@@ -1,0 +1,6 @@
+@startuml
+class StorytellerComp_ThreatsGenerator {
+    + <<override>> MakeIntervalIncidents(target:IIncidentTarget) : IEnumerable<FiringIncident>
+}
+StorytellerComp <|-- StorytellerComp_ThreatsGenerator
+@enduml

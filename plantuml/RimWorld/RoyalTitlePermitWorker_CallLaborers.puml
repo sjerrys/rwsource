@@ -1,0 +1,6 @@
+@startuml
+class RoyalTitlePermitWorker_CallLaborers {
+    + <<override>> GetRoyalAidOptions(map:Map, pawn:Pawn, faction:Faction) : IEnumerable<FloatMenuOption>
+}
+RoyalTitlePermitWorker <|-- RoyalTitlePermitWorker_CallLaborers
+@enduml

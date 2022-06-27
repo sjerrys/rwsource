@@ -1,0 +1,8 @@
+@startuml
+class GameCondition_ClimateCycle {
+    + <<override>> Init() : void
+    + <<override>> ExposeData() : void
+    + <<override>> TemperatureOffset() : float
+}
+GameCondition <|-- GameCondition_ClimateCycle
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class ScreenFader <<static>> {
+    {static} ScreenFader()
+    + {static} OverlayOnGUI(windowSize:Vector2) : void
+    + {static} SetColor(newColor:Color) : void
+    + {static} StartFade(finalColor:Color, duration:float) : void
+}
+@enduml

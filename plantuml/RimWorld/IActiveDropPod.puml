@@ -1,0 +1,6 @@
+@startuml
+interface IActiveDropPod {
+}
+IThingHolder <|-- IActiveDropPod
+IActiveDropPod --> "Contents" ActiveDropPodInfo
+@enduml

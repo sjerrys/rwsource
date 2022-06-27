@@ -1,0 +1,8 @@
+@startuml
+class SectionLayer_EdgeShadows {
+    + <<override>> Visible : bool <<get>>
+    + SectionLayer_EdgeShadows(section:Section)
+    + <<override>> Regenerate() : void
+}
+SectionLayer <|-- SectionLayer_EdgeShadows
+@enduml

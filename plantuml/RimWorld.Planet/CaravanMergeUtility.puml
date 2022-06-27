@@ -1,0 +1,9 @@
+@startuml
+class CaravanMergeUtility <<static>> {
+    + {static} ShouldShowMergeCommand : bool <<get>>
+    + {static} CanMergeAnySelectedCaravans : bool <<get>>
+    + {static} AnySelectedCaravanCloseToAnyOtherMergeableCaravan : bool <<get>>
+    + {static} MergeCommand(caravan:Caravan) : Command
+    + {static} TryMergeSelectedCaravans() : void
+}
+@enduml

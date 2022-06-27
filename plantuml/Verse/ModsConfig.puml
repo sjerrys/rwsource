@@ -1,0 +1,35 @@
+@startuml
+class ModsConfig <<static>> {
+    + {static} RoyaltyActive : bool <<get>>
+    {static} ModsConfig()
+    + {static} TryGetPackageIdWithoutExtraSteamPostfix(packageId:string, nonSteamPackageId:string) : bool
+    + {static} DeactivateNotInstalledMods(logCallback:Action<string>) : void
+    + {static} Reset() : void
+    + {static} Reorder(modIndex:int, newIndex:int) : void
+    + {static} Reorder(newIndices:List<int>) : void
+    + {static} IsActive(mod:ModMetaData) : bool
+    + {static} IsActive(id:string) : bool
+    + {static} SetActive(mod:ModMetaData, active:bool) : void
+    + {static} SetActive(modIdentifier:string, active:bool) : void
+    + {static} SetActiveToList(mods:List<string>) : void
+    + {static} IsExpansionNew(id:string) : bool
+    + {static} AddKnownExpansion(id:string) : void
+    + {static} Save() : void
+    + {static} SaveFromList(mods:List<string>) : void
+    + {static} RestartFromChangedMods() : void
+    + {static} GetModWarnings() : List<string>
+    + {static} ModHasAnyOrderingIssues(mod:ModMetaData) : bool
+    + {static} TrySortMods() : void
+}
+class ModsConfigData {
+    + version : string
+}
+class "IEnumerable`1"<T> {
+}
+class "List`1"<T> {
+}
+ModsConfig --> "ActiveModsInLoadOrder<ModMetaData>" "IEnumerable`1"
+ModsConfig +-- ModsConfigData
+ModsConfigData o-> "activeMods<string>" "List`1"
+ModsConfigData o-> "knownExpansions<string>" "List`1"
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+enum UIDirection {
+    LeftThenUp,
+    LeftThenDown,
+    RightThenUp,
+    RightThenDown,
+}
+@enduml

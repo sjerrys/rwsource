@@ -1,0 +1,17 @@
+@startuml
+class WorldFeatureTextMesh_TextMeshPro {
+    + <<override>> Active : bool <<get>>
+    + <<override>> Text : string <<get>> <<set>>
+    + <<override>> Size : float <<set>>
+    + <<override>> SetActive(active:bool) : void
+    + <<override>> Destroy() : void
+    + <<override>> Init() : void
+    + <<override>> WrapAroundPlanetSurface() : void
+}
+WorldFeatureTextMesh <|-- WorldFeatureTextMesh_TextMeshPro
+WorldFeatureTextMesh_TextMeshPro o-> "WorldTextPrefab" GameObject
+WorldFeatureTextMesh_TextMeshPro --> "Position" Vector3
+WorldFeatureTextMesh_TextMeshPro --> "Color" Color
+WorldFeatureTextMesh_TextMeshPro --> "Rotation" Quaternion
+WorldFeatureTextMesh_TextMeshPro --> "LocalPosition" Vector3
+@enduml

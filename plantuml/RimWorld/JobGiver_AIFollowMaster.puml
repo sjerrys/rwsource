@@ -1,0 +1,7 @@
+@startuml
+class JobGiver_AIFollowMaster {
+    + <<const>> RadiusUnreleased : float = 3f
+    + <<const>> RadiusReleased : float = 50f
+}
+JobGiver_AIFollowPawn <|-- JobGiver_AIFollowMaster
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class RoadDefGenStep_Bulldoze {
+    + <<override>> Place(map:Map, tile:IntVec3, rockDef:TerrainDef, origin:IntVec3, distance:GenStep_Roads.DistanceElement[,]) : void
+}
+RoadDefGenStep <|-- RoadDefGenStep_Bulldoze
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class TriggerUnfogged {
+    + signalTag : string
+    + <<override>> Tick() : void
+    + Activated() : void
+    + <<override>> ExposeData() : void
+}
+Thing <|-- TriggerUnfogged
+@enduml

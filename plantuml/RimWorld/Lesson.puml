@@ -1,0 +1,19 @@
+@startuml
+abstract class Lesson {
+    + startRealTime : float
+    + <<const>> KnowledgeForAutoVanish : float = 0.2f
+    + <<virtual>> MessagesYOffset : float <<get>>
+    + <<virtual>> DefaultRejectInputMessage : string <<get>>
+    + <<virtual>> ExposeData() : void
+    + <<virtual>> OnActivated() : void
+    + <<virtual>> PostDeactivated() : void
+    + {abstract} LessonOnGUI() : void
+    + <<virtual>> LessonUpdate() : void
+    + <<virtual>> Notify_KnowledgeDemonstrated(conc:ConceptDef) : void
+    + <<virtual>> Notify_Event(ep:EventPack) : void
+    + <<virtual>> AllowAction(ep:EventPack) : AcceptanceReport
+}
+IExposable <|-- Lesson
+Lesson --> "Concept" ConceptDef
+Lesson --> "Instruction" InstructionDef
+@enduml

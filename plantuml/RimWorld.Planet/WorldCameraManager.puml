@@ -1,0 +1,14 @@
+@startuml
+class WorldCameraManager <<static>> {
+    + {static} <<readonly>> WorldLayerName : string
+    + {static} WorldLayerMask : int
+    + {static} WorldLayer : int
+    + {static} <<readonly>> WorldSkyboxLayerName : string
+    + {static} WorldSkyboxLayerMask : int
+    + {static} WorldSkyboxLayer : int
+    {static} WorldCameraManager()
+}
+WorldCameraManager --> "WorldCamera" Camera
+WorldCameraManager --> "WorldSkyboxCamera" Camera
+WorldCameraManager --> "WorldCameraDriver" WorldCameraDriver
+@enduml

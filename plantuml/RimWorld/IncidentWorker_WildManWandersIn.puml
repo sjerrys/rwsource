@@ -1,0 +1,5 @@
+@startuml
+class IncidentWorker_WildManWandersIn {
+}
+IncidentWorker <|-- IncidentWorker_WildManWandersIn
+@enduml

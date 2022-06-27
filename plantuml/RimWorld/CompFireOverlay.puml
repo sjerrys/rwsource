@@ -1,0 +1,9 @@
+@startuml
+class CompFireOverlay {
+    + <<override>> PostDraw() : void
+    + <<override>> PostSpawnSetup(respawningAfterLoad:bool) : void
+}
+ThingComp <|-- CompFireOverlay
+CompFireOverlay o-> "FireGraphic" Graphic
+CompFireOverlay --> "Props" CompProperties_FireOverlay
+@enduml

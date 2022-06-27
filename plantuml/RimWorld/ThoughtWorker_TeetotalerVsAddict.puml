@@ -1,0 +1,5 @@
+@startuml
+class ThoughtWorker_TeetotalerVsAddict {
+}
+ThoughtWorker <|-- ThoughtWorker_TeetotalerVsAddict
+@enduml

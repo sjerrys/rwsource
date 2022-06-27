@@ -1,0 +1,8 @@
+@startuml
+abstract class IngestionOutcomeDoer {
+    + chance : float = 1f
+    + doToGeneratedPawnIfAddicted : bool
+    + DoIngestionOutcome(pawn:Pawn, ingested:Thing) : void
+    + <<virtual>> SpecialDisplayStats(parentDef:ThingDef) : IEnumerable<StatDrawEntry>
+}
+@enduml

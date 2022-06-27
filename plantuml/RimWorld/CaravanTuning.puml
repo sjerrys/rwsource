@@ -1,0 +1,6 @@
+@startuml
+class CaravanTuning <<static>> {
+    + <<const>> JoyGainPerHourNotMoving : float = 0.1f
+    + <<const>> JoyGainIntervalTicks : int = 1250
+}
+@enduml

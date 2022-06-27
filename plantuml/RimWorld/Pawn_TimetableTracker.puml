@@ -1,0 +1,13 @@
+@startuml
+class Pawn_TimetableTracker {
+    + Pawn_TimetableTracker(pawn:Pawn)
+    + ExposeData() : void
+    + GetAssignment(hour:int) : TimeAssignmentDef
+    + SetAssignment(hour:int, ta:TimeAssignmentDef) : void
+}
+class "List`1"<T> {
+}
+IExposable <|-- Pawn_TimetableTracker
+Pawn_TimetableTracker --> "times<TimeAssignmentDef>" "List`1"
+Pawn_TimetableTracker --> "CurrentAssignment" TimeAssignmentDef
+@enduml

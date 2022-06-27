@@ -1,0 +1,7 @@
+@startuml
+class BiomeDiseaseRecord {
+    + commonality : float = 999999f
+}
+BiomeDiseaseRecord --> "biome" BiomeDef
+BiomeDiseaseRecord --> "diseaseInc" IncidentDef
+@enduml

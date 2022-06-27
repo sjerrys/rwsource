@@ -1,0 +1,10 @@
+@startuml
+class AbsLatitudeCurve {
+    + planetRadius : float
+    + AbsLatitudeCurve()
+    + AbsLatitudeCurve(curve:SimpleCurve, planetRadius:float)
+    + <<override>> GetValue(x:double, y:double, z:double) : double
+}
+ModuleBase <|-- AbsLatitudeCurve
+AbsLatitudeCurve --> "curve" SimpleCurve
+@enduml

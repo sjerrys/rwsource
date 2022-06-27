@@ -1,0 +1,10 @@
+@startuml
+class Toils_JobTransforms <<static>> {
+    + {static} ExtractNextTargetFromQueue(ind:TargetIndex, failIfCountFromQueueTooBig:bool) : Toil
+    + {static} ClearQueue(ind:TargetIndex) : Toil
+    + {static} ClearDespawnedNullOrForbiddenQueuedTargets(ind:TargetIndex, validator:Func<Thing, bool>) : Toil
+    + {static} SetTargetToIngredientPlaceCell(facilityInd:TargetIndex, carryItemInd:TargetIndex, cellTargetInd:TargetIndex) : Toil
+    + {static} MoveCurrentTargetIntoQueue(ind:TargetIndex) : Toil
+    + {static} SucceedOnNoTargetInQueue(ind:TargetIndex) : Toil
+}
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class BuildDesignatorUtility <<static>> {
+    + {static} TryDrawPowerGridAndAnticipatedConnection(def:BuildableDef, rotation:Rot4) : void
+}
+@enduml

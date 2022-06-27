@@ -1,0 +1,9 @@
+@startuml
+class HediffComp_KillAfterDays {
+    + <<override>> CompPostPostAdd(dinfo:DamageInfo?) : void
+    + <<override>> CompPostTick(severityAdjustment:float) : void
+    + <<override>> CompExposeData() : void
+}
+HediffComp <|-- HediffComp_KillAfterDays
+HediffComp_KillAfterDays --> "Props" HediffCompProperties_KillAfterDays
+@enduml

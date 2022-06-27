@@ -1,0 +1,7 @@
+@startuml
+class JobDriver_CleanFilth {
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+    + <<override>> ExposeData() : void
+}
+JobDriver <|-- JobDriver_CleanFilth
+@enduml

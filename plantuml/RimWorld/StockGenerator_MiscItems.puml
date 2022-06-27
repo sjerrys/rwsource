@@ -1,0 +1,7 @@
+@startuml
+abstract class StockGenerator_MiscItems {
+    + <<override>> GenerateThings(forTile:int, faction:Faction) : IEnumerable<Thing>
+    + <<override>> HandlesThingDef(thingDef:ThingDef) : bool
+}
+StockGenerator <|-- StockGenerator_MiscItems
+@enduml

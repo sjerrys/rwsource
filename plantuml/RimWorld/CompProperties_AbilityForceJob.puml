@@ -1,0 +1,7 @@
+@startuml
+class CompProperties_AbilityForceJob {
+}
+CompProperties_EffectWithDest <|-- CompProperties_AbilityForceJob
+CompProperties_AbilityForceJob --> "jobDef" JobDef
+CompProperties_AbilityForceJob --> "durationMultiplier" StatDef
+@enduml

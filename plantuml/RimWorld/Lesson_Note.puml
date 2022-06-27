@@ -1,0 +1,16 @@
+@startuml
+class Lesson_Note {
+    + doFadeIn : bool = true
+    + Expiring : bool <<get>>
+    + <<override>> MessagesYOffset : float <<get>>
+    + Lesson_Note()
+    + Lesson_Note(concept:ConceptDef)
+    + <<override>> ExposeData() : void
+    + <<override>> OnActivated() : void
+    + <<override>> LessonOnGUI() : void
+    + <<override>> Notify_KnowledgeDemonstrated(conc:ConceptDef) : void
+}
+Lesson <|-- Lesson_Note
+Lesson_Note --> "def" ConceptDef
+Lesson_Note --> "MainRect" Rect
+@enduml

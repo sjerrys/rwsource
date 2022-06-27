@@ -1,0 +1,5 @@
+@startuml
+class ThingDefGenerator_Corpses <<static>> {
+    + {static} ImpliedCorpseDefs() : IEnumerable<ThingDef>
+}
+@enduml

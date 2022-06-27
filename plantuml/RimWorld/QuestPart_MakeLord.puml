@@ -1,0 +1,22 @@
+@startuml
+abstract class QuestPart_MakeLord {
+    + inSignal : string
+    + inSignalRemovePawn : string
+    + excludeFromLookTargets : bool
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> Notify_FactionRemoved(f:Faction) : void
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart <|-- QuestPart_MakeLord
+QuestPart_MakeLord o-> "pawns<Pawn>" "List`1"
+QuestPart_MakeLord --> "faction" Faction
+QuestPart_MakeLord --> "mapParent" MapParent
+QuestPart_MakeLord --> "mapOfPawn" Pawn
+QuestPart_MakeLord --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+QuestPart_MakeLord --> "Map" Map
+@enduml

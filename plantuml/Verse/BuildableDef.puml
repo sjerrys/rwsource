@@ -1,0 +1,63 @@
+@startuml
+abstract class BuildableDef {
+    + pathCost : int
+    + pathCostIgnoreRepeat : bool = true
+    + fertility : float
+    + costStuffCount : int
+    + placingDraggableDimensions : int
+    + clearBuildingArea : bool = true
+    + resourcesFractionWhenDeconstructed : float = 0.75f
+    + useStuffTerrainAffordance : bool
+    + constructionSkillPrerequisite : int
+    + artisticSkillPrerequisite : int
+    + menuHidden : bool
+    + specialDisplayRadius : float
+    + uiIconPath : string
+    + uiIconForStackCount : int
+    + uiIconAngle : float
+    + MadeFromStuff : bool <<get>>
+    + BuildableByPlayer : bool <<get>>
+    + Altitude : float <<get>>
+    + AffectsFertility : bool <<get>>
+    + IsResearchFinished : bool <<get>>
+    + ForceAllowPlaceOver(other:BuildableDef) : bool
+    + <<override>> PostLoad() : void
+    + GetColorForStuff(stuff:ThingDef) : Color
+    + <<override>> ResolveReferences() : void
+    + <<override>> ConfigErrors() : IEnumerable<string>
+    + <<override>> SpecialDisplayStats(req:StatRequest) : IEnumerable<StatDrawEntry>
+    + <<override>> ToString() : string
+    + <<override>> GetHashCode() : int
+}
+class "List`1"<T> {
+}
+Def <|-- BuildableDef
+BuildableDef --> "statBases<StatModifier>" "List`1"
+BuildableDef --> "passability" Traversability
+BuildableDef --> "costList<ThingDefCountClass>" "List`1"
+BuildableDef --> "stuffCategories<StuffCategoryDef>" "List`1"
+BuildableDef o-> "defaultPlacingRot" Rot4
+BuildableDef --> "terrainAffordanceNeeded" TerrainAffordanceDef
+BuildableDef --> "buildingPrerequisites<ThingDef>" "List`1"
+BuildableDef --> "researchPrerequisites<ResearchProjectDef>" "List`1"
+BuildableDef --> "minTechLevelToBuild" TechLevel
+BuildableDef --> "maxTechLevelToBuild" TechLevel
+BuildableDef o-> "altitudeLayer" AltitudeLayer
+BuildableDef --> "repairEffect" EffecterDef
+BuildableDef --> "constructEffect" EffecterDef
+BuildableDef --> "colorPerStuff<ColorForStuff>" "List`1"
+BuildableDef --> "placeWorkers<Type>" "List`1"
+BuildableDef --> "designationCategory" DesignationCategoryDef
+BuildableDef --> "designatorDropdown" DesignatorDropdownGroupDef
+BuildableDef --> "designationHotKey" KeyBindingDef
+BuildableDef --> "uiIconOffset" Vector2
+BuildableDef o-> "uiIconColor" Color
+BuildableDef --> "blueprintDef" ThingDef
+BuildableDef --> "installBlueprintDef" ThingDef
+BuildableDef --> "frameDef" ThingDef
+BuildableDef o-> "graphic" Graphic
+BuildableDef o-> "uiIcon" Texture2D
+BuildableDef --> "Size" IntVec2
+BuildableDef --> "DrawMatSingle" Material
+BuildableDef --> "PlaceWorkers<PlaceWorker>" "List`1"
+@enduml

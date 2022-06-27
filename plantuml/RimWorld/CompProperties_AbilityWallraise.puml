@@ -1,0 +1,8 @@
+@startuml
+class CompProperties_AbilityWallraise {
+}
+class "List`1"<T> {
+}
+CompProperties_AbilityEffect <|-- CompProperties_AbilityWallraise
+CompProperties_AbilityWallraise --> "pattern<IntVec2>" "List`1"
+@enduml

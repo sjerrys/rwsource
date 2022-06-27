@@ -1,0 +1,16 @@
+@startuml
+class MassUtility <<static>> {
+    + <<const>> MassCapacityPerBodySize : float = 35f
+    + {static} EncumbrancePercent(pawn:Pawn) : float
+    + {static} UnboundedEncumbrancePercent(pawn:Pawn) : float
+    + {static} IsOverEncumbered(pawn:Pawn) : bool
+    + {static} WillBeOverEncumberedAfterPickingUp(pawn:Pawn, thing:Thing, count:int) : bool
+    + {static} CountToPickUpUntilOverEncumbered(pawn:Pawn, thing:Thing) : int
+    + {static} FreeSpace(pawn:Pawn) : float
+    + {static} GearAndInventoryMass(pawn:Pawn) : float
+    + {static} GearMass(p:Pawn) : float
+    + {static} InventoryMass(p:Pawn) : float
+    + {static} Capacity(p:Pawn, explanation:StringBuilder) : float
+    + {static} CanEverCarryAnything(p:Pawn) : bool
+}
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+class Caravan_ForageTracker {
+    + ForagedFoodPerDayExplanation : string <<get>>
+    + Caravan_ForageTracker(caravan:Caravan)
+    + ExposeData() : void
+    + ForageTrackerTick() : void
+    + GetGizmos() : IEnumerable<Gizmo>
+}
+class "Pair`2"<T1,T2> {
+}
+IExposable <|-- Caravan_ForageTracker
+Caravan_ForageTracker --> "ForagedFoodPerDay<ThingDef,float>" "Pair`2"
+@enduml

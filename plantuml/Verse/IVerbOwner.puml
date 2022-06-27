@@ -1,0 +1,13 @@
+@startuml
+interface IVerbOwner {
+    UniqueVerbOwnerID() : string
+    VerbsStillUsableBy(p:Pawn) : bool
+}
+class "List`1"<T> {
+}
+IVerbOwner --> "VerbTracker" VerbTracker
+IVerbOwner --> "VerbProperties<VerbProperties>" "List`1"
+IVerbOwner --> "Tools<Tool>" "List`1"
+IVerbOwner --> "ImplementOwnerTypeDef" ImplementOwnerTypeDef
+IVerbOwner --> "ConstantCaster" Thing
+@enduml

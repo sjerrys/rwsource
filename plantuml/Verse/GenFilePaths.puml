@@ -1,0 +1,46 @@
+@startuml
+class GenFilePaths <<static>> {
+    + <<const>> SoundsFolder : string = "Sounds/"
+    + <<const>> SoundsFolderName : string = "Sounds"
+    + <<const>> TexturesFolder : string = "Textures/"
+    + <<const>> TexturesFolderName : string = "Textures"
+    + <<const>> StringsFolder : string = "Strings/"
+    + <<const>> DefsFolder : string = "Defs/"
+    + <<const>> PatchesFolder : string = "Patches/"
+    + <<const>> AssetBundlesFolderName : string = "AssetBundles"
+    + <<const>> AssetsFolderName : string = "Assets"
+    + <<const>> ResourcesFolderName : string = "Resources"
+    + <<const>> ModsFolderName : string = "Mods"
+    + <<const>> AssembliesFolder : string = "Assemblies/"
+    + <<const>> OfficialModsFolderName : string = "Data"
+    + <<const>> CoreFolderName : string = "Core"
+    + <<const>> BackstoriesPath : string = "Backstories"
+    + <<const>> SavedGameExtension : string = ".rws"
+    + <<const>> ScenarioExtension : string = ".rsc"
+    + <<const>> ExternalHistoryFileExtension : string = ".rwh"
+    + {static} SaveDataFolderPath : string <<get>>
+    + {static} ScenarioPreviewImagePath : string <<get>>
+    + {static} ModsFolderPath : string <<get>>
+    + {static} OfficialModsFolderPath : string <<get>>
+    + {static} ConfigFolderPath : string <<get>>
+    + {static} ScreenshotFolderPath : string <<get>>
+    + {static} DevOutputFolderPath : string <<get>>
+    + {static} ModsConfigFilePath : string <<get>>
+    + {static} ConceptKnowledgeFilePath : string <<get>>
+    + {static} PrefsFilePath : string <<get>>
+    + {static} KeyPrefsFilePath : string <<get>>
+    + {static} LastPlayedVersionFilePath : string <<get>>
+    + {static} DevModePermanentlyDisabledFilePath : string <<get>>
+    + {static} BackstoryOutputFilePath : string <<get>>
+    + {static} TempFolderPath : string <<get>>
+    + {static} FilePathForSavedGame(gameName:string) : string
+    + {static} AbsPathForScenario(scenarioName:string) : string
+    + {static} ContentPath() : string
+    + {static} SafeURIForUnityWWWFromPath(rawPath:string) : string
+}
+class "IEnumerable`1"<T> {
+}
+GenFilePaths --> "AllSavedGameFiles<FileInfo>" "IEnumerable`1"
+GenFilePaths --> "AllCustomScenarioFiles<FileInfo>" "IEnumerable`1"
+GenFilePaths --> "AllExternalHistoryFiles<FileInfo>" "IEnumerable`1"
+@enduml

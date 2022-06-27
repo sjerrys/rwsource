@@ -1,0 +1,12 @@
+@startuml
+class MentalState_MurderousRage {
+    + <<override>> ExposeData() : void
+    + <<override>> SocialModeMax() : RandomSocialMode
+    + <<override>> PreStart() : void
+    + <<override>> MentalStateTick() : void
+    + <<override>> GetBeginLetterText() : string
+    + IsTargetStillValidAndReachable() : bool
+}
+MentalState <|-- MentalState_MurderousRage
+MentalState_MurderousRage --> "target" Pawn
+@enduml

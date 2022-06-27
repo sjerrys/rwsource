@@ -1,0 +1,8 @@
+@startuml
+class "LoadedContentItem`1"<T> {
+    + contentItem : T
+    + LoadedContentItem(internalFile:VirtualFile, contentItem:T, extraDisposable:IDisposable)
+}
+"LoadedContentItem`1" --> "internalFile" VirtualFile
+"LoadedContentItem`1" --> "extraDisposable" IDisposable
+@enduml

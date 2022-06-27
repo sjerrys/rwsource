@@ -1,0 +1,8 @@
+@startuml
+class RoyalTitlePermitWorker_DropResources {
+    + <<override>> OrderForceTarget(target:LocalTargetInfo) : void
+    + <<override>> GetRoyalAidOptions(map:Map, pawn:Pawn, faction:Faction) : IEnumerable<FloatMenuOption>
+    + <<override>> GetCaravanGizmos(pawn:Pawn, faction:Faction) : IEnumerable<Gizmo>
+}
+RoyalTitlePermitWorker_Targeted <|-- RoyalTitlePermitWorker_DropResources
+@enduml

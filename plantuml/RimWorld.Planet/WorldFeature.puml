@@ -1,0 +1,19 @@
+@startuml
+class WorldFeature {
+    + uniqueID : int
+    + name : string
+    + drawAngle : float
+    + maxDrawSizeInTiles : float
+    + alpha : float
+    + EffectiveDrawSize : float <<get>>
+    + ExposeData() : void
+    + GetUniqueLoadID() : string
+}
+class "IEnumerable`1"<T> {
+}
+IExposable <|-- WorldFeature
+ILoadReferenceable <|-- WorldFeature
+WorldFeature --> "def" FeatureDef
+WorldFeature --> "drawCenter" Vector3
+WorldFeature --> "Tiles<int>" "IEnumerable`1"
+@enduml

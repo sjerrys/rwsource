@@ -1,0 +1,30 @@
+@startuml
+class HediffComp {
+    + <<virtual>> CompLabelInBracketsExtra : string <<get>>
+    + <<virtual>> CompTipStringExtra : string <<get>>
+    + <<virtual>> CompShouldRemove : bool <<get>>
+    + <<virtual>> CompPostMake() : void
+    + <<virtual>> CompPostTick(severityAdjustment:float) : void
+    + <<virtual>> CompExposeData() : void
+    + <<virtual>> CompPostPostAdd(dinfo:DamageInfo?) : void
+    + <<virtual>> CompPostPostRemoved() : void
+    + <<virtual>> CompPostMerged(other:Hediff) : void
+    + <<virtual>> CompDisallowVisible() : bool
+    + <<virtual>> CompModifyChemicalEffect(chem:ChemicalDef, effect:float) : void
+    + <<virtual>> CompPostInjuryHeal(amount:float) : void
+    + <<virtual>> CompTended(quality:float, batchPosition:int) : void
+    + <<virtual>> CompTended_NewTemp(quality:float, maxQuality:float, batchPosition:int) : void
+    + <<virtual>> Notify_ImplantUsed(violationSourceName:string, detectionChance:float, violationSourceLevel:int) : void
+    + <<virtual>> Notify_EntropyGained(baseAmount:float, finalAmount:float, source:Thing) : void
+    + <<virtual>> Notify_PawnUsedVerb(verb:Verb, target:LocalTargetInfo) : void
+    + <<virtual>> Notify_PawnDied() : void
+    + <<virtual>> Notify_PawnKilled() : void
+    + <<virtual>> Notify_PawnPostApplyDamage(dinfo:DamageInfo, totalDamageDealt:float) : void
+    + <<virtual>> CompDebugString() : string
+}
+HediffComp --> "parent" HediffWithComps
+HediffComp --> "props" HediffCompProperties
+HediffComp --> "Pawn" Pawn
+HediffComp --> "Def" HediffDef
+HediffComp --> "CompStateIcon" TextureAndColor
+@enduml

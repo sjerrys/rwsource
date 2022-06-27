@@ -1,0 +1,10 @@
+@startuml
+class FloodFillRangeQueue {
+    + Count : int <<get>>
+    + PerfDebugString : string <<get>>
+    + FloodFillRangeQueue(initialSize:int)
+    + Enqueue(r:FloodFillRange) : void
+    + Dequeue() : FloodFillRange
+}
+FloodFillRangeQueue --> "First" FloodFillRange
+@enduml

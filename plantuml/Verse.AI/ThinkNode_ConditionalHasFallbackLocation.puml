@@ -1,0 +1,5 @@
+@startuml
+class ThinkNode_ConditionalHasFallbackLocation {
+}
+ThinkNode_Conditional <|-- ThinkNode_ConditionalHasFallbackLocation
+@enduml

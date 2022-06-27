@@ -1,0 +1,8 @@
+@startuml
+class Building_TempControl {
+    + <<override>> SpawnSetup(map:Map, respawningAfterLoad:bool) : void
+}
+Building <|-- Building_TempControl
+Building_TempControl --> "compTempControl" CompTempControl
+Building_TempControl --> "compPowerTrader" CompPowerTrader
+@enduml

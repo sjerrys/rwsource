@@ -1,0 +1,14 @@
+@startuml
+class IncidentQueue {
+    + Count : int <<get>>
+    + DebugQueueReadout : string <<get>>
+    + GetEnumerator() : IEnumerator
+    + Clear() : void
+    + ExposeData() : void
+    + Add(qi:QueuedIncident) : bool
+    + Add(def:IncidentDef, fireTick:int, parms:IncidentParms, retryDurationTicks:int) : bool
+    + IncidentQueueTick() : void
+    + Notify_MapRemoved(map:Map) : void
+}
+IExposable <|-- IncidentQueue
+@enduml

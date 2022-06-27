@@ -1,0 +1,10 @@
+@startuml
+class StorytellerUtilityPopulation <<static>> {
+    + {static} PopulationIntent : float <<get>>
+    + {static} PopulationIntentForQuest : float <<get>>
+    + {static} AdjustedPopulation : float <<get>>
+    + {static} AdjustedPopulationIncludingQuests : float <<get>>
+    + {static} DebugReadout() : string
+    + {static} PopulationIntents() : void
+}
+@enduml

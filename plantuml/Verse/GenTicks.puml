@@ -1,0 +1,14 @@
+@startuml
+class GenTicks <<static>> {
+    + <<const>> TicksPerRealSecond : int = 60
+    + <<const>> TickRareInterval : int = 250
+    + <<const>> TickLongInterval : int = 2000
+    + {static} TicksAbs : int <<get>>
+    + {static} TicksGame : int <<get>>
+    + {static} ConfiguredTicksAbsAtGameStart : int <<get>>
+    + {static} TicksToSeconds(numTicks:int) : float
+    + {static} SecondsToTicks(numSeconds:float) : int
+    + {static} ToStringSecondsFromTicks(numTicks:int) : string
+    + {static} ToStringTicksFromSeconds(numSeconds:float) : string
+}
+@enduml

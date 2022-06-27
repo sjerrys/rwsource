@@ -1,0 +1,9 @@
+@startuml
+class LordJob_SleepThenMechanoidsDefend {
+    + <<override>> GuiltyOnDowned : bool <<get>>
+    + LordJob_SleepThenMechanoidsDefend()
+    + LordJob_SleepThenMechanoidsDefend(things:List<Thing>, faction:Faction, defendRadius:float, defSpot:IntVec3, canAssaultColony:bool, isMechCluster:bool)
+    + <<override>> CreateGraph() : StateGraph
+}
+LordJob_MechanoidDefendBase <|-- LordJob_SleepThenMechanoidsDefend
+@enduml

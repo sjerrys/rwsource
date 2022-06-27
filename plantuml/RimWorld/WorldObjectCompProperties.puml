@@ -1,0 +1,7 @@
+@startuml
+class WorldObjectCompProperties {
+    + <<virtual>> ConfigErrors(parentDef:WorldObjectDef) : IEnumerable<string>
+    + <<virtual>> ResolveReferences(parentDef:WorldObjectDef) : void
+}
+WorldObjectCompProperties o-> "compClass" Type
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+class TerrainAffordanceDefOf <<static>> {
+    {static} TerrainAffordanceDefOf()
+}
+TerrainAffordanceDefOf --> "Light" TerrainAffordanceDef
+TerrainAffordanceDefOf --> "Medium" TerrainAffordanceDef
+TerrainAffordanceDefOf --> "Heavy" TerrainAffordanceDef
+TerrainAffordanceDefOf --> "GrowSoil" TerrainAffordanceDef
+TerrainAffordanceDefOf --> "Diggable" TerrainAffordanceDef
+TerrainAffordanceDefOf --> "SmoothableStone" TerrainAffordanceDef
+TerrainAffordanceDefOf --> "MovingFluid" TerrainAffordanceDef
+TerrainAffordanceDefOf --> "Bridgeable" TerrainAffordanceDef
+@enduml

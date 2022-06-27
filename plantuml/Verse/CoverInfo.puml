@@ -1,0 +1,8 @@
+@startuml
+class CoverInfo <<struct>> {
+    + BlockChance : float <<get>>
+    + CoverInfo(thing:Thing, blockChance:float)
+}
+CoverInfo --> "Thing" Thing
+CoverInfo --> "Invalid" CoverInfo
+@enduml

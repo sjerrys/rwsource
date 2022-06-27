@@ -1,0 +1,8 @@
+@startuml
+class ScenarioDef {
+    + <<override>> PostLoad() : void
+    + <<override>> ConfigErrors() : IEnumerable<string>
+}
+Def <|-- ScenarioDef
+ScenarioDef --> "scenario" Scenario
+@enduml

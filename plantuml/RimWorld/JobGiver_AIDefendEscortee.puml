@@ -1,0 +1,5 @@
+@startuml
+class JobGiver_AIDefendEscortee {
+}
+JobGiver_AIDefendPawn <|-- JobGiver_AIDefendEscortee
+@enduml

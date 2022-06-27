@@ -1,0 +1,6 @@
+@startuml
+class JobDriver_SmoothFloor {
+    + JobDriver_SmoothFloor()
+}
+JobDriver_AffectFloor <|-- JobDriver_SmoothFloor
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+enum SoundContext {
+    Any,
+    MapOnly,
+    WorldOnly,
+}
+@enduml

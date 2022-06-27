@@ -1,0 +1,16 @@
+@startuml
+class DragBox {
+    + active : bool
+    + LeftX : float <<get>>
+    + RightX : float <<get>>
+    + BotZ : float <<get>>
+    + TopZ : float <<get>>
+    + IsValid : bool <<get>>
+    + IsValidAndActive : bool <<get>>
+    + DragBoxOnGUI() : void
+    + Contains(t:Thing) : bool
+    + Contains(v:Vector3) : bool
+}
+DragBox --> "start" Vector3
+DragBox --> "ScreenRect" Rect
+@enduml

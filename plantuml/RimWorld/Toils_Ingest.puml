@@ -1,0 +1,14 @@
+@startuml
+class Toils_Ingest {
+    + <<const>> MaxPawnReservations : int = 10
+    + {static} TakeMealFromDispenser(ind:TargetIndex, eater:Pawn) : Toil
+    + {static} PickupIngestible(ind:TargetIndex, eater:Pawn) : Toil
+    + {static} CarryIngestibleToChewSpot(pawn:Pawn, ingestibleInd:TargetIndex) : Toil
+    + {static} ReserveFoodFromStackForIngesting(ind:TargetIndex, ingester:Pawn) : Toil
+    + {static} TryFindAdjacentIngestionPlaceSpot(root:IntVec3, ingestibleDef:ThingDef, pawn:Pawn, placeSpot:IntVec3) : bool
+    + {static} FindAdjacentEatSurface(eatSurfaceInd:TargetIndex, foodInd:TargetIndex) : Toil
+    + {static} ChewIngestible(chewer:Pawn, durationMultiplier:float, ingestibleInd:TargetIndex, eatSurfaceInd:TargetIndex) : Toil
+    + {static} AddIngestionEffects(toil:Toil, chewer:Pawn, ingestibleInd:TargetIndex, eatSurfaceInd:TargetIndex) : Toil
+    + {static} FinalizeIngest(ingester:Pawn, ingestibleInd:TargetIndex) : Toil
+}
+@enduml

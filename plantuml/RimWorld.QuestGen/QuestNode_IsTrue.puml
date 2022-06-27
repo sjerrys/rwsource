@@ -1,0 +1,10 @@
+@startuml
+class QuestNode_IsTrue {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_IsTrue
+QuestNode_IsTrue --> "value<bool>" "SlateRef`1"
+QuestNode_IsTrue --> "node" QuestNode
+QuestNode_IsTrue --> "elseNode" QuestNode
+@enduml

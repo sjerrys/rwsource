@@ -1,0 +1,18 @@
+@startuml
+class QuestNode_DropPods {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_DropPods
+QuestNode_DropPods --> "inSignal<string>" "SlateRef`1"
+QuestNode_DropPods --> "contents<IEnumerable<Thing>>" "SlateRef`1"
+QuestNode_DropPods --> "useTradeDropSpot<bool>" "SlateRef`1"
+QuestNode_DropPods --> "joinPlayer<bool>" "SlateRef`1"
+QuestNode_DropPods --> "makePrisoners<bool>" "SlateRef`1"
+QuestNode_DropPods --> "sendStandardLetter<bool?>" "SlateRef`1"
+QuestNode_DropPods --> "customLetterLabel<string>" "SlateRef`1"
+QuestNode_DropPods --> "customLetterText<string>" "SlateRef`1"
+QuestNode_DropPods --> "customLetterLabelRules<RulePack>" "SlateRef`1"
+QuestNode_DropPods --> "customLetterTextRules<RulePack>" "SlateRef`1"
+QuestNode_DropPods --> "thingsToExcludeFromHyperlinks<IEnumerable<Thing>>" "SlateRef`1"
+@enduml

@@ -1,0 +1,103 @@
+@startuml
+class "ThingOwner`1"<T> {
+    + <<override>> Count : int <<get>>
+    IsReadOnly : bool <<get>>
+    + ThingOwner()
+    + ThingOwner(owner:IThingHolder)
+    + ThingOwner(owner:IThingHolder, oneStackOnly:bool, contentsLookMode:LookMode)
+    + <<override>> ExposeData() : void
+    + GetEnumerator() : List<T>.Enumerator
+    + <<override>> GetCountCanAccept(item:Thing, canMergeWithExistingStacks:bool) : int
+    + <<override>> TryAdd(item:Thing, count:int, canMergeWithExistingStacks:bool) : int
+    + <<override>> TryAdd(item:Thing, canMergeWithExistingStacks:bool) : bool
+    + TryAddRangeOrTransfer(things:IEnumerable<T>, canMergeWithExistingStacks:bool, destroyLeftover:bool) : void
+    + <<override>> IndexOf(item:Thing) : int
+    + <<override>> Remove(item:Thing) : bool
+    + RemoveAll(predicate:Predicate<T>) : int
+    + TryTransferToContainer(item:Thing, otherContainer:ThingOwner, stackCount:int, resultingTransferredItem:T, canMergeWithExistingStacks:bool) : int
+    + <<new>> Take(thing:Thing, count:int) : T
+    + <<new>> Take(thing:Thing) : T
+    + TryDrop(thing:Thing, dropLoc:IntVec3, map:Map, mode:ThingPlaceMode, count:int, resultingThing:T, placedAction:Action<T, int>, nearPlaceValidator:Predicate<IntVec3>) : bool
+    + TryDrop(thing:Thing, mode:ThingPlaceMode, lastResultingThing:T, placedAction:Action<T, int>, nearPlaceValidator:Predicate<IntVec3>) : bool
+    + TryDrop(thing:Thing, dropLoc:IntVec3, map:Map, mode:ThingPlaceMode, lastResultingThing:T, placedAction:Action<T, int>, nearPlaceValidator:Predicate<IntVec3>) : bool
+    IndexOf(item:T) : int
+    Insert(index:int, item:T) : void
+    Add(item:T) : void
+    CopyTo(array:T[], arrayIndex:int) : void
+    Contains(item:T) : bool
+    Remove(item:T) : bool
+    GetEnumerator() : IEnumerator<T>
+    GetEnumerator() : IEnumerator
+}
+abstract class ThingOwner {
+    + {abstract} Count : int <<get>>
+    + Any : bool <<get>>
+    + TotalStackCount : int <<get>>
+    + ContentsString : string <<get>>
+    IsReadOnly : bool <<get>>
+    + ThingOwner()
+    + ThingOwner(owner:IThingHolder)
+    + ThingOwner(owner:IThingHolder, oneStackOnly:bool, contentsLookMode:LookMode)
+    + <<virtual>> ExposeData() : void
+    + ThingOwnerTick(removeIfDestroyed:bool) : void
+    + ThingOwnerTickRare(removeIfDestroyed:bool) : void
+    + ThingOwnerTickLong(removeIfDestroyed:bool) : void
+    + Clear() : void
+    + ClearAndDestroyContents(mode:DestroyMode) : void
+    + ClearAndDestroyContentsOrPassToWorld(mode:DestroyMode) : void
+    + CanAcceptAnyOf(item:Thing, canMergeWithExistingStacks:bool) : bool
+    + <<virtual>> GetCountCanAccept(item:Thing, canMergeWithExistingStacks:bool) : int
+    + {abstract} TryAdd(item:Thing, count:int, canMergeWithExistingStacks:bool) : int
+    + {abstract} TryAdd(item:Thing, canMergeWithExistingStacks:bool) : bool
+    + {abstract} IndexOf(item:Thing) : int
+    + {abstract} Remove(item:Thing) : bool
+    + Contains(item:Thing) : bool
+    + RemoveAt(index:int) : void
+    + TryAddOrTransfer(item:Thing, count:int, canMergeWithExistingStacks:bool) : int
+    + TryAddOrTransfer(item:Thing, canMergeWithExistingStacks:bool) : bool
+    + TryAddRangeOrTransfer(things:IEnumerable<Thing>, canMergeWithExistingStacks:bool, destroyLeftover:bool) : void
+    + RemoveAll(predicate:Predicate<Thing>) : int
+    + TryTransferToContainer(item:Thing, otherContainer:ThingOwner, canMergeWithExistingStacks:bool) : bool
+    + TryTransferToContainer(item:Thing, otherContainer:ThingOwner, count:int, canMergeWithExistingStacks:bool) : int
+    + TryTransferToContainer(item:Thing, otherContainer:ThingOwner, count:int, resultingTransferredItem:Thing, canMergeWithExistingStacks:bool) : int
+    + TryTransferAllToContainer(other:ThingOwner, canMergeWithExistingStacks:bool) : void
+    + Take(thing:Thing, count:int) : Thing
+    + Take(thing:Thing) : Thing
+    + TryDrop(thing:Thing, mode:ThingPlaceMode, count:int, lastResultingThing:Thing, placedAction:Action<Thing, int>, nearPlaceValidator:Predicate<IntVec3>) : bool
+    + TryDrop(thing:Thing, dropLoc:IntVec3, map:Map, mode:ThingPlaceMode, count:int, resultingThing:Thing, placedAction:Action<Thing, int>, nearPlaceValidator:Predicate<IntVec3>) : bool
+    + TryDrop(thing:Thing, mode:ThingPlaceMode, lastResultingThing:Thing, placedAction:Action<Thing, int>, nearPlaceValidator:Predicate<IntVec3>) : bool
+    + TryDrop(thing:Thing, dropLoc:IntVec3, map:Map, mode:ThingPlaceMode, lastResultingThing:Thing, placedAction:Action<Thing, int>, nearPlaceValidator:Predicate<IntVec3>) : bool
+    + TryDrop_NewTmp(thing:Thing, dropLoc:IntVec3, map:Map, mode:ThingPlaceMode, lastResultingThing:Thing, placedAction:Action<Thing, int>, nearPlaceValidator:Predicate<IntVec3>, playDropSound:bool) : bool
+    + TryDropAll(dropLoc:IntVec3, map:Map, mode:ThingPlaceMode, placeAction:Action<Thing, int>, nearPlaceValidator:Predicate<IntVec3>) : bool
+    + Contains(def:ThingDef) : bool
+    + Contains(def:ThingDef, minCount:int) : bool
+    + TotalStackCountOfDef(def:ThingDef) : int
+    + Notify_ContainedItemDestroyed(t:Thing) : void
+    Insert(index:int, item:Thing) : void
+    Add(item:Thing) : void
+    CopyTo(array:Thing[], arrayIndex:int) : void
+    GetEnumerator() : IEnumerator<Thing>
+    GetEnumerator() : IEnumerator
+}
+class "IList`1"<T> {
+}
+class "ICollection`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+class "List`1"<T> {
+}
+ThingOwner <|-- "ThingOwner`1"
+"IList`1" "<T>" <|-- "ThingOwner`1"
+"ICollection`1" "<T>" <|-- "ThingOwner`1"
+"IEnumerable`1" "<T>" <|-- "ThingOwner`1"
+IEnumerable <|-- "ThingOwner`1"
+"ThingOwner`1" --> "InnerListForReading<T>" "List`1"
+IExposable <|-- ThingOwner
+"IList`1" "<Thing>" <|-- ThingOwner
+"ICollection`1" "<Thing>" <|-- ThingOwner
+"IEnumerable`1" "<Thing>" <|-- ThingOwner
+IEnumerable <|-- ThingOwner
+ThingOwner o-> "contentsLookMode" LookMode
+ThingOwner --> "Owner" IThingHolder
+@enduml

@@ -1,0 +1,47 @@
+@startuml
+abstract class JobDriver {
+    + ended : bool
+    + ticksLeftThisToil : int = 99999
+    + asleep : bool
+    + uninstallWorkLeft : float
+    + collideWithPawns : bool
+    + debugTicksSpentThisToil : int
+    + CurToilIndex : int <<get>>
+    + OnLastToil : bool <<get>>
+    + HandlingFacing : bool <<get>>
+    + <<virtual>> GetReport() : string
+    + {abstract} TryMakePreToilReservations(errorOnFailed:bool) : bool
+    + <<virtual>> SetInitialPosture() : void
+    + <<virtual>> ExposeData() : void
+    + Cleanup(condition:JobCondition) : void
+    + <<virtual>> CanBeginNowWhileLyingDown() : bool
+    + DriverTick() : void
+    + ReadyForNextToil() : void
+    + EndJobWith(condition:JobCondition) : void
+    + <<virtual>> TaleParameters() : object[]
+    + JumpToToil(to:Toil) : void
+    + <<virtual>> Notify_Starting() : void
+    + <<virtual>> Notify_PatherArrived() : void
+    + <<virtual>> Notify_PatherFailed() : void
+    + <<virtual>> Notify_StanceChanged() : void
+    + <<virtual>> Notify_DamageTaken(dinfo:DamageInfo) : void
+    + GetActor() : Pawn
+    + AddEndCondition(newEndCondition:Func<JobCondition>) : void
+    + AddFailCondition(newFailCondition:Func<bool>) : void
+    + AddFinishAction(newAct:Action) : void
+    + <<virtual>> ModifyCarriedThingDrawPos(drawPos:Vector3, behind:bool, flip:bool) : bool
+    + <<virtual>> DesiredSocialMode() : RandomSocialMode
+    + <<virtual>> IsContinuation(j:Job) : bool
+}
+class "List`1"<T> {
+}
+IExposable <|-- JobDriver
+IJobEndable <|-- JobDriver
+JobDriver --> "pawn" Pawn
+JobDriver --> "job" Job
+JobDriver o-> "globalFailConditions<Func<JobCondition>>" "List`1"
+JobDriver o-> "globalFinishActions<Action>" "List`1"
+JobDriver o-> "rotateToFace" TargetIndex
+JobDriver --> "locomotionUrgencySameAs" Pawn
+JobDriver --> "ActiveSkill" SkillDef
+@enduml

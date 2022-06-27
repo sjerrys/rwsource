@@ -1,0 +1,9 @@
+@startuml
+class LogMessageQueue {
+    + maxMessages : int = 200
+    + Enqueue(msg:LogMessage) : void
+}
+class "IEnumerable`1"<T> {
+}
+LogMessageQueue --> "Messages<LogMessage>" "IEnumerable`1"
+@enduml

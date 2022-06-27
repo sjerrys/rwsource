@@ -1,0 +1,6 @@
+@startuml
+class DebugActionsMapManagement <<static>> {
+    + {static} Options_Add_GameCondition() : List<DebugMenuOption>
+    + {static} Options_Remove_GameCondition() : List<DebugMenuOption>
+}
+@enduml

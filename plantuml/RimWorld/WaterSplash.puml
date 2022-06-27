@@ -1,0 +1,5 @@
+@startuml
+class WaterSplash {
+}
+Projectile <|-- WaterSplash
+@enduml

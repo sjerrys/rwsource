@@ -1,0 +1,13 @@
+@startuml
+class QuestNode_AddHediff {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_AddHediff
+QuestNode_AddHediff --> "inSignal<string>" "SlateRef`1"
+QuestNode_AddHediff --> "pawns<IEnumerable<Pawn>>" "SlateRef`1"
+QuestNode_AddHediff --> "hediffDef<HediffDef>" "SlateRef`1"
+QuestNode_AddHediff --> "partsToAffect<IEnumerable<BodyPartDef>>" "SlateRef`1"
+QuestNode_AddHediff --> "checkDiseaseContractChance<bool>" "SlateRef`1"
+QuestNode_AddHediff --> "addToHyperlinks<bool>" "SlateRef`1"
+@enduml

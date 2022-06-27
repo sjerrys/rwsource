@@ -1,0 +1,22 @@
+@startuml
+class GenGrid <<static>> {
+    + <<const>> NoBuildEdgeWidth : int = 10
+    + <<const>> NoZoneEdgeWidth : int = 5
+    + {static} InNoBuildEdgeArea(c:IntVec3, map:Map) : bool
+    + {static} InNoZoneEdgeArea(c:IntVec3, map:Map) : bool
+    + {static} CloseToEdge(c:IntVec3, map:Map, edgeDist:int) : bool
+    + {static} OnEdge(c:IntVec3, map:Map) : bool
+    + {static} OnEdge(c:IntVec3, map:Map, dir:Rot4) : bool
+    + {static} InBounds(c:IntVec3, map:Map) : bool
+    + {static} InBounds(v:Vector3, map:Map) : bool
+    + {static} Walkable(c:IntVec3, map:Map) : bool
+    + {static} Standable(c:IntVec3, map:Map) : bool
+    + {static} Impassable(c:IntVec3, map:Map) : bool
+    + {static} SupportsStructureType(c:IntVec3, map:Map, surfaceType:TerrainAffordanceDef) : bool
+    + {static} CanBeSeenOver(c:IntVec3, map:Map) : bool
+    + {static} CanBeSeenOverFast(c:IntVec3, map:Map) : bool
+    + {static} CanBeSeenOver(b:Building) : bool
+    + {static} GetSurfaceType(c:IntVec3, map:Map) : SurfaceType
+    + {static} HasEatSurface(c:IntVec3, map:Map) : bool
+}
+@enduml

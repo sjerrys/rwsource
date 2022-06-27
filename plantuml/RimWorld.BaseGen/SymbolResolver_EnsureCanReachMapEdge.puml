@@ -1,0 +1,6 @@
+@startuml
+class SymbolResolver_EnsureCanReachMapEdge {
+    + <<override>> Resolve(rp:ResolveParams) : void
+}
+SymbolResolver <|-- SymbolResolver_EnsureCanReachMapEdge
+@enduml

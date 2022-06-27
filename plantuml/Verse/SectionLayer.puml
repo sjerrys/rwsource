@@ -1,0 +1,13 @@
+@startuml
+abstract class SectionLayer {
+    + <<virtual>> Visible : bool <<get>>
+    + SectionLayer(section:Section)
+    + GetSubMesh(material:Material) : LayerSubMesh
+    + <<virtual>> DrawLayer() : void
+    + {abstract} Regenerate() : void
+}
+class "List`1"<T> {
+}
+SectionLayer --> "relevantChangeTypes" MapMeshFlag
+SectionLayer o-> "subMeshes<LayerSubMesh>" "List`1"
+@enduml

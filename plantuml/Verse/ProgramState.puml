@@ -1,0 +1,7 @@
+@startuml
+enum ProgramState {
+    Entry,
+    MapInitializing,
+    Playing,
+}
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+class SymbolResolver_Ship_Pregen {
+    + <<override>> Resolve(rp:ResolveParams) : void
+}
+class SpawnDescriptor <<struct>> {
+}
+SymbolResolver <|-- SymbolResolver_Ship_Pregen
+SymbolResolver_Ship_Pregen +-- SpawnDescriptor
+SpawnDescriptor --> "offset" IntVec3
+SpawnDescriptor --> "def" ThingDef
+SpawnDescriptor --> "rot" Rot4
+@enduml

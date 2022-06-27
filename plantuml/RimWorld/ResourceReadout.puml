@@ -1,0 +1,7 @@
+@startuml
+class ResourceReadout {
+    + ResourceReadout()
+    + ResourceReadoutOnGUI() : void
+    + DrawResourceSimple(rect:Rect, thingDef:ThingDef) : void
+}
+@enduml

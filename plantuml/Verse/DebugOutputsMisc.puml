@@ -1,0 +1,41 @@
+@startuml
+class DebugOutputsMisc <<static>> {
+    + {static} MiningResourceGeneration() : void
+    + {static} NaturalRocks() : void
+    + {static} MeditationFoci() : void
+    + {static} DefaultStuffs() : void
+    + {static} Beauties() : void
+    + {static} StuffBeauty() : void
+    + {static} ThingsPowerAndHeat() : void
+    + {static} FoodPoisonChances() : void
+    + {static} TechLevels() : void
+    + {static} Stuffs() : void
+    + {static} BurningAndSmeltingThings() : void
+    + {static} Medicines() : void
+    + {static} ShootingAccuracy() : void
+    + {static} TemperatureData() : void
+    + {static} WeatherChances() : void
+    + {static} CelestialGlow() : void
+    + {static} SunAngle() : void
+    + {static} FallColor() : void
+    + {static} PawnsListAllOnMap() : void
+    + {static} WindSpeeds() : void
+    + {static} MapPawnsList() : void
+    + {static} Lords() : void
+    + {static} BodyPartTagGroups() : void
+    + {static} MinifiableTags() : void
+    + {static} ThingSetMakerTest() : void
+    + {static} ThingSetMakerPossibleDefs() : void
+    + {static} ThingSetMakerSampled() : void
+    + {static} RewardsGeneration() : void
+    + {static} RewardsGenerationSampled() : void
+    + {static} WorkDisables() : void
+    + {static} FoodPreferability() : void
+    + {static} IngestibleMaxSatisfiedTitle() : void
+    + {static} AbilityCosts() : void
+    + {static} MapDanger() : void
+    + {static} GenSteps() : void
+    + {static} WorldGenSteps() : void
+    + {static} ShuttleDefsToAvoid() : void
+}
+@enduml

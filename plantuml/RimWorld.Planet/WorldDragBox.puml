@@ -1,0 +1,17 @@
+@startuml
+class WorldDragBox {
+    + active : bool
+    + LeftX : float <<get>>
+    + RightX : float <<get>>
+    + BotZ : float <<get>>
+    + TopZ : float <<get>>
+    + Diagonal : float <<get>>
+    + IsValid : bool <<get>>
+    + IsValidAndActive : bool <<get>>
+    + DragBoxOnGUI() : void
+    + Contains(o:WorldObject) : bool
+    + Contains(screenPoint:Vector2) : bool
+}
+WorldDragBox --> "start" Vector2
+WorldDragBox --> "ScreenRect" Rect
+@enduml

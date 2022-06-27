@@ -1,0 +1,6 @@
+@startuml
+class AbilityCategoryDef {
+    + displayOrder : int
+}
+Def <|-- AbilityCategoryDef
+@enduml

@@ -1,0 +1,29 @@
+@startuml
+class HediffWithComps {
+    + <<override>> LabelInBrackets : string <<get>>
+    + <<override>> ShouldRemove : bool <<get>>
+    + <<override>> Visible : bool <<get>>
+    + <<override>> TipStringExtra : string <<get>>
+    + <<override>> PostAdd(dinfo:DamageInfo?) : void
+    + <<override>> PostRemoved() : void
+    + <<override>> PostTick() : void
+    + <<override>> ExposeData() : void
+    + <<override>> Tended(quality:float, batchPosition:int) : void
+    + <<override>> Tended_NewTemp(quality:float, maxQuality:float, batchPosition:int) : void
+    + <<override>> TryMergeWith(other:Hediff) : bool
+    + <<override>> Notify_PawnDied() : void
+    + <<override>> Notify_PawnKilled() : void
+    + <<override>> Notify_PawnPostApplyDamage(dinfo:DamageInfo, totalDamageDealt:float) : void
+    + <<override>> ModifyChemicalEffect(chem:ChemicalDef, effect:float) : void
+    + <<override>> Notify_PawnUsedVerb(verb:Verb, target:LocalTargetInfo) : void
+    + <<override>> Notify_EntropyGained(baseAmount:float, finalAmount:float, src:Thing) : void
+    + <<override>> Notify_ImplantUsed(violationSourceName:string, detectionChance:float, violationSourceLevel:int) : void
+    + <<override>> PostMake() : void
+    + <<override>> DebugString() : string
+}
+class "List`1"<T> {
+}
+Hediff <|-- HediffWithComps
+HediffWithComps o-> "comps<HediffComp>" "List`1"
+HediffWithComps --> "StateIcon" TextureAndColor
+@enduml

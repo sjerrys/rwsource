@@ -1,0 +1,8 @@
+@startuml
+class FireWatcher {
+    + FireDanger : float <<get>>
+    + LargeFireDangerPresent : bool <<get>>
+    + FireWatcher(map:Map)
+    + FireWatcherTick() : void
+}
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class PawnHairColors <<static>> {
+    + {static} RandomHairColor(skinColor:Color, ageYears:int) : Color
+}
+@enduml

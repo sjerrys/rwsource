@@ -1,0 +1,18 @@
+@startuml
+class WorldObjectDefOf <<static>> {
+    {static} WorldObjectDefOf()
+}
+WorldObjectDefOf --> "Caravan" WorldObjectDef
+WorldObjectDefOf --> "Settlement" WorldObjectDef
+WorldObjectDefOf --> "AbandonedSettlement" WorldObjectDef
+WorldObjectDefOf --> "EscapeShip" WorldObjectDef
+WorldObjectDefOf --> "Ambush" WorldObjectDef
+WorldObjectDefOf --> "DestroyedSettlement" WorldObjectDef
+WorldObjectDefOf --> "AttackedNonPlayerCaravan" WorldObjectDef
+WorldObjectDefOf --> "TravelingTransportPods" WorldObjectDef
+WorldObjectDefOf --> "RoutePlannerWaypoint" WorldObjectDef
+WorldObjectDefOf --> "Site" WorldObjectDef
+WorldObjectDefOf --> "PeaceTalks" WorldObjectDef
+WorldObjectDefOf --> "TravelingShuttle" WorldObjectDef
+WorldObjectDefOf --> "Debug_Arena" WorldObjectDef
+@enduml

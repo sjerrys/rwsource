@@ -1,0 +1,5 @@
+@startuml
+class ThoughtWorker_PrisonBarracksImpressiveness {
+}
+ThoughtWorker_RoomImpressiveness <|-- ThoughtWorker_PrisonBarracksImpressiveness
+@enduml

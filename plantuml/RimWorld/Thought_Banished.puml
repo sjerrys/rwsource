@@ -1,0 +1,6 @@
+@startuml
+class Thought_Banished {
+    + <<override>> ShouldDiscard : bool <<get>>
+}
+Thought_Memory <|-- Thought_Banished
+@enduml

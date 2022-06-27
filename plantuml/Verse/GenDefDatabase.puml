@@ -1,0 +1,9 @@
+@startuml
+class GenDefDatabase <<static>> {
+    + {static} GetDef(defType:Type, defName:string, errorOnFail:bool) : Def
+    + {static} GetDefSilentFail(type:Type, targetDefName:string, specialCaseForSoundDefs:bool) : Def
+    + {static} GetAllDefsInDatabaseForDef(defType:Type) : IEnumerable<Def>
+    + {static} AllDefTypesWithDatabases() : IEnumerable<Type>
+    + {static} DefsToGoInDatabase(mod:ModContentPack) : IEnumerable<T>
+}
+@enduml

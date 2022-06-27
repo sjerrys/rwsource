@@ -1,0 +1,9 @@
+@startuml
+class QuestNode_Set {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_Set
+QuestNode_Set --> "name<string>" "SlateRef`1"
+QuestNode_Set --> "value<object>" "SlateRef`1"
+@enduml

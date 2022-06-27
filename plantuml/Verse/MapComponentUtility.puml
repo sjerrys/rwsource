@@ -1,0 +1,10 @@
+@startuml
+class MapComponentUtility <<static>> {
+    + {static} MapComponentUpdate(map:Map) : void
+    + {static} MapComponentTick(map:Map) : void
+    + {static} MapComponentOnGUI(map:Map) : void
+    + {static} FinalizeInit(map:Map) : void
+    + {static} MapGenerated(map:Map) : void
+    + {static} MapRemoved(map:Map) : void
+}
+@enduml

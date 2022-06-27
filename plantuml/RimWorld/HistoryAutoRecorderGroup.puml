@@ -1,0 +1,14 @@
+@startuml
+class HistoryAutoRecorderGroup {
+    + GetMaxDay() : float
+    + Tick() : void
+    + DrawGraph(graphRect:Rect, legendRect:Rect, section:FloatRange, marks:List<CurveMark>) : void
+    + ExposeData() : void
+    + AddOrRemoveHistoryRecorders() : void
+}
+class "List`1"<T> {
+}
+IExposable <|-- HistoryAutoRecorderGroup
+HistoryAutoRecorderGroup --> "def" HistoryAutoRecorderGroupDef
+HistoryAutoRecorderGroup o-> "recorders<HistoryAutoRecorder>" "List`1"
+@enduml

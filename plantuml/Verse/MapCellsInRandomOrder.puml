@@ -1,0 +1,7 @@
+@startuml
+class MapCellsInRandomOrder {
+    + MapCellsInRandomOrder(map:Map)
+    + GetAll() : List<IntVec3>
+    + Get(index:int) : IntVec3
+}
+@enduml

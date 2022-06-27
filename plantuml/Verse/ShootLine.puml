@@ -1,0 +1,11 @@
+@startuml
+class ShootLine <<struct>> {
+    + ShootLine(source:IntVec3, dest:IntVec3)
+    + ChangeDestToMissWild(aimOnChance:float) : void
+    + Points() : IEnumerable<IntVec3>
+    + <<override>> ToString() : string
+    + {static} WildMissResults() : void
+}
+ShootLine --> "Source" IntVec3
+ShootLine --> "Dest" IntVec3
+@enduml

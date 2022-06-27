@@ -1,0 +1,15 @@
+@startuml
+class TimedForcedExit {
+    + ForceExitAndRemoveMapCountdownActive : bool <<get>>
+    + ForceExitAndRemoveMapCountdownTimeLeftString : string <<get>>
+    + <<override>> PostExposeData() : void
+    + ResetForceExitAndRemoveMapCountdown() : void
+    + StartForceExitAndRemoveMapCountdown() : void
+    + StartForceExitAndRemoveMapCountdown(duration:int) : void
+    + <<override>> CompInspectStringExtra() : string
+    + <<override>> CompTick() : void
+    + {static} GetForceExitAndRemoveMapCountdownTimeLeftString(ticksLeft:int) : string
+    + {static} ForceReform(mapParent:MapParent) : void
+}
+WorldObjectComp <|-- TimedForcedExit
+@enduml

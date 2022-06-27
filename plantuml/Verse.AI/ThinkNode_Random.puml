@@ -1,0 +1,6 @@
+@startuml
+class ThinkNode_Random {
+    + <<override>> TryIssueJobPackage(pawn:Pawn, jobParams:JobIssueParams) : ThinkResult
+}
+ThinkNode <|-- ThinkNode_Random
+@enduml

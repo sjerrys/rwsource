@@ -1,0 +1,9 @@
+@startuml
+class GameRules {
+    + SetAllowDesignator(type:Type, allowed:bool) : void
+    + SetAllowBuilding(building:ThingDef, allowed:bool) : void
+    + DesignatorAllowed(d:Designator) : bool
+    + ExposeData() : void
+}
+IExposable <|-- GameRules
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class SteamUtility <<static>> {
+    + {static} SteamPersonaName : string <<get>>
+    + {static} OpenUrl(url:string) : void
+    + {static} OpenWorkshopPage(pfid:PublishedFileId_t) : void
+    + {static} OpenSteamWorkshopPage() : void
+    + {static} SteamWorkshopPageUrl(pfid:PublishedFileId_t) : string
+}
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+class SymbolResolver_BasePart_Outdoors_Division_Grid {
+    + <<override>> CanResolve(rp:ResolveParams) : bool
+    + <<override>> Resolve(rp:ResolveParams) : void
+}
+class Child {
+    + gridX : int
+    + gridY : int
+    + merged : bool
+}
+SymbolResolver <|-- SymbolResolver_BasePart_Outdoors_Division_Grid
+SymbolResolver_BasePart_Outdoors_Division_Grid +-- Child
+Child --> "rect" CellRect
+@enduml

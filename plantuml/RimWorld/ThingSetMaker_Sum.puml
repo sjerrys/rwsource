@@ -1,0 +1,19 @@
+@startuml
+class ThingSetMaker_Sum {
+    + resolveInOrder : bool
+    + <<override>> ResolveReferences() : void
+}
+class Option {
+    + chance : float = 1f
+    + maxMarketValue : float?
+    + minMarketValue : float
+    + minTotalMarketValue : float
+    + <<const>> MaxMarketValueLeewayFactor : float = 0.8f
+}
+class "List`1"<T> {
+}
+ThingSetMaker <|-- ThingSetMaker_Sum
+ThingSetMaker_Sum --> "options<Option>" "List`1"
+ThingSetMaker_Sum +-- Option
+Option --> "thingSetMaker" ThingSetMaker
+@enduml

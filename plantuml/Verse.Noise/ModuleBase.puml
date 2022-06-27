@@ -1,0 +1,12 @@
+@startuml
+abstract class ModuleBase {
+    + SourceModuleCount : int <<get>>
+    + IsDisposed : bool <<get>>
+    + {abstract} GetValue(x:double, y:double, z:double) : double
+    + GetValue(coordinate:IntVec2) : float
+    + GetValue(coordinate:IntVec3) : float
+    + GetValue(coordinate:Vector3) : float
+    + Dispose() : void
+}
+IDisposable <|-- ModuleBase
+@enduml

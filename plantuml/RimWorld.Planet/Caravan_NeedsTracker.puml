@@ -1,0 +1,15 @@
+@startuml
+class Caravan_NeedsTracker {
+    + Caravan_NeedsTracker()
+    + Caravan_NeedsTracker(caravan:Caravan)
+    + ExposeData() : void
+    + NeedsTrackerTick() : void
+    + TrySatisfyPawnsNeeds() : void
+    + IngestDrug(pawn:Pawn, drug:Thing, drugOwner:Pawn) : void
+    + GetCurrentJoyGainPerTick(pawn:Pawn) : float
+    + TryGainPsyfocus(tracker:Pawn_PsychicEntropyTracker) : void
+    + AnyPawnOutOfFood(malnutritionHediff:string) : bool
+}
+IExposable <|-- Caravan_NeedsTracker
+Caravan_NeedsTracker --> "caravan" Caravan
+@enduml

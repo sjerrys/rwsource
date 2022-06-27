@@ -1,0 +1,15 @@
+@startuml
+class "ModContentHolder`1"<T> {
+    + ModContentHolder(mod:ModContentPack)
+    + ClearDestroy() : void
+    + ReloadAll() : void
+    + Get(path:string) : T
+    + GetAllUnderPath(pathRoot:string) : IEnumerable<T>
+}
+class "Dictionary`2"<T1,T2> {
+}
+class "List`1"<T> {
+}
+"ModContentHolder`1" o-> "contentList<string,T>" "Dictionary`2"
+"ModContentHolder`1" o-> "extraDisposables<IDisposable>" "List`1"
+@enduml

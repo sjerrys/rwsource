@@ -1,0 +1,13 @@
+@startuml
+class ForbidUtility <<static>> {
+    + {static} SetForbidden(t:Thing, value:bool, warnOnFail:bool) : void
+    + {static} SetForbiddenIfOutsideHomeArea(t:Thing) : void
+    + {static} CaresAboutForbidden(pawn:Pawn, cellTarget:bool) : bool
+    + {static} InAllowedArea(c:IntVec3, forPawn:Pawn) : bool
+    + {static} IsForbidden(t:Thing, pawn:Pawn) : bool
+    + {static} IsForbiddenToPass(t:Building_Door, pawn:Pawn) : bool
+    + {static} IsForbidden(c:IntVec3, pawn:Pawn) : bool
+    + {static} IsForbiddenEntirely(r:Region, pawn:Pawn) : bool
+    + {static} IsForbidden(t:Thing, faction:Faction) : bool
+}
+@enduml

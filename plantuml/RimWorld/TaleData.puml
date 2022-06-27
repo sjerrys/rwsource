@@ -1,0 +1,8 @@
+@startuml
+abstract class TaleData {
+    + {abstract} ExposeData() : void
+    + <<virtual>> GetRules(prefix:string) : IEnumerable<Rule>
+    + <<virtual>> GetRules() : IEnumerable<Rule>
+}
+IExposable <|-- TaleData
+@enduml

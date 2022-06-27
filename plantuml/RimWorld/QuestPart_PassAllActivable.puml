@@ -1,0 +1,10 @@
+@startuml
+class QuestPart_PassAllActivable {
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+}
+class "List`1"<T> {
+}
+QuestPartActivable <|-- QuestPart_PassAllActivable
+QuestPart_PassAllActivable o-> "inSignals<string>" "List`1"
+@enduml

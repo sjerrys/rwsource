@@ -1,0 +1,5 @@
+@startuml
+class QuestNode_Root_RefugeeDelayedReward {
+}
+QuestNode <|-- QuestNode_Root_RefugeeDelayedReward
+@enduml

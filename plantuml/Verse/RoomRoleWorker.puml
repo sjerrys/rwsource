@@ -1,0 +1,5 @@
+@startuml
+abstract class RoomRoleWorker {
+    + {abstract} GetScore(room:Room) : float
+}
+@enduml

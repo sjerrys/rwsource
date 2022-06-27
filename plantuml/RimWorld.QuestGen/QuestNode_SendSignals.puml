@@ -1,0 +1,10 @@
+@startuml
+class QuestNode_SendSignals {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_SendSignals
+QuestNode_SendSignals --> "outSignals<IEnumerable<string>>" "SlateRef`1"
+QuestNode_SendSignals --> "outSignalsFormat<string>" "SlateRef`1"
+QuestNode_SendSignals --> "outSignalsFormattedCount<int>" "SlateRef`1"
+@enduml

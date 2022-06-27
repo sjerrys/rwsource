@@ -1,0 +1,6 @@
+@startuml
+class AmbientSoundManager <<static>> {
+    + {static} EnsureWorldAmbientSoundCreated() : void
+    + {static} Notify_SwitchedMap() : void
+}
+@enduml

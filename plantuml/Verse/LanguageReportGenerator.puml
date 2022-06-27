@@ -1,0 +1,6 @@
+@startuml
+class LanguageReportGenerator <<static>> {
+    + {static} SaveTranslationReport() : void
+    + {static} SameSimpleGrammarResolverSymbols(str1:string, str2:string) : bool
+}
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class HediffCompProperties_DisappearsOnDeath {
+    + HediffCompProperties_DisappearsOnDeath()
+}
+HediffCompProperties <|-- HediffCompProperties_DisappearsOnDeath
+@enduml

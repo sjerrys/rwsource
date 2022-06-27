@@ -1,0 +1,30 @@
+@startuml
+class Zone_Stockpile {
+    + StorageTabVisible : bool <<get>>
+    + IgnoreStoredThingsBeauty : bool <<get>>
+    + Zone_Stockpile()
+    + Zone_Stockpile(preset:StorageSettingsPreset, zoneManager:ZoneManager)
+    + <<override>> ExposeData() : void
+    + <<override>> AddCell(sq:IntVec3) : void
+    + <<override>> RemoveCell(sq:IntVec3) : void
+    + <<override>> PostDeregister() : void
+    + <<override>> GetInspectTabs() : IEnumerable<InspectTabBase>
+    + <<override>> GetGizmos() : IEnumerable<Gizmo>
+    + <<override>> GetZoneAddGizmos() : IEnumerable<Gizmo>
+    + GetSlotGroup() : SlotGroup
+    + AllSlotCells() : IEnumerable<IntVec3>
+    + AllSlotCellsList() : List<IntVec3>
+    + GetParentStoreSettings() : StorageSettings
+    + GetStoreSettings() : StorageSettings
+    + Accepts(t:Thing) : bool
+    + SlotYielderLabel() : string
+    + Notify_ReceivedThing(newItem:Thing) : void
+    + Notify_LostThing(newItem:Thing) : void
+}
+Zone <|-- Zone_Stockpile
+ISlotGroupParent <|-- Zone_Stockpile
+IStoreSettingsParent <|-- Zone_Stockpile
+IHaulDestination <|-- Zone_Stockpile
+Zone_Stockpile --> "settings" StorageSettings
+Zone_Stockpile --> "slotGroup" SlotGroup
+@enduml

@@ -1,0 +1,54 @@
+@startuml
+class Pawn_PsychicEntropyTracker {
+    + limitEntropyAmount : bool = true
+    + <<const>> PercentageAfterGainingPsylink : float = 0.75f
+    + <<const>> PsyfocusUpdateInterval : int = 150
+    + <<const>> PsyfocusCostTolerance : float = 0.0005f
+    + {static} psyfocusLevelInfoCached : string = null
+    + MaxEntropy : float <<get>>
+    + MaxPotentialEntropy : float <<get>>
+    + PainMultiplier : float <<get>>
+    + RecoveryRate : float <<get>>
+    + EntropyValue : float <<get>>
+    + CurrentPsyfocus : float <<get>>
+    + TargetPsyfocus : float <<get>>
+    + MaxAbilityLevel : int <<get>>
+    + IsCurrentlyMeditating : bool <<get>>
+    + PsychicSensitivity : float <<get>>
+    + EntropyRelativeValue : float <<get>>
+    + PsyfocusBand : int <<get>>
+    + NeedsPsyfocus : bool <<get>>
+    + Pawn_PsychicEntropyTracker(pawn:Pawn)
+    + {static} ResetStaticData() : void
+    + PsychicEntropyTrackerTick() : void
+    + WouldOverflowEntropy(value:float) : bool
+    + TryAddEntropy(value:float, source:Thing, scale:bool, overLimit:bool) : bool
+    + RemoveAllEntropy() : void
+    + GainPsyfocus(focus:Thing) : void
+    + Notify_Meditated() : void
+    + OffsetPsyfocusDirectly(offset:float) : void
+    + SetInitialPsyfocusLevel() : void
+    + SetPsyfocusTarget(val:float) : void
+    + EntropyToRelativeValue(val:float) : float
+    + Notify_GainedPsylink() : void
+    + Notify_PawnDied() : void
+    + NeedToShowGizmo() : bool
+    + GetGizmo() : Gizmo
+    + PsyfocusTipString() : string
+    + PsyfocusTipString_NewTemp(psyfocusTargetOverride:float) : string
+    + ExposeData() : void
+}
+class "Dictionary`2"<T1,T2> {
+}
+class "List`1"<T> {
+}
+IExposable <|-- Pawn_PsychicEntropyTracker
+Pawn_PsychicEntropyTracker o-> "EntropyThresholds<PsychicEntropySeverity,float>" "Dictionary`2"
+Pawn_PsychicEntropyTracker o-> "PsyfocusBandPercentages<float>" "List`1"
+Pawn_PsychicEntropyTracker o-> "FallRatePerPsyfocusBand<float>" "List`1"
+Pawn_PsychicEntropyTracker o-> "MaxAbilityLevelPerPsyfocusBand<int>" "List`1"
+Pawn_PsychicEntropyTracker --> "EntropyThresholdSounds<PsychicEntropySeverity,SoundDef>" "Dictionary`2"
+Pawn_PsychicEntropyTracker --> "Pawn" Pawn
+Pawn_PsychicEntropyTracker --> "Severity" PsychicEntropySeverity
+Pawn_PsychicEntropyTracker --> "Psylink" Hediff_Psylink
+@enduml

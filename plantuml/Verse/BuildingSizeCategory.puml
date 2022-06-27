@@ -1,0 +1,8 @@
+@startuml
+enum BuildingSizeCategory {
+    None,
+    Small,
+    Medium,
+    Large,
+}
+@enduml

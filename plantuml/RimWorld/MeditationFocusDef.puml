@@ -1,0 +1,12 @@
+@startuml
+class MeditationFocusDef {
+    + requiresRoyalTitle : bool
+    + CanPawnUse(p:Pawn) : bool
+    + EnablingThingsExplanation(pawn:Pawn) : string
+}
+class "List`1"<T> {
+}
+Def <|-- MeditationFocusDef
+MeditationFocusDef o-> "requiredBackstoriesAny<BackstoryCategoryAndSlot>" "List`1"
+MeditationFocusDef o-> "incompatibleBackstoriesAny<BackstoryCategoryAndSlot>" "List`1"
+@enduml

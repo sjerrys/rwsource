@@ -1,0 +1,22 @@
+@startuml
+class CompRottable {
+    + RotProgressPct : float <<get>>
+    + RotProgress : float <<get>> <<set>>
+    + TicksUntilRotAtCurrentTemp : int <<get>>
+    + Active : bool <<get>>
+    + <<override>> PostSpawnSetup(respawningAfterLoad:bool) : void
+    + <<override>> PostExposeData() : void
+    + <<override>> CompTick() : void
+    + <<override>> CompTickRare() : void
+    + <<override>> PreAbsorbStack(otherStack:Thing, count:int) : void
+    + <<override>> PostSplitOff(piece:Thing) : void
+    + <<override>> PostIngested(ingester:Pawn) : void
+    + <<override>> CompInspectStringExtra() : string
+    + ApproxTicksUntilRotWhenAtTempOfTile(tile:int, ticksAbs:int) : int
+    + TicksUntilRotAtTemp(temp:float) : int
+    + RotImmediately() : void
+}
+ThingComp <|-- CompRottable
+CompRottable --> "PropsRot" CompProperties_Rottable
+CompRottable --> "Stage" RotStage
+@enduml

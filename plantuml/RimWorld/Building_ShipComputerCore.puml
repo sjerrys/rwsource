@@ -1,0 +1,7 @@
+@startuml
+class Building_ShipComputerCore {
+    + <<override>> GetGizmos() : IEnumerable<Gizmo>
+    + ForceLaunch() : void
+}
+Building <|-- Building_ShipComputerCore
+@enduml

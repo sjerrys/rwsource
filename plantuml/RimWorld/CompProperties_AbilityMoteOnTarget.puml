@@ -1,0 +1,12 @@
+@startuml
+class CompProperties_AbilityMoteOnTarget {
+    + scale : float = 1f
+    + preCastTicks : int
+    + CompProperties_AbilityMoteOnTarget()
+}
+class "List`1"<T> {
+}
+CompProperties_AbilityEffect <|-- CompProperties_AbilityMoteOnTarget
+CompProperties_AbilityMoteOnTarget --> "moteDef" ThingDef
+CompProperties_AbilityMoteOnTarget --> "moteDefs<ThingDef>" "List`1"
+@enduml

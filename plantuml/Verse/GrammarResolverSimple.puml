@@ -1,0 +1,7 @@
+@startuml
+class GrammarResolverSimple <<static>> {
+    + {static} Formatted(str:TaggedString, argsLabelsArg:List<string>, argsObjectsArg:List<object>) : TaggedString
+    + {static} PawnResolveBestRoyalTitle(pawn:Pawn) : string
+    + {static} PawnResolveRoyalTitleInCurrentFaction(pawn:Pawn) : string
+}
+@enduml

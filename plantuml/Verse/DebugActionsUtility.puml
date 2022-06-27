@@ -1,0 +1,7 @@
+@startuml
+class DebugActionsUtility <<static>> {
+    + {static} DustPuffFrom(t:Thing) : void
+    + {static} PointsOptions(extended:bool) : IEnumerable<float>
+    + {static} PopulationOptions() : IEnumerable<int>
+}
+@enduml

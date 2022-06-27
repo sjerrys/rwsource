@@ -1,0 +1,11 @@
+@startuml
+class HediffCompProperties_Immunizable {
+    + immunityPerDayNotSick : float
+    + immunityPerDaySick : float
+    + severityPerDayNotImmune : float
+    + severityPerDayImmune : float
+    + HediffCompProperties_Immunizable()
+}
+HediffCompProperties <|-- HediffCompProperties_Immunizable
+HediffCompProperties_Immunizable o-> "severityPerDayNotImmuneRandomFactor" FloatRange
+@enduml

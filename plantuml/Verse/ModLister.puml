@@ -1,0 +1,22 @@
+@startuml
+class ModLister <<static>> {
+    + {static} RoyaltyInstalled : bool <<get>>
+    + {static} ShouldLogIssues : bool <<get>>
+    {static} ModLister()
+    + {static} EnsureInit() : void
+    + {static} RebuildModList() : void
+    + {static} InstalledModsListHash(activeOnly:bool) : int
+    + {static} GetModWithIdentifier(identifier:string, ignorePostfix:bool) : ModMetaData
+    + {static} GetActiveModWithIdentifier(identifier:string) : ModMetaData
+    + {static} GetExpansionWithIdentifier(packageId:string) : ExpansionDef
+    + {static} HasActiveModWithName(name:string) : bool
+    + {static} AnyFromListActive(mods:List<string>) : bool
+}
+class "IEnumerable`1"<T> {
+}
+class "List`1"<T> {
+}
+ModLister --> "AllInstalledMods<ModMetaData>" "IEnumerable`1"
+ModLister --> "AllActiveModDirs<DirectoryInfo>" "IEnumerable`1"
+ModLister --> "AllExpansions<ExpansionDef>" "List`1"
+@enduml

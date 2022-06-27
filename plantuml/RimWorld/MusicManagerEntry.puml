@@ -1,0 +1,6 @@
+@startuml
+class MusicManagerEntry {
+    + CurSanitizedVolume : float <<get>>
+    + MusicManagerEntryUpdate() : void
+}
+@enduml

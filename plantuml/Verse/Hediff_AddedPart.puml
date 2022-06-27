@@ -1,0 +1,7 @@
+@startuml
+class Hediff_AddedPart {
+    + <<override>> TipStringExtra : string <<get>>
+    + <<override>> PostAdd(dinfo:DamageInfo?) : void
+}
+Hediff_Implant <|-- Hediff_AddedPart
+@enduml

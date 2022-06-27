@@ -1,0 +1,17 @@
+@startuml
+class LordToil_Siege {
+    + <<override>> ForceHighStoryDanger : bool <<get>>
+    + LordToil_Siege(siegeCenter:IntVec3, blueprintPoints:float)
+    + <<override>> Init() : void
+    + <<override>> UpdateAllDuties() : void
+    + <<override>> Notify_PawnLost(victim:Pawn, cond:PawnLostCondition) : void
+    + <<override>> Notify_ConstructionFailed(pawn:Pawn, frame:Frame, newBlueprint:Blueprint_Build) : void
+    + <<override>> LordToilTick() : void
+    + <<override>> Cleanup() : void
+}
+class "Dictionary`2"<T1,T2> {
+}
+LordToil <|-- LordToil_Siege
+LordToil_Siege o-> "rememberedDuties<Pawn,DutyDef>" "Dictionary`2"
+LordToil_Siege --> "FlagLoc" IntVec3
+@enduml

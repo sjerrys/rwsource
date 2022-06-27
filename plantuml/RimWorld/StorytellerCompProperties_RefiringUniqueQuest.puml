@@ -1,0 +1,8 @@
+@startuml
+class StorytellerCompProperties_RefiringUniqueQuest {
+    + refireEveryDays : float
+    + StorytellerCompProperties_RefiringUniqueQuest()
+}
+StorytellerCompProperties <|-- StorytellerCompProperties_RefiringUniqueQuest
+StorytellerCompProperties_RefiringUniqueQuest --> "incident" IncidentDef
+@enduml

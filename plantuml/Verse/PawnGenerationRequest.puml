@@ -1,0 +1,52 @@
+@startuml
+class PawnGenerationRequest <<struct>> {
+    + Tile : int <<get>> <<set>>
+    + ForceGenerateNewPawn : bool <<get>> <<set>>
+    + Newborn : bool <<get>> <<set>>
+    + AllowDead : bool <<get>> <<set>>
+    + AllowDowned : bool <<get>> <<set>>
+    + CanGeneratePawnRelations : bool <<get>> <<set>>
+    + MustBeCapableOfViolence : bool <<get>> <<set>>
+    + ColonistRelationChanceFactor : float <<get>> <<set>>
+    + ForceAddFreeWarmLayerIfNeeded : bool <<get>> <<set>>
+    + AllowGay : bool <<get>> <<set>>
+    + AllowFood : bool <<get>> <<set>>
+    + AllowAddictions : bool <<get>> <<set>>
+    + Inhabitant : bool <<get>> <<set>>
+    + CertainlyBeenInCryptosleep : bool <<get>> <<set>>
+    + ForceRedressWorldPawnIfFormerColonist : bool <<get>> <<set>>
+    + WorldPawnFactionDoesntMatter : bool <<get>> <<set>>
+    + BiocodeWeaponChance : float <<get>> <<set>>
+    + BiocodeApparelChance : float <<get>> <<set>>
+    + RelationWithExtraPawnChanceFactor : float <<get>> <<set>>
+    + MinChanceToRedressWorldPawn : float? <<get>> <<set>>
+    + FixedBiologicalAge : float? <<get>> <<set>>
+    + FixedChronologicalAge : float? <<get>> <<set>>
+    + FixedGender : Gender? <<get>> <<set>>
+    + FixedMelanin : float? <<get>> <<set>>
+    + FixedLastName : string <<get>> <<set>>
+    + FixedBirthName : string <<get>> <<set>>
+    + ForbidAnyTitle : bool <<get>> <<set>>
+    + PawnGenerationRequest(kind:PawnKindDef, faction:Faction, context:PawnGenerationContext, tile:int, forceGenerateNewPawn:bool, newborn:bool, allowDead:bool, allowDowned:bool, canGeneratePawnRelations:bool, mustBeCapableOfViolence:bool, colonistRelationChanceFactor:float, forceAddFreeWarmLayerIfNeeded:bool, allowGay:bool, allowFood:bool, allowAddictions:bool, inhabitant:bool, certainlyBeenInCryptosleep:bool, forceRedressWorldPawnIfFormerColonist:bool, worldPawnFactionDoesntMatter:bool, biocodeWeaponChance:float, extraPawnForExtraRelationChance:Pawn, relationWithExtraPawnChanceFactor:float, validatorPreGear:Predicate<Pawn>, validatorPostGear:Predicate<Pawn>, forcedTraits:IEnumerable<TraitDef>, prohibitedTraits:IEnumerable<TraitDef>, minChanceToRedressWorldPawn:float?, fixedBiologicalAge:float?, fixedChronologicalAge:float?, fixedGender:Gender?, fixedMelanin:float?, fixedLastName:string, fixedBirthName:string, fixedTitle:RoyalTitleDef)
+    + {static} MakeDefault() : PawnGenerationRequest
+    + SetFixedLastName(fixedLastName:string) : void
+    + SetFixedBirthName(fixedBirthName:string) : void
+    + SetFixedMelanin(fixedMelanin:float) : void
+    + <<override>> ToString() : string
+}
+class "IEnumerable`1"<T> {
+}
+class "Predicate`1"<T> {
+}
+PawnGenerationRequest --> "KindDef" PawnKindDef
+PawnGenerationRequest --> "Context" PawnGenerationContext
+PawnGenerationRequest --> "Faction" Faction
+PawnGenerationRequest --> "ForceBodyType" BodyTypeDef
+PawnGenerationRequest --> "ForcedTraits<TraitDef>" "IEnumerable`1"
+PawnGenerationRequest --> "ProhibitedTraits<TraitDef>" "IEnumerable`1"
+PawnGenerationRequest --> "ExtraPawnForExtraRelationChance" Pawn
+PawnGenerationRequest --> "RedressValidator<Pawn>" "Predicate`1"
+PawnGenerationRequest --> "ValidatorPreGear<Pawn>" "Predicate`1"
+PawnGenerationRequest --> "ValidatorPostGear<Pawn>" "Predicate`1"
+PawnGenerationRequest --> "FixedTitle" RoyalTitleDef
+@enduml

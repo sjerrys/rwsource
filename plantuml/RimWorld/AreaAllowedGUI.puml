@@ -1,0 +1,5 @@
+@startuml
+class AreaAllowedGUI <<static>> {
+    + {static} DoAllowedAreaSelectors(rect:Rect, p:Pawn) : void
+}
+@enduml

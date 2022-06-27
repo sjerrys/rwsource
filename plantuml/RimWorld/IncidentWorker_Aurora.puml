@@ -1,0 +1,5 @@
+@startuml
+class IncidentWorker_Aurora {
+}
+IncidentWorker_MakeGameCondition <|-- IncidentWorker_Aurora
+@enduml

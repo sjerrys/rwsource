@@ -1,0 +1,5 @@
+@startuml
+class ThoughtWorker_NeedFood {
+}
+ThoughtWorker <|-- ThoughtWorker_NeedFood
+@enduml

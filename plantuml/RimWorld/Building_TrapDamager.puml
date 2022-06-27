@@ -1,0 +1,6 @@
+@startuml
+class Building_TrapDamager {
+    + <<override>> SpawnSetup(map:Map, respawningAfterLoad:bool) : void
+}
+Building_Trap <|-- Building_TrapDamager
+@enduml

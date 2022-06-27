@@ -1,0 +1,5 @@
+@startuml
+class InventoryCalculatorsUtility <<static>> {
+    + {static} ShouldIgnoreInventoryOf(pawn:Pawn, ignoreMode:IgnorePawnsInventoryMode) : bool
+}
+@enduml

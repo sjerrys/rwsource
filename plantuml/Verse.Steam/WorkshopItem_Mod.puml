@@ -1,0 +1,5 @@
+@startuml
+class WorkshopItem_Mod {
+}
+WorkshopItem <|-- WorkshopItem_Mod
+@enduml

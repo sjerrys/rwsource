@@ -1,0 +1,5 @@
+@startuml
+class ThinkNode_ConditionalAnyColonistTryingToExitMap {
+}
+ThinkNode_Conditional <|-- ThinkNode_ConditionalAnyColonistTryingToExitMap
+@enduml

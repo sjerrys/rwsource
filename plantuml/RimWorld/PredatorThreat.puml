@@ -1,0 +1,9 @@
+@startuml
+class PredatorThreat {
+    + lastAttackTicks : int
+    + Expired : bool <<get>>
+    + ExposeData() : void
+}
+IExposable <|-- PredatorThreat
+PredatorThreat --> "predator" Pawn
+@enduml

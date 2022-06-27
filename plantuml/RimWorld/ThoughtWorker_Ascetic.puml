@@ -1,0 +1,5 @@
+@startuml
+class ThoughtWorker_Ascetic {
+}
+ThoughtWorker <|-- ThoughtWorker_Ascetic
+@enduml

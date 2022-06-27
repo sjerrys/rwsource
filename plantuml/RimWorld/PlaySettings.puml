@@ -1,0 +1,28 @@
+@startuml
+class PlaySettings <<sealed>> {
+    + showLearningHelper : bool = true
+    + showZones : bool = true
+    + showBeauty : bool
+    + showRoomStats : bool
+    + showColonistBar : bool = true
+    + showRoofOverlay : bool
+    + showFertilityOverlay : bool
+    + showTerrainAffordanceOverlay : bool
+    + autoHomeArea : bool = true
+    + autoRebuild : bool
+    + lockNorthUp : bool = true
+    + usePlanetDayNightSystem : bool = true
+    + showExpandingIcons : bool = true
+    + showWorldFeatures : bool = true
+    + useWorkPriorities : bool
+    + ExposeData() : void
+    + DoPlaySettingsGlobalControls(row:WidgetRow, worldView:bool) : void
+}
+IExposable <|-- PlaySettings
+PlaySettings o-> "defaultCareForColonyHumanlike" MedicalCareCategory
+PlaySettings o-> "defaultCareForColonyAnimal" MedicalCareCategory
+PlaySettings o-> "defaultCareForColonyPrisoner" MedicalCareCategory
+PlaySettings o-> "defaultCareForNeutralFaction" MedicalCareCategory
+PlaySettings o-> "defaultCareForNeutralAnimal" MedicalCareCategory
+PlaySettings o-> "defaultCareForHostileFaction" MedicalCareCategory
+@enduml

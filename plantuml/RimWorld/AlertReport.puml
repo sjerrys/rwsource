@@ -1,0 +1,23 @@
+@startuml
+class AlertReport <<struct>> {
+    + active : bool
+    + culpritTarget : GlobalTargetInfo?
+    + AnyCulpritValid : bool <<get>>
+    + {static} CulpritIs(culp:GlobalTargetInfo) : AlertReport
+    + {static} CulpritsAre(culprits:List<Thing>) : AlertReport
+    + {static} CulpritsAre(culprits:List<Pawn>) : AlertReport
+    + {static} CulpritsAre(culprits:List<Caravan>) : AlertReport
+    + {static} CulpritsAre(culprits:List<GlobalTargetInfo>) : AlertReport
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+AlertReport --> "culpritsThings<Thing>" "List`1"
+AlertReport --> "culpritsPawns<Pawn>" "List`1"
+AlertReport --> "culpritsCaravans<Caravan>" "List`1"
+AlertReport --> "culpritsTargets<GlobalTargetInfo>" "List`1"
+AlertReport --> "AllCulprits<GlobalTargetInfo>" "IEnumerable`1"
+AlertReport --> "Active" AlertReport
+AlertReport --> "Inactive" AlertReport
+@enduml

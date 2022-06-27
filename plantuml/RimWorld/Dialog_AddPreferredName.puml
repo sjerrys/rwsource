@@ -1,0 +1,8 @@
+@startuml
+class Dialog_AddPreferredName {
+    + Dialog_AddPreferredName()
+    + <<override>> DoWindowContents(inRect:Rect) : void
+}
+Window <|-- Dialog_AddPreferredName
+Dialog_AddPreferredName --> "InitialSize" Vector2
+@enduml

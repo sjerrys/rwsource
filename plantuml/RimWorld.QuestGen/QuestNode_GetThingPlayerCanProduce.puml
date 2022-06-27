@@ -1,0 +1,18 @@
+@startuml
+class QuestNode_GetThingPlayerCanProduce {
+    + {static} ResetStaticData() : void
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GetThingPlayerCanProduce
+QuestNode_GetThingPlayerCanProduce --> "storeProductionItemDefAs<string>" "SlateRef`1"
+QuestNode_GetThingPlayerCanProduce --> "storeProductionItemStuffAs<string>" "SlateRef`1"
+QuestNode_GetThingPlayerCanProduce --> "storeProductionItemCountAs<string>" "SlateRef`1"
+QuestNode_GetThingPlayerCanProduce --> "storeProductionItemLabelAs<string>" "SlateRef`1"
+QuestNode_GetThingPlayerCanProduce --> "pointsToRequiredWorkCurve<SimpleCurve>" "SlateRef`1"
+QuestNode_GetThingPlayerCanProduce --> "pointsToMaxItemMarketValueCurve<SimpleCurve>" "SlateRef`1"
+QuestNode_GetThingPlayerCanProduce --> "maxMarketValueFactor<float?>" "SlateRef`1"
+QuestNode_GetThingPlayerCanProduce --> "minStuffCommonality<float>" "SlateRef`1"
+QuestNode_GetThingPlayerCanProduce --> "workAmountRandomFactorRange<FloatRange?>" "SlateRef`1"
+QuestNode_GetThingPlayerCanProduce --> "productionItemCountRandomFactorRange<FloatRange?>" "SlateRef`1"
+@enduml

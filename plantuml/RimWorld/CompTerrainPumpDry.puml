@@ -1,0 +1,8 @@
+@startuml
+class CompTerrainPumpDry {
+    + {static} AffectCell(map:Map, c:IntVec3) : void
+    + <<override>> PostDeSpawn(map:Map) : void
+    + <<override>> CompTickRare() : void
+}
+CompTerrainPump <|-- CompTerrainPumpDry
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class ThinkNode_QueuedJob {
+    + inBedOnly : bool
+    + <<override>> DeepCopy(resolve:bool) : ThinkNode
+    + <<override>> TryIssueJobPackage(pawn:Pawn, jobParams:JobIssueParams) : ThinkResult
+}
+ThinkNode <|-- ThinkNode_QueuedJob
+@enduml

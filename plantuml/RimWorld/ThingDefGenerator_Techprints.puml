@@ -1,0 +1,6 @@
+@startuml
+class ThingDefGenerator_Techprints <<static>> {
+    + <<const>> Tag : string = "Techprint"
+    + {static} ImpliedTechprintDefs() : IEnumerable<ThingDef>
+}
+@enduml

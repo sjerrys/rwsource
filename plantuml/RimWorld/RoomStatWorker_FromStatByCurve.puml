@@ -1,0 +1,6 @@
+@startuml
+class RoomStatWorker_FromStatByCurve {
+    + <<override>> GetScore(room:Room) : float
+}
+RoomStatWorker <|-- RoomStatWorker_FromStatByCurve
+@enduml

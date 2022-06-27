@@ -1,0 +1,16 @@
+@startuml
+class Dialog_SplitCaravan {
+    + Dialog_SplitCaravan(caravan:Caravan)
+    + <<override>> PostOpen() : void
+    + <<override>> DoWindowContents(inRect:Rect) : void
+    + <<override>> CausesMessageBackground() : bool
+}
+enum Tab {
+    Pawns,
+    Items,
+    FoodAndMedicine,
+}
+Window <|-- Dialog_SplitCaravan
+Dialog_SplitCaravan --> "InitialSize" Vector2
+Dialog_SplitCaravan +-- Tab
+@enduml

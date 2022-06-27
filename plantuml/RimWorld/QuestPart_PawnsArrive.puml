@@ -1,0 +1,26 @@
+@startuml
+class QuestPart_PawnsArrive {
+    + inSignal : string
+    + joinPlayer : bool
+    + customLetterText : string
+    + customLetterLabel : string
+    + sendStandardLetter : bool = true
+    + <<override>> IncreasesPopulation : bool <<get>>
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+    + <<override>> QuestPartReserves(p:Pawn) : bool
+    + <<override>> ReplacePawnReferences(replace:Pawn, with:Pawn) : void
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart <|-- QuestPart_PawnsArrive
+QuestPart_PawnsArrive --> "mapParent" MapParent
+QuestPart_PawnsArrive o-> "pawns<Pawn>" "List`1"
+QuestPart_PawnsArrive --> "arrivalMode" PawnsArrivalModeDef
+QuestPart_PawnsArrive o-> "spawnNear" IntVec3
+QuestPart_PawnsArrive --> "customLetterDef" LetterDef
+QuestPart_PawnsArrive --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+@enduml

@@ -1,0 +1,24 @@
+@startuml
+class WorldPath {
+    + inUse : bool
+    + Found : bool <<get>>
+    + TotalCost : float <<get>>
+    + NodesLeftCount : int <<get>>
+    + FirstNode : int <<get>>
+    + LastNode : int <<get>>
+    + AddNodeAtStart(tile:int) : void
+    + SetupFound(totalCost:float) : void
+    + Dispose() : void
+    + ReleaseToPool() : void
+    + {static} NewNotFound() : WorldPath
+    + ConsumeNextNode() : int
+    + Peek(nodesAhead:int) : int
+    + <<override>> ToString() : string
+    + DrawPath(pathingCaravan:Caravan) : void
+}
+class "List`1"<T> {
+}
+IDisposable <|-- WorldPath
+WorldPath --> "NodesReversed<int>" "List`1"
+WorldPath --> "NotFound" WorldPath
+@enduml

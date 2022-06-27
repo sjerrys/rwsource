@@ -1,0 +1,24 @@
+@startuml
+class CompEquippable {
+    + CompEquippable()
+    + GetVerbsCommands() : IEnumerable<Command>
+    + <<override>> PostDestroy(mode:DestroyMode, previousMap:Map) : void
+    + <<override>> PostExposeData() : void
+    + <<override>> CompTick() : void
+    + Notify_EquipmentLost() : void
+    UniqueVerbOwnerID() : string
+    VerbsStillUsableBy(p:Pawn) : bool
+}
+class "List`1"<T> {
+}
+ThingComp <|-- CompEquippable
+IVerbOwner <|-- CompEquippable
+CompEquippable --> "verbTracker" VerbTracker
+CompEquippable --> "AllVerbs<Verb>" "List`1"
+CompEquippable --> "PrimaryVerb" Verb
+CompEquippable --> "VerbTracker" VerbTracker
+CompEquippable --> "VerbProperties<VerbProperties>" "List`1"
+CompEquippable --> "Tools<Tool>" "List`1"
+CompEquippable --> "ConstantCaster" Thing
+CompEquippable --> "ImplementOwnerTypeDef" ImplementOwnerTypeDef
+@enduml

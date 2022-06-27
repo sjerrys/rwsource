@@ -1,0 +1,35 @@
+@startuml
+class WorldObjectDef {
+    + canHaveFaction : bool = true
+    + saved : bool = true
+    + canBePlayerHome : bool
+    + allowCaravanIncidentsWhichGenerateMap : bool
+    + isTempIncidentMapOwner : bool
+    + selectable : bool = true
+    + neverMultiSelect : bool
+    + useDynamicDrawer : bool
+    + expandingIcon : bool
+    + expandingIconTexture : string
+    + expandingIconPriority : float
+    + texture : string
+    + expandMore : bool
+    + rotateGraphicWhenTraveling : bool
+    + expandingIconColor : Color?
+    + expandingIconDrawSize : float = 1f
+    + blockExitGridUntilBattleIsWon : bool
+    + <<override>> PostLoad() : void
+    + <<override>> ResolveReferences() : void
+    + <<override>> ConfigErrors() : IEnumerable<string>
+}
+class "List`1"<T> {
+}
+Def <|-- WorldObjectDef
+WorldObjectDef o-> "worldObjectClass" Type
+WorldObjectDef o-> "comps<WorldObjectCompProperties>" "List`1"
+WorldObjectDef --> "IncidentTargetTags<IncidentTargetTagDef>" "List`1"
+WorldObjectDef --> "mapGenerator" MapGeneratorDef
+WorldObjectDef --> "inspectorTabs<Type>" "List`1"
+WorldObjectDef --> "inspectorTabsResolved<InspectTabBase>" "List`1"
+WorldObjectDef --> "Material" Material
+WorldObjectDef --> "ExpandingIconTexture" Texture2D
+@enduml

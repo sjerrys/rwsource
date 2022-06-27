@@ -1,0 +1,7 @@
+@startuml
+class WornGraphicBodyTypeData <<struct>> {
+    + scale : Vector2?
+}
+WornGraphicBodyTypeData --> "offset" Vector2
+WornGraphicBodyTypeData --> "Scale" Vector2
+@enduml

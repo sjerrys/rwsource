@@ -1,0 +1,19 @@
+@startuml
+class Bill_Medical {
+    + temp_partIndexToSetLater : int
+    + <<override>> CheckIngredientsIfSociallyProper : bool <<get>>
+    + <<override>> CompletableEver : bool <<get>>
+    + <<override>> Label : string <<get>>
+    + Bill_Medical()
+    + Bill_Medical(recipe:RecipeDef)
+    + <<override>> ShouldDoNow() : bool
+    + <<override>> Notify_IterationCompleted(billDoer:Pawn, ingredients:List<Thing>) : void
+    + <<override>> Notify_DoBillStarted(billDoer:Pawn) : void
+    + <<override>> ExposeData() : void
+    + <<override>> Clone() : Bill
+}
+Bill <|-- Bill_Medical
+Bill_Medical --> "consumedInitialMedicineDef" ThingDef
+Bill_Medical --> "Part" BodyPartRecord
+Bill_Medical --> "GiverPawn" Pawn
+@enduml

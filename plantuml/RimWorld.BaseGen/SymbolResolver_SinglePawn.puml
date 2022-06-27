@@ -1,0 +1,8 @@
+@startuml
+class SymbolResolver_SinglePawn {
+    + <<override>> CanResolve(rp:ResolveParams) : bool
+    + <<override>> Resolve(rp:ResolveParams) : void
+    + {static} TryFindSpawnCell(rp:ResolveParams, cell:IntVec3) : bool
+}
+SymbolResolver <|-- SymbolResolver_SinglePawn
+@enduml

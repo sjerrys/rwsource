@@ -1,0 +1,11 @@
+@startuml
+class PawnRecentMemory {
+    + TicksSinceLastLight : int <<get>>
+    + TicksSinceOutdoors : int <<get>>
+    + PawnRecentMemory(pawn:Pawn)
+    + ExposeData() : void
+    + RecentMemoryInterval() : void
+    + Notify_Spawned(respawningAfterLoad:bool) : void
+}
+IExposable <|-- PawnRecentMemory
+@enduml

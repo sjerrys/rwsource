@@ -1,0 +1,8 @@
+@startuml
+class CopyPasteUI <<static>> {
+    + <<const>> CopyPasteIconHeight : float = 24f
+    + <<const>> CopyPasteIconWidth : float = 18f
+    + <<const>> CopyPasteColumnWidth : float = 36f
+    + {static} DoCopyPasteButtons(rect:Rect, copyAction:Action, pasteAction:Action) : void
+}
+@enduml

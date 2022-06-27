@@ -1,0 +1,9 @@
+@startuml
+class StartingPawnUtility <<static>> {
+    + {static} ClearAllStartingPawns() : void
+    + {static} RandomizeInPlace(p:Pawn) : Pawn
+    + {static} NewGeneratedStartingPawn() : Pawn
+    + {static} WorkTypeRequirementsSatisfied() : bool
+    + {static} RequiredWorkTypesDisabledForEveryone() : IEnumerable<WorkTypeDef>
+}
+@enduml

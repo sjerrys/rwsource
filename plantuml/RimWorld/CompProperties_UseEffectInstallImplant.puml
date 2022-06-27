@@ -1,0 +1,10 @@
+@startuml
+class CompProperties_UseEffectInstallImplant {
+    + canUpgrade : bool
+    + allowNonColonists : bool
+    + CompProperties_UseEffectInstallImplant()
+}
+CompProperties_Usable <|-- CompProperties_UseEffectInstallImplant
+CompProperties_UseEffectInstallImplant --> "hediffDef" HediffDef
+CompProperties_UseEffectInstallImplant --> "bodyPart" BodyPartDef
+@enduml

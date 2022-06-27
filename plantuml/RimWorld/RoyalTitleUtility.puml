@@ -1,0 +1,24 @@
+@startuml
+class RoyalTitleUtility <<static>> {
+    + {static} FindLostAndGainedPermits(currentTitle:RoyalTitleDef, newTitle:RoyalTitleDef, gainedPermits:List<RoyalTitlePermitDef>, lostPermits:List<RoyalTitlePermitDef>) : void
+    + {static} BuildDifferenceExplanationText(currentTitle:RoyalTitleDef, newTitle:RoyalTitleDef, faction:Faction, pawn:Pawn) : string
+    + {static} GetCurrentTitleIn(p:Pawn, faction:Faction) : RoyalTitleDef
+    + {static} GetCurrentTitleSeniorityIn(p:Pawn, faction:Faction) : int
+    + {static} GetTitleProgressionInfo(faction:Faction, pawn:Pawn) : string
+    + {static} FindBestUnassignedThrone(pawn:Pawn) : Building_Throne
+    + {static} FindBestUsableThrone(pawn:Pawn) : Building_Throne
+    + {static} BedroomSatisfiesRequirements(room:Room, title:RoyalTitle) : bool
+    + {static} IsPawnConceited(p:Pawn) : bool
+    + {static} GetConceitedTraits(p:Pawn) : IEnumerable<Trait>
+    + {static} GetTraitsAffectingPsylinkNegatively(p:Pawn) : IEnumerable<Trait>
+    + {static} GetPsylinkAffectedByTraitsNegativelyWarning(p:Pawn) : TaggedString
+    + {static} ShouldBecomeConceitedOnNewTitle(p:Pawn) : bool
+    + {static} GetCurrentBestowingCeremonyQuest(pawn:Pawn, faction:Faction) : Quest
+    + {static} ShouldGetBestowingCeremonyQuest(pawn:Pawn, faction:Faction) : bool
+    + {static} ShouldGetBestowingCeremonyQuest(pawn:Pawn, faction:Faction) : bool
+    + {static} EndExistingBestowingCeremonyQuest(pawn:Pawn, faction:Faction) : void
+    + {static} GenerateBestowingCeremonyQuest(pawn:Pawn, faction:Faction) : void
+    + {static} ResetStaticData() : void
+    + {static} DoTable_IngestibleMaxSatisfiedTitle() : void
+}
+@enduml

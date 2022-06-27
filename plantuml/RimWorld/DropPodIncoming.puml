@@ -1,0 +1,8 @@
+@startuml
+class DropPodIncoming {
+}
+Skyfaller <|-- DropPodIncoming
+IActiveDropPod <|-- DropPodIncoming
+IThingHolder <|-- DropPodIncoming
+DropPodIncoming --> "Contents" ActiveDropPodInfo
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class TriggerData_FractionColonyDamageTaken {
+    + startColonyDamage : float
+    + <<override>> ExposeData() : void
+}
+TriggerData <|-- TriggerData_FractionColonyDamageTaken
+@enduml

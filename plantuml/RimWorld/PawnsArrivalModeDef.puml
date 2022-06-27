@@ -1,0 +1,15 @@
+@startuml
+class PawnsArrivalModeDef {
+    + forQuickMilitaryAid : bool
+    + walkIn : bool
+    + textEnemy : string
+    + textFriendly : string
+    + textWillArrive : string
+}
+Def <|-- PawnsArrivalModeDef
+PawnsArrivalModeDef o-> "workerClass" Type
+PawnsArrivalModeDef --> "selectionWeightCurve" SimpleCurve
+PawnsArrivalModeDef --> "pointsFactorCurve" SimpleCurve
+PawnsArrivalModeDef --> "minTechLevel" TechLevel
+PawnsArrivalModeDef --> "Worker" PawnsArrivalModeWorker
+@enduml

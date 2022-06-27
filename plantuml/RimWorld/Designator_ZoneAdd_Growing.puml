@@ -1,0 +1,7 @@
+@startuml
+class Designator_ZoneAdd_Growing {
+    + Designator_ZoneAdd_Growing()
+    + <<override>> CanDesignateCell(c:IntVec3) : AcceptanceReport
+}
+Designator_ZoneAdd <|-- Designator_ZoneAdd_Growing
+@enduml

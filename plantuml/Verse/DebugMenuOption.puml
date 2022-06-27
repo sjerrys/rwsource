@@ -1,0 +1,8 @@
+@startuml
+class DebugMenuOption <<struct>> {
+    + label : string
+    + DebugMenuOption(label:string, mode:DebugMenuOptionMode, method:Action)
+}
+DebugMenuOption --> "mode" DebugMenuOptionMode
+DebugMenuOption --> "method" Action
+@enduml

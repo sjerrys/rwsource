@@ -1,0 +1,7 @@
+@startuml
+class GenView <<static>> {
+    + {static} ShouldSpawnMotesAt(loc:Vector3, map:Map) : bool
+    + {static} ShouldSpawnMotesAt(loc:IntVec3, map:Map) : bool
+    + {static} RandomPositionOnOrNearScreen() : Vector3
+}
+@enduml

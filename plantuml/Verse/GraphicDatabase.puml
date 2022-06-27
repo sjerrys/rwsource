@@ -1,0 +1,14 @@
+@startuml
+class GraphicDatabase <<static>> {
+    + {static} Get(path:string) : Graphic
+    + {static} Get(path:string, shader:Shader) : Graphic
+    + {static} Get(path:string, shader:Shader, drawSize:Vector2, color:Color) : Graphic
+    + {static} Get(path:string, shader:Shader, drawSize:Vector2, color:Color, renderQueue:int) : Graphic
+    + {static} Get(path:string, shader:Shader, drawSize:Vector2, color:Color, colorTwo:Color) : Graphic
+    + {static} Get(path:string, shader:Shader, drawSize:Vector2, color:Color, colorTwo:Color, data:GraphicData) : Graphic
+    + {static} Get(graphicClass:Type, path:string, shader:Shader, drawSize:Vector2, color:Color, colorTwo:Color) : Graphic
+    + {static} Get(graphicClass:Type, path:string, shader:Shader, drawSize:Vector2, color:Color, colorTwo:Color, data:GraphicData, shaderParameters:List<ShaderParameter>) : Graphic
+    + {static} Clear() : void
+    + {static} AllGraphicsLoaded() : void
+}
+@enduml

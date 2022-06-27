@@ -1,0 +1,11 @@
+@startuml
+class QuestTextRequest {
+    + keyword : string
+}
+class "Action`1"<T> {
+}
+class "List`1"<T> {
+}
+QuestTextRequest --> "setter<string>" "Action`1"
+QuestTextRequest --> "extraRules<Rule>" "List`1"
+@enduml

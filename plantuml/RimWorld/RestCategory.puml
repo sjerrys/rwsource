@@ -1,0 +1,8 @@
+@startuml
+enum RestCategory {
+    Rested,
+    Tired,
+    VeryTired,
+    Exhausted,
+}
+@enduml

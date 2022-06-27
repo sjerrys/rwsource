@@ -1,0 +1,5 @@
+@startuml
+class Thought_NotBondedAnimalMaster {
+}
+Thought_Situational <|-- Thought_NotBondedAnimalMaster
+@enduml

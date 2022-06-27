@@ -1,0 +1,5 @@
+@startuml
+class PlanetShapeGenerator <<static>> {
+    + {static} Generate(subdivisionsCount:int, outVerts:List<Vector3>, outTileIDToVerts_offsets:List<int>, outTileIDToNeighbors_offsets:List<int>, outTileIDToNeighbors_values:List<int>, radius:float, viewCenter:Vector3, viewAngle:float) : void
+}
+@enduml

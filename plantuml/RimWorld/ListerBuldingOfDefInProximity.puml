@@ -1,0 +1,23 @@
+@startuml
+class ListerBuldingOfDefInProximity {
+    + ListerBuldingOfDefInProximity(map:Map)
+    + Notify_BuildingSpawned(b:Building) : void
+    + Notify_BuildingDeSpawned(b:Building) : void
+    + GetForCell(cell:IntVec3, radius:float, defs:List<MeditationFocusOffsetPerBuilding>, forThing:Thing) : List<Thing>
+}
+class CellRequest <<struct>> {
+    + <<readonly>> radius : float
+    + CellRequest(c:IntVec3, r:float, d:List<MeditationFocusOffsetPerBuilding>, t:Thing)
+    + Equals(other:CellRequest) : bool
+    + <<override>> GetHashCode() : int
+}
+class "IEquatable`1"<T> {
+}
+class "List`1"<T> {
+}
+ListerBuldingOfDefInProximity +-- CellRequest
+"IEquatable`1" "<CellRequest>" <|-- CellRequest
+CellRequest --> "cell" IntVec3
+CellRequest --> "forThing" Thing
+CellRequest --> "defs<MeditationFocusOffsetPerBuilding>" "List`1"
+@enduml

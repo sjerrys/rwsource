@@ -1,0 +1,8 @@
+@startuml
+class NamedArgument <<struct>> {
+    + arg : object
+    + label : string
+    + NamedArgument(arg:object, label:string)
+    + <<override>> ToString() : string
+}
+@enduml

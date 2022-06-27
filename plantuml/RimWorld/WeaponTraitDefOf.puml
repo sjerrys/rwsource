@@ -1,0 +1,6 @@
+@startuml
+class WeaponTraitDefOf <<static>> {
+    {static} WeaponTraitDefOf()
+}
+WeaponTraitDefOf --> "NeedKill" WeaponTraitDef
+@enduml

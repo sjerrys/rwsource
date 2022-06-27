@@ -1,0 +1,7 @@
+@startuml
+class GameAndMapInitExceptionHandlers <<static>> {
+    + {static} ErrorWhileLoadingAssets(e:Exception) : void
+    + {static} ErrorWhileGeneratingMap(e:Exception) : void
+    + {static} ErrorWhileLoadingGame(e:Exception) : void
+}
+@enduml

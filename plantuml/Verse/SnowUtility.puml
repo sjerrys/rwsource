@@ -1,0 +1,8 @@
+@startuml
+class SnowUtility <<static>> {
+    + {static} GetSnowCategory(snowDepth:float) : SnowCategory
+    + {static} GetDescription(category:SnowCategory) : string
+    + {static} MovementTicksAddOn(category:SnowCategory) : int
+    + {static} AddSnowRadial(center:IntVec3, map:Map, radius:float, depth:float) : void
+}
+@enduml

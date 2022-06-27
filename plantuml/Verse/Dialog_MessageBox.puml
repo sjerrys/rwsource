@@ -1,0 +1,24 @@
+@startuml
+class Dialog_MessageBox {
+    + title : string
+    + buttonAText : string
+    + buttonADestructive : bool
+    + buttonBText : string
+    + buttonCText : string
+    + buttonCClose : bool = true
+    + interactionDelay : float
+    + {static} CreateConfirmation(text:TaggedString, confirmedAct:Action, destructive:bool, title:string) : Dialog_MessageBox
+    + Dialog_MessageBox(text:TaggedString, buttonAText:string, buttonAAction:Action, buttonBText:string, buttonBAction:Action, title:string, buttonADestructive:bool, acceptAction:Action, cancelAction:Action)
+    + <<override>> DoWindowContents(inRect:Rect) : void
+    + <<override>> OnCancelKeyPressed() : void
+    + <<override>> OnAcceptKeyPressed() : void
+}
+Window <|-- Dialog_MessageBox
+Dialog_MessageBox --> "text" TaggedString
+Dialog_MessageBox --> "buttonAAction" Action
+Dialog_MessageBox --> "buttonBAction" Action
+Dialog_MessageBox --> "buttonCAction" Action
+Dialog_MessageBox --> "acceptAction" Action
+Dialog_MessageBox --> "cancelAction" Action
+Dialog_MessageBox --> "InitialSize" Vector2
+@enduml

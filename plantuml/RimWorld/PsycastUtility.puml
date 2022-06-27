@@ -1,0 +1,6 @@
+@startuml
+class PsycastUtility {
+    + {static} TotalEntropyFromQueuedPsycasts(pawn:Pawn) : float
+    + {static} TotalPsyfocusCostOfQueuedPsycasts(pawn:Pawn) : float
+}
+@enduml

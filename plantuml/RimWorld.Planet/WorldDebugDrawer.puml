@@ -1,0 +1,11 @@
+@startuml
+class WorldDebugDrawer {
+    + FlashTile(tile:int, colorPct:float, text:string, duration:int) : void
+    + FlashTile(tile:int, mat:Material, text:string, duration:int) : void
+    + FlashLine(a:Vector3, b:Vector3, onPlanetSurface:bool, duration:int) : void
+    + FlashLine(tileA:int, tileB:int, duration:int) : void
+    + WorldDebugDrawerUpdate() : void
+    + WorldDebugDrawerTick() : void
+    + WorldDebugDrawerOnGUI() : void
+}
+@enduml

@@ -1,0 +1,23 @@
+@startuml
+class PhysicalInteractionReservationManager {
+    + Reserve(claimant:Pawn, job:Job, target:LocalTargetInfo) : void
+    + Release(claimant:Pawn, job:Job, target:LocalTargetInfo) : void
+    + IsReservedBy(claimant:Pawn, target:LocalTargetInfo) : bool
+    + IsReserved(target:LocalTargetInfo) : bool
+    + FirstReserverOf(target:LocalTargetInfo) : Pawn
+    + FirstReservationFor(claimant:Pawn) : LocalTargetInfo
+    + ReleaseAllForTarget(target:LocalTargetInfo) : void
+    + ReleaseClaimedBy(claimant:Pawn, job:Job) : void
+    + ReleaseAllClaimedBy(claimant:Pawn) : void
+    + ExposeData() : void
+}
+class PhysicalInteractionReservation {
+    + ExposeData() : void
+}
+IExposable <|-- PhysicalInteractionReservationManager
+PhysicalInteractionReservationManager +-- PhysicalInteractionReservation
+IExposable <|-- PhysicalInteractionReservation
+PhysicalInteractionReservation --> "target" LocalTargetInfo
+PhysicalInteractionReservation --> "claimant" Pawn
+PhysicalInteractionReservation --> "job" Job
+@enduml

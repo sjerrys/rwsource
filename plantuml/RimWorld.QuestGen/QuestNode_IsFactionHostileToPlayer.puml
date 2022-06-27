@@ -1,0 +1,11 @@
+@startuml
+class QuestNode_IsFactionHostileToPlayer {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_IsFactionHostileToPlayer
+QuestNode_IsFactionHostileToPlayer --> "faction<Faction>" "SlateRef`1"
+QuestNode_IsFactionHostileToPlayer --> "factionOf<Thing>" "SlateRef`1"
+QuestNode_IsFactionHostileToPlayer --> "node" QuestNode
+QuestNode_IsFactionHostileToPlayer --> "elseNode" QuestNode
+@enduml

@@ -1,0 +1,44 @@
+@startuml
+abstract class Bill {
+    + suspended : bool
+    + ingredientSearchRadius : float = 999f
+    + deleted : bool
+    + lastIngredientSearchFailTicks : int
+    + <<const>> MaxIngredientSearchRadius : int = 999
+    + <<const>> ButSize : float = 24f
+    + <<virtual>> Label : string <<get>>
+    + <<virtual>> LabelCap : string <<get>>
+    + <<virtual>> CheckIngredientsIfSociallyProper : bool <<get>>
+    + <<virtual>> CompletableEver : bool <<get>>
+    + DeletedOrDereferenced : bool <<get>>
+    + Bill()
+    + Bill(recipe:RecipeDef)
+    + InitializeAfterClone() : void
+    + <<virtual>> ExposeData() : void
+    + <<virtual>> PawnAllowedToStartAnew(p:Pawn) : bool
+    + <<virtual>> Notify_PawnDidWork(p:Pawn) : void
+    + <<virtual>> Notify_IterationCompleted(billDoer:Pawn, ingredients:List<Thing>) : void
+    + {abstract} ShouldDoNow() : bool
+    + <<virtual>> Notify_DoBillStarted(billDoer:Pawn) : void
+    + <<virtual>> DoStatusLineInterface(rect:Rect) : void
+    + DoInterface(x:float, y:float, width:float, index:int) : Rect
+    + IsFixedOrAllowedIngredient(thing:Thing) : bool
+    + IsFixedOrAllowedIngredient(def:ThingDef) : bool
+    + {static} CreateNoPawnsWithSkillDialog(recipe:RecipeDef) : void
+    + <<virtual>> GetStoreMode() : BillStoreModeDef
+    + <<virtual>> GetStoreZone() : Zone_Stockpile
+    + <<virtual>> SetStoreMode(mode:BillStoreModeDef, zone:Zone_Stockpile) : void
+    + <<virtual>> Clone() : Bill
+    + <<virtual>> ValidateSettings() : void
+    + GetUniqueLoadID() : string
+    + <<override>> ToString() : string
+}
+IExposable <|-- Bill
+ILoadReferenceable <|-- Bill
+Bill --> "billStack" BillStack
+Bill --> "recipe" RecipeDef
+Bill --> "ingredientFilter" ThingFilter
+Bill o-> "allowedSkillRange" IntRange
+Bill --> "pawnRestriction" Pawn
+Bill --> "Map" Map
+@enduml

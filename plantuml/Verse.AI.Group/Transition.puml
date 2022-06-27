@@ -1,0 +1,25 @@
+@startuml
+class Transition {
+    + canMoveToSameState : bool
+    + updateDutiesIfMovedToSameState : bool = true
+    + Transition(firstSource:LordToil, target:LordToil, canMoveToSameState:bool, updateDutiesIfMovedToSameState:bool)
+    + AddSource(source:LordToil) : void
+    + AddSources(sources:IEnumerable<LordToil>) : void
+    + AddSources(sources:LordToil[]) : void
+    + AddTrigger(trigger:Trigger) : void
+    + AddPreAction(action:TransitionAction) : void
+    + AddPostAction(action:TransitionAction) : void
+    + SourceToilBecameActive(transition:Transition, previousToil:LordToil) : void
+    + CheckSignal(lord:Lord, signal:TriggerSignal) : bool
+    + Execute(lord:Lord) : void
+    + <<override>> ToString() : string
+}
+class "List`1"<T> {
+}
+Transition --> "sources<LordToil>" "List`1"
+Transition --> "target" LordToil
+Transition o-> "triggers<Trigger>" "List`1"
+Transition o-> "preActions<TransitionAction>" "List`1"
+Transition o-> "postActions<TransitionAction>" "List`1"
+Transition --> "Map" Map
+@enduml

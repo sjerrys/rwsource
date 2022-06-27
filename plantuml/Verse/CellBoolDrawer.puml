@@ -1,0 +1,12 @@
+@startuml
+class CellBoolDrawer {
+    + CellBoolDrawer(giver:ICellBoolGiver, mapSizeX:int, mapSizeZ:int, opacity:float)
+    + CellBoolDrawer(giver:ICellBoolGiver, mapSizeX:int, mapSizeZ:int, renderQueue:int, opacity:float)
+    + CellBoolDrawer(cellBoolGetter:Func<int, bool>, colorGetter:Func<Color>, extraColorGetter:Func<int, Color>, mapSizeX:int, mapSizeZ:int, opacity:float)
+    + CellBoolDrawer(cellBoolGetter:Func<int, bool>, colorGetter:Func<Color>, extraColorGetter:Func<int, Color>, mapSizeX:int, mapSizeZ:int, renderQueue:int, opacity:float)
+    + MarkForDraw() : void
+    + CellBoolDrawerUpdate() : void
+    + SetDirty() : void
+    + RegenerateMesh() : void
+}
+@enduml

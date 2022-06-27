@@ -1,0 +1,9 @@
+@startuml
+class RoyalTitlePermitWorker {
+    + <<virtual>> GetPawnGizmos(pawn:Pawn, faction:Faction) : IEnumerable<Gizmo>
+    + <<virtual>> GetCaravanGizmos(pawn:Pawn, faction:Faction) : IEnumerable<Gizmo>
+    + <<virtual>> GetFactionCommDialogOptions(map:Map, pawn:Pawn, factionInFavor:Faction) : IEnumerable<DiaOption>
+    + <<virtual>> GetRoyalAidOptions(map:Map, pawn:Pawn, faction:Faction) : IEnumerable<FloatMenuOption>
+}
+RoyalTitlePermitWorker --> "def" RoyalTitlePermitDef
+@enduml

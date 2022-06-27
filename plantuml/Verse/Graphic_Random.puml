@@ -1,0 +1,13 @@
+@startuml
+class Graphic_Random {
+    + <<override>> GetColoredVersion(newShader:Shader, newColor:Color, newColorTwo:Color) : Graphic
+    + <<override>> MatAt(rot:Rot4, thing:Thing) : Material
+    + <<override>> MatSingleFor(thing:Thing) : Material
+    + <<override>> DrawWorker(loc:Vector3, rot:Rot4, thingDef:ThingDef, thing:Thing, extraRotation:float) : void
+    + SubGraphicFor(thing:Thing) : Graphic
+    + FirstSubgraphic() : Graphic
+    + <<override>> ToString() : string
+}
+Graphic_Collection <|-- Graphic_Random
+Graphic_Random --> "MatSingle" Material
+@enduml

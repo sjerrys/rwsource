@@ -1,0 +1,6 @@
+@startuml
+class ThingSetMaker_Techprints {
+    + <<override>> ExtraSelectionWeightFactor(parms:ThingSetMakerParams) : float
+}
+ThingSetMaker <|-- ThingSetMaker_Techprints
+@enduml

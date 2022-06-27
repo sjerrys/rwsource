@@ -1,0 +1,14 @@
+@startuml
+class Rule_String {
+    + <<override>> BaseSelectionWeight : float <<get>>
+    + <<override>> Priority : float <<get>>
+    + <<override>> DeepCopy() : Rule
+    + Rule_String()
+    + Rule_String(keyword:string, output:string)
+    + Rule_String(rawString:string)
+    + <<override>> Generate() : string
+    + <<override>> ToString() : string
+    + AppendPrefixToAllKeywords(prefix:string) : void
+}
+Rule <|-- Rule_String
+@enduml

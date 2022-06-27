@@ -1,0 +1,13 @@
+@startuml
+class RoyalTitlePermitWorker_CallShuttle {
+    + <<override>> ValidateTarget(target:LocalTargetInfo) : bool
+    + <<override>> DrawHighlight(target:LocalTargetInfo) : void
+    + <<override>> OrderForceTarget(target:LocalTargetInfo) : void
+    + <<override>> OnGUI(target:LocalTargetInfo) : void
+    + <<override>> GetRoyalAidOptions(map:Map, pawn:Pawn, faction:Faction) : IEnumerable<FloatMenuOption>
+    + <<override>> GetCaravanGizmos(pawn:Pawn, faction:Faction) : IEnumerable<Gizmo>
+    + {static} DrawShuttleGhost(target:LocalTargetInfo, map:Map) : void
+    + {static} ShuttleCanLandHere(target:LocalTargetInfo, map:Map) : AcceptanceReport
+}
+RoyalTitlePermitWorker_Targeted <|-- RoyalTitlePermitWorker_CallShuttle
+@enduml

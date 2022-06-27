@@ -1,0 +1,20 @@
+@startuml
+class RoofGrid <<sealed>> {
+    + RoofGrid(map:Map)
+    + ExposeData() : void
+    + GetCellBool(index:int) : bool
+    + GetCellExtraColor(index:int) : Color
+    + Roofed(index:int) : bool
+    + Roofed(x:int, z:int) : bool
+    + Roofed(c:IntVec3) : bool
+    + RoofAt(index:int) : RoofDef
+    + RoofAt(c:IntVec3) : RoofDef
+    + RoofAt(x:int, z:int) : RoofDef
+    + SetRoof(c:IntVec3, def:RoofDef) : void
+    + RoofGridUpdate() : void
+}
+IExposable <|-- RoofGrid
+ICellBoolGiver <|-- RoofGrid
+RoofGrid --> "Drawer" CellBoolDrawer
+RoofGrid --> "Color" Color
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class LinkGrid {
+    + LinkGrid(map:Map)
+    + LinkFlagsAt(c:IntVec3) : LinkFlags
+    + Notify_LinkerCreatedOrDestroyed(linker:Thing) : void
+}
+@enduml

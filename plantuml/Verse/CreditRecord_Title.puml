@@ -1,0 +1,10 @@
+@startuml
+class CreditRecord_Title {
+    + title : string
+    + CreditRecord_Title()
+    + CreditRecord_Title(title:string)
+    + <<override>> DrawHeight(width:float) : float
+    + <<override>> Draw(rect:Rect) : void
+}
+CreditsEntry <|-- CreditRecord_Title
+@enduml

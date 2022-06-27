@@ -1,0 +1,10 @@
+@startuml
+class LordToil_ExitMapAndEscortCarriers {
+    + <<override>> AllowSatisfyLongNeeds : bool <<get>>
+    + <<override>> AllowSelfTend : bool <<get>>
+    + <<override>> UpdateAllDuties() : void
+    + {static} IsDefendingPosition(pawn:Pawn) : bool
+    + {static} IsAnyDefendingPosition(pawns:List<Pawn>) : bool
+}
+LordToil <|-- LordToil_ExitMapAndEscortCarriers
+@enduml

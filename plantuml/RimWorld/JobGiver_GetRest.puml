@@ -1,0 +1,7 @@
+@startuml
+class JobGiver_GetRest {
+    + <<override>> DeepCopy(resolve:bool) : ThinkNode
+    + <<override>> GetPriority(pawn:Pawn) : float
+}
+ThinkNode_JobGiver <|-- JobGiver_GetRest
+@enduml

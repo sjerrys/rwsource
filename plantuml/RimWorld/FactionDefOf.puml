@@ -1,0 +1,14 @@
+@startuml
+class FactionDefOf <<static>> {
+    {static} FactionDefOf()
+}
+FactionDefOf --> "PlayerColony" FactionDef
+FactionDefOf --> "PlayerTribe" FactionDef
+FactionDefOf --> "Ancients" FactionDef
+FactionDefOf --> "AncientsHostile" FactionDef
+FactionDefOf --> "Mechanoid" FactionDef
+FactionDefOf --> "Insect" FactionDef
+FactionDefOf --> "OutlanderCivil" FactionDef
+FactionDefOf --> "Empire" FactionDef
+FactionDefOf --> "OutlanderRefugee" FactionDef
+@enduml

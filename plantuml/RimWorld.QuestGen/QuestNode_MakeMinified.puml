@@ -1,0 +1,9 @@
+@startuml
+class QuestNode_MakeMinified {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_MakeMinified
+QuestNode_MakeMinified --> "storeAs<string>" "SlateRef`1"
+QuestNode_MakeMinified --> "thing<Thing>" "SlateRef`1"
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+class RulePack {
+    + PostLoad() : void
+}
+class "List`1"<T> {
+}
+RulePack --> "include<RulePackDef>" "List`1"
+RulePack --> "Rules<Rule>" "List`1"
+RulePack --> "UntranslatedRules<Rule>" "List`1"
+@enduml

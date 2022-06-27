@@ -1,0 +1,12 @@
+@startuml
+class TreeNode {
+    + nestDepth : int
+    + <<virtual>> Openable : bool <<get>>
+    + IsOpen(mask:int) : bool
+    + SetOpen(mask:int, val:bool) : void
+}
+class "List`1"<T> {
+}
+TreeNode --> "parentNode" TreeNode
+TreeNode --> "children<TreeNode>" "List`1"
+@enduml

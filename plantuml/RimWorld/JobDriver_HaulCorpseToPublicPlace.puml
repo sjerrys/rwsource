@@ -1,0 +1,7 @@
+@startuml
+class JobDriver_HaulCorpseToPublicPlace {
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+    + <<override>> GetReport() : string
+}
+JobDriver <|-- JobDriver_HaulCorpseToPublicPlace
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+enum DefInjectionPathPartKind {
+    Field,
+    ListIndex,
+    ListHandle,
+    ListHandleWithIndex,
+}
+@enduml

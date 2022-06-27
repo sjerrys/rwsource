@@ -1,0 +1,11 @@
+@startuml
+class TransportPodsArrivalAction_VisitSettlement {
+    + TransportPodsArrivalAction_VisitSettlement()
+    + TransportPodsArrivalAction_VisitSettlement(settlement:Settlement)
+    + <<override>> ExposeData() : void
+    + <<override>> StillValid(pods:IEnumerable<IThingHolder>, destinationTile:int) : FloatMenuAcceptanceReport
+    + {static} CanVisit(pods:IEnumerable<IThingHolder>, settlement:Settlement) : FloatMenuAcceptanceReport
+    + {static} GetFloatMenuOptions(representative:CompLaunchable, pods:IEnumerable<IThingHolder>, settlement:Settlement) : IEnumerable<FloatMenuOption>
+}
+TransportPodsArrivalAction_FormCaravan <|-- TransportPodsArrivalAction_VisitSettlement
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+class PawnFlyer {
+    + GetDirectlyHeldThings() : ThingOwner
+    + PawnFlyer()
+    + GetChildHolders(outChildren:List<IThingHolder>) : void
+    + <<override>> SpawnSetup(map:Map, respawningAfterLoad:bool) : void
+    + <<override>> Tick() : void
+    + {static} MakeFlyer(flyingDef:ThingDef, pawn:Pawn, destCell:IntVec3) : PawnFlyer
+    + <<override>> ExposeData() : void
+}
+Thing <|-- PawnFlyer
+IThingHolder <|-- PawnFlyer
+PawnFlyer --> "FlyingPawn" Pawn
+PawnFlyer --> "DestinationPos" Vector3
+@enduml

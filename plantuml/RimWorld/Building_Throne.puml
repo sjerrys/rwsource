@@ -1,0 +1,13 @@
+@startuml
+class Building_Throne {
+    + <<override>> GetInspectString() : string
+    + <<override>> GetGizmos() : IEnumerable<Gizmo>
+}
+class "IEnumerable`1"<T> {
+}
+Building <|-- Building_Throne
+Building_Throne --> "AllTitlesForThroneStature<RoyalTitleDef>" "IEnumerable`1"
+Building_Throne --> "AssignedPawn" Pawn
+Building_Throne --> "CompAssignableToPawn" CompAssignableToPawn_Throne
+Building_Throne --> "TitleStature" RoyalTitleDef
+@enduml

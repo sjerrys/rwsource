@@ -1,0 +1,7 @@
+@startuml
+class HediffGiver_Hypothermia {
+    + <<override>> OnIntervalPassed(pawn:Pawn, cause:Hediff) : void
+}
+HediffGiver <|-- HediffGiver_Hypothermia
+HediffGiver_Hypothermia --> "hediffInsectoid" HediffDef
+@enduml

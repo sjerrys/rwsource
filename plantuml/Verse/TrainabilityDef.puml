@@ -1,0 +1,6 @@
+@startuml
+class TrainabilityDef {
+    + intelligenceOrder : int
+}
+Def <|-- TrainabilityDef
+@enduml

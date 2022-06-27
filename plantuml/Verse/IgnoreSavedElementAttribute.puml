@@ -1,0 +1,7 @@
+@startuml
+class IgnoreSavedElementAttribute {
+    + elementToIgnore : string
+    + IgnoreSavedElementAttribute(elementToIgnore:string)
+}
+Attribute <|-- IgnoreSavedElementAttribute
+@enduml

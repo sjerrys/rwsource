@@ -1,0 +1,9 @@
+@startuml
+interface ICommunicable {
+    GetCallLabel() : string
+    GetInfoText() : string
+    TryOpenComms(negotiator:Pawn) : void
+    GetFaction() : Faction
+    CommFloatMenuOption(console:Building_CommsConsole, negotiator:Pawn) : FloatMenuOption
+}
+@enduml

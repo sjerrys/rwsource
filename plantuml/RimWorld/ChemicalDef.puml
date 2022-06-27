@@ -1,0 +1,13 @@
+@startuml
+class ChemicalDef {
+    + canBinge : bool = true
+    + onGeneratedAddictedToleranceChance : float
+    + <<override>> ConfigErrors() : IEnumerable<string>
+}
+class "List`1"<T> {
+}
+Def <|-- ChemicalDef
+ChemicalDef --> "addictionHediff" HediffDef
+ChemicalDef --> "toleranceHediff" HediffDef
+ChemicalDef --> "onGeneratedAddictedEvents<HediffGiver_Event>" "List`1"
+@enduml

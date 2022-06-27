@@ -1,0 +1,8 @@
+@startuml
+class IntermittentSteamSprayer {
+    + IntermittentSteamSprayer(parent:Thing)
+    + SteamSprayerTick() : void
+}
+IntermittentSteamSprayer --> "startSprayCallback" Action
+IntermittentSteamSprayer --> "endSprayCallback" Action
+@enduml

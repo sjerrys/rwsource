@@ -1,0 +1,5 @@
+@startuml
+class ThinkNode_ConditionalColonist {
+}
+ThinkNode_Conditional <|-- ThinkNode_ConditionalColonist
+@enduml

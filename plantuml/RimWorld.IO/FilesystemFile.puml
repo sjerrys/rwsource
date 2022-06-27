@@ -1,0 +1,15 @@
+@startuml
+class FilesystemFile {
+    + <<override>> Name : string <<get>>
+    + <<override>> FullPath : string <<get>>
+    + <<override>> Exists : bool <<get>>
+    + <<override>> Length : long <<get>>
+    + FilesystemFile(fileInfo:FileInfo)
+    + <<override>> CreateReadStream() : Stream
+    + <<override>> ReadAllBytes() : byte[]
+    + <<override>> ReadAllLines() : string[]
+    + <<override>> ReadAllText() : string
+    + <<override>> ToString() : string
+}
+VirtualFile <|-- FilesystemFile
+@enduml

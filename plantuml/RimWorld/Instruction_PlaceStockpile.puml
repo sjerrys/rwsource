@@ -1,0 +1,10 @@
+@startuml
+class Instruction_PlaceStockpile {
+    + <<override>> ExposeData() : void
+    + <<override>> OnActivated() : void
+    + <<override>> LessonOnGUI() : void
+    + <<override>> LessonUpdate() : void
+    + <<override>> AllowAction(ep:EventPack) : AcceptanceReport
+}
+Lesson_Instruction <|-- Instruction_PlaceStockpile
+@enduml

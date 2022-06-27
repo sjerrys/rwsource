@@ -1,0 +1,10 @@
+@startuml
+class QuestNode_WorkDisabled {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_WorkDisabled
+QuestNode_WorkDisabled --> "inSignalEnable<string>" "SlateRef`1"
+QuestNode_WorkDisabled --> "pawns<IEnumerable<Pawn>>" "SlateRef`1"
+QuestNode_WorkDisabled --> "disabledWorkTags<WorkTags>" "SlateRef`1"
+@enduml

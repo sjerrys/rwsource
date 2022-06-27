@@ -1,0 +1,10 @@
+@startuml
+class CompProperties_Scanner {
+    + scanFindMtbDays : float
+    + scanFindGuaranteedDays : float
+    + <<override>> ConfigErrors(parentDef:ThingDef) : IEnumerable<string>
+}
+CompProperties <|-- CompProperties_Scanner
+CompProperties_Scanner --> "scanSpeedStat" StatDef
+CompProperties_Scanner --> "soundWorking" SoundDef
+@enduml

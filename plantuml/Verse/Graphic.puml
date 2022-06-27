@@ -1,0 +1,35 @@
+@startuml
+class Graphic {
+    + path : string
+    + <<virtual>> WestFlipped : bool <<get>>
+    + <<virtual>> EastFlipped : bool <<get>>
+    + <<virtual>> ShouldDrawRotated : bool <<get>>
+    + <<virtual>> DrawRotatedExtraAngleOffset : float <<get>>
+    + <<virtual>> UseSameGraphicForGhost : bool <<get>>
+    + <<virtual>> Init(req:GraphicRequest) : void
+    + <<virtual>> MatAt(rot:Rot4, thing:Thing) : Material
+    + <<virtual>> MeshAt(rot:Rot4) : Mesh
+    + <<virtual>> MatSingleFor(thing:Thing) : Material
+    + DrawOffset(rot:Rot4) : Vector3
+    + Draw(loc:Vector3, rot:Rot4, thing:Thing, extraRotation:float) : void
+    + DrawFromDef(loc:Vector3, rot:Rot4, thingDef:ThingDef, extraRotation:float) : void
+    + <<virtual>> DrawWorker(loc:Vector3, rot:Rot4, thingDef:ThingDef, thing:Thing, extraRotation:float) : void
+    + <<virtual>> Print(layer:SectionLayer, thing:Thing) : void
+    + <<virtual>> GetColoredVersion(newShader:Shader, newColor:Color, newColorTwo:Color) : Graphic
+    + <<virtual>> GetCopy(newDrawSize:Vector2) : Graphic
+    + <<virtual>> GetShadowlessGraphic() : Graphic
+}
+Graphic --> "data" GraphicData
+Graphic o-> "color" Color
+Graphic o-> "colorTwo" Color
+Graphic o-> "drawSize" Vector2
+Graphic --> "Shader" Shader
+Graphic --> "ShadowGraphic" Graphic_Shadow
+Graphic --> "Color" Color
+Graphic --> "ColorTwo" Color
+Graphic --> "MatSingle" Material
+Graphic --> "MatWest" Material
+Graphic --> "MatSouth" Material
+Graphic --> "MatEast" Material
+Graphic --> "MatNorth" Material
+@enduml

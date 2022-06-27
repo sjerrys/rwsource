@@ -1,0 +1,10 @@
+@startuml
+class Dialog_ManageFoodRestrictions {
+    + Dialog_ManageFoodRestrictions(selectedFoodRestriction:FoodRestriction)
+    + <<override>> DoWindowContents(inRect:Rect) : void
+    + <<override>> PreClose() : void
+    + {static} DoNameInputRect(rect:Rect, name:string) : void
+}
+Window <|-- Dialog_ManageFoodRestrictions
+Dialog_ManageFoodRestrictions --> "InitialSize" Vector2
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+class Vector2Utility <<static>> {
+    + {static} Rotated(v:Vector2) : Vector2
+    + {static} RotatedBy(v:Vector2, rot:Rot4) : Vector2
+    + {static} RotatedBy(v:Vector2, degrees:float) : Vector2
+    + {static} AngleTo(a:Vector2, b:Vector2) : float
+    + {static} Moved(v:Vector2, angle:float, distance:float) : Vector2
+    + {static} FromAngle(angle:float) : Vector2
+    + {static} ToAngle(v:Vector2) : float
+    + {static} Cross(u:Vector2, v:Vector2) : float
+    + {static} DistanceToRect(u:Vector2, rect:Rect) : float
+}
+@enduml

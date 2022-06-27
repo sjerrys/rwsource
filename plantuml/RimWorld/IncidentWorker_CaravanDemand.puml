@@ -1,0 +1,5 @@
+@startuml
+class IncidentWorker_CaravanDemand {
+}
+IncidentWorker <|-- IncidentWorker_CaravanDemand
+@enduml

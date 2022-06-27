@@ -1,0 +1,90 @@
+@startuml
+class GenText <<static>> {
+    + {static} Possessive(p:Pawn) : string
+    + {static} PossessiveCap(p:Pawn) : string
+    + {static} ProObj(p:Pawn) : string
+    + {static} ProObjCap(p:Pawn) : string
+    + {static} ProSubj(p:Pawn) : string
+    + {static} ProSubjCap(p:Pawn) : string
+    + {static} AdjustedFor(text:string, p:Pawn, pawnSymbol:string, addRelationInfoSymbol:bool) : string
+    + {static} AdjustedForKeys(text:string, outErrors:List<string>, resolveKeys:bool) : string
+    + {static} LabelIndefinite(pawn:Pawn) : string
+    + {static} LabelDefinite(pawn:Pawn) : string
+    + {static} KindLabelIndefinite(pawn:Pawn) : string
+    + {static} KindLabelDefinite(pawn:Pawn) : string
+    + {static} RandomSeedString() : string
+    + {static} Shorten(s:string) : string
+    + {static} MarchingEllipsis(offset:float) : string
+    + {static} SetTextSizeToFit(text:string, r:Rect) : void
+    + {static} TrimEndNewlines(s:string) : string
+    + {static} Indented(s:string, indentation:string) : string
+    + {static} ReplaceFirst(source:string, key:string, replacement:string) : string
+    + {static} StableStringHash(str:string) : int
+    + {static} StringFromEnumerable(source:IEnumerable) : string
+    + {static} LinesFromString(text:string) : IEnumerable<string>
+    + {static} GetInvalidFilenameCharacters() : string
+    + {static} IsValidFilename(str:string) : bool
+    + {static} SanitizeFilename(str:string) : string
+    + {static} NullOrEmpty(str:string) : bool
+    + {static} SplitCamelCase(Str:string) : string
+    + {static} CapitalizedNoSpaces(s:string) : string
+    + {static} RemoveNonAlphanumeric(s:string) : string
+    + {static} EqualsIgnoreCase(A:string, B:string) : bool
+    + {static} WithoutByteOrderMark(str:string) : string
+    + {static} NamesOverlap(A:string, B:string) : bool
+    + {static} FirstLetterBetweenTags(str:string) : int
+    + {static} CapitalizeFirst(str:string) : string
+    + {static} CapitalizeFirst(str:string, possibleDef:Def) : string
+    + {static} UncapitalizeFirst(str:string) : string
+    + {static} ToNewsCase(str:string) : string
+    + {static} ToTitleCaseSmart(str:string) : string
+    + {static} CapitalizeSentences(input:string, capitalizeFirstSentence:bool) : string
+    + {static} CapitalizeAsTitle(str:string) : string
+    + {static} ToCommaList(items:IEnumerable<string>, useAnd:bool) : string
+    + {static} ToClauseSequence(entries:List<string>) : TaggedString
+    + {static} ToLineList(entries:IList<string>, prefix:string) : string
+    + {static} ToLineList(entries:IList<string>, color:Color, prefix:string) : string
+    + {static} ToLineList(entries:IEnumerable<string>, prefix:string, capitalizeItems:bool) : string
+    + {static} ToSpaceList(entries:IEnumerable<string>) : string
+    + {static} ToCamelCase(str:string) : string
+    + {static} Truncate(str:string, width:float, cache:Dictionary<string, string>) : string
+    + {static} Truncate(str:TaggedString, width:float, cache:Dictionary<string, TaggedString>) : TaggedString
+    + {static} TruncateHeight(str:string, width:float, height:float, cache:Dictionary<string, string>) : string
+    + {static} Flatten(str:string) : string
+    + {static} MergeMultipleSpaces(str:string, leaveMultipleSpacesAtLineBeginning:bool) : string
+    + {static} TrimmedToLength(str:string, length:int) : string
+    + {static} ContainsEmptyLines(str:string) : bool
+    + {static} ToStringByStyle(f:float, style:ToStringStyle, numberSense:ToStringNumberSense) : string
+    + {static} ToStringDecimalIfSmall(f:float) : string
+    + {static} ToStringPercent(f:float) : string
+    + {static} ToStringPercent(f:float, format:string) : string
+    + {static} ToStringMoney(f:float, format:string) : string
+    + {static} ToStringMoneyOffset(f:float, format:string) : string
+    + {static} ToStringWithSign(i:int) : string
+    + {static} ToStringWithSign(f:float, format:string) : string
+    + {static} ToStringKilobytes(bytes:int, format:string) : string
+    + {static} ToStringYesNo(b:bool) : string
+    + {static} ToStringLongitude(longitude:float) : string
+    + {static} ToStringLatitude(latitude:float) : string
+    + {static} ToStringMass(mass:float) : string
+    + {static} ToStringMassOffset(mass:float) : string
+    + {static} ToStringSign(val:float) : string
+    + {static} ToStringEnsureThreshold(value:float, threshold:float, decimalPlaces:int) : string
+    + {static} ToStringTemperature(celsiusTemp:float, format:string) : string
+    + {static} ToStringTemperatureOffset(celsiusTemp:float, format:string) : string
+    + {static} ToStringTemperatureRaw(temp:float, format:string) : string
+    + {static} ToStringTwoDigits(v:Vector2) : string
+    + {static} ToStringWorkAmount(workAmount:float) : string
+    + {static} ToStringBytes(b:int, format:string) : string
+    + {static} ToStringBytes(b:uint, format:string) : string
+    + {static} ToStringBytes(b:long, format:string) : string
+    + {static} ToStringBytes(b:ulong, format:string) : string
+    + {static} ToStringReadable(k:KeyCode) : string
+    + {static} AppendWithComma(sb:StringBuilder, text:string) : void
+    + {static} AppendInNewLine(sb:StringBuilder, text:string) : void
+    + {static} AppendWithSeparator(sb:StringBuilder, text:string, separator:string) : void
+    + {static} WordWrapAt(text:string, length:float) : string
+    + {static} EventTypeToStringCached(eventType:EventType) : string
+    + {static} FieldsToString(obj:T) : string
+}
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+class ColonistBarColonistDrawer {
+    + <<const>> PawnTextureCameraZoom : float = 1.28205f
+    + <<const>> DoubleClickTime : float = 0.5f
+    + DrawColonist(rect:Rect, colonist:Pawn, pawnMap:Map, highlight:bool, reordering:bool) : void
+    + DrawGroupFrame(group:int) : void
+    + HandleClicks(rect:Rect, colonist:Pawn, reorderableGroup:int, reordering:bool) : void
+    + HandleGroupFrameClicks(group:int) : void
+    + Notify_RecachedEntries() : void
+    + GetPawnTextureRect(pos:Vector2) : Rect
+}
+ColonistBarColonistDrawer o-> "PawnTextureSize" Vector2
+ColonistBarColonistDrawer o-> "PawnTextureCameraOffset" Vector3
+@enduml

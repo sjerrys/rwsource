@@ -1,0 +1,72 @@
+@startuml
+class Pawn_RoyaltyTracker {
+    + lastDecreeTicks : int
+    + allowRoomRequirements : bool = true
+    + allowApparelRequirements : bool = true
+    + PermitPointsAvailable : bool <<get>>
+    + HasAidPermit : bool <<get>>
+    + Pawn_RoyaltyTracker(pawn:Pawn)
+    + HasAnyTitleIn(faction:Faction) : bool
+    + HasTitle(title:RoyalTitleDef) : bool
+    + PermitsFromFaction(faction:Faction) : List<FactionPermit>
+    + AddPermit(permit:RoyalTitlePermitDef, faction:Faction) : void
+    + RefundPermits(favorCost:int, faction:Faction) : void
+    + HasPermit(permit:RoyalTitlePermitDef, faction:Faction) : bool
+    + GetPermitLastUsedTick(permitDef:RoyalTitlePermitDef) : int
+    + PermitOnCooldown(permitDef:RoyalTitlePermitDef) : bool
+    + Notify_PermitUsed(permitDef:RoyalTitlePermitDef) : void
+    + MainTitle() : RoyalTitleDef
+    + GetFavor(faction:Faction) : int
+    + GetPermit(permit:RoyalTitlePermitDef, faction:Faction) : FactionPermit
+    + GetPermitPoints(faction:Faction) : int
+    + GainFavor(faction:Faction, amount:int) : void
+    + GetTitleAwardedWhenUpdating(faction:Faction, favor:int) : RoyalTitleDef
+    + CanUpdateTitleOfAnyFaction(faction:Faction) : bool
+    + CanUpdateTitle(faction:Faction) : bool
+    + TryUpdateTitle_NewTemp(faction:Faction, sendLetter:bool, updateTo:RoyalTitleDef) : bool
+    + TryUpdateTitle(faction:Faction, sendLetter:bool) : bool
+    + TryRemoveFavor(faction:Faction, amount:int) : bool
+    + SetFavor_NewTemp(faction:Faction, amount:int, notifyOnFavorChanged:bool) : void
+    + SetFavor(faction:Faction, amount:int) : void
+    + GetCurrentTitle(faction:Faction) : RoyalTitleDef
+    + GetCurrentTitleInFaction(faction:Faction) : RoyalTitle
+    + SetTitle(faction:Faction, title:RoyalTitleDef, grantRewards:bool, rewardsOnlyForNewestTitle:bool, sendLetter:bool) : void
+    + ReduceTitle(faction:Faction) : void
+    + GetHeir(faction:Faction) : Pawn
+    + SetHeir(heir:Pawn, faction:Faction) : void
+    + AssignHeirIfNone(t:RoyalTitleDef, faction:Faction) : void
+    + RoyaltyTrackerTick() : void
+    + IssueDecree(causedByMentalBreak:bool, mentalBreakReason:string) : void
+    + {static} MakeLetterTextForTitleChange(pawn:Pawn, faction:Faction, currentTitle:RoyalTitleDef, newTitle:RoyalTitleDef, headline:string, body:string) : void
+    + {static} MakeLetterTextForTitleChange(pawn:Pawn, faction:Faction, currentTitle:RoyalTitleDef, newTitle:RoyalTitleDef) : string
+    + ResetPermitsAndPoints(faction:Faction, currentTitle:RoyalTitleDef) : void
+    + ApplyRewardsForTitle(faction:Faction, currentTitle:RoyalTitleDef, newTitle:RoyalTitleDef, onlyForNewestTitle:bool) : List<Thing>
+    + NewHighestTitle(faction:Faction, newTitle:RoyalTitleDef) : bool
+    + GetGizmos() : IEnumerable<Gizmo>
+    + OpenPermitWindow() : void
+    + Notify_PawnKilled() : void
+    + Notify_Resurrected() : void
+    + RoyalAidGizmo() : Gizmo
+    + CanRequireThroneroom() : bool
+    + HighestTitleWithThroneRoomRequirements() : RoyalTitle
+    + GetUnmetThroneroomRequirements(includeOnGracePeriod:bool, onlyOnGracePeriod:bool) : IEnumerable<string>
+    + CanRequireBedroom() : bool
+    + HighestTitleWithBedroomRequirements() : RoyalTitle
+    + GetUnmetBedroomRequirements(includeOnGracePeriod:bool, onlyOnGracePeriod:bool) : IEnumerable<string>
+    + RecalculatePermitPoints(faction:Faction) : void
+    + HasPersonalBedroom() : bool
+    + ExposeData() : void
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+IExposable <|-- Pawn_RoyaltyTracker
+Pawn_RoyaltyTracker --> "pawn" Pawn
+Pawn_RoyaltyTracker o-> "CommandTex" Texture2D
+Pawn_RoyaltyTracker --> "AllTitlesForReading<RoyalTitle>" "List`1"
+Pawn_RoyaltyTracker --> "AllTitlesInEffectForReading<RoyalTitle>" "List`1"
+Pawn_RoyaltyTracker --> "MostSeniorTitle" RoyalTitle
+Pawn_RoyaltyTracker --> "PossibleDecreeQuests<QuestScriptDef>" "IEnumerable`1"
+Pawn_RoyaltyTracker --> "AllFactionPermits<FactionPermit>" "List`1"
+@enduml

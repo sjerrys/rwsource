@@ -1,0 +1,7 @@
+@startuml
+class PortraitCameraManager <<static>> {
+    {static} PortraitCameraManager()
+}
+PortraitCameraManager --> "PortraitCamera" Camera
+PortraitCameraManager --> "PortraitRenderer" PortraitRenderer
+@enduml

@@ -1,0 +1,67 @@
+@startuml
+class PawnUtility <<static>> {
+    + {static} GetFactionLeaderFaction(pawn:Pawn) : Faction
+    + {static} IsFactionLeader(pawn:Pawn) : bool
+    + {static} IsInteractionBlocked(pawn:Pawn, interaction:InteractionDef, isInitiator:bool, isRandom:bool) : bool
+    + {static} IsKidnappedPawn(pawn:Pawn) : bool
+    + {static} IsTravelingInTransportPodWorldObject(pawn:Pawn) : bool
+    + {static} ForSaleBySettlement(pawn:Pawn) : bool
+    + {static} IsInvisible(pawn:Pawn) : bool
+    + {static} TryDestroyStartingColonistFamily(pawn:Pawn) : void
+    + {static} DestroyStartingColonistFamily(pawn:Pawn) : void
+    + {static} EnemiesAreNearby(pawn:Pawn, regionsToScan:int, passDoors:bool) : bool
+    + {static} WillSoonHaveBasicNeed(p:Pawn) : bool
+    + {static} AnimalFilthChancePerCell(def:ThingDef, bodySize:float) : float
+    + {static} HumanFilthChancePerCell(def:ThingDef, bodySize:float) : float
+    + {static} CanCasuallyInteractNow(p:Pawn, twoWayInteraction:bool) : bool
+    + {static} SpawnedMasteredPawns(master:Pawn) : IEnumerable<Pawn>
+    + {static} InValidState(p:Pawn) : bool
+    + {static} GetPosture(p:Pawn) : PawnPosture
+    + {static} ForceWait(pawn:Pawn, ticks:int, faceTarget:Thing, maintainPosture:bool) : void
+    + {static} GiveNameBecauseOfNuzzle(namer:Pawn, namee:Pawn) : void
+    + {static} GainComfortFromCellIfPossible(p:Pawn, chairsOnly:bool) : void
+    + {static} GainComfortFromThingIfPossible(p:Pawn, from:Thing) : void
+    + {static} BodyResourceGrowthSpeed(pawn:Pawn) : float
+    + {static} FertileMateTarget(male:Pawn, female:Pawn) : bool
+    + {static} Mated(male:Pawn, female:Pawn) : void
+    + {static} PlayerForcedJobNowOrSoon(pawn:Pawn) : bool
+    + {static} TrySpawnHatchedOrBornPawn(pawn:Pawn, motherOrEgg:Thing) : bool
+    + {static} GetAvoidGrid(p:Pawn, onlyIfLordAllows:bool) : ByteGrid
+    + {static} ShouldCollideWithPawns(p:Pawn) : bool
+    + {static} AnyPawnBlockingPathAt(c:IntVec3, forPawn:Pawn, actAsIfHadCollideWithPawnsJob:bool, collideOnlyWithStandingPawns:bool, forPathFinder:bool) : bool
+    + {static} PawnBlockingPathAt(c:IntVec3, forPawn:Pawn, actAsIfHadCollideWithPawnsJob:bool, collideOnlyWithStandingPawns:bool, forPathFinder:bool) : Pawn
+    + {static} KnownDangerAt(c:IntVec3, map:Map, forPawn:Pawn) : bool
+    + {static} ShouldSendNotificationAbout(p:Pawn) : bool
+    + {static} ShouldGetThoughtAbout(pawn:Pawn, subject:Pawn) : bool
+    + {static} IsTeetotaler(pawn:Pawn) : bool
+    + {static} IsProsthophobe(pawn:Pawn) : bool
+    + {static} IsPrisonerInPrisonCell(pawn:Pawn) : bool
+    + {static} PawnKindsToCommaList(pawns:IEnumerable<Pawn>, useAnd:bool) : string
+    + {static} PawnKindsToList(pawnKinds:IEnumerable<PawnKindDef>) : List<string>
+    + {static} PawnKindsToLineList(pawnKinds:IEnumerable<PawnKindDef>, prefix:string) : string
+    + {static} PawnKindsToLineList(pawnKinds:IEnumerable<PawnKindDef>, prefix:string, color:Color) : string
+    + {static} PawnKindsToCommaList(pawnKinds:IEnumerable<PawnKindDef>, useAnd:bool) : string
+    + {static} ResolveLocomotion(pawn:Pawn, secondPriority:LocomotionUrgency) : LocomotionUrgency
+    + {static} ResolveLocomotion(pawn:Pawn, secondPriority:LocomotionUrgency, thirdPriority:LocomotionUrgency) : LocomotionUrgency
+    + {static} ResolveMaxDanger(pawn:Pawn, secondPriority:Danger) : Danger
+    + {static} ResolveMaxDanger(pawn:Pawn, secondPriority:Danger, thirdPriority:Danger) : Danger
+    + {static} IsFighting(pawn:Pawn) : bool
+    + {static} GetMainPsylinkSource(pawn:Pawn) : Hediff_Psylink
+    + {static} GetPsylinkLevel(pawn:Pawn) : int
+    + {static} GetMaxPsylinkLevel(pawn:Pawn) : int
+    + {static} GetMaxPsylinkLevelTitle(pawn:Pawn) : RoyalTitle
+    + {static} GetMaxPsylinkLevelByTitle(pawn:Pawn) : int
+    + {static} ChangePsylinkLevel(pawn:Pawn, levelOffset:int, sendLetter:bool) : void
+    + {static} RecruitDifficulty(pawn:Pawn, recruiterFaction:Faction) : float
+    + {static} GiveAllStartingPlayerPawnsThought(thought:ThoughtDef) : void
+    + {static} DutyLocation(pawn:Pawn) : IntVec3
+    + {static} EverBeenColonistOrTameAnimal(pawn:Pawn) : bool
+    + {static} EverBeenPrisoner(pawn:Pawn) : bool
+    + {static} EverBeenQuestLodger(pawn:Pawn) : bool
+    + {static} RecoverFromUnwalkablePositionOrKill(c:IntVec3, map:Map) : void
+    + {static} GetManhunterOnDamageChance(pawn:Pawn, distance:float, instigator:Thing) : float
+    + {static} GetManhunterOnDamageChance(pawn:Pawn, instigator:Thing) : float
+    + {static} GetManhunterOnDamageChance(kind:PawnKindDef) : float
+    + {static} GetManhunterOnDamageChance(race:RaceProperties) : float
+}
+@enduml

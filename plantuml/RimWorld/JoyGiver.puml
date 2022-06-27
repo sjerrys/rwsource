@@ -1,0 +1,11 @@
+@startuml
+abstract class JoyGiver {
+    + <<virtual>> GetChance(pawn:Pawn) : float
+    + {abstract} TryGiveJob(pawn:Pawn) : Job
+    + <<virtual>> TryGiveJobWhileInBed(pawn:Pawn) : Job
+    + <<virtual>> TryGiveJobInGatheringArea(pawn:Pawn, gatherSpot:IntVec3) : Job
+    + <<virtual>> CanBeGivenTo(pawn:Pawn) : bool
+    + MissingRequiredCapacity(pawn:Pawn) : PawnCapacityDef
+}
+JoyGiver --> "def" JoyGiverDef
+@enduml

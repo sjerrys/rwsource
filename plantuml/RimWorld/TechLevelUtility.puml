@@ -1,0 +1,7 @@
+@startuml
+class TechLevelUtility <<static>> {
+    + {static} ToStringHuman(tl:TechLevel) : string
+    + {static} CanSpawnWithEquipmentFrom(pawnLevel:TechLevel, gearLevel:TechLevel) : bool
+    + {static} IsNeolithicOrWorse(techLevel:TechLevel) : bool
+}
+@enduml

@@ -1,0 +1,57 @@
+@startuml
+class AbilityDef {
+    + warmupPreEndSoundSeconds : float
+    + moteOffsetAmountTowardsTarget : float
+    + canUseAoeToGetTargets : bool = true
+    + targetRequired : bool = true
+    + targetWorldCell : bool
+    + showGizmoOnWorldView : bool
+    + level : int
+    + sendLetterOnCooldownComplete : bool
+    + displayGizmoWhileUndrafted : bool
+    + disableGizmoWhileUndrafted : bool = true
+    + writeCombatLog : bool
+    + stunTargetWhileCasting : bool
+    + showPsycastEffects : bool = true
+    + showCastingProgressBar : bool
+    + detectionChanceOverride : float
+    + confirmationDialogText : string
+    + iconPath : string
+    + EntropyGain : float <<get>>
+    + PsyfocusCost : float <<get>>
+    + EffectRadius : float <<get>>
+    + EffectDuration : float <<get>>
+    + HasAreaOfEffect : bool <<get>>
+    + DetectionChance : float <<get>>
+    + PsyfocusCostPercent : string <<get>>
+    + PsyfocusCostPercentMax : string <<get>>
+    + RequiredPsyfocusBand : int <<get>>
+    + AnyCompOverridesPsyfocusCost : bool <<get>>
+    + <<override>> PostLoad() : void
+    + GetTooltip(pawn:Pawn) : string
+    + <<override>> SpecialDisplayStats(req:StatRequest) : IEnumerable<StatDrawEntry>
+    + <<override>> ConfigErrors() : IEnumerable<string>
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+Def <|-- AbilityDef
+AbilityDef o-> "abilityClass" Type
+AbilityDef o-> "gizmoClass" Type
+AbilityDef o-> "comps<AbilityCompProperties>" "List`1"
+AbilityDef --> "category" AbilityCategoryDef
+AbilityDef --> "statBases<StatModifier>" "List`1"
+AbilityDef --> "verbProperties" VerbProperties
+AbilityDef --> "hotKey" KeyBindingDef
+AbilityDef --> "jobDef" JobDef
+AbilityDef --> "warmupMote" ThingDef
+AbilityDef --> "warmupStartSound" SoundDef
+AbilityDef --> "warmupSound" SoundDef
+AbilityDef --> "warmupPreEndSound" SoundDef
+AbilityDef --> "moteDrawOffset" Vector3
+AbilityDef --> "cooldownTicksRange" IntRange
+AbilityDef o-> "uiIcon" Texture2D
+AbilityDef --> "PsyfocusCostRange" FloatRange
+AbilityDef --> "StatSummary<string>" "IEnumerable`1"
+@enduml

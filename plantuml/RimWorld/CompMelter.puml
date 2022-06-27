@@ -1,0 +1,6 @@
+@startuml
+class CompMelter {
+    + <<override>> CompTickRare() : void
+}
+ThingComp <|-- CompMelter
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class WorkGiver_HaulGeneral {
+    + <<override>> JobOnThing(pawn:Pawn, t:Thing, forced:bool) : Job
+}
+WorkGiver_Haul <|-- WorkGiver_HaulGeneral
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class DebugHistogram {
+    + DebugHistogram(buckets:float[])
+    + Add(val:float) : void
+    + Display() : void
+    + Display(sb:StringBuilder) : void
+}
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+class MainTabWindow_Quests {
+    + <<override>> PreOpen() : void
+    + <<override>> DoWindowContents(rect:Rect) : void
+    + DoFavorCheckBoxes(rect:Rect) : Rect
+    + DoRewardsPrefsButton(rect:Rect) : Rect
+    + Select(quest:Quest) : void
+}
+enum QuestsTab {
+    Available,
+    Active,
+    Historical,
+}
+MainTabWindow <|-- MainTabWindow_Quests
+MainTabWindow_Quests --> "RequestedTabSize" Vector2
+MainTabWindow_Quests +-- QuestsTab
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class DangerWatcher {
+    + DangerWatcher(map:Map)
+    + Notify_ColonistHarmedExternally() : void
+}
+DangerWatcher --> "DangerRating" StoryDanger
+@enduml

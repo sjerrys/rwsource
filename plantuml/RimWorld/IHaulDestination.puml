@@ -1,0 +1,8 @@
+@startuml
+interface IHaulDestination {
+    Accepts(t:Thing) : bool
+}
+IStoreSettingsParent <|-- IHaulDestination
+IHaulDestination --> "Position" IntVec3
+IHaulDestination --> "Map" Map
+@enduml

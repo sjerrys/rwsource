@@ -1,0 +1,10 @@
+@startuml
+class GenStep_RandomSelector {
+    + <<override>> SeedPart : int <<get>>
+    + <<override>> Generate(map:Map, parms:GenStepParams) : void
+}
+class "List`1"<T> {
+}
+GenStep <|-- GenStep_RandomSelector
+GenStep_RandomSelector --> "options<RandomGenStepSelectorOption>" "List`1"
+@enduml

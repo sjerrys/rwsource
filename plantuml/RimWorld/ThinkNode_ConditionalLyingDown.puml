@@ -1,0 +1,5 @@
+@startuml
+class ThinkNode_ConditionalLyingDown {
+}
+ThinkNode_Conditional <|-- ThinkNode_ConditionalLyingDown
+@enduml

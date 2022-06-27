@@ -1,0 +1,7 @@
+@startuml
+class FeedbackItem_FoodGain {
+    + FeedbackItem_FoodGain(ScreenPos:Vector2, Amount:int)
+    + <<override>> FeedbackOnGUI() : void
+}
+FeedbackItem <|-- FeedbackItem_FoodGain
+@enduml

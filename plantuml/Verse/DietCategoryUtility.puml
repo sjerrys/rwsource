@@ -1,0 +1,6 @@
+@startuml
+class DietCategoryUtility <<static>> {
+    + {static} ToStringHuman(diet:DietCategory) : string
+    + {static} ToStringHumanShort(diet:DietCategory) : string
+}
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+abstract class Instruction_BuildAtRoom {
+    + <<override>> LessonOnGUI() : void
+    + <<override>> LessonUpdate() : void
+    + <<override>> AllowAction(ep:EventPack) : AcceptanceReport
+    + <<override>> Notify_Event(ep:EventPack) : void
+}
+Lesson_Instruction <|-- Instruction_BuildAtRoom
+@enduml

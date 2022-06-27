@@ -1,0 +1,8 @@
+@startuml
+class Scribe_References <<static>> {
+    + {static} Look(refee:T, label:string, saveDestroyedThings:bool) : void
+    + {static} Look(refee:WeakReference<T>, label:string, saveDestroyedThings:bool) : void
+    + {static} CheckSaveReferenceToDestroyedThing(th:Thing, label:string, saveDestroyedThings:bool) : bool
+    + {static} CheckSaveReferenceToDestroyedWorldObject(w:WorldObject, label:string, saveDestroyedWorldObjects:bool) : bool
+}
+@enduml

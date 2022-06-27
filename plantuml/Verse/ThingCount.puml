@@ -1,0 +1,17 @@
+@startuml
+class ThingCount <<struct>> {
+    + Count : int <<get>>
+    + ThingCount(thing:Thing, count:int)
+    + ExposeData() : void
+    + WithCount(newCount:int) : ThingCount
+    + <<override>> Equals(obj:object) : bool
+    + Equals(other:ThingCount) : bool
+    + <<override>> GetHashCode() : int
+    + <<override>> ToString() : string
+}
+class "IEquatable`1"<T> {
+}
+"IEquatable`1" "<ThingCount>" <|-- ThingCount
+IExposable <|-- ThingCount
+ThingCount --> "Thing" Thing
+@enduml

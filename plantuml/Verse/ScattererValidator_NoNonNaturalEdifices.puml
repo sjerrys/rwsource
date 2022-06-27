@@ -1,0 +1,7 @@
+@startuml
+class ScattererValidator_NoNonNaturalEdifices {
+    + radius : int = 1
+    + <<override>> Allows(c:IntVec3, map:Map) : bool
+}
+ScattererValidator <|-- ScattererValidator_NoNonNaturalEdifices
+@enduml

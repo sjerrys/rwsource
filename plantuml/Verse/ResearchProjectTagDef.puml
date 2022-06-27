@@ -1,0 +1,6 @@
+@startuml
+class ResearchProjectTagDef {
+    + CompletedProjects() : int
+}
+Def <|-- ResearchProjectTagDef
+@enduml

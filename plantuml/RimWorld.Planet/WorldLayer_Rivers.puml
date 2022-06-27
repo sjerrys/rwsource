@@ -1,0 +1,8 @@
+@startuml
+class WorldLayer_Rivers {
+    + WorldLayer_Rivers()
+    + <<override>> Regenerate() : IEnumerable
+    + <<override>> FinalizePoint(inp:Vector3, distortionFrequency:float, distortionIntensity:float) : Vector3
+}
+WorldLayer_Paths <|-- WorldLayer_Rivers
+@enduml

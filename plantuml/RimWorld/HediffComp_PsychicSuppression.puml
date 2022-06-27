@@ -1,0 +1,6 @@
+@startuml
+class HediffComp_PsychicSuppression {
+    + <<override>> CompShouldRemove : bool <<get>>
+}
+HediffComp <|-- HediffComp_PsychicSuppression
+@enduml

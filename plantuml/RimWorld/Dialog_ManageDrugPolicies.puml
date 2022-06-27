@@ -1,0 +1,11 @@
+@startuml
+class Dialog_ManageDrugPolicies {
+    + Dialog_ManageDrugPolicies(selectedAssignedDrugs:DrugPolicy)
+    + <<override>> DoWindowContents(inRect:Rect) : void
+    + <<override>> PostOpen() : void
+    + <<override>> PreClose() : void
+    + {static} DoNameInputRect(rect:Rect, name:string) : void
+}
+Window <|-- Dialog_ManageDrugPolicies
+Dialog_ManageDrugPolicies --> "InitialSize" Vector2
+@enduml

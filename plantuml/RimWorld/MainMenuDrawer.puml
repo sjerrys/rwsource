@@ -1,0 +1,9 @@
+@startuml
+class MainMenuDrawer <<static>> {
+    + {static} Init() : void
+    + {static} MainMenuOnGUI() : void
+    + {static} DoMainMenuControls(rect:Rect, anyMapFiles:bool) : void
+    + {static} DoExpansionIcons() : void
+    + {static} DoTranslationInfoRect(outRect:Rect) : void
+}
+@enduml

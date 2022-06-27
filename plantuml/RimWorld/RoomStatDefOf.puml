@@ -1,0 +1,14 @@
+@startuml
+class RoomStatDefOf <<static>> {
+    {static} RoomStatDefOf()
+}
+RoomStatDefOf --> "Cleanliness" RoomStatDef
+RoomStatDefOf --> "Wealth" RoomStatDef
+RoomStatDefOf --> "Space" RoomStatDef
+RoomStatDefOf --> "Beauty" RoomStatDef
+RoomStatDefOf --> "Impressiveness" RoomStatDef
+RoomStatDefOf --> "InfectionChanceFactor" RoomStatDef
+RoomStatDefOf --> "ResearchSpeedFactor" RoomStatDef
+RoomStatDefOf --> "GraveVisitingJoyGainFactor" RoomStatDef
+RoomStatDefOf --> "FoodPoisonChance" RoomStatDef
+@enduml

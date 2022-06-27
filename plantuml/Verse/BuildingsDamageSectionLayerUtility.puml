@@ -1,0 +1,12 @@
+@startuml
+class BuildingsDamageSectionLayerUtility <<static>> {
+    + {static} Notify_BuildingHitPointsChanged(b:Building, oldHitPoints:int) : void
+    + {static} UsesLinkableCornersAndEdges(b:Building) : bool
+    + {static} GetScratchMats(b:Building) : IList<Material>
+    + {static} GetAvailableOverlays(b:Building) : List<DamageOverlay>
+    + {static} GetCornerMats(topLeft:Material, topRight:Material, botRight:Material, botLeft:Material, b:Building) : void
+    + {static} GetOverlays(b:Building) : List<DamageOverlay>
+    + {static} GetDamageRect(b:Building) : Rect
+    + {static} DebugDraw() : void
+}
+@enduml

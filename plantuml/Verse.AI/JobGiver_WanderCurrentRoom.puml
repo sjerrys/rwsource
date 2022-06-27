@@ -1,0 +1,6 @@
+@startuml
+class JobGiver_WanderCurrentRoom {
+    + JobGiver_WanderCurrentRoom()
+}
+JobGiver_Wander <|-- JobGiver_WanderCurrentRoom
+@enduml

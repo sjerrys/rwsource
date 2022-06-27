@@ -1,0 +1,6 @@
+@startuml
+class Blueprint_Door {
+    + <<override>> Draw() : void
+}
+Blueprint_Build <|-- Blueprint_Door
+@enduml

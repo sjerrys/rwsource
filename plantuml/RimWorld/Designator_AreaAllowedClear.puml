@@ -1,0 +1,8 @@
+@startuml
+class Designator_AreaAllowedClear {
+    + Designator_AreaAllowedClear()
+    + <<override>> CanDesignateCell(c:IntVec3) : AcceptanceReport
+    + <<override>> DesignateSingleCell(c:IntVec3) : void
+}
+Designator_AreaAllowed <|-- Designator_AreaAllowedClear
+@enduml

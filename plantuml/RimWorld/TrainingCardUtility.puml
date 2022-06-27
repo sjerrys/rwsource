@@ -1,0 +1,8 @@
+@startuml
+class TrainingCardUtility <<static>> {
+    + <<const>> RowHeight : float = 28f
+    + {static} DrawTrainingCard(rect:Rect, pawn:Pawn) : void
+    + {static} TotalHeightForPawn(p:Pawn) : float
+    + {static} DoTrainableCheckbox(rect:Rect, pawn:Pawn, td:TrainableDef, canTrain:AcceptanceReport, drawLabel:bool, doTooltip:bool) : void
+}
+@enduml

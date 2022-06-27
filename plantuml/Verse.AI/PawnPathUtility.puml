@@ -1,0 +1,9 @@
+@startuml
+class PawnPathUtility <<static>> {
+    + {static} FirstBlockingBuilding(path:PawnPath, cellBefore:IntVec3, pawn:Pawn) : Thing
+    + {static} FinalWalkableNonDoorCell(path:PawnPath, map:Map) : IntVec3
+    + {static} LastCellBeforeBlockerOrFinalCell(path:PawnPath, map:Map) : IntVec3
+    + {static} TryFindLastCellBeforeBlockingDoor(path:PawnPath, pawn:Pawn, result:IntVec3) : bool
+    + {static} TryFindCellAtIndex(path:PawnPath, index:int, result:IntVec3) : bool
+}
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+abstract class Designator_Plants {
+    + <<override>> DraggableDimensions : int <<get>>
+    + Designator_Plants()
+    + <<override>> CanDesignateThing(t:Thing) : AcceptanceReport
+    + <<override>> CanDesignateCell(c:IntVec3) : AcceptanceReport
+    + <<override>> DesignateSingleCell(c:IntVec3) : void
+    + <<override>> DesignateThing(t:Thing) : void
+    + <<override>> SelectedUpdate() : void
+}
+Designator <|-- Designator_Plants
+@enduml

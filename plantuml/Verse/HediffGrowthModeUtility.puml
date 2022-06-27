@@ -1,0 +1,5 @@
+@startuml
+class HediffGrowthModeUtility <<static>> {
+    + {static} GetLabel(m:HediffGrowthMode) : string
+}
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class LordJob_AssistColony {
+    + LordJob_AssistColony()
+    + LordJob_AssistColony(faction:Faction, fallbackLocation:IntVec3)
+    + <<override>> CreateGraph() : StateGraph
+    + <<override>> ExposeData() : void
+}
+LordJob <|-- LordJob_AssistColony
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class SitePartWorker_ConditionCauser_ClimateAdjuster {
+    + <<override>> Notify_GeneratedByQuestGen(part:SitePart, slate:Slate, outExtraDescriptionRules:List<Rule>, outExtraDescriptionConstants:Dictionary<string, string>) : void
+}
+SitePartWorker_ConditionCauser <|-- SitePartWorker_ConditionCauser_ClimateAdjuster
+@enduml

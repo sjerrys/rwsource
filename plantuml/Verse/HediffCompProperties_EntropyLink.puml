@@ -1,0 +1,6 @@
+@startuml
+class HediffCompProperties_EntropyLink {
+    + entropyTransferAmount : float
+}
+HediffCompProperties <|-- HediffCompProperties_EntropyLink
+@enduml

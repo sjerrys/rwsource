@@ -1,0 +1,6 @@
+@startuml
+class Dialog_RenameZone {
+    + Dialog_RenameZone(zone:Zone)
+}
+Dialog_Rename <|-- Dialog_RenameZone
+@enduml

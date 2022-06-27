@@ -1,0 +1,11 @@
+@startuml
+class WeaponTraitWorker {
+    + <<virtual>> Notify_Bonded(pawn:Pawn) : void
+    + <<virtual>> Notify_Equipped(pawn:Pawn) : void
+    + <<virtual>> Notify_EquipmentLost(pawn:Pawn) : void
+    + <<virtual>> Notify_KilledPawn(pawn:Pawn) : void
+    + <<virtual>> Notify_Unbonded(pawn:Pawn) : void
+    + <<virtual>> Notify_OtherWeaponWielded(weapon:CompBladelinkWeapon) : void
+}
+WeaponTraitWorker --> "def" WeaponTraitDef
+@enduml

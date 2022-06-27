@@ -1,0 +1,6 @@
+@startuml
+class TransitionAction_WakeAll {
+    + <<override>> DoAction(trans:Transition) : void
+}
+TransitionAction <|-- TransitionAction_WakeAll
+@enduml

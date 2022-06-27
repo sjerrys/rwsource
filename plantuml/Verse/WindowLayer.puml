@@ -1,0 +1,8 @@
+@startuml
+enum WindowLayer {
+    GameUI,
+    Dialog,
+    SubSuper,
+    Super,
+}
+@enduml

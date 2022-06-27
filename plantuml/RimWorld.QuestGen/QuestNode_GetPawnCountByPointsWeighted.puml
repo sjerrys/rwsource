@@ -1,0 +1,15 @@
+@startuml
+class QuestNode_GetPawnCountByPointsWeighted {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GetPawnCountByPointsWeighted
+QuestNode_GetPawnCountByPointsWeighted --> "storeAs<string>" "SlateRef`1"
+QuestNode_GetPawnCountByPointsWeighted --> "challengeRating<int>" "SlateRef`1"
+QuestNode_GetPawnCountByPointsWeighted --> "maxCountOneStar<int>" "SlateRef`1"
+QuestNode_GetPawnCountByPointsWeighted --> "maxCountTwoStar<int>" "SlateRef`1"
+QuestNode_GetPawnCountByPointsWeighted --> "maxCountThreeStar<int>" "SlateRef`1"
+QuestNode_GetPawnCountByPointsWeighted --> "pointsCurve<SimpleCurve>" "SlateRef`1"
+QuestNode_GetPawnCountByPointsWeighted --> "chancesCurve<SimpleCurve>" "SlateRef`1"
+QuestNode_GetPawnCountByPointsWeighted --> "roundRandom<bool>" "SlateRef`1"
+@enduml

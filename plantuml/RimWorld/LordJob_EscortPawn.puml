@@ -1,0 +1,12 @@
+@startuml
+class LordJob_EscortPawn {
+    + <<override>> AlwaysShowWeapon : bool <<get>>
+    + LordJob_EscortPawn()
+    + LordJob_EscortPawn(escortee:Pawn, shuttle:Thing)
+    + <<override>> CreateGraph() : StateGraph
+    + <<override>> ExposeData() : void
+}
+LordJob <|-- LordJob_EscortPawn
+LordJob_EscortPawn --> "escortee" Pawn
+LordJob_EscortPawn --> "shuttle" Thing
+@enduml

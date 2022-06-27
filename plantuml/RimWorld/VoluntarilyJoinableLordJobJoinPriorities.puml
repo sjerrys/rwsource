@@ -1,0 +1,7 @@
+@startuml
+class VoluntarilyJoinableLordJobJoinPriorities <<static>> {
+    + {static} SocialGathering : float = 20f
+    + {static} MarriageCeremonyGuest : float = 20f
+    + {static} MarriageCeremonyFiance : float = 100f
+}
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+class StoryWatcher <<sealed>> {
+    + StoryWatcherTick() : void
+    + ExposeData() : void
+}
+IExposable <|-- StoryWatcher
+StoryWatcher o-> "statsRecord" StatsRecord
+StoryWatcher o-> "watcherAdaptation" StoryWatcher_Adaptation
+StoryWatcher o-> "watcherPopAdaptation" StoryWatcher_PopAdaptation
+@enduml

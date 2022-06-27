@@ -1,0 +1,10 @@
+@startuml
+class StatPart_Stuff {
+    + <<override>> ExplanationPart(req:StatRequest) : string
+    + <<override>> TransformValue(req:StatRequest, value:float) : void
+    + <<override>> GetInfoCardHyperlinks(req:StatRequest) : IEnumerable<Dialog_InfoCard.Hyperlink>
+}
+StatPart <|-- StatPart_Stuff
+StatPart_Stuff --> "stuffPowerStat" StatDef
+StatPart_Stuff --> "multiplierStat" StatDef
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class CellIndices {
+    + NumGridCells : int <<get>>
+    + CellIndices(map:Map)
+    + CellToIndex(c:IntVec3) : int
+    + CellToIndex(x:int, z:int) : int
+    + IndexToCell(ind:int) : IntVec3
+}
+@enduml

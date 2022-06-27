@@ -1,0 +1,21 @@
+@startuml
+class WidgetRow {
+    + <<const>> IconSize : float = 24f
+    + <<const>> DefaultGap : float = 4f
+    + <<const>> LabelGap : float = 2f
+    + <<const>> ButtonExtraSpace : float = 16f
+    + FinalX : float <<get>>
+    + FinalY : float <<get>>
+    + WidgetRow()
+    + WidgetRow(x:float, y:float, growDirection:UIDirection, maxWidth:float, gap:float)
+    + Init(x:float, y:float, growDirection:UIDirection, maxWidth:float, gap:float) : void
+    + Gap(width:float) : void
+    + ButtonIcon(tex:Texture2D, tooltip:string, mouseoverColor:Color?, doMouseoverSound:bool) : bool
+    + GapButtonIcon() : void
+    + ToggleableIcon(toggleable:bool, tex:Texture2D, tooltip:string, mouseoverSound:SoundDef, tutorTag:string) : void
+    + Icon(tex:Texture2D, tooltip:string) : Rect
+    + ButtonText(label:string, tooltip:string, drawBackground:bool, doMouseoverSound:bool) : bool
+    + Label(text:string, width:float) : Rect
+    + FillableBar(width:float, height:float, fillPct:float, label:string, fillTex:Texture2D, bgTex:Texture2D) : Rect
+}
+@enduml

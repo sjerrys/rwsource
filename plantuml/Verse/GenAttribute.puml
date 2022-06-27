@@ -1,0 +1,7 @@
+@startuml
+class GenAttribute <<static>> {
+    + {static} HasAttribute(memberInfo:MemberInfo) : bool
+    + {static} TryGetAttribute(memberInfo:MemberInfo, customAttribute:T) : bool
+    + {static} TryGetAttribute(memberInfo:MemberInfo) : T
+}
+@enduml

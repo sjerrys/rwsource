@@ -1,0 +1,5 @@
+@startuml
+class HibernatableStateDef {
+}
+Def <|-- HibernatableStateDef
+@enduml

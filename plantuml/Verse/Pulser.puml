@@ -1,0 +1,6 @@
+@startuml
+class Pulser <<static>> {
+    + {static} PulseBrightness(frequency:float, amplitude:float) : float
+    + {static} PulseBrightness(frequency:float, amplitude:float, time:float) : float
+}
+@enduml

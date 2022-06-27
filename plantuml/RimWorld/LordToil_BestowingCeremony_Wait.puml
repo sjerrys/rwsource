@@ -1,0 +1,10 @@
+@startuml
+class LordToil_BestowingCeremony_Wait {
+    + LordToil_BestowingCeremony_Wait(target:Pawn)
+    + <<override>> Init() : void
+    + <<override>> DrawPawnGUIOverlay(pawn:Pawn) : void
+    + <<override>> ExtraFloatMenuOptions(bestower:Pawn, forPawn:Pawn) : IEnumerable<FloatMenuOption>
+}
+LordToil_Wait <|-- LordToil_BestowingCeremony_Wait
+LordToil_BestowingCeremony_Wait --> "target" Pawn
+@enduml

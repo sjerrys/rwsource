@@ -1,0 +1,7 @@
+@startuml
+enum QuestPartState {
+    NeverEnabled,
+    Enabled,
+    Disabled,
+}
+@enduml

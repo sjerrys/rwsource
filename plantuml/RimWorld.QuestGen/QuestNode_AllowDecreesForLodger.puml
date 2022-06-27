@@ -1,0 +1,8 @@
+@startuml
+class QuestNode_AllowDecreesForLodger {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_AllowDecreesForLodger
+QuestNode_AllowDecreesForLodger --> "lodger<Pawn>" "SlateRef`1"
+@enduml

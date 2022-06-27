@@ -1,0 +1,12 @@
+@startuml
+class Scale {
+    + X : double <<get>> <<set>>
+    + Y : double <<get>> <<set>>
+    + Z : double <<get>> <<set>>
+    + Scale()
+    + Scale(input:ModuleBase)
+    + Scale(x:double, y:double, z:double, input:ModuleBase)
+    + <<override>> GetValue(x:double, y:double, z:double) : double
+}
+ModuleBase <|-- Scale
+@enduml

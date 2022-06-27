@@ -1,0 +1,5 @@
+@startuml
+class GenDictionary <<static>> {
+    + {static} ToStringFullContents(dict:Dictionary<K, V>) : string
+}
+@enduml

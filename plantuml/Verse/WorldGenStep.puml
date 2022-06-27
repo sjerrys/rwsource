@@ -1,0 +1,9 @@
+@startuml
+abstract class WorldGenStep {
+    + {abstract} SeedPart : int <<get>>
+    + {abstract} GenerateFresh(seed:string) : void
+    + <<virtual>> GenerateWithoutWorldData(seed:string) : void
+    + <<virtual>> GenerateFromScribe(seed:string) : void
+}
+WorldGenStep --> "def" WorldGenStepDef
+@enduml

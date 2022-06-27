@@ -1,0 +1,21 @@
+@startuml
+class PawnCapacitiesHandler {
+    + CanBeAwake : bool <<get>>
+    + PawnCapacitiesHandler(pawn:Pawn)
+    + Clear() : void
+    + GetLevel(capacity:PawnCapacityDef) : float
+    + CapableOf(capacity:PawnCapacityDef) : bool
+    + Notify_CapacityLevelsDirty() : void
+}
+enum CacheStatus {
+    Uncached,
+    Caching,
+    Cached,
+}
+class CacheElement {
+    + value : float
+}
+PawnCapacitiesHandler +-- CacheStatus
+PawnCapacitiesHandler +-- CacheElement
+CacheElement --> "status" CacheStatus
+@enduml

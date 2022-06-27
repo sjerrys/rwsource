@@ -1,0 +1,8 @@
+@startuml
+class Thought_DecreeUnmet {
+    + <<override>> LabelCap : string <<get>>
+    + <<override>> Description : string <<get>>
+    + <<override>> MoodOffset() : float
+}
+Thought_Situational <|-- Thought_DecreeUnmet
+@enduml

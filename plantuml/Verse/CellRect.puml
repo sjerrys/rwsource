@@ -1,0 +1,94 @@
+@startuml
+class CellRect <<struct>> {
+    + minX : int
+    + maxX : int
+    + minZ : int
+    + maxZ : int
+    + IsEmpty : bool <<get>>
+    + Area : int <<get>>
+    + Width : int <<get>> <<set>>
+    + Height : int <<get>> <<set>>
+    + EdgeCellsCount : int <<get>>
+    + GetIterator() : CellRectIterator
+    + CellRect(minX:int, minZ:int, width:int, height:int)
+    + {static} WholeMap(map:Map) : CellRect
+    + {static} FromLimits(minX:int, minZ:int, maxX:int, maxZ:int) : CellRect
+    + {static} FromLimits(first:IntVec3, second:IntVec3) : CellRect
+    + {static} CenteredOn(center:IntVec3, radius:int) : CellRect
+    + {static} CenteredOn(center:IntVec3, width:int, height:int) : CellRect
+    + {static} ViewRect(map:Map) : CellRect
+    + {static} SingleCell(c:IntVec3) : CellRect
+    + InBounds(map:Map) : bool
+    + FullyContainedWithin(within:CellRect) : bool
+    + Overlaps(other:CellRect) : bool
+    + IsOnEdge(c:IntVec3) : bool
+    + IsOnEdge(c:IntVec3, rot:Rot4) : bool
+    + IsOnEdge(c:IntVec3, edgeWidth:int) : bool
+    + IsCorner(c:IntVec3) : bool
+    + GetClosestEdge(c:IntVec3) : Rot4
+    + ClipInsideMap(map:Map) : CellRect
+    + ClipInsideRect(otherRect:CellRect) : CellRect
+    + Contains(c:IntVec3) : bool
+    + ClosestDistSquaredTo(c:IntVec3) : float
+    + ClosestCellTo(c:IntVec3) : IntVec3
+    + InNoBuildEdgeArea(map:Map) : bool
+    + GetEdgeCells(dir:Rot4) : IEnumerable<IntVec3>
+    + TryFindRandomInnerRectTouchingEdge(size:IntVec2, rect:CellRect, predicate:Predicate<CellRect>) : bool
+    + TryFindRandomInnerRect(size:IntVec2, rect:CellRect, predicate:Predicate<CellRect>) : bool
+    + ExpandedBy(dist:int) : CellRect
+    + ContractedBy(dist:int) : CellRect
+    + MovedBy(offset:IntVec2) : CellRect
+    + MovedBy(offset:IntVec3) : CellRect
+    + IndexOf(location:IntVec3) : int
+    + DebugDraw() : void
+    + GetEnumerator() : Enumerator
+    GetEnumerator() : IEnumerator<IntVec3>
+    GetEnumerator() : IEnumerator
+    + <<override>> ToString() : string
+    + {static} FromString(str:string) : CellRect
+    + <<override>> GetHashCode() : int
+    + <<override>> Equals(obj:object) : bool
+    + Equals(other:CellRect) : bool
+}
+class "IEquatable`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+class Enumerator <<struct>> {
+    Current : object <<get>>
+    + Enumerator(ir:CellRect)
+    + MoveNext() : bool
+    + Reset() : void
+    Dispose() : void
+}
+class CellRectIterator <<struct>> {
+    + CellRectIterator(cr:CellRect)
+    + MoveNext() : void
+    + Done() : bool
+}
+class "IEnumerator`1"<T> {
+}
+"IEquatable`1" "<CellRect>" <|-- CellRect
+"IEnumerable`1" "<IntVec3>" <|-- CellRect
+IEnumerable <|-- CellRect
+CellRect --> "Empty" CellRect
+CellRect --> "Corners<IntVec3>" "IEnumerable`1"
+CellRect --> "BottomLeft" IntVec3
+CellRect --> "TopRight" IntVec3
+CellRect --> "RandomCell" IntVec3
+CellRect --> "CenterCell" IntVec3
+CellRect --> "CenterVector3" Vector3
+CellRect --> "RandomVector3" Vector3
+CellRect --> "Cells<IntVec3>" "IEnumerable`1"
+CellRect --> "Cells2D<IntVec2>" "IEnumerable`1"
+CellRect --> "EdgeCells<IntVec3>" "IEnumerable`1"
+CellRect --> "AdjacentCellsCardinal<IntVec3>" "IEnumerable`1"
+CellRect --> "AdjacentCells<IntVec3>" "IEnumerable`1"
+CellRect +-- Enumerator
+"IEnumerator`1" "<IntVec3>" <|-- Enumerator
+IEnumerator <|-- Enumerator
+IDisposable <|-- Enumerator
+Enumerator --> "Current" IntVec3
+CellRect +-- CellRectIterator
+CellRectIterator --> "Current" IntVec3
+@enduml

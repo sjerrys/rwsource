@@ -1,0 +1,9 @@
+@startuml
+class ThinkNode_ConditionalRequireCapacities {
+    + <<override>> DeepCopy(resolve:bool) : ThinkNode
+}
+class "List`1"<T> {
+}
+ThinkNode_Conditional <|-- ThinkNode_ConditionalRequireCapacities
+ThinkNode_ConditionalRequireCapacities --> "requiredCapacities<PawnCapacityDef>" "List`1"
+@enduml

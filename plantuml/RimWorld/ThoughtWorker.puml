@@ -1,0 +1,10 @@
+@startuml
+abstract class ThoughtWorker {
+    + <<virtual>> PostProcessLabel(p:Pawn, label:string) : string
+    + <<virtual>> PostProcessDescription(p:Pawn, description:string) : string
+    + CurrentState(p:Pawn) : ThoughtState
+    + CurrentSocialState(p:Pawn, otherPawn:Pawn) : ThoughtState
+    + <<virtual>> MoodMultiplier(p:Pawn) : float
+}
+ThoughtWorker --> "def" ThoughtDef
+@enduml

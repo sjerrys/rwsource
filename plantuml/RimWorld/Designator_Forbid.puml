@@ -1,0 +1,11 @@
+@startuml
+class Designator_Forbid {
+    + <<override>> DraggableDimensions : int <<get>>
+    + Designator_Forbid()
+    + <<override>> CanDesignateCell(c:IntVec3) : AcceptanceReport
+    + <<override>> DesignateSingleCell(c:IntVec3) : void
+    + <<override>> CanDesignateThing(t:Thing) : AcceptanceReport
+    + <<override>> DesignateThing(t:Thing) : void
+}
+Designator <|-- Designator_Forbid
+@enduml

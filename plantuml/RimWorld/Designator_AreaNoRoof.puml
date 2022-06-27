@@ -1,0 +1,11 @@
+@startuml
+class Designator_AreaNoRoof {
+    + <<override>> DraggableDimensions : int <<get>>
+    + <<override>> DragDrawMeasurements : bool <<get>>
+    + Designator_AreaNoRoof()
+    + <<override>> CanDesignateCell(c:IntVec3) : AcceptanceReport
+    + <<override>> DesignateSingleCell(c:IntVec3) : void
+    + <<override>> SelectedUpdate() : void
+}
+Designator_Area <|-- Designator_AreaNoRoof
+@enduml

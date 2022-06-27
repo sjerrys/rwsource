@@ -1,0 +1,6 @@
+@startuml
+class JobDriver_CastJump {
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+}
+JobDriver_CastVerbOnceStatic <|-- JobDriver_CastJump
+@enduml

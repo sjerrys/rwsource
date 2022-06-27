@@ -1,0 +1,5 @@
+@startuml
+class IncidentWorker_MakeGameCondition {
+}
+IncidentWorker <|-- IncidentWorker_MakeGameCondition
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+class ExternalHistoryUtility <<static>> {
+    {static} ExternalHistoryUtility()
+    + {static} Load(path:string) : ExternalHistory
+    + {static} GetRandomGameplayID() : string
+    + {static} IsValidGameplayID(ID:string) : bool
+    + {static} GetCurrentUploadDate() : string
+    + {static} GetCurrentUploadTime() : int
+}
+class "IEnumerable`1"<T> {
+}
+ExternalHistoryUtility --> "Files<FileInfo>" "IEnumerable`1"
+@enduml

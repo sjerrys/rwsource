@@ -1,0 +1,11 @@
+@startuml
+class LifeStageAge {
+    + minAge : float
+    + GetIcon(forPawn:Pawn) : Texture2D
+}
+LifeStageAge --> "def" LifeStageDef
+LifeStageAge --> "soundCall" SoundDef
+LifeStageAge --> "soundAngry" SoundDef
+LifeStageAge --> "soundWounded" SoundDef
+LifeStageAge --> "soundDeath" SoundDef
+@enduml

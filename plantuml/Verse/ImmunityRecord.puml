@@ -1,0 +1,11 @@
+@startuml
+class ImmunityRecord {
+    + immunity : float
+    + ExposeData() : void
+    + ImmunityTick(pawn:Pawn, sick:bool, diseaseInstance:Hediff) : void
+    + ImmunityChangePerTick(pawn:Pawn, sick:bool, diseaseInstance:Hediff) : float
+}
+IExposable <|-- ImmunityRecord
+ImmunityRecord --> "hediffDef" HediffDef
+ImmunityRecord --> "source" HediffDef
+@enduml

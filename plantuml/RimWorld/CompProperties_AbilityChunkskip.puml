@@ -1,0 +1,8 @@
+@startuml
+class CompProperties_AbilityChunkskip {
+    + chunkCount : int
+    + scatterRadius : float
+    + CompProperties_AbilityChunkskip()
+}
+CompProperties_AbilityEffect <|-- CompProperties_AbilityChunkskip
+@enduml

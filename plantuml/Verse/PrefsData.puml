@@ -1,0 +1,39 @@
+@startuml
+class PrefsData {
+    + volumeGame : float = 0.8f
+    + volumeMusic : float = 0.4f
+    + volumeAmbient : float = 1f
+    + screenWidth : int
+    + screenHeight : int
+    + fullscreen : bool
+    + uiScale : float = 1f
+    + customCursorEnabled : bool = true
+    + hatsOnlyOnMap : bool
+    + plantWindSway : bool = true
+    + showRealtimeClock : bool
+    + extremeDifficultyUnlocked : bool
+    + adaptiveTrainingEnabled : bool = true
+    + resourceReadoutCategorized : bool
+    + runInBackground : bool
+    + edgeScreenScroll : bool = true
+    + autosaveIntervalDays : float = 1f
+    + testMapSizes : bool
+    + maxNumberOfPlayerSettlements : int = 1
+    + pauseOnLoad : bool
+    + mapDragSensitivity : float = 1.3f
+    + pauseOnUrgentLetter : bool?
+    + devMode : bool
+    + langFolderName : string = "unknown"
+    + logVerbose : bool
+    + pauseOnError : bool
+    + resetModsConfigOnCrash : bool = true
+    + simulateNotOwningRoyalty : bool
+    + Apply() : void
+}
+class "List`1"<T> {
+}
+PrefsData --> "animalNameMode" AnimalNameDisplayMode
+PrefsData o-> "preferredNames<string>" "List`1"
+PrefsData --> "temperatureMode" TemperatureDisplayMode
+PrefsData o-> "automaticPauseMode" AutomaticPauseMode
+@enduml

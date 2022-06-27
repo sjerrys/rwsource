@@ -1,0 +1,15 @@
+@startuml
+abstract class ModRequirement {
+    + packageId : string
+    + displayName : string
+    + {abstract} IsSatisfied : bool <<get>>
+    + {abstract} RequirementTypeLabel : string <<get>>
+    + <<virtual>> Tooltip : string <<get>>
+    + {abstract} OnClicked(window:Page_ModsConfig) : void
+}
+ModRequirement o-> "NotResolved" Texture2D
+ModRequirement o-> "NotInstalled" Texture2D
+ModRequirement o-> "Installed" Texture2D
+ModRequirement o-> "Resolved" Texture2D
+ModRequirement --> "StatusIcon" Texture2D
+@enduml

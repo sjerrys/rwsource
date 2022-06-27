@@ -1,0 +1,9 @@
+@startuml
+class SolidBioDatabase {
+    + {static} Clear() : void
+    + {static} LoadAllBios() : void
+}
+class "List`1"<T> {
+}
+SolidBioDatabase o-> "allBios<PawnBio>" "List`1"
+@enduml

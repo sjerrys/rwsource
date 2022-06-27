@@ -1,0 +1,8 @@
+@startuml
+class Verb_SmokePop {
+    + <<override>> HighlightFieldRadiusAroundTarget(needLOSToCenter:bool) : float
+    + <<override>> DrawHighlight(target:LocalTargetInfo) : void
+    + {static} Pop(comp:CompReloadable) : void
+}
+Verb <|-- Verb_SmokePop
+@enduml

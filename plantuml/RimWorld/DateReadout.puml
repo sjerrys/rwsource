@@ -1,0 +1,8 @@
+@startuml
+class DateReadout <<static>> {
+    + {static} Height : float <<get>>
+    {static} DateReadout()
+    + {static} Reset() : void
+    + {static} DateOnGUI(dateRect:Rect) : void
+}
+@enduml

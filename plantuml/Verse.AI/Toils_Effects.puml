@@ -1,0 +1,5 @@
+@startuml
+class Toils_Effects <<static>> {
+    + {static} MakeSound(soundDef:SoundDef) : Toil
+}
+@enduml

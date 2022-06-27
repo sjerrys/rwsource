@@ -1,0 +1,24 @@
+@startuml
+class MapGenerator <<static>> {
+    + <<const>> ElevationName : string = "Elevation"
+    + <<const>> FertilityName : string = "Fertility"
+    + <<const>> CavesName : string = "Caves"
+    + <<const>> RectOfInterestName : string = "RectOfInterest"
+    + <<const>> UsedRectsName : string = "UsedRects"
+    + <<const>> RectOfInterestTurretsGenStepsCount : string = "RectOfInterestTurretsGenStepsCount"
+    + {static} GenerateMap(mapSize:IntVec3, parent:MapParent, mapGenerator:MapGeneratorDef, extraGenStepDefs:IEnumerable<GenStepWithParams>, extraInitBeforeContentGen:Action<Map>) : Map
+    + {static} GenerateContentsIntoMap(genStepDefs:IEnumerable<GenStepWithParams>, map:Map, seed:int) : void
+    + {static} GetVar(name:string) : T
+    + {static} TryGetVar(name:string, var:T) : bool
+    + {static} SetVar(name:string, var:T) : void
+    + {static} FloatGridNamed(name:string) : MapGenFloatGrid
+}
+class "List`1"<T> {
+}
+MapGenerator --> "mapBeingGenerated" Map
+MapGenerator o-> "rootsToUnfog<IntVec3>" "List`1"
+MapGenerator --> "Elevation" MapGenFloatGrid
+MapGenerator --> "Fertility" MapGenFloatGrid
+MapGenerator --> "Caves" MapGenFloatGrid
+MapGenerator --> "PlayerStartSpot" IntVec3
+@enduml

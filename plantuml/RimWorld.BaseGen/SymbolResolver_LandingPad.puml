@@ -1,0 +1,6 @@
+@startuml
+class SymbolResolver_LandingPad {
+    + <<override>> Resolve(rp:ResolveParams) : void
+}
+SymbolResolver <|-- SymbolResolver_LandingPad
+@enduml

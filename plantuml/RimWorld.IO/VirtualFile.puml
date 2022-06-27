@@ -1,0 +1,12 @@
+@startuml
+abstract class VirtualFile {
+    + {abstract} Name : string <<get>>
+    + {abstract} FullPath : string <<get>>
+    + {abstract} Exists : bool <<get>>
+    + {abstract} Length : long <<get>>
+    + {abstract} CreateReadStream() : Stream
+    + {abstract} ReadAllText() : string
+    + {abstract} ReadAllLines() : string[]
+    + {abstract} ReadAllBytes() : byte[]
+}
+@enduml

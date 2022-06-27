@@ -1,0 +1,6 @@
+@startuml
+enum LowPassFilterProperty {
+    Cutoff,
+    Resonance,
+}
+@enduml

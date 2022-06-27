@@ -1,0 +1,17 @@
+@startuml
+class QualityRange <<struct>> {
+    + QualityRange(min:QualityCategory, max:QualityCategory)
+    + Includes(p:QualityCategory) : bool
+    + {static} FromString(s:string) : QualityRange
+    + <<override>> ToString() : string
+    + <<override>> GetHashCode() : int
+    + <<override>> Equals(obj:object) : bool
+    + Equals(other:QualityRange) : bool
+}
+class "IEquatable`1"<T> {
+}
+"IEquatable`1" "<QualityRange>" <|-- QualityRange
+QualityRange --> "min" QualityCategory
+QualityRange --> "max" QualityCategory
+QualityRange --> "All" QualityRange
+@enduml

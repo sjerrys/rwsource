@@ -1,0 +1,6 @@
+@startuml
+class PawnInventoryGenerator <<static>> {
+    + {static} GenerateInventoryFor(p:Pawn, request:PawnGenerationRequest) : void
+    + {static} GiveRandomFood(p:Pawn) : void
+}
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+class ModDependency {
+    + downloadUrl : string
+    + steamWorkshopUrl : string
+    + <<override>> RequirementTypeLabel : string <<get>>
+    + <<override>> IsSatisfied : bool <<get>>
+    + <<override>> Tooltip : string <<get>>
+    + Url : string <<get>>
+    + <<override>> OnClicked(window:Page_ModsConfig) : void
+}
+ModRequirement <|-- ModDependency
+ModDependency --> "StatusIcon" Texture2D
+@enduml

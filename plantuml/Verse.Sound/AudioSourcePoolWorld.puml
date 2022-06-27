@@ -1,0 +1,6 @@
+@startuml
+class AudioSourcePoolWorld {
+    + AudioSourcePoolWorld()
+    + GetSourceWorld() : AudioSource
+}
+@enduml

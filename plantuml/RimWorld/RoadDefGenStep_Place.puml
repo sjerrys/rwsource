@@ -1,0 +1,10 @@
+@startuml
+class RoadDefGenStep_Place {
+    + proximitySpacing : int
+    + onlyIfOriginAllows : bool
+    + suppressOnTerrainTag : string
+    + <<override>> Place(map:Map, position:IntVec3, rockDef:TerrainDef, origin:IntVec3, distance:GenStep_Roads.DistanceElement[,]) : void
+}
+RoadDefGenStep_Bulldoze <|-- RoadDefGenStep_Place
+RoadDefGenStep_Place --> "place" BuildableDef
+@enduml

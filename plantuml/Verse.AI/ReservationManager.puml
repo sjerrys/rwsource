@@ -1,0 +1,40 @@
+@startuml
+class ReservationManager <<sealed>> {
+    + <<const>> StackCount_All : int
+    + ReservationManager(map:Map)
+    + ExposeData() : void
+    + CanReserve(claimant:Pawn, target:LocalTargetInfo, maxPawns:int, stackCount:int, layer:ReservationLayerDef, ignoreOtherReservations:bool) : bool
+    + CanReserveStack(claimant:Pawn, target:LocalTargetInfo, maxPawns:int, layer:ReservationLayerDef, ignoreOtherReservations:bool) : int
+    + Reserve(claimant:Pawn, job:Job, target:LocalTargetInfo, maxPawns:int, stackCount:int, layer:ReservationLayerDef, errorOnFailed:bool) : bool
+    + Release(target:LocalTargetInfo, claimant:Pawn, job:Job) : void
+    + ReleaseAllForTarget(t:Thing) : void
+    + ReleaseClaimedBy(claimant:Pawn, job:Job) : void
+    + ReleaseAllClaimedBy(claimant:Pawn) : void
+    + FirstReservationFor(claimant:Pawn) : LocalTargetInfo
+    + IsReservedByAnyoneOf(target:LocalTargetInfo, faction:Faction) : bool
+    + IsReservedAndRespected(target:LocalTargetInfo, claimant:Pawn) : bool
+    + FirstRespectedReserver(target:LocalTargetInfo, claimant:Pawn) : Pawn
+    + ReservedBy(target:LocalTargetInfo, claimant:Pawn, job:Job) : bool
+    + ReservedBy(target:LocalTargetInfo, claimant:Pawn, targetAIsNot:LocalTargetInfo?, targetBIsNot:LocalTargetInfo?, targetCIsNot:LocalTargetInfo?) : bool
+    + AllReservedThings() : IEnumerable<Thing>
+}
+class Reservation {
+    + MaxPawns : int <<get>>
+    + StackCount : int <<get>>
+    + Reservation()
+    + Reservation(claimant:Pawn, job:Job, maxPawns:int, stackCount:int, target:LocalTargetInfo, layer:ReservationLayerDef)
+    + ExposeData() : void
+    + <<override>> ToString() : string
+}
+class "List`1"<T> {
+}
+IExposable <|-- ReservationManager
+ReservationManager --> "ReservationsReadOnly<Reservation>" "List`1"
+ReservationManager +-- Reservation
+IExposable <|-- Reservation
+Reservation --> "Claimant" Pawn
+Reservation --> "Job" Job
+Reservation --> "Target" LocalTargetInfo
+Reservation --> "Layer" ReservationLayerDef
+Reservation --> "Faction" Faction
+@enduml

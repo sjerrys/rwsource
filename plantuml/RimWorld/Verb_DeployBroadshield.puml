@@ -1,0 +1,6 @@
+@startuml
+class Verb_DeployBroadshield {
+    + {static} Deploy(comp:CompReloadable) : bool
+}
+Verb <|-- Verb_DeployBroadshield
+@enduml

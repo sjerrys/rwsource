@@ -1,0 +1,9 @@
+@startuml
+abstract class WorkGiver_Haul {
+    + <<override>> MaxPathDanger(pawn:Pawn) : Danger
+    + <<override>> PotentialWorkThingsGlobal(pawn:Pawn) : IEnumerable<Thing>
+    + <<override>> ShouldSkip(pawn:Pawn, forced:bool) : bool
+    + <<override>> JobOnThing(pawn:Pawn, t:Thing, forced:bool) : Job
+}
+WorkGiver_Scanner <|-- WorkGiver_Haul
+@enduml

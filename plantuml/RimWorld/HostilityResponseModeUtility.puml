@@ -1,0 +1,8 @@
+@startuml
+class HostilityResponseModeUtility <<static>> {
+    + {static} GetIcon(response:HostilityResponseMode) : Texture2D
+    + {static} GetNextResponse(pawn:Pawn) : HostilityResponseMode
+    + {static} GetLabel(response:HostilityResponseMode) : string
+    + {static} DrawResponseButton(rect:Rect, pawn:Pawn, paintable:bool) : void
+}
+@enduml

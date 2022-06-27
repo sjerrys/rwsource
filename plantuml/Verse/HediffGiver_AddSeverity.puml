@@ -1,0 +1,9 @@
+@startuml
+class HediffGiver_AddSeverity {
+    + severityAmount : float
+    + mtbHours : float
+    + <<override>> OnIntervalPassed(pawn:Pawn, cause:Hediff) : void
+    + <<override>> ConfigErrors() : IEnumerable<string>
+}
+HediffGiver <|-- HediffGiver_AddSeverity
+@enduml

@@ -1,0 +1,22 @@
+@startuml
+class Trait {
+    + Degree : int <<get>>
+    + Label : string <<get>>
+    + LabelCap : string <<get>>
+    + ScenForced : bool <<get>>
+    + Trait()
+    + Trait(def:TraitDef, degree:int, forced:bool)
+    + ExposeData() : void
+    + OffsetOfStat(stat:StatDef) : float
+    + MultiplierOfStat(stat:StatDef) : float
+    + TipString(pawn:Pawn) : string
+    + <<override>> ToString() : string
+    + Notify_MentalStateEndedOn(pawn:Pawn, causedByMood:bool) : void
+    + Notify_MentalStateEndedOn(pawn:Pawn) : void
+    + GetDisabledWorkTypes() : IEnumerable<WorkTypeDef>
+}
+IExposable <|-- Trait
+Trait --> "pawn" Pawn
+Trait --> "def" TraitDef
+Trait --> "CurrentData" TraitDegreeData
+@enduml

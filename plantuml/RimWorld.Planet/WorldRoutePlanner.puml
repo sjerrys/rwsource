@@ -1,0 +1,17 @@
+@startuml
+class WorldRoutePlanner {
+    + Active : bool <<get>>
+    + FormingCaravan : bool <<get>>
+    + Start() : void
+    + Start(formCaravanDialog:Dialog_FormCaravan) : void
+    + Stop() : void
+    + WorldRoutePlannerUpdate() : void
+    + WorldRoutePlannerOnGUI() : void
+    + DoRoutePlannerButton(curBaseY:float) : void
+    + GetTicksToWaypoint(index:int) : int
+    + TryRemoveWaypoint(point:RoutePlannerWaypoint, playSound:bool) : void
+}
+class "List`1"<T> {
+}
+WorldRoutePlanner o-> "waypoints<RoutePlannerWaypoint>" "List`1"
+@enduml

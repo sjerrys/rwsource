@@ -1,0 +1,6 @@
+@startuml
+class PlaceWorker_MeditationSpot {
+    + <<override>> DrawGhost(def:ThingDef, center:IntVec3, rot:Rot4, ghostCol:Color, thing:Thing) : void
+}
+PlaceWorker <|-- PlaceWorker_MeditationSpot
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class CompAbilityEffect_GiveMentalState {
+    + <<override>> Apply(target:LocalTargetInfo, dest:LocalTargetInfo) : void
+    + <<override>> Valid(target:LocalTargetInfo, throwMessages:bool) : bool
+    + {static} TryGiveMentalStateWithDuration(def:MentalStateDef, p:Pawn, ability:AbilityDef, multiplierStat:StatDef) : void
+}
+CompAbilityEffect <|-- CompAbilityEffect_GiveMentalState
+CompAbilityEffect_GiveMentalState --> "Props" CompProperties_AbilityGiveMentalState
+@enduml

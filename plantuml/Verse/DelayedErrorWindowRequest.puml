@@ -1,0 +1,11 @@
+@startuml
+class DelayedErrorWindowRequest <<static>> {
+    + {static} DelayedErrorWindowRequestOnGUI() : void
+    + {static} Add(text:string, title:string) : void
+}
+class Request <<struct>> {
+    + text : string
+    + title : string
+}
+DelayedErrorWindowRequest +-- Request
+@enduml

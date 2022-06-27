@@ -1,0 +1,10 @@
+@startuml
+class CompToggleDrawAffectedMeditationFoci {
+    + Enabled : bool <<get>>
+    + <<override>> PostSpawnSetup(respawningAfterLoad:bool) : void
+    + <<override>> CompGetGizmosExtra() : IEnumerable<Gizmo>
+    + <<override>> PostExposeData() : void
+}
+ThingComp <|-- CompToggleDrawAffectedMeditationFoci
+CompToggleDrawAffectedMeditationFoci --> "Props" CompProperties_ToggleDrawAffectedMeditationFoci
+@enduml

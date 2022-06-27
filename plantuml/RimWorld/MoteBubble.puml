@@ -1,0 +1,9 @@
+@startuml
+class MoteBubble {
+    + SetupMoteBubble(icon:Texture2D, target:Pawn) : void
+    + <<override>> Draw() : void
+}
+MoteDualAttached <|-- MoteBubble
+MoteBubble --> "iconMat" Material
+MoteBubble --> "arrowTarget" Pawn
+@enduml

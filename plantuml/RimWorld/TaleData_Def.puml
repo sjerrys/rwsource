@@ -1,0 +1,9 @@
+@startuml
+class TaleData_Def {
+    + <<override>> ExposeData() : void
+    + <<override>> GetRules(prefix:string) : IEnumerable<Rule>
+    + {static} GenerateFrom(def:Def) : TaleData_Def
+}
+TaleData <|-- TaleData_Def
+TaleData_Def --> "def" Def
+@enduml

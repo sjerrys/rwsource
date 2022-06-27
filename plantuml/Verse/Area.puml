@@ -1,0 +1,31 @@
+@startuml
+abstract class Area {
+    + ID : int
+    + TrueCount : int <<get>>
+    + {abstract} Label : string <<get>>
+    + {abstract} ListPriority : int <<get>>
+    + <<virtual>> Mutable : bool <<get>>
+    + Area()
+    + Area(areaManager:AreaManager)
+    + <<virtual>> ExposeData() : void
+    + GetCellBool(index:int) : bool
+    + GetCellExtraColor(index:int) : Color
+    + <<virtual>> AssignableAsAllowed() : bool
+    + <<virtual>> SetLabel(label:string) : void
+    + Delete() : void
+    + MarkForDraw() : void
+    + AreaUpdate() : void
+    + Invert() : void
+    + {abstract} GetUniqueLoadID() : string
+}
+class "IEnumerable`1"<T> {
+}
+IExposable <|-- Area
+ILoadReferenceable <|-- Area
+ICellBoolGiver <|-- Area
+Area --> "areaManager" AreaManager
+Area --> "Map" Map
+Area --> "Color" Color
+Area --> "ColorTexture" Texture2D
+Area --> "ActiveCells<IntVec3>" "IEnumerable`1"
+@enduml

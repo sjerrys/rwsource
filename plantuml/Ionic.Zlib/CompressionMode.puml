@@ -1,0 +1,6 @@
+@startuml
+enum CompressionMode {
+    Compress,
+    Decompress,
+}
+@enduml

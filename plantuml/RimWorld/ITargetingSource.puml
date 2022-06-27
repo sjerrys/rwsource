@@ -1,0 +1,19 @@
+@startuml
+interface ITargetingSource {
+    CasterIsPawn : bool <<get>>
+    IsMeleeAttack : bool <<get>>
+    Targetable : bool <<get>>
+    MultiSelect : bool <<get>>
+    CanHitTarget(target:LocalTargetInfo) : bool
+    ValidateTarget(target:LocalTargetInfo) : bool
+    DrawHighlight(target:LocalTargetInfo) : void
+    OrderForceTarget(target:LocalTargetInfo) : void
+    OnGUI(target:LocalTargetInfo) : void
+}
+ITargetingSource --> "Caster" Thing
+ITargetingSource --> "CasterPawn" Pawn
+ITargetingSource --> "GetVerb" Verb
+ITargetingSource --> "UIIcon" Texture2D
+ITargetingSource --> "targetParams" TargetingParameters
+ITargetingSource --> "DestinationSelector" ITargetingSource
+@enduml

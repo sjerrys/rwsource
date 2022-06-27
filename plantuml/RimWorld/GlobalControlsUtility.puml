@@ -1,0 +1,8 @@
+@startuml
+class GlobalControlsUtility <<static>> {
+    + {static} DoPlaySettings(rowVisibility:WidgetRow, worldView:bool, curBaseY:float) : void
+    + {static} DoTimespeedControls(leftX:float, width:float, curBaseY:float) : void
+    + {static} DoDate(leftX:float, width:float, curBaseY:float) : void
+    + {static} DoRealtimeClock(leftX:float, width:float, curBaseY:float) : void
+}
+@enduml

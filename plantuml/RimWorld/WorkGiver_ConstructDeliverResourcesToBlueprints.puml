@@ -1,0 +1,7 @@
+@startuml
+class WorkGiver_ConstructDeliverResourcesToBlueprints {
+    + <<override>> JobOnThing(pawn:Pawn, t:Thing, forced:bool) : Job
+}
+WorkGiver_ConstructDeliverResources <|-- WorkGiver_ConstructDeliverResourcesToBlueprints
+WorkGiver_ConstructDeliverResourcesToBlueprints --> "PotentialWorkThingRequest" ThingRequest
+@enduml

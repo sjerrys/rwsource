@@ -1,0 +1,45 @@
+@startuml
+class ITab_Pawn_Log_Utility <<static>> {
+    + {static} GenerateLogLinesFor(pawn:Pawn, showAll:bool, showCombat:bool, showSocial:bool) : IEnumerable<LogLineDisplayable>
+}
+class LogDrawData {
+    + alternatingBackground : bool
+    + highlightIntensity : float
+    + StartNewDraw() : void
+}
+abstract class LogLineDisplayable {
+    + GetHeight(width:float) : float
+    + {abstract} GetHeight_Worker(width:float) : float
+    + {abstract} Draw(position:float, width:float, data:LogDrawData) : void
+    + {abstract} AppendTo(sb:StringBuilder) : void
+    + <<virtual>> Matches(log:LogEntry) : bool
+}
+class LogLineDisplayableHeader {
+    + LogLineDisplayableHeader(text:TaggedString)
+    + <<override>> GetHeight_Worker(width:float) : float
+    + <<override>> Draw(position:float, width:float, data:LogDrawData) : void
+    + <<override>> AppendTo(sb:StringBuilder) : void
+}
+class LogLineDisplayableLog {
+    + LogLineDisplayableLog(log:LogEntry, pawn:Pawn)
+    + <<override>> GetHeight_Worker(width:float) : float
+    + <<override>> Draw(position:float, width:float, data:LogDrawData) : void
+    + <<override>> AppendTo(sb:StringBuilder) : void
+    + <<override>> Matches(log:LogEntry) : bool
+}
+class LogLineDisplayableGap {
+    + LogLineDisplayableGap(height:float)
+    + <<override>> GetHeight_Worker(width:float) : float
+    + <<override>> Draw(position:float, width:float, data:LogDrawData) : void
+    + <<override>> AppendTo(sb:StringBuilder) : void
+}
+ITab_Pawn_Log_Utility +-- LogDrawData
+LogDrawData --> "highlightEntry" LogEntry
+ITab_Pawn_Log_Utility +-- LogLineDisplayable
+ITab_Pawn_Log_Utility +-- LogLineDisplayableHeader
+LogLineDisplayable <|-- LogLineDisplayableHeader
+ITab_Pawn_Log_Utility +-- LogLineDisplayableLog
+LogLineDisplayable <|-- LogLineDisplayableLog
+ITab_Pawn_Log_Utility +-- LogLineDisplayableGap
+LogLineDisplayable <|-- LogLineDisplayableGap
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class StorytellerCompProperties_FactionInteraction {
+    + baseIncidentsPerYear : float
+    + minSpacingDays : float
+    + fullAlliesOnly : bool
+    + StorytellerCompProperties_FactionInteraction()
+}
+StorytellerCompProperties <|-- StorytellerCompProperties_FactionInteraction
+StorytellerCompProperties_FactionInteraction --> "incident" IncidentDef
+StorytellerCompProperties_FactionInteraction --> "minDanger" StoryDanger
+@enduml

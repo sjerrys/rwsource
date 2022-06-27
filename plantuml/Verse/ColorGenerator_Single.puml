@@ -1,0 +1,7 @@
+@startuml
+class ColorGenerator_Single {
+    + <<override>> NewRandomizedColor() : Color
+}
+ColorGenerator <|-- ColorGenerator_Single
+ColorGenerator_Single --> "color" Color
+@enduml

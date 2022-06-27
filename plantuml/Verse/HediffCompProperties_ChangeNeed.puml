@@ -1,0 +1,8 @@
+@startuml
+class HediffCompProperties_ChangeNeed {
+    + percentPerDay : float
+    + HediffCompProperties_ChangeNeed()
+}
+HediffCompProperties <|-- HediffCompProperties_ChangeNeed
+HediffCompProperties_ChangeNeed --> "needDef" NeedDef
+@enduml

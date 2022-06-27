@@ -1,0 +1,6 @@
+@startuml
+class ThingCountUtility <<static>> {
+    + {static} CountOf(list:List<ThingCount>, thing:Thing) : int
+    + {static} AddToList(list:List<ThingCount>, thing:Thing, countToAdd:int) : void
+}
+@enduml

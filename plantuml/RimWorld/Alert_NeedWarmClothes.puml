@@ -1,0 +1,8 @@
+@startuml
+class Alert_NeedWarmClothes {
+    + Alert_NeedWarmClothes()
+    + <<override>> GetExplanation() : TaggedString
+    + <<override>> GetReport() : AlertReport
+}
+Alert <|-- Alert_NeedWarmClothes
+@enduml

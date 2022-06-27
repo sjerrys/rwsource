@@ -1,0 +1,14 @@
+@startuml
+class GenRadial <<static>> {
+    + {static} MaxRadialPatternRadius : float <<get>>
+    {static} GenRadial()
+    + {static} NumCellsToFillForRadius_ManualRadialPattern(radius:int) : int
+    + {static} NumCellsInRadius(radius:float) : int
+    + {static} RadiusOfNumCells(numCells:int) : float
+    + {static} RadialPatternInRadius(radius:float) : IEnumerable<IntVec3>
+    + {static} RadialCellsAround(center:IntVec3, radius:float, useCenter:bool) : IEnumerable<IntVec3>
+    + {static} RadialCellsAround(center:IntVec3, minRadius:float, maxRadius:float) : IEnumerable<IntVec3>
+    + {static} RadialDistinctThingsAround(center:IntVec3, map:Map, radius:float, useCenter:bool) : IEnumerable<Thing>
+    + {static} ProcessEquidistantCells(center:IntVec3, radius:float, processor:Func<List<IntVec3>, bool>, map:Map) : void
+}
+@enduml

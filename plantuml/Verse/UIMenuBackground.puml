@@ -1,0 +1,5 @@
+@startuml
+abstract class UIMenuBackground {
+    + {abstract} BackgroundOnGUI() : void
+}
+@enduml

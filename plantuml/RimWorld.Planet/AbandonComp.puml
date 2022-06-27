@@ -1,0 +1,6 @@
+@startuml
+class AbandonComp {
+    + <<override>> GetGizmos() : IEnumerable<Gizmo>
+}
+WorldObjectComp <|-- AbandonComp
+@enduml

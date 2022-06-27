@@ -1,0 +1,7 @@
+@startuml
+class QuestPart_AllowDecreesForLodger {
+    + <<override>> ExposeData() : void
+}
+QuestPart <|-- QuestPart_AllowDecreesForLodger
+QuestPart_AllowDecreesForLodger --> "lodger" Pawn
+@enduml

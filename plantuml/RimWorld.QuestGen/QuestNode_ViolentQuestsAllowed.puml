@@ -1,0 +1,7 @@
+@startuml
+class QuestNode_ViolentQuestsAllowed {
+}
+QuestNode <|-- QuestNode_ViolentQuestsAllowed
+QuestNode_ViolentQuestsAllowed --> "node" QuestNode
+QuestNode_ViolentQuestsAllowed --> "elseNode" QuestNode
+@enduml

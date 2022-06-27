@@ -1,0 +1,7 @@
+@startuml
+class JobDriver_Open {
+    + <<const>> OpenTicks : int = 300
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+}
+JobDriver <|-- JobDriver_Open
+@enduml

@@ -1,0 +1,16 @@
+@startuml
+class VerbTracker {
+    + VerbTracker(directOwner:IVerbOwner)
+    + VerbsTick() : void
+    + GetVerbsCommands(hotKey:KeyCode) : IEnumerable<Command>
+    + GetVerb(category:VerbCategory) : Verb
+    + ExposeData() : void
+    + VerbsNeedReinitOnLoad() : void
+}
+class "List`1"<T> {
+}
+IExposable <|-- VerbTracker
+VerbTracker --> "directOwner" IVerbOwner
+VerbTracker --> "AllVerbs<Verb>" "List`1"
+VerbTracker --> "PrimaryVerb" Verb
+@enduml

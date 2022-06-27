@@ -1,0 +1,5 @@
+@startuml
+class RoyalTitleInheritanceWorker {
+    + FindHeir(faction:Faction, pawn:Pawn, title:RoyalTitleDef) : Pawn
+}
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class TimeAssignmentSelector <<static>> {
+    + {static} DrawTimeAssignmentSelectorGrid(rect:Rect) : void
+}
+TimeAssignmentSelector o-> "selectedAssignment" TimeAssignmentDef
+@enduml

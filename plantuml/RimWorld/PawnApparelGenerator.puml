@@ -1,0 +1,31 @@
+@startuml
+class PawnApparelGenerator <<static>> {
+    {static} PawnApparelGenerator()
+    + {static} Reset() : void
+    + {static} GenerateStartingApparelFor(pawn:Pawn, request:PawnGenerationRequest) : void
+    + {static} IsDerpApparel(thing:ThingDef, stuff:ThingDef) : bool
+    + {static} ApparelRequirementHandlesThing(req:SpecificApparelRequirement, thing:ThingDef) : bool
+    + {static} ApparelRequirementTagsMatch(req:SpecificApparelRequirement, thing:ThingDef) : bool
+    + {static} IsHeadgear(td:ThingDef) : bool
+    + {static} CalculateNeededWarmth(pawn:Pawn, tile:int, twelfth:Twelfth) : NeededWarmth
+}
+class PossibleApparelSet {
+    + Count : int <<get>>
+    + TotalPrice : float <<get>>
+    + TotalInsulationCold : float <<get>>
+    + Reset(body:BodyDef, raceDef:ThingDef) : void
+    + Add(pair:ThingStuffPair) : void
+    + PairOverlapsAnything(pair:ThingStuffPair) : bool
+    + CoatButNoShirt() : bool
+    + Covers(bp:BodyPartGroupDef) : bool
+    + IsNaked(gender:Gender) : bool
+    + SatisfiesNeededWarmth(warmth:NeededWarmth, mustBeSafe:bool, mapTemperature:float) : bool
+    + AddFreeWarmthAsNeeded(warmth:NeededWarmth, mapTemperature:float) : void
+    + GiveToPawn(pawn:Pawn) : void
+    + <<override>> ToString() : string
+}
+class "List`1"<T> {
+}
+PawnApparelGenerator +-- PossibleApparelSet
+PossibleApparelSet --> "ApparelsForReading<ThingStuffPair>" "List`1"
+@enduml

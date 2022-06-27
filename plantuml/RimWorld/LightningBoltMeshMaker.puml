@@ -1,0 +1,5 @@
+@startuml
+class LightningBoltMeshMaker <<static>> {
+    + {static} NewBoltMesh() : Mesh
+}
+@enduml

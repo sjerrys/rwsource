@@ -1,0 +1,10 @@
+@startuml
+abstract class QuestPart_RequirementsToAccept {
+    + {abstract} CanAccept() : AcceptanceReport
+    + <<virtual>> CanPawnAccept(p:Pawn) : bool
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart <|-- QuestPart_RequirementsToAccept
+QuestPart_RequirementsToAccept --> "Culprits<GlobalTargetInfo>" "IEnumerable`1"
+@enduml

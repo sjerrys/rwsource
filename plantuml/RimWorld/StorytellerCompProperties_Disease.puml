@@ -1,0 +1,7 @@
+@startuml
+class StorytellerCompProperties_Disease {
+    + StorytellerCompProperties_Disease()
+}
+StorytellerCompProperties <|-- StorytellerCompProperties_Disease
+StorytellerCompProperties_Disease --> "category" IncidentCategoryDef
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class PerfLogger <<static>> {
+    + {static} Reset() : void
+    + {static} Flush() : void
+    + {static} Record(label:string) : void
+    + {static} Indent() : void
+    + {static} Outdent() : void
+    + {static} Duration() : float
+}
+PerfLogger o-> "currentLog" StringBuilder
+@enduml

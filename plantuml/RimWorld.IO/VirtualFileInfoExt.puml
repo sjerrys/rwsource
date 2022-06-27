@@ -1,0 +1,5 @@
+@startuml
+class VirtualFileInfoExt <<static>> {
+    + {static} LoadAsXDocument(file:VirtualFile) : XDocument
+}
+@enduml

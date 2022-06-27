@@ -1,0 +1,6 @@
+@startuml
+class JobGiver_WanderNearFallbackLocation {
+    + JobGiver_WanderNearFallbackLocation()
+}
+JobGiver_Wander <|-- JobGiver_WanderNearFallbackLocation
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+class QuestPart_ThreatsGenerator {
+    + threatStartTicks : int
+    + MakeIntervalIncidents() : IEnumerable<FiringIncident>
+    + <<override>> DoDebugWindowContents(innerRect:Rect, curY:float) : void
+    + <<override>> ExposeData() : void
+}
+QuestPartActivable <|-- QuestPart_ThreatsGenerator
+IIncidentMakerQuestPart <|-- QuestPart_ThreatsGenerator
+QuestPart_ThreatsGenerator --> "parms" ThreatsGeneratorParams
+QuestPart_ThreatsGenerator --> "mapParent" MapParent
+@enduml

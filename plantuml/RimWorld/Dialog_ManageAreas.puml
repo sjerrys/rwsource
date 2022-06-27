@@ -1,0 +1,9 @@
+@startuml
+class Dialog_ManageAreas {
+    + Dialog_ManageAreas(map:Map)
+    + <<override>> DoWindowContents(inRect:Rect) : void
+    + {static} DoNameInputRect(rect:Rect, name:string, maxLength:int) : void
+}
+Window <|-- Dialog_ManageAreas
+Dialog_ManageAreas --> "InitialSize" Vector2
+@enduml

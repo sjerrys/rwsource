@@ -1,0 +1,22 @@
+@startuml
+class CompProperties_ProjectileInterceptor {
+    + radius : float
+    + cooldownTicks : int
+    + disarmedByEmpForTicks : int
+    + interceptGroundProjectiles : bool
+    + interceptAirProjectiles : bool
+    + interceptNonHostileProjectiles : bool
+    + interceptOutgoingProjectiles : bool
+    + chargeIntervalTicks : int
+    + chargeDurationTicks : int
+    + minAlpha : float
+    + idlePulseSpeed : float = 0.7f
+    + minIdleAlpha : float
+    + CompProperties_ProjectileInterceptor()
+}
+CompProperties <|-- CompProperties_ProjectileInterceptor
+CompProperties_ProjectileInterceptor o-> "color" Color
+CompProperties_ProjectileInterceptor --> "reactivateEffect" EffecterDef
+CompProperties_ProjectileInterceptor --> "interceptEffect" EffecterDef
+CompProperties_ProjectileInterceptor --> "activeSound" SoundDef
+@enduml

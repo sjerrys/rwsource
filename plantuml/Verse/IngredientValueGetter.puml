@@ -1,0 +1,7 @@
+@startuml
+abstract class IngredientValueGetter {
+    + {abstract} ValuePerUnitOf(t:ThingDef) : float
+    + {abstract} BillRequirementsDescription(r:RecipeDef, ing:IngredientCount) : string
+    + <<virtual>> ExtraDescriptionLine(r:RecipeDef) : string
+}
+@enduml

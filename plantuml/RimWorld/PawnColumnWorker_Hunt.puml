@@ -1,0 +1,5 @@
+@startuml
+class PawnColumnWorker_Hunt {
+}
+PawnColumnWorker_Designator <|-- PawnColumnWorker_Hunt
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+class SubEffecter {
+    + SubEffecter(subDef:SubEffecterDef, parent:Effecter)
+    + <<virtual>> SubEffectTick(A:TargetInfo, B:TargetInfo) : void
+    + <<virtual>> SubTrigger(A:TargetInfo, B:TargetInfo) : void
+    + <<virtual>> SubCleanup() : void
+}
+SubEffecter --> "parent" Effecter
+SubEffecter --> "def" SubEffecterDef
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+class QuestNode_Prefix {
+}
+class "SlateRef`1"<T> {
+}
+class "List`1"<T> {
+}
+QuestNode <|-- QuestNode_Prefix
+QuestNode_Prefix --> "prefix<string>" "SlateRef`1"
+QuestNode_Prefix --> "allowNonPrefixedLookup<bool>" "SlateRef`1"
+QuestNode_Prefix o-> "parms<PrefixCapturedVar>" "List`1"
+QuestNode_Prefix o-> "returnVarNames<SlateRef<string>>" "List`1"
+QuestNode_Prefix --> "node" QuestNode
+@enduml

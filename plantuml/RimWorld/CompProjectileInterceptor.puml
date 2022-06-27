@@ -1,0 +1,24 @@
+@startuml
+class CompProjectileInterceptor {
+    + Active : bool <<get>>
+    + OnCooldown : bool <<get>>
+    + Charging : bool <<get>>
+    + ChargeCycleStartTick : int <<get>>
+    + ChargingTicksLeft : int <<get>>
+    + CooldownTicksLeft : int <<get>>
+    + ReactivatedThisTick : bool <<get>>
+    + <<override>> PostPostMake() : void
+    + <<override>> PostDeSpawn(map:Map) : void
+    + CheckIntercept(projectile:Projectile, lastExactPos:Vector3, newExactPos:Vector3) : bool
+    + {static} InterceptsProjectile(props:CompProperties_ProjectileInterceptor, projectile:Projectile) : bool
+    + <<override>> CompTick() : void
+    + <<override>> Notify_LordDestroyed() : void
+    + <<override>> PostDraw() : void
+    + <<override>> CompGetGizmosExtra() : IEnumerable<Gizmo>
+    + <<override>> CompInspectStringExtra() : string
+    + <<override>> PostPreApplyDamage(dinfo:DamageInfo, absorbed:bool) : void
+    + <<override>> PostExposeData() : void
+}
+ThingComp <|-- CompProjectileInterceptor
+CompProjectileInterceptor --> "Props" CompProperties_ProjectileInterceptor
+@enduml

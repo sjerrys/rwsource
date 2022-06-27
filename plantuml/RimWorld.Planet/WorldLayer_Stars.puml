@@ -1,0 +1,8 @@
+@startuml
+class WorldLayer_Stars {
+    + <<const>> DistanceToStars : float = 10f
+    + <<override>> ShouldRegenerate : bool <<get>>
+    + <<override>> Regenerate() : IEnumerable
+}
+WorldLayer <|-- WorldLayer_Stars
+@enduml

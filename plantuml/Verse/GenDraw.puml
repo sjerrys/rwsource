@@ -1,0 +1,49 @@
+@startuml
+class GenDraw <<static>> {
+    + {static} <<readonly>> LineTexPath : string = "UI/Overlays/ThingLine"
+    + {static} <<readonly>> OneSidedLineTexPath : string = "UI/Overlays/OneSidedLine"
+    + {static} DrawNoBuildEdgeLines() : void
+    + {static} DrawNoZoneEdgeLines() : void
+    + {static} DrawLineBetween(A:Vector3, B:Vector3) : void
+    + {static} DrawLineBetween(A:Vector3, B:Vector3, layer:float) : void
+    + {static} DrawLineBetween(A:Vector3, B:Vector3, color:SimpleColor) : void
+    + {static} DrawLineBetween(A:Vector3, B:Vector3, mat:Material) : void
+    + {static} DrawCircleOutline(center:Vector3, radius:float) : void
+    + {static} DrawCircleOutline(center:Vector3, radius:float, color:SimpleColor) : void
+    + {static} DrawCircleOutline(center:Vector3, radius:float, material:Material) : void
+    + {static} DrawWorldLineBetween(A:Vector3, B:Vector3) : void
+    + {static} DrawWorldLineBetween(A:Vector3, B:Vector3, material:Material, widthFactor:float) : void
+    + {static} DrawWorldRadiusRing(center:int, radius:int) : void
+    + {static} DrawWorldLineStrip(edgeTiles:List<int>, material:Material, widthFactor:float) : void
+    + {static} DrawTargetHighlight(targ:LocalTargetInfo) : void
+    + {static} DrawTargetHighlightWithLayer(c:IntVec3, layer:AltitudeLayer) : void
+    + {static} DrawTargetHighlightWithLayer(c:Vector3, layer:AltitudeLayer) : void
+    + {static} DrawTargetingHightlight_Explosion(c:IntVec3, Radius:float) : void
+    + {static} DrawInteractionCell(tDef:ThingDef, center:IntVec3, placingRot:Rot4) : void
+    + {static} DrawRadiusRing(center:IntVec3, radius:float, color:Color, predicate:Func<IntVec3, bool>) : void
+    + {static} DrawRadiusRing(center:IntVec3, radius:float) : void
+    + {static} DrawFieldEdges(cells:List<IntVec3>) : void
+    + {static} DrawFieldEdges(cells:List<IntVec3>, color:Color) : void
+    + {static} DrawAimPie(shooter:Thing, target:LocalTargetInfo, degreesWide:int, offsetDist:float) : void
+    + {static} DrawAimPieRaw(center:Vector3, facing:float, degreesWide:int) : void
+    + {static} DrawCooldownCircle(center:Vector3, radius:float) : void
+    + {static} DrawFillableBar(r:FillableBarRequest) : void
+    + {static} DrawMeshNowOrLater(mesh:Mesh, loc:Vector3, quat:Quaternion, mat:Material, drawNow:bool) : void
+    + {static} DrawMeshNowOrLater_NewTemp(mesh:Mesh, matrix:Matrix4x4, mat:Material, drawNow:bool) : void
+    + {static} DrawArrowPointingAt(mapTarget:Vector3, offscreenOnly:bool) : void
+}
+class FillableBarRequest <<struct>> {
+    + fillPercent : float
+    + margin : float
+}
+GenDraw o-> "InteractionCellMaterial" Material
+GenDraw --> "CurTargetingMat" Material
+GenDraw --> "CurTargetingColor" Color
+GenDraw +-- FillableBarRequest
+FillableBarRequest --> "center" Vector3
+FillableBarRequest --> "size" Vector2
+FillableBarRequest --> "filledMat" Material
+FillableBarRequest --> "unfilledMat" Material
+FillableBarRequest --> "rotation" Rot4
+FillableBarRequest --> "preRotationOffset" Vector2
+@enduml

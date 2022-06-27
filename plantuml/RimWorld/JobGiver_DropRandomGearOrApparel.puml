@@ -1,0 +1,5 @@
+@startuml
+class JobGiver_DropRandomGearOrApparel {
+}
+ThinkNode_JobGiver <|-- JobGiver_DropRandomGearOrApparel
+@enduml

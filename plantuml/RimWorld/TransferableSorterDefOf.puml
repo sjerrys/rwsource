@@ -1,0 +1,7 @@
+@startuml
+class TransferableSorterDefOf <<static>> {
+    {static} TransferableSorterDefOf()
+}
+TransferableSorterDefOf --> "Category" TransferableSorterDef
+TransferableSorterDefOf --> "MarketValue" TransferableSorterDef
+@enduml

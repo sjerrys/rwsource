@@ -1,0 +1,21 @@
+@startuml
+class DesignationDefOf <<static>> {
+    {static} DesignationDefOf()
+}
+DesignationDefOf --> "Haul" DesignationDef
+DesignationDefOf --> "Mine" DesignationDef
+DesignationDefOf --> "Deconstruct" DesignationDef
+DesignationDefOf --> "Uninstall" DesignationDef
+DesignationDefOf --> "CutPlant" DesignationDef
+DesignationDefOf --> "HarvestPlant" DesignationDef
+DesignationDefOf --> "Hunt" DesignationDef
+DesignationDefOf --> "SmoothFloor" DesignationDef
+DesignationDefOf --> "RemoveFloor" DesignationDef
+DesignationDefOf --> "SmoothWall" DesignationDef
+DesignationDefOf --> "Flick" DesignationDef
+DesignationDefOf --> "Plan" DesignationDef
+DesignationDefOf --> "Strip" DesignationDef
+DesignationDefOf --> "Slaughter" DesignationDef
+DesignationDefOf --> "Tame" DesignationDef
+DesignationDefOf --> "Open" DesignationDef
+@enduml

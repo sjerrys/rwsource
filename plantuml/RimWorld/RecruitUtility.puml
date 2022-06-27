@@ -1,0 +1,11 @@
+@startuml
+class RecruitUtility <<static>> {
+    + {static} RecruitChanceFactorForMood(recruitee:Pawn) : float
+    + {static} RecruitChanceFactorForOpinion(recruiter:Pawn, recruitee:Pawn) : float
+    + {static} RecruitChanceFactorForRecruiterNegotiationAbility(recruiter:Pawn) : float
+    + {static} RecruitChanceFactorForRecruiter(recruiter:Pawn, recruitee:Pawn) : float
+    + {static} RecruitChanceFactorForRecruitDifficulty(recruitee:Pawn, recruiterFaction:Faction) : float
+    + {static} RecruitChanceFinalByFaction(recruitee:Pawn, recruiterFaction:Faction) : float
+    + {static} RecruitChanceFinalByPawn(recruitee:Pawn, recruiter:Pawn) : float
+}
+@enduml

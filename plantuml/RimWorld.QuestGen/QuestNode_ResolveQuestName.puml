@@ -1,0 +1,10 @@
+@startuml
+class QuestNode_ResolveQuestName {
+    + <<const>> TextRoot : string = "questName"
+    + {static} Resolve() : void
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_ResolveQuestName
+QuestNode_ResolveQuestName --> "rules<RulePack>" "SlateRef`1"
+@enduml

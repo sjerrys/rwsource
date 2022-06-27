@@ -1,0 +1,7 @@
+@startuml
+class Alert_NeedMiner {
+    + Alert_NeedMiner()
+    + <<override>> GetReport() : AlertReport
+}
+Alert <|-- Alert_NeedMiner
+@enduml

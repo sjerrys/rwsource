@@ -1,0 +1,8 @@
+@startuml
+class GenPlanetMorphology <<static>> {
+    + {static} Erode(tiles:List<int>, count:int, extraPredicate:Predicate<int>) : void
+    + {static} Dilate(tiles:List<int>, count:int, extraPredicate:Predicate<int>) : void
+    + {static} Open(tiles:List<int>, count:int) : void
+    + {static} Close(tiles:List<int>, count:int) : void
+}
+@enduml

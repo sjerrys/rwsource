@@ -1,0 +1,15 @@
+@startuml
+class CompBreakdownable {
+    + <<const>> BreakdownSignal : string = "Breakdown"
+    + BrokenDown : bool <<get>>
+    + <<override>> PostExposeData() : void
+    + <<override>> PostDraw() : void
+    + <<override>> PostSpawnSetup(respawningAfterLoad:bool) : void
+    + <<override>> PostDeSpawn(map:Map) : void
+    + CheckForBreakdown() : void
+    + Notify_Repaired() : void
+    + DoBreakdown() : void
+    + <<override>> CompInspectStringExtra() : string
+}
+ThingComp <|-- CompBreakdownable
+@enduml

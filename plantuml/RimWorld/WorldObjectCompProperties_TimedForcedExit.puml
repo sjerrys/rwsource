@@ -1,0 +1,7 @@
+@startuml
+class WorldObjectCompProperties_TimedForcedExit {
+    + WorldObjectCompProperties_TimedForcedExit()
+    + <<override>> ConfigErrors(parentDef:WorldObjectDef) : IEnumerable<string>
+}
+WorldObjectCompProperties <|-- WorldObjectCompProperties_TimedForcedExit
+@enduml

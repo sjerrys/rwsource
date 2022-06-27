@@ -1,0 +1,7 @@
+@startuml
+class CameraMapConfig_Car {
+    + CameraMapConfig_Car()
+    + <<override>> ConfigFixedUpdate_60(velocity:Vector3) : void
+}
+CameraMapConfig <|-- CameraMapConfig_Car
+@enduml

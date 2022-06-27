@@ -1,0 +1,20 @@
+@startuml
+class QuestNode_Letter {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_Letter
+QuestNode_Letter --> "inSignal<string>" "SlateRef`1"
+QuestNode_Letter --> "relatedFaction<Faction>" "SlateRef`1"
+QuestNode_Letter --> "letterDef<LetterDef>" "SlateRef`1"
+QuestNode_Letter --> "label<string>" "SlateRef`1"
+QuestNode_Letter --> "text<string>" "SlateRef`1"
+QuestNode_Letter --> "labelRules<RulePack>" "SlateRef`1"
+QuestNode_Letter --> "textRules<RulePack>" "SlateRef`1"
+QuestNode_Letter --> "lookTargets<IEnumerable<object>>" "SlateRef`1"
+QuestNode_Letter --> "signalListenMode<QuestPart.SignalListenMode?>" "SlateRef`1"
+QuestNode_Letter --> "chosenPawnSignal<string>" "SlateRef`1"
+QuestNode_Letter --> "useColonistsOnMap<MapParent>" "SlateRef`1"
+QuestNode_Letter --> "useColonistsFromCaravanArg<bool>" "SlateRef`1"
+QuestNode_Letter --> "filterDeadPawnsFromLookTargets<bool>" "SlateRef`1"
+@enduml

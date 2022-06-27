@@ -1,0 +1,16 @@
+@startuml
+class ThoughtStage {
+    + label : string
+    + labelSocial : string
+    + description : string
+    + baseMoodEffect : float
+    + baseOpinionOffset : float
+    + visible : bool = true
+    + untranslatedLabel : string
+    + untranslatedLabelSocial : string
+    + LabelCap : string <<get>>
+    + LabelSocialCap : string <<get>>
+    + PostLoad() : void
+    + ConfigErrors() : IEnumerable<string>
+}
+@enduml

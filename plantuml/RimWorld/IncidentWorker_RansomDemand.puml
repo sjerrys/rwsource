@@ -1,0 +1,5 @@
+@startuml
+class IncidentWorker_RansomDemand {
+}
+IncidentWorker <|-- IncidentWorker_RansomDemand
+@enduml

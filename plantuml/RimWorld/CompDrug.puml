@@ -1,0 +1,8 @@
+@startuml
+class CompDrug {
+    + <<override>> PrePostIngested(ingester:Pawn) : void
+    + <<override>> PostIngested(ingester:Pawn) : void
+}
+ThingComp <|-- CompDrug
+CompDrug --> "Props" CompProperties_Drug
+@enduml

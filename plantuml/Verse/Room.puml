@@ -1,0 +1,56 @@
+@startuml
+class Room <<sealed>> {
+    + mapIndex : sbyte
+    + ID : int
+    + lastChangeTick : int
+    + isPrisonCell : bool
+    + newOrReusedRoomGroupIndex : int
+    + RegionCount : int <<get>>
+    + IsHuge : bool <<get>>
+    + Dereferenced : bool <<get>>
+    + TouchesMapEdge : bool <<get>>
+    + Temperature : float <<get>>
+    + UsesOutdoorTemperature : bool <<get>>
+    + CellCount : int <<get>>
+    + OpenRoofCount : int <<get>>
+    + PsychologicallyOutdoors : bool <<get>>
+    + OutdoorsForWork : bool <<get>>
+    + Fogged : bool <<get>>
+    + IsDoorway : bool <<get>>
+    + {static} MakeNew(map:Map) : Room
+    + AddRegion(r:Region) : void
+    + RemoveRegion(r:Region) : void
+    + Notify_MyMapRemoved() : void
+    + Notify_ContainedThingSpawnedOrDespawned(th:Thing) : void
+    + Notify_TerrainChanged() : void
+    + Notify_BedTypeChanged() : void
+    + Notify_RoofChanged() : void
+    + Notify_RoomShapeOrContainedBedsChanged() : void
+    + ContainsCell(cell:IntVec3) : bool
+    + ContainsThing(def:ThingDef) : bool
+    + ContainedThings(def:ThingDef) : IEnumerable<Thing>
+    + ThingCount(def:ThingDef) : int
+    + DecrementMapIndex() : void
+    + GetStat(roomStat:RoomStatDef) : float
+    + GetStatScoreStage(stat:RoomStatDef) : RoomStatScoreStage
+    + DrawFieldEdges() : void
+    + OpenRoofCountStopAt(threshold:int) : int
+    + <<override>> ToString() : string
+    + <<override>> GetHashCode() : int
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+Room --> "Map" Map
+Room --> "RegionType" RegionType
+Room --> "Regions<Region>" "List`1"
+Room --> "Group" RoomGroup
+Room --> "Neighbors<Room>" "List`1"
+Room --> "Cells<IntVec3>" "IEnumerable`1"
+Room --> "BorderCells<IntVec3>" "IEnumerable`1"
+Room --> "Owners<Pawn>" "IEnumerable`1"
+Room --> "ContainedBeds<Building_Bed>" "IEnumerable`1"
+Room --> "ContainedAndAdjacentThings<Thing>" "List`1"
+Room --> "Role" RoomRoleDef
+@enduml

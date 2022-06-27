@@ -1,0 +1,6 @@
+@startuml
+class SymbolResolver_IndoorLighting {
+    + <<override>> Resolve(rp:ResolveParams) : void
+}
+SymbolResolver <|-- SymbolResolver_IndoorLighting
+@enduml

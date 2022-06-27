@@ -1,0 +1,7 @@
+@startuml
+abstract class RoyalTitleAwardWorker {
+    + <<virtual>> OnPreAward(pawn:Pawn, faction:Faction, currentTitle:RoyalTitleDef, newTitle:RoyalTitleDef) : void
+    + {abstract} DoAward(pawn:Pawn, faction:Faction, currentTitle:RoyalTitleDef, newTitle:RoyalTitleDef) : void
+}
+RoyalTitleAwardWorker --> "def" RoyalTitleDef
+@enduml

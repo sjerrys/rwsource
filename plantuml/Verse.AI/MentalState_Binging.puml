@@ -1,0 +1,6 @@
+@startuml
+class MentalState_Binging {
+    + <<override>> SocialModeMax() : RandomSocialMode
+}
+MentalState <|-- MentalState_Binging
+@enduml

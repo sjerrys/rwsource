@@ -1,0 +1,7 @@
+@startuml
+class CellIndicesUtility <<static>> {
+    + {static} CellToIndex(c:IntVec3, mapSizeX:int) : int
+    + {static} CellToIndex(x:int, z:int, mapSizeX:int) : int
+    + {static} IndexToCell(ind:int, mapSizeX:int) : IntVec3
+}
+@enduml

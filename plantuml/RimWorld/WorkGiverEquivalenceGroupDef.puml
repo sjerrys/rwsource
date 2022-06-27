@@ -1,0 +1,5 @@
+@startuml
+class WorkGiverEquivalenceGroupDef {
+}
+Def <|-- WorkGiverEquivalenceGroupDef
+@enduml

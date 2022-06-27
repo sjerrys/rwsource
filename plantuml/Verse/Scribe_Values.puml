@@ -1,0 +1,5 @@
+@startuml
+class Scribe_Values <<static>> {
+    + {static} Look(value:T, label:string, defaultValue:T, forceSave:bool) : void
+}
+@enduml

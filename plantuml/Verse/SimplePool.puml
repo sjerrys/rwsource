@@ -1,0 +1,7 @@
+@startuml
+class "SimplePool`1"<T> <<static>> {
+    + {static} FreeItemsCount : int <<get>>
+    + {static} Get() : T
+    + {static} Return(item:T) : void
+}
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class ThoughtWorker_NudistNude {
+}
+ThoughtWorker <|-- ThoughtWorker_NudistNude
+@enduml

@@ -1,0 +1,16 @@
+@startuml
+abstract class FocusStrengthOffset {
+    + offset : float
+    + <<virtual>> DependsOnPawn : bool <<get>>
+    + <<virtual>> NeedsToBeSpawned : bool <<get>>
+    + <<virtual>> GetExplanation(parent:Thing) : string
+    + <<virtual>> GetExplanationAbstract(def:ThingDef) : string
+    + <<virtual>> InspectStringExtra(parent:Thing, user:Pawn) : string
+    + <<virtual>> GetOffset(parent:Thing, user:Pawn) : float
+    + <<virtual>> CanApply(parent:Thing, user:Pawn) : bool
+    + <<virtual>> PostDrawExtraSelectionOverlays(parent:Thing, user:Pawn) : void
+    + <<virtual>> MinOffset(parent:Thing) : float
+    + <<virtual>> MaxOffset(parent:Thing) : float
+    + <<virtual>> ResolveReferences() : void
+}
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class JobDriver_Meditate {
+    + {static} AnimaTreeSubplantProgressPerTick : float = 6.666667E-05f
+    + <<override>> GetReport() : string
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+    + <<override>> Notify_Starting() : void
+    + <<override>> ExposeData() : void
+}
+JobDriver <|-- JobDriver_Meditate
+JobDriver_Meditate --> "Focus" LocalTargetInfo
+@enduml

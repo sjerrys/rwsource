@@ -1,0 +1,9 @@
+@startuml
+class Blend {
+    + Blend()
+    + Blend(lhs:ModuleBase, rhs:ModuleBase, controller:ModuleBase)
+    + <<override>> GetValue(x:double, y:double, z:double) : double
+}
+ModuleBase <|-- Blend
+Blend --> "Controller" ModuleBase
+@enduml

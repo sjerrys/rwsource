@@ -1,0 +1,12 @@
+@startuml
+class EditWindow_CurveEditor {
+    + <<override>> IsDebug : bool <<get>>
+    + EditWindow_CurveEditor(curve:SimpleCurve, title:string)
+    + <<override>> DoWindowContents(inRect:Rect) : void
+}
+class "List`1"<T> {
+}
+EditWindow <|-- EditWindow_CurveEditor
+EditWindow_CurveEditor --> "debugInputValues<float>" "List`1"
+EditWindow_CurveEditor --> "InitialSize" Vector2
+@enduml

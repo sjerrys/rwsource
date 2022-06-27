@@ -1,0 +1,5 @@
+@startuml
+class JobDriver_ViewArt {
+}
+JobDriver_VisitJoyThing <|-- JobDriver_ViewArt
+@enduml

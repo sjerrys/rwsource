@@ -1,0 +1,7 @@
+@startuml
+class HediffCompProperties_SkillDecay {
+    + HediffCompProperties_SkillDecay()
+}
+HediffCompProperties <|-- HediffCompProperties_SkillDecay
+HediffCompProperties_SkillDecay --> "decayPerDayPercentageLevelCurve" SimpleCurve
+@enduml

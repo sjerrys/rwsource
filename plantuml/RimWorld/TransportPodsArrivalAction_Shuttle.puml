@@ -1,0 +1,17 @@
+@startuml
+class TransportPodsArrivalAction_Shuttle {
+    + TransportPodsArrivalAction_Shuttle()
+    + TransportPodsArrivalAction_Shuttle(mapParent:MapParent)
+    + <<override>> ShouldUseLongEvent(pods:List<ActiveDropPodInfo>, tile:int) : bool
+    + <<override>> Arrived(pods:List<ActiveDropPodInfo>, tile:int) : void
+    + <<override>> ExposeData() : void
+}
+class "List`1"<T> {
+}
+TransportPodsArrivalAction <|-- TransportPodsArrivalAction_Shuttle
+TransportPodsArrivalAction_Shuttle --> "mapParent" MapParent
+TransportPodsArrivalAction_Shuttle --> "missionShuttleTarget" WorldObject
+TransportPodsArrivalAction_Shuttle --> "missionShuttleHome" WorldObject
+TransportPodsArrivalAction_Shuttle --> "sendAwayIfQuestFinished" Quest
+TransportPodsArrivalAction_Shuttle --> "questTags<string>" "List`1"
+@enduml

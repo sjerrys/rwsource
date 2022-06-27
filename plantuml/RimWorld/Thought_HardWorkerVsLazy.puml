@@ -1,0 +1,6 @@
+@startuml
+class Thought_HardWorkerVsLazy {
+    + <<override>> OpinionOffset() : float
+}
+Thought_SituationalSocial <|-- Thought_HardWorkerVsLazy
+@enduml

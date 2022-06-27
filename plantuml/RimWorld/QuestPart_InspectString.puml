@@ -1,0 +1,15 @@
+@startuml
+class QuestPart_InspectString {
+    + inspectString : string
+    + <<override>> ExtraInspectString(target:ISelectable) : string
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+QuestPartActivable <|-- QuestPart_InspectString
+QuestPart_InspectString o-> "targets<ISelectable>" "List`1"
+QuestPart_InspectString --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+@enduml

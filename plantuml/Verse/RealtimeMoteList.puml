@@ -1,0 +1,11 @@
+@startuml
+class RealtimeMoteList {
+    + Clear() : void
+    + MoteSpawned(newMote:Mote) : void
+    + MoteDespawned(oldMote:Mote) : void
+    + MoteListUpdate() : void
+}
+class "List`1"<T> {
+}
+RealtimeMoteList o-> "allMotes<Mote>" "List`1"
+@enduml

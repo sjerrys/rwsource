@@ -1,0 +1,15 @@
+@startuml
+class StorageSettings {
+    + StorageSettings()
+    + StorageSettings(owner:IStoreSettingsParent)
+    + ExposeData() : void
+    + SetFromPreset(preset:StorageSettingsPreset) : void
+    + CopyFrom(other:StorageSettings) : void
+    + AllowedToAccept(t:Thing) : bool
+    + AllowedToAccept(t:ThingDef) : bool
+}
+IExposable <|-- StorageSettings
+StorageSettings --> "owner" IStoreSettingsParent
+StorageSettings --> "filter" ThingFilter
+StorageSettings --> "Priority" StoragePriority
+@enduml

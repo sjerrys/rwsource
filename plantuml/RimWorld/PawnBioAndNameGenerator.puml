@@ -1,0 +1,7 @@
+@startuml
+class PawnBioAndNameGenerator <<static>> {
+    + {static} GiveAppropriateBioAndNameTo(pawn:Pawn, requiredLastName:string, factionType:FactionDef) : void
+    + {static} TryGetRandomUnusedSolidName(gender:Gender, requiredLastName:string) : NameTriple
+    + {static} GeneratePawnName(pawn:Pawn, style:NameStyle, forcedLastName:string) : Name
+}
+@enduml

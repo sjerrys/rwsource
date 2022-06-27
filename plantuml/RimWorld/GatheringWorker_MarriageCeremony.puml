@@ -1,0 +1,6 @@
+@startuml
+class GatheringWorker_MarriageCeremony {
+    + <<override>> CanExecute(map:Map, organizer:Pawn) : bool
+}
+GatheringWorker <|-- GatheringWorker_MarriageCeremony
+@enduml

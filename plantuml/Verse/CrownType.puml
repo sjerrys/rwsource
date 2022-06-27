@@ -1,0 +1,7 @@
+@startuml
+enum CrownType {
+    Undefined,
+    Average,
+    Narrow,
+}
+@enduml

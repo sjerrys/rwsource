@@ -1,0 +1,7 @@
+@startuml
+class LordToilData_HuntEnemies {
+    + <<override>> ExposeData() : void
+}
+LordToilData <|-- LordToilData_HuntEnemies
+LordToilData_HuntEnemies o-> "fallbackLocation" IntVec3
+@enduml

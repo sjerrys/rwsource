@@ -1,0 +1,8 @@
+@startuml
+class WorkGiver_GrowerSow {
+    + {static} ResetStaticData() : void
+    + <<override>> JobOnCell(pawn:Pawn, c:IntVec3, forced:bool) : Job
+}
+WorkGiver_Grower <|-- WorkGiver_GrowerSow
+WorkGiver_GrowerSow --> "PathEndMode" PathEndMode
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+abstract class ITab_Pawn_Visitor {
+    + ITab_Pawn_Visitor()
+}
+ITab <|-- ITab_Pawn_Visitor
+@enduml

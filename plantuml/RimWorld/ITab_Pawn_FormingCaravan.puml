@@ -1,0 +1,9 @@
+@startuml
+class ITab_Pawn_FormingCaravan {
+    + <<override>> IsVisible : bool <<get>>
+    + ITab_Pawn_FormingCaravan()
+    + <<override>> TabUpdate() : void
+    + {static} SelectNow(things:List<Thing>) : void
+}
+ITab <|-- ITab_Pawn_FormingCaravan
+@enduml

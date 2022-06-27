@@ -1,0 +1,6 @@
+@startuml
+class WindowResizer {
+    + DoResizeControl(winRect:Rect) : Rect
+}
+WindowResizer o-> "minWindowSize" Vector2
+@enduml

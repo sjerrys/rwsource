@@ -1,0 +1,7 @@
+@startuml
+class CompShearable {
+    + <<override>> CompInspectStringExtra() : string
+}
+CompHasGatherableBodyResource <|-- CompShearable
+CompShearable --> "Props" CompProperties_Shearable
+@enduml

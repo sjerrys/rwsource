@@ -1,0 +1,20 @@
+@startuml
+class CompProperties_AbilityEffect {
+    + goodwillImpact : int
+    + psychic : bool
+    + applicableToMechs : bool = true
+    + applyGoodwillImpactToLodgers : bool = true
+    + clamorRadius : int
+    + screenShakeIntensity : float
+    + customLetterLabel : string
+    + customLetterText : string
+    + sendLetter : bool = true
+    + message : string
+    + weight : float = 1f
+    + availableWhenTargetIsWounded : bool = true
+}
+AbilityCompProperties <|-- CompProperties_AbilityEffect
+CompProperties_AbilityEffect --> "clamorType" ClamorDef
+CompProperties_AbilityEffect --> "sound" SoundDef
+CompProperties_AbilityEffect --> "messageType" MessageTypeDef
+@enduml

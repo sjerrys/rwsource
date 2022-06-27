@@ -1,0 +1,5 @@
+@startuml
+abstract class WorkGiver_TakeToBed {
+}
+WorkGiver_Scanner <|-- WorkGiver_TakeToBed
+@enduml

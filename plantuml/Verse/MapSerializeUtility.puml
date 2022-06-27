@@ -1,0 +1,6 @@
+@startuml
+class MapSerializeUtility <<static>> {
+    + {static} SerializeUshort(map:Map, shortReader:Func<IntVec3, ushort>) : byte[]
+    + {static} LoadUshort(arr:byte[], map:Map, shortWriter:Action<IntVec3, ushort>) : void
+}
+@enduml

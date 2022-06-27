@@ -1,0 +1,7 @@
+@startuml
+class PatchOperationSequence {
+    + <<override>> Complete(modIdentifier:string) : void
+    + <<override>> ToString() : string
+}
+PatchOperation <|-- PatchOperationSequence
+@enduml

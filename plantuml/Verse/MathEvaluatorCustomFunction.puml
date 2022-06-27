@@ -1,0 +1,10 @@
+@startuml
+class MathEvaluatorCustomFunction {
+    + Maxargs : int <<get>>
+    + Minargs : int <<get>>
+    + MathEvaluatorCustomFunction(functionType:MathEvaluatorCustomFunctions.FunctionType, argTypes:XPathResultType[])
+    + Invoke(xsltContext:XsltContext, args:object[], docContext:XPathNavigator) : object
+}
+IXsltContextFunction <|-- MathEvaluatorCustomFunction
+MathEvaluatorCustomFunction --> "ReturnType" XPathResultType
+@enduml

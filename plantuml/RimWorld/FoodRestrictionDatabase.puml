@@ -1,0 +1,13 @@
+@startuml
+class FoodRestrictionDatabase {
+    + FoodRestrictionDatabase()
+    + ExposeData() : void
+    + DefaultFoodRestriction() : FoodRestriction
+    + TryDelete(foodRestriction:FoodRestriction) : AcceptanceReport
+    + MakeNewFoodRestriction() : FoodRestriction
+}
+class "List`1"<T> {
+}
+IExposable <|-- FoodRestrictionDatabase
+FoodRestrictionDatabase --> "AllFoodRestrictions<FoodRestriction>" "List`1"
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class ListableOption {
+    + label : string
+    + minHeight : float = 45f
+    + ListableOption(label:string, action:Action, uiHighlightTag:string)
+    + <<virtual>> DrawOption(pos:Vector2, width:float) : float
+}
+ListableOption --> "action" Action
+@enduml

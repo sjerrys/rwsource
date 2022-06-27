@@ -1,0 +1,29 @@
+@startuml
+class CompRefuelable {
+    + allowAutoRefuel : bool = true
+    + <<const>> RefueledSignal : string = "Refueled"
+    + <<const>> RanOutOfFuelSignal : string = "RanOutOfFuel"
+    + TargetFuelLevel : float <<get>> <<set>>
+    + Fuel : float <<get>>
+    + FuelPercentOfTarget : float <<get>>
+    + FuelPercentOfMax : float <<get>>
+    + IsFull : bool <<get>>
+    + HasFuel : bool <<get>>
+    + ShouldAutoRefuelNow : bool <<get>>
+    + ShouldAutoRefuelNowIgnoringFuelPct : bool <<get>>
+    + <<override>> Initialize(props:CompProperties) : void
+    + <<override>> PostExposeData() : void
+    + <<override>> PostDraw() : void
+    + <<override>> PostDestroy(mode:DestroyMode, previousMap:Map) : void
+    + <<override>> CompInspectStringExtra() : string
+    + <<override>> CompTick() : void
+    + ConsumeFuel(amount:float) : void
+    + Refuel(fuelThings:List<Thing>) : void
+    + Refuel(amount:float) : void
+    + Notify_UsedThisTick() : void
+    + GetFuelCountToFullyRefuel() : int
+    + <<override>> CompGetGizmosExtra() : IEnumerable<Gizmo>
+}
+ThingComp <|-- CompRefuelable
+CompRefuelable --> "Props" CompProperties_Refuelable
+@enduml

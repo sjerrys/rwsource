@@ -1,0 +1,5 @@
+@startuml
+class DirectXmlSaveFormatter <<static>> {
+    + {static} AddWhitespaceFromRoot(root:XElement) : void
+}
+@enduml

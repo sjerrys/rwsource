@@ -1,0 +1,5 @@
+@startuml
+class ThoughtWorker_ListeningToHarpsichord {
+}
+ThoughtWorker_MusicalInstrumentListeningBase <|-- ThoughtWorker_ListeningToHarpsichord
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+enum LoadSaveMode {
+    Inactive,
+    Saving,
+    LoadingVars,
+    ResolvingCrossRefs,
+    PostLoadInit,
+}
+@enduml

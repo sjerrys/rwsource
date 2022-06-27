@@ -1,0 +1,11 @@
+@startuml
+enum Season {
+    Undefined,
+    Spring,
+    Summer,
+    Fall,
+    Winter,
+    PermanentSummer,
+    PermanentWinter,
+}
+@enduml

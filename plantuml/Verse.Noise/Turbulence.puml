@@ -1,0 +1,14 @@
+@startuml
+class Turbulence {
+    + Frequency : double <<get>> <<set>>
+    + Power : double <<get>> <<set>>
+    + Roughness : int <<get>> <<set>>
+    + Seed : int <<get>> <<set>>
+    + Turbulence()
+    + Turbulence(input:ModuleBase)
+    + Turbulence(power:double, input:ModuleBase)
+    + Turbulence(x:Perlin, y:Perlin, z:Perlin, power:double, input:ModuleBase)
+    + <<override>> GetValue(x:double, y:double, z:double) : double
+}
+ModuleBase <|-- Turbulence
+@enduml

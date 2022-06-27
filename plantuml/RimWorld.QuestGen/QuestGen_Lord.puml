@@ -1,0 +1,8 @@
+@startuml
+class QuestGen_Lord <<static>> {
+    + {static} DefendPoint(quest:Quest, mapParent:MapParent, point:IntVec3, pawns:IEnumerable<Pawn>, faction:Faction, inSignal:string, inSignalRemovePawn:string, wanderRadius:float?, isCaravanSendable:bool, addFleeToil:bool) : QuestPart_DefendPoint
+    + {static} AssaultThings(quest:Quest, mapParent:MapParent, pawns:IEnumerable<Pawn>, assaulterFaction:Faction, things:IEnumerable<Thing>, inSignal:string, inSignalRemovePawn:string, excludeFromLookTargets:bool) : QuestPart_AssaultThings
+    + {static} ExitOnShuttle(quest:Quest, mapParent:MapParent, pawns:IEnumerable<Pawn>, faction:Faction, shuttle:Thing, inSignal:string, addFleeToil:bool) : QuestPart_ExitOnShuttle
+    + {static} WaitForEscort(quest:Quest, mapParent:MapParent, pawns:IEnumerable<Pawn>, faction:Faction, position:IntVec3, inSignal:string, addFleeToil:bool) : QuestPart_WaitForEscort
+}
+@enduml

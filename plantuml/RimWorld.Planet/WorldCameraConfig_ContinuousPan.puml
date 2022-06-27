@@ -1,0 +1,6 @@
+@startuml
+class WorldCameraConfig_ContinuousPan {
+    + WorldCameraConfig_ContinuousPan()
+}
+WorldCameraConfig <|-- WorldCameraConfig_ContinuousPan
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class InverseLerp {
+    + InverseLerp()
+    + InverseLerp(module:ModuleBase, from:float, to:float)
+    + <<override>> GetValue(x:double, y:double, z:double) : double
+}
+ModuleBase <|-- InverseLerp
+@enduml

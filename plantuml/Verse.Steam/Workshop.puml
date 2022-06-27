@@ -1,0 +1,8 @@
+@startuml
+class Workshop <<static>> {
+    + <<const>> InstallInfoFolderNameMaxLength : uint = 257u
+    + {static} GetUpdateStatus(updateStatus:EItemUpdateStatus, progPercent:float) : void
+    + {static} UploadButtonLabel(pfid:PublishedFileId_t) : string
+}
+Workshop --> "CurStage" WorkshopInteractStage
+@enduml

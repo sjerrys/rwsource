@@ -1,0 +1,9 @@
+@startuml
+class QuestNode_AddItemsReward {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_AddItemsReward
+QuestNode_AddItemsReward --> "items<IEnumerable<Thing>>" "SlateRef`1"
+QuestNode_AddItemsReward --> "inSignalChoiceUsed<string>" "SlateRef`1"
+@enduml

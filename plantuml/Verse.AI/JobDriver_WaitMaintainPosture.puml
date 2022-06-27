@@ -1,0 +1,6 @@
+@startuml
+class JobDriver_WaitMaintainPosture {
+    + <<override>> SetInitialPosture() : void
+}
+JobDriver_Wait <|-- JobDriver_WaitMaintainPosture
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class QuestPart_WaitForEscort {
+    + addFleeToil : bool = true
+    + <<override>> ExposeData() : void
+}
+QuestPart_MakeLord <|-- QuestPart_WaitForEscort
+QuestPart_WaitForEscort --> "point" IntVec3
+@enduml

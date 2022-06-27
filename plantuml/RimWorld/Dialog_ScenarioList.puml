@@ -1,0 +1,5 @@
+@startuml
+abstract class Dialog_ScenarioList {
+}
+Dialog_FileList <|-- Dialog_ScenarioList
+@enduml

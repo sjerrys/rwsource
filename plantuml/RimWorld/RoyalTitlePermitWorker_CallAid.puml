@@ -1,0 +1,7 @@
+@startuml
+class RoyalTitlePermitWorker_CallAid {
+    + <<override>> GetRoyalAidOptions(map:Map, pawn:Pawn, faction:Faction) : IEnumerable<FloatMenuOption>
+    + <<override>> OrderForceTarget(target:LocalTargetInfo) : void
+}
+RoyalTitlePermitWorker_Targeted <|-- RoyalTitlePermitWorker_CallAid
+@enduml

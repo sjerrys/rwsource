@@ -1,0 +1,6 @@
+@startuml
+class SymbolResolver_Interior_Storage {
+    + <<override>> Resolve(rp:ResolveParams) : void
+}
+SymbolResolver <|-- SymbolResolver_Interior_Storage
+@enduml

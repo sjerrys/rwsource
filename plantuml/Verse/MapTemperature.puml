@@ -1,0 +1,13 @@
+@startuml
+class MapTemperature {
+    + OutdoorTemp : float <<get>>
+    + SeasonalTemp : float <<get>>
+    + MapTemperature(map:Map)
+    + MapTemperatureTick() : void
+    + SeasonAcceptableFor(animalRace:ThingDef) : bool
+    + OutdoorTemperatureAcceptableFor(animalRace:ThingDef) : bool
+    + SeasonAndOutdoorTemperatureAcceptableFor(animalRace:ThingDef) : bool
+    + LocalSeasonsAreMeaningful() : bool
+    + DebugLogTemps() : void
+}
+@enduml

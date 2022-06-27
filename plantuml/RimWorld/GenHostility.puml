@@ -1,0 +1,13 @@
+@startuml
+class GenHostility <<static>> {
+    + {static} HostileTo(a:Thing, b:Thing) : bool
+    + {static} HostileTo(t:Thing, fac:Faction) : bool
+    + {static} AnyHostileActiveThreatToPlayer(map:Map, countDormantPawnsAsHostile:bool) : bool
+    + {static} AnyHostileActiveThreatTo(map:Map, faction:Faction, countDormantPawnsAsHostile:bool) : bool
+    + {static} AnyHostileActiveThreatTo(map:Map, faction:Faction, threat:IAttackTarget, countDormantPawnsAsHostile:bool) : bool
+    + {static} IsActiveThreatToPlayer(target:IAttackTarget) : bool
+    + {static} IsActiveThreatTo(target:IAttackTarget, faction:Faction) : bool
+    + {static} IsDefMechClusterThreat(def:ThingDef) : bool
+    + {static} Notify_PawnLostForTutor(pawn:Pawn, map:Map) : void
+}
+@enduml

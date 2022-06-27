@@ -1,0 +1,9 @@
+@startuml
+class WorldObjectSelectionUtility <<static>> {
+    + {static} MultiSelectableWorldObjectsInScreenRectDistinct(rect:Rect) : IEnumerable<WorldObject>
+    + {static} HiddenBehindTerrainNow(o:WorldObject) : bool
+    + {static} ScreenPos(o:WorldObject) : Vector2
+    + {static} VisibleToCameraNow(o:WorldObject) : bool
+    + {static} DistanceToMouse(o:WorldObject, mousePos:Vector2) : float
+}
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+abstract class ITab_ContentsBase {
+    + canRemoveThings : bool = true
+    + containedItemsKey : string
+    + <<override>> IsVisible : bool <<get>>
+    + ITab_ContentsBase()
+}
+class "IList`1"<T> {
+}
+ITab <|-- ITab_ContentsBase
+ITab_ContentsBase --> "container<Thing>" "IList`1"
+@enduml

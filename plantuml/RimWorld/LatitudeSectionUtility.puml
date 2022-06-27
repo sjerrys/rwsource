@@ -1,0 +1,8 @@
+@startuml
+class LatitudeSectionUtility <<static>> {
+    + {static} GetReportedLatitudeSection(latitude:float) : LatitudeSection
+    + {static} GetDominantLatitudeSection(latitude:float) : LatitudeSection
+    + {static} GetLatitudeSection(latitude:float, equatorial:float, seasonal:float, polar:float) : void
+    + {static} GetMaxLatitude(latitudeSection:LatitudeSection) : float
+}
+@enduml

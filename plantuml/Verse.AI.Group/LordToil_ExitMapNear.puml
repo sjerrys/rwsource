@@ -1,0 +1,9 @@
+@startuml
+class LordToil_ExitMapNear {
+    + <<override>> AllowSatisfyLongNeeds : bool <<get>>
+    + <<override>> AllowSelfTend : bool <<get>>
+    + LordToil_ExitMapNear(near:IntVec3, radius:float, locomotion:LocomotionUrgency, canDig:bool)
+    + <<override>> UpdateAllDuties() : void
+}
+LordToil <|-- LordToil_ExitMapNear
+@enduml

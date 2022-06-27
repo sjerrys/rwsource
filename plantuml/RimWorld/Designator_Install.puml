@@ -1,0 +1,16 @@
+@startuml
+class Designator_Install {
+    + <<override>> Label : string <<get>>
+    + <<override>> Desc : string <<get>>
+    + <<override>> Visible : bool <<get>>
+    + Designator_Install()
+    + <<override>> CanRemainSelected() : bool
+    + <<override>> ProcessInput(ev:Event) : void
+    + <<override>> CanDesignateCell(c:IntVec3) : AcceptanceReport
+    + <<override>> DesignateSingleCell(c:IntVec3) : void
+    + <<override>> SelectedUpdate() : void
+}
+Designator_Place <|-- Designator_Install
+Designator_Install --> "PlacingDef" BuildableDef
+Designator_Install --> "IconDrawColor" Color
+@enduml

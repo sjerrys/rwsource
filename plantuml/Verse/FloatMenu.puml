@@ -1,0 +1,17 @@
+@startuml
+class FloatMenu {
+    + givesColonistOrders : bool
+    + vanishIfMouseDistant : bool = true
+    + FloatMenu(options:List<FloatMenuOption>)
+    + FloatMenu(options:List<FloatMenuOption>, title:string, needSelection:bool)
+    + <<override>> ExtraOnGUI() : void
+    + <<override>> DoWindowContents(rect:Rect) : void
+    + <<override>> PostClose() : void
+    + Cancel() : void
+    + <<virtual>> PreOptionChosen(opt:FloatMenuOption) : void
+}
+Window <|-- FloatMenu
+FloatMenu --> "onCloseCallback" Action
+FloatMenu --> "InitialSize" Vector2
+FloatMenu --> "SizeMode" FloatMenuSizeMode
+@enduml

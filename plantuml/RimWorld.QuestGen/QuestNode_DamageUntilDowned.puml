@@ -1,0 +1,10 @@
+@startuml
+class QuestNode_DamageUntilDowned {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_DamageUntilDowned
+QuestNode_DamageUntilDowned --> "inSignal<string>" "SlateRef`1"
+QuestNode_DamageUntilDowned --> "pawns<IEnumerable<Pawn>>" "SlateRef`1"
+QuestNode_DamageUntilDowned --> "allowBleedingWounds<bool?>" "SlateRef`1"
+@enduml

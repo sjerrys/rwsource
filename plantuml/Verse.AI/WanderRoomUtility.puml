@@ -1,0 +1,5 @@
+@startuml
+class WanderRoomUtility <<static>> {
+    + {static} IsValidWanderDest(pawn:Pawn, loc:IntVec3, root:IntVec3) : bool
+}
+@enduml

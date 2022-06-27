@@ -1,0 +1,11 @@
+@startuml
+class ExtraDamage {
+    + amount : float
+    + armorPenetration : float
+    + chance : float = 1f
+    + AdjustedDamageAmount(verb:Verb, caster:Pawn) : float
+    + AdjustedArmorPenetration(verb:Verb, caster:Pawn) : float
+    + AdjustedArmorPenetration() : float
+}
+ExtraDamage --> "def" DamageDef
+@enduml

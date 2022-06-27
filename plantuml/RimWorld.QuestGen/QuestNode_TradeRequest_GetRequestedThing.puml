@@ -1,0 +1,12 @@
+@startuml
+class QuestNode_TradeRequest_GetRequestedThing {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_TradeRequest_GetRequestedThing
+QuestNode_TradeRequest_GetRequestedThing --> "storeThingAs<string>" "SlateRef`1"
+QuestNode_TradeRequest_GetRequestedThing --> "storeThingCountAs<string>" "SlateRef`1"
+QuestNode_TradeRequest_GetRequestedThing --> "storeMarketValueAs<string>" "SlateRef`1"
+QuestNode_TradeRequest_GetRequestedThing --> "storeHasQualityAs<string>" "SlateRef`1"
+QuestNode_TradeRequest_GetRequestedThing --> "dontRequest<List<ThingDef>>" "SlateRef`1"
+@enduml

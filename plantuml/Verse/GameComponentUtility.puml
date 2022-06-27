@@ -1,0 +1,10 @@
+@startuml
+class GameComponentUtility <<static>> {
+    + {static} GameComponentUpdate() : void
+    + {static} GameComponentTick() : void
+    + {static} GameComponentOnGUI() : void
+    + {static} FinalizeInit() : void
+    + {static} StartedNewGame() : void
+    + {static} LoadedGame() : void
+}
+@enduml

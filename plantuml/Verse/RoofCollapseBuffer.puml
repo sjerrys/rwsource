@@ -1,0 +1,10 @@
+@startuml
+class RoofCollapseBuffer {
+    + IsMarkedToCollapse(c:IntVec3) : bool
+    + MarkToCollapse(c:IntVec3) : void
+    + Clear() : void
+}
+class "List`1"<T> {
+}
+RoofCollapseBuffer --> "CellsMarkedToCollapse<IntVec3>" "List`1"
+@enduml

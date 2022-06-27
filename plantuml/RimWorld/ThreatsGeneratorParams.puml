@@ -1,0 +1,17 @@
+@startuml
+class ThreatsGeneratorParams {
+    + randSeed : int
+    + onDays : float
+    + offDays : float
+    + minSpacingDays : float
+    + threatPoints : float?
+    + minThreatPoints : float?
+    + currentThreatPointsFactor : float = 1f
+    + ExposeData() : void
+    + <<override>> ToString() : string
+}
+IExposable <|-- ThreatsGeneratorParams
+ThreatsGeneratorParams --> "allowedThreats" AllowedThreatsGeneratorThreats
+ThreatsGeneratorParams --> "numIncidentsRange" FloatRange
+ThreatsGeneratorParams --> "faction" Faction
+@enduml

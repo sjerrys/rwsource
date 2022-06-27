@@ -1,0 +1,10 @@
+@startuml
+class TilesPerDayCalculator <<static>> {
+    + {static} ApproxTilesPerDay(caravanTicksPerMove:int, tile:int, nextTile:int, explanation:StringBuilder, caravanTicksPerMoveExplanation:string) : float
+    + {static} ApproxTilesPerDay(caravan:Caravan, explanation:StringBuilder) : float
+    + {static} ApproxTilesPerDay(transferables:List<TransferableOneWay>, massUsage:float, massCapacity:float, tile:int, nextTile:int, explanation:StringBuilder) : float
+    + {static} ApproxTilesPerDayLeftAfterTransfer(transferables:List<TransferableOneWay>, massUsageLeftAfterTransfer:float, massCapacityLeftAfterTransfer:float, tile:int, nextTile:int, explanation:StringBuilder) : float
+    + {static} ApproxTilesPerDayLeftAfterTradeableTransfer(allCurrentThings:List<Thing>, tradeables:List<Tradeable>, massUsageLeftAfterTradeableTransfer:float, massCapacityLeftAfterTradeableTransfer:float, tile:int, nextTile:int, explanation:StringBuilder) : float
+    + {static} ApproxTilesPerDay(thingCounts:List<ThingCount>, massUsage:float, massCapacity:float, tile:int, nextTile:int, explanation:StringBuilder) : float
+}
+@enduml

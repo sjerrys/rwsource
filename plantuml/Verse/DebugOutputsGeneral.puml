@@ -1,0 +1,21 @@
+@startuml
+class DebugOutputsGeneral <<static>> {
+    + {static} WeaponsRanged() : void
+    + {static} Turrets() : void
+    + {static} WeaponsMelee() : void
+    + {static} Tools() : void
+    + {static} ResearchProjects() : void
+    + {static} ThingsExistingList() : void
+    + {static} ThingFillageAndPassability() : void
+    + {static} ThingPathCosts() : void
+    + {static} ThingDamageData() : void
+    + {static} UnfinishedThings() : void
+    + {static} ThingMasses() : void
+    + {static} ThingFillPercents() : void
+    + {static} ThingNutritions() : void
+    + {static} MakeTablePairsByThing(pairList:List<ThingStuffPair>) : void
+    + {static} ToStringEmptyZero(f:float, format:string) : string
+    + {static} ToStringPercentEmptyZero(f:float, format:string) : string
+    + {static} ToStringCheckBlank(b:bool) : string
+}
+@enduml

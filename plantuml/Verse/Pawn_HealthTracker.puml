@@ -1,0 +1,44 @@
+@startuml
+class Pawn_HealthTracker {
+    + forceIncap : bool
+    + beCarriedByCaravanIfSick : bool
+    + Downed : bool <<get>>
+    + Dead : bool <<get>>
+    + LethalDamageThreshold : float <<get>>
+    + InPainShock : bool <<get>>
+    + Pawn_HealthTracker(pawn:Pawn)
+    + Reset() : void
+    + ExposeData() : void
+    + AddHediff(def:HediffDef, part:BodyPartRecord, dinfo:DamageInfo?, result:DamageWorker.DamageResult) : Hediff
+    + AddHediff(hediff:Hediff, part:BodyPartRecord, dinfo:DamageInfo?, result:DamageWorker.DamageResult) : void
+    + RemoveHediff(hediff:Hediff) : void
+    + Notify_HediffChanged(hediff:Hediff) : void
+    + Notify_UsedVerb(verb:Verb, target:LocalTargetInfo) : void
+    + PreApplyDamage(dinfo:DamageInfo, absorbed:bool) : void
+    + PostApplyDamage(dinfo:DamageInfo, totalDamageDealt:float) : void
+    + RestorePart(part:BodyPartRecord, diffException:Hediff, checkStateChange:bool) : void
+    + CheckForStateChange(dinfo:DamageInfo?, hediff:Hediff) : void
+    + ShouldBeDeadFromRequiredCapacity() : PawnCapacityDef
+    + ShouldBeDeadFromLethalDamageThreshold() : bool
+    + WouldDieAfterAddingHediff(hediff:Hediff) : bool
+    + WouldDieAfterAddingHediff(def:HediffDef, part:BodyPartRecord, severity:float) : bool
+    + WouldBeDownedAfterAddingHediff(hediff:Hediff) : bool
+    + WouldBeDownedAfterAddingHediff(def:HediffDef, part:BodyPartRecord, severity:float) : bool
+    + SetDead() : void
+    + NotifyPlayerOfKilled(dinfo:DamageInfo?, hediff:Hediff, caravan:Caravan) : void
+    + Notify_Resurrected() : void
+    + HealthTick() : void
+    + HasHediffsNeedingTend(forAlert:bool) : bool
+    + HasHediffsNeedingTendByPlayer(forAlert:bool) : bool
+    + DropBloodFilth() : void
+}
+IExposable <|-- Pawn_HealthTracker
+Pawn_HealthTracker --> "woundedEffecter" Effecter
+Pawn_HealthTracker --> "deflectionEffecter" Effecter
+Pawn_HealthTracker --> "hediffSet" HediffSet
+Pawn_HealthTracker --> "capacities" PawnCapacitiesHandler
+Pawn_HealthTracker --> "surgeryBills" BillStack
+Pawn_HealthTracker --> "summaryHealth" SummaryHealthHandler
+Pawn_HealthTracker --> "immunity" ImmunityHandler
+Pawn_HealthTracker --> "State" PawnHealthState
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class CompProperties_BiocodableApparel {
+    + CompProperties_BiocodableApparel()
+}
+CompProperties <|-- CompProperties_BiocodableApparel
+@enduml

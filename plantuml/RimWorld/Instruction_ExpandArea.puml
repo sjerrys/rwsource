@@ -1,0 +1,8 @@
+@startuml
+abstract class Instruction_ExpandArea {
+    + <<override>> OnActivated() : void
+    + <<override>> ExposeData() : void
+    + <<override>> LessonUpdate() : void
+}
+Lesson_Instruction <|-- Instruction_ExpandArea
+@enduml

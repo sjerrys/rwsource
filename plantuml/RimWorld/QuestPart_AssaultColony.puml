@@ -1,0 +1,5 @@
+@startuml
+class QuestPart_AssaultColony {
+}
+QuestPart_MakeLord <|-- QuestPart_AssaultColony
+@enduml

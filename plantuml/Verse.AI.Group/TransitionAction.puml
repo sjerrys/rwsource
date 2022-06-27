@@ -1,0 +1,5 @@
+@startuml
+abstract class TransitionAction {
+    + {abstract} DoAction(trans:Transition) : void
+}
+@enduml

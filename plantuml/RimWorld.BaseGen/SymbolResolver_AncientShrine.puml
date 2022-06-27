@@ -1,0 +1,9 @@
+@startuml
+class SymbolResolver_AncientShrine {
+    + techprintChance : float
+    + bladelinkChance : float
+    + psychicChance : float
+    + <<override>> Resolve(rp:ResolveParams) : void
+}
+SymbolResolver <|-- SymbolResolver_AncientShrine
+@enduml

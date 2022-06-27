@@ -1,0 +1,14 @@
+@startuml
+class QuestGen_Signal <<static>> {
+    + {static} Signal(quest:Quest, inSignal:string, action:Action, outSignals:IEnumerable<string>, signalListenMode:QuestPart.SignalListenMode) : void
+    + {static} AnySignal(quest:Quest, inSignals:IEnumerable<string>, action:Action, outSignals:IEnumerable<string>, signalListenMode:QuestPart.SignalListenMode) : void
+    + {static} SignalRandom(quest:Quest, actions:IEnumerable<Action>, inSignal:string, signalListenMode:QuestPart.SignalListenMode) : void
+    + {static} SendSignals(quest:Quest, outSignals:IEnumerable<string>, outSignalsFormat:string, outSignalsFormattedCount:int) : void
+    + {static} SignalPassOutMany(quest:Quest, action:Action, inSignal:string, outSignals:IEnumerable<string>) : void
+    + {static} SignalPassActivable(quest:Quest, action:Action, inSignalEnable:string, inSignal:string, outSignalCompleted:string, outSignalsCompleted:IEnumerable<string>, inSignalDisable:string, reactivatable:bool) : QuestPart_PassActivable
+    + {static} SignalPass(quest:Quest, action:Action, inSignal:string, outSignal:string) : void
+    + {static} SignalPassAll(quest:Quest, action:Action, inSignals:List<string>, outSignal:string) : void
+    + {static} SignalPassAllSequence(quest:Quest, action:Action, inSignals:List<string>, outSignal:string) : void
+    + {static} SignalPassWithFaction(quest:Quest, faction:Faction, action:Action, outAction:Action, inSignal:string, outSignal:string) : void
+}
+@enduml

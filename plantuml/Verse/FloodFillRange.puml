@@ -1,0 +1,8 @@
+@startuml
+class FloodFillRange <<struct>> {
+    + minX : int
+    + maxX : int
+    + z : int
+    + FloodFillRange(minX:int, maxX:int, y:int)
+}
+@enduml

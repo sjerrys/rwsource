@@ -1,0 +1,11 @@
+@startuml
+class CompLifespan {
+    + age : int
+    + <<override>> PostExposeData() : void
+    + <<override>> CompTick() : void
+    + <<override>> CompTickRare() : void
+    + <<override>> CompInspectStringExtra() : string
+}
+ThingComp <|-- CompLifespan
+CompLifespan --> "Props" CompProperties_Lifespan
+@enduml

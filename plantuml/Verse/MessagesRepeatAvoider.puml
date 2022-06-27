@@ -1,0 +1,6 @@
+@startuml
+class MessagesRepeatAvoider <<static>> {
+    + {static} Reset() : void
+    + {static} MessageShowAllowed(tag:string, minSecondsSinceLastShow:float) : bool
+}
+@enduml

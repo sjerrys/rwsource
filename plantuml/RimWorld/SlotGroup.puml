@@ -1,0 +1,17 @@
+@startuml
+class SlotGroup {
+    + GetEnumerator() : IEnumerator<IntVec3>
+    + SlotGroup(parent:ISlotGroupParent)
+    + Notify_AddedCell(c:IntVec3) : void
+    + Notify_LostCell(c:IntVec3) : void
+    + <<override>> ToString() : string
+}
+class "IEnumerable`1"<T> {
+}
+class "List`1"<T> {
+}
+SlotGroup --> "parent" ISlotGroupParent
+SlotGroup --> "Settings" StorageSettings
+SlotGroup --> "HeldThings<Thing>" "IEnumerable`1"
+SlotGroup --> "CellsList<IntVec3>" "List`1"
+@enduml

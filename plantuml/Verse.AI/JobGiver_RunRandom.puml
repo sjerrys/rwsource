@@ -1,0 +1,6 @@
+@startuml
+class JobGiver_RunRandom {
+    + JobGiver_RunRandom()
+}
+JobGiver_Wander <|-- JobGiver_RunRandom
+@enduml

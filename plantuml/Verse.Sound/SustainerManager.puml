@@ -1,0 +1,13 @@
+@startuml
+class SustainerManager {
+    + RegisterSustainer(newSustainer:Sustainer) : void
+    + DeregisterSustainer(oldSustainer:Sustainer) : void
+    + SustainerExists(def:SoundDef) : bool
+    + SustainerManagerUpdate() : void
+    + UpdateAllSustainerScopes() : void
+    + EndAllInMap(map:Map) : void
+}
+class "List`1"<T> {
+}
+SustainerManager --> "AllSustainers<Sustainer>" "List`1"
+@enduml

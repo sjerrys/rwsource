@@ -1,0 +1,14 @@
+@startuml
+class ScribeSaver {
+    + savingForDebug : bool
+    + InitSaving(filePath:string, documentElementName:string) : void
+    + FinalizeSaving() : void
+    + WriteElement(elementName:string, value:string) : void
+    + WriteAttribute(attributeName:string, value:string) : void
+    + DebugOutputFor(saveable:IExposable) : string
+    + EnterNode(nodeName:string) : bool
+    + ExitNode() : void
+    + ForceStop() : void
+}
+ScribeSaver o-> "loadIDsErrorsChecker" DebugLoadIDsSavingErrorsChecker
+@enduml

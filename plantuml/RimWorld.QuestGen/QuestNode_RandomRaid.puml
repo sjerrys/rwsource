@@ -1,0 +1,9 @@
+@startuml
+class QuestNode_RandomRaid {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_RandomRaid
+QuestNode_RandomRaid --> "inSignal<string>" "SlateRef`1"
+QuestNode_RandomRaid --> "useCurrentThreatPoints<bool>" "SlateRef`1"
+@enduml

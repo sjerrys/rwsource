@@ -1,0 +1,19 @@
+@startuml
+class TaggedString <<struct>> {
+    + RawText : string <<get>>
+    + Length : int <<get>>
+    + StrippedLength : int <<get>>
+    + TaggedString(dat:string)
+    + Resolve() : string
+    + CapitalizeFirst() : TaggedString
+    + NullOrEmpty() : bool
+    + AdjustedFor(p:Pawn, pawnSymbol:string, addRelationInfoSymbol:bool) : TaggedString
+    + GetWidthCached() : float
+    + Trim() : TaggedString
+    + Shorten() : TaggedString
+    + ToLower() : TaggedString
+    + Replace(oldValue:string, newValue:string) : TaggedString
+    + <<override>> ToString() : string
+}
+TaggedString --> "Empty" TaggedString
+@enduml

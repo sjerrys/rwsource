@@ -1,0 +1,12 @@
+@startuml
+class RegionLink {
+    + Register(reg:Region) : void
+    + Deregister(reg:Region) : void
+    + GetOtherRegion(reg:Region) : Region
+    + UniqueHashCode() : ulong
+    + <<override>> ToString() : string
+}
+RegionLink --> "span" EdgeSpan
+RegionLink --> "RegionA" Region
+RegionLink --> "RegionB" Region
+@enduml

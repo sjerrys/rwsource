@@ -1,0 +1,10 @@
+@startuml
+class Toils_Combat <<static>> {
+    + {static} TrySetJobToUseAttackVerb(targetInd:TargetIndex) : Toil
+    + {static} GotoCastPosition(targetInd:TargetIndex, closeIfDowned:bool, maxRangeFactor:float) : Toil
+    + {static} CastVerb(targetInd:TargetIndex, canHitNonTargetPawns:bool) : Toil
+    + {static} CastVerb(targetInd:TargetIndex, destInd:TargetIndex, canHitNonTargetPawns:bool) : Toil
+    + {static} GetActiveSkillForToil(toil:Toil) : SkillDef
+    + {static} FollowAndMeleeAttack(targetInd:TargetIndex, hitAction:Action) : Toil
+}
+@enduml

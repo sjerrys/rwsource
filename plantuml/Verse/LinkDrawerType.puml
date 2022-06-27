@@ -1,0 +1,9 @@
+@startuml
+enum LinkDrawerType {
+    None,
+    Basic,
+    CornerFiller,
+    Transmitter,
+    TransmitterOverlay,
+}
+@enduml

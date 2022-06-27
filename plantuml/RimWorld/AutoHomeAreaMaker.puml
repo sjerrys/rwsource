@@ -1,0 +1,8 @@
+@startuml
+class AutoHomeAreaMaker <<static>> {
+    + {static} Notify_BuildingSpawned(b:Thing) : void
+    + {static} Notify_BuildingClaimed(b:Thing) : void
+    + {static} MarkHomeAroundThing(t:Thing) : void
+    + {static} Notify_ZoneCellAdded(c:IntVec3, zone:Zone) : void
+}
+@enduml

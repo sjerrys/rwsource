@@ -1,0 +1,20 @@
+@startuml
+class Targeter {
+    + IsTargeting : bool <<get>>
+    + BeginTargeting(source:ITargetingSource, parent:ITargetingSource) : void
+    + BeginTargeting(targetParams:TargetingParameters, action:Action<LocalTargetInfo>, caster:Pawn, actionWhenFinished:Action, mouseAttachment:Texture2D) : void
+    + BeginTargeting(targetParams:TargetingParameters, action:Action<LocalTargetInfo>, highlightAction:Action<LocalTargetInfo>, targetValidator:Func<LocalTargetInfo, bool>, caster:Pawn, actionWhenFinished:Action, mouseAttachment:Texture2D) : void
+    + BeginTargeting(targetParams:TargetingParameters, ability:ITargetingSource, action:Action<LocalTargetInfo>, actionWhenFinished:Action, mouseAttachment:Texture2D) : void
+    + StopTargeting() : void
+    + ProcessInputEvents() : void
+    + TargeterOnGUI() : void
+    + TargeterUpdate() : void
+    + IsPawnTargeting(p:Pawn) : bool
+    + OrderPawnForceTarget(targetingSource:ITargetingSource) : void
+}
+class "List`1"<T> {
+}
+Targeter --> "targetingSource" ITargetingSource
+Targeter --> "targetingSourceParent" ITargetingSource
+Targeter --> "targetingSourceAdditionalPawns<Pawn>" "List`1"
+@enduml

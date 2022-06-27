@@ -1,0 +1,10 @@
+@startuml
+class PowerOverlayMats <<static>> {
+    {static} PowerOverlayMats()
+}
+PowerOverlayMats --> "LinkedOverlayGraphic" Graphic
+PowerOverlayMats --> "MatConnectorBase" Material
+PowerOverlayMats --> "MatConnectorLine" Material
+PowerOverlayMats --> "MatConnectorAnticipated" Material
+PowerOverlayMats --> "MatConnectorBaseAnticipated" Material
+@enduml

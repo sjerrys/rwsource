@@ -1,0 +1,5 @@
+@startuml
+class ThingCompUtility <<static>> {
+    + {static} TryGetComp(thing:Thing) : T
+}
+@enduml

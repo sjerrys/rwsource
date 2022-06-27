@@ -1,0 +1,7 @@
+@startuml
+class Alert_NeedBatteries {
+    + Alert_NeedBatteries()
+    + <<override>> GetReport() : AlertReport
+}
+Alert <|-- Alert_NeedBatteries
+@enduml

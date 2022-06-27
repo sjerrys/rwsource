@@ -1,0 +1,6 @@
+@startuml
+class BlightUtility <<static>> {
+    + {static} GetFirstBlightableNowPlant(c:IntVec3, map:Map) : Plant
+    + {static} GetFirstBlightableEverPlant(c:IntVec3, map:Map) : Plant
+}
+@enduml

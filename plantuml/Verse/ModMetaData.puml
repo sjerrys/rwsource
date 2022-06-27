@@ -1,0 +1,89 @@
+@startuml
+class ModMetaData {
+    + enabled : bool = true
+    + appendPackageIdSteamPostfix : bool
+    + translationMod : bool
+    + {static} <<readonly>> SteamModPostfix : string = "_steam"
+    + FolderName : string <<get>>
+    + IsCoreMod : bool <<get>>
+    + Active : bool <<get>> <<set>>
+    + VersionCompatible : bool <<get>>
+    + MadeForNewerVersion : bool <<get>>
+    + Name : string <<get>>
+    + Description : string <<get>>
+    + Author : string <<get>>
+    + Url : string <<get>>
+    + SteamAppId : int <<get>>
+    + TargetVersion : string <<get>>
+    + PreviewImagePath : string <<get>>
+    + Official : bool <<get>>
+    + PackageId : string <<get>>
+    + PackageIdNonUnique : string <<get>>
+    + PackageIdPlayerFacing : string <<get>>
+    + HadIncorrectlyFormattedVersionInMetadata : bool <<get>>
+    + HadIncorrectlyFormattedPackageId : bool <<get>>
+    + OnSteamWorkshop : bool <<get>>
+    + UnsatisfiedDependencies() : List<string>
+    + ModMetaData(localAbsPath:string, official:bool)
+    + ModMetaData(workshopItem:WorkshopItem)
+    + UnsetPreviewImage() : void
+    + SamePackageId(otherPackageId:string, ignorePostfix:bool) : bool
+    + LoadFoldersForVersion(version:string) : List<LoadFolder>
+    + PrepareForWorkshopUpload() : void
+    + CanToUploadToWorkshop() : bool
+    + GetPublishedFileId() : PublishedFileId_t
+    + SetPublishedFileId(newPfid:PublishedFileId_t) : void
+    + GetWorkshopName() : string
+    + GetWorkshopDescription() : string
+    + GetWorkshopPreviewImagePath() : string
+    + GetWorkshopTags() : IList<string>
+    + GetWorkshopUploadDirectory() : DirectoryInfo
+    + GetWorkshopItemHook() : WorkshopItemHook
+    + GetRequirements() : IEnumerable<ModRequirement>
+    + <<override>> GetHashCode() : int
+    + <<override>> ToString() : string
+    + ToStringLong() : string
+}
+class ModMetaDataInternal {
+    + packageId : string = ""
+    + name : string = ""
+    + author : string = "Anonymous"
+    + url : string = ""
+    + description : string = "No description provided."
+    + steamAppId : int
+    + TryParseSupportedVersions(logIssues:bool) : bool
+    + TryParsePackageId(isOfficial:bool, logIssues:bool) : bool
+    + ValidateDependencies() : void
+    + ValidateDependencies_NewTmp(logIssues:bool) : void
+    + InitVersionedData() : void
+}
+class "VersionedData`1"<T> {
+    + LoadDataFromXmlCustom(xmlRoot:XmlNode) : void
+    + GetItemForVersion(ver:string) : T
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+WorkshopUploadable <|-- ModMetaData
+ModMetaData --> "loadFolders" ModLoadFolders
+ModMetaData --> "PreviewImage" Texture2D
+ModMetaData --> "RootDir" DirectoryInfo
+ModMetaData --> "Expansion" ExpansionDef
+ModMetaData --> "SupportedVersionsReadOnly<System.Version>" "List`1"
+ModMetaData --> "SupportedVersions<System.Version>" "IEnumerable`1"
+ModMetaData --> "Source" ContentSource
+ModMetaData --> "Dependencies<ModDependency>" "List`1"
+ModMetaData --> "LoadBefore<string>" "List`1"
+ModMetaData --> "LoadAfter<string>" "List`1"
+ModMetaData --> "IncompatibleWith<string>" "List`1"
+ModMetaData +-- ModMetaDataInternal
+ModMetaDataInternal --> "supportedVersions<string>" "List`1"
+ModMetaDataInternal o-> "modDependencies<ModDependency>" "List`1"
+ModMetaDataInternal o-> "loadBefore<string>" "List`1"
+ModMetaDataInternal o-> "loadAfter<string>" "List`1"
+ModMetaDataInternal o-> "incompatibleWith<string>" "List`1"
+ModMetaDataInternal o-> "PackageIdFormatRegex" Regex
+ModMetaDataInternal --> "SupportedVersions<System.Version>" "List`1"
+ModMetaData +-- "VersionedData`1"
+@enduml

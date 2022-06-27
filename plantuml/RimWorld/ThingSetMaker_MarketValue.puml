@@ -1,0 +1,6 @@
+@startuml
+class ThingSetMaker_MarketValue {
+    + ThingSetMaker_MarketValue()
+}
+ThingSetMaker <|-- ThingSetMaker_MarketValue
+@enduml

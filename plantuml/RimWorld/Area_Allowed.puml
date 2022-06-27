@@ -1,0 +1,16 @@
+@startuml
+class Area_Allowed {
+    + <<override>> Label : string <<get>>
+    + <<override>> Mutable : bool <<get>>
+    + <<override>> ListPriority : int <<get>>
+    + Area_Allowed()
+    + Area_Allowed(areaManager:AreaManager, label:string)
+    + <<override>> ExposeData() : void
+    + <<override>> AssignableAsAllowed() : bool
+    + <<override>> SetLabel(label:string) : void
+    + <<override>> GetUniqueLoadID() : string
+    + <<override>> ToString() : string
+}
+Area <|-- Area_Allowed
+Area_Allowed --> "Color" Color
+@enduml

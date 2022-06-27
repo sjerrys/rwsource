@@ -1,0 +1,7 @@
+@startuml
+class SummaryHealthHandler {
+    + SummaryHealthPercent : float <<get>>
+    + SummaryHealthHandler(pawn:Pawn)
+    + Notify_HealthChanged() : void
+}
+@enduml

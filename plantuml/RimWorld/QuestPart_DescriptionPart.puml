@@ -1,0 +1,9 @@
+@startuml
+class QuestPart_DescriptionPart {
+    + descriptionPart : string
+    + <<override>> DescriptionPart : string <<get>>
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+}
+QuestPartActivable <|-- QuestPart_DescriptionPart
+@enduml

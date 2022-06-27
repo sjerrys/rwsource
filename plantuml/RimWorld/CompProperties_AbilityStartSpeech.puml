@@ -1,0 +1,6 @@
+@startuml
+class CompProperties_AbilityStartSpeech {
+    + CompProperties_AbilityStartSpeech()
+}
+CompProperties_AbilityEffect <|-- CompProperties_AbilityStartSpeech
+@enduml

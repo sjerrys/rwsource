@@ -1,0 +1,8 @@
+@startuml
+class HediffGiverSetDef {
+}
+class "List`1"<T> {
+}
+Def <|-- HediffGiverSetDef
+HediffGiverSetDef --> "hediffGivers<HediffGiver>" "List`1"
+@enduml

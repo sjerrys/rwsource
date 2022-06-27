@@ -1,0 +1,7 @@
+@startuml
+class CompProperties_GeneratedName {
+    + CompProperties_GeneratedName()
+}
+CompProperties <|-- CompProperties_GeneratedName
+CompProperties_GeneratedName --> "nameMaker" RulePackDef
+@enduml

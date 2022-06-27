@@ -1,0 +1,6 @@
+@startuml
+enum PlayerPawnsArriveMethod {
+    Standing,
+    DropPods,
+}
+@enduml

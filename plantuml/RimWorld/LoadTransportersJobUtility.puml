@@ -1,0 +1,7 @@
+@startuml
+class LoadTransportersJobUtility <<static>> {
+    + {static} HasJobOnTransporter(pawn:Pawn, transporter:CompTransporter) : bool
+    + {static} JobOnTransporter(p:Pawn, transporter:CompTransporter) : Job
+    + {static} FindThingToLoad(p:Pawn, transporter:CompTransporter) : ThingCount
+}
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class ThoughtWorker_Ugly {
+}
+ThoughtWorker <|-- ThoughtWorker_Ugly
+@enduml

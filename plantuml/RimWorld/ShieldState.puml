@@ -1,0 +1,6 @@
+@startuml
+enum ShieldState {
+    Active,
+    Resetting,
+}
+@enduml

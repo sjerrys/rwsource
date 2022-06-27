@@ -1,0 +1,11 @@
+@startuml
+class RoomRequirement_Thing {
+    + <<override>> Met(r:Room, p:Pawn) : bool
+    + <<override>> SameOrSubsetOf(other:RoomRequirement) : bool
+    + <<override>> Label(r:Room) : string
+    + <<override>> ConfigErrors() : IEnumerable<string>
+    + <<override>> PlayerHasResearched() : bool
+}
+RoomRequirement <|-- RoomRequirement_Thing
+RoomRequirement_Thing --> "thingDef" ThingDef
+@enduml

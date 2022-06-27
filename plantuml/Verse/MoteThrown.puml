@@ -1,0 +1,10 @@
+@startuml
+class MoteThrown {
+    + airTimeLeft : float = 999999f
+    + MoveAngle : float <<get>> <<set>>
+    + Speed : float <<get>> <<set>>
+    + SetVelocity(angle:float, speed:float) : void
+}
+Mote <|-- MoteThrown
+MoteThrown --> "Velocity" Vector3
+@enduml

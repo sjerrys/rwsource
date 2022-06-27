@@ -1,0 +1,12 @@
+@startuml
+class Pawn_FoodRestrictionTracker {
+    + Configurable : bool <<get>>
+    + Pawn_FoodRestrictionTracker(pawn:Pawn)
+    + Pawn_FoodRestrictionTracker()
+    + GetCurrentRespectedRestriction(getter:Pawn) : FoodRestriction
+    + ExposeData() : void
+}
+IExposable <|-- Pawn_FoodRestrictionTracker
+Pawn_FoodRestrictionTracker --> "pawn" Pawn
+Pawn_FoodRestrictionTracker --> "CurrentFoodRestriction" FoodRestriction
+@enduml

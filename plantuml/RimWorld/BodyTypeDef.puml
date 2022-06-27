@@ -1,0 +1,8 @@
+@startuml
+class BodyTypeDef {
+    + bodyNakedGraphicPath : string
+    + bodyDessicatedGraphicPath : string
+}
+Def <|-- BodyTypeDef
+BodyTypeDef --> "headOffset" Vector2
+@enduml

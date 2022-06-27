@@ -1,0 +1,8 @@
+@startuml
+class RoofDefOf <<static>> {
+    {static} RoofDefOf()
+}
+RoofDefOf --> "RoofConstructed" RoofDef
+RoofDefOf --> "RoofRockThick" RoofDef
+RoofDefOf --> "RoofRockThin" RoofDef
+@enduml

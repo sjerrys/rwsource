@@ -1,0 +1,10 @@
+@startuml
+class BodyTypeDefOf <<static>> {
+    {static} BodyTypeDefOf()
+}
+BodyTypeDefOf --> "Male" BodyTypeDef
+BodyTypeDefOf --> "Female" BodyTypeDef
+BodyTypeDefOf --> "Thin" BodyTypeDef
+BodyTypeDefOf --> "Hulk" BodyTypeDef
+BodyTypeDefOf --> "Fat" BodyTypeDef
+@enduml

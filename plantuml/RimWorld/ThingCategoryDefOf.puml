@@ -1,0 +1,34 @@
+@startuml
+class ThingCategoryDefOf <<static>> {
+    {static} ThingCategoryDefOf()
+}
+ThingCategoryDefOf --> "Foods" ThingCategoryDef
+ThingCategoryDefOf --> "FoodMeals" ThingCategoryDef
+ThingCategoryDefOf --> "Manufactured" ThingCategoryDef
+ThingCategoryDefOf --> "Root" ThingCategoryDef
+ThingCategoryDefOf --> "Apparel" ThingCategoryDef
+ThingCategoryDefOf --> "PlantFoodRaw" ThingCategoryDef
+ThingCategoryDefOf --> "PlantMatter" ThingCategoryDef
+ThingCategoryDefOf --> "ResourcesRaw" ThingCategoryDef
+ThingCategoryDefOf --> "Items" ThingCategoryDef
+ThingCategoryDefOf --> "Neurotrainers" ThingCategoryDef
+ThingCategoryDefOf --> "NeurotrainersPsycast" ThingCategoryDef
+ThingCategoryDefOf --> "NeurotrainersSkill" ThingCategoryDef
+ThingCategoryDefOf --> "Techprints" ThingCategoryDef
+ThingCategoryDefOf --> "BuildingsArt" ThingCategoryDef
+ThingCategoryDefOf --> "Weapons" ThingCategoryDef
+ThingCategoryDefOf --> "Medicine" ThingCategoryDef
+ThingCategoryDefOf --> "Drugs" ThingCategoryDef
+ThingCategoryDefOf --> "BodyParts" ThingCategoryDef
+ThingCategoryDefOf --> "Chunks" ThingCategoryDef
+ThingCategoryDefOf --> "StoneChunks" ThingCategoryDef
+ThingCategoryDefOf --> "StoneBlocks" ThingCategoryDef
+ThingCategoryDefOf --> "MeatRaw" ThingCategoryDef
+ThingCategoryDefOf --> "Leathers" ThingCategoryDef
+ThingCategoryDefOf --> "Buildings" ThingCategoryDef
+ThingCategoryDefOf --> "Corpses" ThingCategoryDef
+ThingCategoryDefOf --> "CorpsesHumanlike" ThingCategoryDef
+ThingCategoryDefOf --> "CorpsesMechanoid" ThingCategoryDef
+ThingCategoryDefOf --> "CorpsesInsect" ThingCategoryDef
+ThingCategoryDefOf --> "CorpsesAnimal" ThingCategoryDef
+@enduml

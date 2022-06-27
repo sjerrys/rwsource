@@ -1,0 +1,12 @@
+@startuml
+class Designator_Deconstruct {
+    + <<override>> DraggableDimensions : int <<get>>
+    + Designator_Deconstruct()
+    + <<override>> CanDesignateCell(c:IntVec3) : AcceptanceReport
+    + <<override>> DesignateSingleCell(loc:IntVec3) : void
+    + <<override>> DesignateThing(t:Thing) : void
+    + <<override>> CanDesignateThing(t:Thing) : AcceptanceReport
+    + <<override>> SelectedUpdate() : void
+}
+Designator <|-- Designator_Deconstruct
+@enduml

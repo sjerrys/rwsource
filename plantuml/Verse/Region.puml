@@ -1,0 +1,48 @@
+@startuml
+class Region <<sealed>> {
+    + id : int
+    + mapIndex : sbyte
+    + touchesMapEdge : bool
+    + valid : bool = true
+    + reachedIndex : uint
+    + newRegionGroupIndex : int
+    + mark : int
+    + <<const>> GridSize : int = 12
+    + CellCount : int <<get>>
+    + DebugString : string <<get>>
+    + DebugIsNew : bool <<get>>
+    + IsDoorway : bool <<get>>
+    + {static} MakeNewUnfilled(root:IntVec3, map:Map) : Region
+    + Allows(tp:TraverseParms, isDestination:bool) : bool
+    + DangerFor(p:Pawn) : Danger
+    + GetBaseDesiredPlantsCount(allowCache:bool) : float
+    + OverlapWith(a:Area) : AreaOverlap
+    + Notify_AreaChanged(a:Area) : void
+    + DecrementMapIndex() : void
+    + Notify_MyMapRemoved() : void
+    + {static} ClearStaticData() : void
+    + <<override>> ToString() : string
+    + DebugDraw() : void
+    + DebugDrawMouseover() : void
+    + Debug_Notify_Traversed() : void
+    + <<override>> GetHashCode() : int
+    + <<override>> Equals(obj:object) : bool
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+Region o-> "type" RegionType
+Region o-> "links<RegionLink>" "List`1"
+Region --> "extentsClose" CellRect
+Region --> "extentsLimit" CellRect
+Region --> "door" Building_Door
+Region --> "Map" Map
+Region --> "Cells<IntVec3>" "IEnumerable`1"
+Region --> "Neighbors<Region>" "IEnumerable`1"
+Region --> "NeighborsOfSameType<Region>" "IEnumerable`1"
+Region --> "Room" Room
+Region --> "RandomCell" IntVec3
+Region --> "AnyCell" IntVec3
+Region --> "ListerThings" ListerThings
+@enduml

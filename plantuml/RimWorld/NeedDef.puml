@@ -1,0 +1,28 @@
+@startuml
+class NeedDef {
+    + colonistAndPrisonersOnly : bool
+    + colonistsOnly : bool
+    + onlyIfCausedByHediff : bool
+    + neverOnPrisoner : bool
+    + showOnNeedList : bool = true
+    + baseLevel : float = 0.5f
+    + major : bool
+    + listPriority : int
+    + tutorHighlightTag : string
+    + showForCaravanMembers : bool
+    + scaleBar : bool
+    + fallPerDay : float = 0.5f
+    + seekerRisePerHour : float
+    + seekerFallPerHour : float
+    + freezeWhileSleeping : bool
+    + freezeInMentalState : bool
+    + <<override>> ConfigErrors() : IEnumerable<string>
+}
+class "List`1"<T> {
+}
+Def <|-- NeedDef
+NeedDef --> "needClass" Type
+NeedDef --> "minIntelligence" Intelligence
+NeedDef --> "titleRequiredAny<RoyalTitleDef>" "List`1"
+NeedDef --> "hediffRequiredAny<HediffDef>" "List`1"
+@enduml

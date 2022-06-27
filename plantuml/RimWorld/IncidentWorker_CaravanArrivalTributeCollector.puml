@@ -1,0 +1,6 @@
+@startuml
+class IncidentWorker_CaravanArrivalTributeCollector {
+    + <<const>> TributeCollectorTraderKindCategory : string = "TributeCollector"
+}
+IncidentWorker_TraderCaravanArrival <|-- IncidentWorker_CaravanArrivalTributeCollector
+@enduml

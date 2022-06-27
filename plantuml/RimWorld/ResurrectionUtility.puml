@@ -1,0 +1,6 @@
+@startuml
+class ResurrectionUtility <<static>> {
+    + {static} Resurrect(pawn:Pawn) : void
+    + {static} ResurrectWithSideEffects(pawn:Pawn) : void
+}
+@enduml

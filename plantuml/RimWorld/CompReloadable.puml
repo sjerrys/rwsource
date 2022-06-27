@@ -1,0 +1,35 @@
+@startuml
+class CompReloadable {
+    + RemainingCharges : int <<get>>
+    + MaxCharges : int <<get>>
+    + CanBeUsed : bool <<get>>
+    + LabelRemaining : string <<get>>
+    + UniqueVerbOwnerID() : string
+    + VerbsStillUsableBy(p:Pawn) : bool
+    + <<override>> PostPostMake() : void
+    + <<override>> CompInspectStringExtra() : string
+    + <<override>> SpecialDisplayStats() : IEnumerable<StatDrawEntry>
+    + <<override>> PostExposeData() : void
+    + <<override>> CompGetWornGizmosExtra() : IEnumerable<Gizmo>
+    + DisabledReason(minNeeded:int, maxNeeded:int) : string
+    + NeedsReload(allowForcedReload:bool) : bool
+    + ReloadFrom(ammo:Thing) : void
+    + MinAmmoNeeded(allowForcedReload:bool) : int
+    + MaxAmmoNeeded(allowForcedReload:bool) : int
+    + MaxAmmoAmount() : int
+    + UsedOnce() : void
+}
+class "List`1"<T> {
+}
+ThingComp <|-- CompReloadable
+IVerbOwner <|-- CompReloadable
+CompReloadable --> "Props" CompProperties_Reloadable
+CompReloadable --> "AmmoDef" ThingDef
+CompReloadable --> "Wearer" Pawn
+CompReloadable --> "VerbProperties<VerbProperties>" "List`1"
+CompReloadable --> "Tools<Tool>" "List`1"
+CompReloadable --> "ImplementOwnerTypeDef" ImplementOwnerTypeDef
+CompReloadable --> "ConstantCaster" Thing
+CompReloadable --> "VerbTracker" VerbTracker
+CompReloadable --> "AllVerbs<Verb>" "List`1"
+@enduml

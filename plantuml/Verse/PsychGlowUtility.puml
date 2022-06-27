@@ -1,0 +1,5 @@
+@startuml
+class PsychGlowUtility <<static>> {
+    + {static} GetLabel(gl:PsychGlow) : string
+}
+@enduml

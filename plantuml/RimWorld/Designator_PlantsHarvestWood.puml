@@ -1,0 +1,8 @@
+@startuml
+class Designator_PlantsHarvestWood {
+    + Designator_PlantsHarvestWood()
+    + <<override>> CanDesignateThing(t:Thing) : AcceptanceReport
+    + <<override>> DesignateThing(t:Thing) : void
+}
+Designator_Plants <|-- Designator_PlantsHarvestWood
+@enduml

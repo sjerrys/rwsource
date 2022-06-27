@@ -1,0 +1,10 @@
+@startuml
+class LordToil_DefendTraderCaravan {
+    + <<override>> AllowSatisfyLongNeeds : bool <<get>>
+    + <<override>> CustomWakeThreshold : float? <<get>>
+    + LordToil_DefendTraderCaravan()
+    + LordToil_DefendTraderCaravan(defendPoint:IntVec3)
+    + <<override>> UpdateAllDuties() : void
+}
+LordToil_DefendPoint <|-- LordToil_DefendTraderCaravan
+@enduml

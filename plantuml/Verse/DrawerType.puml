@@ -1,0 +1,8 @@
+@startuml
+enum DrawerType {
+    None,
+    RealtimeOnly,
+    MapMeshOnly,
+    MapMeshAndRealTime,
+}
+@enduml

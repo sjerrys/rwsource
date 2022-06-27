@@ -1,0 +1,8 @@
+@startuml
+class Alert_MajorOrExtremeBreakRisk {
+    + <<override>> GetLabel() : string
+    + <<override>> GetExplanation() : TaggedString
+    + <<override>> GetReport() : AlertReport
+}
+Alert_Critical <|-- Alert_MajorOrExtremeBreakRisk
+@enduml

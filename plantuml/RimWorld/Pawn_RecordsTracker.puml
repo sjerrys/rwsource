@@ -1,0 +1,19 @@
+@startuml
+class Pawn_RecordsTracker {
+    + StoryRelevance : float <<get>>
+    + LastBattleTick : int <<get>>
+    + Pawn_RecordsTracker(pawn:Pawn)
+    + RecordsTick() : void
+    + RecordsTickMothballed(interval:int) : void
+    + Increment(def:RecordDef) : void
+    + AddTo(def:RecordDef, value:float) : void
+    + GetValue(def:RecordDef) : float
+    + GetAsInt(def:RecordDef) : int
+    + AccumulateStoryEvent(def:StoryEventDef) : void
+    + EnterBattle(battle:Battle) : void
+    + ExposeData() : void
+}
+IExposable <|-- Pawn_RecordsTracker
+Pawn_RecordsTracker --> "pawn" Pawn
+Pawn_RecordsTracker --> "BattleActive" Battle
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class BuildCopyCommandUtility <<static>> {
+    + {static} BuildCopyCommand(buildable:BuildableDef, stuff:ThingDef) : Command
+    + {static} BuildCommand(buildable:BuildableDef, stuff:ThingDef, label:string, description:string, allowHotKey:bool) : Command
+    + {static} FindAllowedDesignator(buildable:BuildableDef, mustBeVisible:bool) : Designator_Build
+    + {static} FindAllowedDesignatorRoot(buildable:BuildableDef, mustBeVisible:bool) : Designator
+}
+@enduml

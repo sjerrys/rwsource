@@ -1,0 +1,14 @@
+@startuml
+abstract class Designator_Place {
+    + Designator_Place()
+    + <<override>> DrawMouseAttachments() : void
+    + <<override>> DoExtraGuiControls(leftX:float, bottomY:float) : void
+    + <<override>> SelectedProcessInput(ev:Event) : void
+    + <<override>> SelectedUpdate() : void
+    + <<override>> Selected() : void
+}
+Designator <|-- Designator_Place
+Designator_Place o-> "CanPlaceColor" Color
+Designator_Place o-> "CannotPlaceColor" Color
+Designator_Place --> "PlacingDef" BuildableDef
+@enduml

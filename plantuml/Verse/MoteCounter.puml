@@ -1,0 +1,10 @@
+@startuml
+class MoteCounter {
+    + MoteCount : int <<get>>
+    + Saturation : float <<get>>
+    + Saturated : bool <<get>>
+    + SaturatedLowPriority : bool <<get>>
+    + Notify_MoteSpawned() : void
+    + Notify_MoteDespawned() : void
+}
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class ThinkNode_Subtree {
+    + <<override>> DeepCopy(resolve:bool) : ThinkNode
+    + <<override>> TryIssueJobPackage(pawn:Pawn, jobParams:JobIssueParams) : ThinkResult
+}
+ThinkNode <|-- ThinkNode_Subtree
+ThinkNode_Subtree --> "subtreeNode" ThinkNode
+@enduml

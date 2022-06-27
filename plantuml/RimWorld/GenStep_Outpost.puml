@@ -1,0 +1,9 @@
+@startuml
+class GenStep_Outpost {
+    + size : int = 16
+    + <<override>> SeedPart : int <<get>>
+    + <<override>> Generate(map:Map, parms:GenStepParams) : void
+}
+GenStep <|-- GenStep_Outpost
+GenStep_Outpost o-> "defaultPawnGroupPointsRange" FloatRange
+@enduml

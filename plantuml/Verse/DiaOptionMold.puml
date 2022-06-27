@@ -1,0 +1,10 @@
+@startuml
+class DiaOptionMold {
+    + Text : string
+    + RandomLinkNode() : DiaNodeMold
+}
+class "List`1"<T> {
+}
+DiaOptionMold o-> "ChildNodes<DiaNodeMold>" "List`1"
+DiaOptionMold o-> "ChildNodeNames<string>" "List`1"
+@enduml

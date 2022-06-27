@@ -1,0 +1,6 @@
+@startuml
+class WorkGiver_TendSelfEmergency {
+    + <<override>> NonScanJob(pawn:Pawn) : Job
+}
+WorkGiver_TendSelf <|-- WorkGiver_TendSelfEmergency
+@enduml

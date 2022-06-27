@@ -1,0 +1,23 @@
+@startuml
+class GlobalSettings {
+    + minBuildings : int
+    + minEmptyNodes : int
+    + minLandingPads : int
+    + minBarracks : int
+    + minThroneRooms : int
+    + basePart_buildingsResolved : int
+    + basePart_emptyNodesResolved : int
+    + basePart_landingPadsResolved : int
+    + basePart_barracksResolved : int
+    + basePart_throneRoomsResolved : int
+    + basePart_batteriesCoverage : float
+    + basePart_farmsCoverage : float
+    + basePart_powerPlantsCoverage : float
+    + basePart_breweriesCoverage : float
+    + landingPadsGenerated : int
+    + Clear() : void
+    + ClearResult() : void
+}
+GlobalSettings --> "map" Map
+GlobalSettings --> "mainRect" CellRect
+@enduml

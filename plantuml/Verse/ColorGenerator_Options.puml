@@ -1,0 +1,10 @@
+@startuml
+class ColorGenerator_Options {
+    + <<override>> NewRandomizedColor() : Color
+}
+class "List`1"<T> {
+}
+ColorGenerator <|-- ColorGenerator_Options
+ColorGenerator_Options o-> "options<ColorOption>" "List`1"
+ColorGenerator_Options --> "ExemplaryColor" Color
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class PawnGroupMakerUtility {
+    + {static} GeneratePawns(parms:PawnGroupMakerParms, warnOnZeroResults:bool) : IEnumerable<Pawn>
+    + {static} GeneratePawnKindsExample(parms:PawnGroupMakerParms) : IEnumerable<PawnKindDef>
+    + {static} ChoosePawnGenOptionsByPoints(pointsTotal:float, options:List<PawnGenOption>, groupParms:PawnGroupMakerParms) : IEnumerable<PawnGenOption>
+    + {static} MaxPawnCost(faction:Faction, totalPoints:float, raidStrategy:RaidStrategyDef, groupKind:PawnGroupKindDef) : float
+    + {static} CanGenerateAnyNormalGroup(faction:Faction, points:float) : bool
+    + {static} PawnGroupsMade() : void
+    + {static} TryGetRandomFactionForCombatPawnGroup(points:float, faction:Faction, validator:Predicate<Faction>, allowNonHostileToPlayer:bool, allowHidden:bool, allowDefeated:bool, allowNonHumanlike:bool) : bool
+}
+@enduml

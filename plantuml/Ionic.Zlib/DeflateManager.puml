@@ -1,0 +1,9 @@
+@startuml
+class DeflateManager <<sealed>> {
+}
+class Config {
+    + {static} Lookup(level:CompressionLevel) : Config
+    {static} Config()
+}
+DeflateManager +-- Config
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class BiomeWorker_AridShrubland {
+    + <<override>> GetScore(tile:Tile, tileID:int) : float
+}
+BiomeWorker <|-- BiomeWorker_AridShrubland
+@enduml

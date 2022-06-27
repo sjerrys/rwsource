@@ -1,0 +1,8 @@
+@startuml
+class Add {
+    + Add()
+    + Add(lhs:ModuleBase, rhs:ModuleBase)
+    + <<override>> GetValue(x:double, y:double, z:double) : double
+}
+ModuleBase <|-- Add
+@enduml

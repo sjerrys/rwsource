@@ -1,0 +1,5 @@
+@startuml
+class WorldCameraConfig_Normal {
+}
+WorldCameraConfig <|-- WorldCameraConfig_Normal
+@enduml

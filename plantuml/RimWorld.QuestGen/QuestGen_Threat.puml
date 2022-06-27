@@ -1,0 +1,5 @@
+@startuml
+class QuestGen_Threat <<static>> {
+    + {static} Raid(quest:Quest, map:Map, points:float, faction:Faction, inSignalLeave:string, customLetterLabel:string, customLetterText:string, customLetterLabelRules:RulePack, customLetterTextRules:RulePack, walkInSpot:IntVec3?, tag:string, inSignal:string, rootSymbol:string, raidArrivalMode:PawnsArrivalModeDef) : void
+}
+@enduml

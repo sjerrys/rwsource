@@ -1,0 +1,7 @@
+@startuml
+class StorytellerCompProperties_ThreatsGenerator {
+    + StorytellerCompProperties_ThreatsGenerator()
+}
+StorytellerCompProperties <|-- StorytellerCompProperties_ThreatsGenerator
+StorytellerCompProperties_ThreatsGenerator --> "parms" ThreatsGeneratorParams
+@enduml

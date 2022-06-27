@@ -1,0 +1,7 @@
+@startuml
+class SongDefOf <<static>> {
+    {static} SongDefOf()
+}
+SongDefOf --> "EntrySong" SongDef
+SongDefOf --> "EndCreditsSong" SongDef
+@enduml

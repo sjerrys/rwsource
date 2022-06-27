@@ -1,0 +1,6 @@
+@startuml
+class NamePlayerFactionDialogUtility <<static>> {
+    + {static} IsValidName(s:string) : bool
+    + {static} Named(s:string) : void
+}
+@enduml

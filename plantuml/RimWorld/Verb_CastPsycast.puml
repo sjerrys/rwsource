@@ -1,0 +1,10 @@
+@startuml
+class Verb_CastPsycast {
+    + <<override>> IsApplicableTo(target:LocalTargetInfo, showMessages:bool) : bool
+    + <<override>> OrderForceTarget(target:LocalTargetInfo) : void
+    + <<override>> ValidateTarget(target:LocalTargetInfo) : bool
+    + <<override>> OnGUI(target:LocalTargetInfo) : void
+}
+Verb_CastAbility <|-- Verb_CastPsycast
+Verb_CastPsycast --> "Psycast" Psycast
+@enduml

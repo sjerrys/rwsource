@@ -1,0 +1,14 @@
+@startuml
+class Pawn_RotationTracker {
+    + Pawn_RotationTracker(pawn:Pawn)
+    + Notify_Spawned() : void
+    + UpdateRotation() : void
+    + RotationTrackerTick() : void
+    + FaceCell(c:IntVec3) : void
+    + Face(p:Vector3) : void
+    + FaceTarget(target:LocalTargetInfo) : void
+    + {static} RotFromAngleBiased(angle:float) : Rot4
+    + ExposeData() : void
+}
+IExposable <|-- Pawn_RotationTracker
+@enduml

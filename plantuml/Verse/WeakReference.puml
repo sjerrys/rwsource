@@ -1,0 +1,7 @@
+@startuml
+class "WeakReference`1"<T> {
+    + <<new>> Target : T <<get>> <<set>>
+    + WeakReference(target:T)
+}
+WeakReference <|-- "WeakReference`1"
+@enduml

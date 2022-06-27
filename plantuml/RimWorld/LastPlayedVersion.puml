@@ -1,0 +1,6 @@
+@startuml
+class LastPlayedVersion <<static>> {
+    + {static} InitializeIfNeeded() : void
+}
+LastPlayedVersion --> "Version" Version
+@enduml

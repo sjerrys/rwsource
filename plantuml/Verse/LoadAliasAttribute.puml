@@ -1,0 +1,7 @@
+@startuml
+class LoadAliasAttribute {
+    + alias : string
+    + LoadAliasAttribute(alias:string)
+}
+Attribute <|-- LoadAliasAttribute
+@enduml

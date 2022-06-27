@@ -1,0 +1,8 @@
+@startuml
+class CellRenderer <<static>> {
+    + {static} RenderCell(c:IntVec3, colorPct:float) : void
+    + {static} RenderCell(c:IntVec3, mat:Material) : void
+    + {static} RenderSpot(loc:Vector3, colorPct:float) : void
+    + {static} RenderSpot(loc:Vector3, mat:Material, scale:float) : void
+}
+@enduml

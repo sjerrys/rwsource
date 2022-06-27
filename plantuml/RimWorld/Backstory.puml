@@ -1,0 +1,52 @@
+@startuml
+class Backstory {
+    + identifier : string
+    + title : string
+    + titleFemale : string
+    + titleShort : string
+    + titleShortFemale : string
+    + baseDesc : string
+    + shuffleable : bool = true
+    + untranslatedTitle : string
+    + untranslatedTitleFemale : string
+    + untranslatedTitleShort : string
+    + untranslatedTitleShortFemale : string
+    + untranslatedDesc : string
+    + titleTranslated : bool
+    + titleFemaleTranslated : bool
+    + titleShortTranslated : bool
+    + titleShortFemaleTranslated : bool
+    + descTranslated : bool
+    + DisallowsTrait(def:TraitDef, degree:int) : bool
+    + TitleFor(g:Gender) : string
+    + TitleCapFor(g:Gender) : string
+    + TitleShortFor(g:Gender) : string
+    + TitleShortCapFor(g:Gender) : string
+    + BodyTypeFor(g:Gender) : BodyTypeDef
+    + FullDescriptionFor(p:Pawn) : TaggedString
+    + PostLoad() : void
+    + ResolveReferences() : void
+    + ConfigErrors(ignoreNoSpawnCategories:bool) : IEnumerable<string>
+    + SetTitle(newTitle:string, newTitleFemale:string) : void
+    + SetTitleShort(newTitleShort:string, newTitleShortFemale:string) : void
+    + <<override>> ToString() : string
+    + <<override>> GetHashCode() : int
+}
+class "Dictionary`2"<T1,T2> {
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+Backstory --> "slot" BackstorySlot
+Backstory o-> "skillGainsResolved<SkillDef,int>" "Dictionary`2"
+Backstory --> "workDisables" WorkTags
+Backstory --> "requiredWorkTags" WorkTags
+Backstory o-> "spawnCategories<string>" "List`1"
+Backstory --> "forcedTraits<TraitEntry>" "List`1"
+Backstory --> "disallowedTraits<TraitEntry>" "List`1"
+Backstory --> "hairTags<string>" "List`1"
+Backstory --> "NameMaker" RulePackDef
+Backstory --> "DisabledWorkTypes<WorkTypeDef>" "IEnumerable`1"
+Backstory --> "DisabledWorkGivers<WorkGiverDef>" "IEnumerable`1"
+@enduml

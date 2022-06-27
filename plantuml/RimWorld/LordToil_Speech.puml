@@ -1,0 +1,11 @@
+@startuml
+class LordToil_Speech {
+    + LordToil_Speech(spot:IntVec3, gatheringDef:GatheringDef, organizer:Pawn)
+    + <<override>> Init() : void
+    + <<override>> VoluntaryJoinDutyHookFor(p:Pawn) : ThinkTreeDutyHook
+    + <<override>> UpdateAllDuties() : void
+}
+LordToil_Gathering <|-- LordToil_Speech
+LordToil_Speech --> "organizer" Pawn
+LordToil_Speech --> "Data" LordToilData_Speech
+@enduml

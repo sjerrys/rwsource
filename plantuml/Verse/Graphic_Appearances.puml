@@ -1,0 +1,14 @@
+@startuml
+class Graphic_Appearances {
+    + <<override>> MatAt(rot:Rot4, thing:Thing) : Material
+    + <<override>> Init(req:GraphicRequest) : void
+    + <<override>> GetColoredVersion(newShader:Shader, newColor:Color, newColorTwo:Color) : Graphic
+    + <<override>> MatSingleFor(thing:Thing) : Material
+    + <<override>> DrawWorker(loc:Vector3, rot:Rot4, thingDef:ThingDef, thing:Thing, extraRotation:float) : void
+    + SubGraphicFor(thing:Thing) : Graphic
+    + SubGraphicFor(stuff:ThingDef) : Graphic
+    + <<override>> ToString() : string
+}
+Graphic <|-- Graphic_Appearances
+Graphic_Appearances --> "MatSingle" Material
+@enduml

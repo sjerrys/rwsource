@@ -1,0 +1,7 @@
+@startuml
+class SappersUtility <<static>> {
+    + {static} IsGoodSapper(p:Pawn) : bool
+    + {static} IsGoodBackupSapper(p:Pawn) : bool
+    + {static} HasBuildingDestroyerWeapon(p:Pawn) : bool
+}
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class StatWorker_MeleeArmorPenetration {
+    + <<override>> IsDisabledFor(thing:Thing) : bool
+    + <<override>> GetValueUnfinalized(req:StatRequest, applyPostProcess:bool) : float
+    + <<override>> ShouldShowFor(req:StatRequest) : bool
+}
+StatWorker <|-- StatWorker_MeleeArmorPenetration
+@enduml

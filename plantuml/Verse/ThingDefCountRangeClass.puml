@@ -1,0 +1,17 @@
+@startuml
+class ThingDefCountRangeClass <<sealed>> {
+    + Min : int <<get>>
+    + Max : int <<get>>
+    + TrueMin : int <<get>>
+    + TrueMax : int <<get>>
+    + ThingDefCountRangeClass()
+    + ThingDefCountRangeClass(thingDef:ThingDef, min:int, max:int)
+    + ThingDefCountRangeClass(thingDef:ThingDef, countRange:IntRange)
+    + ExposeData() : void
+    + LoadDataFromXmlCustom(xmlRoot:XmlNode) : void
+    + <<override>> ToString() : string
+}
+IExposable <|-- ThingDefCountRangeClass
+ThingDefCountRangeClass --> "thingDef" ThingDef
+ThingDefCountRangeClass --> "countRange" IntRange
+@enduml

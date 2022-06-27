@@ -1,0 +1,22 @@
+@startuml
+class Pawn_Ownership {
+    + Pawn_Ownership(pawn:Pawn)
+    + ExposeData() : void
+    + ClaimBedIfNonMedical(newBed:Building_Bed) : bool
+    + UnclaimBed() : bool
+    + ClaimGrave(newGrave:Building_Grave) : bool
+    + UnclaimGrave() : bool
+    + ClaimThrone(newThrone:Building_Throne) : bool
+    + UnclaimThrone() : bool
+    + ClaimMeditationSpot(newSpot:Building) : bool
+    + UnclaimMeditationSpot() : bool
+    + UnclaimAll() : void
+    + Notify_ChangedGuestStatus() : void
+}
+IExposable <|-- Pawn_Ownership
+Pawn_Ownership --> "OwnedBed" Building_Bed
+Pawn_Ownership --> "AssignedGrave" Building_Grave
+Pawn_Ownership --> "AssignedThrone" Building_Throne
+Pawn_Ownership --> "AssignedMeditationSpot" Building
+Pawn_Ownership --> "OwnedRoom" Room
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class PlayerPawnsArriveMethodExtension <<static>> {
+    + {static} ToStringHuman(method:PlayerPawnsArriveMethod) : string
+}
+@enduml

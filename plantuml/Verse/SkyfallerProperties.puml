@@ -1,0 +1,32 @@
+@startuml
+class SkyfallerProperties {
+    + hitRoof : bool = true
+    + reversed : bool
+    + explosionRadius : float = 3f
+    + damageSpawnedThings : bool
+    + explosionDamageFactor : float = 1f
+    + shrapnelDistanceFactor : float = 1f
+    + speed : float = 1f
+    + shadow : string = "Things/Skyfaller/SkyfallerShadowCircle"
+    + cameraShake : float
+    + rotateGraphicTowardsDirection : bool
+    + anticipationSoundTicks : int = 100
+    + motesPerCell : int = 3
+    + moteSpawnTime : float
+    + MakesShrapnel : bool <<get>>
+    + CausesExplosion : bool <<get>>
+}
+SkyfallerProperties o-> "ticksToImpactRange" IntRange
+SkyfallerProperties --> "explosionDamage" DamageDef
+SkyfallerProperties o-> "metalShrapnelCountRange" IntRange
+SkyfallerProperties o-> "rubbleShrapnelCountRange" IntRange
+SkyfallerProperties --> "movementType" SkyfallerMovementType
+SkyfallerProperties o-> "shadowSize" Vector2
+SkyfallerProperties --> "impactSound" SoundDef
+SkyfallerProperties --> "anticipationSound" SoundDef
+SkyfallerProperties --> "xPositionCurve" SimpleCurve
+SkyfallerProperties --> "zPositionCurve" SimpleCurve
+SkyfallerProperties --> "angleCurve" SimpleCurve
+SkyfallerProperties --> "rotationCurve" SimpleCurve
+SkyfallerProperties --> "speedCurve" SimpleCurve
+@enduml

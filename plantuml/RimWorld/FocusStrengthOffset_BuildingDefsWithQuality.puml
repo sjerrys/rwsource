@@ -1,0 +1,9 @@
+@startuml
+class FocusStrengthOffset_BuildingDefsWithQuality {
+    + <<override>> GetExplanation(parent:Thing) : string
+    + <<override>> GetExplanationAbstract(def:ThingDef) : string
+    + <<override>> MaxOffset(parent:Thing) : float
+}
+FocusStrengthOffset_BuildingDefs <|-- FocusStrengthOffset_BuildingDefsWithQuality
+FocusStrengthOffset_BuildingDefsWithQuality --> "focusPerQuality" SimpleCurve
+@enduml

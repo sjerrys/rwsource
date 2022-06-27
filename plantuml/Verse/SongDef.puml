@@ -1,0 +1,18 @@
+@startuml
+class SongDef {
+    + clipPath : string
+    + volume : float = 1f
+    + playOnMap : bool = true
+    + commonality : float = 1f
+    + tense : bool
+    + <<override>> PostLoad() : void
+    + <<override>> ResolveReferences() : void
+}
+class "List`1"<T> {
+}
+Def <|-- SongDef
+SongDef o-> "allowedTimeOfDay" TimeOfDay
+SongDef --> "allowedSeasons<Season>" "List`1"
+SongDef --> "minRoyalTitle" RoyalTitleDef
+SongDef --> "clip" AudioClip
+@enduml

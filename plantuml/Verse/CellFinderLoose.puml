@@ -1,0 +1,13 @@
+@startuml
+class CellFinderLoose <<static>> {
+    + {static} RandomCellWith(validator:Predicate<IntVec3>, map:Map, maxTries:int) : IntVec3
+    + {static} TryGetRandomCellWith(validator:Predicate<IntVec3>, map:Map, maxTries:int, result:IntVec3) : bool
+    + {static} TryFindRandomNotEdgeCellWith(minEdgeDistance:int, validator:Predicate<IntVec3>, map:Map, result:IntVec3) : bool
+    + {static} GetFleeDest(pawn:Pawn, threats:List<Thing>, distance:float) : IntVec3
+    + {static} GetFleeDestAnimal(pawn:Pawn, threats:List<Thing>, distance:float) : IntVec3
+    + {static} CanFleeToLocation(pawn:Pawn, location:IntVec3) : bool
+    + {static} GetFleeDestToolUser(pawn:Pawn, threats:List<Thing>, distance:float) : IntVec3
+    + {static} TryFindCentralCell(map:Map, tightness:int, minCellCount:int, extraValidator:Predicate<IntVec3>) : IntVec3
+    + {static} TryFindSkyfallerCell(skyfaller:ThingDef, map:Map, cell:IntVec3, minDistToEdge:int, nearLoc:IntVec3, nearLocMaxDist:int, allowRoofedCells:bool, allowCellsWithItems:bool, allowCellsWithBuildings:bool, colonyReachable:bool, avoidColonistsIfExplosive:bool, alwaysAvoidColonists:bool, extraValidator:Predicate<IntVec3>) : bool
+}
+@enduml

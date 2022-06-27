@@ -1,0 +1,9 @@
+@startuml
+abstract class MentalState_Tantrum {
+    + <<override>> ExposeData() : void
+    + <<override>> SocialModeMax() : RandomSocialMode
+    + <<override>> Notify_AttackedTarget(hitTarget:LocalTargetInfo) : void
+}
+MentalState <|-- MentalState_Tantrum
+MentalState_Tantrum --> "target" Thing
+@enduml

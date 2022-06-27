@@ -1,0 +1,13 @@
+@startuml
+class QuestPart_PawnsAvailable {
+    + requiredCount : int
+    + inSignalDecrement : string
+    + outSignalPawnsNotAvailable : string
+    + <<override>> QuestPartTick() : void
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> ExposeData() : void
+}
+QuestPartActivable <|-- QuestPart_PawnsAvailable
+QuestPart_PawnsAvailable --> "race" ThingDef
+QuestPart_PawnsAvailable --> "mapParent" MapParent
+@enduml

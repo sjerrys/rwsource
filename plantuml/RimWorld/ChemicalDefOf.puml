@@ -1,0 +1,6 @@
+@startuml
+class ChemicalDefOf <<static>> {
+    {static} ChemicalDefOf()
+}
+ChemicalDefOf --> "Alcohol" ChemicalDef
+@enduml

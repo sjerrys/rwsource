@@ -1,0 +1,11 @@
+@startuml
+abstract class IncidentWorker_Raid {
+    + {abstract} ResolveRaidStrategy(parms:IncidentParms, groupKind:PawnGroupKindDef) : void
+    + <<virtual>> ResolveRaidArriveMode(parms:IncidentParms) : void
+    + {static} AdjustedRaidPoints(points:float, raidArrivalMode:PawnsArrivalModeDef, raidStrategy:RaidStrategyDef, faction:Faction, groupKind:PawnGroupKindDef) : float
+    + DoTable_RaidFactionSampled() : void
+    + DoTable_RaidStrategySampled(fac:Faction) : void
+    + DoTable_RaidArrivalModeSampled(fac:Faction) : void
+}
+IncidentWorker_PawnsArrive <|-- IncidentWorker_Raid
+@enduml

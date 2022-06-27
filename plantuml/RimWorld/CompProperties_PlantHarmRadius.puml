@@ -1,0 +1,9 @@
+@startuml
+class CompProperties_PlantHarmRadius {
+    + harmFrequencyPerArea : float = 0.011f
+    + leaflessPlantKillChance : float = 0.05f
+    + CompProperties_PlantHarmRadius()
+}
+CompProperties <|-- CompProperties_PlantHarmRadius
+CompProperties_PlantHarmRadius --> "radiusPerDayCurve" SimpleCurve
+@enduml

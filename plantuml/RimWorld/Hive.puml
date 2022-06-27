@@ -1,0 +1,33 @@
+@startuml
+class Hive {
+    + <<const>> PawnSpawnRadius : int = 2
+    + <<const>> MaxSpawnedPawnsPoints : float = 500f
+    + <<const>> InitialPawnsPoints : float = 200f
+    + {static} <<readonly>> MemoAttackedByEnemy : string = "HiveAttacked"
+    + {static} <<readonly>> MemoDeSpawned : string = "HiveDeSpawned"
+    + {static} <<readonly>> MemoBurnedBadly : string = "HiveBurnedBadly"
+    + {static} <<readonly>> MemoDestroyedNonRoofCollapse : string = "HiveDestroyedNonRoofCollapse"
+    + TargetPriorityFactor : float <<get>>
+    + ThreatDisabled(disabledFor:IAttackTargetSearcher) : bool
+    + {static} ResetStaticData() : void
+    + <<override>> SpawnSetup(map:Map, respawningAfterLoad:bool) : void
+    + <<override>> Tick() : void
+    + <<override>> DeSpawn(mode:DestroyMode) : void
+    + <<override>> Destroy(mode:DestroyMode) : void
+    + <<override>> PostApplyDamage(dinfo:DamageInfo, totalDamageDealt:float) : void
+    + <<override>> Kill(dinfo:DamageInfo?, exactCulprit:Hediff) : void
+    + <<override>> PreventPlayerSellingThingsNearby(reason:string) : bool
+    + <<override>> GetGizmos() : IEnumerable<Gizmo>
+    + <<override>> ExposeData() : void
+}
+class "List`1"<T> {
+}
+ThingWithComps <|-- Hive
+IAttackTarget <|-- Hive
+ILoadReferenceable <|-- Hive
+Hive o-> "spawnablePawnKinds<PawnKindDef>" "List`1"
+Hive --> "CompDormant" CompCanBeDormant
+Hive --> "Thing" Thing
+Hive --> "TargetCurrentlyAimingAt" LocalTargetInfo
+Hive --> "PawnSpawner" CompSpawnerPawn
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+enum LatitudeSection {
+    Undefined,
+    Equatorial,
+    Seasonal,
+    Polar,
+}
+@enduml

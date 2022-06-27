@@ -1,0 +1,8 @@
+@startuml
+class StorytellerCompProperties_SingleMTB {
+    + mtbDays : float = 13f
+    + StorytellerCompProperties_SingleMTB()
+}
+StorytellerCompProperties <|-- StorytellerCompProperties_SingleMTB
+StorytellerCompProperties_SingleMTB --> "incident" IncidentDef
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class GenGuest <<static>> {
+    + {static} PrisonerRelease(p:Pawn) : void
+    + {static} AddPrisonerSoldThoughts(prisoner:Pawn) : void
+    + {static} AddHealthyPrisonerReleasedThoughts(prisoner:Pawn) : void
+    + {static} RemoveHealthyPrisonerReleasedThoughts(prisoner:Pawn) : void
+}
+@enduml

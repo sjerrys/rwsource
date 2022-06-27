@@ -1,0 +1,7 @@
+@startuml
+class ThingSetMaker_TraderStock {
+    + DebugAverageTotalStockValue(td:TraderKindDef) : float
+    + DebugGenerationDataFor(td:TraderKindDef) : string
+}
+ThingSetMaker <|-- ThingSetMaker_TraderStock
+@enduml

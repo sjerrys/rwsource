@@ -1,0 +1,10 @@
+@startuml
+class RealTime <<static>> {
+    + {static} deltaTime : float
+    + {static} realDeltaTime : float
+    + {static} frameCount : int
+    + {static} LastRealTime : float <<get>>
+    + {static} Update() : void
+}
+RealTime o-> "moteList" RealtimeMoteList
+@enduml

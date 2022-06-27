@@ -1,0 +1,7 @@
+@startuml
+enum TaleType {
+    Volatile,
+    Expirable,
+    PermanentHistorical,
+}
+@enduml

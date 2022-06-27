@@ -1,0 +1,6 @@
+@startuml
+enum PawnNameCategory {
+    NoName,
+    HumanStandard,
+}
+@enduml

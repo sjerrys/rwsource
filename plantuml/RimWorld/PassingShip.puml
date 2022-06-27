@@ -1,0 +1,25 @@
+@startuml
+class PassingShip {
+    + name : string = "Nameless"
+    + ticksUntilDeparture : int = 40000
+    + <<virtual>> FullTitle : string <<get>>
+    + Departed : bool <<get>>
+    + PassingShip()
+    + PassingShip(faction:Faction)
+    + <<virtual>> ExposeData() : void
+    + <<virtual>> PassingShipTick() : void
+    + <<virtual>> Depart() : void
+    + <<virtual>> TryOpenComms(negotiator:Pawn) : void
+    + <<virtual>> GetCallLabel() : string
+    + GetInfoText() : string
+    GetFaction() : Faction
+    + CommFloatMenuOption(console:Building_CommsConsole, negotiator:Pawn) : FloatMenuOption
+    + GetUniqueLoadID() : string
+}
+IExposable <|-- PassingShip
+ICommunicable <|-- PassingShip
+ILoadReferenceable <|-- PassingShip
+PassingShip --> "passingShipManager" PassingShipManager
+PassingShip --> "Map" Map
+PassingShip --> "Faction" Faction
+@enduml

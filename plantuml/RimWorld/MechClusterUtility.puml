@@ -1,0 +1,12 @@
+@startuml
+class MechClusterUtility <<static>> {
+    + <<const>> DefeatedSignal : string = "MechClusterDefeated"
+    + {static} FindClusterPosition(map:Map, sketch:MechClusterSketch, maxTries:int, spawnCloseToColonyChance:float) : IntVec3
+    + {static} GetClusterPositionScore(center:IntVec3, map:Map, sketch:MechClusterSketch) : float
+    + {static} CanSpawnClusterAt(sketch:MechClusterSketch, center:IntVec3, map:Map, desperate:bool) : bool
+    + {static} FindDropPodLocation(map:Map, validator:Predicate<IntVec3>, maxTries:int, spawnCloseToColonyChance:float) : IntVec3
+    + {static} TryFindMechClusterPosInRect(rect:CellRect, map:Map, sketch:MechClusterSketch) : IntVec3
+    + {static} SpawnCluster(center:IntVec3, map:Map, sketch:MechClusterSketch, dropInPods:bool, canAssaultColony:bool, questTag:string) : List<Thing>
+    + {static} AnyThreatBuilding(things:List<Thing>) : bool
+}
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class SmoothSurfaceDesignatorUtility <<static>> {
+    + {static} CanSmoothFloorUnder(b:Building) : bool
+    + {static} Notify_BuildingSpawned(b:Building) : void
+    + {static} Notify_BuildingDespawned(b:Building, map:Map) : void
+}
+@enduml

@@ -1,0 +1,16 @@
+@startuml
+class FireUtility <<static>> {
+    + {static} CanEverAttachFire(t:Thing) : bool
+    + {static} ChanceToStartFireIn(c:IntVec3, map:Map) : float
+    + {static} TryStartFireIn(c:IntVec3, map:Map, fireSize:float) : bool
+    + {static} ChanceToAttachFireFromEvent(t:Thing) : float
+    + {static} ChanceToAttachFireCumulative(t:Thing, freqInTicks:float) : float
+    + {static} TryAttachFire(t:Thing, fireSize:float) : void
+    + {static} IsBurning(t:TargetInfo) : bool
+    + {static} IsBurning(t:Thing) : bool
+    + {static} ContainsStaticFire(c:IntVec3, map:Map) : bool
+    + {static} ContainsTrap(c:IntVec3, map:Map) : bool
+    + {static} Flammable(terrain:TerrainDef) : bool
+    + {static} TerrainFlammableNow(c:IntVec3, map:Map) : bool
+}
+@enduml

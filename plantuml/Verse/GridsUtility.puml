@@ -1,0 +1,38 @@
+@startuml
+class GridsUtility <<static>> {
+    + {static} GetTemperature(loc:IntVec3, map:Map) : float
+    + {static} GetRegion(loc:IntVec3, map:Map, allowedRegionTypes:RegionType) : Region
+    + {static} GetRoom(loc:IntVec3, map:Map, allowedRegionTypes:RegionType) : Room
+    + {static} GetRoomGroup(loc:IntVec3, map:Map) : RoomGroup
+    + {static} GetRoomOrAdjacent(loc:IntVec3, map:Map, allowedRegionTypes:RegionType) : Room
+    + {static} GetThingList(c:IntVec3, map:Map) : List<Thing>
+    + {static} GetSnowDepth(c:IntVec3, map:Map) : float
+    + {static} Fogged(t:Thing) : bool
+    + {static} Fogged(c:IntVec3, map:Map) : bool
+    + {static} GetRoof(c:IntVec3, map:Map) : RoofDef
+    + {static} Roofed(c:IntVec3, map:Map) : bool
+    + {static} Filled(c:IntVec3, map:Map) : bool
+    + {static} GetTerrain(c:IntVec3, map:Map) : TerrainDef
+    + {static} GetZone(c:IntVec3, map:Map) : Zone
+    + {static} GetPlant(c:IntVec3, map:Map) : Plant
+    + {static} GetRoofHolderOrImpassable(c:IntVec3, map:Map) : Thing
+    + {static} GetFirstThing(c:IntVec3, map:Map, def:ThingDef) : Thing
+    + {static} GetFirstThingWithComp(c:IntVec3, map:Map) : ThingWithComps
+    + {static} GetFirstThing(c:IntVec3, map:Map) : T
+    + {static} GetFirstHaulable(c:IntVec3, map:Map) : Thing
+    + {static} GetFirstItem(c:IntVec3, map:Map) : Thing
+    + {static} GetFirstBuilding(c:IntVec3, map:Map) : Building
+    + {static} GetFirstPawn(c:IntVec3, map:Map) : Pawn
+    + {static} GetFirstMineable(c:IntVec3, map:Map) : Mineable
+    + {static} GetFirstBlight(c:IntVec3, map:Map) : Blight
+    + {static} GetFirstSkyfaller(c:IntVec3, map:Map) : Skyfaller
+    + {static} GetPlantToGrowSettable(c:IntVec3, map:Map) : IPlantToGrowSettable
+    + {static} GetTransmitter(c:IntVec3, map:Map) : Building
+    + {static} GetDoor(c:IntVec3, map:Map) : Building_Door
+    + {static} GetEdifice(c:IntVec3, map:Map) : Building
+    + {static} GetCover(c:IntVec3, map:Map) : Thing
+    + {static} GetGas(c:IntVec3, map:Map) : Gas
+    + {static} IsInPrisonCell(c:IntVec3, map:Map) : bool
+    + {static} UsesOutdoorTemperature(c:IntVec3, map:Map) : bool
+}
+@enduml

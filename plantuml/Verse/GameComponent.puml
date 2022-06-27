@@ -1,0 +1,12 @@
+@startuml
+abstract class GameComponent {
+    + <<virtual>> GameComponentUpdate() : void
+    + <<virtual>> GameComponentTick() : void
+    + <<virtual>> GameComponentOnGUI() : void
+    + <<virtual>> ExposeData() : void
+    + <<virtual>> FinalizeInit() : void
+    + <<virtual>> StartedNewGame() : void
+    + <<virtual>> LoadedGame() : void
+}
+IExposable <|-- GameComponent
+@enduml

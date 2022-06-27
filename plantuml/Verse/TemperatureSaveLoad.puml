@@ -1,0 +1,7 @@
+@startuml
+class TemperatureSaveLoad {
+    + TemperatureSaveLoad(map:Map)
+    + DoExposeWork() : void
+    + ApplyLoadedDataToRegions() : void
+}
+@enduml

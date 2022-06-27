@@ -1,0 +1,8 @@
+@startuml
+class BodyPartToDrop {
+    + allowMale : bool = true
+    + allowFemale : bool = true
+}
+BodyPartToDrop --> "bodyPartGroup" BodyPartGroupDef
+BodyPartToDrop --> "thing" ThingDef
+@enduml

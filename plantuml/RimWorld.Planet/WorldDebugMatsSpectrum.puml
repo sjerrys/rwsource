@@ -1,0 +1,7 @@
+@startuml
+class WorldDebugMatsSpectrum <<static>> {
+    + <<const>> MaterialCount : int = 100
+    {static} WorldDebugMatsSpectrum()
+    + {static} Mat(ind:int) : Material
+}
+@enduml

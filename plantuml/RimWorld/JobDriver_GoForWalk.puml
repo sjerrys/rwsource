@@ -1,0 +1,6 @@
+@startuml
+class JobDriver_GoForWalk {
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+}
+JobDriver <|-- JobDriver_GoForWalk
+@enduml

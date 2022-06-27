@@ -1,0 +1,13 @@
+@startuml
+class WeatherDecider {
+    + WeatherDecider(map:Map)
+    + ExposeData() : void
+    + WeatherDeciderTick() : void
+    + StartNextWeather() : void
+    + StartInitialWeather() : void
+    + DisableRainFor(ticks:int) : void
+    + LogWeatherChances() : void
+}
+IExposable <|-- WeatherDecider
+WeatherDecider --> "ForcedWeather" WeatherDef
+@enduml

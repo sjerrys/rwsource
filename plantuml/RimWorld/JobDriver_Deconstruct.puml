@@ -1,0 +1,5 @@
+@startuml
+class JobDriver_Deconstruct {
+}
+JobDriver_RemoveBuilding <|-- JobDriver_Deconstruct
+@enduml

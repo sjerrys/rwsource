@@ -1,0 +1,10 @@
+@startuml
+class Mineable {
+    + <<override>> ExposeData() : void
+    + <<override>> PreApplyDamage(dinfo:DamageInfo, absorbed:bool) : void
+    + DestroyMined(pawn:Pawn) : void
+    + <<override>> Destroy(mode:DestroyMode) : void
+    + Notify_TookMiningDamage(amount:int, miner:Pawn) : void
+}
+Building <|-- Mineable
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class DamageArmorCategoryDef {
+}
+Def <|-- DamageArmorCategoryDef
+DamageArmorCategoryDef --> "multStat" StatDef
+DamageArmorCategoryDef --> "armorRatingStat" StatDef
+@enduml

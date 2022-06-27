@@ -1,0 +1,23 @@
+@startuml
+class BillStack {
+    + <<const>> MaxCount : int = 15
+    + Count : int <<get>>
+    + AnyShouldDoNow : bool <<get>>
+    + GetEnumerator() : IEnumerator<Bill>
+    + BillStack(giver:IBillGiver)
+    + AddBill(bill:Bill) : void
+    + Delete(bill:Bill) : void
+    + Clear() : void
+    + Reorder(bill:Bill, offset:int) : void
+    + RemoveIncompletableBills() : void
+    + IndexOf(bill:Bill) : int
+    + ExposeData() : void
+    + DoListing(rect:Rect, recipeOptionsMaker:Func<List<FloatMenuOption>>, scrollPosition:Vector2, viewHeight:float) : Bill
+}
+class "List`1"<T> {
+}
+IExposable <|-- BillStack
+BillStack --> "billGiver" IBillGiver
+BillStack --> "Bills<Bill>" "List`1"
+BillStack --> "FirstShouldDoNow" Bill
+@enduml

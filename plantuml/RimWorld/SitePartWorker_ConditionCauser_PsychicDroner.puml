@@ -1,0 +1,6 @@
+@startuml
+class SitePartWorker_ConditionCauser_PsychicDroner {
+    + <<override>> Notify_GeneratedByQuestGen(part:SitePart, slate:Slate, outExtraDescriptionRules:List<Rule>, outExtraDescriptionConstants:Dictionary<string, string>) : void
+}
+SitePartWorker_ConditionCauser <|-- SitePartWorker_ConditionCauser_PsychicDroner
+@enduml

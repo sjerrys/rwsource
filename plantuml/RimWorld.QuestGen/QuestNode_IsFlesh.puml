@@ -1,0 +1,5 @@
+@startuml
+class QuestNode_IsFlesh {
+}
+QuestNode_RaceProperty <|-- QuestNode_IsFlesh
+@enduml

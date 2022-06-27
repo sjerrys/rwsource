@@ -1,0 +1,6 @@
+@startuml
+class JobDriver_Execute {
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+}
+JobDriver <|-- JobDriver_Execute
+@enduml

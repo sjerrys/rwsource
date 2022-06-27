@@ -1,0 +1,9 @@
+@startuml
+class Graphic_LinkedCornerFiller {
+    + Graphic_LinkedCornerFiller(subGraphic:Graphic)
+    + <<override>> GetColoredVersion(newShader:Shader, newColor:Color, newColorTwo:Color) : Graphic
+    + <<override>> Print(layer:SectionLayer, thing:Thing) : void
+}
+Graphic_Linked <|-- Graphic_LinkedCornerFiller
+Graphic_LinkedCornerFiller --> "LinkerType" LinkDrawerType
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class DebugWindowsOpener {
+    + DebugWindowsOpener()
+    + DevToolStarterOnGUI() : void
+}
+@enduml

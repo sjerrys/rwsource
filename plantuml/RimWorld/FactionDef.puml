@@ -1,0 +1,91 @@
+@startuml
+class FactionDef {
+    + isPlayer : bool
+    + fixedName : string
+    + humanlikeFaction : bool = true
+    + hidden : bool
+    + listOrderPriority : float
+    + autoFlee : bool = true
+    + canSiege : bool
+    + canStageAttacks : bool
+    + canUseAvoidGrid : bool = true
+    + earliestRaidDays : float
+    + rescueesCanJoin : bool
+    + pawnSingular : string = "member"
+    + pawnsPlural : string = "members"
+    + leaderTitle : string = "leader"
+    + leaderTitleFemale : string
+    + royalFavorLabel : string
+    + royalFavorIconPath : string
+    + leaderForceGenerateNewPawn : bool
+    + forageabilityFactor : float = 1f
+    + categoryTag : string
+    + hostileToFactionlessHumanlikes : bool
+    + requiredCountAtGameStart : int
+    + maxCountAtGameStart : int = 9999
+    + canMakeRandomly : bool
+    + settlementGenerationWeight : float
+    + generateNewLeaderFromMapMembersOnly : bool
+    + geneticVariance : float = 1f
+    + mustStartOneEnemy : bool
+    + goodwillDailyGain : float
+    + goodwillDailyFall : float
+    + permanentEnemy : bool
+    + permanentEnemyToEveryoneExceptPlayer : bool
+    + settlementTexturePath : string
+    + factionIconPath : string
+    + renounceTitleMessage : string
+    + CanEverBeNonHostile : bool <<get>>
+    + HasRoyalTitles : bool <<get>>
+    + MinPointsToGeneratePawnGroup(groupKind:PawnGroupKindDef) : float
+    + CanUseStuffForApparel(stuffDef:ThingDef) : bool
+    + RaidCommonalityFromPoints(points:float) : float
+    + <<override>> ResolveReferences() : void
+    + <<override>> PostLoad() : void
+    + <<override>> ConfigErrors() : IEnumerable<string>
+    + {static} Named(defName:string) : FactionDef
+    + GetNameMaker(gender:Gender) : RulePackDef
+}
+class "List`1"<T> {
+}
+Def <|-- FactionDef
+FactionDef --> "factionNameMaker" RulePackDef
+FactionDef --> "settlementNameMaker" RulePackDef
+FactionDef --> "playerInitialSettlementNameMaker" RulePackDef
+FactionDef --> "pawnGroupMakers<PawnGroupMaker>" "List`1"
+FactionDef --> "raidCommonalityFromPointsCurve" SimpleCurve
+FactionDef o-> "attackersDownPercentageRangeForAutoFlee" FloatRange
+FactionDef o-> "allowedArrivalTemperatureRange" FloatRange
+FactionDef --> "basicMemberKind" PawnKindDef
+FactionDef --> "startingResearchTags<ResearchProjectTagDef>" "List`1"
+FactionDef --> "startingTechprintsResearchTags<ResearchProjectTagDef>" "List`1"
+FactionDef --> "recipePrerequisiteTags<string>" "List`1"
+FactionDef --> "fixedLeaderKinds<PawnKindDef>" "List`1"
+FactionDef --> "maxPawnCostPerTotalPointsCurve" SimpleCurve
+FactionDef --> "royalTitleTags<string>" "List`1"
+FactionDef --> "pawnNameMaker" RulePackDef
+FactionDef --> "pawnNameMakerFemale" RulePackDef
+FactionDef --> "techLevel" TechLevel
+FactionDef --> "backstoryFilters<BackstoryCategoryFilter>" "List`1"
+FactionDef o-> "hairTags<string>" "List`1"
+FactionDef --> "apparelStuffFilter" ThingFilter
+FactionDef --> "raidLootMaker" ThingSetMakerDef
+FactionDef o-> "raidLootValueFromPointsCurve" SimpleCurve
+FactionDef o-> "caravanTraderKinds<TraderKindDef>" "List`1"
+FactionDef o-> "visitorTraderKinds<TraderKindDef>" "List`1"
+FactionDef o-> "baseTraderKinds<TraderKindDef>" "List`1"
+FactionDef o-> "startingGoodwill" IntRange
+FactionDef o-> "naturalColonyGoodwill" IntRange
+FactionDef --> "permanentEnemyToEveryoneExcept<FactionDef>" "List`1"
+FactionDef --> "colorSpectrum<Color>" "List`1"
+FactionDef --> "royalTitleInheritanceRelations<PawnRelationDef>" "List`1"
+FactionDef --> "royalTitleInheritanceWorkerClass" Type
+FactionDef --> "royalImplantRules<RoyalImplantRule>" "List`1"
+FactionDef --> "minTitleForBladelinkWeapons" RoyalTitleDef
+FactionDef --> "RoyalTitlesAwardableInSeniorityOrderForReading<RoyalTitleDef>" "List`1"
+FactionDef --> "RoyalTitlesAllInSeniorityOrderForReading<RoyalTitleDef>" "List`1"
+FactionDef --> "RoyalTitleInheritanceWorker" RoyalTitleInheritanceWorker
+FactionDef --> "SettlementTexture" Texture2D
+FactionDef --> "FactionIcon" Texture2D
+FactionDef --> "RoyalFavorIcon" Texture2D
+@enduml

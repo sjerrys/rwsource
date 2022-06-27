@@ -1,0 +1,7 @@
+@startuml
+class JobDriver_SocialRelax {
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+    + <<override>> ModifyCarriedThingDrawPos(drawPos:Vector3, behind:bool, flip:bool) : bool
+}
+JobDriver <|-- JobDriver_SocialRelax
+@enduml

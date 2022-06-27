@@ -1,0 +1,12 @@
+@startuml
+abstract class PawnGroupKindWorker {
+    + {abstract} MinPointsToGenerateAnything(groupMaker:PawnGroupMaker) : float
+    + GeneratePawns(parms:PawnGroupMakerParms, groupMaker:PawnGroupMaker, errorOnZeroResults:bool) : List<Pawn>
+    + <<virtual>> CanGenerateFrom(parms:PawnGroupMakerParms, groupMaker:PawnGroupMaker) : bool
+    + {abstract} GeneratePawnKindsExample(parms:PawnGroupMakerParms, groupMaker:PawnGroupMaker) : IEnumerable<PawnKindDef>
+}
+class "List`1"<T> {
+}
+PawnGroupKindWorker --> "def" PawnGroupKindDef
+PawnGroupKindWorker o-> "pawnsBeingGeneratedNow<List<Pawn>>" "List`1"
+@enduml

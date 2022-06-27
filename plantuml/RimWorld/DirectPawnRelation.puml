@@ -1,0 +1,11 @@
+@startuml
+class DirectPawnRelation {
+    + startTicks : int
+    + DirectPawnRelation()
+    + DirectPawnRelation(def:PawnRelationDef, otherPawn:Pawn, startTicks:int)
+    + ExposeData() : void
+}
+IExposable <|-- DirectPawnRelation
+DirectPawnRelation --> "def" PawnRelationDef
+DirectPawnRelation --> "otherPawn" Pawn
+@enduml

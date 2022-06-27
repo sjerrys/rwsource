@@ -1,0 +1,7 @@
+@startuml
+class HediffCompProperties_DrugEffectFactor {
+    + HediffCompProperties_DrugEffectFactor()
+}
+HediffCompProperties <|-- HediffCompProperties_DrugEffectFactor
+HediffCompProperties_DrugEffectFactor --> "chemical" ChemicalDef
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class Scribe_Defs <<static>> {
+    + {static} Look(value:T, label:string) : void
+}
+@enduml

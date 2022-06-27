@@ -1,0 +1,22 @@
+@startuml
+class CharacterCardUtility <<static>> {
+    + <<const>> MainRectsY : int = 100
+    + <<const>> MaxNickLength : int = 16
+    + <<const>> MaxTitleLength : int = 25
+    + <<const>> QuestLineHeight : int = 20
+    + {static} DrawCharacterCard(rect:Rect, pawn:Pawn, randomizeCallback:Action, creationRect:Rect) : void
+    + {static} PawnCardSize(pawn:Pawn) : Vector2
+    + {static} DoNameInputRect(rect:Rect, name:string, maxLength:int) : void
+}
+class LeftRectSection <<struct>> {
+    + calculatedSize : float
+}
+class "Action`1"<T> {
+}
+CharacterCardUtility o-> "BasePawnCardSize" Vector2
+CharacterCardUtility o-> "StackElementBackground" Color
+CharacterCardUtility o-> "ValidNameRegex" Regex
+CharacterCardUtility +-- LeftRectSection
+LeftRectSection --> "rect" Rect
+LeftRectSection --> "drawer<Rect>" "Action`1"
+@enduml

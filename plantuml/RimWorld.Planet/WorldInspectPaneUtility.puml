@@ -1,0 +1,5 @@
+@startuml
+class WorldInspectPaneUtility <<static>> {
+    + {static} AdjustedLabelFor(worldObjects:List<WorldObject>, rect:Rect) : string
+}
+@enduml

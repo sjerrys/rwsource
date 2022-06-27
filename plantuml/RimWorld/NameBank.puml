@@ -1,0 +1,10 @@
+@startuml
+class NameBank {
+    + NameBank(ID:PawnNameCategory)
+    + ErrorCheck() : void
+    + AddNames(slot:PawnNameSlot, gender:Gender, namesToAdd:IEnumerable<string>) : void
+    + AddNamesFromFile(slot:PawnNameSlot, gender:Gender, fileName:string) : void
+    + GetName(slot:PawnNameSlot, gender:Gender, checkIfAlreadyUsed:bool) : string
+}
+NameBank --> "nameType" PawnNameCategory
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class Printer_Mesh <<static>> {
+    + {static} PrintMesh(layer:SectionLayer, center:Vector3, mesh:Mesh, mat:Material) : void
+}
+@enduml

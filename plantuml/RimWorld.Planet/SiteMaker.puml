@@ -1,0 +1,12 @@
+@startuml
+class SiteMaker <<static>> {
+    + {static} MakeSite(sitePart:SitePartDef, tile:int, faction:Faction, ifHostileThenMustRemainHostile:bool, threatPoints:float?) : Site
+    + {static} MakeSite(siteParts:IEnumerable<SitePartDef>, tile:int, faction:Faction, ifHostileThenMustRemainHostile:bool, threatPoints:float?) : Site
+    + {static} MakeSite(siteParts:IEnumerable<SitePartDefWithParams>, tile:int, faction:Faction, ifHostileThenMustRemainHostile:bool) : Site
+    + {static} TryMakeSite_SingleSitePart(singleSitePartCandidates:IEnumerable<SitePartDef>, tile:int, faction:Faction, disallowNonHostileFactions:bool, extraFactionValidator:Predicate<Faction>, ifHostileThenMustRemainHostile:bool, threatPoints:float?) : Site
+    + {static} TryMakeSite_SingleSitePart(singleSitePartTag:string, tile:int, faction:Faction, disallowNonHostileFactions:bool, extraFactionValidator:Predicate<Faction>, ifHostileThenMustRemainHostile:bool, threatPoints:float?) : Site
+    + {static} TryMakeSite_MultipleSiteParts(sitePartsCandidates:IEnumerable<IEnumerable<SitePartDef>>, tile:int, faction:Faction, disallowNonHostileFactions:bool, extraFactionValidator:Predicate<Faction>, ifHostileThenMustRemainHostile:bool, threatPoints:float?) : Site
+    + {static} TryMakeSite_MultipleSiteParts(sitePartsTags:List<string>, tile:int, faction:Faction, disallowNonHostileFactions:bool, extraFactionValidator:Predicate<Faction>, ifHostileThenMustRemainHostile:bool, threatPoints:float?) : Site
+    + {static} TryMakeSite(siteParts:IEnumerable<SitePartDef>, tile:int, disallowNonHostileFactions:bool, extraFactionValidator:Predicate<Faction>, ifHostileThenMustRemainHostile:bool, threatPoints:float?) : Site
+}
+@enduml

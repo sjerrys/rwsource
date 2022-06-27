@@ -1,0 +1,7 @@
+@startuml
+class AreaUtility <<static>> {
+    + {static} MakeAllowedAreaListFloatMenu(selAction:Action<Area>, addNullAreaOption:bool, addManageOption:bool, map:Map) : void
+    + {static} AreaAllowedLabel(pawn:Pawn) : string
+    + {static} AreaAllowedLabel_Area(area:Area) : string
+}
+@enduml

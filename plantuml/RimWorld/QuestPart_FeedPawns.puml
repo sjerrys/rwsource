@@ -1,0 +1,13 @@
+@startuml
+class QuestPart_FeedPawns {
+    + inSignal : string
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> ExposeData() : void
+    + <<override>> ReplacePawnReferences(replace:Pawn, with:Pawn) : void
+}
+class "List`1"<T> {
+}
+QuestPart <|-- QuestPart_FeedPawns
+QuestPart_FeedPawns --> "pawnsInTransporter" Thing
+QuestPart_FeedPawns o-> "pawns<Pawn>" "List`1"
+@enduml

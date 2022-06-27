@@ -1,0 +1,6 @@
+@startuml
+class JobGiver_MoveDrugsToInventory {
+    + <<override>> GetPriority(pawn:Pawn) : float
+}
+ThinkNode_JobGiver <|-- JobGiver_MoveDrugsToInventory
+@enduml

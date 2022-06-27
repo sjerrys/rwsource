@@ -1,0 +1,16 @@
+@startuml
+class Messages <<static>> {
+    + {static} Update() : void
+    + {static} Message(text:string, lookTargets:LookTargets, def:MessageTypeDef, quest:Quest, historical:bool) : void
+    + {static} Message(text:string, lookTargets:LookTargets, def:MessageTypeDef, historical:bool) : void
+    + {static} Message(text:string, def:MessageTypeDef, historical:bool) : void
+    + {static} Message(msg:Message, historical:bool) : void
+    + {static} IsLive(msg:Message) : bool
+    + {static} MessagesDoGUI() : void
+    + {static} CollidesWithAnyMessage(rect:Rect, messageAlpha:float) : bool
+    + {static} Clear() : void
+    + {static} Notify_LoadedLevelChanged() : void
+    + {static} Notify_Mouseover(msg:Message) : void
+}
+Messages o-> "MessagesTopLeftStandard" Vector2
+@enduml

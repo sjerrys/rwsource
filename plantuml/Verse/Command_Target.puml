@@ -1,0 +1,11 @@
+@startuml
+class Command_Target {
+    + <<override>> ProcessInput(ev:Event) : void
+    + <<override>> InheritInteractionsFrom(other:Gizmo) : bool
+}
+class "Action`1"<T> {
+}
+Command <|-- Command_Target
+Command_Target --> "action<Thing>" "Action`1"
+Command_Target --> "targetingParams" TargetingParameters
+@enduml

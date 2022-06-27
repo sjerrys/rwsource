@@ -1,0 +1,5 @@
+@startuml
+class BillRepeatModeUtility <<static>> {
+    + {static} MakeConfigFloatMenu(bill:Bill_Production) : void
+}
+@enduml

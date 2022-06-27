@@ -1,0 +1,11 @@
+@startuml
+class GenAdjFast <<static>> {
+    + {static} AdjacentCells8Way(pack:LocalTargetInfo) : List<IntVec3>
+    + {static} AdjacentCells8Way(root:IntVec3) : List<IntVec3>
+    + {static} AdjacentCells8Way(thingCenter:IntVec3, thingRot:Rot4, thingSize:IntVec2) : List<IntVec3>
+    + {static} AdjacentCellsCardinal(pack:LocalTargetInfo) : List<IntVec3>
+    + {static} AdjacentCellsCardinal(root:IntVec3) : List<IntVec3>
+    + {static} AdjacentCellsCardinal(thingCenter:IntVec3, thingRot:Rot4, thingSize:IntVec2) : List<IntVec3>
+    + {static} AdjacentThings8Way(thing:Thing, outThings:List<Thing>) : void
+}
+@enduml

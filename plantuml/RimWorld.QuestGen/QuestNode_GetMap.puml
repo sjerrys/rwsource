@@ -1,0 +1,10 @@
+@startuml
+class QuestNode_GetMap {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GetMap
+QuestNode_GetMap o-> "storeAs<string>" "SlateRef`1"
+QuestNode_GetMap --> "mustBeInfestable<bool>" "SlateRef`1"
+QuestNode_GetMap --> "preferMapWithMinFreeColonists<int>" "SlateRef`1"
+@enduml

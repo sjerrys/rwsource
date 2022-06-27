@@ -1,0 +1,13 @@
+@startuml
+class PawnInventoryOption {
+    + choiceChance : float = 1f
+    + skipChance : float
+    + GenerateThings() : IEnumerable<Thing>
+}
+class "List`1"<T> {
+}
+PawnInventoryOption --> "thingDef" ThingDef
+PawnInventoryOption o-> "countRange" IntRange
+PawnInventoryOption --> "subOptionsTakeAll<PawnInventoryOption>" "List`1"
+PawnInventoryOption --> "subOptionsChooseOne<PawnInventoryOption>" "List`1"
+@enduml

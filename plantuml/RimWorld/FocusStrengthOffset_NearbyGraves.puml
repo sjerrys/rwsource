@@ -1,0 +1,9 @@
+@startuml
+class FocusStrengthOffset_NearbyGraves {
+    + focusPerFullGrave : float
+    + <<override>> MaxOffset(parent:Thing) : float
+    + <<override>> GetExplanation(parent:Thing) : string
+    + <<override>> GetExplanationAbstract(def:ThingDef) : string
+}
+FocusStrengthOffset_BuildingDefs <|-- FocusStrengthOffset_NearbyGraves
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class CameraSwooper {
+    + Swooping : bool
+    + StartSwoopFromRoot(FinalOffset:Vector3, FinalOrthoSizeOffset:float, TotalSwoopTime:float, SwoopFinishedCallback:SwoopCallbackMethod) : void
+    + StartSwoopToRoot(FinalOffset:Vector3, FinalOrthoSizeOffset:float, TotalSwoopTime:float, SwoopFinishedCallback:SwoopCallbackMethod) : void
+    + Update() : void
+    + OffsetCameraFrom(camObj:GameObject, basePos:Vector3, baseSize:float) : void
+}
+@enduml

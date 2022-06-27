@@ -1,0 +1,8 @@
+@startuml
+class QuestNode_Unset {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_Unset
+QuestNode_Unset --> "name<string>" "SlateRef`1"
+@enduml

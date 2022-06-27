@@ -1,0 +1,8 @@
+@startuml
+class DebugTools_Health <<static>> {
+    + {static} Options_RestorePart(p:Pawn) : List<DebugMenuOption>
+    + {static} Options_ApplyDamage() : List<DebugMenuOption>
+    + {static} Options_AddHediff() : List<DebugMenuOption>
+    + {static} Options_RemoveHediff(pawn:Pawn) : List<DebugMenuOption>
+}
+@enduml

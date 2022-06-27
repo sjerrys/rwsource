@@ -1,0 +1,7 @@
+@startuml
+class DebugTool {
+    + DebugTool(label:string, clickAction:Action, onGUIAction:Action)
+    + DebugTool(label:string, clickAction:Action, firstRectCorner:IntVec3)
+    + DebugToolOnGUI() : void
+}
+@enduml

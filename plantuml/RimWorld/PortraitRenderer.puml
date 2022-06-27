@@ -1,0 +1,7 @@
+@startuml
+class PortraitRenderer {
+    + RenderPortrait(pawn:Pawn, renderTexture:RenderTexture, cameraOffset:Vector3, cameraZoom:float) : void
+    + OnPostRender() : void
+}
+MonoBehaviour <|-- PortraitRenderer
+@enduml

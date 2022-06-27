@@ -1,0 +1,108 @@
+@startuml
+class BuildingProperties {
+    + isEdifice : bool = true
+    + isInert : bool
+    + alwaysDeconstructible : bool
+    + claimable : bool = true
+    + isSittable : bool
+    + expandHomeArea : bool = true
+    + uninstallWork : float = 200f
+    + forceShowRoomStats : bool
+    + wantsHopperAdjacent : bool
+    + allowWireConnection : bool = true
+    + shipPart : bool
+    + canPlaceOverImpassablePlant : bool = true
+    + heatPerTickWhileWorking : float
+    + canBuildNonEdificesUnder : bool = true
+    + canPlaceOverWall : bool
+    + allowAutoroof : bool = true
+    + preventDeteriorationOnTop : bool
+    + preventDeteriorationInside : bool
+    + isMealSource : bool
+    + isNaturalRock : bool
+    + isResourceRock : bool
+    + repairable : bool = true
+    + roofCollapseDamageMultiplier : float = 1f
+    + hasFuelingPort : bool
+    + combatPower : float
+    + minMechClusterPoints : int
+    + destroyShakeAmount : float
+    + isPlayerEjectable : bool
+    + bed_healPerDay : float
+    + bed_defaultMedical : bool
+    + bed_showSleeperBody : bool
+    + bed_humanlike : bool = true
+    + bed_maxBodySize : float = 9999f
+    + bed_caravansCanUse : bool
+    + nutritionCostPerDispense : float
+    + turretBurstWarmupTime : float
+    + turretBurstCooldownTime : float
+    + turretInitialCooldownTime : float
+    + turretTopDrawSize : float = 2f
+    + ai_combatDangerous : bool
+    + ai_chillDestination : bool = true
+    + ai_neverTrashThis : bool
+    + sowTag : string
+    + mineableYield : int = 1
+    + mineableNonMinedEfficiency : float = 0.7f
+    + mineableDropChance : float = 1f
+    + mineableYieldWasteable : bool = true
+    + mineableScatterCommonality : float
+    + ignoreStoredThingsBeauty : bool
+    + isTrap : bool
+    + trapDestroyOnSpring : bool
+    + trapPeacefulWildAnimalsSpringChanceFactor : float = 1f
+    + unpoweredWorkTableWorkSpeedFactor : float
+    + watchBuildingStandRectWidth : int = 3
+    + watchBuildingInSameRoom : bool
+    + haulToContainerDuration : int
+    + instrumentRange : float
+    + minDistanceToSameTypeOfBuilding : int
+    + artificialForMeditationPurposes : bool = true
+    + SupportsPlants : bool <<get>>
+    + EffectiveMineableYield : int <<get>>
+    + IsTurret : bool <<get>>
+    + IsDeconstructible : bool <<get>>
+    + IsMortar : bool <<get>>
+    + ConfigErrors(parent:ThingDef) : IEnumerable<string>
+    + PostLoadSpecial(parent:ThingDef) : void
+    + ResolveReferencesSpecial() : void
+    + {static} FinalizeInit() : void
+    + SpecialDisplayStats(parentDef:ThingDef, req:StatRequest) : IEnumerable<StatDrawEntry>
+}
+class "List`1"<T> {
+}
+BuildingProperties o-> "buildingTags<string>" "List`1"
+BuildingProperties --> "soundAmbient" SoundDef
+BuildingProperties --> "spawnedConceptLearnOpportunity" ConceptDef
+BuildingProperties --> "boughtConceptLearnOpportunity" ConceptDef
+BuildingProperties o-> "blueprintClass" Type
+BuildingProperties --> "blueprintGraphicData" GraphicData
+BuildingProperties --> "smoothedThing" ThingDef
+BuildingProperties --> "unsmoothedThing" ThingDef
+BuildingProperties --> "naturalTerrain" TerrainDef
+BuildingProperties --> "leaveTerrain" TerrainDef
+BuildingProperties --> "destroySound" SoundDef
+BuildingProperties --> "destroyEffecter" EffecterDef
+BuildingProperties --> "buildingSizeCategory" BuildingSizeCategory
+BuildingProperties --> "fullGraveGraphicData" GraphicData
+BuildingProperties --> "soundDispense" SoundDef
+BuildingProperties --> "turretGunDef" ThingDef
+BuildingProperties --> "turretTopMat" Material
+BuildingProperties --> "turretTopOffset" Vector2
+BuildingProperties --> "soundDoorOpenPowered" SoundDef
+BuildingProperties --> "soundDoorClosePowered" SoundDef
+BuildingProperties --> "soundDoorOpenManual" SoundDef
+BuildingProperties --> "soundDoorCloseManual" SoundDef
+BuildingProperties --> "defaultPlantToGrow" ThingDef
+BuildingProperties --> "mineableThing" ThingDef
+BuildingProperties o-> "mineableScatterLumpSizeRange" IntRange
+BuildingProperties --> "fixedStorageSettings" StorageSettings
+BuildingProperties --> "defaultStorageSettings" StorageSettings
+BuildingProperties --> "trapDamageCategory" DamageArmorCategoryDef
+BuildingProperties --> "trapUnarmedGraphicData" GraphicData
+BuildingProperties --> "trapUnarmedGraphic" Graphic
+BuildingProperties o-> "watchBuildingStandDistanceRange" IntRange
+BuildingProperties --> "joyKind" JoyKindDef
+BuildingProperties --> "effectWatching" EffecterDef
+@enduml

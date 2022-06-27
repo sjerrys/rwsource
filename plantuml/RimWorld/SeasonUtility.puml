@@ -1,0 +1,15 @@
+@startuml
+class SeasonUtility <<static>> {
+    + {static} GetReportedSeason(yearPct:float, latitude:float) : Season
+    + {static} GetDominantSeason(yearPct:float, latitude:float) : Season
+    + {static} GetSeason(yearPct:float, latitude:float, spring:float, summer:float, fall:float, winter:float, permanentSummer:float, permanentWinter:float) : void
+    + {static} GetFirstTwelfth(season:Season, latitude:float) : Twelfth
+    + {static} GetMiddleTwelfth(season:Season, latitude:float) : Twelfth
+    + {static} GetPreviousSeason(season:Season) : Season
+    + {static} GetMiddleYearPct(season:Season, latitude:float) : float
+    + {static} Label(season:Season) : string
+    + {static} LabelCap(season:Season) : string
+    + {static} SeasonsRangeLabel(twelfths:List<Twelfth>, longLat:Vector2) : string
+}
+SeasonUtility --> "FirstSeason" Season
+@enduml

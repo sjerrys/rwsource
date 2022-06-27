@@ -1,0 +1,18 @@
+@startuml
+class QuestPart_DestroyThingsOrPassToWorld {
+    + inSignal : string
+    + questLookTargets : bool = true
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + {static} Destroy(things:List<Thing>) : void
+    + {static} Destroy(thing:Thing) : void
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart <|-- QuestPart_DestroyThingsOrPassToWorld
+QuestPart_DestroyThingsOrPassToWorld o-> "things<Thing>" "List`1"
+QuestPart_DestroyThingsOrPassToWorld --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+@enduml

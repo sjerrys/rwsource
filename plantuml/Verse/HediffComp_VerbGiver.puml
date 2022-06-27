@@ -1,0 +1,20 @@
+@startuml
+class HediffComp_VerbGiver {
+    + HediffComp_VerbGiver()
+    + <<override>> CompExposeData() : void
+    + <<override>> CompPostTick(severityAdjustment:float) : void
+    UniqueVerbOwnerID() : string
+    VerbsStillUsableBy(p:Pawn) : bool
+}
+class "List`1"<T> {
+}
+HediffComp <|-- HediffComp_VerbGiver
+IVerbOwner <|-- HediffComp_VerbGiver
+HediffComp_VerbGiver --> "verbTracker" VerbTracker
+HediffComp_VerbGiver --> "Props" HediffCompProperties_VerbGiver
+HediffComp_VerbGiver --> "VerbTracker" VerbTracker
+HediffComp_VerbGiver --> "VerbProperties<VerbProperties>" "List`1"
+HediffComp_VerbGiver --> "Tools<Tool>" "List`1"
+HediffComp_VerbGiver --> "ConstantCaster" Thing
+HediffComp_VerbGiver --> "ImplementOwnerTypeDef" ImplementOwnerTypeDef
+@enduml

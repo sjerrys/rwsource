@@ -1,0 +1,5 @@
+@startuml
+class WorldLayer_WorldObjects_Expandable {
+}
+WorldLayer_WorldObjects <|-- WorldLayer_WorldObjects_Expandable
+@enduml

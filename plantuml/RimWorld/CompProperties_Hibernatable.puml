@@ -1,0 +1,10 @@
+@startuml
+class CompProperties_Hibernatable {
+    + startupDays : float = 14f
+    + CompProperties_Hibernatable()
+    + <<override>> ConfigErrors(parentDef:ThingDef) : IEnumerable<string>
+}
+CompProperties <|-- CompProperties_Hibernatable
+CompProperties_Hibernatable --> "incidentTargetWhileStarting" IncidentTargetTagDef
+CompProperties_Hibernatable --> "sustainerActive" SoundDef
+@enduml

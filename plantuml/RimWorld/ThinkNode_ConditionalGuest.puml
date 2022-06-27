@@ -1,0 +1,5 @@
+@startuml
+class ThinkNode_ConditionalGuest {
+}
+ThinkNode_Conditional <|-- ThinkNode_ConditionalGuest
+@enduml

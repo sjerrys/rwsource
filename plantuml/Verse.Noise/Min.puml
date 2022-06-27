@@ -1,0 +1,8 @@
+@startuml
+class Min {
+    + Min()
+    + Min(lhs:ModuleBase, rhs:ModuleBase)
+    + <<override>> GetValue(x:double, y:double, z:double) : double
+}
+ModuleBase <|-- Min
+@enduml

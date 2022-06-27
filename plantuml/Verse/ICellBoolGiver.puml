@@ -1,0 +1,7 @@
+@startuml
+interface ICellBoolGiver {
+    GetCellBool(index:int) : bool
+    GetCellExtraColor(index:int) : Color
+}
+ICellBoolGiver --> "Color" Color
+@enduml

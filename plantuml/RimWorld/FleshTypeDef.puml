@@ -1,0 +1,19 @@
+@startuml
+class FleshTypeDef {
+    + ChooseWoundOverlay() : Material
+}
+class Wound {
+    + texture : string
+    + GetMaterial() : Material
+}
+class "List`1"<T> {
+}
+Def <|-- FleshTypeDef
+FleshTypeDef --> "ateDirect" ThoughtDef
+FleshTypeDef --> "ateAsIngredient" ThoughtDef
+FleshTypeDef --> "corpseCategory" ThingCategoryDef
+FleshTypeDef --> "damageEffecter" EffecterDef
+FleshTypeDef --> "wounds<Wound>" "List`1"
+FleshTypeDef +-- Wound
+Wound o-> "color" Color
+@enduml

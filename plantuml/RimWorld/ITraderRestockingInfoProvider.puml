@@ -1,0 +1,7 @@
+@startuml
+interface ITraderRestockingInfoProvider {
+    EverVisited : bool <<get>>
+    RestockedSinceLastVisit : bool <<get>>
+    NextRestockTick : int <<get>>
+}
+@enduml

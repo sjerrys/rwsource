@@ -1,0 +1,7 @@
+@startuml
+class BlueprintGrid <<sealed>> {
+    + BlueprintGrid(map:Map)
+    + Register(ed:Blueprint) : void
+    + DeRegister(ed:Blueprint) : void
+}
+@enduml

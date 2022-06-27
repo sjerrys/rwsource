@@ -1,0 +1,12 @@
+@startuml
+class CompAffectsSky {
+    + <<virtual>> LerpFactor : float <<get>>
+    + HasAutoAnimation : bool <<get>>
+    + <<virtual>> OverrideShadowVector : Vector2? <<get>>
+    + <<override>> PostExposeData() : void
+    + StartFadeInHoldFadeOut(fadeInDuration:int, holdDuration:int, fadeOutDuration:int, target:float) : void
+}
+ThingComp <|-- CompAffectsSky
+CompAffectsSky --> "Props" CompProperties_AffectsSky
+CompAffectsSky --> "SkyTarget" SkyTarget
+@enduml

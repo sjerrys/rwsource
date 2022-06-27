@@ -1,0 +1,5 @@
+@startuml
+class JobGiver_AIFollowEscortee {
+}
+JobGiver_AIFollowPawn <|-- JobGiver_AIFollowEscortee
+@enduml

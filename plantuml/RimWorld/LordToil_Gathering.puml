@@ -1,0 +1,8 @@
+@startuml
+abstract class LordToil_Gathering {
+    + LordToil_Gathering(spot:IntVec3, gatheringDef:GatheringDef)
+    + <<override>> VoluntaryJoinDutyHookFor(p:Pawn) : ThinkTreeDutyHook
+    + <<override>> UpdateAllDuties() : void
+}
+LordToil <|-- LordToil_Gathering
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class AudioGrain_Clip {
+    + clipPath : string = ""
+    + <<override>> GetResolvedGrains() : IEnumerable<ResolvedGrain>
+}
+AudioGrain <|-- AudioGrain_Clip
+@enduml

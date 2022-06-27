@@ -1,0 +1,11 @@
+@startuml
+class SignalManager {
+    + RegisterReceiver(receiver:ISignalReceiver) : void
+    + DeregisterReceiver(receiver:ISignalReceiver) : void
+    + SendSignal(signal:Signal) : void
+    + SignalManagerUpdate() : void
+}
+class "List`1"<T> {
+}
+SignalManager o-> "receivers<ISignalReceiver>" "List`1"
+@enduml

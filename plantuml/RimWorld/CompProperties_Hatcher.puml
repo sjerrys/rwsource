@@ -1,0 +1,8 @@
+@startuml
+class CompProperties_Hatcher {
+    + hatcherDaystoHatch : float = 1f
+    + CompProperties_Hatcher()
+}
+CompProperties <|-- CompProperties_Hatcher
+CompProperties_Hatcher --> "hatcherPawn" PawnKindDef
+@enduml

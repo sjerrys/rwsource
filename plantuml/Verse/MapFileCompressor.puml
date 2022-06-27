@@ -1,0 +1,10 @@
+@startuml
+class MapFileCompressor {
+    + MapFileCompressor(map:Map)
+    + ExposeData() : void
+    + BuildCompressedString() : void
+    + ThingsToSpawnAfterLoad() : IEnumerable<Thing>
+}
+IExposable <|-- MapFileCompressor
+MapFileCompressor --> "compressibilityDecider" CompressibilityDecider
+@enduml

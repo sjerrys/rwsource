@@ -1,0 +1,20 @@
+@startuml
+class CompProperties_Reloadable {
+    + maxCharges : int = 1
+    + ammoCountToRefill : int
+    + ammoCountPerCharge : int
+    + destroyOnEmpty : bool
+    + baseReloadTicks : int = 60
+    + displayGizmoWhileUndrafted : bool = true
+    + displayGizmoWhileDrafted : bool = true
+    + chargeNoun : string = "charge"
+    + CompProperties_Reloadable()
+    + <<override>> ConfigErrors(parentDef:ThingDef) : IEnumerable<string>
+    + <<override>> SpecialDisplayStats(req:StatRequest) : IEnumerable<StatDrawEntry>
+}
+CompProperties <|-- CompProperties_Reloadable
+CompProperties_Reloadable --> "ammoDef" ThingDef
+CompProperties_Reloadable --> "hotKey" KeyBindingDef
+CompProperties_Reloadable --> "soundReload" SoundDef
+CompProperties_Reloadable --> "ChargeNounArgument" NamedArgument
+@enduml

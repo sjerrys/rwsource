@@ -1,0 +1,8 @@
+@startuml
+class SubEffecter_SprayerTriggeredDelayed {
+    + SubEffecter_SprayerTriggeredDelayed(def:SubEffecterDef, parent:Effecter)
+    + <<override>> SubTrigger(A:TargetInfo, B:TargetInfo) : void
+    + <<override>> SubEffectTick(A:TargetInfo, B:TargetInfo) : void
+}
+SubEffecter_SprayerTriggered <|-- SubEffecter_SprayerTriggeredDelayed
+@enduml

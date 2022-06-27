@@ -1,0 +1,22 @@
+@startuml
+class SitePart {
+    + hidden : bool
+    + lastRaidTick : int
+    + conditionCauserWasSpawned : bool
+    + SitePart()
+    + SitePart(site:Site, def:SitePartDef, parms:SitePartParams)
+    + SitePartTick() : void
+    + PostDestroy() : void
+    + GetChildHolders(outChildren:List<IThingHolder>) : void
+    + GetDirectlyHeldThings() : ThingOwner
+    + ExposeData() : void
+}
+IExposable <|-- SitePart
+IThingHolder <|-- SitePart
+SitePart --> "site" Site
+SitePart --> "def" SitePartDef
+SitePart --> "parms" SitePartParams
+SitePart --> "things" ThingOwner
+SitePart --> "conditionCauser" Thing
+SitePart --> "ParentHolder" IThingHolder
+@enduml

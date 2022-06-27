@@ -1,0 +1,12 @@
+@startuml
+class KeyPrefs {
+    + {static} Init() : void
+    + {static} Save() : void
+}
+enum BindingSlot {
+    A,
+    B,
+}
+KeyPrefs --> "KeyPrefsData" KeyPrefsData
+KeyPrefs +-- BindingSlot
+@enduml

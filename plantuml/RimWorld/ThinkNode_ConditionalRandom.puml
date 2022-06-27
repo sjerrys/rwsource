@@ -1,0 +1,7 @@
+@startuml
+class ThinkNode_ConditionalRandom {
+    + chance : float = 0.5f
+    + <<override>> DeepCopy(resolve:bool) : ThinkNode
+}
+ThinkNode_Conditional <|-- ThinkNode_ConditionalRandom
+@enduml

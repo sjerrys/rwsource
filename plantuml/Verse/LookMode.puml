@@ -1,0 +1,13 @@
+@startuml
+enum LookMode {
+    Undefined,
+    Value,
+    Deep,
+    Reference,
+    Def,
+    LocalTargetInfo,
+    TargetInfo,
+    GlobalTargetInfo,
+    BodyPart,
+}
+@enduml

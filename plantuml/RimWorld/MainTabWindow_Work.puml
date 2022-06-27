@@ -1,0 +1,7 @@
+@startuml
+class MainTabWindow_Work {
+    + <<override>> PostOpen() : void
+    + <<override>> DoWindowContents(rect:Rect) : void
+}
+MainTabWindow_PawnTable <|-- MainTabWindow_Work
+@enduml

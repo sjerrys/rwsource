@@ -1,0 +1,10 @@
+@startuml
+abstract class MentalState_InsultingSpree {
+    + insultedTargetAtLeastOnce : bool
+    + lastInsultTicks : int
+    + <<override>> ExposeData() : void
+    + <<override>> SocialModeMax() : RandomSocialMode
+}
+MentalState <|-- MentalState_InsultingSpree
+MentalState_InsultingSpree --> "target" Pawn
+@enduml

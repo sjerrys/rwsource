@@ -1,0 +1,5 @@
+@startuml
+class PawnHairChooser <<static>> {
+    + {static} RandomHairDefFor(pawn:Pawn, factionType:FactionDef) : HairDef
+}
+@enduml

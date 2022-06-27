@@ -1,0 +1,6 @@
+@startuml
+class JobInBedUtility <<static>> {
+    + {static} KeepLyingDown(driver:JobDriver, bedIndex:TargetIndex) : void
+    + {static} InBedOrRestSpotNow(pawn:Pawn, bedOrRestSpot:LocalTargetInfo) : bool
+}
+@enduml

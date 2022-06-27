@@ -1,0 +1,6 @@
+@startuml
+class MentalStateWorker_SadisticRageTantrum {
+    + <<override>> StateCanOccur(pawn:Pawn) : bool
+}
+MentalStateWorker <|-- MentalStateWorker_SadisticRageTantrum
+@enduml

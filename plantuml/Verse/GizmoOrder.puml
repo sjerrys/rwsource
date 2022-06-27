@@ -1,0 +1,13 @@
+@startuml
+class GizmoOrder <<static>> {
+    + <<const>> Special : float
+    + <<const>> ReverseDesignator : float
+    + <<const>> ReverseDesignator_Uninstall : float
+    + <<const>> Install : float
+    + <<const>> Default : float = 0f
+    + <<const>> Psycast : float = 5f
+    + <<const>> BuildCopy : float = 10f
+    + <<const>> Build : float = 20f
+    + <<const>> AbandonSettlement : float = 30f
+}
+@enduml

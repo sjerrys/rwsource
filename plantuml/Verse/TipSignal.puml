@@ -1,0 +1,21 @@
+@startuml
+class TipSignal <<struct>> {
+    + <<const>> DefaultDelay : float = 0.45f
+    + text : string
+    + uniqueId : int
+    + delay : float
+    + TipSignal(text:string, uniqueId:int)
+    + TipSignal(text:string, uniqueId:int, priority:TooltipPriority)
+    + TipSignal(text:string)
+    + TipSignal(text:string, delay:float)
+    + TipSignal(text:TaggedString)
+    + TipSignal(textGetter:Func<string>, uniqueId:int)
+    + TipSignal(textGetter:Func<string>, uniqueId:int, priority:TooltipPriority)
+    + TipSignal(cloneSource:TipSignal)
+    + <<override>> ToString() : string
+}
+class "Func`1"<T> {
+}
+TipSignal --> "textGetter<string>" "Func`1"
+TipSignal --> "priority" TooltipPriority
+@enduml

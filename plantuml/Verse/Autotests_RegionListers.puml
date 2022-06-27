@@ -1,0 +1,5 @@
+@startuml
+class Autotests_RegionListers <<static>> {
+    + {static} CheckBugs(map:Map) : void
+}
+@enduml

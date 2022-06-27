@@ -1,0 +1,16 @@
+@startuml
+abstract class Page {
+    + <<const>> TitleAreaHeight : float = 45f
+    + <<const>> BottomButHeight : float = 38f
+    + <<virtual>> PageTitle : string <<get>>
+    + Page()
+    + <<override>> OnCancelKeyPressed() : void
+    + <<override>> OnAcceptKeyPressed() : void
+}
+Window <|-- Page
+Page --> "prev" Page
+Page --> "next" Page
+Page --> "nextAct" Action
+Page o-> "StandardSize" Vector2
+Page --> "InitialSize" Vector2
+@enduml

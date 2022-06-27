@@ -1,0 +1,6 @@
+@startuml
+class SettleInEmptyTileUtility <<static>> {
+    + {static} Settle(caravan:Caravan) : void
+    + {static} SettleCommand(caravan:Caravan) : Command
+}
+@enduml

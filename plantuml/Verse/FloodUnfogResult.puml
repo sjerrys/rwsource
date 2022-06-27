@@ -1,0 +1,7 @@
+@startuml
+class FloodUnfogResult <<struct>> {
+    + mechanoidFound : bool
+    + allOnScreen : bool
+    + cellsUnfogged : int
+}
+@enduml

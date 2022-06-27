@@ -1,0 +1,11 @@
+@startuml
+class FactionRelation {
+    + goodwill : int = 100
+    + CheckKindThresholds(faction:Faction, canSendLetter:bool, reason:string, lookTarget:GlobalTargetInfo, sentLetter:bool) : void
+    + ExposeData() : void
+    + <<override>> ToString() : string
+}
+IExposable <|-- FactionRelation
+FactionRelation --> "other" Faction
+FactionRelation o-> "kind" FactionRelationKind
+@enduml

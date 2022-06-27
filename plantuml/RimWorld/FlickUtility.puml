@@ -1,0 +1,6 @@
+@startuml
+class FlickUtility <<static>> {
+    + {static} UpdateFlickDesignation(t:Thing) : void
+    + {static} WantsToBeOn(t:Thing) : bool
+}
+@enduml

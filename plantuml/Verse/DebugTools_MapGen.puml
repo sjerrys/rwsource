@@ -1,0 +1,5 @@
+@startuml
+class DebugTools_MapGen <<static>> {
+    + {static} Options_Scatterers() : List<DebugMenuOption>
+}
+@enduml

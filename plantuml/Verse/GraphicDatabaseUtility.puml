@@ -1,0 +1,5 @@
+@startuml
+class GraphicDatabaseUtility <<static>> {
+    + {static} GraphicNamesInFolder(folderPath:string) : IEnumerable<string>
+}
+@enduml

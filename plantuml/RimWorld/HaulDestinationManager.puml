@@ -1,0 +1,23 @@
+@startuml
+class HaulDestinationManager <<sealed>> {
+    + HaulDestinationManager(map:Map)
+    + AddHaulDestination(haulDestination:IHaulDestination) : void
+    + RemoveHaulDestination(haulDestination:IHaulDestination) : void
+    + Notify_HaulDestinationChangedPriority() : void
+    + SlotGroupAt(loc:IntVec3) : SlotGroup
+    + SlotGroupParentAt(loc:IntVec3) : ISlotGroupParent
+    + SetCellFor(c:IntVec3, group:SlotGroup) : void
+    + ClearCellFor(c:IntVec3, group:SlotGroup) : void
+}
+class "IEnumerable`1"<T> {
+}
+class "List`1"<T> {
+}
+HaulDestinationManager --> "AllHaulDestinations<IHaulDestination>" "IEnumerable`1"
+HaulDestinationManager --> "AllHaulDestinationsListForReading<IHaulDestination>" "List`1"
+HaulDestinationManager --> "AllHaulDestinationsListInPriorityOrder<IHaulDestination>" "List`1"
+HaulDestinationManager --> "AllGroups<SlotGroup>" "IEnumerable`1"
+HaulDestinationManager --> "AllGroupsListForReading<SlotGroup>" "List`1"
+HaulDestinationManager --> "AllGroupsListInPriorityOrder<SlotGroup>" "List`1"
+HaulDestinationManager --> "AllSlots<IntVec3>" "IEnumerable`1"
+@enduml

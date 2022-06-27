@@ -1,0 +1,5 @@
+@startuml
+class PawnColumnWorker_MentalState {
+}
+PawnColumnWorker_Icon <|-- PawnColumnWorker_MentalState
+@enduml

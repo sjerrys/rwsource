@@ -1,0 +1,5 @@
+@startuml
+class DigUtility <<static>> {
+    + {static} PassBlockerJob(pawn:Pawn, blocker:Thing, cellBeforeBlocker:IntVec3, canMineMineables:bool, canMineNonMineables:bool) : Job
+}
+@enduml

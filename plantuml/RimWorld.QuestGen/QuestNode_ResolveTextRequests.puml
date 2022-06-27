@@ -1,0 +1,9 @@
+@startuml
+class QuestNode_ResolveTextRequests {
+    + {static} Resolve() : void
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_ResolveTextRequests
+QuestNode_ResolveTextRequests --> "rules<RulePack>" "SlateRef`1"
+@enduml

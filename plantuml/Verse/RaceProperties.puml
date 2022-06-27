@@ -1,0 +1,81 @@
+@startuml
+class RaceProperties {
+    + hasGenders : bool = true
+    + needsRest : bool = true
+    + makesFootprints : bool
+    + executionRange : int = 2
+    + lifeExpectancy : float = 10f
+    + herdAnimal : bool
+    + packAnimal : bool
+    + predator : bool
+    + maxPreyBodySize : float = 99999f
+    + wildness : float
+    + petness : float
+    + nuzzleMtbHours : float
+    + manhunterOnDamageChance : float
+    + manhunterOnTameFailChance : float
+    + canBePredatorPrey : bool = true
+    + herdMigrationAllowed : bool = true
+    + gestationPeriodDays : float = 10f
+    + mateMtbHours : float = 12f
+    + nameOnTameChance : float
+    + nameOnNuzzleChance : float
+    + baseBodySize : float = 1f
+    + baseHealthScale : float = 1f
+    + baseHungerRate : float = 1f
+    + meatLabel : string
+    + meatMarketValue : float = 2f
+    + Humanlike : bool <<get>>
+    + ToolUser : bool <<get>>
+    + Animal : bool <<get>>
+    + EatsFood : bool <<get>>
+    + FoodLevelPercentageWantEat : float <<get>>
+    + IsMechanoid : bool <<get>>
+    + IsFlesh : bool <<get>>
+    + CanDoHerdMigration : bool <<get>>
+    + GetNameGenerator(gender:Gender) : RulePackDef
+    + CanEverEat(t:Thing) : bool
+    + CanEverEat(t:ThingDef) : bool
+    + Eats(food:FoodTypeFlags) : bool
+    + ResolveReferencesSpecial() : void
+    + ConfigErrors() : IEnumerable<string>
+    + SpecialDisplayStats(parentDef:ThingDef, req:StatRequest) : IEnumerable<StatDrawEntry>
+    + {static} NutritionEatenPerDayExplanation(p:Pawn) : string
+    + {static} NutritionEatenPerDayExplanation_NewTemp(p:Pawn, showDiet:bool, showLegend:bool, showCalculations:bool) : string
+}
+class "List`1"<T> {
+}
+RaceProperties --> "intelligence" Intelligence
+RaceProperties --> "thinkTreeMain" ThinkTreeDef
+RaceProperties --> "thinkTreeConstant" ThinkTreeDef
+RaceProperties --> "nameCategory" PawnNameCategory
+RaceProperties --> "foodType" FoodTypeFlags
+RaceProperties --> "body" BodyDef
+RaceProperties --> "deathActionWorkerClass" Type
+RaceProperties --> "wildBiomes<AnimalBiomeRecord>" "List`1"
+RaceProperties --> "ageGenerationCurve" SimpleCurve
+RaceProperties --> "hediffGiverSets<HediffGiverSetDef>" "List`1"
+RaceProperties --> "willNeverEat<ThingDef>" "List`1"
+RaceProperties --> "litterSizeCurve" SimpleCurve
+RaceProperties --> "untrainableTags<string>" "List`1"
+RaceProperties --> "trainableTags<string>" "List`1"
+RaceProperties --> "trainability" TrainabilityDef
+RaceProperties o-> "lifeStageAges<LifeStageAge>" "List`1"
+RaceProperties o-> "meatColor" Color
+RaceProperties --> "useMeatFrom" ThingDef
+RaceProperties --> "useLeatherFrom" ThingDef
+RaceProperties --> "leatherDef" ThingDef
+RaceProperties --> "specialShadowData" ShadowData
+RaceProperties o-> "soundCallIntervalRange" IntRange
+RaceProperties --> "soundMeleeHitPawn" SoundDef
+RaceProperties --> "soundMeleeHitBuilding" SoundDef
+RaceProperties --> "soundMeleeMiss" SoundDef
+RaceProperties --> "soundMeleeDodge" SoundDef
+RaceProperties --> "meatDef" ThingDef
+RaceProperties --> "corpseDef" ThingDef
+RaceProperties --> "ResolvedDietCategory" DietCategory
+RaceProperties --> "DeathActionWorker" DeathActionWorker
+RaceProperties --> "FleshType" FleshTypeDef
+RaceProperties --> "BloodDef" ThingDef
+RaceProperties --> "AnyPawnKind" PawnKindDef
+@enduml

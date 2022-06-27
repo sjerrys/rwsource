@@ -1,0 +1,11 @@
+@startuml
+class ScenPart_PlayerPawnsArriveMethod {
+    + <<override>> ExposeData() : void
+    + <<override>> DoEditInterface(listing:Listing_ScenEdit) : void
+    + <<override>> Summary(scen:Scenario) : string
+    + <<override>> Randomize() : void
+    + <<override>> GenerateIntoMap(map:Map) : void
+    + <<override>> PostMapGenerate(map:Map) : void
+}
+ScenPart <|-- ScenPart_PlayerPawnsArriveMethod
+@enduml

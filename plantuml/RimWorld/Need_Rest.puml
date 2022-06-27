@@ -1,0 +1,20 @@
+@startuml
+class Need_Rest {
+    + <<const>> BaseRestGainPerTick : float = 3.809524E-05f
+    + <<const>> ThreshTired : float = 0.28f
+    + <<const>> ThreshVeryTired : float = 0.14f
+    + <<const>> DefaultFallAsleepMaxLevel : float = 0.75f
+    + <<const>> DefaultNaturalWakeThreshold : float = 1f
+    + <<const>> CanWakeThreshold : float = 0.2f
+    + RestFallPerTick : float <<get>>
+    + <<override>> GUIChangeArrow : int <<get>>
+    + TicksAtZero : int <<get>>
+    + Need_Rest(pawn:Pawn)
+    + <<override>> ExposeData() : void
+    + <<override>> SetInitialLevel() : void
+    + <<override>> NeedInterval() : void
+    + TickResting(restEffectiveness:float) : void
+}
+Need <|-- Need_Rest
+Need_Rest --> "CurCategory" RestCategory
+@enduml

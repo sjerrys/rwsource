@@ -1,0 +1,19 @@
+@startuml
+class LordManager <<sealed>> {
+    + LordManager(map:Map)
+    + ExposeData() : void
+    + LordManagerTick() : void
+    + LordManagerUpdate() : void
+    + LordManagerOnGUI() : void
+    + AddLord(newLord:Lord) : void
+    + RemoveLord(oldLord:Lord) : void
+    + LordOf(p:Pawn) : Lord
+    + LordOf(b:Building) : Lord
+    + LogLords() : void
+}
+class "List`1"<T> {
+}
+IExposable <|-- LordManager
+LordManager --> "map" Map
+LordManager o-> "lords<Lord>" "List`1"
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class Trigger_OnClamor {
+    + Trigger_OnClamor(clamorType:ClamorDef)
+    + <<override>> ActivateOn(lord:Lord, signal:TriggerSignal) : bool
+}
+Trigger <|-- Trigger_OnClamor
+@enduml

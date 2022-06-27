@@ -1,0 +1,5 @@
+@startuml
+class HistoryAutoRecorderWorker {
+    + <<virtual>> PullRecord() : float
+}
+@enduml

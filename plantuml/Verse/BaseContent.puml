@@ -1,0 +1,19 @@
+@startuml
+class BaseContent <<static>> {
+    + {static} <<readonly>> BadTexPath : string = "UI/Misc/BadTexture"
+    + {static} <<readonly>> PlaceholderImagePath : string = "PlaceholderImage"
+    + {static} NullOrBad(mat:Material) : bool
+    + {static} NullOrBad(tex:Texture2D) : bool
+}
+BaseContent o-> "BadMat" Material
+BaseContent o-> "BadTex" Texture2D
+BaseContent o-> "BadGraphic" Graphic
+BaseContent o-> "BlackTex" Texture2D
+BaseContent o-> "GreyTex" Texture2D
+BaseContent o-> "WhiteTex" Texture2D
+BaseContent o-> "ClearTex" Texture2D
+BaseContent o-> "YellowTex" Texture2D
+BaseContent o-> "BlackMat" Material
+BaseContent o-> "WhiteMat" Material
+BaseContent o-> "ClearMat" Material
+@enduml

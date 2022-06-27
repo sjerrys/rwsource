@@ -1,0 +1,11 @@
+@startuml
+class GenderUtility <<static>> {
+    + {static} GetGenderLabel(pawn:Pawn) : string
+    + {static} GetLabel(gender:Gender, animal:bool) : string
+    + {static} GetPronoun(gender:Gender) : string
+    + {static} GetPossessive(gender:Gender) : string
+    + {static} GetObjective(gender:Gender) : string
+    + {static} GetIcon(gender:Gender) : Texture2D
+    + {static} Opposite(gender:Gender) : Gender
+}
+@enduml

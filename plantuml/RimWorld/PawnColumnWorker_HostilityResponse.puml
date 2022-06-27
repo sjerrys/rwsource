@@ -1,0 +1,10 @@
+@startuml
+class PawnColumnWorker_HostilityResponse {
+    + <<override>> DoCell(rect:Rect, pawn:Pawn, table:PawnTable) : void
+    + <<override>> GetMinCellHeight(pawn:Pawn) : int
+    + <<override>> GetMinWidth(table:PawnTable) : int
+    + <<override>> GetMaxWidth(table:PawnTable) : int
+    + <<override>> Compare(a:Pawn, b:Pawn) : int
+}
+PawnColumnWorker <|-- PawnColumnWorker_HostilityResponse
+@enduml

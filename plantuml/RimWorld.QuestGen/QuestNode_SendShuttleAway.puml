@@ -1,0 +1,10 @@
+@startuml
+class QuestNode_SendShuttleAway {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_SendShuttleAway
+QuestNode_SendShuttleAway --> "inSignal<string>" "SlateRef`1"
+QuestNode_SendShuttleAway --> "shuttle<Thing>" "SlateRef`1"
+QuestNode_SendShuttleAway --> "dropEverything<bool>" "SlateRef`1"
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+class MaterialAtlasPool <<static>> {
+    + {static} SubMaterialFromAtlas(mat:Material, LinkSet:LinkDirections) : Material
+}
+class MaterialAtlas {
+    + MaterialAtlas(newRootMat:Material)
+    + SubMat(linkSet:LinkDirections) : Material
+}
+MaterialAtlasPool +-- MaterialAtlas
+@enduml

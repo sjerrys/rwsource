@@ -1,0 +1,11 @@
+@startuml
+class DirectXmlLoaderSimple <<static>> {
+    + {static} ValuesFromXmlFile(file:VirtualFile) : IEnumerable<XmlKeyValuePair>
+}
+class XmlKeyValuePair <<struct>> {
+    + key : string
+    + value : string
+    + lineNumber : int
+}
+DirectXmlLoaderSimple +-- XmlKeyValuePair
+@enduml

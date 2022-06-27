@@ -1,0 +1,8 @@
+@startuml
+class LabelValue <<struct>> {
+    + Label : string <<get>>
+    + Value : string <<get>>
+    + LabelValue(label:string, value:string)
+    + <<override>> ToString() : string
+}
+@enduml

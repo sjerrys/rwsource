@@ -1,0 +1,7 @@
+@startuml
+class JobDriver_Skygaze {
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+    + <<override>> GetReport() : string
+}
+JobDriver <|-- JobDriver_Skygaze
+@enduml

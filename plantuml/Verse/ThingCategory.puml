@@ -1,0 +1,16 @@
+@startuml
+enum ThingCategory {
+    None,
+    Pawn,
+    Item,
+    Building,
+    Plant,
+    Projectile,
+    Filth,
+    Gas,
+    Attachment,
+    Mote,
+    Ethereal,
+    PsychicEmitter,
+}
+@enduml

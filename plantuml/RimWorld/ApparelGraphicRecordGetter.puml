@@ -1,0 +1,5 @@
+@startuml
+class ApparelGraphicRecordGetter <<static>> {
+    + {static} TryGetGraphicApparel(apparel:Apparel, bodyType:BodyTypeDef, rec:ApparelGraphicRecord) : bool
+}
+@enduml

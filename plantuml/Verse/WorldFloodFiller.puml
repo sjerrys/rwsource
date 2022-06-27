@@ -1,0 +1,8 @@
+@startuml
+class WorldFloodFiller {
+    + FloodFill(rootTile:int, passCheck:Predicate<int>, processor:Action<int>, maxTilesToProcess:int, extraRootTiles:IEnumerable<int>) : void
+    + FloodFill(rootTile:int, passCheck:Predicate<int>, processor:Action<int, int>, maxTilesToProcess:int, extraRootTiles:IEnumerable<int>) : void
+    + FloodFill(rootTile:int, passCheck:Predicate<int>, processor:Predicate<int>, maxTilesToProcess:int, extraRootTiles:IEnumerable<int>) : void
+    + FloodFill(rootTile:int, passCheck:Predicate<int>, processor:Func<int, int, bool>, maxTilesToProcess:int, extraRootTiles:IEnumerable<int>) : void
+}
+@enduml

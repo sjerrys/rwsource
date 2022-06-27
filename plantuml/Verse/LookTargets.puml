@@ -1,0 +1,32 @@
+@startuml
+class LookTargets {
+    + IsValid : bool <<get>>
+    + Any : bool <<get>>
+    + ExposeData() : void
+    + LookTargets()
+    + LookTargets(t:Thing)
+    + LookTargets(o:WorldObject)
+    + LookTargets(c:IntVec3, map:Map)
+    + LookTargets(tile:int)
+    + LookTargets(targets:IEnumerable<GlobalTargetInfo>)
+    + LookTargets(targets:GlobalTargetInfo[])
+    + LookTargets(targets:IEnumerable<TargetInfo>)
+    + LookTargets(targets:TargetInfo[])
+    + LookTargets(targets:IEnumerable<Thing>)
+    + LookTargets(targets:IEnumerable<ThingWithComps>)
+    + LookTargets(targets:IEnumerable<Pawn>)
+    + LookTargets(targets:IEnumerable<Building>)
+    + LookTargets(targets:IEnumerable<Plant>)
+    + LookTargets(targets:IEnumerable<WorldObject>)
+    + LookTargets(targets:IEnumerable<Caravan>)
+    + {static} SameTargets(a:LookTargets, b:LookTargets) : bool
+    + Highlight(arrow:bool, colonistBar:bool, circleOverlay:bool) : void
+    + Notify_MapRemoved(map:Map) : void
+}
+class "List`1"<T> {
+}
+IExposable <|-- LookTargets
+LookTargets --> "targets<GlobalTargetInfo>" "List`1"
+LookTargets --> "Invalid" LookTargets
+LookTargets --> "PrimaryTarget" GlobalTargetInfo
+@enduml

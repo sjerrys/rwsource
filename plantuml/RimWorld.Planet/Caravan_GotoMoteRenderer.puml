@@ -1,0 +1,7 @@
+@startuml
+class Caravan_GotoMoteRenderer {
+    + RenderMote() : void
+    + OrderedToTile(tile:int) : void
+}
+Caravan_GotoMoteRenderer o-> "FeedbackGoto" Material
+@enduml

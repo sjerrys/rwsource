@@ -1,0 +1,15 @@
+@startuml
+class BackstoryDatabase <<static>> {
+    + {static} Clear() : void
+    + {static} ReloadAllBackstories() : void
+    + {static} AddBackstory(bs:Backstory) : void
+    + {static} TryGetWithIdentifier(identifier:string, bs:Backstory, closestMatchWarning:bool) : bool
+    + {static} GetIdentifierClosestMatch(identifier:string, closestMatchWarning:bool) : string
+    + {static} RandomBackstory(slot:BackstorySlot) : Backstory
+    + {static} ShuffleableBackstoryList(slot:BackstorySlot, group:BackstoryCategoryFilter) : List<Backstory>
+    + {static} StripNumericSuffix(key:string) : string
+}
+class "Dictionary`2"<T1,T2> {
+}
+BackstoryDatabase o-> "allBackstories<string,Backstory>" "Dictionary`2"
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class Recipe_RemoveHediff {
+    + <<override>> AvailableOnNow(thing:Thing) : bool
+    + <<override>> GetPartsToApplyOn(pawn:Pawn, recipe:RecipeDef) : IEnumerable<BodyPartRecord>
+    + <<override>> ApplyOnPawn(pawn:Pawn, part:BodyPartRecord, billDoer:Pawn, ingredients:List<Thing>, bill:Bill) : void
+}
+Recipe_Surgery <|-- Recipe_RemoveHediff
+@enduml

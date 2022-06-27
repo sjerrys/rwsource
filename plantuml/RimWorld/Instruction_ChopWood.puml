@@ -1,0 +1,6 @@
+@startuml
+class Instruction_ChopWood {
+    + <<override>> LessonUpdate() : void
+}
+Lesson_Instruction <|-- Instruction_ChopWood
+@enduml

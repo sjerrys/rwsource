@@ -1,0 +1,13 @@
+@startuml
+abstract class InspectTabBase {
+    + labelKey : string
+    + tutorTag : string
+    + <<virtual>> IsVisible : bool <<get>>
+    + TutorHighlightTagClosed : string <<get>>
+    + DoTabGUI() : void
+    + <<virtual>> OnOpen() : void
+    + <<virtual>> TabTick() : void
+    + <<virtual>> TabUpdate() : void
+    + <<virtual>> Notify_ClearingAllMapsMemory() : void
+}
+@enduml

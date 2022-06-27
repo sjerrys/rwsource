@@ -1,0 +1,15 @@
+@startuml
+class ShipLandingArea {
+    + Clear : bool <<get>>
+    + BlockedByRoof : bool <<get>>
+    + Active : bool <<get>>
+    + ShipLandingArea(rect:CellRect, map:Map)
+    + RecalculateBlockingThing() : void
+}
+class "List`1"<T> {
+}
+ShipLandingArea o-> "beacons<CompShipLandingBeacon>" "List`1"
+ShipLandingArea --> "CenterCell" IntVec3
+ShipLandingArea --> "MyRect" CellRect
+ShipLandingArea --> "FirstBlockingThing" Thing
+@enduml

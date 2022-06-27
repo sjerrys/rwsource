@@ -1,0 +1,5 @@
+@startuml
+abstract class AudioGrain {
+    + {abstract} GetResolvedGrains() : IEnumerable<ResolvedGrain>
+}
+@enduml

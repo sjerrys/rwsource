@@ -1,0 +1,5 @@
+@startuml
+class JobGiver_AITrashColonyClose {
+}
+ThinkNode_JobGiver <|-- JobGiver_AITrashColonyClose
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class CompSnowExpand {
+    + <<override>> PostExposeData() : void
+    + <<override>> CompTick() : void
+}
+ThingComp <|-- CompSnowExpand
+CompSnowExpand --> "Props" CompProperties_SnowExpand
+@enduml

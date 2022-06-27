@@ -1,0 +1,8 @@
+@startuml
+class Command_SetTargetFuelLevel {
+    + <<override>> ProcessInput(ev:Event) : void
+    + <<override>> InheritInteractionsFrom(other:Gizmo) : bool
+}
+Command <|-- Command_SetTargetFuelLevel
+Command_SetTargetFuelLevel --> "refuelable" CompRefuelable
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class GraphicMeshSet {
+    + GraphicMeshSet(normalMesh:Mesh, leftMesh:Mesh)
+    + GraphicMeshSet(size:float)
+    + GraphicMeshSet(width:float, height:float)
+    + MeshAt(rot:Rot4) : Mesh
+}
+@enduml

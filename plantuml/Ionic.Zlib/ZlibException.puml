@@ -1,0 +1,7 @@
+@startuml
+class ZlibException {
+    + ZlibException()
+    + ZlibException(s:string)
+}
+Exception <|-- ZlibException
+@enduml

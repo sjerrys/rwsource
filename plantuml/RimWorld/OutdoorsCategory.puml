@@ -1,0 +1,10 @@
+@startuml
+enum OutdoorsCategory {
+    Entombed,
+    Trapped,
+    CabinFeverSevere,
+    CabinFeverLight,
+    NeedFreshAir,
+    Free,
+}
+@enduml

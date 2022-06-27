@@ -1,0 +1,15 @@
+@startuml
+class ShotReport <<struct>> {
+    + AimOnTargetChance_StandardTarget : float <<get>>
+    + AimOnTargetChance_IgnoringPosture : float <<get>>
+    + AimOnTargetChance : float <<get>>
+    + PassCoverChance : float <<get>>
+    + TotalEstimatedHitChance : float <<get>>
+    + {static} HitReportFor(caster:Thing, verb:Verb, target:LocalTargetInfo) : ShotReport
+    + {static} HitFactorFromShooter(caster:Thing, distance:float) : float
+    + {static} HitFactorFromShooter(accRating:float, distance:float) : float
+    + GetTextReadout() : string
+    + GetRandomCoverToMissInto() : Thing
+}
+ShotReport --> "ShootLine" ShootLine
+@enduml

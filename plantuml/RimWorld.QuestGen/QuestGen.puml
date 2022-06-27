@@ -1,0 +1,34 @@
+@startuml
+class QuestGen <<static>> {
+    + {static} Working : bool <<get>>
+    + {static} GenerateNewSignal(signalString:string, ensureUnique:bool) : string
+    + {static} GenerateNewTargetQuestTag(targetString:string, ensureUnique:bool) : string
+    + {static} Generate(root:QuestScriptDef, initialVars:Slate) : Quest
+    + {static} AddToGeneratedPawns(pawn:Pawn) : void
+    + {static} WasGeneratedForQuestBeingGenerated(pawn:Pawn) : bool
+    + {static} AddQuestDescriptionRules(rulePack:RulePack) : void
+    + {static} AddQuestDescriptionRules(rules:List<Rule>) : void
+    + {static} AddQuestDescriptionConstants(constants:Dictionary<string, string>) : void
+    + {static} AddQuestNameRules(rulePack:RulePack) : void
+    + {static} AddQuestNameRules(rules:List<Rule>) : void
+    + {static} AddQuestNameConstants(constants:Dictionary<string, string>) : void
+    + {static} AddQuestContentRules(rulePack:RulePack) : void
+    + {static} AddQuestContentRules(rules:List<Rule>) : void
+    + {static} AddSlateQuestTagToAddWhenFinished(slateVarNameWithPrefix:string) : void
+    + {static} AddTextRequest(localKeyword:string, setter:Action<string>, extraLocalRules:RulePack) : void
+    + {static} AddTextRequest(localKeyword:string, setter:Action<string>, extraLocalRules:List<Rule>) : void
+}
+class "List`1"<T> {
+}
+class "Dictionary`2"<T1,T2> {
+}
+QuestGen --> "quest" Quest
+QuestGen o-> "slate" Slate
+QuestGen --> "Root" QuestScriptDef
+QuestGen --> "QuestDescriptionRulesReadOnly<Rule>" "List`1"
+QuestGen --> "QuestDescriptionConstantsReadOnly<string,string>" "Dictionary`2"
+QuestGen --> "QuestNameRulesReadOnly<Rule>" "List`1"
+QuestGen --> "QuestNameConstantsReadOnly<string,string>" "Dictionary`2"
+QuestGen --> "TextRequestsReadOnly<QuestTextRequest>" "List`1"
+QuestGen --> "QuestContentRulesReadOnly<Rule>" "List`1"
+@enduml

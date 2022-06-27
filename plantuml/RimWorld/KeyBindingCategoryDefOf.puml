@@ -1,0 +1,6 @@
+@startuml
+class KeyBindingCategoryDefOf <<static>> {
+    {static} KeyBindingCategoryDefOf()
+}
+KeyBindingCategoryDefOf --> "MainTabs" KeyBindingCategoryDef
+@enduml

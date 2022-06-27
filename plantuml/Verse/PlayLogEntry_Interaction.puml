@@ -1,0 +1,15 @@
+@startuml
+class PlayLogEntry_Interaction {
+    + PlayLogEntry_Interaction()
+    + PlayLogEntry_Interaction(intDef:InteractionDef, initiator:Pawn, recipient:Pawn, extraSentencePacks:List<RulePackDef>)
+    + <<override>> Concerns(t:Thing) : bool
+    + <<override>> GetConcerns() : IEnumerable<Thing>
+    + <<override>> CanBeClickedFromPOV(pov:Thing) : bool
+    + <<override>> ClickedFromPOV(pov:Thing) : void
+    + <<override>> IconFromPOV(pov:Thing) : Texture2D
+    + <<override>> GetTipString() : string
+    + <<override>> ExposeData() : void
+    + <<override>> ToString() : string
+}
+LogEntry <|-- PlayLogEntry_Interaction
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+class BattleLogEntry_DamageTaken {
+    + BattleLogEntry_DamageTaken()
+    + BattleLogEntry_DamageTaken(recipient:Pawn, ruleDef:RulePackDef, initiator:Pawn)
+    + <<override>> Concerns(t:Thing) : bool
+    + <<override>> GetConcerns() : IEnumerable<Thing>
+    + <<override>> CanBeClickedFromPOV(pov:Thing) : bool
+    + <<override>> ClickedFromPOV(pov:Thing) : void
+    + <<override>> IconFromPOV(pov:Thing) : Texture2D
+    + <<override>> ExposeData() : void
+    + <<override>> ToString() : string
+}
+LogEntry_DamageResult <|-- BattleLogEntry_DamageTaken
+@enduml

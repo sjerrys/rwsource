@@ -1,0 +1,8 @@
+@startuml
+class RecipeDefOf <<static>> {
+    {static} RecipeDefOf()
+}
+RecipeDefOf --> "RemoveBodyPart" RecipeDef
+RecipeDefOf --> "CookMealSimple" RecipeDef
+RecipeDefOf --> "InstallPegLeg" RecipeDef
+@enduml

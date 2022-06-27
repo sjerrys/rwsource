@@ -1,0 +1,5 @@
+@startuml
+class QuestNode_IsMechanoid {
+}
+QuestNode_RaceProperty <|-- QuestNode_IsMechanoid
+@enduml

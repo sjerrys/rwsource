@@ -1,0 +1,5 @@
+@startuml
+class ThoughtWorker_TeetotalerVsChemicalInterest {
+}
+ThoughtWorker <|-- ThoughtWorker_TeetotalerVsChemicalInterest
+@enduml

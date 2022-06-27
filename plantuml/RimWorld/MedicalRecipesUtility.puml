@@ -1,0 +1,10 @@
+@startuml
+class MedicalRecipesUtility {
+    + {static} IsCleanAndDroppable(pawn:Pawn, part:BodyPartRecord) : bool
+    + {static} IsClean(pawn:Pawn, part:BodyPartRecord) : bool
+    + {static} RestorePartAndSpawnAllPreviousParts(pawn:Pawn, part:BodyPartRecord, pos:IntVec3, map:Map) : void
+    + {static} SpawnNaturalPartIfClean(pawn:Pawn, part:BodyPartRecord, pos:IntVec3, map:Map) : Thing
+    + {static} SpawnThingsFromHediffs(pawn:Pawn, part:BodyPartRecord, pos:IntVec3, map:Map) : void
+    + {static} GetFixedPartsToApplyOn(recipe:RecipeDef, pawn:Pawn, validator:Func<BodyPartRecord, bool>) : IEnumerable<BodyPartRecord>
+}
+@enduml

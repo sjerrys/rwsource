@@ -1,0 +1,16 @@
+@startuml
+class WorldInfo {
+    + name : string = "DefaultWorldName"
+    + planetCoverage : float
+    + seedString : string = "SeedError"
+    + persistentRandomValue : int
+    + FileNameNoExtension : string <<get>>
+    + Seed : int <<get>>
+    + ExposeData() : void
+}
+IExposable <|-- WorldInfo
+WorldInfo o-> "overallRainfall" OverallRainfall
+WorldInfo o-> "overallTemperature" OverallTemperature
+WorldInfo o-> "overallPopulation" OverallPopulation
+WorldInfo o-> "initialMapSize" IntVec3
+@enduml

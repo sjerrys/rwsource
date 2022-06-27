@@ -1,0 +1,8 @@
+@startuml
+class DifficultyDefOf <<static>> {
+    {static} DifficultyDefOf()
+}
+DifficultyDefOf --> "Peaceful" DifficultyDef
+DifficultyDefOf --> "Easy" DifficultyDef
+DifficultyDefOf --> "Rough" DifficultyDef
+@enduml

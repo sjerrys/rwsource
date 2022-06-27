@@ -1,0 +1,18 @@
+@startuml
+class SectionLayer_TerrainScatter {
+    + <<override>> Visible : bool <<get>>
+    + SectionLayer_TerrainScatter(section:Section)
+    + <<override>> Regenerate() : void
+}
+class Scatterable {
+    + size : float
+    + rotation : float
+    + IsOnValidTerrain : bool <<get>>
+    + Scatterable(def:ScatterableDef, loc:Vector3, map:Map)
+    + PrintOnto(layer:SectionLayer) : void
+}
+SectionLayer <|-- SectionLayer_TerrainScatter
+SectionLayer_TerrainScatter +-- Scatterable
+Scatterable --> "def" ScatterableDef
+Scatterable --> "loc" Vector3
+@enduml

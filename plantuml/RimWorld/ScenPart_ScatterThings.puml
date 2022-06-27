@@ -1,0 +1,6 @@
+@startuml
+abstract class ScenPart_ScatterThings {
+    + <<override>> GenerateIntoMap(map:Map) : void
+}
+ScenPart_ThingCount <|-- ScenPart_ScatterThings
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+abstract class SectionLayer_Things {
+    + SectionLayer_Things(section:Section)
+    + <<override>> DrawLayer() : void
+    + <<override>> Regenerate() : void
+}
+SectionLayer <|-- SectionLayer_Things
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class IncidentWorker {
+    + <<virtual>> BaseChanceThisGame : float <<get>>
+    + CanFireNow(parms:IncidentParms, forced:bool) : bool
+    + FiredTooRecently(target:IIncidentTarget) : bool
+    + TryExecute(parms:IncidentParms) : bool
+}
+IncidentWorker --> "def" IncidentDef
+@enduml

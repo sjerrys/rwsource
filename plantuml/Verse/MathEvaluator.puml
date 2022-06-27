@@ -1,0 +1,5 @@
+@startuml
+class MathEvaluator <<static>> {
+    + {static} Evaluate(expr:string) : double
+}
+@enduml

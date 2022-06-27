@@ -1,0 +1,11 @@
+@startuml
+class Trigger_PawnHarmed {
+    + chance : float = 1f
+    + requireInstigatorWithFaction : bool
+    + Trigger_PawnHarmed(chance:float, requireInstigatorWithFaction:bool, requireInstigatorWithSpecificFaction:Faction)
+    + <<override>> ActivateOn(lord:Lord, signal:TriggerSignal) : bool
+    + {static} SignalIsHarm(signal:TriggerSignal) : bool
+}
+Trigger <|-- Trigger_PawnHarmed
+Trigger_PawnHarmed --> "requireInstigatorWithSpecificFaction" Faction
+@enduml

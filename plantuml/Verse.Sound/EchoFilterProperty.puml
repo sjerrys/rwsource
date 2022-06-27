@@ -1,0 +1,8 @@
+@startuml
+enum EchoFilterProperty {
+    Delay,
+    DecayRatio,
+    WetMix,
+    DryMix,
+}
+@enduml

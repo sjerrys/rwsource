@@ -1,0 +1,6 @@
+@startuml
+class CameraMapConfig_MoreZoom {
+    + CameraMapConfig_MoreZoom()
+}
+CameraMapConfig <|-- CameraMapConfig_MoreZoom
+@enduml

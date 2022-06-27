@@ -1,0 +1,10 @@
+@startuml
+class Alert_TitleRequiresBedroom {
+    + Alert_TitleRequiresBedroom()
+    + <<override>> GetReport() : AlertReport
+}
+class "List`1"<T> {
+}
+Alert <|-- Alert_TitleRequiresBedroom
+Alert_TitleRequiresBedroom --> "Targets<Pawn>" "List`1"
+@enduml

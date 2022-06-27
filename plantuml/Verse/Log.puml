@@ -1,0 +1,16 @@
+@startuml
+class Log <<static>> {
+    + {static} openOnMessage : bool = false
+    + {static} ResetMessageCount() : void
+    + {static} Message(text:string, ignoreStopLoggingLimit:bool) : void
+    + {static} Warning(text:string, ignoreStopLoggingLimit:bool) : void
+    + {static} Error(text:string, ignoreStopLoggingLimit:bool) : void
+    + {static} ErrorOnce(text:string, key:int, ignoreStopLoggingLimit:bool) : void
+    + {static} Clear() : void
+    + {static} TryOpenLogWindow() : void
+    + {static} Notify_MessageReceivedThreadedInternal(msg:string, stackTrace:string, type:LogType) : void
+}
+class "IEnumerable`1"<T> {
+}
+Log --> "Messages<LogMessage>" "IEnumerable`1"
+@enduml

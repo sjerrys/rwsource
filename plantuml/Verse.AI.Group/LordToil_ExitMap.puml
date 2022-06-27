@@ -1,0 +1,10 @@
+@startuml
+class LordToil_ExitMap {
+    + <<override>> AllowSatisfyLongNeeds : bool <<get>>
+    + <<override>> AllowSelfTend : bool <<get>>
+    + LordToil_ExitMap(locomotion:LocomotionUrgency, canDig:bool, interruptCurrentJob:bool)
+    + <<override>> UpdateAllDuties() : void
+}
+LordToil <|-- LordToil_ExitMap
+LordToil_ExitMap --> "ExitDuty" DutyDef
+@enduml

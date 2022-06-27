@@ -1,0 +1,7 @@
+@startuml
+class Toils_Reserve <<static>> {
+    + {static} Reserve(ind:TargetIndex, maxPawns:int, stackCount:int, layer:ReservationLayerDef) : Toil
+    + {static} ReserveQueue(ind:TargetIndex, maxPawns:int, stackCount:int, layer:ReservationLayerDef) : Toil
+    + {static} Release(ind:TargetIndex) : Toil
+}
+@enduml

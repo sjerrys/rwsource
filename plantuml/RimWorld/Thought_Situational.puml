@@ -1,0 +1,9 @@
+@startuml
+class Thought_Situational {
+    + Active : bool <<get>>
+    + <<override>> CurStageIndex : int <<get>>
+    + <<override>> LabelCap : string <<get>>
+    + RecalculateState() : void
+}
+Thought <|-- Thought_Situational
+@enduml

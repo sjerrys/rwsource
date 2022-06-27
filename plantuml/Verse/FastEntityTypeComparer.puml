@@ -1,0 +1,10 @@
+@startuml
+class FastEntityTypeComparer {
+    + Equals(x:ThingCategory, y:ThingCategory) : bool
+    + GetHashCode(obj:ThingCategory) : int
+}
+class "IEqualityComparer`1"<T> {
+}
+"IEqualityComparer`1" "<ThingCategory>" <|-- FastEntityTypeComparer
+FastEntityTypeComparer o-> "Instance" FastEntityTypeComparer
+@enduml

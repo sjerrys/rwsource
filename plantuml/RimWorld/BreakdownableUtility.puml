@@ -1,0 +1,5 @@
+@startuml
+class BreakdownableUtility <<static>> {
+    + {static} IsBrokenDown(t:Thing) : bool
+}
+@enduml

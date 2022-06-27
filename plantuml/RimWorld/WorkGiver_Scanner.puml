@@ -1,0 +1,20 @@
+@startuml
+abstract class WorkGiver_Scanner {
+    + <<virtual>> MaxRegionsToScanBeforeGlobalSearch : int <<get>>
+    + <<virtual>> Prioritized : bool <<get>>
+    + <<virtual>> AllowUnreachable : bool <<get>>
+    + <<virtual>> PotentialWorkCellsGlobal(pawn:Pawn) : IEnumerable<IntVec3>
+    + <<virtual>> PotentialWorkThingsGlobal(pawn:Pawn) : IEnumerable<Thing>
+    + <<virtual>> MaxPathDanger(pawn:Pawn) : Danger
+    + <<virtual>> HasJobOnThing(pawn:Pawn, t:Thing, forced:bool) : bool
+    + <<virtual>> JobOnThing(pawn:Pawn, t:Thing, forced:bool) : Job
+    + <<virtual>> HasJobOnCell(pawn:Pawn, c:IntVec3, forced:bool) : bool
+    + <<virtual>> JobOnCell(pawn:Pawn, cell:IntVec3, forced:bool) : Job
+    + <<virtual>> GetPriority(pawn:Pawn, t:TargetInfo) : float
+    + <<virtual>> PostProcessedGerund(job:Job) : string
+    + GetPriority(pawn:Pawn, cell:IntVec3) : float
+}
+WorkGiver <|-- WorkGiver_Scanner
+WorkGiver_Scanner --> "PotentialWorkThingRequest" ThingRequest
+WorkGiver_Scanner --> "PathEndMode" PathEndMode
+@enduml

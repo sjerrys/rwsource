@@ -1,0 +1,7 @@
+@startuml
+class PermadeathModeUtility <<static>> {
+    + {static} GeneratePermadeathSaveName() : string
+    + {static} GeneratePermadeathSaveNameBasedOnPlayerInput(factionName:string, acceptedNameEvenIfTaken:string) : string
+    + {static} CheckUpdatePermadeathModeUniqueNameOnGameLoad(filename:string) : void
+}
+@enduml

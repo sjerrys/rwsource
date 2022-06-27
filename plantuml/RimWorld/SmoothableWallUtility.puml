@@ -1,0 +1,7 @@
+@startuml
+class SmoothableWallUtility <<static>> {
+    + {static} Notify_SmoothedByPawn(t:Thing, p:Pawn) : void
+    + {static} Notify_BuildingDestroying(t:Thing, mode:DestroyMode) : void
+    + {static} SmoothWall(target:Thing, smoother:Pawn) : Thing
+}
+@enduml

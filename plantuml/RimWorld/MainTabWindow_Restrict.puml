@@ -1,0 +1,7 @@
+@startuml
+class MainTabWindow_Restrict {
+    + <<override>> PostOpen() : void
+    + <<override>> DoWindowContents(fillRect:Rect) : void
+}
+MainTabWindow_PawnTable <|-- MainTabWindow_Restrict
+@enduml

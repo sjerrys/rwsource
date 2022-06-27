@@ -1,0 +1,10 @@
+@startuml
+class ConvertToIsland {
+    + viewAngle : float
+    + ConvertToIsland()
+    + ConvertToIsland(viewCenter:Vector3, viewAngle:float, input:ModuleBase)
+    + <<override>> GetValue(x:double, y:double, z:double) : double
+}
+ModuleBase <|-- ConvertToIsland
+ConvertToIsland --> "viewCenter" Vector3
+@enduml

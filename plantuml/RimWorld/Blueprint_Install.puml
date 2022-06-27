@@ -1,0 +1,14 @@
+@startuml
+class Blueprint_Install {
+    + <<override>> ExposeData() : void
+    + <<override>> EntityToBuildStuff() : ThingDef
+    + <<override>> MaterialsNeeded() : List<ThingDefCountClass>
+    + <<override>> TryReplaceWithSolidThing(workerPawn:Pawn, createdThing:Thing, jobEnded:bool) : bool
+    + <<override>> GetGizmos() : IEnumerable<Gizmo>
+    + <<override>> DrawExtraSelectionOverlays() : void
+}
+Blueprint <|-- Blueprint_Install
+Blueprint_Install --> "MiniToInstallOrBuildingToReinstall" Thing
+Blueprint_Install --> "ThingToInstall" Thing
+Blueprint_Install --> "Graphic" Graphic
+@enduml

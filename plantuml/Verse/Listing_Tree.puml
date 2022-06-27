@@ -1,0 +1,11 @@
+@startuml
+class Listing_Tree {
+    + nestIndentWidth : float = 11f
+    + <<override>> Begin(rect:Rect) : void
+    + <<override>> End() : void
+    + InfoText(text:string, indentLevel:int) : void
+    + ButtonText(label:string) : bool
+    + StartWidgetsRow(indentLevel:int) : WidgetRow
+}
+Listing_Lines <|-- Listing_Tree
+@enduml

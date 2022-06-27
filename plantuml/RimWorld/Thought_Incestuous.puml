@@ -1,0 +1,6 @@
+@startuml
+class Thought_Incestuous {
+    + <<override>> OpinionOffset() : float
+}
+Thought_SituationalSocial <|-- Thought_Incestuous
+@enduml

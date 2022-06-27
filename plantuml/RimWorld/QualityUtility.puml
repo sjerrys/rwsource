@@ -1,0 +1,23 @@
+@startuml
+class QualityUtility <<static>> {
+    {static} QualityUtility()
+    + {static} TryGetQuality(t:Thing, qc:QualityCategory) : bool
+    + {static} GetLabel(cat:QualityCategory) : string
+    + {static} GetLabelShort(cat:QualityCategory) : string
+    + {static} FollowQualityThingFilter(def:ThingDef) : bool
+    + {static} GenerateQuality(qualityGenerator:QualityGenerator) : QualityCategory
+    + {static} GenerateQualityRandomEqualChance() : QualityCategory
+    + {static} GenerateQualityReward() : QualityCategory
+    + {static} GenerateQualityGift() : QualityCategory
+    + {static} GenerateQualitySuper() : QualityCategory
+    + {static} GenerateQualityTraderItem() : QualityCategory
+    + {static} GenerateQualityBaseGen() : QualityCategory
+    + {static} GenerateQualityGeneratingPawn(pawnKind:PawnKindDef) : QualityCategory
+    + {static} GenerateQualityCreatedByPawn(relevantSkillLevel:int, inspired:bool) : QualityCategory
+    + {static} GenerateQualityCreatedByPawn(pawn:Pawn, relevantSkill:SkillDef) : QualityCategory
+    + {static} SendCraftNotification(thing:Thing, worker:Pawn) : void
+}
+class "List`1"<T> {
+}
+QualityUtility --> "AllQualityCategories<QualityCategory>" "List`1"
+@enduml

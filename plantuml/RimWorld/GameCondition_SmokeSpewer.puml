@@ -1,0 +1,6 @@
+@startuml
+class GameCondition_SmokeSpewer {
+    + <<override>> TransitionTicks : int <<get>>
+}
+GameCondition_VolcanicWinter <|-- GameCondition_SmokeSpewer
+@enduml

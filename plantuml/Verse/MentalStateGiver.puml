@@ -1,0 +1,6 @@
+@startuml
+class MentalStateGiver {
+    + mtbDays : float
+}
+MentalStateGiver --> "mentalState" MentalStateDef
+@enduml

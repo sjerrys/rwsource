@@ -1,0 +1,21 @@
+@startuml
+class TaleDef {
+    + usableForArt : bool = true
+    + colonistOnly : bool = true
+    + maxPerPawn : int
+    + ignoreChance : float
+    + expireDays : float
+    + firstPawnSymbol : string
+    + secondPawnSymbol : string
+    + defSymbol : string
+    + baseInterest : float
+    + <<override>> ConfigErrors() : IEnumerable<string>
+    + {static} Named(str:string) : TaleDef
+}
+Def <|-- TaleDef
+TaleDef --> "type" TaleType
+TaleDef --> "taleClass" Type
+TaleDef --> "rulePack" RulePack
+TaleDef o-> "defType" Type
+TaleDef o-> "historyGraphColor" Color
+@enduml

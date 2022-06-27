@@ -1,0 +1,15 @@
+@startuml
+class WorldRendererUtility <<static>> {
+    + {static} WorldRenderedNow : bool <<get>>
+    + {static} UpdateWorldShadersParams() : void
+    + {static} PrintQuadTangentialToPlanet(pos:Vector3, size:float, altOffset:float, subMesh:LayerSubMesh, counterClockwise:bool, randomizeRotation:bool, printUVs:bool) : void
+    + {static} PrintQuadTangentialToPlanet(pos:Vector3, posForTangents:Vector3, size:float, altOffset:float, subMesh:LayerSubMesh, counterClockwise:bool, randomizeRotation:bool, printUVs:bool) : void
+    + {static} DrawQuadTangentialToPlanet(pos:Vector3, size:float, altOffset:float, material:Material, counterClockwise:bool, useSkyboxLayer:bool, propertyBlock:MaterialPropertyBlock) : void
+    + {static} GetTangentsToPlanet(pos:Vector3, first:Vector3, second:Vector3, randomizeRotation:bool) : void
+    + {static} ProjectOnQuadTangentialToPlanet(center:Vector3, point:Vector2) : Vector3
+    + {static} GetTangentialVectorFacing(root:Vector3, pointToFace:Vector3, forward:Vector3, right:Vector3) : void
+    + {static} PrintTextureAtlasUVs(indexX:int, indexY:int, numX:int, numY:int, subMesh:LayerSubMesh) : void
+    + {static} HiddenBehindTerrainNow(pos:Vector3) : bool
+}
+WorldRendererUtility --> "CurrentWorldRenderMode" WorldRenderMode
+@enduml

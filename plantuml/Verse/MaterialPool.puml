@@ -1,0 +1,14 @@
+@startuml
+class MaterialPool <<static>> {
+    + {static} MatFrom(texPath:string, reportFailure:bool) : Material
+    + {static} MatFrom(texPath:string) : Material
+    + {static} MatFrom(srcTex:Texture2D) : Material
+    + {static} MatFrom(srcTex:Texture2D, shader:Shader, color:Color) : Material
+    + {static} MatFrom(srcTex:Texture2D, shader:Shader, color:Color, renderQueue:int) : Material
+    + {static} MatFrom(texPath:string, shader:Shader) : Material
+    + {static} MatFrom(texPath:string, shader:Shader, renderQueue:int) : Material
+    + {static} MatFrom(texPath:string, shader:Shader, color:Color) : Material
+    + {static} MatFrom(texPath:string, shader:Shader, color:Color, renderQueue:int) : Material
+    + {static} MatFrom(req:MaterialRequest) : Material
+}
+@enduml

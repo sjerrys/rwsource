@@ -1,0 +1,6 @@
+@startuml
+class HediffMaker <<static>> {
+    + {static} MakeHediff(def:HediffDef, pawn:Pawn, partRecord:BodyPartRecord) : Hediff
+    + {static} Debug_MakeConcreteExampleHediff(def:HediffDef) : Hediff
+}
+@enduml

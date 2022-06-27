@@ -1,0 +1,7 @@
+@startuml
+interface IStoreSettingsParent {
+    StorageTabVisible : bool <<get>>
+    GetStoreSettings() : StorageSettings
+    GetParentStoreSettings() : StorageSettings
+}
+@enduml

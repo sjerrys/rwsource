@@ -1,0 +1,6 @@
+@startuml
+class CompUseEffect_StartWick {
+    + <<override>> DoEffect(usedBy:Pawn) : void
+}
+CompUseEffect <|-- CompUseEffect_StartWick
+@enduml

@@ -1,0 +1,49 @@
+@startuml
+class HediffSet {
+    + PainTotal : float <<get>>
+    + BleedRateTotal : float <<get>>
+    + HasHead : bool <<get>>
+    + HungerRateFactor : float <<get>>
+    + RestFallFactor : float <<get>>
+    + AnyHediffMakesSickThought : bool <<get>>
+    + HediffSet(newPawn:Pawn)
+    + ExposeData() : void
+    + AddDirect(hediff:Hediff, dinfo:DamageInfo?, damageResult:DamageWorker.DamageResult) : void
+    + DirtyCache() : void
+    + GetHungerRateFactor(ignore:HediffDef) : float
+    + GetHediffs() : IEnumerable<T>
+    + GetFirstHediffOfDef(def:HediffDef, mustBeVisible:bool) : Hediff
+    + PartIsMissing(part:BodyPartRecord) : bool
+    + GetPartHealth(part:BodyPartRecord) : float
+    + GetBrain() : BodyPartRecord
+    + HasHediff(def:HediffDef, mustBeVisible:bool) : bool
+    + HasHediff(def:HediffDef, bodyPart:BodyPartRecord, mustBeVisible:bool) : bool
+    + GetHediffsVerbs() : IEnumerable<Verb>
+    + GetHediffsTendable() : IEnumerable<Hediff>
+    + HasTendableHediff(forAlert:bool) : bool
+    + GetAllComps() : IEnumerable<HediffComp>
+    + GetInjuriesTendable() : IEnumerable<Hediff_Injury>
+    + HasTendableInjury() : bool
+    + HasNaturallyHealingInjury() : bool
+    + HasTendedAndHealingInjury() : bool
+    + HasTemperatureInjury(minStage:TemperatureInjuryStage) : bool
+    + GetInjuredParts() : IEnumerable<BodyPartRecord>
+    + GetNaturallyHealingInjuredParts() : IEnumerable<BodyPartRecord>
+    + GetMissingPartsCommonAncestors() : List<Hediff_MissingPart>
+    + GetNotMissingParts(height:BodyPartHeight, depth:BodyPartDepth, tag:BodyPartTagDef, partParent:BodyPartRecord) : IEnumerable<BodyPartRecord>
+    + GetRandomNotMissingPart(damDef:DamageDef, height:BodyPartHeight, depth:BodyPartDepth, partParent:BodyPartRecord) : BodyPartRecord
+    + GetCoverageOfNotMissingNaturalParts(part:BodyPartRecord) : float
+    + HasDirectlyAddedPartFor(part:BodyPartRecord) : bool
+    + PartOrAnyAncestorHasDirectlyAddedParts(part:BodyPartRecord) : bool
+    + AncestorHasDirectlyAddedParts(part:BodyPartRecord) : bool
+    + GetTendableNonInjuryNonMissingPartHediffs() : IEnumerable<Hediff>
+    + HasTendableNonInjuryNonMissingPartHediff(forAlert:bool) : bool
+    + HasImmunizableNotImmuneHediff() : bool
+    + Clear() : void
+}
+class "List`1"<T> {
+}
+IExposable <|-- HediffSet
+HediffSet --> "pawn" Pawn
+HediffSet o-> "hediffs<Hediff>" "List`1"
+@enduml

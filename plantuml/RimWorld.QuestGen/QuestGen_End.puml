@@ -1,0 +1,5 @@
+@startuml
+class QuestGen_End <<static>> {
+    + {static} End(quest:Quest, outcome:QuestEndOutcome, goodwillChangeAmount:int, goodwillChangeFactionOf:Faction, inSignal:string, signalListenMode:QuestPart.SignalListenMode, sendStandardLetter:bool) : QuestPart_QuestEnd
+}
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+abstract class CompTargetable {
+    + <<override>> PostExposeData() : void
+    + <<override>> SelectedUseOption(p:Pawn) : bool
+    + <<override>> DoEffect(usedBy:Pawn) : void
+    + {abstract} GetTargets(targetChosenByPlayer:Thing) : IEnumerable<Thing>
+    + BaseTargetValidator(t:Thing) : bool
+}
+CompUseEffect <|-- CompTargetable
+CompTargetable --> "Props" CompProperties_Targetable
+@enduml

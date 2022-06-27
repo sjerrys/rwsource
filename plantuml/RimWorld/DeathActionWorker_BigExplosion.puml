@@ -1,0 +1,8 @@
+@startuml
+class DeathActionWorker_BigExplosion {
+    + <<override>> DangerousInMelee : bool <<get>>
+    + <<override>> PawnDied(corpse:Corpse) : void
+}
+DeathActionWorker <|-- DeathActionWorker_BigExplosion
+DeathActionWorker_BigExplosion --> "DeathRules" RulePackDef
+@enduml

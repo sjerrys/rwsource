@@ -1,0 +1,11 @@
+@startuml
+class IntVec3Utility <<static>> {
+    + {static} ToIntVec3(vect:Vector3) : IntVec3
+    + {static} DistanceTo(a:IntVec3, b:IntVec3) : float
+    + {static} DistanceToSquared(a:IntVec3, b:IntVec3) : int
+    + {static} RotatedBy(orig:IntVec3, rot:Rot4) : IntVec3
+    + {static} ManhattanDistanceFlat(a:IntVec3, b:IntVec3) : int
+    + {static} RandomHorizontalOffset(maxDist:float) : IntVec3
+    + {static} DistanceToEdge(v:IntVec3, map:Map) : int
+}
+@enduml

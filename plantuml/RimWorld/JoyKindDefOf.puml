@@ -1,0 +1,8 @@
+@startuml
+class JoyKindDefOf <<static>> {
+    {static} JoyKindDefOf()
+}
+JoyKindDefOf --> "Meditative" JoyKindDef
+JoyKindDefOf --> "Social" JoyKindDef
+JoyKindDefOf --> "Gluttonous" JoyKindDef
+@enduml

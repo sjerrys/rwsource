@@ -1,0 +1,18 @@
+@startuml
+class Tradeable_RoyalFavor {
+    + <<override>> IsFavor : bool <<get>>
+    + <<override>> IsCurrency : bool <<get>>
+    + <<override>> TraderWillTrade : bool <<get>>
+    + <<override>> IsThing : bool <<get>>
+    + <<override>> Interactive : bool <<get>>
+    + <<override>> Label : string <<get>>
+    + <<override>> TipDescription : string <<get>>
+    + <<override>> CostToInt(cost:float) : int
+    + <<override>> ResolveTrade() : void
+    + <<override>> DrawIcon(iconRect:Rect) : void
+    + <<override>> CountHeldBy(trans:Transactor) : int
+    + <<override>> GetHashCode() : int
+}
+Tradeable <|-- Tradeable_RoyalFavor
+Tradeable_RoyalFavor --> "AnyThing" Thing
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class JobDriver_GotoMindControlled {
+}
+JobDriver_Goto <|-- JobDriver_GotoMindControlled
+@enduml

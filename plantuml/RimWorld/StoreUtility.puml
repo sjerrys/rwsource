@@ -1,0 +1,21 @@
+@startuml
+class StoreUtility <<static>> {
+    + {static} CurrentHaulDestinationOf(t:Thing) : IHaulDestination
+    + {static} CurrentStoragePriorityOf(t:Thing) : StoragePriority
+    + {static} StoragePriorityAtFor(c:IntVec3, t:Thing) : StoragePriority
+    + {static} StoragePriorityAtFor(at:IHaulDestination, t:Thing) : StoragePriority
+    + {static} IsInAnyStorage(t:Thing) : bool
+    + {static} IsInValidStorage(t:Thing) : bool
+    + {static} IsInValidBestStorage(t:Thing) : bool
+    + {static} StoringThing(t:Thing) : Thing
+    + {static} GetSlotGroup(thing:Thing) : SlotGroup
+    + {static} GetSlotGroup(c:IntVec3, map:Map) : SlotGroup
+    + {static} IsValidStorageFor(c:IntVec3, map:Map, storable:Thing) : bool
+    + {static} TryFindBestBetterStorageFor(t:Thing, carrier:Pawn, map:Map, currentPriority:StoragePriority, faction:Faction, foundCell:IntVec3, haulDestination:IHaulDestination, needAccurateResult:bool) : bool
+    + {static} TryFindBestBetterStoreCellFor(t:Thing, carrier:Pawn, map:Map, currentPriority:StoragePriority, faction:Faction, foundCell:IntVec3, needAccurateResult:bool) : bool
+    + {static} TryFindBestBetterStoreCellForIn(t:Thing, carrier:Pawn, map:Map, currentPriority:StoragePriority, faction:Faction, slotGroup:SlotGroup, foundCell:IntVec3, needAccurateResult:bool) : bool
+    + {static} TryFindBestBetterNonSlotGroupStorageFor(t:Thing, carrier:Pawn, map:Map, currentPriority:StoragePriority, faction:Faction, haulDestination:IHaulDestination, acceptSamePriority:bool) : bool
+    + {static} IsGoodStoreCell(c:IntVec3, map:Map, t:Thing, carrier:Pawn, faction:Faction) : bool
+    + {static} TryFindStoreCellNearColonyDesperate(item:Thing, carrier:Pawn, storeCell:IntVec3) : bool
+}
+@enduml

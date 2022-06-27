@@ -1,0 +1,7 @@
+@startuml
+class WorldObjectCompProperties_TimedDetectionRaids {
+    + WorldObjectCompProperties_TimedDetectionRaids()
+    + <<override>> ConfigErrors(parentDef:WorldObjectDef) : IEnumerable<string>
+}
+WorldObjectCompProperties <|-- WorldObjectCompProperties_TimedDetectionRaids
+@enduml

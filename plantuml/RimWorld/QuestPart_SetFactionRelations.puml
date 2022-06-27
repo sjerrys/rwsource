@@ -1,0 +1,15 @@
+@startuml
+class QuestPart_SetFactionRelations {
+    + inSignal : string
+    + canSendLetter : bool
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> Notify_FactionRemoved(f:Faction) : void
+    + <<override>> ExposeData() : void
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart <|-- QuestPart_SetFactionRelations
+QuestPart_SetFactionRelations --> "faction" Faction
+QuestPart_SetFactionRelations --> "relationKind" FactionRelationKind
+QuestPart_SetFactionRelations --> "InvolvedFactions<Faction>" "IEnumerable`1"
+@enduml

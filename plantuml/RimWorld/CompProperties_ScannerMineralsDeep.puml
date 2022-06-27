@@ -1,0 +1,6 @@
+@startuml
+class CompProperties_ScannerMineralsDeep {
+    + CompProperties_ScannerMineralsDeep()
+}
+CompProperties_Scanner <|-- CompProperties_ScannerMineralsDeep
+@enduml

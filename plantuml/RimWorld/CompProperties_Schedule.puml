@@ -1,0 +1,9 @@
+@startuml
+class CompProperties_Schedule {
+    + startTime : float
+    + endTime : float = 1f
+    + offMessage : string
+    + CompProperties_Schedule()
+}
+CompProperties <|-- CompProperties_Schedule
+@enduml

@@ -1,0 +1,27 @@
+@startuml
+class MainButtonDef {
+    + buttonVisible : bool = true
+    + order : int
+    + canBeTutorDenied : bool = true
+    + validWithoutMap : bool
+    + minimized : bool
+    + iconPath : string
+    + cachedTutorTag : string
+    + cachedHighlightTagClosed : string
+    + <<const>> ButtonHeight : int = 35
+    + ShortenedLabelCap : string <<get>>
+    + LabelCapWidth : float <<get>>
+    + ShortenedLabelCapWidth : float <<get>>
+    + <<override>> PostLoad() : void
+    + Notify_SwitchedMap() : void
+    + Notify_ClearingAllMapsMemory() : void
+}
+Def <|-- MainButtonDef
+MainButtonDef o-> "workerClass" Type
+MainButtonDef --> "tabWindowClass" Type
+MainButtonDef --> "defaultHotKey" KeyCode
+MainButtonDef --> "hotKey" KeyBindingDef
+MainButtonDef --> "Worker" MainButtonWorker
+MainButtonDef --> "TabWindow" MainTabWindow
+MainButtonDef --> "Icon" Texture2D
+@enduml

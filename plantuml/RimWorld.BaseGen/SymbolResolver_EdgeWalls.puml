@@ -1,0 +1,6 @@
+@startuml
+class SymbolResolver_EdgeWalls {
+    + <<override>> Resolve(rp:ResolveParams) : void
+}
+SymbolResolver <|-- SymbolResolver_EdgeWalls
+@enduml

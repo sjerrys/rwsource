@@ -1,0 +1,8 @@
+@startuml
+class CompProperties_TemperatureDamaged {
+    + damagePerTickRare : int = 1
+    + CompProperties_TemperatureDamaged()
+}
+CompProperties <|-- CompProperties_TemperatureDamaged
+CompProperties_TemperatureDamaged o-> "safeTemperatureRange" FloatRange
+@enduml

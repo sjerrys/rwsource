@@ -1,0 +1,7 @@
+@startuml
+class ShortCircuitUtility <<static>> {
+    + {static} GetShortCircuitablePowerConduits(map:Map) : IEnumerable<Building>
+    + {static} DoShortCircuit(culprit:Building) : void
+    + {static} TryShortCircuitInRain(thing:Thing) : bool
+}
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+class WorldFeatures {
+    + textsCreated : bool
+    + ExposeData() : void
+    + UpdateFeatures() : void
+    + GetFeatureWithID(uniqueID:int) : WorldFeature
+}
+class "List`1"<T> {
+}
+IExposable <|-- WorldFeatures
+WorldFeatures o-> "features<WorldFeature>" "List`1"
+@enduml

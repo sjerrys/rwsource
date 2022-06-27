@@ -1,0 +1,19 @@
+@startuml
+class QuestPart_MoodBelow {
+    + threshold : float
+    + minTicksBelowThreshold : int
+    + showAlert : bool = true
+    + <<override>> AlertCritical : bool <<get>>
+    + <<override>> AlertLabel : string <<get>>
+    + <<override>> AlertExplanation : string <<get>>
+    + <<override>> QuestPartTick() : void
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+    + <<override>> ReplacePawnReferences(replace:Pawn, with:Pawn) : void
+}
+class "List`1"<T> {
+}
+QuestPartActivable <|-- QuestPart_MoodBelow
+QuestPart_MoodBelow o-> "pawns<Pawn>" "List`1"
+QuestPart_MoodBelow --> "AlertReport" AlertReport
+@enduml

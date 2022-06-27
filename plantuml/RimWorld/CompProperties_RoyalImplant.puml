@@ -1,0 +1,7 @@
+@startuml
+class CompProperties_RoyalImplant {
+    + CompProperties_RoyalImplant()
+}
+CompProperties <|-- CompProperties_RoyalImplant
+CompProperties_RoyalImplant --> "implantHediff" HediffDef
+@enduml

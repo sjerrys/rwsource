@@ -1,0 +1,8 @@
+@startuml
+abstract class Need_Seeker {
+    + <<override>> GUIChangeArrow : int <<get>>
+    + Need_Seeker(pawn:Pawn)
+    + <<override>> NeedInterval() : void
+}
+Need <|-- Need_Seeker
+@enduml

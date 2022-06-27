@@ -1,0 +1,6 @@
+@startuml
+class ModSummaryWindow {
+    + {static} DrawWindow(offset:Vector2, useWindowStack:bool) : void
+    + {static} GetEffectiveSize() : Vector2
+}
+@enduml

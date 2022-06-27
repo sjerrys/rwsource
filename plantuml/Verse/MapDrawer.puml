@@ -1,0 +1,12 @@
+@startuml
+class MapDrawer <<sealed>> {
+    + MapDrawer(map:Map)
+    + MapMeshDirty(loc:IntVec3, dirtyFlags:MapMeshFlag) : void
+    + MapMeshDirty(loc:IntVec3, dirtyFlags:MapMeshFlag, regenAdjacentCells:bool, regenAdjacentSections:bool) : void
+    + MapMeshDrawerUpdate_First() : void
+    + DrawMapMesh() : void
+    + SectionAt(loc:IntVec3) : Section
+    + RegenerateEverythingNow() : void
+    + WholeMapChanged(change:MapMeshFlag) : void
+}
+@enduml

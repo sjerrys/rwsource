@@ -1,0 +1,5 @@
+@startuml
+class Spark {
+}
+Projectile <|-- Spark
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class Hediff_HeartAttack {
+    + <<override>> PostMake() : void
+    + <<override>> ExposeData() : void
+    + <<override>> Tick() : void
+    + <<override>> Tended_NewTemp(quality:float, maxQuality:float, batchPosition:int) : void
+}
+HediffWithComps <|-- Hediff_HeartAttack
+@enduml

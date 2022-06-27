@@ -1,0 +1,9 @@
+@startuml
+class ParentRelationUtility <<static>> {
+    + {static} GetFather(pawn:Pawn) : Pawn
+    + {static} GetMother(pawn:Pawn) : Pawn
+    + {static} SetFather(pawn:Pawn, newFather:Pawn) : void
+    + {static} SetMother(pawn:Pawn, newMother:Pawn) : void
+    + {static} GetRandomSecondParentSkinColor(otherParentSkin:float, childSkin:float, secondChildSkin:float?) : float
+}
+@enduml

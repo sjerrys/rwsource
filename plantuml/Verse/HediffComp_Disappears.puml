@@ -1,0 +1,14 @@
+@startuml
+class HediffComp_Disappears {
+    + ticksToDisappear : int
+    + <<override>> CompShouldRemove : bool <<get>>
+    + <<override>> CompLabelInBracketsExtra : string <<get>>
+    + <<override>> CompPostMake() : void
+    + <<override>> CompPostTick(severityAdjustment:float) : void
+    + <<override>> CompPostMerged(other:Hediff) : void
+    + <<override>> CompExposeData() : void
+    + <<override>> CompDebugString() : string
+}
+HediffComp <|-- HediffComp_Disappears
+HediffComp_Disappears --> "Props" HediffCompProperties_Disappears
+@enduml

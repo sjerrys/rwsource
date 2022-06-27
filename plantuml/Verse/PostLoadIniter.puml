@@ -1,0 +1,7 @@
+@startuml
+class PostLoadIniter {
+    + RegisterForPostLoadInit(s:IExposable) : void
+    + DoAllPostLoadInits() : void
+    + Clear() : void
+}
+@enduml

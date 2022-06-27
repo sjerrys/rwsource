@@ -1,0 +1,37 @@
+@startuml
+class FactionManager {
+    + ExposeData() : void
+    + Add(faction:Faction) : void
+    + FactionManagerTick() : void
+    + FirstFactionOfDef(facDef:FactionDef) : Faction
+    + TryGetRandomNonColonyHumanlikeFaction_NewTemp(faction:Faction, tryMedievalOrBetter:bool, allowDefeated:bool, minTechLevel:TechLevel, allowTemporary:bool) : bool
+    + TryGetRandomNonColonyHumanlikeFaction(faction:Faction, tryMedievalOrBetter:bool, allowDefeated:bool, minTechLevel:TechLevel) : bool
+    + GetFactions_NewTemp(allowHidden:bool, allowDefeated:bool, allowNonHumanlike:bool, minTechLevel:TechLevel, allowTemporary:bool) : IEnumerable<Faction>
+    + GetFactions(allowHidden:bool, allowDefeated:bool, allowNonHumanlike:bool, minTechLevel:TechLevel) : IEnumerable<Faction>
+    + RandomEnemyFaction(allowHidden:bool, allowDefeated:bool, allowNonHumanlike:bool, minTechLevel:TechLevel) : Faction
+    + RandomNonHostileFaction(allowHidden:bool, allowDefeated:bool, allowNonHumanlike:bool, minTechLevel:TechLevel) : Faction
+    + RandomAlliedFaction(allowHidden:bool, allowDefeated:bool, allowNonHumanlike:bool, minTechLevel:TechLevel) : Faction
+    + RandomRoyalFaction(allowHidden:bool, allowDefeated:bool, allowNonHumanlike:bool, minTechLevel:TechLevel) : Faction
+    + LogKidnappedPawns() : void
+    + {static} GetInViewOrder(factions:IEnumerable<Faction>) : IEnumerable<Faction>
+    + Notify_QuestCleanedUp(quest:Quest) : void
+    + Notify_PawnKilled(pawn:Pawn) : void
+    + Notify_PawnLeftMap(pawn:Pawn) : void
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+IExposable <|-- FactionManager
+FactionManager --> "AllFactionsListForReading<Faction>" "List`1"
+FactionManager --> "AllFactions<Faction>" "IEnumerable`1"
+FactionManager --> "AllFactionsVisible<Faction>" "IEnumerable`1"
+FactionManager --> "AllFactionsVisibleInViewOrder<Faction>" "IEnumerable`1"
+FactionManager --> "AllFactionsInViewOrder<Faction>" "IEnumerable`1"
+FactionManager --> "OfPlayer" Faction
+FactionManager --> "OfMechanoids" Faction
+FactionManager --> "OfInsects" Faction
+FactionManager --> "OfAncients" Faction
+FactionManager --> "OfAncientsHostile" Faction
+FactionManager --> "Empire" Faction
+@enduml

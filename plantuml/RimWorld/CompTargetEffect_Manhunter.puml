@@ -1,0 +1,6 @@
+@startuml
+class CompTargetEffect_Manhunter {
+    + <<override>> DoEffectOn(user:Pawn, target:Thing) : void
+}
+CompTargetEffect <|-- CompTargetEffect_Manhunter
+@enduml

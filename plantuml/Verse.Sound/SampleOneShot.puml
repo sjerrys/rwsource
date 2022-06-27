@@ -1,0 +1,12 @@
+@startuml
+class SampleOneShot {
+    + <<override>> ParentStartRealTime : float <<get>>
+    + <<override>> ParentStartTick : float <<get>>
+    + <<override>> ParentHashCode : float <<get>>
+    + {static} TryMakeAndPlay(def:SubSoundDef, clip:AudioClip, info:SoundInfo) : SampleOneShot
+}
+Sample <|-- SampleOneShot
+SampleOneShot --> "info" SoundInfo
+SampleOneShot --> "ExternalParams" SoundParams
+SampleOneShot --> "Info" SoundInfo
+@enduml

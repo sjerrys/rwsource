@@ -1,0 +1,13 @@
+@startuml
+class RectTrigger {
+    + destroyIfUnfogged : bool
+    + activateOnExplosion : bool
+    + signalTag : string
+    + <<override>> SpawnSetup(map:Map, respawningAfterLoad:bool) : void
+    + <<override>> Tick() : void
+    + ActivatedBy(p:Pawn) : void
+    + <<override>> ExposeData() : void
+}
+Thing <|-- RectTrigger
+RectTrigger --> "Rect" CellRect
+@enduml

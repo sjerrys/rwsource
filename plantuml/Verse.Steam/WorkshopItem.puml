@@ -1,0 +1,8 @@
+@startuml
+class WorkshopItem {
+    + {static} MakeFrom(pfid:PublishedFileId_t) : WorkshopItem
+    + <<override>> ToString() : string
+}
+WorkshopItem --> "Directory" DirectoryInfo
+WorkshopItem --> "PublishedFileId" PublishedFileId_t
+@enduml

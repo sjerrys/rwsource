@@ -1,0 +1,10 @@
+@startuml
+class TileFinder <<static>> {
+    + {static} RandomStartingTile() : int
+    + {static} RandomSettlementTileFor(faction:Faction, mustBeAutoChoosable:bool, extraValidator:Predicate<int>) : int
+    + {static} IsValidTileForNewSettlement(tile:int, reason:StringBuilder) : bool
+    + {static} TryFindPassableTileWithTraversalDistance(rootTile:int, minDist:int, maxDist:int, result:int, validator:Predicate<int>, ignoreFirstTilePassability:bool, preferCloserTiles:bool, canTraverseImpassable:bool) : bool
+    + {static} TryFindRandomPlayerTile(tile:int, allowCaravans:bool, validator:Predicate<int>) : bool
+    + {static} TryFindNewSiteTile(tile:int, minDist:int, maxDist:int, allowCaravans:bool, preferCloserTiles:bool, nearThisTile:int) : bool
+}
+@enduml

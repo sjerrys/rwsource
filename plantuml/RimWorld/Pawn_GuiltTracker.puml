@@ -1,0 +1,11 @@
+@startuml
+class Pawn_GuiltTracker {
+    + lastGuiltyTick : int
+    + IsGuilty : bool <<get>>
+    + TicksUntilInnocent : int <<get>>
+    + Pawn_GuiltTracker(pawn:Pawn)
+    + ExposeData() : void
+    + Notify_Guilty() : void
+}
+IExposable <|-- Pawn_GuiltTracker
+@enduml

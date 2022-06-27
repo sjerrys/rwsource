@@ -1,0 +1,7 @@
+@startuml
+class SubEffecter_DrifterEmoteContinuous {
+    + SubEffecter_DrifterEmoteContinuous(def:SubEffecterDef, parent:Effecter)
+    + <<override>> SubEffectTick(A:TargetInfo, B:TargetInfo) : void
+}
+SubEffecter_DrifterEmote <|-- SubEffecter_DrifterEmoteContinuous
+@enduml

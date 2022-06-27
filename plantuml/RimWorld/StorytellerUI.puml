@@ -1,0 +1,7 @@
+@startuml
+class StorytellerUI <<static>> {
+    + {static} ResetStorytellerSelectionInterface() : void
+    + {static} DrawStorytellerSelectionInterface(rect:Rect, chosenStoryteller:StorytellerDef, difficulty:DifficultyDef, infoListing:Listing_Standard) : void
+    + {static} DrawStorytellerSelectionInterface_NewTemp(rect:Rect, chosenStoryteller:StorytellerDef, difficulty:DifficultyDef, difficultyValues:Difficulty, infoListing:Listing_Standard) : void
+}
+@enduml

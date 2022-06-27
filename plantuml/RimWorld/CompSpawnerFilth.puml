@@ -1,0 +1,10 @@
+@startuml
+class CompSpawnerFilth {
+    + <<override>> PostExposeData() : void
+    + <<override>> PostSpawnSetup(respawningAfterLoad:bool) : void
+    + <<override>> CompTick() : void
+    + <<override>> CompTickRare() : void
+    + TrySpawnFilth() : void
+}
+ThingComp <|-- CompSpawnerFilth
+@enduml

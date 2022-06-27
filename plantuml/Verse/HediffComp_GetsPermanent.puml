@@ -1,0 +1,15 @@
+@startuml
+class HediffComp_GetsPermanent {
+    + permanentDamageThreshold : float = 9999f
+    + isPermanentInt : bool
+    + IsPermanent : bool <<get>> <<set>>
+    + PainFactor : float <<get>>
+    + <<override>> CompExposeData() : void
+    + PreFinalizeInjury() : void
+    + <<override>> CompPostInjuryHeal(amount:float) : void
+    + <<override>> CompDebugString() : string
+}
+HediffComp <|-- HediffComp_GetsPermanent
+HediffComp_GetsPermanent --> "Props" HediffCompProperties_GetsPermanent
+HediffComp_GetsPermanent --> "PainCategory" PainCategory
+@enduml

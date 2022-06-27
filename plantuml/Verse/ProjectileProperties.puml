@@ -1,0 +1,39 @@
+@startuml
+class ProjectileProperties {
+    + speed : float = 5f
+    + flyOverhead : bool
+    + alwaysFreeIntercept : bool
+    + stoppingPower : float = 0.5f
+    + arcHeightFactor : float
+    + shadowSize : float
+    + explosionRadius : float
+    + explosionDelay : int
+    + preExplosionSpawnChance : float = 1f
+    + preExplosionSpawnThingCount : int = 1
+    + postExplosionSpawnChance : float = 1f
+    + postExplosionSpawnThingCount : int = 1
+    + applyDamageToExplosionCellsNeighbors : bool
+    + explosionChanceToStartFire : float
+    + explosionDamageFalloff : bool
+    + ai_IsIncendiary : bool
+    + StoppingPower : float <<get>>
+    + SpeedTilesPerTick : float <<get>>
+    + GetDamageAmount(weapon:Thing, explanation:StringBuilder) : int
+    + GetDamageAmount_NewTmp(weapon:ThingDef, weaponStuff:ThingDef, explanation:StringBuilder) : int
+    + GetDamageAmount(weaponDamageMultiplier:float, explanation:StringBuilder) : int
+    + GetArmorPenetration(weapon:Thing, explanation:StringBuilder) : float
+    + GetArmorPenetration(weaponDamageMultiplier:float, explanation:StringBuilder) : float
+    + ConfigErrors(parent:ThingDef) : IEnumerable<string>
+}
+class "List`1"<T> {
+}
+ProjectileProperties --> "damageDef" DamageDef
+ProjectileProperties --> "extraDamages<ExtraDamage>" "List`1"
+ProjectileProperties --> "soundHitThickRoof" SoundDef
+ProjectileProperties --> "soundExplode" SoundDef
+ProjectileProperties --> "soundImpactAnticipate" SoundDef
+ProjectileProperties --> "soundAmbient" SoundDef
+ProjectileProperties --> "preExplosionSpawnThingDef" ThingDef
+ProjectileProperties --> "postExplosionSpawnThingDef" ThingDef
+ProjectileProperties --> "explosionEffect" EffecterDef
+@enduml

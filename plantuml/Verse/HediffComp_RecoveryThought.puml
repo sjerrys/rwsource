@@ -1,0 +1,7 @@
+@startuml
+class HediffComp_RecoveryThought {
+    + <<override>> CompPostPostRemoved() : void
+}
+HediffComp <|-- HediffComp_RecoveryThought
+HediffComp_RecoveryThought --> "Props" HediffCompProperties_RecoveryThought
+@enduml

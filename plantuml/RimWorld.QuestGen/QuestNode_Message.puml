@@ -1,0 +1,12 @@
+@startuml
+class QuestNode_Message {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_Message
+QuestNode_Message --> "inSignal<string>" "SlateRef`1"
+QuestNode_Message --> "messageType<MessageTypeDef>" "SlateRef`1"
+QuestNode_Message --> "text<string>" "SlateRef`1"
+QuestNode_Message --> "rules<RulePack>" "SlateRef`1"
+QuestNode_Message --> "lookTargets<IEnumerable<object>>" "SlateRef`1"
+@enduml

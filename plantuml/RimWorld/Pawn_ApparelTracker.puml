@@ -1,0 +1,51 @@
+@startuml
+class Pawn_ApparelTracker {
+    + WornApparelCount : int <<get>>
+    + AnyApparel : bool <<get>>
+    + AnyApparelLocked : bool <<get>>
+    + AnyApparelUnlocked : bool <<get>>
+    + AllApparelLocked : bool <<get>>
+    + PsychologicallyNude : bool <<get>>
+    + Pawn_ApparelTracker(pawn:Pawn)
+    + ExposeData() : void
+    + ApparelTrackerTickRare() : void
+    + ApparelTrackerTick() : void
+    + IsLocked(apparel:Apparel) : bool
+    + Lock(apparel:Apparel) : void
+    + Unlock(apparel:Apparel) : void
+    + LockAll() : void
+    + CanWearWithoutDroppingAnything(apDef:ThingDef) : bool
+    + Wear(newApparel:Apparel, dropReplacedApparel:bool, locked:bool) : void
+    + Remove(ap:Apparel) : void
+    + TryDrop(ap:Apparel) : bool
+    + TryDrop(ap:Apparel, resultingAp:Apparel) : bool
+    + TryDrop(ap:Apparel, resultingAp:Apparel, pos:IntVec3, forbid:bool) : bool
+    + DropAll(pos:IntVec3, forbid:bool, dropLocked:bool) : void
+    + DestroyAll(mode:DestroyMode) : void
+    + Contains(apparel:Thing) : bool
+    + WouldReplaceLockedApparel(newApparel:Apparel) : bool
+    + Notify_PawnKilled(dinfo:DamageInfo?) : void
+    + Notify_LostBodyPart() : void
+    + HasBasicApparel(hasPants:bool, hasShirt:bool) : void
+    + FirstApparelOnBodyPartGroup(g:BodyPartGroupDef) : Apparel
+    + BodyPartGroupIsCovered(bp:BodyPartGroupDef) : bool
+    + GetGizmos() : IEnumerable<Gizmo>
+    + Notify_ApparelAdded(apparel:Apparel) : void
+    + Notify_ApparelRemoved(apparel:Apparel) : void
+    + Notify_BulletImpactNearby(impactData:BulletImpactData) : void
+    + GetDirectlyHeldThings() : ThingOwner
+    + GetChildHolders(outChildren:List<IThingHolder>) : void
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+IThingHolder <|-- Pawn_ApparelTracker
+IExposable <|-- Pawn_ApparelTracker
+Pawn_ApparelTracker --> "pawn" Pawn
+Pawn_ApparelTracker --> "ParentHolder" IThingHolder
+Pawn_ApparelTracker --> "WornApparel<Apparel>" "List`1"
+Pawn_ApparelTracker --> "LockedApparel<Apparel>" "List`1"
+Pawn_ApparelTracker --> "UnlockedApparel<Apparel>" "IEnumerable`1"
+Pawn_ApparelTracker --> "AllApparelVerbs<Verb>" "IEnumerable`1"
+@enduml

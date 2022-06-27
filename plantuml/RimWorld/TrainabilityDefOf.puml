@@ -1,0 +1,9 @@
+@startuml
+class TrainabilityDefOf <<static>> {
+    {static} TrainabilityDefOf()
+}
+TrainabilityDefOf --> "None" TrainabilityDef
+TrainabilityDefOf --> "Simple" TrainabilityDef
+TrainabilityDefOf --> "Intermediate" TrainabilityDef
+TrainabilityDefOf --> "Advanced" TrainabilityDef
+@enduml

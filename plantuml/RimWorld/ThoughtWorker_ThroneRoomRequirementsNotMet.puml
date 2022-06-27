@@ -1,0 +1,6 @@
+@startuml
+class ThoughtWorker_ThroneRoomRequirementsNotMet {
+    + <<override>> PostProcessDescription(p:Pawn, description:string) : string
+}
+ThoughtWorker_RoomRequirementsNotMet <|-- ThoughtWorker_ThroneRoomRequirementsNotMet
+@enduml

@@ -1,0 +1,16 @@
+@startuml
+class MentalStateDefOf <<static>> {
+    {static} MentalStateDefOf()
+}
+MentalStateDefOf --> "Berserk" MentalStateDef
+MentalStateDefOf --> "Binging_DrugExtreme" MentalStateDef
+MentalStateDefOf --> "BerserkMechanoid" MentalStateDef
+MentalStateDefOf --> "Wander_Psychotic" MentalStateDef
+MentalStateDefOf --> "Binging_DrugMajor" MentalStateDef
+MentalStateDefOf --> "Wander_Sad" MentalStateDef
+MentalStateDefOf --> "Wander_OwnRoom" MentalStateDef
+MentalStateDefOf --> "PanicFlee" MentalStateDef
+MentalStateDefOf --> "Manhunter" MentalStateDef
+MentalStateDefOf --> "ManhunterPermanent" MentalStateDef
+MentalStateDefOf --> "SocialFighting" MentalStateDef
+@enduml

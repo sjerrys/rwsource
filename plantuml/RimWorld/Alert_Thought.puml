@@ -1,0 +1,8 @@
+@startuml
+abstract class Alert_Thought {
+    + <<override>> GetLabel() : string
+    + <<override>> GetReport() : AlertReport
+    + <<override>> GetExplanation() : TaggedString
+}
+Alert <|-- Alert_Thought
+@enduml

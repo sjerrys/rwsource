@@ -1,0 +1,13 @@
+@startuml
+class CompMaintainable {
+    + ticksSinceMaintain : int
+    + <<override>> PostExposeData() : void
+    + <<override>> CompTick() : void
+    + <<override>> CompTickRare() : void
+    + Maintained() : void
+    + <<override>> CompInspectStringExtra() : string
+}
+ThingComp <|-- CompMaintainable
+CompMaintainable --> "Props" CompProperties_Maintainable
+CompMaintainable --> "CurStage" MaintainableStage
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+enum IncidentPopulationEffect {
+    None,
+    IncreaseHard,
+    IncreaseMedium,
+    IncreaseEasy,
+}
+@enduml

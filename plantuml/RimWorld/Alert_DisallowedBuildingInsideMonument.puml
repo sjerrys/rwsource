@@ -1,0 +1,8 @@
+@startuml
+class Alert_DisallowedBuildingInsideMonument {
+    + Alert_DisallowedBuildingInsideMonument()
+    + <<override>> GetReport() : AlertReport
+    + <<override>> GetExplanation() : TaggedString
+}
+Alert_Critical <|-- Alert_DisallowedBuildingInsideMonument
+@enduml

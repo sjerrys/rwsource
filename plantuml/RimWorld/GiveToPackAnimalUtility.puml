@@ -1,0 +1,6 @@
+@startuml
+class GiveToPackAnimalUtility <<static>> {
+    + {static} CarrierCandidatesFor(pawn:Pawn) : IEnumerable<Pawn>
+    + {static} UsablePackAnimalWithTheMostFreeSpace(pawn:Pawn) : Pawn
+}
+@enduml

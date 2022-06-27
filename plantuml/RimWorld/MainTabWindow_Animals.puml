@@ -1,0 +1,6 @@
+@startuml
+class MainTabWindow_Animals {
+    + <<override>> PostOpen() : void
+}
+MainTabWindow_PawnTable <|-- MainTabWindow_Animals
+@enduml

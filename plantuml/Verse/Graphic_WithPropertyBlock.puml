@@ -1,0 +1,5 @@
+@startuml
+abstract class Graphic_WithPropertyBlock {
+}
+Graphic_Single <|-- Graphic_WithPropertyBlock
+@enduml

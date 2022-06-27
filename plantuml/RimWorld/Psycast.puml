@@ -1,0 +1,14 @@
+@startuml
+class Psycast {
+    + <<override>> CanCast : bool <<get>>
+    + Psycast(pawn:Pawn)
+    + Psycast(pawn:Pawn, def:AbilityDef)
+    + <<override>> GetGizmos() : IEnumerable<Command>
+    + <<override>> Activate(target:LocalTargetInfo, dest:LocalTargetInfo) : bool
+    + <<override>> Activate(target:GlobalTargetInfo) : bool
+    + CanApplyPsycastTo(target:LocalTargetInfo) : bool
+    + <<override>> GizmoDisabled(reason:string) : bool
+    + <<override>> AbilityTick() : void
+}
+Ability <|-- Psycast
+@enduml

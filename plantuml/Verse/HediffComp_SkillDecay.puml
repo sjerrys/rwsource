@@ -1,0 +1,7 @@
+@startuml
+class HediffComp_SkillDecay {
+    + <<override>> CompPostTick(severityAdjustment:float) : void
+}
+HediffComp <|-- HediffComp_SkillDecay
+HediffComp_SkillDecay --> "Props" HediffCompProperties_SkillDecay
+@enduml

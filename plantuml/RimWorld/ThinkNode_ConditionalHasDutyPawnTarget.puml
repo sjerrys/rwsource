@@ -1,0 +1,5 @@
+@startuml
+class ThinkNode_ConditionalHasDutyPawnTarget {
+}
+ThinkNode_Conditional <|-- ThinkNode_ConditionalHasDutyPawnTarget
+@enduml

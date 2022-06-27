@@ -1,0 +1,9 @@
+@startuml
+class QuestNode_Root_Mission_BanditCamp {
+}
+class "List`1"<T> {
+}
+QuestNode_Root_Mission <|-- QuestNode_Root_Mission_BanditCamp
+QuestNode_Root_Mission_BanditCamp --> "factionsToDrawLeaderFrom<FactionDef>" "List`1"
+QuestNode_Root_Mission_BanditCamp --> "siteFaction" FactionDef
+@enduml

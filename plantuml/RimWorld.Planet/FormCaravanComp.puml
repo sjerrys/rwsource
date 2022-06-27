@@ -1,0 +1,10 @@
+@startuml
+class FormCaravanComp {
+    + Reform : bool <<get>>
+    + CanFormOrReformCaravanNow : bool <<get>>
+    + <<override>> GetGizmos() : IEnumerable<Gizmo>
+}
+WorldObjectComp <|-- FormCaravanComp
+FormCaravanComp o-> "FormCaravanCommand" Texture2D
+FormCaravanComp --> "Props" WorldObjectCompProperties_FormCaravan
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class FeedbackItem_HealthGain {
+    + FeedbackItem_HealthGain(ScreenPos:Vector2, Amount:int, Healer:Pawn)
+    + <<override>> FeedbackOnGUI() : void
+}
+FeedbackItem <|-- FeedbackItem_HealthGain
+@enduml

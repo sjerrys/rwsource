@@ -1,0 +1,38 @@
+@startuml
+class SitePartDef {
+    + activeThreatDisturbanceFactor : float = 1f
+    + defaultHidden : bool
+    + siteTexture : string
+    + expandingIconTexture : string
+    + applyFactionColorToSiteTexture : bool
+    + showFactionInInspectString : bool
+    + requiresFaction : bool
+    + approachOrderString : string
+    + approachingReportString : string
+    + arrivedLetter : string
+    + arrivedLetterLabelPart : string
+    + wantsThreatPoints : bool
+    + minThreatPoints : float
+    + increasesPopulation : bool
+    + badEvenIfNoMap : bool
+    + forceExitAndRemoveMapCountdownDurationDays : float = 4f
+    + handlesWorldObjectTimeoutInspectString : bool
+    + mainPartAllThreatsLabel : string
+    + SitePartDef()
+    + FactionCanOwn(faction:Faction) : bool
+    + CompatibleWith(part:SitePartDef) : bool
+}
+class "List`1"<T> {
+}
+Def <|-- SitePartDef
+SitePartDef --> "conditionCauserDef" ThingDef
+SitePartDef o-> "workerClass" Type
+SitePartDef --> "minFactionTechLevel" TechLevel
+SitePartDef o-> "tags<string>" "List`1"
+SitePartDef o-> "excludesTags<string>" "List`1"
+SitePartDef --> "arrivedLetterHediffHyperlinks<HediffDef>" "List`1"
+SitePartDef --> "arrivedLetterDef" LetterDef
+SitePartDef --> "Worker" SitePartWorker
+SitePartDef --> "ExpandingIconTexture" Texture2D
+SitePartDef --> "ExtraGenSteps<GenStepDef>" "List`1"
+@enduml

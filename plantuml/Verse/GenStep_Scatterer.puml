@@ -1,0 +1,23 @@
+@startuml
+abstract class GenStep_Scatterer {
+    + count : int
+    + nearPlayerStart : bool
+    + nearMapCenter : bool
+    + minSpacing : float = 10f
+    + spotMustBeStandable : bool
+    + minDistToPlayerStart : int
+    + minEdgeDist : int
+    + extraNoBuildEdgeDist : int
+    + allowInWaterBiome : bool = true
+    + allowFoggedPositions : bool = true
+    + warnOnFail : bool = true
+    + <<override>> Generate(map:Map, parms:GenStepParams) : void
+    + {static} CountFromPer10kCells(countPer10kCells:float, map:Map, mapSize:int) : int
+    + ForceScatterAt(loc:IntVec3, map:Map) : void
+}
+class "List`1"<T> {
+}
+GenStep <|-- GenStep_Scatterer
+GenStep_Scatterer o-> "countPer10kCellsRange" FloatRange
+GenStep_Scatterer o-> "validators<ScattererValidator>" "List`1"
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class ModToolUtility <<static>> {
+    + {static} IsValueEditable(type:Type) : bool
+}
+@enduml

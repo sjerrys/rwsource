@@ -1,0 +1,7 @@
+@startuml
+class LordToil_Concert {
+    + LordToil_Concert(spot:IntVec3, organizer:Pawn, gatheringDef:GatheringDef, joyPerTick:float)
+}
+LordToil_Party <|-- LordToil_Concert
+LordToil_Concert --> "Organizer" Pawn
+@enduml

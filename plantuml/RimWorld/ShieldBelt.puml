@@ -1,0 +1,15 @@
+@startuml
+class ShieldBelt {
+    + Energy : float <<get>>
+    + <<override>> ExposeData() : void
+    + <<override>> GetWornGizmos() : IEnumerable<Gizmo>
+    + <<override>> GetSpecialApparelScoreOffset() : float
+    + <<override>> Tick() : void
+    + <<override>> CheckPreAbsorbDamage(dinfo:DamageInfo) : bool
+    + KeepDisplaying() : void
+    + <<override>> DrawWornExtras() : void
+    + <<override>> AllowVerbCast(root:IntVec3, map:Map, targ:LocalTargetInfo, verb:Verb) : bool
+}
+Apparel <|-- ShieldBelt
+ShieldBelt --> "ShieldState" ShieldState
+@enduml

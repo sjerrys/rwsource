@@ -1,0 +1,13 @@
+@startuml
+class GameCondition_PsychicSuppression {
+    + <<override>> LetterText : string <<get>>
+    + <<override>> Description : string <<get>>
+    + <<override>> Init() : void
+    + <<override>> ExposeData() : void
+    + {static} CheckPawn(pawn:Pawn, targetGender:Gender) : void
+    + <<override>> GameConditionTick() : void
+    + <<override>> RandomizeSettings(points:float, map:Map, outExtraDescriptionRules:List<Rule>, outExtraDescriptionConstants:Dictionary<string, string>) : void
+}
+GameCondition <|-- GameCondition_PsychicSuppression
+GameCondition_PsychicSuppression --> "gender" Gender
+@enduml

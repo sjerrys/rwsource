@@ -1,0 +1,56 @@
+@startuml
+class DamageDef {
+    + hasForcefulImpact : bool = true
+    + harmsHealth : bool = true
+    + makesBlood : bool = true
+    + canInterruptJobs : bool = true
+    + isRanged : bool
+    + makesAnimalsFlee : bool
+    + execution : bool
+    + buildingDamageFactor : float = 1f
+    + plantDamageFactor : float = 1f
+    + canUseDeflectMetalEffect : bool = true
+    + deathMessage : string = "{0&#125; has been killed."
+    + defaultDamage : int
+    + defaultArmorPenetration : float
+    + defaultStoppingPower : float
+    + minDamageToFragment : int = 99999
+    + harmAllLayersUntilOutside : bool
+    + isExplosive : bool
+    + explosionSnowMeltAmount : float = 1f
+    + explosionAffectOutsidePartsOnly : bool = true
+    + explosionHeatEnergyPerCell : float
+    + stabChanceOfForcedInternal : float
+    + stabPierceBonus : float
+    + cutCleaveBonus : float
+    + bluntInnerHitChance : float
+    + bluntStunDuration : float = 1f
+    + scratchSplitPercentage : float = 0.5f
+    + biteDamageMultiplier : float = 1f
+    + ExternalViolenceFor(thing:Thing) : bool
+}
+class "List`1"<T> {
+}
+Def <|-- DamageDef
+DamageDef o-> "workerClass" Type
+DamageDef --> "combatLogRules" RulePackDef
+DamageDef --> "impactSoundType" ImpactSoundTypeDef
+DamageDef --> "damageEffecter" EffecterDef
+DamageDef --> "additionalHediffs<DamageDefAdditionalHediff>" "List`1"
+DamageDef --> "armorCategory" DamageArmorCategoryDef
+DamageDef o-> "overkillPctToDestroyPart" FloatRange
+DamageDef --> "hediff" HediffDef
+DamageDef --> "hediffSkin" HediffDef
+DamageDef --> "hediffSolid" HediffDef
+DamageDef --> "explosionCellMote" ThingDef
+DamageDef o-> "explosionColorCenter" Color
+DamageDef o-> "explosionColorEdge" Color
+DamageDef --> "explosionInteriorMote" ThingDef
+DamageDef --> "soundExplosion" SoundDef
+DamageDef --> "cutExtraTargetsCurve" SimpleCurve
+DamageDef --> "bluntInnerHitDamageFractionToConvert" FloatRange
+DamageDef --> "bluntInnerHitDamageFractionToAdd" FloatRange
+DamageDef --> "bluntStunChancePerDamagePctOfCorePartToHeadCurve" SimpleCurve
+DamageDef --> "bluntStunChancePerDamagePctOfCorePartToBodyCurve" SimpleCurve
+DamageDef --> "Worker" DamageWorker
+@enduml

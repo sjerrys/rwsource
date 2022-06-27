@@ -1,0 +1,8 @@
+@startuml
+class MentalState_InsultingSpreeAll {
+    + <<override>> ExposeData() : void
+    + <<override>> PostStart(reason:string) : void
+    + <<override>> MentalStateTick() : void
+}
+MentalState_InsultingSpree <|-- MentalState_InsultingSpreeAll
+@enduml

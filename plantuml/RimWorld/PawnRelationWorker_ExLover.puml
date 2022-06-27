@@ -1,0 +1,7 @@
+@startuml
+class PawnRelationWorker_ExLover {
+    + <<override>> GenerationChance(generated:Pawn, other:Pawn, request:PawnGenerationRequest) : float
+    + <<override>> CreateRelation(generated:Pawn, other:Pawn, request:PawnGenerationRequest) : void
+}
+PawnRelationWorker <|-- PawnRelationWorker_ExLover
+@enduml

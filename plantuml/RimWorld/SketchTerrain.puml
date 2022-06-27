@@ -1,0 +1,25 @@
+@startuml
+class SketchTerrain {
+    + treatSimilarAsSame : bool
+    + <<override>> SpawnOrder : float <<get>>
+    + <<override>> Label : string <<get>>
+    + <<override>> LabelCap : string <<get>>
+    + <<override>> DrawGhost(at:IntVec3, color:Color) : void
+    + <<override>> IsSameSpawned(at:IntVec3, map:Map) : bool
+    + IsSameOrSimilar(other:BuildableDef) : bool
+    + <<override>> GetSpawnedBlueprintOrFrame(at:IntVec3, map:Map) : Thing
+    + <<override>> IsSpawningBlocked(at:IntVec3, map:Map, thingToIgnore:Thing, wipeIfCollides:bool) : bool
+    + <<override>> IsSpawningBlockedPermanently(at:IntVec3, map:Map, thingToIgnore:Thing, wipeIfCollides:bool) : bool
+    + <<override>> CanBuildOnTerrain(at:IntVec3, map:Map) : bool
+    + <<override>> Spawn(at:IntVec3, map:Map, faction:Faction, spawnMode:Sketch.SpawnMode, wipeIfCollides:bool, spawnedThings:List<Thing>, dormant:bool) : bool
+    + <<override>> SameForSubtracting(other:SketchEntity) : bool
+    + <<override>> DeepCopy() : SketchEntity
+    + <<override>> ExposeData() : void
+}
+SketchBuildable <|-- SketchTerrain
+SketchTerrain --> "def" TerrainDef
+SketchTerrain --> "stuffForComparingSimilar" ThingDef
+SketchTerrain --> "Buildable" BuildableDef
+SketchTerrain --> "Stuff" ThingDef
+SketchTerrain --> "OccupiedRect" CellRect
+@enduml

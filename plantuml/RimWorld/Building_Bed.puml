@@ -1,0 +1,33 @@
+@startuml
+class Building_Bed {
+    + ForPrisoners : bool <<get>> <<set>>
+    + Medical : bool <<get>> <<set>>
+    + AnyUnownedSleepingSlot : bool <<get>>
+    + AnyUnoccupiedSleepingSlot : bool <<get>>
+    + SleepingSlotsCount : int <<get>>
+    + <<override>> SpawnSetup(map:Map, respawningAfterLoad:bool) : void
+    + <<override>> DeSpawn(mode:DestroyMode) : void
+    + <<override>> ExposeData() : void
+    + <<override>> DrawExtraSelectionOverlays() : void
+    + {static} RoomCanBePrisonCell(r:Room) : bool
+    + <<override>> GetGizmos() : IEnumerable<Gizmo>
+    + <<override>> GetInspectString() : string
+    + <<override>> GetFloatMenuOptions(myPawn:Pawn) : IEnumerable<FloatMenuOption>
+    + <<override>> DrawGUIOverlay() : void
+    + GetCurOccupant(slotIndex:int) : Pawn
+    + GetCurOccupantSlotIndex(curOccupant:Pawn) : int
+    + GetCurOccupantAt(pos:IntVec3) : Pawn
+    + GetSleepingSlotPos(index:int) : IntVec3
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+Building <|-- Building_Bed
+Building_Bed o-> "SheetColorForPrisoner" Color
+Building_Bed --> "OwnersForReading<Pawn>" "List`1"
+Building_Bed --> "CompAssignableToPawn" CompAssignableToPawn
+Building_Bed --> "CurOccupants<Pawn>" "IEnumerable`1"
+Building_Bed --> "DrawColor" Color
+Building_Bed --> "DrawColorTwo" Color
+@enduml

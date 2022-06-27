@@ -1,0 +1,5 @@
+@startuml
+class ThinkNode_ConditionalAnyUndownedColonistSpawnedNearby {
+}
+ThinkNode_Conditional <|-- ThinkNode_ConditionalAnyUndownedColonistSpawnedNearby
+@enduml

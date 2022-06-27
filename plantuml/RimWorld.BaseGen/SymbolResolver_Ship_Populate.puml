@@ -1,0 +1,7 @@
+@startuml
+class SymbolResolver_Ship_Populate {
+    + <<override>> Resolve(rp:ResolveParams) : void
+    + AttemptToPlace(thingDef:ThingDef, rect:CellRect, rotation:Rot4, faction:Faction) : void
+}
+SymbolResolver <|-- SymbolResolver_Ship_Populate
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+class QuestPart_DisableTradeRequest {
+    + inSignal : string
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart <|-- QuestPart_DisableTradeRequest
+QuestPart_DisableTradeRequest --> "settlement" Settlement
+QuestPart_DisableTradeRequest --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+QuestPart_DisableTradeRequest --> "InvolvedFactions<Faction>" "IEnumerable`1"
+@enduml

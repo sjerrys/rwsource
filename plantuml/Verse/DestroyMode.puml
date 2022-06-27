@@ -1,0 +1,12 @@
+@startuml
+enum DestroyMode {
+    Vanish,
+    WillReplace,
+    KillFinalize,
+    Deconstruct,
+    FailConstruction,
+    Cancel,
+    Refund,
+    QuestLogic,
+}
+@enduml

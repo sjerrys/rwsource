@@ -1,0 +1,14 @@
+@startuml
+abstract class VirtualDirectory {
+    + {abstract} Name : string <<get>>
+    + {abstract} FullPath : string <<get>>
+    + {abstract} Exists : bool <<get>>
+    + {abstract} GetDirectory(directoryName:string) : VirtualDirectory
+    + {abstract} GetFile(filename:string) : VirtualFile
+    + {abstract} GetFiles(searchPattern:string, searchOption:SearchOption) : IEnumerable<VirtualFile>
+    + {abstract} GetDirectories(searchPattern:string, searchOption:SearchOption) : IEnumerable<VirtualDirectory>
+    + ReadAllText(filename:string) : string
+    + FileExists(filename:string) : bool
+    + <<override>> ToString() : string
+}
+@enduml

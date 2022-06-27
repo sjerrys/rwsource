@@ -1,0 +1,13 @@
+@startuml
+class QuestNode_GenerateThreats {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GenerateThreats
+QuestNode_GenerateThreats --> "inSignalEnable<string>" "SlateRef`1"
+QuestNode_GenerateThreats --> "inSignalDisable<string>" "SlateRef`1"
+QuestNode_GenerateThreats --> "storeThreatExampleAs<string>" "SlateRef`1"
+QuestNode_GenerateThreats --> "threatStartTicks<int>" "SlateRef`1"
+QuestNode_GenerateThreats --> "parms<ThreatsGeneratorParams>" "SlateRef`1"
+QuestNode_GenerateThreats --> "faction<Faction>" "SlateRef`1"
+@enduml

@@ -1,0 +1,33 @@
+@startuml
+class EffecterDefOf <<static>> {
+    {static} EffecterDefOf()
+}
+EffecterDefOf --> "Clean" EffecterDef
+EffecterDefOf --> "ConstructMetal" EffecterDef
+EffecterDefOf --> "ConstructWood" EffecterDef
+EffecterDefOf --> "ConstructDirt" EffecterDef
+EffecterDefOf --> "RoofWork" EffecterDef
+EffecterDefOf --> "EatMeat" EffecterDef
+EffecterDefOf --> "ProgressBar" EffecterDef
+EffecterDefOf --> "Mine" EffecterDef
+EffecterDefOf --> "Deflect_Metal" EffecterDef
+EffecterDefOf --> "Deflect_Metal_Bullet" EffecterDef
+EffecterDefOf --> "Deflect_General" EffecterDef
+EffecterDefOf --> "Deflect_General_Bullet" EffecterDef
+EffecterDefOf --> "DamageDiminished_Metal" EffecterDef
+EffecterDefOf --> "DamageDiminished_General" EffecterDef
+EffecterDefOf --> "Drill" EffecterDef
+EffecterDefOf --> "Research" EffecterDef
+EffecterDefOf --> "ClearSnow" EffecterDef
+EffecterDefOf --> "Sow" EffecterDef
+EffecterDefOf --> "Harvest" EffecterDef
+EffecterDefOf --> "Vomit" EffecterDef
+EffecterDefOf --> "PlayPoker" EffecterDef
+EffecterDefOf --> "Interceptor_BlockedProjectile" EffecterDef
+EffecterDefOf --> "DisabledByEMP" EffecterDef
+EffecterDefOf --> "ActivatorProximityTriggered" EffecterDef
+EffecterDefOf --> "Skip_Entry" EffecterDef
+EffecterDefOf --> "Skip_Exit" EffecterDef
+EffecterDefOf --> "Skip_EntryNoDelay" EffecterDef
+EffecterDefOf --> "Skip_ExitNoDelay" EffecterDef
+@enduml

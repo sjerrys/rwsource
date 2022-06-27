@@ -1,0 +1,5 @@
+@startuml
+class TaleRecorder <<static>> {
+    + {static} RecordTale(def:TaleDef, args:object[]) : Tale
+}
+@enduml

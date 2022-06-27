@@ -1,0 +1,5 @@
+@startuml
+class CompTargetable_AllAnimalsOnTheMap {
+}
+CompTargetable_AllPawnsOnTheMap <|-- CompTargetable_AllAnimalsOnTheMap
+@enduml

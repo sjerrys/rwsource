@@ -1,0 +1,12 @@
+@startuml
+enum TechLevel {
+    Undefined,
+    Animal,
+    Neolithic,
+    Medieval,
+    Industrial,
+    Spacer,
+    Ultra,
+    Archotech,
+}
+@enduml

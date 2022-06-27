@@ -1,0 +1,15 @@
+@startuml
+class PriorityWork {
+    + IsPrioritized : bool <<get>>
+    + PriorityWork()
+    + PriorityWork(pawn:Pawn)
+    + ExposeData() : void
+    + Set(prioritizedCell:IntVec3, prioritizedWorkGiver:WorkGiverDef) : void
+    + Clear() : void
+    + ClearPrioritizedWorkAndJobQueue() : void
+    + GetGizmos() : IEnumerable<Gizmo>
+}
+IExposable <|-- PriorityWork
+PriorityWork --> "Cell" IntVec3
+PriorityWork --> "WorkGiver" WorkGiverDef
+@enduml

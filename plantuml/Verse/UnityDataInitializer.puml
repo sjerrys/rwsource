@@ -1,0 +1,6 @@
+@startuml
+class UnityDataInitializer <<static>> {
+    + {static} initializing : bool
+    + {static} CopyUnityData() : void
+}
+@enduml

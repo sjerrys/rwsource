@@ -1,0 +1,13 @@
+@startuml
+class Designator_Cancel {
+    + <<override>> DraggableDimensions : int <<get>>
+    + Designator_Cancel()
+    + <<override>> CanDesignateCell(c:IntVec3) : AcceptanceReport
+    + <<override>> DesignateSingleCell(c:IntVec3) : void
+    + <<override>> CanDesignateThing(t:Thing) : AcceptanceReport
+    + <<override>> DesignateThing(t:Thing) : void
+    + <<override>> SelectedUpdate() : void
+    + <<override>> RenderHighlight(dragCells:List<IntVec3>) : void
+}
+Designator <|-- Designator_Cancel
+@enduml

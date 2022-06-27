@@ -1,0 +1,6 @@
+@startuml
+class QuestGen_Sites <<static>> {
+    + {static} SpawnWorldObject(quest:Quest, worldObject:WorldObject, defsToExcludeFromHyperlinks:List<ThingDef>, inSignal:string) : QuestPart_SpawnWorldObject
+    + {static} GenerateSite(sitePartsParams:IEnumerable<SitePartDefWithParams>, tile:int, faction:Faction, hiddenSitePartsPossible:bool, singleSitePartRules:RulePack) : Site
+}
+@enduml

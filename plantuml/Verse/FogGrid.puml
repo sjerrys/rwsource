@@ -1,0 +1,13 @@
+@startuml
+class FogGrid <<sealed>> {
+    + FogGrid(map:Map)
+    + ExposeData() : void
+    + Unfog(c:IntVec3) : void
+    + IsFogged(c:IntVec3) : bool
+    + IsFogged(index:int) : bool
+    + ClearAllFog() : void
+    + Notify_FogBlockerRemoved(c:IntVec3) : void
+    + Notify_PawnEnteringDoor(door:Building_Door, pawn:Pawn) : void
+}
+IExposable <|-- FogGrid
+@enduml

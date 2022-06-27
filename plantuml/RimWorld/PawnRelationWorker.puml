@@ -1,0 +1,10 @@
+@startuml
+class PawnRelationWorker {
+    + <<virtual>> InRelation(me:Pawn, other:Pawn) : bool
+    + <<virtual>> GenerationChance(generated:Pawn, other:Pawn, request:PawnGenerationRequest) : float
+    + <<virtual>> CreateRelation(generated:Pawn, other:Pawn, request:PawnGenerationRequest) : void
+    + BaseGenerationChanceFactor(generated:Pawn, other:Pawn, request:PawnGenerationRequest) : float
+    + <<virtual>> OnRelationCreated(firstPawn:Pawn, secondPawn:Pawn) : void
+}
+PawnRelationWorker --> "def" PawnRelationDef
+@enduml

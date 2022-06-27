@@ -1,0 +1,8 @@
+@startuml
+class Dialog_Negotiation {
+    + Dialog_Negotiation(negotiator:Pawn, commTarget:ICommunicable, startNode:DiaNode, radioMode:bool)
+    + <<override>> DoWindowContents(inRect:Rect) : void
+}
+Dialog_NodeTree <|-- Dialog_Negotiation
+Dialog_Negotiation --> "InitialSize" Vector2
+@enduml

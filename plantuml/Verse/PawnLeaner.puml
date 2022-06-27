@@ -1,0 +1,9 @@
+@startuml
+class PawnLeaner {
+    + PawnLeaner(pawn:Pawn)
+    + LeanerTick() : void
+    + ShouldLean() : bool
+    + Notify_WarmingCastAlongLine(newShootLine:ShootLine, ShootPosition:IntVec3) : void
+}
+PawnLeaner --> "LeanOffset" Vector3
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+class ChildRelationUtility <<static>> {
+    + <<const>> MinFemaleAgeToHaveChildren : float = 16f
+    + <<const>> MaxFemaleAgeToHaveChildren : float = 45f
+    + <<const>> UsualFemaleAgeToHaveChildren : float = 27f
+    + <<const>> MinMaleAgeToHaveChildren : float = 14f
+    + <<const>> MaxMaleAgeToHaveChildren : float = 50f
+    + <<const>> UsualMaleAgeToHaveChildren : float = 30f
+    + <<const>> ChanceForChildToHaveNameOfAnyParent : float = 0.99f
+    + {static} ChanceOfBecomingChildOf(child:Pawn, father:Pawn, mother:Pawn, childGenerationRequest:PawnGenerationRequest?, fatherGenerationRequest:PawnGenerationRequest?, motherGenerationRequest:PawnGenerationRequest?) : float
+    + {static} ChildWantsNameOfAnyParent(child:Pawn) : bool
+    + {static} GetReflectedSkin(value:float, mirror:float) : float
+    + {static} GetMelaninSimilarityFactor(melanin1:float, melanin2:float) : float
+    + {static} GetRandomChildSkinColor(fatherMelanin:float, motherMelanin:float) : float
+    + {static} DefinitelyHasNotBirthName(pawn:Pawn) : bool
+}
+@enduml

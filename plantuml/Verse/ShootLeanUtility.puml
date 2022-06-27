@@ -1,0 +1,6 @@
+@startuml
+class ShootLeanUtility <<static>> {
+    + {static} LeanShootingSourcesFromTo(shooterLoc:IntVec3, targetPos:IntVec3, map:Map, listToFill:List<IntVec3>) : void
+    + {static} CalcShootableCellsOf(outCells:List<IntVec3>, t:Thing) : void
+}
+@enduml

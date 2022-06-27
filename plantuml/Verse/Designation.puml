@@ -1,0 +1,17 @@
+@startuml
+class Designation {
+    + <<const>> ClaimedDesignationDrawAltitude : float = 15f
+    + DesignationDrawAltitude : float <<get>>
+    + Designation()
+    + Designation(target:LocalTargetInfo, def:DesignationDef)
+    + ExposeData() : void
+    + Notify_Added() : void
+    + <<virtual>> DesignationDraw() : void
+    + Delete() : void
+    + <<override>> ToString() : string
+}
+IExposable <|-- Designation
+Designation --> "designationManager" DesignationManager
+Designation --> "def" DesignationDef
+Designation --> "target" LocalTargetInfo
+@enduml

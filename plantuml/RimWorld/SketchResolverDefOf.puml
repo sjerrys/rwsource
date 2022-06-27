@@ -1,0 +1,18 @@
+@startuml
+class SketchResolverDefOf <<static>> {
+    {static} SketchResolverDefOf()
+}
+SketchResolverDefOf --> "Monument" SketchResolverDef
+SketchResolverDefOf --> "MonumentRuin" SketchResolverDef
+SketchResolverDefOf --> "Symmetry" SketchResolverDef
+SketchResolverDefOf --> "AssignRandomStuff" SketchResolverDef
+SketchResolverDefOf --> "FloorFill" SketchResolverDef
+SketchResolverDefOf --> "AddColumns" SketchResolverDef
+SketchResolverDefOf --> "AddCornerThings" SketchResolverDef
+SketchResolverDefOf --> "AddThingsCentral" SketchResolverDef
+SketchResolverDefOf --> "AddWallEdgeThings" SketchResolverDef
+SketchResolverDefOf --> "AddInnerMonuments" SketchResolverDef
+SketchResolverDefOf --> "DamageBuildings" SketchResolverDef
+SketchResolverDefOf --> "MechCluster" SketchResolverDef
+SketchResolverDefOf --> "MechClusterWalls" SketchResolverDef
+@enduml

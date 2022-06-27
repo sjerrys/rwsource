@@ -1,0 +1,7 @@
+@startuml
+class WeatherCommonalityRecord {
+    + commonality : float
+    + LoadDataFromXmlCustom(xmlRoot:XmlNode) : void
+}
+WeatherCommonalityRecord --> "weather" WeatherDef
+@enduml

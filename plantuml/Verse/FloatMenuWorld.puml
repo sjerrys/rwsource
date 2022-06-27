@@ -1,0 +1,8 @@
+@startuml
+class FloatMenuWorld {
+    + FloatMenuWorld(options:List<FloatMenuOption>, title:string, clickPos:Vector2)
+    + <<override>> DoWindowContents(inRect:Rect) : void
+    + <<override>> PreOptionChosen(opt:FloatMenuOption) : void
+}
+FloatMenu <|-- FloatMenuWorld
+@enduml

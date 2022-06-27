@@ -1,0 +1,6 @@
+@startuml
+class MaterialUtility <<static>> {
+    + {static} GetMaskTexture(mat:Material) : Texture2D
+    + {static} GetColorTwo(mat:Material) : Color
+}
+@enduml

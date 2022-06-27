@@ -1,0 +1,5 @@
+@startuml
+class CaravanNameGenerator <<static>> {
+    + {static} GenerateCaravanName(caravan:Caravan) : string
+}
+@enduml

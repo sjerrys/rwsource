@@ -1,0 +1,11 @@
+@startuml
+class Pawn_OutfitTracker {
+    + Pawn_OutfitTracker()
+    + Pawn_OutfitTracker(pawn:Pawn)
+    + ExposeData() : void
+}
+IExposable <|-- Pawn_OutfitTracker
+Pawn_OutfitTracker --> "pawn" Pawn
+Pawn_OutfitTracker o-> "forcedHandler" OutfitForcedHandler
+Pawn_OutfitTracker --> "CurrentOutfit" Outfit
+@enduml

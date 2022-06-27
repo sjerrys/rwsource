@@ -1,0 +1,17 @@
+@startuml
+class MapInterface {
+    + MapInterfaceOnGUI_BeforeMainTabs() : void
+    + MapInterfaceOnGUI_AfterMainTabs() : void
+    + HandleMapClicks() : void
+    + HandleLowPriorityInput() : void
+    + MapInterfaceUpdate() : void
+    + Notify_SwitchedMap() : void
+}
+MapInterface o-> "thingOverlays" ThingOverlays
+MapInterface o-> "selector" Selector
+MapInterface o-> "targeter" Targeter
+MapInterface o-> "designatorManager" DesignatorManager
+MapInterface o-> "reverseDesignatorDatabase" ReverseDesignatorDatabase
+MapInterface o-> "globalControls" GlobalControls
+MapInterface o-> "colonistBar" ColonistBar
+@enduml

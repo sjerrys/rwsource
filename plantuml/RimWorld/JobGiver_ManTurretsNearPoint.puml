@@ -1,0 +1,5 @@
+@startuml
+class JobGiver_ManTurretsNearPoint {
+}
+JobGiver_ManTurrets <|-- JobGiver_ManTurretsNearPoint
+@enduml

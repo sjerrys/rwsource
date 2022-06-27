@@ -1,0 +1,14 @@
+@startuml
+class CreditRecord_Role {
+    + roleKey : string
+    + creditee : string
+    + extra : string
+    + displayKey : bool
+    + compressed : bool
+    + CreditRecord_Role()
+    + CreditRecord_Role(roleKey:string, creditee:string, extra:string)
+    + <<override>> DrawHeight(width:float) : float
+    + <<override>> Draw(rect:Rect) : void
+}
+CreditsEntry <|-- CreditRecord_Role
+@enduml

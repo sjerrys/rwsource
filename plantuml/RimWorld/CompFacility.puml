@@ -1,0 +1,16 @@
+@startuml
+class CompFacility {
+    + CanBeActive : bool <<get>>
+    + {static} DrawLinesToPotentialThingsToLinkTo(myDef:ThingDef, myPos:IntVec3, myRot:Rot4, map:Map) : void
+    + Notify_NewLink(thing:Thing) : void
+    + Notify_LinkRemoved(thing:Thing) : void
+    + Notify_LOSBlockerSpawnedOrDespawned() : void
+    + Notify_ThingChanged() : void
+    + <<override>> PostSpawnSetup(respawningAfterLoad:bool) : void
+    + <<override>> PostDeSpawn(map:Map) : void
+    + <<override>> PostDrawExtraSelectionOverlays() : void
+    + <<override>> CompInspectStringExtra() : string
+}
+ThingComp <|-- CompFacility
+CompFacility --> "Props" CompProperties_Facility
+@enduml

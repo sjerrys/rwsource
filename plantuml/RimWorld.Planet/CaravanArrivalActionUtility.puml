@@ -1,0 +1,5 @@
+@startuml
+class CaravanArrivalActionUtility <<static>> {
+    + {static} GetFloatMenuOptions(acceptanceReportGetter:Func<FloatMenuAcceptanceReport>, arrivalActionGetter:Func<T>, label:string, caravan:Caravan, pathDestination:int, revalidateWorldClickTarget:WorldObject, confirmActionProxy:Action<Action>) : IEnumerable<FloatMenuOption>
+}
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class ThinkNode_ConditionalBodySize {
+    + min : float
+    + max : float = 99999f
+}
+ThinkNode_Conditional <|-- ThinkNode_ConditionalBodySize
+@enduml

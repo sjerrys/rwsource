@@ -1,0 +1,9 @@
+@startuml
+abstract class TransportPodsArrivalAction {
+    + <<virtual>> StillValid(pods:IEnumerable<IThingHolder>, destinationTile:int) : FloatMenuAcceptanceReport
+    + <<virtual>> ShouldUseLongEvent(pods:List<ActiveDropPodInfo>, tile:int) : bool
+    + {abstract} Arrived(pods:List<ActiveDropPodInfo>, tile:int) : void
+    + <<virtual>> ExposeData() : void
+}
+IExposable <|-- TransportPodsArrivalAction
+@enduml

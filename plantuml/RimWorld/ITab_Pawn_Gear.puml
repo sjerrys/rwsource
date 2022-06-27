@@ -1,0 +1,9 @@
+@startuml
+class ITab_Pawn_Gear {
+    + <<override>> IsVisible : bool <<get>>
+    + ITab_Pawn_Gear()
+}
+ITab <|-- ITab_Pawn_Gear
+ITab_Pawn_Gear o-> "ThingLabelColor" Color
+ITab_Pawn_Gear o-> "HighlightColor" Color
+@enduml

@@ -1,0 +1,32 @@
+@startuml
+class Message {
+    + text : string
+    + startingFrame : int
+    + startingTick : int
+    + Expired : bool <<get>>
+    + Alpha : float <<get>>
+    ArchivedLabel : string <<get>>
+    ArchivedTooltip : string <<get>>
+    CreatedTicksGame : int <<get>>
+    CanCullArchivedNow : bool <<get>>
+    + Message()
+    + Message(text:string, def:MessageTypeDef)
+    + Message(text:string, def:MessageTypeDef, lookTargets:LookTargets)
+    + Message(text:string, def:MessageTypeDef, lookTargets:LookTargets, quest:Quest)
+    + ExposeData() : void
+    + CalculateRect(x:float, y:float) : Rect
+    + Draw(xOffset:int, yOffset:int) : void
+    OpenArchived() : void
+    + GetUniqueLoadID() : string
+}
+IArchivable <|-- Message
+IExposable <|-- Message
+ILoadReferenceable <|-- Message
+Message --> "def" MessageTypeDef
+Message --> "lookTargets" LookTargets
+Message --> "quest" Quest
+Message --> "lastDrawRect" Rect
+Message --> "ArchivedIcon" Texture
+Message --> "ArchivedIconColor" Color
+Message --> "LookTargets" LookTargets
+@enduml

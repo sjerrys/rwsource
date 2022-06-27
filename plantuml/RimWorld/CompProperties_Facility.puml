@@ -1,0 +1,16 @@
+@startuml
+class CompProperties_Facility {
+    + maxSimultaneous : int = 1
+    + mustBePlacedAdjacent : bool
+    + mustBePlacedAdjacentCardinalToBedHead : bool
+    + canLinkToMedBedsOnly : bool
+    + maxDistance : float = 8f
+    + CompProperties_Facility()
+    + <<override>> ResolveReferences(parentDef:ThingDef) : void
+}
+class "List`1"<T> {
+}
+CompProperties <|-- CompProperties_Facility
+CompProperties_Facility --> "linkableBuildings<ThingDef>" "List`1"
+CompProperties_Facility --> "statOffsets<StatModifier>" "List`1"
+@enduml

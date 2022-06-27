@@ -1,0 +1,12 @@
+@startuml
+abstract class CompTerrainPump {
+    + <<override>> PostSpawnSetup(respawningAfterLoad:bool) : void
+    + <<override>> PostDeSpawn(map:Map) : void
+    + <<override>> CompTickRare() : void
+    + <<override>> PostExposeData() : void
+    + <<override>> PostDrawExtraSelectionOverlays() : void
+    + <<override>> CompInspectStringExtra() : string
+    + <<override>> CompGetGizmosExtra() : IEnumerable<Gizmo>
+}
+ThingComp <|-- CompTerrainPump
+@enduml

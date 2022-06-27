@@ -1,0 +1,8 @@
+@startuml
+class CompUseEffect_GainAbility {
+    + <<override>> DoEffect(user:Pawn) : void
+    + <<override>> CanBeUsedBy(p:Pawn, failReason:string) : bool
+    + <<override>> ConfirmMessage(p:Pawn) : TaggedString
+}
+CompUseEffect <|-- CompUseEffect_GainAbility
+@enduml

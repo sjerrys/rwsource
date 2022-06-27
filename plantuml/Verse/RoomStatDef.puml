@@ -1,0 +1,19 @@
+@startuml
+class RoomStatDef {
+    + updatePriority : float
+    + displayRounded : bool
+    + isHidden : bool
+    + roomlessScore : float
+    + GetScoreStage(score:float) : RoomStatScoreStage
+    + GetScoreStageIndex(score:float) : int
+    + ScoreToString(score:float) : string
+}
+class "List`1"<T> {
+}
+Def <|-- RoomStatDef
+RoomStatDef --> "workerClass" Type
+RoomStatDef --> "scoreStages<RoomStatScoreStage>" "List`1"
+RoomStatDef --> "inputStat" RoomStatDef
+RoomStatDef --> "curve" SimpleCurve
+RoomStatDef --> "Worker" RoomStatWorker
+@enduml

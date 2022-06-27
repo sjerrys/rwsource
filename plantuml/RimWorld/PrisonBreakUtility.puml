@@ -1,0 +1,9 @@
+@startuml
+class PrisonBreakUtility <<static>> {
+    + {static} InitiatePrisonBreakMtbDays(pawn:Pawn) : float
+    + {static} CanParticipateInPrisonBreak(pawn:Pawn) : bool
+    + {static} IsPrisonBreaking(pawn:Pawn) : bool
+    + {static} StartPrisonBreak(initiator:Pawn) : void
+    + {static} StartPrisonBreak(initiator:Pawn, letterText:string, letterLabel:string, letterDef:LetterDef) : void
+}
+@enduml

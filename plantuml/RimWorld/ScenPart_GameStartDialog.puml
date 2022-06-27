@@ -1,0 +1,8 @@
+@startuml
+class ScenPart_GameStartDialog {
+    + <<override>> DoEditInterface(listing:Listing_ScenEdit) : void
+    + <<override>> ExposeData() : void
+    + <<override>> PostGameStart() : void
+}
+ScenPart <|-- ScenPart_GameStartDialog
+@enduml

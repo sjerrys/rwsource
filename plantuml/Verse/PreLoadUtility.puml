@@ -1,0 +1,5 @@
+@startuml
+class PreLoadUtility <<static>> {
+    + {static} CheckVersionAndLoad(path:string, mode:ScribeMetaHeaderUtility.ScribeHeaderMode, loadAct:Action) : void
+}
+@enduml

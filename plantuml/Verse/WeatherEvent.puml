@@ -1,0 +1,13 @@
+@startuml
+abstract class WeatherEvent {
+    + {abstract} Expired : bool <<get>>
+    + CurrentlyAffectsSky : bool <<get>>
+    + <<virtual>> SkyTargetLerpFactor : float <<get>>
+    + <<virtual>> OverrideShadowVector : Vector2? <<get>>
+    + WeatherEvent(map:Map)
+    + {abstract} FireEvent() : void
+    + {abstract} WeatherEventTick() : void
+    + <<virtual>> WeatherEventDraw() : void
+}
+WeatherEvent --> "SkyTarget" SkyTarget
+@enduml

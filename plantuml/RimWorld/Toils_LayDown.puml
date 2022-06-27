@@ -1,0 +1,5 @@
+@startuml
+class Toils_LayDown <<static>> {
+    + {static} LayDown(bedOrRestSpotIndex:TargetIndex, hasBed:bool, lookForOtherJobs:bool, canSleep:bool, gainRestAndHealth:bool) : Toil
+}
+@enduml

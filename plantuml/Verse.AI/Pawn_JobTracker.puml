@@ -1,0 +1,35 @@
+@startuml
+class Pawn_JobTracker {
+    + startingNewJob : bool
+    + debugLog : bool
+    + HandlingFacing : bool <<get>>
+    + Pawn_JobTracker(newPawn:Pawn)
+    + <<virtual>> ExposeData() : void
+    + Notify_WorkTypeDisabled(wType:WorkTypeDef) : void
+    + Notify_JoyKindDisabled(joyKind:JoyKindDef) : void
+    + <<virtual>> JobTrackerTick() : void
+    + AllJobs() : IEnumerable<Job>
+    + StartJob(newJob:Job, lastJobEndCondition:JobCondition, jobGiver:ThinkNode, resumeCurJobAfterwards:bool, cancelBusyStances:bool, thinkTree:ThinkTreeDef, tag:JobTag?, fromQueue:bool, canReturnCurJobToPool:bool) : void
+    + EndCurrentOrQueuedJob(job:Job, condition:JobCondition, canReturnToPool:bool) : void
+    + EndCurrentJob(condition:JobCondition, startNewJob:bool, canReturnToPool:bool) : void
+    + CaptureAndClearJobQueue() : JobQueue
+    + RestoreCapturedJobs(incomming:JobQueue, canReturnToPool:bool) : void
+    + ClearQueuedJobs(canReturnToPool:bool) : void
+    + CheckForJobOverride() : void
+    + StopAll(ifLayingKeepLaying:bool, canReturnToPool:bool) : void
+    + TryOpportunisticJob(job:Job) : Job
+    + IsCurrentJobPlayerInterruptible() : bool
+    + TryTakeOrderedJobPrioritizedWork(job:Job, giver:WorkGiver, cell:IntVec3) : bool
+    + TryTakeOrderedJob(job:Job, tag:JobTag) : bool
+    + TryTakeOrderedJob_NewTemp(job:Job, tag:JobTag?, requestQueueing:bool) : bool
+    + Notify_TuckedIntoBed(bed:Building_Bed) : void
+    + Notify_DamageTaken(dinfo:DamageInfo) : void
+    + DrawLinesBetweenTargets() : void
+    + DebugLogEvent(s:string) : void
+}
+IExposable <|-- Pawn_JobTracker
+Pawn_JobTracker --> "curJob" Job
+Pawn_JobTracker --> "curDriver" JobDriver
+Pawn_JobTracker o-> "jobQueue" JobQueue
+Pawn_JobTracker --> "posture" PawnPosture
+@enduml

@@ -1,0 +1,37 @@
+@startuml
+class GenAdj <<static>> {
+    {static} GenAdj()
+    + {static} AdjacentCells8WayRandomized() : List<IntVec3>
+    + {static} CellsOccupiedBy(t:Thing) : IEnumerable<IntVec3>
+    + {static} CellsOccupiedBy(center:IntVec3, rotation:Rot4, size:IntVec2) : IEnumerable<IntVec3>
+    + {static} CellsAdjacent8Way(pack:TargetInfo) : IEnumerable<IntVec3>
+    + {static} CellsAdjacent8Way(t:Thing) : IEnumerable<IntVec3>
+    + {static} CellsAdjacent8Way(thingCenter:IntVec3, thingRot:Rot4, thingSize:IntVec2) : IEnumerable<IntVec3>
+    + {static} CellsAdjacentCardinal(t:Thing) : IEnumerable<IntVec3>
+    + {static} CellsAdjacentCardinal(center:IntVec3, rot:Rot4, size:IntVec2) : IEnumerable<IntVec3>
+    + {static} CellsAdjacentAlongEdge(thingCent:IntVec3, thingRot:Rot4, thingSize:IntVec2, dir:LinkDirections) : IEnumerable<IntVec3>
+    + {static} CellsAdjacent8WayAndInside(thing:Thing) : IEnumerable<IntVec3>
+    + {static} GetAdjacentCorners(target:LocalTargetInfo, BL:IntVec3, TL:IntVec3, TR:IntVec3, BR:IntVec3) : void
+    + {static} RandomAdjacentCell8Way(root:IntVec3) : IntVec3
+    + {static} RandomAdjacentCellCardinal(root:IntVec3) : IntVec3
+    + {static} RandomAdjacentCell8Way(t:Thing) : IntVec3
+    + {static} RandomAdjacentCellCardinal(t:Thing) : IntVec3
+    + {static} TryFindRandomAdjacentCell8WayWithRoomGroup(t:Thing, result:IntVec3) : bool
+    + {static} TryFindRandomAdjacentCell8WayWithRoomGroup(center:IntVec3, rot:Rot4, size:IntVec2, map:Map, result:IntVec3) : bool
+    + {static} AdjacentTo8WayOrInside(me:IntVec3, other:LocalTargetInfo) : bool
+    + {static} AdjacentTo8Way(me:IntVec3, other:IntVec3) : bool
+    + {static} AdjacentTo8WayOrInside(me:IntVec3, other:IntVec3) : bool
+    + {static} IsAdjacentToCardinalOrInside(me:IntVec3, other:CellRect) : bool
+    + {static} IsAdjacentToCardinalOrInside(t1:Thing, t2:Thing) : bool
+    + {static} IsAdjacentToCardinalOrInside(rect1:CellRect, rect2:CellRect) : bool
+    + {static} AdjacentTo8WayOrInside(root:IntVec3, t:Thing) : bool
+    + {static} AdjacentTo8WayOrInside(root:IntVec3, center:IntVec3, rot:Rot4, size:IntVec2) : bool
+    + {static} AdjacentTo8WayOrInside(a:Thing, b:Thing) : bool
+    + {static} AdjacentTo8WayOrInside(rect1:CellRect, rect2:CellRect) : bool
+    + {static} IsInside(root:IntVec3, t:Thing) : bool
+    + {static} IsInside(root:IntVec3, center:IntVec3, rot:Rot4, size:IntVec2) : bool
+    + {static} OccupiedRect(t:Thing) : CellRect
+    + {static} OccupiedRect(center:IntVec3, rot:Rot4, size:IntVec2) : CellRect
+    + {static} AdjustForRotation(center:IntVec3, size:IntVec2, rot:Rot4) : void
+}
+@enduml

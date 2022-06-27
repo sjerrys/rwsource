@@ -1,0 +1,10 @@
+@startuml
+class Caravan_Tweener {
+    + Caravan_Tweener(caravan:Caravan)
+    + TweenerTick() : void
+    + ResetTweenedPosToRoot() : void
+}
+Caravan_Tweener --> "TweenedPos" Vector3
+Caravan_Tweener --> "LastTickTweenedVelocity" Vector3
+Caravan_Tweener --> "TweenedPosRoot" Vector3
+@enduml

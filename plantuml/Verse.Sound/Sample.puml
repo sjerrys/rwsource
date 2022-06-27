@@ -1,0 +1,27 @@
+@startuml
+abstract class Sample {
+    + startRealTime : float
+    + startTick : int
+    + resolvedVolume : float
+    + resolvedPitch : float
+    + AgeRealTime : float <<get>>
+    + AgeTicks : int <<get>>
+    + {abstract} ParentStartRealTime : float <<get>>
+    + {abstract} ParentStartTick : float <<get>>
+    + {abstract} ParentHashCode : float <<get>>
+    + SanitizedVolume : float <<get>>
+    + SanitizedPitch : float <<get>>
+    + Sample(def:SubSoundDef)
+    + <<virtual>> Update() : void
+    + ApplyMappedParameters() : void
+    + SignalMappedVolume(value:float, sourceParam:SoundParamTarget) : void
+    + <<virtual>> SampleCleanup() : void
+    + <<override>> ToString() : string
+    + <<override>> GetHashCode() : int
+}
+Sample --> "subDef" SubSoundDef
+Sample --> "source" AudioSource
+Sample --> "ExternalParams" SoundParams
+Sample --> "Info" SoundInfo
+Sample --> "Map" Map
+@enduml

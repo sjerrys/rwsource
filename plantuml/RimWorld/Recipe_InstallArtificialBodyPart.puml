@@ -1,0 +1,8 @@
+@startuml
+class Recipe_InstallArtificialBodyPart {
+    + <<override>> GetPartsToApplyOn(pawn:Pawn, recipe:RecipeDef) : IEnumerable<BodyPartRecord>
+    + <<override>> ApplyOnPawn(pawn:Pawn, part:BodyPartRecord, billDoer:Pawn, ingredients:List<Thing>, bill:Bill) : void
+    + <<override>> IsViolationOnPawn(pawn:Pawn, part:BodyPartRecord, billDoerFaction:Faction) : bool
+}
+Recipe_Surgery <|-- Recipe_InstallArtificialBodyPart
+@enduml

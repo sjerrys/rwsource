@@ -1,0 +1,6 @@
+@startuml
+class DefaultFloatRangeAttribute {
+    + DefaultFloatRangeAttribute(min:float, max:float)
+}
+DefaultValueAttribute <|-- DefaultFloatRangeAttribute
+@enduml

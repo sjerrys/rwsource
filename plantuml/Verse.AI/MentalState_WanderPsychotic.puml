@@ -1,0 +1,6 @@
+@startuml
+class MentalState_WanderPsychotic {
+    + <<override>> SocialModeMax() : RandomSocialMode
+}
+MentalState <|-- MentalState_WanderPsychotic
+@enduml

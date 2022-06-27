@@ -1,0 +1,21 @@
+@startuml
+class CompExplosive {
+    + wickStarted : bool
+    + destroyedThroughDetonation : bool
+    + AddThingsIgnoredByExplosion(things:List<Thing>) : void
+    + <<override>> PostExposeData() : void
+    + <<override>> PostSpawnSetup(respawningAfterLoad:bool) : void
+    + <<override>> CompTick() : void
+    + <<override>> PostDraw() : void
+    + <<override>> PostDestroy(mode:DestroyMode, previousMap:Map) : void
+    + <<override>> PostPreApplyDamage(dinfo:DamageInfo, absorbed:bool) : void
+    + <<override>> PostPostApplyDamage(dinfo:DamageInfo, totalDamageDealt:float) : void
+    + StartWick(instigator:Thing) : void
+    + StopWick() : void
+    + ExplosiveRadius() : float
+    + <<override>> CompInspectStringExtra() : string
+    + <<override>> CompGetGizmosExtra() : IEnumerable<Gizmo>
+}
+ThingComp <|-- CompExplosive
+CompExplosive --> "Props" CompProperties_Explosive
+@enduml

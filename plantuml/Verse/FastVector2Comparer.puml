@@ -1,0 +1,10 @@
+@startuml
+class FastVector2Comparer {
+    + Equals(x:Vector2, y:Vector2) : bool
+    + GetHashCode(obj:Vector2) : int
+}
+class "IEqualityComparer`1"<T> {
+}
+"IEqualityComparer`1" "<Vector2>" <|-- FastVector2Comparer
+FastVector2Comparer o-> "Instance" FastVector2Comparer
+@enduml

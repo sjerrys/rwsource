@@ -1,0 +1,8 @@
+@startuml
+class SitePartWorker_MechCluster {
+    + <<const>> MinPoints : float = 750f
+    + <<override>> GetArrivedLetterPart(map:Map, preferredLetterDef:LetterDef, lookTargets:LookTargets) : string
+    + <<override>> GenerateDefaultParams(myThreatPoints:float, tile:int, faction:Faction) : SitePartParams
+}
+SitePartWorker <|-- SitePartWorker_MechCluster
+@enduml

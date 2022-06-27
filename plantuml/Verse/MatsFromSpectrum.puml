@@ -1,0 +1,6 @@
+@startuml
+class MatsFromSpectrum <<static>> {
+    + {static} Get(spectrum:Color[], val:float) : Material
+    + {static} Get(spectrum:Color[], val:float, shader:Shader) : Material
+}
+@enduml

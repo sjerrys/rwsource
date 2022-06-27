@@ -1,0 +1,9 @@
+@startuml
+class QuestNode_GetSiteDisturbanceFactor {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GetSiteDisturbanceFactor
+QuestNode_GetSiteDisturbanceFactor --> "storeAs<string>" "SlateRef`1"
+QuestNode_GetSiteDisturbanceFactor --> "sitePartDefs<IEnumerable<SitePartDef>>" "SlateRef`1"
+@enduml

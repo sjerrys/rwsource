@@ -1,0 +1,18 @@
+@startuml
+class DrugStatsUtility <<static>> {
+    + {static} GetDrugComp(d:ThingDef) : CompProperties_Drug
+    + {static} GetChemical(d:ThingDef) : ChemicalDef
+    + {static} GetNeed(d:ThingDef) : NeedDef
+    + {static} GetTolerance(d:ThingDef) : HediffDef
+    + {static} GetDrugHighGiver(d:ThingDef) : IngestionOutcomeDoer_GiveHediff
+    + {static} GetToleranceGiver(d:ThingDef) : IngestionOutcomeDoer_GiveHediff
+    + {static} GetHighOffsetPerDay(d:ThingDef) : float
+    + {static} GetToleranceGain(d:ThingDef) : float
+    + {static} GetToleranceOffsetPerDay(d:ThingDef) : float
+    + {static} GetAddictionOffsetPerDay(d:ThingDef) : float
+    + {static} GetAddictionNeedCostPerDay(d:ThingDef) : float
+    + {static} GetSafeDoseInterval(d:ThingDef) : float
+    + {static} GetSafeDoseIntervalReadout(d:ThingDef) : string
+    + {static} SpecialDisplayStats(def:ThingDef) : IEnumerable<StatDrawEntry>
+}
+@enduml

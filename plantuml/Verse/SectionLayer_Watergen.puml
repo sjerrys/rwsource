@@ -1,0 +1,8 @@
+@startuml
+class SectionLayer_Watergen {
+    + SectionLayer_Watergen(section:Section)
+    + <<override>> GetMaterialFor(terrain:TerrainDef) : Material
+    + <<override>> DrawLayer() : void
+}
+SectionLayer_Terrain <|-- SectionLayer_Watergen
+@enduml

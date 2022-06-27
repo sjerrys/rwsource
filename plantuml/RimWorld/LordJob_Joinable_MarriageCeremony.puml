@@ -1,0 +1,15 @@
+@startuml
+class LordJob_Joinable_MarriageCeremony {
+    + <<override>> LostImportantReferenceDuringLoading : bool <<get>>
+    + <<override>> AllowStartNewGatherings : bool <<get>>
+    + LordJob_Joinable_MarriageCeremony()
+    + LordJob_Joinable_MarriageCeremony(firstPawn:Pawn, secondPawn:Pawn, spot:IntVec3)
+    + <<override>> CreateGraph() : StateGraph
+    + <<override>> VoluntaryJoinPriorityFor(p:Pawn) : float
+    + <<override>> ExposeData() : void
+    + <<override>> GetReport(pawn:Pawn) : string
+}
+LordJob_VoluntarilyJoinable <|-- LordJob_Joinable_MarriageCeremony
+LordJob_Joinable_MarriageCeremony --> "firstPawn" Pawn
+LordJob_Joinable_MarriageCeremony --> "secondPawn" Pawn
+@enduml

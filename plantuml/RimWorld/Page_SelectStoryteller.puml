@@ -1,0 +1,8 @@
+@startuml
+class Page_SelectStoryteller {
+    + <<override>> PageTitle : string <<get>>
+    + <<override>> PreOpen() : void
+    + <<override>> DoWindowContents(rect:Rect) : void
+}
+Page <|-- Page_SelectStoryteller
+@enduml

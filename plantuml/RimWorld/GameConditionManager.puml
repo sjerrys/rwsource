@@ -1,0 +1,27 @@
+@startuml
+class GameConditionManager <<sealed>> {
+    + ElectricityDisabled : bool <<get>>
+    + GameConditionManager(map:Map)
+    + GameConditionManager(world:World)
+    + RegisterCondition(cond:GameCondition) : void
+    + ExposeData() : void
+    + GameConditionManagerTick() : void
+    + GameConditionManagerDraw(map:Map) : void
+    + DoSteadyEffects(c:IntVec3, map:Map) : void
+    + ConditionIsActive(def:GameConditionDef) : bool
+    + GetActiveCondition(def:GameConditionDef) : GameCondition
+    + GetActiveCondition() : T
+    + GetHighestPsychicDroneLevelFor(gender:Gender) : PsychicDroneLevel
+    + GetChildren(outChildren:List<GameConditionManager>) : void
+    + TotalHeightAt(width:float) : float
+    + DoConditionsUI(rect:Rect) : void
+    + GetAllGameConditionsAffectingMap(map:Map, listToFill:List<GameCondition>) : void
+    + DebugString() : string
+}
+class "List`1"<T> {
+}
+IExposable <|-- GameConditionManager
+GameConditionManager --> "ownerMap" Map
+GameConditionManager --> "ActiveConditions<GameCondition>" "List`1"
+GameConditionManager --> "Parent" GameConditionManager
+@enduml

@@ -1,0 +1,21 @@
+@startuml
+class QuestPart_AddHediff {
+    + inSignal : string
+    + checkDiseaseContractChance : bool
+    + addToHyperlinks : bool
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+    + <<override>> ReplacePawnReferences(replace:Pawn, with:Pawn) : void
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart <|-- QuestPart_AddHediff
+QuestPart_AddHediff o-> "pawns<Pawn>" "List`1"
+QuestPart_AddHediff --> "partsToAffect<BodyPartDef>" "List`1"
+QuestPart_AddHediff --> "hediffDef" HediffDef
+QuestPart_AddHediff --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+QuestPart_AddHediff --> "Hyperlinks<Dialog_InfoCard.Hyperlink>" "IEnumerable`1"
+@enduml

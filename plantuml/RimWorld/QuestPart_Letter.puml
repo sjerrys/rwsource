@@ -1,0 +1,20 @@
+@startuml
+class QuestPart_Letter {
+    + inSignal : string
+    + getLookTargetsFromSignal : bool = true
+    + getColonistsFromSignal : string
+    + useColonistsFromCaravanArg : bool
+    + chosenPawnSignal : string
+    + filterDeadPawnsFromLookTargets : bool
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart <|-- QuestPart_Letter
+QuestPart_Letter --> "letter" Letter
+QuestPart_Letter --> "useColonistsOnMap" MapParent
+QuestPart_Letter --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+QuestPart_Letter --> "InvolvedFactions<Faction>" "IEnumerable`1"
+@enduml

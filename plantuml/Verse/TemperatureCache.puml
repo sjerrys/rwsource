@@ -1,0 +1,11 @@
+@startuml
+class TemperatureCache <<sealed>> {
+    + TemperatureCache(map:Map)
+    + ResetTemperatureCache() : void
+    + ExposeData() : void
+    + ResetCachedCellInfo(c:IntVec3) : void
+    + TryCacheRegionTempInfo(c:IntVec3, reg:Region) : void
+    + TryGetAverageCachedRoomGroupTemp(r:RoomGroup, result:float) : bool
+}
+IExposable <|-- TemperatureCache
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class GenGameEnd <<static>> {
+    + {static} EndGameDialogMessage(msg:string, allowKeepPlaying:bool) : void
+    + {static} EndGameDialogMessage(msg:string, allowKeepPlaying:bool, screenFillColor:Color) : void
+}
+@enduml

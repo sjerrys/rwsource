@@ -1,0 +1,12 @@
+@startuml
+class ScenPart_ConfigPage_ConfigureStartingPawns {
+    + pawnCount : int = 3
+    + pawnChoiceCount : int = 10
+    + <<override>> DoEditInterface(listing:Listing_ScenEdit) : void
+    + <<override>> ExposeData() : void
+    + <<override>> Summary(scen:Scenario) : string
+    + <<override>> Randomize() : void
+    + <<override>> PostWorldGenerate() : void
+}
+ScenPart_ConfigPage <|-- ScenPart_ConfigPage_ConfigureStartingPawns
+@enduml

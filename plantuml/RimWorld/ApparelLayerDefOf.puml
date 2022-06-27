@@ -1,0 +1,10 @@
+@startuml
+class ApparelLayerDefOf <<static>> {
+    {static} ApparelLayerDefOf()
+}
+ApparelLayerDefOf --> "OnSkin" ApparelLayerDef
+ApparelLayerDefOf --> "Shell" ApparelLayerDef
+ApparelLayerDefOf --> "Middle" ApparelLayerDef
+ApparelLayerDefOf --> "Belt" ApparelLayerDef
+ApparelLayerDefOf --> "Overhead" ApparelLayerDef
+@enduml

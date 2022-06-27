@@ -1,0 +1,6 @@
+@startuml
+class TriggerFilter_NoSapperSapping {
+    + <<override>> AllowActivation(lord:Lord, signal:TriggerSignal) : bool
+}
+TriggerFilter <|-- TriggerFilter_NoSapperSapping
+@enduml

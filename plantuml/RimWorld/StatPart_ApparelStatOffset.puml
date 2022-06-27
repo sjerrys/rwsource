@@ -1,0 +1,8 @@
+@startuml
+class StatPart_ApparelStatOffset {
+    + <<override>> TransformValue(req:StatRequest, val:float) : void
+    + <<override>> ExplanationPart(req:StatRequest) : string
+    + <<override>> GetInfoCardHyperlinks(req:StatRequest) : IEnumerable<Dialog_InfoCard.Hyperlink>
+}
+StatPart <|-- StatPart_ApparelStatOffset
+@enduml

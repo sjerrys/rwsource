@@ -1,0 +1,17 @@
+@startuml
+class Terrace {
+    + ControlPointCount : int <<get>>
+    + IsInverted : bool <<get>> <<set>>
+    + Terrace()
+    + Terrace(input:ModuleBase)
+    + Terrace(inverted:bool, input:ModuleBase)
+    + Add(input:double) : void
+    + Clear() : void
+    + Generate(steps:int) : void
+    + <<override>> GetValue(x:double, y:double, z:double) : double
+}
+class "List`1"<T> {
+}
+ModuleBase <|-- Terrace
+Terrace --> "ControlPoints<double>" "List`1"
+@enduml

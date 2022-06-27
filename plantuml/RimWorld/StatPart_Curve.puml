@@ -1,0 +1,7 @@
+@startuml
+abstract class StatPart_Curve {
+    + <<override>> TransformValue(req:StatRequest, val:float) : void
+    + <<override>> ExplanationPart(req:StatRequest) : string
+}
+StatPart <|-- StatPart_Curve
+@enduml

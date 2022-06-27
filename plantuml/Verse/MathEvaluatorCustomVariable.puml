@@ -1,0 +1,10 @@
+@startuml
+class MathEvaluatorCustomVariable {
+    + IsLocal : bool <<get>>
+    + IsParam : bool <<get>>
+    + MathEvaluatorCustomVariable(prefix:string, name:string)
+    + Evaluate(xsltContext:XsltContext) : object
+}
+IXsltContextVariable <|-- MathEvaluatorCustomVariable
+MathEvaluatorCustomVariable --> "VariableType" XPathResultType
+@enduml

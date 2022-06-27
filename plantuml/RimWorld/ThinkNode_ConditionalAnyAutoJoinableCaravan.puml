@@ -1,0 +1,5 @@
+@startuml
+class ThinkNode_ConditionalAnyAutoJoinableCaravan {
+}
+ThinkNode_Conditional <|-- ThinkNode_ConditionalAnyAutoJoinableCaravan
+@enduml

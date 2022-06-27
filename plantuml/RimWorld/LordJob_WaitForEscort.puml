@@ -1,0 +1,11 @@
+@startuml
+class LordJob_WaitForEscort {
+    + <<override>> AddFleeToil : bool <<get>>
+    + LordJob_WaitForEscort()
+    + LordJob_WaitForEscort(point:IntVec3, addFleeToil:bool)
+    + <<override>> CreateGraph() : StateGraph
+    + <<override>> ExposeData() : void
+}
+LordJob <|-- LordJob_WaitForEscort
+LordJob_WaitForEscort --> "point" IntVec3
+@enduml

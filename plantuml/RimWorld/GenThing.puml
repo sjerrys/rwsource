@@ -1,0 +1,10 @@
+@startuml
+class GenThing <<static>> {
+    + {static} TrueCenter(t:Thing) : Vector3
+    + {static} TrueCenter(loc:IntVec3, rotation:Rot4, thingSize:IntVec2, altitude:float) : Vector3
+    + {static} TryDropAndSetForbidden(th:Thing, pos:IntVec3, map:Map, mode:ThingPlaceMode, resultingThing:Thing, forbidden:bool) : bool
+    + {static} ThingsToCommaList(things:IList<Thing>, useAnd:bool, aggregate:bool, maxCount:int) : string
+    + {static} GetMarketValue(things:IList<Thing>) : float
+    + {static} CloserThingBetween(thingDef:ThingDef, a:IntVec3, b:IntVec3, map:Map, thingToIgnore:Thing) : bool
+}
+@enduml

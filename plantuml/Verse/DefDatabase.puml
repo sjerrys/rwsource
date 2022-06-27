@@ -1,0 +1,22 @@
+@startuml
+class "DefDatabase`1"<T> <<static>> {
+    + {static} DefCount : int <<get>>
+    + {static} AddAllInMods() : void
+    + {static} Add(defs:IEnumerable<T>) : void
+    + {static} Add(def:T) : void
+    + {static} Clear() : void
+    + {static} ClearCachedData() : void
+    + {static} ResolveAllReferences(onlyExactlyMyType:bool, parallel:bool) : void
+    + {static} ErrorCheckAllDefs() : void
+    + {static} GetNamed(defName:string, errorOnFail:bool) : T
+    + {static} GetNamedSilentFail(defName:string) : T
+    + {static} GetByShortHash(shortHash:ushort) : T
+    + {static} GetRandom() : T
+}
+class "IEnumerable`1"<T> {
+}
+class "List`1"<T> {
+}
+"DefDatabase`1" --> "AllDefs<T>" "IEnumerable`1"
+"DefDatabase`1" --> "AllDefsListForReading<T>" "List`1"
+@enduml

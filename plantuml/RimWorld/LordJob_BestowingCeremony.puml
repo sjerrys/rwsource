@@ -1,0 +1,22 @@
+@startuml
+class LordJob_BestowingCeremony {
+    + <<const>> ExpirationTicks : int = 30000
+    + <<const>> WaitTimeTicks : int = 600
+    + questEndedSignal : string
+    + <<override>> AlwaysShowWeapon : bool <<get>>
+    + LordJob_BestowingCeremony()
+    + LordJob_BestowingCeremony(bestower:Pawn, target:Pawn, spot:LocalTargetInfo, spotCell:IntVec3, shuttle:Thing, questEndedSignal:string)
+    + <<override>> CreateGraph() : StateGraph
+    + <<override>> Notify_PawnLost(p:Pawn, condition:PawnLostCondition) : void
+    + MakeCeremonyFail() : void
+    + StartCeremony(pawn:Pawn) : void
+    + FinishCeremony(pawn:Pawn) : void
+    + <<override>> ExposeData() : void
+}
+LordJob <|-- LordJob_BestowingCeremony
+LordJob_BestowingCeremony --> "bestower" Pawn
+LordJob_BestowingCeremony --> "target" Pawn
+LordJob_BestowingCeremony --> "spot" LocalTargetInfo
+LordJob_BestowingCeremony --> "spotCell" IntVec3
+LordJob_BestowingCeremony --> "shuttle" Thing
+@enduml

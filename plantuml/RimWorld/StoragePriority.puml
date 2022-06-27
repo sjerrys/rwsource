@@ -1,0 +1,10 @@
+@startuml
+enum StoragePriority {
+    Unstored,
+    Low,
+    Normal,
+    Preferred,
+    Important,
+    Critical,
+}
+@enduml

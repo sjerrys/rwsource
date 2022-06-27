@@ -1,0 +1,10 @@
+@startuml
+class CompForbiddable {
+    + Forbidden : bool <<get>> <<set>>
+    + <<override>> PostExposeData() : void
+    + <<override>> PostDraw() : void
+    + <<override>> PostSplitOff(piece:Thing) : void
+    + <<override>> CompGetGizmosExtra() : IEnumerable<Gizmo>
+}
+ThingComp <|-- CompForbiddable
+@enduml

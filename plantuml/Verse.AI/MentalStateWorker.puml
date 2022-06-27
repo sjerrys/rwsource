@@ -1,0 +1,6 @@
+@startuml
+class MentalStateWorker {
+    + <<virtual>> StateCanOccur(pawn:Pawn) : bool
+}
+MentalStateWorker --> "def" MentalStateDef
+@enduml

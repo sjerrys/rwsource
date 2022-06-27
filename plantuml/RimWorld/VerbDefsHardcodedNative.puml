@@ -1,0 +1,5 @@
+@startuml
+class VerbDefsHardcodedNative <<static>> {
+    + {static} AllVerbDefs() : IEnumerable<VerbProperties>
+}
+@enduml

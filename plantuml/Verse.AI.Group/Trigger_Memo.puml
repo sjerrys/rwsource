@@ -1,0 +1,7 @@
+@startuml
+class Trigger_Memo {
+    + Trigger_Memo(memo:string)
+    + <<override>> ActivateOn(lord:Lord, signal:TriggerSignal) : bool
+}
+Trigger <|-- Trigger_Memo
+@enduml

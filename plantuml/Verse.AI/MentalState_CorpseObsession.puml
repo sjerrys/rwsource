@@ -1,0 +1,11 @@
+@startuml
+class MentalState_CorpseObsession {
+    + alreadyHauledCorpse : bool
+    + <<override>> ExposeData() : void
+    + <<override>> MentalStateTick() : void
+    + <<override>> PostStart(reason:string) : void
+    + Notify_CorpseHauled() : void
+}
+MentalState <|-- MentalState_CorpseObsession
+MentalState_CorpseObsession --> "corpse" Corpse
+@enduml

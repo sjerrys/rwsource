@@ -1,0 +1,13 @@
+@startuml
+class LordToil_Travel {
+    + <<override>> AllowSatisfyLongNeeds : bool <<get>>
+    + LordToil_Travel(dest:IntVec3)
+    + <<override>> UpdateAllDuties() : void
+    + <<override>> LordToilTick() : void
+    + HasDestination() : bool
+    + SetDestination(dest:IntVec3) : void
+}
+LordToil <|-- LordToil_Travel
+LordToil_Travel --> "maxDanger" Danger
+LordToil_Travel --> "FlagLoc" IntVec3
+@enduml

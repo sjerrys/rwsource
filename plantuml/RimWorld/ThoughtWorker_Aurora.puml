@@ -1,0 +1,5 @@
+@startuml
+class ThoughtWorker_Aurora {
+}
+ThoughtWorker_GameCondition <|-- ThoughtWorker_Aurora
+@enduml

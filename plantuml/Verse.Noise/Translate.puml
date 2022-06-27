@@ -1,0 +1,12 @@
+@startuml
+class Translate {
+    + X : double <<get>> <<set>>
+    + Y : double <<get>> <<set>>
+    + Z : double <<get>> <<set>>
+    + Translate()
+    + Translate(input:ModuleBase)
+    + Translate(x:double, y:double, z:double, input:ModuleBase)
+    + <<override>> GetValue(x:double, y:double, z:double) : double
+}
+ModuleBase <|-- Translate
+@enduml

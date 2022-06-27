@@ -1,0 +1,115 @@
+@startuml
+class Thing {
+    + thingIDNumber : int
+    + stackCount : int = 1
+    + {static} allowDestroyNonDestroyable : bool = false
+    + <<const>> SmeltCostRecoverFraction : float = 0.25f
+    + <<virtual>> HitPoints : int <<get>> <<set>>
+    + MaxHitPoints : int <<get>>
+    + MarketValue : float <<get>>
+    + <<virtual>> RoyalFavorValue : float <<get>>
+    + FlammableNow : bool <<get>>
+    + <<virtual>> FireBulwark : bool <<get>>
+    + Destroyed : bool <<get>>
+    + Discarded : bool <<get>>
+    + Spawned : bool <<get>>
+    + SpawnedOrAnyParentSpawned : bool <<get>>
+    + Smeltable : bool <<get>>
+    + BurnableByRecipe : bool <<get>>
+    + ThingID : string <<get>> <<set>>
+    + <<virtual>> CustomRectForSelector : CellRect? <<get>>
+    + <<override>> Label : string <<get>>
+    + <<virtual>> LabelNoCount : string <<get>>
+    + <<override>> LabelCap : string <<get>>
+    + <<virtual>> LabelCapNoCount : string <<get>>
+    + <<override>> LabelShort : string <<get>>
+    + <<virtual>> IngestibleNow : bool <<get>>
+    + AmbientTemperature : float <<get>>
+    + Tile : int <<get>>
+    + Suspended : bool <<get>>
+    + <<virtual>> DescriptionDetailed : string <<get>>
+    + <<virtual>> DescriptionFlavor : string <<get>>
+    + {static} IDNumberFromThingID(thingID:string) : int
+    + <<virtual>> PostMake() : void
+    + GetUniqueLoadID() : string
+    + <<override>> SpawnSetup(map:Map, respawningAfterLoad:bool) : void
+    + <<override>> DeSpawn(mode:DestroyMode) : void
+    + <<virtual>> Kill(dinfo:DamageInfo?, exactCulprit:Hediff) : void
+    + <<virtual>> Destroy(mode:DestroyMode) : void
+    + <<virtual>> PreTraded(action:TradeAction, playerNegotiator:Pawn, trader:ITrader) : void
+    + <<virtual>> PostGeneratedForTrader(trader:TraderKindDef, forTile:int, forFaction:Faction) : void
+    + <<virtual>> Notify_MyMapRemoved() : void
+    + <<virtual>> Notify_LordDestroyed() : void
+    + ForceSetStateToUnspawned() : void
+    + DecrementMapIndex() : void
+    + <<virtual>> ExposeData() : void
+    + <<virtual>> PostMapInit() : void
+    + <<virtual>> Draw() : void
+    + <<virtual>> DrawAt(drawLoc:Vector3, flip:bool) : void
+    + <<virtual>> Print(layer:SectionLayer) : void
+    + DirtyMapMesh(map:Map) : void
+    + <<virtual>> DrawGUIOverlay() : void
+    + <<virtual>> DrawExtraSelectionOverlays() : void
+    + <<virtual>> GetInspectString() : string
+    + <<virtual>> GetInspectStringLowPriority() : string
+    + <<virtual>> GetGizmos() : IEnumerable<Gizmo>
+    + <<virtual>> GetFloatMenuOptions(selPawn:Pawn) : IEnumerable<FloatMenuOption>
+    + <<virtual>> GetMultiSelectFloatMenuOptions(selPawns:List<Pawn>) : IEnumerable<FloatMenuOption>
+    + <<virtual>> GetInspectTabs() : IEnumerable<InspectTabBase>
+    + <<virtual>> GetCustomLabelNoCount(includeHp:bool) : string
+    + TakeDamage(dinfo:DamageInfo) : DamageWorker.DamageResult
+    + <<virtual>> PreApplyDamage(dinfo:DamageInfo, absorbed:bool) : void
+    + <<virtual>> PostApplyDamage(dinfo:DamageInfo, totalDamageDealt:float) : void
+    + <<virtual>> CanStackWith(other:Thing) : bool
+    + <<virtual>> TryAbsorbStack(other:Thing, respectStackLimit:bool) : bool
+    + <<virtual>> SplitOff(count:int) : Thing
+    + <<virtual>> SpecialDisplayStats() : IEnumerable<StatDrawEntry>
+    + <<virtual>> Notify_ColorChanged() : void
+    + <<virtual>> Notify_Equipped(pawn:Pawn) : void
+    + <<virtual>> Notify_UsedWeapon(pawn:Pawn) : void
+    + <<virtual>> Notify_SignalReceived(signal:Signal) : void
+    + <<virtual>> Notify_Explosion(explosion:Explosion) : void
+    + <<virtual>> Notify_BulletImpactNearby(impactData:BulletImpactData) : void
+    + <<virtual>> GetTooltip() : TipSignal
+    + <<virtual>> BlocksPawn(p:Pawn) : bool
+    + SetFactionDirect(newFaction:Faction) : void
+    + <<virtual>> SetFaction(newFaction:Faction, recruiter:Pawn) : void
+    + SetPositionDirect(newPos:IntVec3) : void
+    + SetStuffDirect(newStuff:ThingDef) : void
+    + <<override>> ToString() : string
+    + <<override>> GetHashCode() : int
+    + <<virtual>> Discard(silentlyRemoveReferences:bool) : void
+    + <<virtual>> ButcherProducts(butcher:Pawn, efficiency:float) : IEnumerable<Thing>
+    + <<virtual>> SmeltProducts(efficiency:float) : IEnumerable<Thing>
+    + Ingested(ingester:Pawn, nutritionWanted:float) : float
+    + <<virtual>> PreventPlayerSellingThingsNearby(reason:string) : bool
+    + <<virtual>> PathFindCostFor(p:Pawn) : ushort
+}
+class "List`1"<T> {
+}
+Entity <|-- Thing
+IExposable <|-- Thing
+ISelectable <|-- Thing
+ILoadReferenceable <|-- Thing
+ISignalReceiver <|-- Thing
+Thing --> "def" ThingDef
+Thing --> "holdingOwner" ThingOwner
+Thing --> "questTags<string>" "List`1"
+Thing --> "SpawnedParentOrMe" Thing
+Thing --> "Map" Map
+Thing --> "MapHeld" Map
+Thing --> "Position" IntVec3
+Thing --> "PositionHeld" IntVec3
+Thing --> "Rotation" Rot4
+Thing --> "ParentHolder" IThingHolder
+Thing --> "Faction" Faction
+Thing --> "RotatedSize" IntVec2
+Thing --> "Stuff" ThingDef
+Thing --> "DefaultGraphic" Graphic
+Thing --> "Graphic" Graphic
+Thing --> "InteractionCell" IntVec3
+Thing --> "TerrainAffordanceNeeded" TerrainAffordanceDef
+Thing --> "DrawPos" Vector3
+Thing --> "DrawColor" Color
+Thing --> "DrawColorTwo" Color
+@enduml

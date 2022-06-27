@@ -1,0 +1,6 @@
+@startuml
+class SymbolResolver_Stockpile {
+    + <<override>> Resolve(rp:ResolveParams) : void
+}
+SymbolResolver <|-- SymbolResolver_Stockpile
+@enduml

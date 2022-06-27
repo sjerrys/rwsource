@@ -1,0 +1,5 @@
+@startuml
+class ReverbCustomPresets <<static>> {
+    + {static} SetupAs(setup:ReverbSetup, preset:AudioReverbPreset) : void
+}
+@enduml

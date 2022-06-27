@@ -1,0 +1,34 @@
+@startuml
+class PawnGraphicSet {
+    + AllResolved : bool <<get>>
+    + MatsBodyBaseAt(facing:Rot4, bodyCondition:RotDrawMode) : List<Material>
+    + HeadMatAt_NewTemp(facing:Rot4, bodyCondition:RotDrawMode, stump:bool, portrait:bool) : Material
+    + HeadMatAt(facing:Rot4, bodyCondition:RotDrawMode, stump:bool) : Material
+    + HairMatAt_NewTemp(facing:Rot4, portrait:bool) : Material
+    + HairMatAt(facing:Rot4) : Material
+    + PawnGraphicSet(pawn:Pawn)
+    + ClearCache() : void
+    + ResolveAllGraphics() : void
+    + SetAllGraphicsDirty() : void
+    + ResolveApparelGraphics() : void
+    + SetApparelGraphicsDirty() : void
+}
+class "List`1"<T> {
+}
+PawnGraphicSet --> "pawn" Pawn
+PawnGraphicSet --> "nakedGraphic" Graphic
+PawnGraphicSet --> "rottingGraphic" Graphic
+PawnGraphicSet --> "dessicatedGraphic" Graphic
+PawnGraphicSet --> "packGraphic" Graphic
+PawnGraphicSet --> "flasher" DamageFlasher
+PawnGraphicSet --> "headGraphic" Graphic
+PawnGraphicSet --> "desiccatedHeadGraphic" Graphic
+PawnGraphicSet --> "skullGraphic" Graphic
+PawnGraphicSet --> "headStumpGraphic" Graphic
+PawnGraphicSet --> "desiccatedHeadStumpGraphic" Graphic
+PawnGraphicSet --> "hairGraphic" Graphic
+PawnGraphicSet o-> "apparelGraphics<ApparelGraphicRecord>" "List`1"
+PawnGraphicSet o-> "RottingColor" Color
+PawnGraphicSet o-> "DessicatedColorInsect" Color
+PawnGraphicSet --> "HairMeshSet" GraphicMeshSet
+@enduml

@@ -1,0 +1,29 @@
+@startuml
+class Storyteller {
+    + <<const>> IntervalsPerDay : int = 60
+    + <<const>> CheckInterval : int = 1000
+    + {static} StorytellerStaticUpdate() : void
+    + Storyteller()
+    + Storyteller(def:StorytellerDef, difficulty:DifficultyDef)
+    + Storyteller(def:StorytellerDef, difficulty:DifficultyDef, difficultyValues:Difficulty)
+    + ExposeData() : void
+    + StorytellerTick() : void
+    + TryFire(fi:FiringIncident) : bool
+    + MakeIncidentsForInterval() : IEnumerable<FiringIncident>
+    + MakeIncidentsForInterval(comp:StorytellerComp, targets:List<IIncidentTarget>) : IEnumerable<FiringIncident>
+    + Notify_PawnEvent(pawn:Pawn, ev:AdaptationEvent, dinfo:DamageInfo?) : void
+    + Notify_DefChanged() : void
+    + DebugString() : string
+}
+class "List`1"<T> {
+}
+IExposable <|-- Storyteller
+Storyteller --> "def" StorytellerDef
+Storyteller --> "difficulty" DifficultyDef
+Storyteller o-> "difficultyValues" Difficulty
+Storyteller --> "storytellerComps<StorytellerComp>" "List`1"
+Storyteller o-> "incidentQueue" IncidentQueue
+Storyteller o-> "PortraitSizeTiny" Vector2
+Storyteller o-> "PortraitSizeLarge" Vector2
+Storyteller --> "AllIncidentTargets<IIncidentTarget>" "List`1"
+@enduml

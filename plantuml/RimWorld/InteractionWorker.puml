@@ -1,0 +1,7 @@
+@startuml
+class InteractionWorker {
+    + <<virtual>> RandomSelectionWeight(initiator:Pawn, recipient:Pawn) : float
+    + <<virtual>> Interacted(initiator:Pawn, recipient:Pawn, extraSentencePacks:List<RulePackDef>, letterText:string, letterLabel:string, letterDef:LetterDef, lookTargets:LookTargets) : void
+}
+InteractionWorker --> "interaction" InteractionDef
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class IncidentWorker_MeteoriteImpact {
+}
+IncidentWorker <|-- IncidentWorker_MeteoriteImpact
+@enduml

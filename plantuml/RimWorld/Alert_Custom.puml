@@ -1,0 +1,11 @@
+@startuml
+class Alert_Custom {
+    + label : string
+    + explanation : string
+    + <<override>> GetLabel() : string
+    + <<override>> GetExplanation() : TaggedString
+    + <<override>> GetReport() : AlertReport
+}
+Alert <|-- Alert_Custom
+Alert_Custom --> "report" AlertReport
+@enduml

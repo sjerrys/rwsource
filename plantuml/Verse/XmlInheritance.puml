@@ -1,0 +1,23 @@
+@startuml
+class XmlInheritance <<static>> {
+    {static} XmlInheritance()
+    + {static} TryRegisterAllFrom(xmlAsset:LoadableXmlAsset, mod:ModContentPack) : void
+    + {static} TryRegister(node:XmlNode, mod:ModContentPack) : void
+    + {static} Resolve() : void
+    + {static} GetResolvedNodeFor(originalNode:XmlNode) : XmlNode
+    + {static} Clear() : void
+}
+class XmlInheritanceNode {
+}
+class "HashSet`1"<T> {
+}
+class "List`1"<T> {
+}
+XmlInheritance --> "allowDuplicateNodesFieldNames<string>" "HashSet`1"
+XmlInheritance +-- XmlInheritanceNode
+XmlInheritanceNode --> "xmlNode" XmlNode
+XmlInheritanceNode --> "resolvedXmlNode" XmlNode
+XmlInheritanceNode --> "mod" ModContentPack
+XmlInheritanceNode --> "parent" XmlInheritanceNode
+XmlInheritanceNode o-> "children<XmlInheritanceNode>" "List`1"
+@enduml

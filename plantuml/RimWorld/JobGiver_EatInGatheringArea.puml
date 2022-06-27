@@ -1,0 +1,5 @@
+@startuml
+class JobGiver_EatInGatheringArea {
+}
+ThinkNode_JobGiver <|-- JobGiver_EatInGatheringArea
+@enduml

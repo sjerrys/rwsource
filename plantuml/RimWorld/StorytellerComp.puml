@@ -1,0 +1,11 @@
+@startuml
+abstract class StorytellerComp {
+    + <<virtual>> MakeIntervalIncidents(target:IIncidentTarget) : IEnumerable<FiringIncident>
+    + <<virtual>> Notify_PawnEvent(p:Pawn, ev:AdaptationEvent, dinfo:DamageInfo?) : void
+    + <<virtual>> GenerateParms(incCat:IncidentCategoryDef, target:IIncidentTarget) : IncidentParms
+    + <<virtual>> Initialize() : void
+    + <<override>> ToString() : string
+    + <<virtual>> DebugTablesIncidentChances() : void
+}
+StorytellerComp --> "props" StorytellerCompProperties
+@enduml

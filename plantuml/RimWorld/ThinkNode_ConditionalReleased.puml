@@ -1,0 +1,5 @@
+@startuml
+class ThinkNode_ConditionalReleased {
+}
+ThinkNode_Conditional <|-- ThinkNode_ConditionalReleased
+@enduml

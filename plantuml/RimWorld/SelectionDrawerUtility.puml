@@ -1,0 +1,7 @@
+@startuml
+class SelectionDrawerUtility <<static>> {
+    + {static} CalculateSelectionBracketPositionsUI(bracketLocs:Vector2[], obj:T, rect:Rect, selectTimes:Dictionary<T, float>, textureSize:Vector2, jumpDistanceFactor:float) : void
+    + {static} CalculateSelectionBracketPositionsWorld(bracketLocs:Vector3[], obj:T, worldPos:Vector3, worldSize:Vector2, selectTimes:Dictionary<T, float>, textureSize:Vector2, jumpDistanceFactor:float) : void
+}
+SelectionDrawerUtility o-> "SelectedTexGUI" Texture2D
+@enduml

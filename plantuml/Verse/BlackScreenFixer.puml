@@ -1,0 +1,5 @@
+@startuml
+class BlackScreenFixer {
+}
+MonoBehaviour <|-- BlackScreenFixer
+@enduml

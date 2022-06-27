@@ -1,0 +1,29 @@
+@startuml
+class Tale {
+    + id : int
+    + date : int
+    + customLabel : string
+    + AgeTicks : int <<get>>
+    + Uses : int <<get>>
+    + Unused : bool <<get>>
+    + InterestLevel : float <<get>>
+    + Expired : bool <<get>>
+    + <<virtual>> ShortSummary : string <<get>>
+    + <<virtual>> GenerateTestData() : void
+    + <<virtual>> Concerns(th:Thing) : bool
+    + <<virtual>> ExposeData() : void
+    + Notify_NewlyUsed() : void
+    + Notify_ReferenceDestroyed() : void
+    + <<virtual>> Notify_FactionRemoved(faction:Faction) : void
+    + GetTextGenerationIncludes() : IEnumerable<RulePack>
+    + GetTextGenerationRules() : IEnumerable<Rule>
+    + GetUniqueLoadID() : string
+    + <<override>> GetHashCode() : int
+    + <<override>> ToString() : string
+}
+IExposable <|-- Tale
+ILoadReferenceable <|-- Tale
+Tale --> "def" TaleDef
+Tale --> "surroundings" TaleData_Surroundings
+Tale --> "DominantPawn" Pawn
+@enduml

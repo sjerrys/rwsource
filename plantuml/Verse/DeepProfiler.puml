@@ -1,0 +1,8 @@
+@startuml
+class DeepProfiler <<static>> {
+    + {static} <<volatile>> enabled : bool = true
+    + {static} Get() : ThreadLocalDeepProfiler
+    + {static} Start(label:string) : void
+    + {static} End() : void
+}
+@enduml

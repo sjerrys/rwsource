@@ -1,0 +1,15 @@
+@startuml
+class QuestPart_RequirementsToAcceptBedroom {
+    + <<override>> CanAccept() : AcceptanceReport
+    + <<override>> ExposeData() : void
+    + <<override>> ReplacePawnReferences(replace:Pawn, with:Pawn) : void
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart_RequirementsToAccept <|-- QuestPart_RequirementsToAcceptBedroom
+QuestPart_RequirementsToAcceptBedroom o-> "targetPawns<Pawn>" "List`1"
+QuestPart_RequirementsToAcceptBedroom --> "mapParent" MapParent
+QuestPart_RequirementsToAcceptBedroom --> "Hyperlinks<Dialog_InfoCard.Hyperlink>" "IEnumerable`1"
+@enduml

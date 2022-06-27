@@ -1,0 +1,8 @@
+@startuml
+class Alert_NeedMeditationSpot {
+    + Alert_NeedMeditationSpot()
+    + <<override>> GetExplanation() : TaggedString
+    + <<override>> GetReport() : AlertReport
+}
+Alert <|-- Alert_NeedMeditationSpot
+@enduml

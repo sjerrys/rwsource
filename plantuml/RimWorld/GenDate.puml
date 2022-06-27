@@ -1,0 +1,64 @@
+@startuml
+class GenDate <<static>> {
+    + <<const>> TicksPerDay : int = 60000
+    + <<const>> HoursPerDay : int = 24
+    + <<const>> DaysPerTwelfth : int = 5
+    + <<const>> TwelfthsPerYear : int = 12
+    + <<const>> GameStartHourOfDay : int = 6
+    + <<const>> TicksPerTwelfth : int = 300000
+    + <<const>> TicksPerSeason : int = 900000
+    + <<const>> TicksPerQuadrum : int = 900000
+    + <<const>> TicksPerYear : int = 3600000
+    + <<const>> DaysPerYear : int = 60
+    + <<const>> DaysPerSeason : int = 15
+    + <<const>> DaysPerQuadrum : int = 15
+    + <<const>> TicksPerHour : int = 2500
+    + <<const>> TimeZoneWidth : float = 15f
+    + <<const>> DefaultStartingYear : int = 5500
+    + {static} DaysPassed : int <<get>>
+    + {static} DaysPassedFloat : float <<get>>
+    + {static} TwelfthsPassed : int <<get>>
+    + {static} TwelfthsPassedFloat : float <<get>>
+    + {static} YearsPassed : int <<get>>
+    + {static} YearsPassedFloat : float <<get>>
+    + {static} TickAbsToGame(absTick:int) : int
+    + {static} TickGameToAbs(gameTick:int) : int
+    + {static} DaysPassedAt(gameTicks:int) : int
+    + {static} TwelfthsPassedAt(gameTicks:int) : int
+    + {static} YearsPassedAt(gameTicks:int) : int
+    + {static} HourOfDay(absTicks:long, longitude:float) : int
+    + {static} DayOfTwelfth(absTicks:long, longitude:float) : int
+    + {static} DayOfYear(absTicks:long, longitude:float) : int
+    + {static} Twelfth(absTicks:long, longitude:float) : Twelfth
+    + {static} Season(absTicks:long, longLat:Vector2) : Season
+    + {static} Season(absTicks:long, latitude:float, longitude:float) : Season
+    + {static} Quadrum(absTicks:long, longitude:float) : Quadrum
+    + {static} Year(absTicks:long, longitude:float) : int
+    + {static} DayOfSeason(absTicks:long, longitude:float) : int
+    + {static} DayOfQuadrum(absTicks:long, longitude:float) : int
+    + {static} DayTick(absTicks:long, longitude:float) : int
+    + {static} DayPercent(absTicks:long, longitude:float) : float
+    + {static} YearPercent(absTicks:long, longitude:float) : float
+    + {static} HourInteger(absTicks:long, longitude:float) : int
+    + {static} HourFloat(absTicks:long, longitude:float) : float
+    + {static} DateFullStringAt(absTicks:long, location:Vector2) : string
+    + {static} DateFullStringWithHourAt(absTicks:long, location:Vector2) : string
+    + {static} DateReadoutStringAt(absTicks:long, location:Vector2) : string
+    + {static} DateShortStringAt(absTicks:long, location:Vector2) : string
+    + {static} SeasonDateStringAt(absTicks:long, longLat:Vector2) : string
+    + {static} SeasonDateStringAt(twelfth:Twelfth, longLat:Vector2) : string
+    + {static} QuadrumDateStringAt(absTicks:long, longitude:float) : string
+    + {static} QuadrumDateStringAt(quadrum:Quadrum) : string
+    + {static} QuadrumDateStringAt(twelfth:Twelfth) : string
+    + {static} TicksToDays(numTicks:int) : float
+    + {static} ToStringTicksToDays(numTicks:int, format:string) : string
+    + {static} ToStringTicksToPeriod(numTicks:int, allowSeconds:bool, shortForm:bool, canUseDecimals:bool, allowYears:bool) : string
+    + {static} ToStringTicksToPeriodVerbose(numTicks:int, allowHours:bool, allowQuadrums:bool) : string
+    + {static} ToStringTicksToPeriodVague(numTicks:int, vagueMin:bool, vagueMax:bool) : string
+    + {static} TicksToPeriod(numTicks:int, years:int, quadrums:int, days:int, hoursFloat:float) : void
+    + {static} TicksToPeriod(numTicks:long, years:int, quadrums:int, days:int, hoursFloat:float) : void
+    + {static} ToStringApproxAge(yearsFloat:float) : string
+    + {static} TimeZoneAt(longitude:float) : int
+    + {static} TimeZoneFloatAt(longitude:float) : float
+}
+@enduml

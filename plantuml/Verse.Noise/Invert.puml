@@ -1,0 +1,8 @@
+@startuml
+class Invert {
+    + Invert()
+    + Invert(input:ModuleBase)
+    + <<override>> GetValue(x:double, y:double, z:double) : double
+}
+ModuleBase <|-- Invert
+@enduml

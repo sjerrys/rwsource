@@ -1,0 +1,6 @@
+@startuml
+class JobGiver_RescueNearby {
+    + <<override>> DeepCopy(resolve:bool) : ThinkNode
+}
+ThinkNode_JobGiver <|-- JobGiver_RescueNearby
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class IncidentWorker_ThrumboPasses {
+}
+IncidentWorker <|-- IncidentWorker_ThrumboPasses
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class CompFadesInOut {
+    + <<override>> CompTick() : void
+    + Opacity() : float
+    + <<override>> PostExposeData() : void
+}
+ThingComp <|-- CompFadesInOut
+CompFadesInOut --> "Props" CompProperties_FadesInOut
+@enduml

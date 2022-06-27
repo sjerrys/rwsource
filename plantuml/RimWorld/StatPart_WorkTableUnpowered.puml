@@ -1,0 +1,8 @@
+@startuml
+class StatPart_WorkTableUnpowered {
+    + <<override>> TransformValue(req:StatRequest, val:float) : void
+    + <<override>> ExplanationPart(req:StatRequest) : string
+    + {static} Applies(th:Thing) : bool
+}
+StatPart <|-- StatPart_WorkTableUnpowered
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+class TemperatureMemory {
+    + GrowthSeasonOutdoorsNow : bool <<get>>
+    + GrowthSeasonOutdoorsNowForSowing : bool <<get>>
+    + TemperatureMemory(map:Map)
+    + GrowthSeasonMemoryTick() : void
+    + ExposeData() : void
+}
+IExposable <|-- TemperatureMemory
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class WorldLayer_SettleTile {
+}
+WorldLayer_SingleTile <|-- WorldLayer_SettleTile
+@enduml

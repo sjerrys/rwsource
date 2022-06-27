@@ -1,0 +1,6 @@
+@startuml
+class Building_MarriageSpot {
+    + <<override>> GetInspectString() : string
+}
+Building <|-- Building_MarriageSpot
+@enduml

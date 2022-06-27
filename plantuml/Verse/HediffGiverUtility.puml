@@ -1,0 +1,5 @@
+@startuml
+class HediffGiverUtility <<static>> {
+    + {static} TryApply(pawn:Pawn, hediff:HediffDef, partsToAffect:IEnumerable<BodyPartDef>, canAffectAnyLivePart:bool, countToAffect:int, outAddedHediffs:List<Hediff>) : bool
+}
+@enduml

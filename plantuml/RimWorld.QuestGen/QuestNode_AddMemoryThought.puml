@@ -1,0 +1,12 @@
+@startuml
+class QuestNode_AddMemoryThought {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_AddMemoryThought
+QuestNode_AddMemoryThought --> "inSignal<string>" "SlateRef`1"
+QuestNode_AddMemoryThought --> "def<ThoughtDef>" "SlateRef`1"
+QuestNode_AddMemoryThought --> "pawns<IEnumerable<Pawn>>" "SlateRef`1"
+QuestNode_AddMemoryThought --> "otherPawn<Pawn>" "SlateRef`1"
+QuestNode_AddMemoryThought --> "addToLookTargets<bool?>" "SlateRef`1"
+@enduml

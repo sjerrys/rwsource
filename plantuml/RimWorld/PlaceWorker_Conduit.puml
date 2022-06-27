@@ -1,0 +1,6 @@
+@startuml
+class PlaceWorker_Conduit {
+    + <<override>> AllowsPlacing(checkingDef:BuildableDef, loc:IntVec3, rot:Rot4, map:Map, thingToIgnore:Thing, thing:Thing) : AcceptanceReport
+}
+PlaceWorker <|-- PlaceWorker_Conduit
+@enduml

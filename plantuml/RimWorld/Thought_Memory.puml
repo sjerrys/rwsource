@@ -1,0 +1,21 @@
+@startuml
+class Thought_Memory {
+    + moodPowerFactor : float = 1f
+    + age : int
+    + <<override>> VisibleInNeedsTab : bool <<get>>
+    + <<override>> CurStageIndex : int <<get>>
+    + <<virtual>> ShouldDiscard : bool <<get>>
+    + <<override>> LabelCap : string <<get>>
+    + <<override>> LabelCapSocial : string <<get>>
+    + SetForcedStage(stageIndex:int) : void
+    + <<override>> ExposeData() : void
+    + <<virtual>> ThoughtInterval() : void
+    + Renew() : void
+    + <<virtual>> TryMergeWithExistingMemory(showBubble:bool) : bool
+    + <<override>> GroupsWith(other:Thought) : bool
+    + <<override>> MoodOffset() : float
+    + <<override>> ToString() : string
+}
+Thought <|-- Thought_Memory
+Thought_Memory --> "otherPawn" Pawn
+@enduml

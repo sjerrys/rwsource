@@ -1,0 +1,9 @@
+@startuml
+class QuestPart_ReplaceLostLeaderReferences {
+    + inSignal : string
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+}
+QuestPart <|-- QuestPart_ReplaceLostLeaderReferences
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class EditorHiddenAttribute {
+}
+Attribute <|-- EditorHiddenAttribute
+@enduml

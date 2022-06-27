@@ -1,0 +1,39 @@
+@startuml
+class Pawn_GuestTracker {
+    + isPrisonerInt : bool
+    + lastRecruiterName : string
+    + lastRecruiterOpinion : int
+    + lastRecruiterOpinionChanceFactor : float
+    + lastRecruiterNegotiationAbilityFactor : float
+    + hasOpinionOfLastRecruiter : bool
+    + lastRecruiterResistanceReduce : float
+    + lastRecruiterFinalChance : float
+    + lastPrisonBreakTicks : int
+    + everParticipatedInPrisonBreak : bool
+    + resistance : float
+    + getRescuedThoughtOnUndownedBecauseOfPlayer : bool
+    + <<const>> MinInteractionInterval : int = 10000
+    + <<const>> MaxInteractionsPerDay : int = 2
+    + CanBeBroughtFood : bool <<get>>
+    + IsPrisoner : bool <<get>>
+    + ScheduledForInteraction : bool <<get>>
+    + Released : bool <<get>> <<set>>
+    + PrisonerIsSecure : bool <<get>>
+    + ShouldWaitInsteadOfEscaping : bool <<get>>
+    + Resistance : float <<get>>
+    + Pawn_GuestTracker()
+    + Pawn_GuestTracker(pawn:Pawn)
+    + GuestTrackerTick() : void
+    + ExposeData() : void
+    + ClearLastRecruiterData() : void
+    + SetLastRecruiterData(recruiter:Pawn, resistanceReduce:float) : void
+    + SetGuestStatus(newHost:Faction, prisoner:bool) : void
+    + CapturedBy(by:Faction, byPawn:Pawn) : void
+    + WaitInsteadOfEscapingForDefaultTicks() : void
+    + WaitInsteadOfEscapingFor(ticks:int) : void
+}
+IExposable <|-- Pawn_GuestTracker
+Pawn_GuestTracker o-> "interactionMode" PrisonerInteractionModeDef
+Pawn_GuestTracker o-> "spotToWaitInsteadOfEscaping" IntVec3
+Pawn_GuestTracker --> "HostFaction" Faction
+@enduml

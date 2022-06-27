@@ -1,0 +1,11 @@
+@startuml
+abstract class QuestPart_AddQuest {
+    + inSignal : string
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + {abstract} GetSlate() : Slate
+    + <<override>> ExposeData() : void
+}
+QuestPart <|-- QuestPart_AddQuest
+QuestPart_AddQuest --> "acceptee" Pawn
+QuestPart_AddQuest --> "questDef" QuestScriptDef
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class OverlayDrawer {
+    {static} OverlayDrawer()
+    + DrawOverlay(t:Thing, overlayType:OverlayTypes) : void
+    + DrawAllOverlays() : void
+}
+@enduml

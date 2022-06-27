@@ -1,0 +1,15 @@
+@startuml
+class PassingShipManager <<sealed>> {
+    + PassingShipManager(map:Map)
+    + ExposeData() : void
+    + AddShip(vis:PassingShip) : void
+    + RemoveShip(vis:PassingShip) : void
+    + PassingShipManagerTick() : void
+    + RemoveAllShipsOfFaction(faction:Faction) : void
+}
+class "List`1"<T> {
+}
+IExposable <|-- PassingShipManager
+PassingShipManager --> "map" Map
+PassingShipManager o-> "passingShips<PassingShip>" "List`1"
+@enduml

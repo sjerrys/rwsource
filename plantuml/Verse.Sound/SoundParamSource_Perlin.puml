@@ -1,0 +1,10 @@
+@startuml
+class SoundParamSource_Perlin {
+    + perlinFrequency : float = 1f
+    + <<override>> Label : string <<get>>
+    + <<override>> ValueFor(samp:Sample) : float
+}
+SoundParamSource <|-- SoundParamSource_Perlin
+SoundParamSource_Perlin --> "timeType" TimeType
+SoundParamSource_Perlin --> "syncType" PerlinMappingSyncType
+@enduml

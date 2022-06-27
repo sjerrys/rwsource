@@ -1,0 +1,6 @@
+@startuml
+class Designator_AreaSnowClearClear {
+    + Designator_AreaSnowClearClear()
+}
+Designator_AreaSnowClear <|-- Designator_AreaSnowClearClear
+@enduml

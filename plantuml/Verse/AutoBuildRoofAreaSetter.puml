@@ -1,0 +1,9 @@
+@startuml
+class AutoBuildRoofAreaSetter {
+    + AutoBuildRoofAreaSetter(map:Map)
+    + TryGenerateAreaOnImpassable(c:IntVec3) : void
+    + TryGenerateAreaFor(room:Room) : void
+    + AutoBuildRoofAreaSetterTick_First() : void
+    + ResolveQueuedGenerateRoofs() : void
+}
+@enduml

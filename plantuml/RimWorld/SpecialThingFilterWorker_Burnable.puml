@@ -1,0 +1,8 @@
+@startuml
+class SpecialThingFilterWorker_Burnable {
+    + <<override>> Matches(t:Thing) : bool
+    + <<override>> CanEverMatch(def:ThingDef) : bool
+    + <<override>> AlwaysMatches(def:ThingDef) : bool
+}
+SpecialThingFilterWorker <|-- SpecialThingFilterWorker_Burnable
+@enduml

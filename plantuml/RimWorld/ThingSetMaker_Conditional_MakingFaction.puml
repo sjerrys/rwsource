@@ -1,0 +1,10 @@
+@startuml
+class ThingSetMaker_Conditional_MakingFaction {
+    + requireNonNull : bool
+}
+class "List`1"<T> {
+}
+ThingSetMaker_Conditional <|-- ThingSetMaker_Conditional_MakingFaction
+ThingSetMaker_Conditional_MakingFaction --> "makingFaction" FactionDef
+ThingSetMaker_Conditional_MakingFaction --> "makingFactionCategories<string>" "List`1"
+@enduml

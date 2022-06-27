@@ -1,0 +1,5 @@
+@startuml
+class ReachabilityWithinRegion <<static>> {
+    + {static} ThingFromRegionListerReachable(thing:Thing, region:Region, peMode:PathEndMode, traveler:Pawn) : bool
+}
+@enduml

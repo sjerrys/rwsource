@@ -1,0 +1,14 @@
+@startuml
+class FilesystemDirectory {
+    + <<override>> Name : string <<get>>
+    + <<override>> FullPath : string <<get>>
+    + <<override>> Exists : bool <<get>>
+    + FilesystemDirectory(dir:string)
+    + FilesystemDirectory(dir:DirectoryInfo)
+    + <<override>> GetDirectories(searchPattern:string, searchOption:SearchOption) : IEnumerable<VirtualDirectory>
+    + <<override>> GetDirectory(directoryName:string) : VirtualDirectory
+    + <<override>> GetFile(filename:string) : VirtualFile
+    + <<override>> GetFiles(searchPattern:string, searchOption:SearchOption) : IEnumerable<VirtualFile>
+}
+VirtualDirectory <|-- FilesystemDirectory
+@enduml

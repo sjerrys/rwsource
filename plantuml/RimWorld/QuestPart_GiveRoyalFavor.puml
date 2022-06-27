@@ -1,0 +1,18 @@
+@startuml
+class QuestPart_GiveRoyalFavor {
+    + giveToAccepter : bool
+    + inSignal : string
+    + amount : int
+    + <<override>> RequiresAccepter : bool <<get>>
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> AssignDebugData() : void
+    + <<override>> ExposeData() : void
+    + <<override>> ReplacePawnReferences(replace:Pawn, with:Pawn) : void
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart <|-- QuestPart_GiveRoyalFavor
+QuestPart_GiveRoyalFavor --> "giveTo" Pawn
+QuestPart_GiveRoyalFavor --> "faction" Faction
+QuestPart_GiveRoyalFavor --> "InvolvedFactions<Faction>" "IEnumerable`1"
+@enduml

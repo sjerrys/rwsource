@@ -1,0 +1,8 @@
+@startuml
+class MapGeneratorDef {
+}
+class "List`1"<T> {
+}
+Def <|-- MapGeneratorDef
+MapGeneratorDef --> "genSteps<GenStepDef>" "List`1"
+@enduml

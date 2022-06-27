@@ -1,0 +1,7 @@
+@startuml
+class FloatMenuMakerWorld <<static>> {
+    + {static} TryMakeFloatMenu(caravan:Caravan) : bool
+    + {static} ChoicesAtFor(mousePos:Vector2, caravan:Caravan) : List<FloatMenuOption>
+    + {static} ChoicesAtFor(tile:int, caravan:Caravan) : List<FloatMenuOption>
+}
+@enduml

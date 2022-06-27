@@ -1,0 +1,24 @@
+@startuml
+class FeatureDef {
+    + order : float
+    + minSize : int = 50
+    + maxSize : int
+    + canTouchWorldEdge : bool = true
+    + maxPossiblyAllowedSizeToTake : int = 30
+    + maxPossiblyAllowedSizePctOfMeToTake : float = 0.5f
+    + maxSpaceBetweenRootGroups : int = 5
+    + minRootGroupsInCluster : int = 3
+    + minRootGroupSize : int = 10
+    + maxRootGroupSize : int
+    + maxPassageWidth : int = 3
+    + maxPctOfWholeArea : float = 0.1f
+}
+class "List`1"<T> {
+}
+Def <|-- FeatureDef
+FeatureDef o-> "workerClass" Type
+FeatureDef --> "nameMaker" RulePackDef
+FeatureDef o-> "rootBiomes<BiomeDef>" "List`1"
+FeatureDef o-> "acceptableBiomes<BiomeDef>" "List`1"
+FeatureDef --> "Worker" FeatureWorker
+@enduml

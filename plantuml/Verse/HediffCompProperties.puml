@@ -1,0 +1,7 @@
+@startuml
+class HediffCompProperties {
+    + <<virtual>> PostLoad() : void
+    + <<virtual>> ConfigErrors(parentDef:HediffDef) : IEnumerable<string>
+}
+HediffCompProperties --> "compClass" Type
+@enduml

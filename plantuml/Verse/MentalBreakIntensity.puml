@@ -1,0 +1,8 @@
+@startuml
+enum MentalBreakIntensity {
+    None,
+    Minor,
+    Major,
+    Extreme,
+}
+@enduml

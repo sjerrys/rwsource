@@ -1,0 +1,6 @@
+@startuml
+class JobGiver_Meditate {
+    + <<override>> GetPriority(pawn:Pawn) : float
+}
+ThinkNode_JobGiver <|-- JobGiver_Meditate
+@enduml

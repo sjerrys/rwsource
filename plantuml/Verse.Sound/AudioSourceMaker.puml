@@ -1,0 +1,5 @@
+@startuml
+class AudioSourceMaker <<static>> {
+    + {static} NewAudioSourceOn(go:GameObject) : AudioSource
+}
+@enduml

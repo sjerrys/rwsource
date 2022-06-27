@@ -1,0 +1,6 @@
+@startuml
+class StorytellerCompProperties_RandomQuest {
+    + StorytellerCompProperties_RandomQuest()
+}
+StorytellerCompProperties_OnOffCycle <|-- StorytellerCompProperties_RandomQuest
+@enduml

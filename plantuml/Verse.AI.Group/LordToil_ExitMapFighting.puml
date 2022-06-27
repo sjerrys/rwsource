@@ -1,0 +1,7 @@
+@startuml
+class LordToil_ExitMapFighting {
+    + LordToil_ExitMapFighting(locomotion:LocomotionUrgency, canDig:bool, interruptCurrentJob:bool)
+}
+LordToil_ExitMap <|-- LordToil_ExitMapFighting
+LordToil_ExitMapFighting --> "ExitDuty" DutyDef
+@enduml

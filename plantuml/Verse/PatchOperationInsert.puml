@@ -1,0 +1,10 @@
+@startuml
+class PatchOperationInsert {
+}
+enum Order {
+    Append,
+    Prepend,
+}
+PatchOperationPathed <|-- PatchOperationInsert
+PatchOperationInsert +-- Order
+@enduml

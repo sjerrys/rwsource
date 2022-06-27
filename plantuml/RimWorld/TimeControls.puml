@@ -1,0 +1,6 @@
+@startuml
+class TimeControls <<static>> {
+    + {static} DoTimeControlsGUI(timerRect:Rect) : void
+}
+TimeControls o-> "TimeButSize" Vector2
+@enduml

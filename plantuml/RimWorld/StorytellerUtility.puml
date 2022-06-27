@@ -1,0 +1,24 @@
+@startuml
+class StorytellerUtility <<static>> {
+    + <<const>> GlobalPointsMin : float = 35f
+    + <<const>> GlobalPointsMax : float = 10000f
+    + <<const>> BuildingWealthFactor : float = 0.5f
+    + <<const>> FixedWeathModeMaxThreatLevelInYears : float = 12f
+    + <<const>> CaravanWealthPointsFactor : float = 0.7f
+    + <<const>> CaravanAnimalPointsFactor : float = 0.7f
+    + <<const>> ProgressScorePerWealth : float = 0.0001f
+    + <<const>> ProgressScorePerFreeColonist : float = 1f
+    + {static} DefaultParmsNow(incCat:IncidentCategoryDef, target:IIncidentTarget) : IncidentParms
+    + {static} GetProgressScore(target:IIncidentTarget) : float
+    + {static} DefaultThreatPointsNow(target:IIncidentTarget) : float
+    + {static} DefaultSiteThreatPointsNow() : float
+    + {static} AllyIncidentFraction(fullAlliesOnly:bool) : float
+    + {static} ShowFutureIncidentsDebugLogFloatMenu(currentMapOnly:bool) : void
+    + {static} DebugLogTestFutureIncidents(currentMapOnly:bool, onlyThisComp:StorytellerComp, onlyThisQuestPart:QuestPart, numTestDays:int) : void
+    + {static} DebugLogTestFutureIncidents(parms:ThreatsGeneratorParams) : void
+    + {static} DebugGetFutureIncidents(numTestDays:int, currentMapOnly:bool, incCountsForTarget:Dictionary<IIncidentTarget, int>, incCountsForComp:int[], allIncidents:List<Pair<IncidentDef, IncidentParms>>, threatBigCount:int, outputSb:StringBuilder, onlyThisComp:StorytellerComp, onlyThisThreatsGenerator:ThreatsGeneratorParams, onlyThisQuestPart:QuestPart) : void
+    + {static} DebugLogTestIncidentTargets() : void
+}
+StorytellerUtility o-> "FixedWealthModeMapWealthFromTimeCurve" SimpleCurve
+StorytellerUtility o-> "CaravanPointsRandomFactorRange" FloatRange
+@enduml

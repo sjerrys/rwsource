@@ -1,0 +1,11 @@
+@startuml
+abstract class SkyOverlay {
+    + SkyOverlay()
+    + <<virtual>> TickOverlay(map:Map) : void
+    + DrawOverlay(map:Map) : void
+    + <<override>> ToString() : string
+}
+SkyOverlay --> "worldOverlayMat" Material
+SkyOverlay --> "screenOverlayMat" Material
+SkyOverlay --> "OverlayColor" Color
+@enduml

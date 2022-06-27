@@ -1,0 +1,13 @@
+@startuml
+class IngredientCount <<sealed>> {
+    + IsFixedIngredient : bool <<get>>
+    + Summary : string <<get>>
+    + CountRequiredOfFor(thingDef:ThingDef, recipe:RecipeDef) : int
+    + GetBaseCount() : float
+    + SetBaseCount(count:float) : void
+    + ResolveReferences() : void
+    + <<override>> ToString() : string
+}
+IngredientCount o-> "filter" ThingFilter
+IngredientCount --> "FixedIngredient" ThingDef
+@enduml

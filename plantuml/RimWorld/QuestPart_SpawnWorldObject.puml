@@ -1,0 +1,18 @@
+@startuml
+class QuestPart_SpawnWorldObject {
+    + inSignal : string
+    + <<override>> IncreasesPopulation : bool <<get>>
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> PostQuestAdded() : void
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart <|-- QuestPart_SpawnWorldObject
+QuestPart_SpawnWorldObject --> "worldObject" WorldObject
+QuestPart_SpawnWorldObject --> "defsToExcludeFromHyperlinks<ThingDef>" "List`1"
+QuestPart_SpawnWorldObject --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class Thought_ChemicalInterestVsTeetotaler {
+    + <<override>> OpinionOffset() : float
+}
+Thought_SituationalSocial <|-- Thought_ChemicalInterestVsTeetotaler
+@enduml

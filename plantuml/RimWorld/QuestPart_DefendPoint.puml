@@ -1,0 +1,10 @@
+@startuml
+class QuestPart_DefendPoint {
+    + wanderRadius : float?
+    + isCaravanSendable : bool
+    + addFleeToil : bool = true
+    + <<override>> ExposeData() : void
+}
+QuestPart_MakeLord <|-- QuestPart_DefendPoint
+QuestPart_DefendPoint --> "point" IntVec3
+@enduml

@@ -1,0 +1,29 @@
+@startuml
+class StatCategoryDefOf <<static>> {
+    {static} StatCategoryDefOf()
+}
+StatCategoryDefOf --> "Basics" StatCategoryDef
+StatCategoryDefOf --> "BasicsImportant" StatCategoryDef
+StatCategoryDefOf --> "BasicsPawnImportant" StatCategoryDef
+StatCategoryDefOf --> "BasicsNonPawnImportant" StatCategoryDef
+StatCategoryDefOf --> "BasicsNonPawn" StatCategoryDef
+StatCategoryDefOf --> "BasicsPawn" StatCategoryDef
+StatCategoryDefOf --> "Apparel" StatCategoryDef
+StatCategoryDefOf --> "Implant" StatCategoryDef
+StatCategoryDefOf --> "Weapon" StatCategoryDef
+StatCategoryDefOf --> "Ability" StatCategoryDef
+StatCategoryDefOf --> "Building" StatCategoryDef
+StatCategoryDefOf --> "PawnWork" StatCategoryDef
+StatCategoryDefOf --> "PawnCombat" StatCategoryDef
+StatCategoryDefOf --> "PawnSocial" StatCategoryDef
+StatCategoryDefOf --> "PawnMisc" StatCategoryDef
+StatCategoryDefOf --> "EquippedStatOffsets" StatCategoryDef
+StatCategoryDefOf --> "StuffStatFactors" StatCategoryDef
+StatCategoryDefOf --> "StuffStatOffsets" StatCategoryDef
+StatCategoryDefOf --> "StuffOfEquipmentStatFactors" StatCategoryDef
+StatCategoryDefOf --> "Surgery" StatCategoryDef
+StatCategoryDefOf --> "CapacityEffects" StatCategoryDef
+StatCategoryDefOf --> "Meditation" StatCategoryDef
+StatCategoryDefOf --> "Drug" StatCategoryDef
+StatCategoryDefOf --> "DrugAddiction" StatCategoryDef
+@enduml

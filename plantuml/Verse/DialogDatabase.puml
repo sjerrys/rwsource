@@ -1,0 +1,7 @@
+@startuml
+class DialogDatabase <<static>> {
+    {static} DialogDatabase()
+    + {static} GetRandomEncounterRootNode(NType:DiaNodeType) : DiaNodeMold
+    + {static} GetNodeNamed(NodeName:string) : DiaNodeMold
+}
+@enduml

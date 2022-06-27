@@ -1,0 +1,23 @@
+@startuml
+class MeshPool <<static>> {
+    {static} MeshPool()
+    + {static} GridPlane(size:Vector2) : Mesh
+    + {static} GridPlaneFlip(size:Vector2) : Mesh
+    + {static} MeshPoolStats() : void
+}
+MeshPool --> "humanlikeBodySet" GraphicMeshSet
+MeshPool --> "humanlikeHeadSet" GraphicMeshSet
+MeshPool --> "humanlikeHairSetAverage" GraphicMeshSet
+MeshPool --> "humanlikeHairSetNarrow" GraphicMeshSet
+MeshPool --> "plane025" Mesh
+MeshPool --> "plane03" Mesh
+MeshPool --> "plane05" Mesh
+MeshPool --> "plane08" Mesh
+MeshPool --> "plane10" Mesh
+MeshPool --> "plane10Back" Mesh
+MeshPool --> "plane10Flip" Mesh
+MeshPool --> "plane14" Mesh
+MeshPool --> "plane20" Mesh
+MeshPool --> "wholeMapPlane" Mesh
+MeshPool --> "circle" Mesh
+@enduml

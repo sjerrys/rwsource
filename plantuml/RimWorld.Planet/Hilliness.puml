@@ -1,0 +1,10 @@
+@startuml
+enum Hilliness {
+    Undefined,
+    Flat,
+    SmallHills,
+    LargeHills,
+    Mountainous,
+    Impassable,
+}
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class DamageFlasher {
+    + FlashingNowOrRecently : bool <<get>>
+    + DamageFlasher(pawn:Pawn)
+    + GetDamagedMat(baseMat:Material) : Material
+    + Notify_DamageApplied(dinfo:DamageInfo) : void
+}
+@enduml

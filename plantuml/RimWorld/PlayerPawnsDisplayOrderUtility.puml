@@ -1,0 +1,6 @@
+@startuml
+class PlayerPawnsDisplayOrderUtility <<static>> {
+    + {static} Sort(pawns:List<Pawn>) : void
+    + {static} InOrder(pawns:IEnumerable<Pawn>) : IEnumerable<Pawn>
+}
+@enduml

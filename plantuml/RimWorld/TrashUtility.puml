@@ -1,0 +1,8 @@
+@startuml
+class TrashUtility <<static>> {
+    + {static} ShouldTrashPlant(pawn:Pawn, p:Plant) : bool
+    + {static} ShouldTrashBuilding(pawn:Pawn, b:Building, attackAllInert:bool) : bool
+    + {static} TrashJob(pawn:Pawn, t:Thing, allowPunchingInert:bool) : Job
+    + {static} TrashJob_NewTemp(pawn:Pawn, t:Thing, allowPunchingInert:bool, killIncappedTarget:bool) : Job
+}
+@enduml

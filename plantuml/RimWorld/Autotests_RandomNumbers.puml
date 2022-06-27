@@ -1,0 +1,5 @@
+@startuml
+class Autotests_RandomNumbers <<static>> {
+    + {static} Run() : void
+}
+@enduml

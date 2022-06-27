@@ -1,0 +1,43 @@
+@startuml
+class ParseHelper <<static>> {
+    + {static} ParseString(str:string) : string
+    + {static} ParseIntPermissive(str:string) : int
+    + {static} FromStringVector3(Str:string) : Vector3
+    + {static} FromStringVector2(Str:string) : Vector2
+    + {static} FromStringVector4Adaptive(Str:string) : Vector4
+    + {static} FromStringRect(str:string) : Rect
+    + {static} ParseFloat(str:string) : float
+    + {static} ParseBool(str:string) : bool
+    + {static} ParseLong(str:string) : long
+    + {static} ParseDouble(str:string) : double
+    + {static} ParseSByte(str:string) : sbyte
+    + {static} ParseType(str:string) : Type
+    + {static} ParseAction(str:string) : Action
+    + {static} ParseColor(str:string) : Color
+    + {static} ParsePublishedFileId(str:string) : PublishedFileId_t
+    + {static} ParseIntVec2(str:string) : IntVec2
+    + {static} ParseIntVec3(str:string) : IntVec3
+    + {static} ParseRot4(str:string) : Rot4
+    + {static} ParseCellRect(str:string) : CellRect
+    + {static} ParseCurvePoint(str:string) : CurvePoint
+    + {static} ParseNameTriple(str:string) : NameTriple
+    + {static} ParseFloatRange(str:string) : FloatRange
+    + {static} ParseIntRange(str:string) : IntRange
+    + {static} ParseQualityRange(str:string) : QualityRange
+    + {static} ParseColorInt(str:string) : ColorInt
+    + {static} ParseTaggedString(str:string) : TaggedString
+    {static} ParseHelper()
+    + {static} FromString(str:string) : T
+    + {static} FromString(str:string, itemType:Type) : object
+    + {static} HandlesType(type:Type) : bool
+    + {static} CanParse(type:Type, str:string) : bool
+}
+class "Parsers`1"<T> <<static>> {
+    + {static} <<readonly>> profilerLabel : string
+    + {static} Register(method:Func<string, T>) : void
+}
+class "Func`2"<T1,T2> {
+}
+ParseHelper +-- "Parsers`1"
+"Parsers`1" --> "parser<string,T>" "Func`2"
+@enduml

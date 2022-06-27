@@ -1,0 +1,8 @@
+@startuml
+class WorldGenStep_AncientSites {
+    + <<override>> SeedPart : int <<get>>
+    + <<override>> GenerateFresh(seed:string) : void
+}
+WorldGenStep <|-- WorldGenStep_AncientSites
+WorldGenStep_AncientSites --> "ancientSitesPer100kTiles" FloatRange
+@enduml

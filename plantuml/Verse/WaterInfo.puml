@@ -1,0 +1,18 @@
+@startuml
+class WaterInfo {
+    + <<const>> RiverOffsetMapBorder : int = 2
+    + WaterInfo(map:Map)
+    + <<override>> MapRemoved() : void
+    + SetTextures() : void
+    + GetWaterMovement(position:Vector3) : Vector3
+    + GenerateRiverFlowMap() : void
+    + <<override>> ExposeData() : void
+    + DebugDrawRiver() : void
+}
+class "List`1"<T> {
+}
+MapComponent <|-- WaterInfo
+WaterInfo --> "riverOffsetTexture" Texture2D
+WaterInfo o-> "riverDebugData<Vector3>" "List`1"
+WaterInfo --> "riverFlowMapBounds" CellRect
+@enduml

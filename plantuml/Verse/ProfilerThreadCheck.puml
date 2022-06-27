@@ -1,0 +1,6 @@
+@startuml
+class ProfilerThreadCheck <<static>> {
+    + {static} BeginSample(name:string) : void
+    + {static} EndSample() : void
+}
+@enduml

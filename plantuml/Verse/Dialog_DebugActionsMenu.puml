@@ -1,0 +1,18 @@
+@startuml
+class Dialog_DebugActionsMenu {
+    + <<override>> IsDebug : bool <<get>>
+    + Dialog_DebugActionsMenu()
+    + <<override>> OnAcceptKeyPressed() : void
+}
+class DebugActionOption <<struct>> {
+    + label : string
+    + category : string
+}
+class "Action`1"<T> {
+}
+Dialog_DebugOptionLister <|-- Dialog_DebugActionsMenu
+Dialog_DebugActionsMenu +-- DebugActionOption
+DebugActionOption --> "actionType" DebugActionType
+DebugActionOption --> "action" Action
+DebugActionOption --> "pawnAction<Pawn>" "Action`1"
+@enduml

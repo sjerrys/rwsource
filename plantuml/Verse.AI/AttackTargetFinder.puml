@@ -1,0 +1,10 @@
+@startuml
+class AttackTargetFinder <<static>> {
+    + {static} BestAttackTarget(searcher:IAttackTargetSearcher, flags:TargetScanFlags, validator:Predicate<Thing>, minDist:float, maxDist:float, locus:IntVec3, maxTravelRadiusFromLocus:float, canBash:bool, canTakeTargetsCloserThanEffectiveMinRange:bool) : IAttackTarget
+    + {static} BestShootTargetFromCurrentPosition(searcher:IAttackTargetSearcher, flags:TargetScanFlags, validator:Predicate<Thing>, minDistance:float, maxDistance:float) : IAttackTarget
+    + {static} CanSee(seer:Thing, target:Thing, validator:Func<IntVec3, bool>) : bool
+    + {static} DebugDrawAttackTargetScores_Update() : void
+    + {static} DebugDrawAttackTargetScores_OnGUI() : void
+    + {static} IsAutoTargetable(target:IAttackTarget) : bool
+}
+@enduml

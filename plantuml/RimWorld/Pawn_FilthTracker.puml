@@ -1,0 +1,11 @@
+@startuml
+class Pawn_FilthTracker {
+    + FilthReport : string <<get>>
+    + Pawn_FilthTracker(pawn:Pawn)
+    + ExposeData() : void
+    + Notify_EnteredNewCell() : void
+    + GainFilth(filthDef:ThingDef) : void
+    + GainFilth(filthDef:ThingDef, sources:IEnumerable<string>) : void
+}
+IExposable <|-- Pawn_FilthTracker
+@enduml

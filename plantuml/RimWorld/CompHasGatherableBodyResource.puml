@@ -1,0 +1,10 @@
+@startuml
+abstract class CompHasGatherableBodyResource {
+    + Fullness : float <<get>>
+    + ActiveAndFull : bool <<get>>
+    + <<override>> PostExposeData() : void
+    + <<override>> CompTick() : void
+    + Gathered(doer:Pawn) : void
+}
+ThingComp <|-- CompHasGatherableBodyResource
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class SettlementAbandonUtility <<static>> {
+    + {static} AbandonCommand(settlement:MapParent) : Command
+    + {static} AllColonistsThere(settlement:MapParent) : bool
+    + {static} TryAbandonViaInterface(settlement:MapParent) : void
+}
+@enduml

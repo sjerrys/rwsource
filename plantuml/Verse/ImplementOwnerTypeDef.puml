@@ -1,0 +1,7 @@
+@startuml
+class ImplementOwnerTypeDef {
+    + implementOwnerRuleName : string
+    + implementOwnerTypeValue : string
+}
+Def <|-- ImplementOwnerTypeDef
+@enduml

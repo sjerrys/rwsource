@@ -1,0 +1,7 @@
+@startuml
+class DebugOutputsJoy <<static>> {
+    + {static} JoyGivers() : void
+    + {static} JoyKinds() : void
+    + {static} JoyJobs() : void
+}
+@enduml

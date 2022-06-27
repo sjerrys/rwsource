@@ -1,0 +1,9 @@
+@startuml
+class LordToilData_Party {
+    + <<override>> ExposeData() : void
+}
+class "Dictionary`2"<T1,T2> {
+}
+LordToilData <|-- LordToilData_Party
+LordToilData_Party o-> "presentForTicks<Pawn,int>" "Dictionary`2"
+@enduml

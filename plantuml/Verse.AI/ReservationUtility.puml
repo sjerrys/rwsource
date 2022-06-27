@@ -1,0 +1,11 @@
+@startuml
+class ReservationUtility <<static>> {
+    + {static} CanReserve(p:Pawn, target:LocalTargetInfo, maxPawns:int, stackCount:int, layer:ReservationLayerDef, ignoreOtherReservations:bool) : bool
+    + {static} CanReserveAndReach(p:Pawn, target:LocalTargetInfo, peMode:PathEndMode, maxDanger:Danger, maxPawns:int, stackCount:int, layer:ReservationLayerDef, ignoreOtherReservations:bool) : bool
+    + {static} Reserve(p:Pawn, target:LocalTargetInfo, job:Job, maxPawns:int, stackCount:int, layer:ReservationLayerDef, errorOnFailed:bool) : bool
+    + {static} ReserveAsManyAsPossible(p:Pawn, target:List<LocalTargetInfo>, job:Job, maxPawns:int, stackCount:int, layer:ReservationLayerDef) : void
+    + {static} HasReserved(p:Pawn, target:LocalTargetInfo, job:Job) : bool
+    + {static} HasReserved(p:Pawn, target:LocalTargetInfo, targetAIsNot:LocalTargetInfo?, targetBIsNot:LocalTargetInfo?, targetCIsNot:LocalTargetInfo?) : bool
+    + {static} CanReserveNew(p:Pawn, target:LocalTargetInfo) : bool
+}
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+interface IAttackTarget {
+    TargetPriorityFactor : float <<get>>
+    ThreatDisabled(disabledFor:IAttackTargetSearcher) : bool
+}
+ILoadReferenceable <|-- IAttackTarget
+IAttackTarget --> "Thing" Thing
+IAttackTarget --> "TargetCurrentlyAimingAt" LocalTargetInfo
+@enduml

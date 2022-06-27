@@ -1,0 +1,8 @@
+@startuml
+class RoomRequirement_AllThingsAreGlowing {
+    + <<override>> Met(r:Room, p:Pawn) : bool
+    + <<override>> ConfigErrors() : IEnumerable<string>
+}
+RoomRequirement <|-- RoomRequirement_AllThingsAreGlowing
+RoomRequirement_AllThingsAreGlowing --> "thingDef" ThingDef
+@enduml

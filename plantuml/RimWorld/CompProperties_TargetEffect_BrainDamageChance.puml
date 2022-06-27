@@ -1,0 +1,7 @@
+@startuml
+class CompProperties_TargetEffect_BrainDamageChance {
+    + brainDamageChance : float = 0.3f
+    + CompProperties_TargetEffect_BrainDamageChance()
+}
+CompProperties <|-- CompProperties_TargetEffect_BrainDamageChance
+@enduml

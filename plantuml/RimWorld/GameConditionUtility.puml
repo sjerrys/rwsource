@@ -1,0 +1,6 @@
+@startuml
+class GameConditionUtility <<static>> {
+    + {static} LerpInOutValue(gameCondition:GameCondition, lerpTime:float, lerpTarget:float) : float
+    + {static} LerpInOutValue(timePassed:float, timeLeft:float, lerpTime:float, lerpTarget:float) : float
+}
+@enduml

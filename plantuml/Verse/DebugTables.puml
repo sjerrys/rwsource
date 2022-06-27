@@ -1,0 +1,6 @@
+@startuml
+class DebugTables <<static>> {
+    + {static} MakeTablesDialog(dataSources:IEnumerable<T>, getters:TableDataGetter<T>[]) : void
+    + {static} MakeTablesDialog(colValues:IEnumerable<TColumn>, colLabelFormatter:Func<TColumn, string>, rowValues:IEnumerable<TRow>, rowLabelFormatter:Func<TRow, string>, func:Func<TColumn, TRow, string>, tlLabel:string) : void
+}
+@enduml

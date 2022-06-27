@@ -1,0 +1,6 @@
+@startuml
+class TransferableComparer_HitPointsPercentage {
+    + <<override>> Compare(lhs:Transferable, rhs:Transferable) : int
+}
+TransferableComparer <|-- TransferableComparer_HitPointsPercentage
+@enduml

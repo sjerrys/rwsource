@@ -1,0 +1,6 @@
+@startuml
+class GhostDrawer <<static>> {
+    + {static} DrawGhostThing(center:IntVec3, rot:Rot4, thingDef:ThingDef, baseGraphic:Graphic, ghostCol:Color, drawAltitude:AltitudeLayer, thing:Thing) : void
+    + {static} DrawGhostThing_NewTmp(center:IntVec3, rot:Rot4, thingDef:ThingDef, baseGraphic:Graphic, ghostCol:Color, drawAltitude:AltitudeLayer, thing:Thing, drawPlaceWorkers:bool) : void
+}
+@enduml

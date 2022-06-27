@@ -1,0 +1,7 @@
+@startuml
+enum PawnsToGather {
+    None,
+    Animals,
+    Slaves,
+}
+@enduml

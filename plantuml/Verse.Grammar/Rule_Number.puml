@@ -1,0 +1,10 @@
+@startuml
+class Rule_Number {
+    + selectionWeight : int = 1
+    + <<override>> BaseSelectionWeight : float <<get>>
+    + <<override>> DeepCopy() : Rule
+    + <<override>> Generate() : string
+    + <<override>> ToString() : string
+}
+Rule <|-- Rule_Number
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class ExecutionUtility <<static>> {
+    + {static} DoExecutionByCut(executioner:Pawn, victim:Pawn) : void
+}
+@enduml

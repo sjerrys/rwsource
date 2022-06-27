@@ -1,0 +1,29 @@
+@startuml
+class FloatMenuOption {
+    + autoTakeable : bool
+    + autoTakeablePriority : float
+    + extraPartWidth : float
+    + tutorTag : string
+    + <<const>> MaxWidth : float = 300f
+    + <<const>> ExtraPartHeight : float = 30f
+    + Label : string <<get>> <<set>>
+    + Disabled : bool <<get>> <<set>>
+    + RequiredHeight : float <<get>>
+    + RequiredWidth : float <<get>>
+    + FloatMenuOption(label:string, action:Action, priority:MenuOptionPriority, mouseoverGuiAction:Action, revalidateClickTarget:Thing, extraPartWidth:float, extraPartOnGUI:Func<Rect, bool>, revalidateWorldClickTarget:WorldObject)
+    + FloatMenuOption(label:string, action:Action, shownItemForIcon:ThingDef, priority:MenuOptionPriority, mouseoverGuiAction:Action, revalidateClickTarget:Thing, extraPartWidth:float, extraPartOnGUI:Func<Rect, bool>, revalidateWorldClickTarget:WorldObject)
+    + FloatMenuOption(label:string, action:Action, itemIcon:Texture2D, iconColor:Color, priority:MenuOptionPriority, mouseoverGuiAction:Action, revalidateClickTarget:Thing, extraPartWidth:float, extraPartOnGUI:Func<Rect, bool>, revalidateWorldClickTarget:WorldObject)
+    + SetSizeMode(newSizeMode:FloatMenuSizeMode) : void
+    + Chosen(colonistOrdering:bool, floatMenu:FloatMenu) : void
+    + <<virtual>> DoGUI(rect:Rect, colonistOrdering:bool, floatMenu:FloatMenu) : bool
+    + <<override>> ToString() : string
+}
+class "Func`2"<T1,T2> {
+}
+FloatMenuOption --> "action" Action
+FloatMenuOption --> "mouseoverGuiAction" Action
+FloatMenuOption --> "revalidateClickTarget" Thing
+FloatMenuOption --> "revalidateWorldClickTarget" WorldObject
+FloatMenuOption --> "extraPartOnGUI<Rect,bool>" "Func`2"
+FloatMenuOption --> "Priority" MenuOptionPriority
+@enduml

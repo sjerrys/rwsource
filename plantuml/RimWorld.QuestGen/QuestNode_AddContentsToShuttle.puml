@@ -1,0 +1,10 @@
+@startuml
+class QuestNode_AddContentsToShuttle {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_AddContentsToShuttle
+QuestNode_AddContentsToShuttle --> "inSignal<string>" "SlateRef`1"
+QuestNode_AddContentsToShuttle --> "shuttle<Thing>" "SlateRef`1"
+QuestNode_AddContentsToShuttle --> "contents<IEnumerable<Thing>>" "SlateRef`1"
+@enduml

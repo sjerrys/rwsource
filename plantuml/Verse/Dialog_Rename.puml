@@ -1,0 +1,9 @@
+@startuml
+abstract class Dialog_Rename {
+    + Dialog_Rename()
+    + WasOpenedByHotkey() : void
+    + <<override>> DoWindowContents(inRect:Rect) : void
+}
+Window <|-- Dialog_Rename
+Dialog_Rename --> "InitialSize" Vector2
+@enduml

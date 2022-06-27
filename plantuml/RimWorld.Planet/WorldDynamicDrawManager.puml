@@ -1,0 +1,7 @@
+@startuml
+class WorldDynamicDrawManager {
+    + RegisterDrawable(o:WorldObject) : void
+    + DeRegisterDrawable(o:WorldObject) : void
+    + DrawDynamicWorldObjects() : void
+}
+@enduml

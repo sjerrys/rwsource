@@ -1,0 +1,14 @@
+@startuml
+class Vector3Utility <<static>> {
+    + {static} HorizontalVectorFromAngle(angle:float) : Vector3
+    + {static} AngleFlat(v:Vector3) : float
+    + {static} RandomHorizontalOffset(maxDist:float) : Vector3
+    + {static} Yto0(v3:Vector3) : Vector3
+    + {static} RotatedBy(v3:Vector3, angle:float) : Vector3
+    + {static} RotatedBy(orig:Vector3, rot:Rot4) : Vector3
+    + {static} AngleToFlat(a:Vector3, b:Vector3) : float
+    + {static} FromAngleFlat(angle:float) : Vector3
+    + {static} ToAngleFlat(v:Vector3) : float
+    + {static} Abs(v:Vector3) : Vector3
+}
+@enduml

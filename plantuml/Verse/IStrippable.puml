@@ -1,0 +1,6 @@
+@startuml
+interface IStrippable {
+    AnythingToStrip() : bool
+    Strip() : void
+}
+@enduml

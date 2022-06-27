@@ -1,0 +1,14 @@
+@startuml
+abstract class WorldLayer_Paths {
+    + GeneratePaths(subMesh:LayerSubMesh, tileID:int, nodes:List<OutputDirection>, color:Color32, allowSmoothTransition:bool) : void
+    + {abstract} FinalizePoint(inp:Vector3, distortionFrequency:float, distortionIntensity:float) : Vector3
+}
+class OutputDirection <<struct>> {
+    + neighbor : int
+    + width : float
+    + distortionFrequency : float
+    + distortionIntensity : float
+}
+WorldLayer <|-- WorldLayer_Paths
+WorldLayer_Paths +-- OutputDirection
+@enduml

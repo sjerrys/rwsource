@@ -1,0 +1,6 @@
+@startuml
+class PawnBreathMoteMaker {
+    + PawnBreathMoteMaker(pawn:Pawn)
+    + BreathMoteMakerTick() : void
+}
+@enduml

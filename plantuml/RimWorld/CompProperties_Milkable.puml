@@ -1,0 +1,10 @@
+@startuml
+class CompProperties_Milkable {
+    + milkIntervalDays : int
+    + milkAmount : int = 1
+    + milkFemaleOnly : bool = true
+    + CompProperties_Milkable()
+}
+CompProperties <|-- CompProperties_Milkable
+CompProperties_Milkable --> "milkDef" ThingDef
+@enduml

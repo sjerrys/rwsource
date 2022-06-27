@@ -1,0 +1,6 @@
+@startuml
+class CompTargetEffect_MoodBoost {
+    + <<override>> DoEffectOn(user:Pawn, target:Thing) : void
+}
+CompTargetEffect <|-- CompTargetEffect_MoodBoost
+@enduml

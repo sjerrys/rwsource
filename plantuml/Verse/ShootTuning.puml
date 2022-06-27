@@ -1,0 +1,33 @@
+@startuml
+class ShootTuning <<static>> {
+    + <<const>> DistTouch : float = 3f
+    + <<const>> DistShort : float = 12f
+    + <<const>> DistMedium : float = 25f
+    + <<const>> DistLong : float = 40f
+    + <<const>> MeleeRange : float = 1.42f
+    + <<const>> HitChanceFactorFromEquipmentMin : float = 0.01f
+    + <<const>> MinAccuracyFactorFromShooterAndDistance : float = 0.0201f
+    + <<const>> LayingDownHitChanceFactorMinDistance : float = 4.5f
+    + <<const>> HitChanceFactorIfLayingDown : float = 0.2f
+    + <<const>> ExecutionMaxDistance : float = 3.9f
+    + <<const>> ExecutionAccuracyFactor : float = 7.5f
+    + <<const>> TargetSizeFactorFromFillPercentFactor : float = 2.5f
+    + <<const>> TargetSizeFactorMin : float = 0.5f
+    + <<const>> TargetSizeFactorMax : float = 2f
+    + <<const>> MinAimOnChance_StandardTarget : float = 0.0201f
+    + <<const>> CanInterceptPawnsChanceOnWildOrForcedMissRadius : float = 0.5f
+    + <<const>> InterceptDistMin : float = 5f
+    + <<const>> InterceptDistMax : float = 12f
+    + <<const>> Intercept_Pawn_HitChancePerBodySize : float = 0.4f
+    + <<const>> Intercept_Pawn_HitChanceFactor_LayingDown : float = 0.1f
+    + <<const>> Intercept_Pawn_HitChanceFactor_NonWildNonEnemy : float = 0.4f
+    + <<const>> Intercept_Object_HitChancePerFillPercent : float = 0.15f
+    + <<const>> Intercept_Object_AdjToTarget_HitChancePerFillPercent : float = 1f
+    + <<const>> Intercept_OpenDoor_HitChance : float = 0.05f
+    + <<const>> ImpactCell_Pawn_HitChancePerBodySize : float = 0.5f
+    + <<const>> ImpactCell_Object_HitChancePerFillPercent : float = 1.5f
+    + <<const>> BodySizeClampMin : float = 0.1f
+    + <<const>> BodySizeClampMax : float = 2f
+}
+ShootTuning o-> "MissDistanceFromAimOnChanceCurves" SimpleSurface
+@enduml

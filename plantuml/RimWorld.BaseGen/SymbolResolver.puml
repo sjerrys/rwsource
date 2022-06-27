@@ -1,0 +1,8 @@
+@startuml
+abstract class SymbolResolver {
+    + selectionWeight : float = 1f
+    + <<virtual>> CanResolve(rp:ResolveParams) : bool
+    + {abstract} Resolve(rp:ResolveParams) : void
+}
+SymbolResolver o-> "minRectSize" IntVec2
+@enduml

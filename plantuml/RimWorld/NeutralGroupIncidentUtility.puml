@@ -1,0 +1,5 @@
+@startuml
+class NeutralGroupIncidentUtility <<static>> {
+    + {static} AnyBlockingHostileLord(map:Map, forFaction:Faction) : bool
+}
+@enduml

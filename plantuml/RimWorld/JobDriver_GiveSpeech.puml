@@ -1,0 +1,7 @@
+@startuml
+class JobDriver_GiveSpeech {
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+}
+JobDriver <|-- JobDriver_GiveSpeech
+JobDriver_GiveSpeech o-> "moteIcon" Texture2D
+@enduml

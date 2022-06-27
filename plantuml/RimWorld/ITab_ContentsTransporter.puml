@@ -1,0 +1,11 @@
+@startuml
+class ITab_ContentsTransporter {
+    + <<override>> IsVisible : bool <<get>>
+    + ITab_ContentsTransporter()
+}
+class "IList`1"<T> {
+}
+ITab_ContentsBase <|-- ITab_ContentsTransporter
+ITab_ContentsTransporter --> "container<Thing>" "IList`1"
+ITab_ContentsTransporter --> "Transporter" CompTransporter
+@enduml

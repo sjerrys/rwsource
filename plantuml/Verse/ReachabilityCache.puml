@@ -1,0 +1,23 @@
+@startuml
+class ReachabilityCache {
+    + Count : int <<get>>
+    + CachedResultFor(A:Room, B:Room, traverseParams:TraverseParms) : BoolUnknown
+    + AddCachedResult(A:Room, B:Room, traverseParams:TraverseParms, reachable:bool) : void
+    + Clear() : void
+    + ClearFor(p:Pawn) : void
+    + ClearForHostile(hostileTo:Thing) : void
+}
+class CachedEntry <<struct>> {
+    + FirstRoomID : int <<get>>
+    + SecondRoomID : int <<get>>
+    + CachedEntry(firstRoomID:int, secondRoomID:int, traverseParms:TraverseParms)
+    + <<override>> Equals(obj:object) : bool
+    + Equals(other:CachedEntry) : bool
+    + <<override>> GetHashCode() : int
+}
+class "IEquatable`1"<T> {
+}
+ReachabilityCache +-- CachedEntry
+"IEquatable`1" "<CachedEntry>" <|-- CachedEntry
+CachedEntry --> "TraverseParms" TraverseParms
+@enduml

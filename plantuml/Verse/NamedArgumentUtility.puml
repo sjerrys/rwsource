@@ -1,0 +1,5 @@
+@startuml
+class NamedArgumentUtility <<static>> {
+    + {static} Named(arg:object, label:string) : NamedArgument
+}
+@enduml

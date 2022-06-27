@@ -1,0 +1,11 @@
+@startuml
+class MedicalCareUtility <<static>> {
+    + <<const>> CareSetterHeight : float = 28f
+    + <<const>> CareSetterWidth : float = 140f
+    + {static} Reset() : void
+    + {static} MedicalCareSetter(rect:Rect, medCare:MedicalCareCategory) : void
+    + {static} GetLabel(cat:MedicalCareCategory) : string
+    + {static} AllowsMedicine(cat:MedicalCareCategory, meds:ThingDef) : bool
+    + {static} MedicalCareSelectButton(rect:Rect, pawn:Pawn) : void
+}
+@enduml

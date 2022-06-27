@@ -1,0 +1,9 @@
+@startuml
+class RaidStrategyWorker_SiegeMechanoid {
+    + <<override>> CanUseWith(parms:IncidentParms, groupKind:PawnGroupKindDef) : bool
+    + <<override>> TryGenerateThreats(parms:IncidentParms) : void
+    + <<override>> SpawnThreats(parms:IncidentParms) : List<Pawn>
+    + <<override>> MakeLords(parms:IncidentParms, pawns:List<Pawn>) : void
+}
+RaidStrategyWorker_Siege <|-- RaidStrategyWorker_SiegeMechanoid
+@enduml

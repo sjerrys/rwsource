@@ -1,0 +1,6 @@
+@startuml
+class DefOfHelper <<static>> {
+    + {static} RebindAllDefOfs(earlyTryMode:bool) : void
+    + {static} EnsureInitializedInCtor(defOf:Type) : void
+}
+@enduml

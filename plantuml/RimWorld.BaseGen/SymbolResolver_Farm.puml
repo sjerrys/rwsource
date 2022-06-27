@@ -1,0 +1,7 @@
+@startuml
+class SymbolResolver_Farm {
+    + <<override>> CanResolve(rp:ResolveParams) : bool
+    + <<override>> Resolve(rp:ResolveParams) : void
+}
+SymbolResolver <|-- SymbolResolver_Farm
+@enduml

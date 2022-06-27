@@ -1,0 +1,7 @@
+@startuml
+class AvoidGridTuning <<static>> {
+    + <<const>> MaxValue : byte
+    + <<const>> PathCostFactor : int = 8
+    + <<const>> CostForTurretLOS : int = 45
+}
+@enduml

@@ -1,0 +1,4 @@
+@startuml
+class InternalInflateConstants <<static>> {
+}
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class HediffCompProperties_ExplodeOnDeath {
+    + destroyGear : bool
+    + destroyBody : bool
+    + explosionRadius : float
+    + damageAmount : int
+    + HediffCompProperties_ExplodeOnDeath()
+}
+HediffCompProperties <|-- HediffCompProperties_ExplodeOnDeath
+HediffCompProperties_ExplodeOnDeath --> "damageDef" DamageDef
+@enduml

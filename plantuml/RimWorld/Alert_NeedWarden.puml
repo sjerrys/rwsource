@@ -1,0 +1,7 @@
+@startuml
+class Alert_NeedWarden {
+    + Alert_NeedWarden()
+    + <<override>> GetReport() : AlertReport
+}
+Alert <|-- Alert_NeedWarden
+@enduml

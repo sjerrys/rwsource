@@ -1,0 +1,17 @@
+@startuml
+class SpecificApparelRequirement {
+    + RequiredTag : string <<get>>
+}
+class TagChance <<struct>> {
+    + tag : string
+    + chance : float
+}
+class "List`1"<T> {
+}
+SpecificApparelRequirement --> "AlternateTagChoices<TagChance>" "List`1"
+SpecificApparelRequirement --> "Stuff" ThingDef
+SpecificApparelRequirement --> "BodyPartGroup" BodyPartGroupDef
+SpecificApparelRequirement --> "ApparelLayer" ApparelLayerDef
+SpecificApparelRequirement --> "Color" Color
+SpecificApparelRequirement +-- TagChance
+@enduml

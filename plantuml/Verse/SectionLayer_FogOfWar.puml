@@ -1,0 +1,8 @@
+@startuml
+class SectionLayer_FogOfWar {
+    + <<override>> Visible : bool <<get>>
+    + SectionLayer_FogOfWar(section:Section)
+    + <<override>> Regenerate() : void
+}
+SectionLayer <|-- SectionLayer_FogOfWar
+@enduml

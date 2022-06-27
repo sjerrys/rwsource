@@ -1,0 +1,7 @@
+@startuml
+enum PlantLifeStage {
+    Sowing,
+    Growing,
+    Mature,
+}
+@enduml

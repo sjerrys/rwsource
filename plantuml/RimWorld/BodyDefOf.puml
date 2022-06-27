@@ -1,0 +1,7 @@
+@startuml
+class BodyDefOf <<static>> {
+    {static} BodyDefOf()
+}
+BodyDefOf --> "Human" BodyDef
+BodyDefOf --> "MechanicalCentipede" BodyDef
+@enduml

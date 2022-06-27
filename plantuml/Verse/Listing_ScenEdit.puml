@@ -1,0 +1,7 @@
+@startuml
+class Listing_ScenEdit {
+    + Listing_ScenEdit(scen:Scenario)
+    + GetScenPartRect(part:ScenPart, height:float) : Rect
+}
+Listing_Standard <|-- Listing_ScenEdit
+@enduml

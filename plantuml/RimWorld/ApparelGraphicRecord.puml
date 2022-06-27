@@ -1,0 +1,7 @@
+@startuml
+class ApparelGraphicRecord <<struct>> {
+    + ApparelGraphicRecord(graphic:Graphic, sourceApparel:Apparel)
+}
+ApparelGraphicRecord --> "graphic" Graphic
+ApparelGraphicRecord --> "sourceApparel" Apparel
+@enduml

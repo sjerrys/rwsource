@@ -1,0 +1,17 @@
+@startuml
+class Pawn_TraderTracker {
+    + RandomPriceFactorSeed : int <<get>>
+    + TraderName : string <<get>>
+    + CanTradeNow : bool <<get>>
+    + Pawn_TraderTracker(pawn:Pawn)
+    + ExposeData() : void
+    + ColonyThingsWillingToBuy(playerNegotiator:Pawn) : IEnumerable<Thing>
+    + GiveSoldThingToTrader(toGive:Thing, countToGive:int, playerNegotiator:Pawn) : void
+    + GiveSoldThingToPlayer(toGive:Thing, countToGive:int, playerNegotiator:Pawn) : void
+}
+class "IEnumerable`1"<T> {
+}
+IExposable <|-- Pawn_TraderTracker
+Pawn_TraderTracker --> "traderKind" TraderKindDef
+Pawn_TraderTracker --> "Goods<Thing>" "IEnumerable`1"
+@enduml

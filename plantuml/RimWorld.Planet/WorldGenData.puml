@@ -1,0 +1,11 @@
+@startuml
+class WorldGenData {
+    + WorldGenData(world:World)
+    + <<override>> ExposeData() : void
+}
+class "List`1"<T> {
+}
+WorldComponent <|-- WorldGenData
+WorldGenData o-> "roadNodes<int>" "List`1"
+WorldGenData o-> "ancientSites<int>" "List`1"
+@enduml

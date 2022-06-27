@@ -1,0 +1,9 @@
+@startuml
+enum TraderCaravanRole {
+    None,
+    Trader,
+    Carrier,
+    Guard,
+    Chattel,
+}
+@enduml

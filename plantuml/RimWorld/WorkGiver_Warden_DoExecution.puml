@@ -1,0 +1,8 @@
+@startuml
+class WorkGiver_Warden_DoExecution {
+    + {static} ResetStaticData() : void
+    + <<override>> JobOnThing(pawn:Pawn, t:Thing, forced:bool) : Job
+}
+WorkGiver_Warden <|-- WorkGiver_Warden_DoExecution
+WorkGiver_Warden_DoExecution --> "PathEndMode" PathEndMode
+@enduml

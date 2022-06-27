@@ -1,0 +1,11 @@
+@startuml
+class HealthAIUtility <<static>> {
+    + {static} ShouldSeekMedicalRestUrgent(pawn:Pawn) : bool
+    + {static} ShouldSeekMedicalRest(pawn:Pawn) : bool
+    + {static} ShouldBeTendedNowByPlayerUrgent(pawn:Pawn) : bool
+    + {static} ShouldBeTendedNowByPlayer(pawn:Pawn) : bool
+    + {static} ShouldEverReceiveMedicalCareFromPlayer(pawn:Pawn) : bool
+    + {static} ShouldHaveSurgeryDoneNow(pawn:Pawn) : bool
+    + {static} FindBestMedicine(healer:Pawn, patient:Pawn) : Thing
+}
+@enduml

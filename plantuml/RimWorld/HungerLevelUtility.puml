@@ -1,0 +1,5 @@
+@startuml
+class HungerLevelUtility <<static>> {
+    + {static} GetLabel(hunger:HungerCategory) : string
+}
+@enduml

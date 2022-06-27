@@ -1,0 +1,10 @@
+@startuml
+class TimeAssignmentDefOf <<static>> {
+    {static} TimeAssignmentDefOf()
+}
+TimeAssignmentDefOf --> "Anything" TimeAssignmentDef
+TimeAssignmentDefOf --> "Work" TimeAssignmentDef
+TimeAssignmentDefOf --> "Joy" TimeAssignmentDef
+TimeAssignmentDefOf --> "Sleep" TimeAssignmentDef
+TimeAssignmentDefOf --> "Meditate" TimeAssignmentDef
+@enduml

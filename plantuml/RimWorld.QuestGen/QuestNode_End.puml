@@ -1,0 +1,13 @@
+@startuml
+class QuestNode_End {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_End
+QuestNode_End --> "inSignal<string>" "SlateRef`1"
+QuestNode_End --> "outcome<QuestEndOutcome>" "SlateRef`1"
+QuestNode_End --> "signalListenMode<QuestPart.SignalListenMode?>" "SlateRef`1"
+QuestNode_End --> "sendStandardLetter<bool?>" "SlateRef`1"
+QuestNode_End --> "goodwillChangeAmount<int>" "SlateRef`1"
+QuestNode_End --> "goodwillChangeFactionOf<Thing>" "SlateRef`1"
+@enduml

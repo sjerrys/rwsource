@@ -1,0 +1,5 @@
+@startuml
+class SketchGen <<static>> {
+    + {static} Generate(root:SketchResolverDef, parms:ResolveParams) : Sketch
+}
+@enduml

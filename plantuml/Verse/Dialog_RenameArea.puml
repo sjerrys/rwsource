@@ -1,0 +1,6 @@
+@startuml
+class Dialog_RenameArea {
+    + Dialog_RenameArea(area:Area)
+}
+Dialog_Rename <|-- Dialog_RenameArea
+@enduml

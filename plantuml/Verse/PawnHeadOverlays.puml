@@ -1,0 +1,6 @@
+@startuml
+class PawnHeadOverlays {
+    + PawnHeadOverlays(pawn:Pawn)
+    + RenderStatusOverlays(bodyLoc:Vector3, quat:Quaternion, headMesh:Mesh) : void
+}
+@enduml

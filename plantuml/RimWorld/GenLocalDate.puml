@@ -1,0 +1,43 @@
+@startuml
+class GenLocalDate <<static>> {
+    + {static} DayOfYear(map:Map) : int
+    + {static} HourOfDay(map:Map) : int
+    + {static} DayOfTwelfth(map:Map) : int
+    + {static} Twelfth(map:Map) : Twelfth
+    + {static} Season(map:Map) : Season
+    + {static} Year(map:Map) : int
+    + {static} DayOfSeason(map:Map) : int
+    + {static} DayOfQuadrum(map:Map) : int
+    + {static} DayTick(map:Map) : int
+    + {static} DayPercent(map:Map) : float
+    + {static} YearPercent(map:Map) : float
+    + {static} HourInteger(map:Map) : int
+    + {static} HourFloat(map:Map) : float
+    + {static} DayOfYear(thing:Thing) : int
+    + {static} HourOfDay(thing:Thing) : int
+    + {static} DayOfTwelfth(thing:Thing) : int
+    + {static} Twelfth(thing:Thing) : Twelfth
+    + {static} Season(thing:Thing) : Season
+    + {static} Year(thing:Thing) : int
+    + {static} DayOfSeason(thing:Thing) : int
+    + {static} DayOfQuadrum(thing:Thing) : int
+    + {static} DayTick(thing:Thing) : int
+    + {static} DayPercent(thing:Thing) : float
+    + {static} YearPercent(thing:Thing) : float
+    + {static} HourInteger(thing:Thing) : int
+    + {static} HourFloat(thing:Thing) : float
+    + {static} DayOfYear(tile:int) : int
+    + {static} HourOfDay(tile:int) : int
+    + {static} DayOfTwelfth(tile:int) : int
+    + {static} Twelfth(tile:int) : Twelfth
+    + {static} Season(tile:int) : Season
+    + {static} Year(tile:int) : int
+    + {static} DayOfSeason(tile:int) : int
+    + {static} DayOfQuadrum(tile:int) : int
+    + {static} DayTick(tile:int) : int
+    + {static} DayPercent(tile:int) : float
+    + {static} YearPercent(tile:int) : float
+    + {static} HourInteger(tile:int) : int
+    + {static} HourFloat(tile:int) : float
+}
+@enduml

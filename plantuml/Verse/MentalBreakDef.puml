@@ -1,0 +1,13 @@
+@startuml
+class MentalBreakDef {
+    + baseCommonality : float
+    + <<override>> ConfigErrors() : IEnumerable<string>
+}
+Def <|-- MentalBreakDef
+MentalBreakDef o-> "workerClass" Type
+MentalBreakDef --> "mentalState" MentalStateDef
+MentalBreakDef --> "commonalityFactorPerPopulationCurve" SimpleCurve
+MentalBreakDef --> "intensity" MentalBreakIntensity
+MentalBreakDef --> "requiredTrait" TraitDef
+MentalBreakDef --> "Worker" MentalBreakWorker
+@enduml

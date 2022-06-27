@@ -1,0 +1,7 @@
+@startuml
+class SpecialThingFilterWorker_NonDeadmansApparel {
+    + <<override>> Matches(t:Thing) : bool
+    + <<override>> CanEverMatch(def:ThingDef) : bool
+}
+SpecialThingFilterWorker <|-- SpecialThingFilterWorker_NonDeadmansApparel
+@enduml

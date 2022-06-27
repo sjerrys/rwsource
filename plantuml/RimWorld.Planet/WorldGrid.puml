@@ -1,0 +1,55 @@
+@startuml
+class WorldGrid {
+    + averageTileSize : float
+    + viewAngle : float
+    + <<const>> PlanetRadius : float = 100f
+    + <<const>> ElevationOffset : int = 8192
+    + <<const>> TemperatureOffset : int = 300
+    + <<const>> TemperatureMultiplier : float = 10f
+    + TilesCount : int <<get>>
+    + HasWorldData : bool <<get>>
+    + WorldGrid()
+    + InBounds(tileID:int) : bool
+    + LongLatOf(tileID:int) : Vector2
+    + GetHeadingFromTo(from:Vector3, to:Vector3) : float
+    + GetHeadingFromTo(fromTileID:int, toTileID:int) : float
+    + GetDirection8WayFromTo(fromTileID:int, toTileID:int) : Direction8Way
+    + GetRotFromTo(fromTileID:int, toTileID:int) : Rot4
+    + GetTileVertices(tileID:int, outVerts:List<Vector3>) : void
+    + GetTileVerticesIndices(tileID:int, outVertsIndices:List<int>) : void
+    + GetTileNeighbors(tileID:int, outNeighbors:List<int>) : void
+    + GetTileNeighborCount(tileID:int) : int
+    + GetMaxTileNeighborCountEver(tileID:int) : int
+    + IsNeighbor(tile1:int, tile2:int) : bool
+    + IsNeighborOrSame(tile1:int, tile2:int) : bool
+    + GetNeighborId(tile1:int, tile2:int) : int
+    + GetTileNeighbor(tileID:int, adjacentId:int) : int
+    + GetTileCenter(tileID:int) : Vector3
+    + TileRadiusToAngle(radius:float) : float
+    + DistOnSurfaceToAngle(dist:float) : float
+    + DistanceFromEquatorNormalized(tile:int) : float
+    + ApproxDistanceInTiles(sphericalDistance:float) : float
+    + ApproxDistanceInTiles(firstTile:int, secondTile:int) : float
+    + OverlayRoad(fromTile:int, toTile:int, roadDef:RoadDef) : void
+    + GetRoadDef(fromTile:int, toTile:int, visibleOnly:bool) : RoadDef
+    + OverlayRiver(fromTile:int, toTile:int, riverDef:RiverDef) : void
+    + GetRiverDef(fromTile:int, toTile:int, visibleOnly:bool) : RiverDef
+    + GetRoadMovementDifficultyMultiplier(fromTile:int, toTile:int, explanation:StringBuilder) : float
+    + FindMostReasonableAdjacentTileForDisplayedPathCost(fromTile:int) : int
+    + TraversalDistanceBetween(start:int, end:int, passImpassable:bool, maxDist:int) : int
+    + TilesNumWithinTraversalDistance(traversalDist:int) : int
+    + IsOnEdge(tileID:int) : bool
+    + ExposeData() : void
+    + StandardizeTileData() : void
+}
+class "List`1"<T> {
+}
+IExposable <|-- WorldGrid
+WorldGrid o-> "tiles<Tile>" "List`1"
+WorldGrid --> "verts<Vector3>" "List`1"
+WorldGrid --> "tileIDToVerts_offsets<int>" "List`1"
+WorldGrid --> "tileIDToNeighbors_offsets<int>" "List`1"
+WorldGrid --> "tileIDToNeighbors_values<int>" "List`1"
+WorldGrid --> "viewCenter" Vector3
+WorldGrid --> "NorthPolePos" Vector3
+@enduml

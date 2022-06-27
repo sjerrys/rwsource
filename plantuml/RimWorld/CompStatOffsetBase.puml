@@ -1,0 +1,11 @@
+@startuml
+abstract class CompStatOffsetBase {
+    + {abstract} GetStatOffset(pawn:Pawn) : float
+    + {abstract} GetExplanation() : IEnumerable<string>
+    + Used(pawn:Pawn) : void
+    + <<override>> PostExposeData() : void
+}
+ThingComp <|-- CompStatOffsetBase
+CompStatOffsetBase --> "Props" CompProperties_StatOffsetBase
+CompStatOffsetBase --> "LastUser" Pawn
+@enduml

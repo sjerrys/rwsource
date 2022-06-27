@@ -1,0 +1,5 @@
+@startuml
+class JobDriver_PlantCut {
+}
+JobDriver_PlantWork <|-- JobDriver_PlantCut
+@enduml

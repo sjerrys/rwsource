@@ -1,0 +1,7 @@
+@startuml
+class AxisAsValueZ {
+    + AxisAsValueZ()
+    + <<override>> GetValue(x:double, y:double, z:double) : double
+}
+ModuleBase <|-- AxisAsValueZ
+@enduml

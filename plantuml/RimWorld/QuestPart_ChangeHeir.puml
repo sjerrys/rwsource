@@ -1,0 +1,17 @@
+@startuml
+class QuestPart_ChangeHeir {
+    + inSignal : string
+    + done : bool
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> ReplacePawnReferences(replace:Pawn, with:Pawn) : void
+    + <<override>> ExposeData() : void
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart <|-- QuestPart_ChangeHeir
+QuestPart_ChangeHeir --> "faction" Faction
+QuestPart_ChangeHeir --> "holder" Pawn
+QuestPart_ChangeHeir --> "heir" Pawn
+QuestPart_ChangeHeir --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+QuestPart_ChangeHeir --> "InvolvedFactions<Faction>" "IEnumerable`1"
+@enduml

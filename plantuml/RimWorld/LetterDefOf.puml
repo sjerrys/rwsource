@@ -1,0 +1,15 @@
+@startuml
+class LetterDefOf <<static>> {
+    {static} LetterDefOf()
+}
+LetterDefOf --> "ThreatBig" LetterDef
+LetterDefOf --> "ThreatSmall" LetterDef
+LetterDefOf --> "NegativeEvent" LetterDef
+LetterDefOf --> "NeutralEvent" LetterDef
+LetterDefOf --> "PositiveEvent" LetterDef
+LetterDefOf --> "Death" LetterDef
+LetterDefOf --> "NewQuest" LetterDef
+LetterDefOf --> "AcceptVisitors" LetterDef
+LetterDefOf --> "BetrayVisitors" LetterDef
+LetterDefOf --> "ChoosePawn" LetterDef
+@enduml

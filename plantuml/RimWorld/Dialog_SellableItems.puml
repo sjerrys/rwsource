@@ -1,0 +1,8 @@
+@startuml
+class Dialog_SellableItems {
+    + Dialog_SellableItems(trader:ITrader)
+    + <<override>> DoWindowContents(inRect:Rect) : void
+}
+Window <|-- Dialog_SellableItems
+Dialog_SellableItems --> "InitialSize" Vector2
+@enduml

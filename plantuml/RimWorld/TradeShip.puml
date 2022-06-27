@@ -1,0 +1,36 @@
+@startuml
+class TradeShip {
+    + <<override>> FullTitle : string <<get>>
+    + Silver : int <<get>>
+    + RandomPriceFactorSeed : int <<get>>
+    + TraderName : string <<get>>
+    + CanTradeNow : bool <<get>>
+    + TradePriceImprovementOffsetForPlayer : float <<get>>
+    + TradeShip()
+    + TradeShip(def:TraderKindDef, faction:Faction)
+    + ColonyThingsWillingToBuy(playerNegotiator:Pawn) : IEnumerable<Thing>
+    + GenerateThings() : void
+    + <<override>> PassingShipTick() : void
+    + <<override>> ExposeData() : void
+    + <<override>> TryOpenComms(negotiator:Pawn) : void
+    + <<override>> Depart() : void
+    + <<override>> GetCallLabel() : string
+    + CountHeldOf(thingDef:ThingDef, stuffDef:ThingDef) : int
+    + GiveSoldThingToTrader(toGive:Thing, countToGive:int, playerNegotiator:Pawn) : void
+    + GiveSoldThingToPlayer(toGive:Thing, countToGive:int, playerNegotiator:Pawn) : void
+    + ChangeCountHeldOf(thingDef:ThingDef, stuffDef:ThingDef, count:int) : void
+    + <<override>> ToString() : string
+    + GetDirectlyHeldThings() : ThingOwner
+    + GetChildHolders(outChildren:List<IThingHolder>) : void
+}
+class "IEnumerable`1"<T> {
+}
+PassingShip <|-- TradeShip
+ITrader <|-- TradeShip
+IThingHolder <|-- TradeShip
+TradeShip --> "def" TraderKindDef
+TradeShip --> "TradeCurrency" TradeCurrency
+TradeShip --> "ParentHolder" IThingHolder
+TradeShip --> "TraderKind" TraderKindDef
+TradeShip --> "Goods<Thing>" "IEnumerable`1"
+@enduml

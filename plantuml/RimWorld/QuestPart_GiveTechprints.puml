@@ -1,0 +1,12 @@
+@startuml
+class QuestPart_GiveTechprints {
+    + <<const>> WasGivenSignal : string = "AddedTechprints"
+    + inSignal : string
+    + outSignalWasGiven : string
+    + amount : int
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> ExposeData() : void
+}
+QuestPart <|-- QuestPart_GiveTechprints
+QuestPart_GiveTechprints --> "project" ResearchProjectDef
+@enduml

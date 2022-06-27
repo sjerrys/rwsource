@@ -1,0 +1,5 @@
+@startuml
+class ThinkNode_ChancePerHour_Mate {
+}
+ThinkNode_ChancePerHour <|-- ThinkNode_ChancePerHour_Mate
+@enduml

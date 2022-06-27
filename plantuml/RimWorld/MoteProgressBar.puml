@@ -1,0 +1,8 @@
+@startuml
+class MoteProgressBar {
+    + progress : float
+    + offsetZ : float
+    + <<override>> Draw() : void
+}
+MoteDualAttached <|-- MoteProgressBar
+@enduml

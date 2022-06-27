@@ -1,0 +1,6 @@
+@startuml
+class MentalState_GiveUpExit {
+    + <<override>> SocialModeMax() : RandomSocialMode
+}
+MentalState <|-- MentalState_GiveUpExit
+@enduml

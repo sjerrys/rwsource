@@ -1,0 +1,5 @@
+@startuml
+class RecordsCardUtility <<static>> {
+    + {static} DrawRecordsCard(rect:Rect, pawn:Pawn) : void
+}
+@enduml

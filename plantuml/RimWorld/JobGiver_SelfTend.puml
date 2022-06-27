@@ -1,0 +1,5 @@
+@startuml
+class JobGiver_SelfTend {
+}
+ThinkNode_JobGiver <|-- JobGiver_SelfTend
+@enduml

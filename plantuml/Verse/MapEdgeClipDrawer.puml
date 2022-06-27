@@ -1,0 +1,6 @@
+@startuml
+class MapEdgeClipDrawer <<static>> {
+    + {static} DrawClippers(map:Map) : void
+}
+MapEdgeClipDrawer o-> "ClipMat" Material
+@enduml

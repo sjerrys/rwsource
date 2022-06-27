@@ -1,0 +1,6 @@
+@startuml
+class CompTargetable_SingleCorpse {
+    + <<override>> GetTargets(targetChosenByPlayer:Thing) : IEnumerable<Thing>
+}
+CompTargetable <|-- CompTargetable_SingleCorpse
+@enduml

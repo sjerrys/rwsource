@@ -1,0 +1,6 @@
+@startuml
+class ThoughtWorker_NoPersonalBedroom {
+    + <<override>> PostProcessDescription(p:Pawn, description:string) : string
+}
+ThoughtWorker <|-- ThoughtWorker_NoPersonalBedroom
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class DeepDrillInfestationIncidentUtility <<static>> {
+    + {static} GetUsableDeepDrills(map:Map, outDrills:List<Thing>) : void
+}
+@enduml

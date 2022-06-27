@@ -1,0 +1,7 @@
+@startuml
+class RecordsUtility <<static>> {
+    + {static} Notify_PawnKilled(killed:Pawn, killer:Pawn) : void
+    + {static} Notify_PawnDowned(downed:Pawn, instigator:Pawn) : void
+    + {static} Notify_BillDone(billDoer:Pawn, products:List<Thing>) : void
+}
+@enduml

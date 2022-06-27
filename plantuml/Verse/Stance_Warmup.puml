@@ -1,0 +1,11 @@
+@startuml
+class Stance_Warmup {
+    + Stance_Warmup()
+    + Stance_Warmup(ticks:int, focusTarg:LocalTargetInfo, verb:Verb)
+    + <<override>> ExposeData() : void
+    + <<override>> StanceDraw() : void
+    + <<override>> StanceTick() : void
+    + Interrupt() : void
+}
+Stance_Busy <|-- Stance_Warmup
+@enduml

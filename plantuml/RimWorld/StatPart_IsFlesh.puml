@@ -1,0 +1,7 @@
+@startuml
+class StatPart_IsFlesh {
+    + <<override>> TransformValue(req:StatRequest, val:float) : void
+    + <<override>> ExplanationPart(req:StatRequest) : string
+}
+StatPart <|-- StatPart_IsFlesh
+@enduml

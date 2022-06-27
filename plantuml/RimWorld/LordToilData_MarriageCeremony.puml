@@ -1,0 +1,8 @@
+@startuml
+class LordToilData_MarriageCeremony {
+    + <<override>> ExposeData() : void
+}
+LordToilData <|-- LordToilData_MarriageCeremony
+LordToilData_MarriageCeremony --> "spectateRect" CellRect
+LordToilData_MarriageCeremony o-> "spectateRectAllowedSides" SpectateRectSide
+@enduml

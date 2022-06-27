@@ -1,0 +1,16 @@
+@startuml
+class JobDriver_DoBill {
+    + workLeft : float
+    + billStartTick : int
+    + ticksSpentDoingRecipeWork : int
+    + <<override>> GetReport() : string
+    + <<override>> ExposeData() : void
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+}
+JobDriver <|-- JobDriver_DoBill
+JobDriver_DoBill o-> "GotoIngredientPathEndMode" PathEndMode
+JobDriver_DoBill o-> "BillGiverInd" TargetIndex
+JobDriver_DoBill o-> "IngredientInd" TargetIndex
+JobDriver_DoBill o-> "IngredientPlaceCellInd" TargetIndex
+JobDriver_DoBill --> "BillGiver" IBillGiver
+@enduml

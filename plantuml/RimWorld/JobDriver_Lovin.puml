@@ -1,0 +1,8 @@
+@startuml
+class JobDriver_Lovin {
+    + <<override>> ExposeData() : void
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+    + <<override>> CanBeginNowWhileLyingDown() : bool
+}
+JobDriver <|-- JobDriver_Lovin
+@enduml

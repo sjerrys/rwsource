@@ -1,0 +1,9 @@
+@startuml
+class JobUtility <<static>> {
+    + {static} TryStartErrorRecoverJob(pawn:Pawn, message:string, exception:Exception, concreteDriver:JobDriver) : void
+    + {static} GetResolvedJobReport(baseText:string, a:LocalTargetInfo) : string
+    + {static} GetResolvedJobReport(baseText:string, a:LocalTargetInfo, b:LocalTargetInfo) : string
+    + {static} GetResolvedJobReport(baseText:string, a:LocalTargetInfo, b:LocalTargetInfo, c:LocalTargetInfo) : string
+    + {static} GetResolvedJobReportRaw(baseText:string, aText:string, aObj:object, bText:string, bObj:object, cText:string, cObj:object) : string
+}
+@enduml

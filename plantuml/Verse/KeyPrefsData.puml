@@ -1,0 +1,15 @@
+@startuml
+class KeyPrefsData {
+    + ResetToDefaults() : void
+    + AddMissingDefaultBindings() : void
+    + SetBinding(keyDef:KeyBindingDef, slot:KeyPrefs.BindingSlot, keyCode:KeyCode) : bool
+    + GetBoundKeyCode(keyDef:KeyBindingDef, slot:KeyPrefs.BindingSlot) : KeyCode
+    + EraseConflictingBindingsForKeyCode(keyDef:KeyBindingDef, keyCode:KeyCode, callBackOnErase:Action<KeyBindingDef>) : void
+    + CheckConflictsFor(keyDef:KeyBindingDef, slot:KeyPrefs.BindingSlot) : void
+    + Clone() : KeyPrefsData
+    + ErrorCheck() : void
+}
+class "Dictionary`2"<T1,T2> {
+}
+KeyPrefsData o-> "keyPrefs<KeyBindingDef,KeyBindingData>" "Dictionary`2"
+@enduml

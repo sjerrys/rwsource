@@ -1,0 +1,5 @@
+@startuml
+class IncidentWorker_CrashedShipPart {
+}
+IncidentWorker <|-- IncidentWorker_CrashedShipPart
+@enduml

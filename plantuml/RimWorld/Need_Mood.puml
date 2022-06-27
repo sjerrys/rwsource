@@ -1,0 +1,15 @@
+@startuml
+class Need_Mood {
+    + <<override>> CurInstantLevel : float <<get>>
+    + MoodString : string <<get>>
+    + Need_Mood(pawn:Pawn)
+    + <<override>> ExposeData() : void
+    + <<override>> NeedInterval() : void
+    + <<override>> GetTipString() : string
+    + <<override>> DrawOnGUI(rect:Rect, maxThresholdMarkers:int, customMargin:float, drawArrows:bool, doTooltip:bool) : void
+}
+Need_Seeker <|-- Need_Mood
+Need_Mood --> "thoughts" ThoughtHandler
+Need_Mood --> "observer" PawnObserver
+Need_Mood --> "recentMemory" PawnRecentMemory
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class ThoughtWorker_BondedAnimalMaster {
+    + GetAnimals(p:Pawn, outAnimals:List<string>) : void
+    + GetAnimalsCount(p:Pawn) : int
+}
+ThoughtWorker <|-- ThoughtWorker_BondedAnimalMaster
+@enduml

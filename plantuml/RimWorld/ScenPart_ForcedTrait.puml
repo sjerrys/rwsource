@@ -1,0 +1,10 @@
+@startuml
+class ScenPart_ForcedTrait {
+    + <<override>> ExposeData() : void
+    + <<override>> DoEditInterface(listing:Listing_ScenEdit) : void
+    + <<override>> Summary(scen:Scenario) : string
+    + <<override>> Randomize() : void
+    + <<override>> CanCoexistWith(other:ScenPart) : bool
+}
+ScenPart_PawnModifier <|-- ScenPart_ForcedTrait
+@enduml

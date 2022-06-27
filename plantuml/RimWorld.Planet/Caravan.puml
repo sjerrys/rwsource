@@ -1,0 +1,97 @@
+@startuml
+class Caravan {
+    + autoJoinable : bool
+    + notifiedOutOfFood : bool
+    + Name : string <<get>> <<set>>
+    + IsPlayerControlled : bool <<get>>
+    + ImmobilizedByMass : bool <<get>>
+    + CantMove : bool <<get>>
+    + MassCapacity : float <<get>>
+    + MassCapacityExplanation : string <<get>>
+    + MassUsage : float <<get>>
+    + AllOwnersDowned : bool <<get>>
+    + AllOwnersHaveMentalBreak : bool <<get>>
+    + NightResting : bool <<get>>
+    + LeftRestTicks : int <<get>>
+    + LeftNonRestTicks : int <<get>>
+    + <<override>> Label : string <<get>>
+    + <<override>> HasName : bool <<get>>
+    + TicksPerMove : int <<get>>
+    + <<override>> AppendFactionToInspectString : bool <<get>>
+    + Visibility : float <<get>>
+    + VisibilityExplanation : string <<get>>
+    + TicksPerMoveExplanation : string <<get>>
+    + ConstantRandSeed : int <<get>>
+    + PlayerWealthForStoryteller : float <<get>>
+    + RandomPriceFactorSeed : int <<get>>
+    + TraderName : string <<get>>
+    + CanTradeNow : bool <<get>>
+    + TradePriceImprovementOffsetForPlayer : float <<get>>
+    + SetUniqueId(newId:int) : void
+    + ColonyThingsWillingToBuy(playerNegotiator:Pawn) : IEnumerable<Thing>
+    + GiveSoldThingToTrader(toGive:Thing, countToGive:int, playerNegotiator:Pawn) : void
+    + GiveSoldThingToPlayer(toGive:Thing, countToGive:int, playerNegotiator:Pawn) : void
+    + Caravan()
+    + <<override>> ExposeData() : void
+    + <<override>> PostAdd() : void
+    + <<override>> PostRemove() : void
+    + <<override>> Tick() : void
+    + <<override>> SpawnSetup() : void
+    + <<override>> DrawExtraSelectionOverlays() : void
+    + AddPawn(p:Pawn, addCarriedPawnToWorldPawnsIfAny:bool) : void
+    + AddPawnOrItem(thing:Thing, addCarriedPawnToWorldPawnsIfAny:bool) : void
+    + ContainsPawn(p:Pawn) : bool
+    + RemovePawn(p:Pawn) : void
+    + RemoveAllPawns() : void
+    + IsOwner(p:Pawn) : bool
+    + <<override>> GetInspectString() : string
+    + <<override>> GetGizmos() : IEnumerable<Gizmo>
+    + <<override>> GetTransportPodsFloatMenuOptions(pods:IEnumerable<IThingHolder>, representative:CompLaunchable) : IEnumerable<FloatMenuOption>
+    + RecacheImmobilizedNow() : void
+    + RecacheDaysWorthOfFood() : void
+    + <<virtual>> Notify_MemberDied(member:Pawn) : void
+    + <<virtual>> Notify_Merged(group:List<Caravan>) : void
+    + <<virtual>> Notify_StartedTrading() : void
+    + Notify_PawnRemoved(p:Pawn) : void
+    + Notify_PawnAdded(p:Pawn) : void
+    + Notify_DestinationOrPauseStatusChanged() : void
+    + Notify_Teleported() : void
+    + GetDirectlyHeldThings() : ThingOwner
+    + GetChildHolders(outChildren:List<IThingHolder>) : void
+}
+class "ThingOwner`1"<T> {
+}
+class "List`1"<T> {
+}
+class "Pair`2"<T1,T2> {
+}
+class "IEnumerable`1"<T> {
+}
+WorldObject <|-- Caravan
+IThingHolder <|-- Caravan
+IIncidentTarget <|-- Caravan
+ILoadReferenceable <|-- Caravan
+ITrader <|-- Caravan
+Caravan --> "pawns<Pawn>" "ThingOwner`1"
+Caravan --> "pather" Caravan_PathFollower
+Caravan --> "gotoMote" Caravan_GotoMoteRenderer
+Caravan --> "tweener" Caravan_Tweener
+Caravan --> "trader" Caravan_TraderTracker
+Caravan --> "forage" Caravan_ForageTracker
+Caravan --> "needs" Caravan_NeedsTracker
+Caravan --> "carryTracker" Caravan_CarryTracker
+Caravan --> "beds" Caravan_BedsTracker
+Caravan --> "storyState" StoryState
+Caravan --> "PawnsListForReading<Pawn>" "List`1"
+Caravan --> "Material" Material
+Caravan --> "DrawPos" Vector3
+Caravan --> "DaysWorthOfFood<float,float>" "Pair`2"
+Caravan --> "AllThings<Thing>" "IEnumerable`1"
+Caravan --> "StoryState" StoryState
+Caravan --> "GameConditionManager" GameConditionManager
+Caravan --> "PlayerPawnsForStoryteller<Pawn>" "IEnumerable`1"
+Caravan --> "IncidentPointsRandomFactorRange" FloatRange
+Caravan --> "TraderKind" TraderKindDef
+Caravan --> "Goods<Thing>" "IEnumerable`1"
+Caravan --> "TradeCurrency" TradeCurrency
+@enduml

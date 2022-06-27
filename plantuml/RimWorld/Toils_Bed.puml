@@ -1,0 +1,8 @@
+@startuml
+class Toils_Bed <<static>> {
+    + {static} GotoBed(bedIndex:TargetIndex) : Toil
+    + {static} ClaimBedIfNonMedical(ind:TargetIndex, claimantIndex:TargetIndex) : Toil
+    + {static} FailOnNonMedicalBedNotOwned(f:T, bedIndex:TargetIndex, claimantIndex:TargetIndex) : T
+    + {static} FailOnBedNoLongerUsable(toil:Toil, bedIndex:TargetIndex) : void
+}
+@enduml

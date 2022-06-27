@@ -1,0 +1,38 @@
+@startuml
+class Rot4 <<struct>> {
+    + IsValid : bool <<get>>
+    + AsByte : byte <<get>> <<set>>
+    + AsInt : int <<get>> <<set>>
+    + AsAngle : float <<get>>
+    + IsHorizontal : bool <<get>>
+    + Rot4(newRot:byte)
+    + Rot4(newRot:int)
+    + Rotate(RotDir:RotationDirection) : void
+    + Rotated(RotDir:RotationDirection) : Rot4
+    + {static} FromAngleFlat(angle:float) : Rot4
+    + {static} FromIntVec3(offset:IntVec3) : Rot4
+    + {static} FromIntVec2(offset:IntVec2) : Rot4
+    + <<override>> GetHashCode() : int
+    + <<override>> ToString() : string
+    + ToStringHuman() : string
+    + ToStringWord() : string
+    + {static} FromString(str:string) : Rot4
+    + <<override>> Equals(obj:object) : bool
+    + Equals(other:Rot4) : bool
+}
+class "IEquatable`1"<T> {
+}
+"IEquatable`1" "<Rot4>" <|-- Rot4
+Rot4 --> "AsSpectateSide" SpectateRectSide
+Rot4 --> "AsQuat" Quaternion
+Rot4 --> "AsVector2" Vector2
+Rot4 --> "North" Rot4
+Rot4 --> "East" Rot4
+Rot4 --> "South" Rot4
+Rot4 --> "West" Rot4
+Rot4 --> "Random" Rot4
+Rot4 --> "Invalid" Rot4
+Rot4 --> "FacingCell" IntVec3
+Rot4 --> "RighthandCell" IntVec3
+Rot4 --> "Opposite" Rot4
+@enduml

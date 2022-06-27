@@ -1,0 +1,12 @@
+@startuml
+class CaravanUtility <<static>> {
+    + {static} IsOwner(pawn:Pawn, caravanFaction:Faction) : bool
+    + {static} GetCaravan(pawn:Pawn) : Caravan
+    + {static} IsCaravanMember(pawn:Pawn) : bool
+    + {static} IsPlayerControlledCaravanMember(pawn:Pawn) : bool
+    + {static} BestGotoDestNear(tile:int, c:Caravan) : int
+    + {static} PlayerHasAnyCaravan() : bool
+    + {static} RandomOwner(caravan:Caravan) : Pawn
+    + {static} ShouldAutoCapture(p:Pawn, caravanFaction:Faction) : bool
+}
+@enduml

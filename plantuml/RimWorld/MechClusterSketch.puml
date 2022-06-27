@@ -1,0 +1,21 @@
+@startuml
+class MechClusterSketch {
+    + startDormant : bool
+    + MechClusterSketch()
+    + MechClusterSketch(buildingsSketch:Sketch, pawns:List<Mech>, startDormant:bool)
+    + ExposeData() : void
+}
+class Mech <<struct>> {
+    + Mech(kindDef:PawnKindDef)
+    + ExposeData() : void
+}
+class "List`1"<T> {
+}
+IExposable <|-- MechClusterSketch
+MechClusterSketch --> "buildingsSketch" Sketch
+MechClusterSketch --> "pawns<Mech>" "List`1"
+MechClusterSketch +-- Mech
+IExposable <|-- Mech
+Mech --> "kindDef" PawnKindDef
+Mech --> "position" IntVec3
+@enduml

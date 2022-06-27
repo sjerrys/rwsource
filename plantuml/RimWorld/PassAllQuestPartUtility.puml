@@ -1,0 +1,5 @@
+@startuml
+class PassAllQuestPartUtility <<static>> {
+    + {static} AllReceived(inSignals:List<string>, signalsReceived:List<bool>) : bool
+}
+@enduml

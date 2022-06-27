@@ -1,0 +1,17 @@
+@startuml
+class WildPlantSpawner {
+    + CurrentPlantDensity : float <<get>>
+    + CurrentWholeMapNumDesiredPlants : float <<get>>
+    + CurrentWholeMapNumNonZeroFertilityCells : int <<get>>
+    + CavePlantsCommonalitiesSum : float <<get>>
+    + WildPlantSpawner(map:Map)
+    + {static} ResetStaticData() : void
+    + ExposeData() : void
+    + WildPlantSpawnerTick() : void
+    + CheckSpawnWildPlantAt(c:IntVec3, plantDensity:float, wholeMapNumDesiredPlants:float, setRandomGrowth:bool) : bool
+    + GetBaseDesiredPlantsCountAt(c:IntVec3) : float
+    + GetDesiredPlantsCountAt(c:IntVec3, forCell:IntVec3, plantDensity:float) : float
+    + GetDesiredPlantsCountIn(reg:Region, forCell:IntVec3, plantDensity:float) : float
+}
+IExposable <|-- WildPlantSpawner
+@enduml

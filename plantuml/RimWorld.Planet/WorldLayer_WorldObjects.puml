@@ -1,0 +1,6 @@
+@startuml
+abstract class WorldLayer_WorldObjects {
+    + <<override>> Regenerate() : IEnumerable
+}
+WorldLayer <|-- WorldLayer_WorldObjects
+@enduml

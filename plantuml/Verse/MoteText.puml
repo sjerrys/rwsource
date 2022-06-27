@@ -1,0 +1,10 @@
+@startuml
+class MoteText {
+    + text : string
+    + overrideTimeBeforeStartFadeout : float
+    + <<override>> Draw() : void
+    + <<override>> DrawGUIOverlay() : void
+}
+MoteThrown <|-- MoteText
+MoteText o-> "textColor" Color
+@enduml

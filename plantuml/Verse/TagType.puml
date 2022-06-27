@@ -1,0 +1,11 @@
+@startuml
+enum TagType {
+    Undefined,
+    Name,
+    Faction,
+    Settlement,
+    DateTime,
+    ColonistCount,
+    Threat,
+}
+@enduml

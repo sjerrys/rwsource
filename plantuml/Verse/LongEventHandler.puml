@@ -1,0 +1,34 @@
+@startuml
+class LongEventHandler <<static>> {
+    + {static} ShouldWaitForEvent : bool <<get>>
+    + {static} AnyEventNowOrWaiting : bool <<get>>
+    + {static} AnyEventWhichDoesntUseStandardWindowNowOrWaiting : bool <<get>>
+    + {static} ForcePause : bool <<get>>
+    + {static} QueueLongEvent(action:Action, textKey:string, doAsynchronously:bool, exceptionHandler:Action<Exception>, showExtraUIInfo:bool) : void
+    + {static} QueueLongEvent(action:IEnumerable, textKey:string, exceptionHandler:Action<Exception>, showExtraUIInfo:bool) : void
+    + {static} QueueLongEvent(preLoadLevelAction:Action, levelToLoad:string, textKey:string, doAsynchronously:bool, exceptionHandler:Action<Exception>, showExtraUIInfo:bool) : void
+    + {static} ClearQueuedEvents() : void
+    + {static} LongEventsOnGUI() : void
+    + {static} LongEventsUpdate(sceneChanged:bool) : void
+    + {static} ExecuteWhenFinished(action:Action) : void
+    + {static} SetCurrentEventText(newText:string) : void
+}
+class QueuedLongEvent {
+    + levelToLoad : string
+    + eventTextKey : string = ""
+    + eventText : string = ""
+    + doAsynchronously : bool
+    + alreadyDisplayed : bool
+    + canEverUseStandardWindow : bool = true
+    + showExtraUIInfo : bool = true
+    + UseAnimatedDots : bool <<get>>
+    + ShouldWaitUntilDisplayed : bool <<get>>
+    + UseStandardWindow : bool <<get>>
+}
+class "Action`1"<T> {
+}
+LongEventHandler +-- QueuedLongEvent
+QueuedLongEvent --> "eventAction" Action
+QueuedLongEvent --> "eventActionEnumerator" IEnumerator
+QueuedLongEvent --> "exceptionHandler<Exception>" "Action`1"
+@enduml

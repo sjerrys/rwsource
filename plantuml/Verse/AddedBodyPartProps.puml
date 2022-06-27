@@ -1,0 +1,8 @@
+@startuml
+class AddedBodyPartProps {
+    + partEfficiency : float = 1f
+    + solid : bool = true
+    + isGoodWeapon : bool
+    + betterThanNatural : bool
+}
+@enduml

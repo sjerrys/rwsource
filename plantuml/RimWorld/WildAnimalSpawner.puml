@@ -1,0 +1,9 @@
+@startuml
+class WildAnimalSpawner {
+    + AnimalEcosystemFull : bool <<get>>
+    + WildAnimalSpawner(map:Map)
+    + WildAnimalSpawnerTick() : void
+    + SpawnRandomWildAnimalAt(loc:IntVec3) : bool
+    + DebugString() : string
+}
+@enduml

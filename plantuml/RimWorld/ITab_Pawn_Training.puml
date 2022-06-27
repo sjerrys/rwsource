@@ -1,0 +1,7 @@
+@startuml
+class ITab_Pawn_Training {
+    + <<override>> IsVisible : bool <<get>>
+    + ITab_Pawn_Training()
+}
+ITab <|-- ITab_Pawn_Training
+@enduml

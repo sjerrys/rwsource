@@ -1,0 +1,20 @@
+@startuml
+class QuestPart_ShuttleDelay {
+    + alert : bool
+    + <<override>> AlertCritical : bool <<get>>
+    + <<override>> AlertLabel : string <<get>>
+    + <<override>> AlertExplanation : string <<get>>
+    + <<override>> ExtraInspectString(target:ISelectable) : string
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+    + <<override>> ReplacePawnReferences(replace:Pawn, with:Pawn) : void
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart_Delay <|-- QuestPart_ShuttleDelay
+QuestPart_ShuttleDelay o-> "lodgers<Pawn>" "List`1"
+QuestPart_ShuttleDelay --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+QuestPart_ShuttleDelay --> "AlertReport" AlertReport
+@enduml

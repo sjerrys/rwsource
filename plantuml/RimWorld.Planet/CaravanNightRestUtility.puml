@@ -1,0 +1,12 @@
+@startuml
+class CaravanNightRestUtility <<static>> {
+    + <<const>> WakeUpHour : float = 6f
+    + <<const>> RestStartHour : float = 22f
+    + {static} RestingNowAt(tile:int) : bool
+    + {static} WouldBeRestingAt(tile:int, ticksAbs:long) : bool
+    + {static} LeftRestTicksAt(tile:int) : int
+    + {static} LeftRestTicksAt(tile:int, ticksAbs:long) : int
+    + {static} LeftNonRestTicksAt(tile:int) : int
+    + {static} LeftNonRestTicksAt(tile:int, ticksAbs:long) : int
+}
+@enduml

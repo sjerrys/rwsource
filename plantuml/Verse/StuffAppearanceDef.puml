@@ -1,0 +1,6 @@
+@startuml
+class StuffAppearanceDef {
+    + pathPrefix : string
+}
+Def <|-- StuffAppearanceDef
+@enduml

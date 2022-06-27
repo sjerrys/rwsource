@@ -1,0 +1,9 @@
+@startuml
+class RegionTypeUtility <<static>> {
+    + {static} IsOneCellRegion(regionType:RegionType) : bool
+    + {static} AllowsMultipleRegionsPerRoom(regionType:RegionType) : bool
+    + {static} GetExpectedRegionType(c:IntVec3, map:Map) : RegionType
+    + {static} GetRegionType(c:IntVec3, map:Map) : RegionType
+    + {static} Passable(regionType:RegionType) : bool
+}
+@enduml

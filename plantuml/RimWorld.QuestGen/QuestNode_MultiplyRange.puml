@@ -1,0 +1,10 @@
+@startuml
+class QuestNode_MultiplyRange {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_MultiplyRange
+QuestNode_MultiplyRange --> "range<FloatRange>" "SlateRef`1"
+QuestNode_MultiplyRange --> "value<float>" "SlateRef`1"
+QuestNode_MultiplyRange --> "storeAs<string>" "SlateRef`1"
+@enduml

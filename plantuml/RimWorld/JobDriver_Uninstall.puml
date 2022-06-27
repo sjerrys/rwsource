@@ -1,0 +1,5 @@
+@startuml
+class JobDriver_Uninstall {
+}
+JobDriver_RemoveBuilding <|-- JobDriver_Uninstall
+@enduml

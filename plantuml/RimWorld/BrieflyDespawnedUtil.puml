@@ -1,0 +1,5 @@
+@startuml
+class BrieflyDespawnedUtil <<static>> {
+    + {static} BrieflyDespawned(pawn:Pawn) : bool
+}
+@enduml

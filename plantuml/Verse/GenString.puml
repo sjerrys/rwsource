@@ -1,0 +1,7 @@
+@startuml
+class GenString <<static>> {
+    {static} GenString()
+    + {static} ToStringCached(num:int) : string
+    + {static} SplitBy(str:string, chunkLength:int) : IEnumerable<string>
+}
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class DamageWatcher {
+    + DamageTakenEver : float <<get>>
+    + Notify_DamageTaken(damagee:Thing, amount:float) : void
+    + ExposeData() : void
+}
+IExposable <|-- DamageWatcher
+@enduml

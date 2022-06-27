@@ -1,0 +1,7 @@
+@startuml
+class SoundParamTarget_Pitch {
+    + <<override>> Label : string <<get>>
+    + <<override>> SetOn(sample:Sample, value:float) : void
+}
+SoundParamTarget <|-- SoundParamTarget_Pitch
+@enduml

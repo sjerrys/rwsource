@@ -1,0 +1,21 @@
+@startuml
+class RegionTraverser <<static>> {
+    + {static} NumWorkers : int
+    + {static} FloodAndSetRooms(root:Region, map:Map, existingRoom:Room) : Room
+    + {static} FloodAndSetNewRegionIndex(root:Region, newRegionGroupIndex:int) : void
+    + {static} WithinRegions(A:IntVec3, B:IntVec3, map:Map, regionLookCount:int, traverseParams:TraverseParms, traversableRegionTypes:RegionType) : bool
+    + {static} MarkRegionsBFS(root:Region, entryCondition:RegionEntryPredicate, maxRegions:int, inRadiusMark:int, traversableRegionTypes:RegionType) : void
+    + {static} ShouldCountRegion(r:Region) : bool
+    {static} RegionTraverser()
+    + {static} RecreateWorkers() : void
+    + {static} BreadthFirstTraverse(start:IntVec3, map:Map, entryCondition:RegionEntryPredicate, regionProcessor:RegionProcessor, maxRegions:int, traversableRegionTypes:RegionType) : void
+    + {static} BreadthFirstTraverse(root:Region, entryCondition:RegionEntryPredicate, regionProcessor:RegionProcessor, maxRegions:int, traversableRegionTypes:RegionType) : void
+}
+class BFSWorker {
+    + BFSWorker(closedArrayPos:int)
+    + Clear() : void
+    + BreadthFirstTraverseWork(root:Region, entryCondition:RegionEntryPredicate, regionProcessor:RegionProcessor, maxRegions:int, traversableRegionTypes:RegionType) : void
+}
+RegionTraverser --> "PassAll" RegionEntryPredicate
+RegionTraverser +-- BFSWorker
+@enduml

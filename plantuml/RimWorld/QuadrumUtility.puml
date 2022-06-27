@@ -1,0 +1,12 @@
+@startuml
+class QuadrumUtility <<static>> {
+    + {static} GetFirstTwelfth(quadrum:Quadrum) : Twelfth
+    + {static} GetMiddleTwelfth(quadrum:Quadrum) : Twelfth
+    + {static} GetMiddleYearPct(quadrum:Quadrum) : float
+    + {static} Label(quadrum:Quadrum) : string
+    + {static} LabelShort(quadrum:Quadrum) : string
+    + {static} GetSeason(q:Quadrum, latitude:float) : Season
+    + {static} QuadrumsRangeLabel(twelfths:List<Twelfth>) : string
+}
+QuadrumUtility --> "FirstQuadrum" Quadrum
+@enduml

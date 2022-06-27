@@ -1,0 +1,7 @@
+@startuml
+class RoyalImplantRule {
+    + maxLevel : int
+}
+RoyalImplantRule --> "implantHediff" HediffDef
+RoyalImplantRule --> "minTitle" RoyalTitleDef
+@enduml

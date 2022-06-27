@@ -1,0 +1,7 @@
+@startuml
+class WorkGiver_HaulCorpses {
+    + <<override>> JobOnThing(pawn:Pawn, t:Thing, forced:bool) : Job
+    + <<override>> PostProcessedGerund(job:Job) : string
+}
+WorkGiver_Haul <|-- WorkGiver_HaulCorpses
+@enduml

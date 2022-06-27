@@ -1,0 +1,14 @@
+@startuml
+class QuestPart_RequirementsToAcceptThroneRoom {
+    + <<override>> CanAccept() : AcceptanceReport
+    + <<override>> ExposeData() : void
+    + <<override>> ReplacePawnReferences(replace:Pawn, with:Pawn) : void
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart_RequirementsToAccept <|-- QuestPart_RequirementsToAcceptThroneRoom
+QuestPart_RequirementsToAcceptThroneRoom --> "forTitle" RoyalTitleDef
+QuestPart_RequirementsToAcceptThroneRoom --> "faction" Faction
+QuestPart_RequirementsToAcceptThroneRoom --> "forPawn" Pawn
+QuestPart_RequirementsToAcceptThroneRoom --> "Hyperlinks<Dialog_InfoCard.Hyperlink>" "IEnumerable`1"
+@enduml

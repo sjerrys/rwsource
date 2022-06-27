@@ -1,0 +1,16 @@
+@startuml
+class PawnCapacityDefOf <<static>> {
+    {static} PawnCapacityDefOf()
+}
+PawnCapacityDefOf --> "Consciousness" PawnCapacityDef
+PawnCapacityDefOf --> "Sight" PawnCapacityDef
+PawnCapacityDefOf --> "Hearing" PawnCapacityDef
+PawnCapacityDefOf --> "Moving" PawnCapacityDef
+PawnCapacityDefOf --> "Manipulation" PawnCapacityDef
+PawnCapacityDefOf --> "Talking" PawnCapacityDef
+PawnCapacityDefOf --> "Eating" PawnCapacityDef
+PawnCapacityDefOf --> "Breathing" PawnCapacityDef
+PawnCapacityDefOf --> "BloodFiltration" PawnCapacityDef
+PawnCapacityDefOf --> "BloodPumping" PawnCapacityDef
+PawnCapacityDefOf --> "Metabolism" PawnCapacityDef
+@enduml

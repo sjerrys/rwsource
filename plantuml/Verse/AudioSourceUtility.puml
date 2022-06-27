@@ -1,0 +1,6 @@
+@startuml
+class AudioSourceUtility <<static>> {
+    + {static} GetSanitizedVolume(volume:float, debugInfo:object) : float
+    + {static} GetSanitizedPitch(pitch:float, debugInfo:object) : float
+}
+@enduml

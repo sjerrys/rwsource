@@ -1,0 +1,7 @@
+@startuml
+class StorytellerDefOf <<static>> {
+    {static} StorytellerDefOf()
+}
+StorytellerDefOf --> "Cassandra" StorytellerDef
+StorytellerDefOf --> "Tutor" StorytellerDef
+@enduml

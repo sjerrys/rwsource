@@ -1,0 +1,11 @@
+@startuml
+class DebugActionAttribute {
+    + name : string
+    + category : string = "General"
+    + IsAllowedInCurrentGameState : bool <<get>>
+    + DebugActionAttribute(category:string, name:string)
+}
+Attribute <|-- DebugActionAttribute
+DebugActionAttribute o-> "allowedGameStates" AllowedGameStates
+DebugActionAttribute --> "actionType" DebugActionType
+@enduml

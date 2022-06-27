@@ -1,0 +1,6 @@
+@startuml
+class HistoryAutoRecorderWorker_WealthTotal {
+    + <<override>> PullRecord() : float
+}
+HistoryAutoRecorderWorker <|-- HistoryAutoRecorderWorker_WealthTotal
+@enduml

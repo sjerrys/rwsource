@@ -1,0 +1,5 @@
+@startuml
+class IncidentCycleUtility {
+    + {static} IncidentCountThisInterval(target:IIncidentTarget, randSeedSalt:int, minDaysPassed:float, onDays:float, offDays:float, minSpacingDays:float, minIncidents:float, maxIncidents:float, acceptFraction:float) : int
+}
+@enduml

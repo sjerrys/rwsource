@@ -1,0 +1,7 @@
+@startuml
+class SmokepopBelt {
+    + <<override>> Notify_BulletImpactNearby(impactData:BulletImpactData) : void
+    + <<override>> GetSpecialApparelScoreOffset() : float
+}
+Apparel <|-- SmokepopBelt
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class GameInfo <<sealed>> {
+    + permadeathMode : bool
+    + permadeathModeUniqueName : string
+    + RealPlayTimeInteracting : float <<get>>
+    + GameInfoOnGUI() : void
+    + GameInfoUpdate() : void
+    + ExposeData() : void
+}
+IExposable <|-- GameInfo
+@enduml

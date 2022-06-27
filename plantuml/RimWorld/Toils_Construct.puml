@@ -1,0 +1,6 @@
+@startuml
+class Toils_Construct <<static>> {
+    + {static} MakeSolidThingFromBlueprintIfNecessary(blueTarget:TargetIndex, targetToUpdate:TargetIndex) : Toil
+    + {static} UninstallIfMinifiable(thingInd:TargetIndex) : Toil
+}
+@enduml

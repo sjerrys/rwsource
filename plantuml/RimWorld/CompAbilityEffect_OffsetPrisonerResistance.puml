@@ -1,0 +1,9 @@
+@startuml
+class CompAbilityEffect_OffsetPrisonerResistance {
+    + <<override>> Apply(target:LocalTargetInfo, dest:LocalTargetInfo) : void
+    + <<override>> CanApplyOn(target:LocalTargetInfo, dest:LocalTargetInfo) : bool
+    + <<override>> Valid(target:LocalTargetInfo, throwMessages:bool) : bool
+}
+CompAbilityEffect <|-- CompAbilityEffect_OffsetPrisonerResistance
+CompAbilityEffect_OffsetPrisonerResistance --> "Props" CompProperties_AbilityOffsetPrisonerResistance
+@enduml

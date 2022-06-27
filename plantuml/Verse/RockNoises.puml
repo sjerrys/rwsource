@@ -1,0 +1,14 @@
+@startuml
+class RockNoises <<static>> {
+    + {static} Init(map:Map) : void
+    + {static} Reset() : void
+}
+class RockNoise {
+}
+class "List`1"<T> {
+}
+RockNoises --> "rockNoises<RockNoise>" "List`1"
+RockNoises +-- RockNoise
+RockNoise --> "rockDef" ThingDef
+RockNoise --> "noise" ModuleBase
+@enduml

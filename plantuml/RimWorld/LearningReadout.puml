@@ -1,0 +1,16 @@
+@startuml
+class LearningReadout {
+    + ActiveConceptsCount : int <<get>>
+    + ShowAllMode : bool <<get>>
+    + LearningReadout()
+    + ExposeData() : void
+    + TryActivateConcept(conc:ConceptDef) : bool
+    + IsActive(conc:ConceptDef) : bool
+    + LearningReadoutUpdate() : void
+    + Notify_ConceptNewlyLearned(conc:ConceptDef) : void
+    + LearningReadoutOnGUI() : void
+}
+IExposable <|-- LearningReadout
+LearningReadout o-> "ProgressBarFillTex" Texture2D
+LearningReadout o-> "ProgressBarBGTex" Texture2D
+@enduml

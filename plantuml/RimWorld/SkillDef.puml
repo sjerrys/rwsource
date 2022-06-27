@@ -1,0 +1,13 @@
+@startuml
+class SkillDef {
+    + skillLabel : string
+    + usuallyDefinedInBackstories : bool = true
+    + pawnCreatorSummaryVisible : bool
+    + listOrder : float
+    + neverDisabledBasedOnWorkTypes : bool
+    + <<override>> PostLoad() : void
+    + IsDisabled(combinedDisabledWorkTags:WorkTags, disabledWorkTypes:IEnumerable<WorkTypeDef>) : bool
+}
+Def <|-- SkillDef
+SkillDef --> "disablingWorkTags" WorkTags
+@enduml

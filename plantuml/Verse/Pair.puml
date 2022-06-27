@@ -1,0 +1,14 @@
+@startuml
+class "Pair`2"<T1,T2> <<struct>> {
+    + First : T1 <<get>>
+    + Second : T2 <<get>>
+    + Pair(first:T1, second:T2)
+    + <<override>> ToString() : string
+    + <<override>> GetHashCode() : int
+    + <<override>> Equals(other:object) : bool
+    + Equals(other:Pair<T1, T2>) : bool
+}
+class "IEquatable`1"<T> {
+}
+"IEquatable`1" "<Pair<T1, T2>>" <|-- "Pair`2"
+@enduml

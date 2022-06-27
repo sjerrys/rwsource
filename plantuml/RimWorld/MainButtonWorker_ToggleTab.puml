@@ -1,0 +1,6 @@
+@startuml
+class MainButtonWorker_ToggleTab {
+    + <<override>> Activate() : void
+}
+MainButtonWorker <|-- MainButtonWorker_ToggleTab
+@enduml

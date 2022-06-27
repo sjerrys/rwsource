@@ -1,0 +1,7 @@
+@startuml
+class MTBByBiome {
+    + mtbDays : float
+    + LoadDataFromXmlCustom(xmlRoot:XmlNode) : void
+}
+MTBByBiome --> "biome" BiomeDef
+@enduml

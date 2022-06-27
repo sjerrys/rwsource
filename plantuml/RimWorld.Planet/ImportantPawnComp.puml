@@ -1,0 +1,15 @@
+@startuml
+abstract class ImportantPawnComp {
+    + ImportantPawnComp()
+    + <<override>> PostExposeData() : void
+    + GetChildHolders(outChildren:List<IThingHolder>) : void
+    + GetDirectlyHeldThings() : ThingOwner
+    + <<override>> CompTick() : void
+    + <<override>> PostDestroy() : void
+}
+class "ThingOwner`1"<T> {
+}
+WorldObjectComp <|-- ImportantPawnComp
+IThingHolder <|-- ImportantPawnComp
+ImportantPawnComp --> "pawn<Pawn>" "ThingOwner`1"
+@enduml

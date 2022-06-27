@@ -1,0 +1,8 @@
+@startuml
+class PeaceTalks {
+    + Notify_CaravanArrived(caravan:Caravan) : void
+    + <<override>> GetFloatMenuOptions(caravan:Caravan) : IEnumerable<FloatMenuOption>
+}
+WorldObject <|-- PeaceTalks
+PeaceTalks --> "Material" Material
+@enduml

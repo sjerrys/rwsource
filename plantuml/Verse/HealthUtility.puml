@@ -1,0 +1,26 @@
+@startuml
+class HealthUtility <<static>> {
+    + {static} GetGeneralConditionLabel(pawn:Pawn, shortVersion:bool) : string
+    + {static} GetPartConditionLabel(pawn:Pawn, part:BodyPartRecord) : Pair<string, Color>
+    + {static} GetGeneralDestroyedPartLabel(part:BodyPartRecord, fresh:bool, solid:bool) : string
+    + {static} GiveInjuriesOperationFailureMinor(p:Pawn, part:BodyPartRecord) : void
+    + {static} GiveInjuriesOperationFailureCatastrophic(p:Pawn, part:BodyPartRecord) : void
+    + {static} GiveInjuriesOperationFailureRidiculous(p:Pawn) : void
+    + {static} HealNonPermanentInjuriesAndRestoreLegs(p:Pawn) : void
+    + {static} DamageUntilDowned(p:Pawn, allowBleedingWounds:bool) : void
+    + {static} DamageUntilDead(p:Pawn) : void
+    + {static} DamageLegsUntilIncapableOfMoving(p:Pawn, allowBleedingWounds:bool) : void
+    + {static} RandomViolenceDamageType() : DamageDef
+    + {static} GetHediffDefFromDamage(dam:DamageDef, pawn:Pawn, part:BodyPartRecord) : HediffDef
+    + {static} TryAnesthetize(pawn:Pawn) : bool
+    + {static} AdjustSeverity(pawn:Pawn, hdDef:HediffDef, sevOffset:float) : void
+    + {static} PartRemovalIntent(pawn:Pawn, part:BodyPartRecord) : BodyPartRemovalIntent
+    + {static} TicksUntilDeathDueToBloodLoss(pawn:Pawn) : int
+    + {static} CureHediff(hediff:Hediff) : void
+}
+HealthUtility o-> "GoodConditionColor" Color
+HealthUtility o-> "RedColor" Color
+HealthUtility o-> "DarkRedColor" Color
+HealthUtility o-> "ImpairedColor" Color
+HealthUtility o-> "SlightlyImpairedColor" Color
+@enduml

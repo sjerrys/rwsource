@@ -1,0 +1,11 @@
+@startuml
+class DesignatorManager {
+    + Select(des:Designator) : void
+    + Deselect() : void
+    + ProcessInputEvents() : void
+    + DesignationManagerOnGUI() : void
+    + DesignatorManagerUpdate() : void
+}
+DesignatorManager --> "SelectedDesignator" Designator
+DesignatorManager --> "Dragger" DesignationDragger
+@enduml

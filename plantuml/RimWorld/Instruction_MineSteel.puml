@@ -1,0 +1,11 @@
+@startuml
+class Instruction_MineSteel {
+    + <<override>> ExposeData() : void
+    + <<override>> OnActivated() : void
+    + <<override>> LessonOnGUI() : void
+    + <<override>> LessonUpdate() : void
+    + <<override>> AllowAction(ep:EventPack) : AcceptanceReport
+    + <<override>> Notify_Event(ep:EventPack) : void
+}
+Lesson_Instruction <|-- Instruction_MineSteel
+@enduml

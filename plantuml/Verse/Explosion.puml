@@ -1,0 +1,31 @@
+@startuml
+class Explosion {
+    + radius : float
+    + damAmount : int
+    + armorPenetration : float
+    + applyDamageToExplosionCellsNeighbors : bool
+    + preExplosionSpawnChance : float
+    + preExplosionSpawnThingCount : int = 1
+    + postExplosionSpawnChance : float
+    + postExplosionSpawnThingCount : int = 1
+    + chanceToStartFire : float
+    + damageFalloff : bool
+    + needLOSToCell1 : IntVec3?
+    + needLOSToCell2 : IntVec3?
+    + <<override>> SpawnSetup(map:Map, respawningAfterLoad:bool) : void
+    + <<override>> DeSpawn(mode:DestroyMode) : void
+    + <<virtual>> StartExplosion(explosionSound:SoundDef, ignoredThings:List<Thing>) : void
+    + <<override>> Tick() : void
+    + GetDamageAmountAt(c:IntVec3) : int
+    + GetArmorPenetrationAt(c:IntVec3) : float
+    + <<override>> ExposeData() : void
+}
+Thing <|-- Explosion
+Explosion --> "damType" DamageDef
+Explosion --> "instigator" Thing
+Explosion --> "weapon" ThingDef
+Explosion --> "projectile" ThingDef
+Explosion --> "intendedTarget" Thing
+Explosion --> "preExplosionSpawnThingDef" ThingDef
+Explosion --> "postExplosionSpawnThingDef" ThingDef
+@enduml

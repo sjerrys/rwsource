@@ -1,0 +1,6 @@
+@startuml
+class WorldCameraConfig_CarWithContinuousZoom {
+    + WorldCameraConfig_CarWithContinuousZoom()
+}
+WorldCameraConfig_Car <|-- WorldCameraConfig_CarWithContinuousZoom
+@enduml

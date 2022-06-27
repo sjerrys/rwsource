@@ -1,0 +1,27 @@
+@startuml
+class DirectXmlToObject <<static>> {
+    + <<const>> DictionaryKeyName : string = "key"
+    + <<const>> DictionaryValueName : string = "value"
+    + <<const>> LoadDataFromXmlCustomMethodName : string = "LoadDataFromXmlCustom"
+    + <<const>> PostLoadMethodName : string = "PostLoad"
+    + <<const>> ObjectFromXmlMethodName : string = "ObjectFromXmlReflection"
+    + <<const>> ListFromXmlMethodName : string = "ListFromXmlReflection"
+    + <<const>> DictionaryFromXmlMethodName : string = "DictionaryFromXmlReflection"
+    + {static} GetObjectFromXmlMethod(type:Type) : Func<XmlNode, bool, object>
+    + {static} ObjectFromXml(xmlRoot:XmlNode, doPostLoad:bool) : T
+    + {static} InnerTextWithReplacedNewlinesOrXML(xmlNode:XmlNode) : string
+}
+class FieldAliasCache <<struct>> {
+    + fieldName : string
+    + FieldAliasCache(type:Type, fieldName:string)
+    + Equals(other:FieldAliasCache) : bool
+}
+class "Stack`1"<T> {
+}
+class "IEquatable`1"<T> {
+}
+DirectXmlToObject o-> "currentlyInstantiatingObjectOfType<Type>" "Stack`1"
+DirectXmlToObject +-- FieldAliasCache
+"IEquatable`1" "<FieldAliasCache>" <|-- FieldAliasCache
+FieldAliasCache --> "type" Type
+@enduml

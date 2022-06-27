@@ -1,0 +1,9 @@
+@startuml
+class CompProperties_AffectedByFacilities {
+    + CompProperties_AffectedByFacilities()
+}
+class "List`1"<T> {
+}
+CompProperties <|-- CompProperties_AffectedByFacilities
+CompProperties_AffectedByFacilities --> "linkableFacilities<ThingDef>" "List`1"
+@enduml

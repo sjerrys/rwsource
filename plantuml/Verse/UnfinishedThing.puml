@@ -1,0 +1,23 @@
+@startuml
+class UnfinishedThing {
+    + workLeft : float
+    + <<override>> LabelNoCount : string <<get>>
+    + <<override>> DescriptionDetailed : string <<get>>
+    + <<override>> DescriptionFlavor : string <<get>>
+    + Initialized : bool <<get>>
+    + <<override>> ExposeData() : void
+    + <<override>> Destroy(mode:DestroyMode) : void
+    + <<override>> GetGizmos() : IEnumerable<Gizmo>
+    + BillOnTableForMe(workTable:Thing) : Bill_ProductionWithUft
+    + <<override>> DrawExtraSelectionOverlays() : void
+    + <<override>> GetInspectString() : string
+}
+class "List`1"<T> {
+}
+ThingWithComps <|-- UnfinishedThing
+UnfinishedThing o-> "ingredients<Thing>" "List`1"
+UnfinishedThing --> "Creator" Pawn
+UnfinishedThing --> "Recipe" RecipeDef
+UnfinishedThing --> "BoundBill" Bill_ProductionWithUft
+UnfinishedThing --> "BoundWorkTable" Thing
+@enduml

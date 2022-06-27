@@ -1,0 +1,9 @@
+@startuml
+class AcceptanceReport <<struct>> {
+    + Reason : string <<get>>
+    + Accepted : bool <<get>>
+    + AcceptanceReport(reasonText:string)
+}
+AcceptanceReport --> "WasAccepted" AcceptanceReport
+AcceptanceReport --> "WasRejected" AcceptanceReport
+@enduml

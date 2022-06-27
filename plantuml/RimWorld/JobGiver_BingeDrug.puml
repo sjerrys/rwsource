@@ -1,0 +1,5 @@
+@startuml
+class JobGiver_BingeDrug {
+}
+JobGiver_Binge <|-- JobGiver_BingeDrug
+@enduml

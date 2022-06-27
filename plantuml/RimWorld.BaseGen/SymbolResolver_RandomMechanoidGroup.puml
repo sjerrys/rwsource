@@ -1,0 +1,6 @@
+@startuml
+class SymbolResolver_RandomMechanoidGroup {
+    + <<override>> Resolve(rp:ResolveParams) : void
+}
+SymbolResolver <|-- SymbolResolver_RandomMechanoidGroup
+@enduml

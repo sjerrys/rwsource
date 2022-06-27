@@ -1,0 +1,5 @@
+@startuml
+class ThingSetMaker_RefugeePod {
+}
+ThingSetMaker <|-- ThingSetMaker_RefugeePod
+@enduml

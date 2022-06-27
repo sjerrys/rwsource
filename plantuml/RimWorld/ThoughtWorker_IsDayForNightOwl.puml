@@ -1,0 +1,5 @@
+@startuml
+class ThoughtWorker_IsDayForNightOwl {
+}
+ThoughtWorker <|-- ThoughtWorker_IsDayForNightOwl
+@enduml

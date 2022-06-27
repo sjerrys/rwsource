@@ -1,0 +1,8 @@
+@startuml
+class CompAbilityEffect_GiveInspiration {
+    + <<override>> Apply(target:LocalTargetInfo, dest:LocalTargetInfo) : void
+    + <<override>> CanApplyOn(target:LocalTargetInfo, dest:LocalTargetInfo) : bool
+    + <<override>> Valid(target:LocalTargetInfo, throwMessages:bool) : bool
+}
+CompAbilityEffect <|-- CompAbilityEffect_GiveInspiration
+@enduml

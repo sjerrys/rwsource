@@ -1,0 +1,16 @@
+@startuml
+class PawnGroupMakerParms {
+    + tile : int
+    + inhabitants : bool
+    + points : float
+    + generateFightersOnly : bool
+    + dontUseSingleUseRocketLaunchers : bool
+    + forceOneIncap : bool
+    + seed : int?
+    + <<override>> ToString() : string
+}
+PawnGroupMakerParms --> "groupKind" PawnGroupKindDef
+PawnGroupMakerParms --> "faction" Faction
+PawnGroupMakerParms --> "traderKind" TraderKindDef
+PawnGroupMakerParms --> "raidStrategy" RaidStrategyDef
+@enduml

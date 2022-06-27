@@ -1,0 +1,6 @@
+@startuml
+class Instruction_FinishConstruction {
+    + <<override>> LessonUpdate() : void
+}
+Lesson_Instruction <|-- Instruction_FinishConstruction
+@enduml

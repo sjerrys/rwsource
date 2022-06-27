@@ -1,0 +1,5 @@
+@startuml
+class JobGiver_LoadTransporters {
+}
+ThinkNode_JobGiver <|-- JobGiver_LoadTransporters
+@enduml

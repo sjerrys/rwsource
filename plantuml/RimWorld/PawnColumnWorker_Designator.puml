@@ -1,0 +1,5 @@
+@startuml
+abstract class PawnColumnWorker_Designator {
+}
+PawnColumnWorker_Checkbox <|-- PawnColumnWorker_Designator
+@enduml

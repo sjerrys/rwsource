@@ -1,0 +1,8 @@
+@startuml
+class WorldGenStep_Factions {
+    + <<override>> SeedPart : int <<get>>
+    + <<override>> GenerateFresh(seed:string) : void
+    + <<override>> GenerateWithoutWorldData(seed:string) : void
+}
+WorldGenStep <|-- WorldGenStep_Factions
+@enduml

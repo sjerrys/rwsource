@@ -1,0 +1,20 @@
+@startuml
+class BodyPartDefOf <<static>> {
+    {static} BodyPartDefOf()
+}
+BodyPartDefOf --> "Heart" BodyPartDef
+BodyPartDefOf --> "Leg" BodyPartDef
+BodyPartDefOf --> "Liver" BodyPartDef
+BodyPartDefOf --> "Brain" BodyPartDef
+BodyPartDefOf --> "Eye" BodyPartDef
+BodyPartDefOf --> "Arm" BodyPartDef
+BodyPartDefOf --> "Jaw" BodyPartDef
+BodyPartDefOf --> "Hand" BodyPartDef
+BodyPartDefOf --> "Neck" BodyPartDef
+BodyPartDefOf --> "Head" BodyPartDef
+BodyPartDefOf --> "Body" BodyPartDef
+BodyPartDefOf --> "Torso" BodyPartDef
+BodyPartDefOf --> "InsectHead" BodyPartDef
+BodyPartDefOf --> "SnakeBody" BodyPartDef
+BodyPartDefOf --> "Stomach" BodyPartDef
+@enduml

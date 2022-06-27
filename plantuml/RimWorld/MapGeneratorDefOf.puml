@@ -1,0 +1,9 @@
+@startuml
+class MapGeneratorDefOf <<static>> {
+    {static} MapGeneratorDefOf()
+}
+MapGeneratorDefOf --> "Encounter" MapGeneratorDef
+MapGeneratorDefOf --> "Base_Player" MapGeneratorDef
+MapGeneratorDefOf --> "Base_Faction" MapGeneratorDef
+MapGeneratorDefOf --> "EscapeShip" MapGeneratorDef
+@enduml

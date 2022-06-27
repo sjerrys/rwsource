@@ -1,0 +1,6 @@
+@startuml
+class GenStepDefOf <<static>> {
+    {static} GenStepDefOf()
+}
+GenStepDefOf --> "PreciousLump" GenStepDef
+@enduml

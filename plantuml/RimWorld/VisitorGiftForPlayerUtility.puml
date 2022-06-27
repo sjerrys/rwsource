@@ -1,0 +1,7 @@
+@startuml
+class VisitorGiftForPlayerUtility {
+    + {static} ChanceToLeaveGift(faction:Faction, map:Map) : float
+    + {static} GenerateGifts(faction:Faction, map:Map) : List<Thing>
+    + {static} GiveGift(possibleGivers:List<Pawn>, faction:Faction) : void
+}
+@enduml

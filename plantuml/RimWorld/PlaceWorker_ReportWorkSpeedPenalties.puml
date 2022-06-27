@@ -1,0 +1,6 @@
+@startuml
+class PlaceWorker_ReportWorkSpeedPenalties {
+    + <<override>> PostPlace(map:Map, def:BuildableDef, loc:IntVec3, rot:Rot4) : void
+}
+PlaceWorker <|-- PlaceWorker_ReportWorkSpeedPenalties
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+class ChoiceLetter_BetrayVisitors {
+    + <<override>> CanDismissWithRightClick : bool <<get>>
+    + <<override>> CanShowInLetterStack : bool <<get>>
+    + <<override>> ExposeData() : void
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+ChoiceLetter <|-- ChoiceLetter_BetrayVisitors
+ChoiceLetter_BetrayVisitors o-> "pawns<Pawn>" "List`1"
+ChoiceLetter_BetrayVisitors --> "Choices<DiaOption>" "IEnumerable`1"
+@enduml

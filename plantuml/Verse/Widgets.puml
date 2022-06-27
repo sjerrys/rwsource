@@ -1,0 +1,160 @@
+@startuml
+class Widgets <<static>> {
+    + <<const>> CheckboxSize : float = 24f
+    + <<const>> RadioButtonSize : float = 24f
+    + <<const>> CloseButtonSize : float = 18f
+    + <<const>> CloseButtonMargin : float = 4f
+    + <<const>> BackButtonWidth : float = 120f
+    + <<const>> BackButtonHeight : float = 40f
+    + <<const>> BackButtonMargin : float = 16f
+    + <<const>> ListSeparatorHeight : float = 25f
+    + <<const>> ButtonSubtleDefaultMarginPct : float = 0.15f
+    + <<const>> RangeControlIdealHeight : float = 31f
+    + <<const>> RangeControlCompactHeight : float = 28f
+    + {static} MaxFillableBarChangeRate : int
+    + <<const>> InfoCardButtonSize : float = 24f
+    {static} Widgets()
+    + {static} CanDrawIconFor(def:Def) : bool
+    + {static} DefIcon(rect:Rect, def:Def, stuffDef:ThingDef, scale:float, drawPlaceholder:bool) : void
+    + {static} ThingIcon(rect:Rect, thing:Thing, alpha:float) : void
+    + {static} ThingIcon(rect:Rect, thingDef:ThingDef, stuffDef:ThingDef, scale:float) : void
+    + {static} CroppedTerrainTextureRect(tex:Texture2D) : Rect
+    + {static} DrawAltRect(rect:Rect) : void
+    + {static} ListSeparator(curY:float, width:float, label:string) : void
+    + {static} DrawLine(start:Vector2, end:Vector2, color:Color, width:float) : void
+    + {static} DrawLineHorizontal(x:float, y:float, length:float) : void
+    + {static} DrawLineVertical(x:float, y:float, length:float) : void
+    + {static} DrawBoxSolid(rect:Rect, color:Color) : void
+    + {static} DrawBox(rect:Rect, thickness:int) : void
+    + {static} LabelCacheHeight(rect:Rect, label:string, renderLabel:bool, forceInvalidation:bool) : void
+    + {static} Label(rect:Rect, content:GUIContent) : void
+    + {static} Label(rect:Rect, label:string) : void
+    + {static} Label(rect:Rect, label:TaggedString) : void
+    + {static} LongLabel(x:float, width:float, label:string, curY:float, draw:bool) : void
+    + {static} LabelScrollable(rect:Rect, label:string, scrollbarPosition:Vector2, dontConsumeScrollEventsIfNoScrollbar:bool, takeScrollbarSpaceEvenIfNoScrollbar:bool, longLabel:bool) : void
+    + {static} DefLabelWithIcon(rect:Rect, def:Def, iconMargin:float, textOffsetX:float) : void
+    + {static} HyperlinkWithIcon(rect:Rect, hyperlink:Dialog_InfoCard.Hyperlink, text:string, iconMargin:float, textOffsetX:float) : void
+    + {static} DrawNumberOnMap(screenPos:Vector2, number:int, textColor:Color) : void
+    + {static} Checkbox(topLeft:Vector2, checkOn:bool, size:float, disabled:bool, paintable:bool, texChecked:Texture2D, texUnchecked:Texture2D) : void
+    + {static} Checkbox(x:float, y:float, checkOn:bool, size:float, disabled:bool, paintable:bool, texChecked:Texture2D, texUnchecked:Texture2D) : void
+    + {static} CheckboxLabeled(rect:Rect, label:string, checkOn:bool, disabled:bool, texChecked:Texture2D, texUnchecked:Texture2D, placeCheckboxNearText:bool) : void
+    + {static} CheckboxLabeledSelectable(rect:Rect, label:string, selected:bool, checkOn:bool) : bool
+    + {static} CheckboxMulti(rect:Rect, state:MultiCheckboxState, paintable:bool) : MultiCheckboxState
+    + {static} RadioButton(topLeft:Vector2, chosen:bool) : bool
+    + {static} RadioButton(x:float, y:float, chosen:bool) : bool
+    + {static} RadioButtonLabeled(rect:Rect, labelText:string, chosen:bool) : bool
+    + {static} ButtonText(rect:Rect, label:string, drawBackground:bool, doMouseoverSound:bool, active:bool) : bool
+    + {static} ButtonText(rect:Rect, label:string, drawBackground:bool, doMouseoverSound:bool, textColor:Color, active:bool) : bool
+    + {static} ButtonTextDraggable(rect:Rect, label:string, drawBackground:bool, doMouseoverSound:bool, active:bool) : DraggableResult
+    + {static} ButtonTextDraggable(rect:Rect, label:string, drawBackground:bool, doMouseoverSound:bool, textColor:Color, active:bool) : DraggableResult
+    + {static} DrawRectFast(position:Rect, color:Color, content:GUIContent) : void
+    + {static} CustomButtonText(rect:Rect, label:string, bgColor:Color, textColor:Color, borderColor:Color, cacheHeight:bool, borderSize:int, doMouseoverSound:bool, active:bool) : bool
+    + {static} ButtonTextSubtle(rect:Rect, label:string, barPercent:float, textLeftMargin:float, mouseoverSound:SoundDef, functionalSizeOffset:Vector2) : bool
+    + {static} ButtonImage(butRect:Rect, tex:Texture2D, doMouseoverSound:bool) : bool
+    + {static} ButtonImage(butRect:Rect, tex:Texture2D, baseColor:Color, doMouseoverSound:bool) : bool
+    + {static} ButtonImage(butRect:Rect, tex:Texture2D, baseColor:Color, mouseoverColor:Color, doMouseoverSound:bool) : bool
+    + {static} ButtonImageDraggable(butRect:Rect, tex:Texture2D) : DraggableResult
+    + {static} ButtonImageDraggable(butRect:Rect, tex:Texture2D, baseColor:Color) : DraggableResult
+    + {static} ButtonImageDraggable(butRect:Rect, tex:Texture2D, baseColor:Color, mouseoverColor:Color) : DraggableResult
+    + {static} ButtonImageFitted(butRect:Rect, tex:Texture2D) : bool
+    + {static} ButtonImageFitted(butRect:Rect, tex:Texture2D, baseColor:Color) : bool
+    + {static} ButtonImageFitted(butRect:Rect, tex:Texture2D, baseColor:Color, mouseoverColor:Color) : bool
+    + {static} ButtonImageWithBG(butRect:Rect, image:Texture2D, imageSize:Vector2?) : bool
+    + {static} CloseButtonFor(rectToClose:Rect) : bool
+    + {static} BackButtonFor(rectToBack:Rect) : bool
+    + {static} ButtonInvisible(butRect:Rect, doMouseoverSound:bool) : bool
+    + {static} ButtonInvisibleDraggable(butRect:Rect, doMouseoverSound:bool) : DraggableResult
+    + {static} TextField(rect:Rect, text:string) : string
+    + {static} TextField(rect:Rect, text:string, maxLength:int, inputValidator:Regex) : string
+    + {static} TextArea(rect:Rect, text:string, readOnly:bool) : string
+    + {static} TextAreaScrollable(rect:Rect, text:string, scrollbarPosition:Vector2, readOnly:bool) : string
+    + {static} TextEntryLabeled(rect:Rect, label:string, text:string) : string
+    + {static} TextFieldNumeric(rect:Rect, val:T, buffer:string, min:float, max:float) : void
+    + {static} TextFieldNumericLabeled(rect:Rect, label:string, val:T, buffer:string, min:float, max:float) : void
+    + {static} TextFieldPercent(rect:Rect, val:float, buffer:string, min:float, max:float) : void
+    + {static} ChangeType(obj:object) : T
+    + {static} HorizontalSlider(rect:Rect, value:float, leftValue:float, rightValue:float, middleAlignment:bool, label:string, leftAlignedLabel:string, rightAlignedLabel:string, roundTo:float) : float
+    + {static} FrequencyHorizontalSlider(rect:Rect, freq:float, minFreq:float, maxFreq:float, roundToInt:bool) : float
+    + {static} IntEntry(rect:Rect, value:int, editBuffer:string, multiplier:int) : void
+    + {static} FloatRange(rect:Rect, id:int, range:FloatRange, min:float, max:float, labelKey:string, valueStyle:ToStringStyle) : void
+    + {static} IntRange(rect:Rect, id:int, range:IntRange, min:int, max:int, labelKey:string, minWidth:int) : void
+    + {static} QualityRange(rect:Rect, id:int, range:QualityRange) : void
+    + {static} FloatRangeWithTypeIn(rect:Rect, id:int, fRange:FloatRange, sliderMin:float, sliderMax:float, valueStyle:ToStringStyle, labelKey:string) : void
+    + {static} FillableBar(rect:Rect, fillPercent:float) : Rect
+    + {static} FillableBar(rect:Rect, fillPercent:float, fillTex:Texture2D) : Rect
+    + {static} FillableBar(rect:Rect, fillPercent:float, fillTex:Texture2D, bgTex:Texture2D, doBorder:bool) : Rect
+    + {static} FillableBarLabeled(rect:Rect, fillPercent:float, labelWidth:int, label:string) : void
+    + {static} FillableBarChangeArrows(barRect:Rect, changeRate:float) : void
+    + {static} FillableBarChangeArrows(barRect:Rect, changeRate:int) : void
+    + {static} DrawWindowBackground(rect:Rect) : void
+    + {static} DrawMenuSection(rect:Rect) : void
+    + {static} DrawWindowBackgroundTutor(rect:Rect) : void
+    + {static} DrawOptionUnselected(rect:Rect) : void
+    + {static} DrawOptionSelected(rect:Rect) : void
+    + {static} DrawOptionBackground(rect:Rect, selected:bool) : void
+    + {static} DrawShadowAround(rect:Rect) : void
+    + {static} DrawAtlas(rect:Rect, atlas:Texture2D) : void
+    + {static} AdjustCoordToUIScalingFloor(coord:float) : float
+    + {static} AdjustCoordToUIScalingCeil(coord:float) : float
+    + {static} DrawAtlas(rect:Rect, atlas:Texture2D, drawTop:bool) : void
+    + {static} ToUVRect(r:Rect, texSize:Vector2) : Rect
+    + {static} DrawTexturePart(drawRect:Rect, uvRect:Rect, tex:Texture2D) : void
+    + {static} ScrollHorizontal(outRect:Rect, scrollPosition:Vector2, viewRect:Rect, ScrollWheelSpeed:float) : void
+    + {static} BeginScrollView(outRect:Rect, scrollPosition:Vector2, viewRect:Rect, showScrollbars:bool) : void
+    + {static} EndScrollView() : void
+    + {static} EnsureMousePositionStackEmpty() : void
+    + {static} DrawHighlightSelected(rect:Rect) : void
+    + {static} DrawHighlightIfMouseover(rect:Rect) : void
+    + {static} DrawHighlight(rect:Rect) : void
+    + {static} DrawLightHighlight(rect:Rect) : void
+    + {static} DrawTitleBG(rect:Rect) : void
+    + {static} InfoCardButton(x:float, y:float, thing:Thing) : bool
+    + {static} InfoCardButton(x:float, y:float, def:Def) : bool
+    + {static} InfoCardButton(x:float, y:float, thingDef:ThingDef, stuffDef:ThingDef) : bool
+    + {static} InfoCardButton(x:float, y:float, worldObject:WorldObject) : bool
+    + {static} InfoCardButtonCentered(rect:Rect, thing:Thing) : bool
+    + {static} InfoCardButton(x:float, y:float, faction:Faction) : bool
+    + {static} DrawTextureFitted(outerRect:Rect, tex:Texture, scale:float) : void
+    + {static} DrawTextureFitted(outerRect:Rect, tex:Texture, scale:float, texProportions:Vector2, texCoords:Rect, angle:float, mat:Material) : void
+    + {static} DrawTextureRotated(center:Vector2, tex:Texture, angle:float, scale:float) : void
+    + {static} DrawTextureRotated(rect:Rect, tex:Texture, angle:float) : void
+    + {static} NoneLabel(y:float, width:float, customLabel:string) : void
+    + {static} NoneLabel(curY:float, width:float, customLabel:string) : void
+    + {static} NoneLabelCenteredVertically(rect:Rect, customLabel:string) : void
+    + {static} Dropdown(rect:Rect, target:Target, getPayload:Func<Target, Payload>, menuGenerator:Func<Target, IEnumerable<DropdownMenuElement<Payload>>>, buttonLabel:string, buttonIcon:Texture2D, dragLabel:string, dragIcon:Texture2D, dropdownOpened:Action, paintable:bool) : void
+    + {static} Dropdown(rect:Rect, target:Target, iconColor:Color, getPayload:Func<Target, Payload>, menuGenerator:Func<Target, IEnumerable<DropdownMenuElement<Payload>>>, buttonLabel:string, buttonIcon:Texture2D, dragLabel:string, dragIcon:Texture2D, dropdownOpened:Action, paintable:bool) : void
+    + {static} MouseAttachedLabel(label:string) : void
+    + {static} WidgetsOnGUI() : void
+}
+enum DraggableResult {
+    Idle,
+    Pressed,
+    Dragged,
+    DraggedThenPressed,
+}
+enum RangeEnd {
+    None,
+    Min,
+    Max,
+}
+class "DropdownMenuElement`1"<Payload> <<struct>> {
+    + payload : Payload
+}
+class "Stack`1"<T> {
+}
+Widgets --> "mouseOverScrollViewStack<bool>" "Stack`1"
+Widgets --> "EmptyStyle" GUIStyle
+Widgets --> "CheckboxOnTex" Texture2D
+Widgets --> "CheckboxOffTex" Texture2D
+Widgets --> "CheckboxPartialTex" Texture2D
+Widgets --> "LightHighlight" Texture2D
+Widgets --> "NormalOptionColor" Color
+Widgets --> "MouseoverOptionColor" Color
+Widgets --> "SeparatorLabelColor" Color
+Widgets --> "ButtonSubtleAtlas" Texture2D
+Widgets --> "WindowBGFillColor" Color
+Widgets +-- DraggableResult
+Widgets +-- RangeEnd
+Widgets +-- "DropdownMenuElement`1"
+"DropdownMenuElement`1" --> "option" FloatMenuOption
+@enduml

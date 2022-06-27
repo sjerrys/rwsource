@@ -1,0 +1,7 @@
+@startuml
+class AgeInjuryUtility <<static>> {
+    + {static} RandomHediffsToGainOnBirthday(pawn:Pawn, age:int) : IEnumerable<HediffGiver_Birthday>
+    + {static} GenerateRandomOldAgeInjuries(pawn:Pawn, tryNotToKillPawn:bool) : void
+    + {static} PermanentInjuryCalculations() : void
+}
+@enduml

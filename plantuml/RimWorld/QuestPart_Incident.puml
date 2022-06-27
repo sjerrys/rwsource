@@ -1,0 +1,14 @@
+@startuml
+class QuestPart_Incident {
+    + inSignal : string
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + SetIncidentParmsAndRemoveTarget(value:IncidentParms) : void
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart <|-- QuestPart_Incident
+QuestPart_Incident --> "incident" IncidentDef
+QuestPart_Incident --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+@enduml

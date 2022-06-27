@@ -1,0 +1,17 @@
+@startuml
+class ExternalHistory {
+    + gameVersion : string = "?"
+    + gameplayID : string = "?"
+    + userName : string = "?"
+    + storytellerName : string = "?"
+    + realWorldDate : string = "?"
+    + firstUploadDate : string = "?"
+    + firstUploadTime : int
+    + devMode : bool
+    + {static} defaultUserName : string = "Anonymous"
+    + AllInformation : string <<get>>
+    + ExposeData() : void
+}
+IExposable <|-- ExternalHistory
+ExternalHistory o-> "history" History
+@enduml

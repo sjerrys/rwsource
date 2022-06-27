@@ -1,0 +1,8 @@
+@startuml
+class JobDriver_Vomit {
+    + <<override>> SetInitialPosture() : void
+    + <<override>> ExposeData() : void
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+}
+JobDriver <|-- JobDriver_Vomit
+@enduml

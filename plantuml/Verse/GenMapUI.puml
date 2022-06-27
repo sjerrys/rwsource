@@ -1,0 +1,21 @@
+@startuml
+class GenMapUI <<static>> {
+    + <<const>> NameBGHeight_Tiny : float = 12f
+    + <<const>> NameBGExtraWidth_Tiny : float = 4f
+    + <<const>> NameBGHeight_Small : float = 16f
+    + <<const>> NameBGExtraWidth_Small : float = 6f
+    + <<const>> LabelOffsetYStandard : float
+    + <<const>> PsychicEntropyBarHeight : float = 4f
+    + {static} LabelDrawPosFor(thing:Thing, worldOffsetZ:float) : Vector2
+    + {static} LabelDrawPosFor(center:IntVec3) : Vector2
+    + {static} DrawThingLabel(thing:Thing, text:string) : void
+    + {static} DrawThingLabel(thing:Thing, text:string, textColor:Color) : void
+    + {static} DrawThingLabel(screenPos:Vector2, text:string, textColor:Color) : void
+    + {static} DrawPawnLabel(pawn:Pawn, pos:Vector2, alpha:float, truncateToWidth:float, truncatedLabelsCache:Dictionary<string, string>, font:GameFont, alwaysDrawBg:bool, alignCenter:bool) : void
+    + {static} DrawPawnLabel(pawn:Pawn, bgRect:Rect, alpha:float, truncateToWidth:float, truncatedLabelsCache:Dictionary<string, string>, font:GameFont, alwaysDrawBg:bool, alignCenter:bool) : void
+    + {static} DrawText(worldPos:Vector2, text:string, textColor:Color) : void
+}
+GenMapUI o-> "OverlayHealthTex" Texture2D
+GenMapUI o-> "OverlayEntropyTex" Texture2D
+GenMapUI o-> "DefaultThingLabelColor" Color
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class Alert_ShuttleLandingBeaconUnusable {
+    + Alert_ShuttleLandingBeaconUnusable()
+    + <<override>> GetReport() : AlertReport
+}
+Alert <|-- Alert_ShuttleLandingBeaconUnusable
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+class QuestNode_GetRandomFactionForSite {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GetRandomFactionForSite
+QuestNode_GetRandomFactionForSite --> "sitePartDefs<IEnumerable<SitePartDef>>" "SlateRef`1"
+QuestNode_GetRandomFactionForSite --> "storeAs<string>" "SlateRef`1"
+QuestNode_GetRandomFactionForSite --> "mustBeHostileToFactionOf<Thing>" "SlateRef`1"
+@enduml

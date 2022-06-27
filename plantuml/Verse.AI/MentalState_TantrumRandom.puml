@@ -1,0 +1,8 @@
+@startuml
+abstract class MentalState_TantrumRandom {
+    + <<override>> ExposeData() : void
+    + <<override>> PostStart(reason:string) : void
+    + <<override>> MentalStateTick() : void
+}
+MentalState_Tantrum <|-- MentalState_TantrumRandom
+@enduml

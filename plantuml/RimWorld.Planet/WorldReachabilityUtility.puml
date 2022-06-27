@@ -1,0 +1,5 @@
+@startuml
+class WorldReachabilityUtility <<static>> {
+    + {static} CanReach(c:Caravan, tile:int) : bool
+}
+@enduml

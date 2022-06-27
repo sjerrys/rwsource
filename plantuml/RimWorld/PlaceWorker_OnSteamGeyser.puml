@@ -1,0 +1,7 @@
+@startuml
+class PlaceWorker_OnSteamGeyser {
+    + <<override>> AllowsPlacing(checkingDef:BuildableDef, loc:IntVec3, rot:Rot4, map:Map, thingToIgnore:Thing, thing:Thing) : AcceptanceReport
+    + <<override>> ForceAllowPlaceOver(otherDef:BuildableDef) : bool
+}
+PlaceWorker <|-- PlaceWorker_OnSteamGeyser
+@enduml

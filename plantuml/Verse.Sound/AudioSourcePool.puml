@@ -1,0 +1,8 @@
+@startuml
+class AudioSourcePool {
+    + AudioSourcePool()
+    + GetSource(onCamera:bool) : AudioSource
+}
+AudioSourcePool --> "sourcePoolCamera" AudioSourcePoolCamera
+AudioSourcePool --> "sourcePoolWorld" AudioSourcePoolWorld
+@enduml

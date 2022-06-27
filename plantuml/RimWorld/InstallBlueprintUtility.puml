@@ -1,0 +1,6 @@
+@startuml
+class InstallBlueprintUtility <<static>> {
+    + {static} CancelBlueprintsFor(th:Thing) : void
+    + {static} ExistingBlueprintFor(th:Thing) : Blueprint_Install
+}
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+class QuestNode_GetRelationsInfo {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GetRelationsInfo
+QuestNode_GetRelationsInfo --> "pawn<Pawn>" "SlateRef`1"
+QuestNode_GetRelationsInfo --> "otherPawns<IEnumerable<Pawn>>" "SlateRef`1"
+QuestNode_GetRelationsInfo --> "storeAs<string>" "SlateRef`1"
+QuestNode_GetRelationsInfo --> "nonRelatedLabel<string>" "SlateRef`1"
+QuestNode_GetRelationsInfo --> "nonRelatedLabelPlural<string>" "SlateRef`1"
+@enduml

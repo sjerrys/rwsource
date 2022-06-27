@@ -1,0 +1,12 @@
+@startuml
+class Dialog_Options {
+    + Dialog_Options()
+    + <<override>> PostOpen() : void
+    + <<override>> DoWindowContents(inRect:Rect) : void
+    + <<override>> PreClose() : void
+    + {static} ResToString(width:int, height:int) : string
+    + RestoreToDefaultSettings() : void
+}
+Window <|-- Dialog_Options
+Dialog_Options --> "InitialSize" Vector2
+@enduml

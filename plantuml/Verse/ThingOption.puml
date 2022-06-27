@@ -1,0 +1,10 @@
+@startuml
+class ThingOption <<sealed>> {
+    + weight : float = 1f
+    + ThingOption()
+    + ThingOption(thingDef:ThingDef, weight:float)
+    + LoadDataFromXmlCustom(xmlRoot:XmlNode) : void
+    + <<override>> ToString() : string
+}
+ThingOption --> "thingDef" ThingDef
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class WorkGiver_UnloadCarriers {
+    + <<override>> ShouldSkip(pawn:Pawn, forced:bool) : bool
+    + <<override>> PotentialWorkThingsGlobal(pawn:Pawn) : IEnumerable<Thing>
+    + <<override>> HasJobOnThing(pawn:Pawn, t:Thing, forced:bool) : bool
+    + <<override>> JobOnThing(pawn:Pawn, t:Thing, forced:bool) : Job
+}
+WorkGiver_Scanner <|-- WorkGiver_UnloadCarriers
+WorkGiver_UnloadCarriers --> "PotentialWorkThingRequest" ThingRequest
+WorkGiver_UnloadCarriers --> "PathEndMode" PathEndMode
+@enduml

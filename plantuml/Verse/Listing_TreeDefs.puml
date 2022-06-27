@@ -1,0 +1,7 @@
+@startuml
+class Listing_TreeDefs {
+    + Listing_TreeDefs(labelColumnWidth:float)
+    + ContentLines(node:TreeNode_Editor, indentLevel:int) : void
+}
+Listing_Tree <|-- Listing_TreeDefs
+@enduml

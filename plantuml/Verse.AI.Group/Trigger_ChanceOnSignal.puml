@@ -1,0 +1,7 @@
+@startuml
+class Trigger_ChanceOnSignal {
+    + Trigger_ChanceOnSignal(signalType:TriggerSignalType, chance:float)
+    + <<override>> ActivateOn(lord:Lord, signal:TriggerSignal) : bool
+}
+Trigger <|-- Trigger_ChanceOnSignal
+@enduml

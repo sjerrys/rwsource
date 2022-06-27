@@ -1,0 +1,7 @@
+@startuml
+class IngestionOutcomeDoer_OffsetPsyfocus {
+    + offset : float
+    + <<override>> SpecialDisplayStats(parentDef:ThingDef) : IEnumerable<StatDrawEntry>
+}
+IngestionOutcomeDoer <|-- IngestionOutcomeDoer_OffsetPsyfocus
+@enduml

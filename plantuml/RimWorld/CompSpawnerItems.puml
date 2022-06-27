@@ -1,0 +1,11 @@
+@startuml
+class CompSpawnerItems {
+    + Active : bool <<get>>
+    + <<override>> CompGetGizmosExtra() : IEnumerable<Gizmo>
+    + <<override>> CompTickRare() : void
+    + <<override>> PostExposeData() : void
+    + <<override>> CompInspectStringExtra() : string
+}
+ThingComp <|-- CompSpawnerItems
+CompSpawnerItems --> "Props" CompProperties_SpawnerItems
+@enduml

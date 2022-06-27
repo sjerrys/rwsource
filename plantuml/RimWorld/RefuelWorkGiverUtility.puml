@@ -1,0 +1,7 @@
+@startuml
+class RefuelWorkGiverUtility <<static>> {
+    + {static} CanRefuel(pawn:Pawn, t:Thing, forced:bool) : bool
+    + {static} RefuelJob(pawn:Pawn, t:Thing, forced:bool, customRefuelJob:JobDef, customAtomicRefuelJob:JobDef) : Job
+    + {static} FindEnoughReservableThings(pawn:Pawn, rootCell:IntVec3, desiredQuantity:IntRange, validThing:Predicate<Thing>) : List<Thing>
+}
+@enduml

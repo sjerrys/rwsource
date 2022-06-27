@@ -1,0 +1,30 @@
+@startuml
+class DamageWorker {
+    + <<virtual>> Apply(dinfo:DamageInfo, victim:Thing) : DamageResult
+    + <<virtual>> ExplosionStart(explosion:Explosion, cellsToAffect:List<IntVec3>) : void
+    + <<virtual>> ExplosionAffectCell(explosion:Explosion, c:IntVec3, damagedThings:List<Thing>, ignoredThings:List<Thing>, canThrowMotes:bool) : void
+    + ExplosionCellsToHit(explosion:Explosion) : IEnumerable<IntVec3>
+    + <<virtual>> ExplosionCellsToHit(center:IntVec3, map:Map, radius:float, needLOSToCell1:IntVec3?, needLOSToCell2:IntVec3?) : IEnumerable<IntVec3>
+}
+class DamageResult {
+    + wounded : bool
+    + headshot : bool
+    + deflected : bool
+    + stunned : bool
+    + deflectedByMetalArmor : bool
+    + diminished : bool
+    + diminishedByMetalArmor : bool
+    + totalDamageDealt : float
+    + AddPart(hitThing:Thing, part:BodyPartRecord) : void
+    + AddHediff(hediff:Hediff) : void
+    + AssociateWithLog(log:LogEntry_DamageResult) : void
+}
+class "List`1"<T> {
+}
+DamageWorker --> "def" DamageDef
+DamageWorker +-- DamageResult
+DamageResult --> "hitThing" Thing
+DamageResult --> "parts<BodyPartRecord>" "List`1"
+DamageResult --> "hediffs<Hediff>" "List`1"
+DamageResult --> "LastHitPart" BodyPartRecord
+@enduml

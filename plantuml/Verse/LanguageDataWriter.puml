@@ -1,0 +1,5 @@
+@startuml
+class LanguageDataWriter <<static>> {
+    + {static} WriteBackstoryFile() : void
+}
+@enduml

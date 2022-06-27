@@ -1,0 +1,12 @@
+@startuml
+class CompBiocodable {
+    + Biocoded : bool <<get>>
+    + CodedPawnLabel : string <<get>>
+    + CodeFor(p:Pawn) : void
+    + <<override>> TransformLabel(label:string) : string
+    + <<override>> CompInspectStringExtra() : string
+    + <<override>> PostExposeData() : void
+}
+ThingComp <|-- CompBiocodable
+CompBiocodable --> "CodedPawn" Pawn
+@enduml

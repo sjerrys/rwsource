@@ -1,0 +1,6 @@
+@startuml
+class Verb_ShootOneUse {
+    + <<override>> Notify_EquipmentLost() : void
+}
+Verb_Shoot <|-- Verb_ShootOneUse
+@enduml

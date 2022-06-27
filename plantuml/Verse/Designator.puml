@@ -1,0 +1,39 @@
+@startuml
+abstract class Designator {
+    + isOrder : bool
+    + <<virtual>> DraggableDimensions : int <<get>>
+    + <<virtual>> DragDrawMeasurements : bool <<get>>
+    + <<virtual>> PanelReadoutTitleExtraRightMargin : float <<get>>
+    + <<override>> TutorTagSelect : string <<get>>
+    + TutorTagDesignate : string <<get>>
+    + <<override>> HighlightTag : string <<get>>
+    + Designator()
+    + <<override>> ProcessInput(ev:Event) : void
+    + <<virtual>> CanDesignateThing(t:Thing) : AcceptanceReport
+    + <<virtual>> DesignateThing(t:Thing) : void
+    + {abstract} CanDesignateCell(loc:IntVec3) : AcceptanceReport
+    + <<virtual>> DesignateMultiCell(cells:IEnumerable<IntVec3>) : void
+    + <<virtual>> DesignateSingleCell(c:IntVec3) : void
+    + <<virtual>> ShowWarningForCell(c:IntVec3) : bool
+    + <<new>> Finalize(somethingSucceeded:bool) : void
+    + <<virtual>> LabelCapReverseDesignating(t:Thing) : string
+    + <<virtual>> DescReverseDesignating(t:Thing) : string
+    + <<virtual>> IconReverseDesignating(t:Thing, angle:float, offset:Vector2) : Texture2D
+    + <<virtual>> DrawMouseAttachments() : void
+    + <<virtual>> DrawPanelReadout(curY:float, width:float) : void
+    + <<virtual>> DoExtraGuiControls(leftX:float, bottomY:float) : void
+    + <<virtual>> SelectedUpdate() : void
+    + <<virtual>> SelectedProcessInput(ev:Event) : void
+    + <<virtual>> Rotate(rotDir:RotationDirection) : void
+    + <<virtual>> CanRemainSelected() : bool
+    + <<virtual>> Selected() : void
+    + <<virtual>> RenderHighlight(dragCells:List<IntVec3>) : void
+}
+class "IEnumerable`1"<T> {
+}
+Command <|-- Designator
+Designator --> "soundDragSustain" SoundDef
+Designator --> "soundDragChanged" SoundDef
+Designator --> "Map" Map
+Designator --> "RightClickFloatMenuOptions<FloatMenuOption>" "IEnumerable`1"
+@enduml

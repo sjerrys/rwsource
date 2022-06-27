@@ -1,0 +1,24 @@
+@startuml
+class Building_Casket {
+    + HasAnyContents : bool <<get>>
+    + CanOpen : bool <<get>>
+    + Building_Casket()
+    + GetDirectlyHeldThings() : ThingOwner
+    + GetChildHolders(outChildren:List<IThingHolder>) : void
+    + <<override>> TickRare() : void
+    + <<override>> Tick() : void
+    + <<virtual>> Open() : void
+    + <<override>> ExposeData() : void
+    + <<override>> SpawnSetup(map:Map, respawningAfterLoad:bool) : void
+    + <<override>> ClaimableBy(fac:Faction) : bool
+    + <<virtual>> Accepts(thing:Thing) : bool
+    + <<virtual>> TryAcceptThing(thing:Thing, allowSpecialEffects:bool) : bool
+    + <<override>> Destroy(mode:DestroyMode) : void
+    + <<virtual>> EjectContents() : void
+    + <<override>> GetInspectString() : string
+}
+Building <|-- Building_Casket
+IThingHolder <|-- Building_Casket
+IOpenable <|-- Building_Casket
+Building_Casket --> "ContainedThing" Thing
+@enduml

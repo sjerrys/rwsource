@@ -1,0 +1,5 @@
+@startuml
+class SkyfallerShrapnelUtility <<static>> {
+    + {static} MakeShrapnel(center:IntVec3, map:Map, angle:float, distanceFactor:float, metalShrapnelCount:int, rubbleShrapnelCount:int, spawnMotes:bool) : void
+}
+@enduml

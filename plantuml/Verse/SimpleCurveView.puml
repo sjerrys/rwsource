@@ -1,0 +1,11 @@
+@startuml
+class SimpleCurveView {
+    + SetDebugInput(key:object, value:float) : void
+    + ClearDebugInputFrom(key:object) : void
+    + SetViewRectAround(curve:SimpleCurve) : void
+}
+class "IEnumerable`1"<T> {
+}
+SimpleCurveView --> "rect" Rect
+SimpleCurveView --> "DebugInputValues<float>" "IEnumerable`1"
+@enduml

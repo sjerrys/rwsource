@@ -1,0 +1,11 @@
+@startuml
+class CompSelfhealHitpoints {
+    + ticksPassedSinceLastHeal : int
+    + <<override>> PostExposeData() : void
+    + <<override>> CompTick() : void
+    + <<override>> CompTickRare() : void
+    + <<override>> CompTickLong() : void
+}
+ThingComp <|-- CompSelfhealHitpoints
+CompSelfhealHitpoints --> "Props" CompProperties_SelfhealHitpoints
+@enduml

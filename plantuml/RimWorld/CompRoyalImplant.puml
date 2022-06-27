@@ -1,0 +1,9 @@
+@startuml
+class CompRoyalImplant {
+    + <<override>> SpecialDisplayStats() : IEnumerable<StatDrawEntry>
+    + <<override>> CompInspectStringExtra() : string
+    + {static} CheckForViolations(pawn:Pawn, hediff:HediffDef, levelOffset:int) : TaggedString
+}
+ThingComp <|-- CompRoyalImplant
+CompRoyalImplant --> "Props" CompProperties_RoyalImplant
+@enduml

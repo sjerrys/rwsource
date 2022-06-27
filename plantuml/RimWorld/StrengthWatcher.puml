@@ -1,0 +1,6 @@
+@startuml
+class StrengthWatcher {
+    + StrengthRating : float <<get>>
+    + StrengthWatcher(map:Map)
+}
+@enduml

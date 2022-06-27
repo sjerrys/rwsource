@@ -1,0 +1,7 @@
+@startuml
+class Alert_NeedColonistBeds {
+    + Alert_NeedColonistBeds()
+    + <<override>> GetReport() : AlertReport
+}
+Alert <|-- Alert_NeedColonistBeds
+@enduml

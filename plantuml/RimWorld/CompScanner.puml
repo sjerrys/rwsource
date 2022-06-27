@@ -1,0 +1,12 @@
+@startuml
+abstract class CompScanner {
+    + CanUseNow : bool <<get>>
+    + <<override>> PostExposeData() : void
+    + <<override>> PostSpawnSetup(respawningAfterLoad:bool) : void
+    + Used(worker:Pawn) : void
+    + <<override>> CompInspectStringExtra() : string
+    + <<override>> CompGetGizmosExtra() : IEnumerable<Gizmo>
+}
+ThingComp <|-- CompScanner
+CompScanner --> "Props" CompProperties_Scanner
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class PlayLogEntryUtility <<static>> {
+    + {static} RulesForOptionalWeapon(prefix:string, weaponDef:ThingDef, projectileDef:ThingDef) : IEnumerable<Rule>
+    + {static} RulesForDamagedParts(prefix:string, body:BodyDef, bodyParts:List<BodyPartRecord>, bodyPartsDestroyed:List<bool>, constants:Dictionary<string, string>) : IEnumerable<Rule>
+}
+@enduml

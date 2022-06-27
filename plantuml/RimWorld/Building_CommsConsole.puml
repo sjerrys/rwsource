@@ -1,0 +1,10 @@
+@startuml
+class Building_CommsConsole {
+    + CanUseCommsNow : bool <<get>>
+    + <<override>> SpawnSetup(map:Map, respawningAfterLoad:bool) : void
+    + GetCommTargets(myPawn:Pawn) : IEnumerable<ICommunicable>
+    + <<override>> GetFloatMenuOptions(myPawn:Pawn) : IEnumerable<FloatMenuOption>
+    + GiveUseCommsJob(negotiator:Pawn, target:ICommunicable) : void
+}
+Building <|-- Building_CommsConsole
+@enduml

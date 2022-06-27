@@ -1,0 +1,13 @@
+@startuml
+class PlayLog {
+    + LastTick : int <<get>>
+    + Add(entry:LogEntry) : void
+    + ExposeData() : void
+    + Notify_PawnDiscarded(p:Pawn, silentlyRemoveReferences:bool) : void
+    + AnyEntryConcerns(p:Pawn) : bool
+}
+class "List`1"<T> {
+}
+IExposable <|-- PlayLog
+PlayLog --> "AllEntries<LogEntry>" "List`1"
+@enduml

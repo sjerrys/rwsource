@@ -1,0 +1,9 @@
+@startuml
+class HediffCompProperties_SeverityPerDay {
+    + severityPerDay : float
+    + showDaysToRecover : bool
+    + showHoursToRecover : bool
+    + HediffCompProperties_SeverityPerDay()
+}
+HediffCompProperties <|-- HediffCompProperties_SeverityPerDay
+@enduml

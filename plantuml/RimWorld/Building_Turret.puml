@@ -1,0 +1,23 @@
+@startuml
+abstract class Building_Turret {
+    + LastAttackTargetTick : int <<get>>
+    + TargetPriorityFactor : float <<get>>
+    + Building_Turret()
+    + <<override>> Tick() : void
+    + <<override>> ExposeData() : void
+    + <<override>> PreApplyDamage(dinfo:DamageInfo, absorbed:bool) : void
+    + {abstract} OrderAttack(targ:LocalTargetInfo) : void
+    + ThreatDisabled(disabledFor:IAttackTargetSearcher) : bool
+}
+Building <|-- Building_Turret
+IAttackTarget <|-- Building_Turret
+ILoadReferenceable <|-- Building_Turret
+IAttackTargetSearcher <|-- Building_Turret
+Building_Turret --> "CurrentTarget" LocalTargetInfo
+Building_Turret --> "AttackVerb" Verb
+Building_Turret --> "Thing" Thing
+Building_Turret --> "TargetCurrentlyAimingAt" LocalTargetInfo
+Building_Turret --> "Thing" Thing
+Building_Turret --> "CurrentEffectiveVerb" Verb
+Building_Turret --> "LastAttackedTarget" LocalTargetInfo
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class TantrumMentalStateUtility <<static>> {
+    + {static} CanSmash(pawn:Pawn, thing:Thing, skipReachabilityCheck:bool, customValidator:Predicate<Thing>, extraMinBuildingOrItemMarketValue:int) : bool
+    + {static} GetSmashableThingsNear(pawn:Pawn, near:IntVec3, outCandidates:List<Thing>, customValidator:Predicate<Thing>, extraMinBuildingOrItemMarketValue:int, maxDistance:int) : void
+    + {static} GetSmashableThingsIn(room:Room, pawn:Pawn, outCandidates:List<Thing>, customValidator:Predicate<Thing>, extraMinBuildingOrItemMarketValue:int) : void
+    + {static} CanAttackPrisoner(pawn:Pawn, prisoner:Thing) : bool
+}
+@enduml

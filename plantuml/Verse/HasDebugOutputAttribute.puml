@@ -1,0 +1,5 @@
+@startuml
+class HasDebugOutputAttribute {
+}
+Attribute <|-- HasDebugOutputAttribute
+@enduml

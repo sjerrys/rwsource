@@ -1,0 +1,39 @@
+@startuml
+class Pawn_EquipmentTracker {
+    + Pawn_EquipmentTracker(newPawn:Pawn)
+    + ExposeData() : void
+    + EquipmentTrackerTick() : void
+    + EquipmentTrackerTickRare() : void
+    + HasAnything() : bool
+    + MakeRoomFor(eq:ThingWithComps) : void
+    + Remove(eq:ThingWithComps) : void
+    + TryDropEquipment(eq:ThingWithComps, resultingEq:ThingWithComps, pos:IntVec3, forbid:bool) : bool
+    + DropAllEquipment(pos:IntVec3, forbid:bool) : void
+    + TryTransferEquipmentToContainer(eq:ThingWithComps, container:ThingOwner) : bool
+    + DestroyEquipment(eq:ThingWithComps) : void
+    + DestroyAllEquipment(mode:DestroyMode) : void
+    + Contains(eq:Thing) : bool
+    + AddEquipment(newEq:ThingWithComps) : void
+    + GetGizmos() : IEnumerable<Gizmo>
+    + Notify_EquipmentAdded(eq:ThingWithComps) : void
+    + Notify_EquipmentRemoved(eq:ThingWithComps) : void
+    + Notify_PawnSpawned() : void
+    + Notify_PawnDied() : void
+    + Notify_KilledPawn() : void
+    + GetDirectlyHeldThings() : ThingOwner
+    + GetChildHolders(outChildren:List<IThingHolder>) : void
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+IThingHolder <|-- Pawn_EquipmentTracker
+IExposable <|-- Pawn_EquipmentTracker
+Pawn_EquipmentTracker --> "pawn" Pawn
+Pawn_EquipmentTracker --> "bondedWeapon" Thing
+Pawn_EquipmentTracker --> "Primary" ThingWithComps
+Pawn_EquipmentTracker --> "PrimaryEq" CompEquippable
+Pawn_EquipmentTracker --> "AllEquipmentListForReading<ThingWithComps>" "List`1"
+Pawn_EquipmentTracker --> "AllEquipmentVerbs<Verb>" "IEnumerable`1"
+Pawn_EquipmentTracker --> "ParentHolder" IThingHolder
+@enduml

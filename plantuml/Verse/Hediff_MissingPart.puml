@@ -1,0 +1,19 @@
+@startuml
+class Hediff_MissingPart {
+    + <<override>> SummaryHealthPercentImpact : float <<get>>
+    + <<override>> ShouldRemove : bool <<get>>
+    + <<override>> LabelBase : string <<get>>
+    + <<override>> LabelInBrackets : string <<get>>
+    + <<override>> BleedRate : float <<get>>
+    + <<override>> PainOffset : float <<get>>
+    + IsFresh : bool <<get>> <<set>>
+    + IsFreshNonSolidExtremity : bool <<get>>
+    + <<override>> TendableNow(ignoreTimer:bool) : bool
+    + <<override>> Tick() : void
+    + <<override>> Tended_NewTemp(quality:float, maxQuality:float, batchPosition:int) : void
+    + <<override>> PostAdd(dinfo:DamageInfo?) : void
+    + <<override>> ExposeData() : void
+}
+HediffWithComps <|-- Hediff_MissingPart
+Hediff_MissingPart --> "lastInjury" HediffDef
+@enduml

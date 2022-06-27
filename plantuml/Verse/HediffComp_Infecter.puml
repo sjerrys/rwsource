@@ -1,0 +1,11 @@
+@startuml
+class HediffComp_Infecter {
+    + <<override>> CompPostPostAdd(dinfo:DamageInfo?) : void
+    + <<override>> CompExposeData() : void
+    + <<override>> CompPostTick(severityAdjustment:float) : void
+    + <<override>> CompTended_NewTemp(quality:float, maxQuality:float, batchPosition:int) : void
+    + <<override>> CompDebugString() : string
+}
+HediffComp <|-- HediffComp_Infecter
+HediffComp_Infecter --> "Props" HediffCompProperties_Infecter
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class Bullet {
+}
+Projectile <|-- Bullet
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class JobDriver_ExtinguishSelf {
+    + <<override>> GetReport() : string
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+}
+JobDriver <|-- JobDriver_ExtinguishSelf
+@enduml

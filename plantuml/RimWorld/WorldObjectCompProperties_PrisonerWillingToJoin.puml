@@ -1,0 +1,6 @@
+@startuml
+class WorldObjectCompProperties_PrisonerWillingToJoin {
+    + WorldObjectCompProperties_PrisonerWillingToJoin()
+}
+WorldObjectCompProperties <|-- WorldObjectCompProperties_PrisonerWillingToJoin
+@enduml

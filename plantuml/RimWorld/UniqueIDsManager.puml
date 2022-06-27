@@ -1,0 +1,31 @@
+@startuml
+class UniqueIDsManager {
+    + GetNextThingID() : int
+    + GetNextBillID() : int
+    + GetNextFactionID() : int
+    + GetNextLordID() : int
+    + GetNextTaleID() : int
+    + GetNextPassingShipID() : int
+    + GetNextWorldObjectID() : int
+    + GetNextMapID() : int
+    + GetNextCaravanID() : int
+    + GetNextAreaID() : int
+    + GetNextTransporterGroupID() : int
+    + GetNextAncientCryptosleepCasketGroupID() : int
+    + GetNextJobID() : int
+    + GetNextSignalTagID() : int
+    + GetNextWorldFeatureID() : int
+    + GetNextHediffID() : int
+    + GetNextBattleID() : int
+    + GetNextLogID() : int
+    + GetNextLetterID() : int
+    + GetNextArchivedDialogID() : int
+    + GetNextMessageID() : int
+    + GetNextZoneID() : int
+    + GetNextQuestID() : int
+    + GetNextGameConditionID() : int
+    + UniqueIDsManager()
+    + ExposeData() : void
+}
+IExposable <|-- UniqueIDsManager
+@enduml

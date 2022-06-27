@@ -1,0 +1,8 @@
+@startuml
+class StorytellerCompProperties_CategoryIndividualMTBByBiome {
+    + applyCaravanVisibility : bool
+    + StorytellerCompProperties_CategoryIndividualMTBByBiome()
+}
+StorytellerCompProperties <|-- StorytellerCompProperties_CategoryIndividualMTBByBiome
+StorytellerCompProperties_CategoryIndividualMTBByBiome --> "category" IncidentCategoryDef
+@enduml

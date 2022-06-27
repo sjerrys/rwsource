@@ -1,0 +1,9 @@
+@startuml
+class QuestNode_GetBodySize {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GetBodySize
+QuestNode_GetBodySize --> "pawnKind<PawnKindDef>" "SlateRef`1"
+QuestNode_GetBodySize --> "storeAs<string>" "SlateRef`1"
+@enduml

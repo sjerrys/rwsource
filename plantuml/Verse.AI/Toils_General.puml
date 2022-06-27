@@ -1,0 +1,14 @@
+@startuml
+class Toils_General <<static>> {
+    + {static} StopDead() : Toil
+    + {static} Wait(ticks:int, face:TargetIndex) : Toil
+    + {static} WaitWith(targetInd:TargetIndex, ticks:int, useProgressBar:bool, maintainPosture:bool) : Toil
+    + {static} RemoveDesignationsOnThing(ind:TargetIndex, def:DesignationDef) : Toil
+    + {static} ClearTarget(ind:TargetIndex) : Toil
+    + {static} PutCarriedThingInInventory() : Toil
+    + {static} Do(action:Action) : Toil
+    + {static} DoAtomic(action:Action) : Toil
+    + {static} Open(openableInd:TargetIndex) : Toil
+    + {static} Label() : Toil
+}
+@enduml

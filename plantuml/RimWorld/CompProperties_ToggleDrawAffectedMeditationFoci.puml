@@ -1,0 +1,7 @@
+@startuml
+class CompProperties_ToggleDrawAffectedMeditationFoci {
+    + defaultEnabled : bool = true
+    + CompProperties_ToggleDrawAffectedMeditationFoci()
+}
+CompProperties <|-- CompProperties_ToggleDrawAffectedMeditationFoci
+@enduml

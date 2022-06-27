@@ -1,0 +1,13 @@
+@startuml
+class StateGraph {
+    + AddToil(toil:LordToil) : void
+    + AddTransition(transition:Transition, highPriority:bool) : void
+    + AttachSubgraph(subGraph:StateGraph) : StateGraph
+    + ErrorCheck() : void
+}
+class "List`1"<T> {
+}
+StateGraph o-> "lordToils<LordToil>" "List`1"
+StateGraph o-> "transitions<Transition>" "List`1"
+StateGraph --> "StartingToil" LordToil
+@enduml

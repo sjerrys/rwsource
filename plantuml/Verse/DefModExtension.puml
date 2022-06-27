@@ -1,0 +1,5 @@
+@startuml
+abstract class DefModExtension {
+    + <<virtual>> ConfigErrors() : IEnumerable<string>
+}
+@enduml

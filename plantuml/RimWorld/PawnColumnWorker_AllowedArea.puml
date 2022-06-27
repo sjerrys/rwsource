@@ -1,0 +1,11 @@
+@startuml
+class PawnColumnWorker_AllowedArea {
+    + <<override>> GetMinWidth(table:PawnTable) : int
+    + <<override>> GetOptimalWidth(table:PawnTable) : int
+    + <<override>> GetMinHeaderHeight(table:PawnTable) : int
+    + <<override>> DoCell(rect:Rect, pawn:Pawn, table:PawnTable) : void
+    + <<override>> DoHeader(rect:Rect, table:PawnTable) : void
+    + <<override>> Compare(a:Pawn, b:Pawn) : int
+}
+PawnColumnWorker <|-- PawnColumnWorker_AllowedArea
+@enduml

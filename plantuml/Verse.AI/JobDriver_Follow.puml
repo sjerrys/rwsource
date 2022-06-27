@@ -1,0 +1,7 @@
+@startuml
+class JobDriver_Follow {
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+    + <<override>> IsContinuation(j:Job) : bool
+}
+JobDriver <|-- JobDriver_Follow
+@enduml

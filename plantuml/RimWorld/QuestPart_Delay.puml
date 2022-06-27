@@ -1,0 +1,25 @@
+@startuml
+class QuestPart_Delay {
+    + delayTicks : int
+    + expiryInfoPart : string
+    + expiryInfoPartTip : string
+    + inspectString : string
+    + isBad : bool
+    + TicksLeft : int <<get>>
+    + <<override>> ExpiryInfoPart : string <<get>>
+    + <<override>> ExpiryInfoPartTip : string <<get>>
+    + <<override>> QuestPartTick() : void
+    + <<override>> ExtraInspectString(target:ISelectable) : string
+    + <<override>> ExposeData() : void
+    + <<override>> DoDebugWindowContents(innerRect:Rect, curY:float) : void
+    + <<override>> AssignDebugData() : void
+    + DebugForceEnd() : void
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+QuestPartActivable <|-- QuestPart_Delay
+QuestPart_Delay --> "inspectStringTargets<ISelectable>" "List`1"
+QuestPart_Delay --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+@enduml

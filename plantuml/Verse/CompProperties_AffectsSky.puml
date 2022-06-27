@@ -1,0 +1,11 @@
+@startuml
+class CompProperties_AffectsSky {
+    + glow : float = 1f
+    + lightsourceShineSize : float = 1f
+    + lightsourceShineIntensity : float = 1f
+    + lerpDarken : bool
+    + CompProperties_AffectsSky()
+}
+CompProperties <|-- CompProperties_AffectsSky
+CompProperties_AffectsSky --> "skyColors" SkyColorSet
+@enduml

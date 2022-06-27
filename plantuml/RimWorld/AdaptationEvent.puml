@@ -1,0 +1,8 @@
+@startuml
+enum AdaptationEvent {
+    Downed,
+    Died,
+    Kidnapped,
+    LostBecauseMapClosed,
+}
+@enduml

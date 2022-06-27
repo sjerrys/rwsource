@@ -1,0 +1,17 @@
+@startuml
+class ResearchManager <<sealed>> {
+    + <<const>> IntellectualExpPerTechprint : int = 2000
+    + AnyProjectIsAvailable : bool <<get>>
+    + ExposeData() : void
+    + GetProgress(proj:ResearchProjectDef) : float
+    + GetTechprints(proj:ResearchProjectDef) : int
+    + ApplyTechprint(proj:ResearchProjectDef, applyingPawn:Pawn) : void
+    + AddTechprints(proj:ResearchProjectDef, amount:int) : void
+    + ResearchPerformed(amount:float, researcher:Pawn) : void
+    + ReapplyAllMods() : void
+    + FinishProject(proj:ResearchProjectDef, doCompletionDialog:bool, researcher:Pawn) : void
+    + DebugSetAllProjectsFinished() : void
+}
+IExposable <|-- ResearchManager
+ResearchManager --> "currentProj" ResearchProjectDef
+@enduml

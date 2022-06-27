@@ -1,0 +1,18 @@
+@startuml
+class InspirationHandler {
+    + Inspired : bool <<get>>
+    + InspirationHandler(pawn:Pawn)
+    + ExposeData() : void
+    + InspirationHandlerTick() : void
+    + TryStartInspiration(def:InspirationDef) : bool
+    + TryStartInspiration_NewTemp(def:InspirationDef, reason:string) : bool
+    + EndInspiration(inspiration:Inspiration) : void
+    + EndInspiration(inspirationDef:InspirationDef) : void
+    + Reset() : void
+    + GetRandomAvailableInspirationDef() : InspirationDef
+}
+IExposable <|-- InspirationHandler
+InspirationHandler --> "pawn" Pawn
+InspirationHandler --> "CurState" Inspiration
+InspirationHandler --> "CurStateDef" InspirationDef
+@enduml

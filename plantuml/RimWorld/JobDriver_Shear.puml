@@ -1,0 +1,5 @@
+@startuml
+class JobDriver_Shear {
+}
+JobDriver_GatherAnimalBodyResources <|-- JobDriver_Shear
+@enduml

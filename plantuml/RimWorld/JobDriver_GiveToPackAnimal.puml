@@ -1,0 +1,6 @@
+@startuml
+class JobDriver_GiveToPackAnimal {
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+}
+JobDriver <|-- JobDriver_GiveToPackAnimal
+@enduml

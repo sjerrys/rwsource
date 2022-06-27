@@ -1,0 +1,5 @@
+@startuml
+class IncidentWorker_TravelerGroup {
+}
+IncidentWorker_NeutralGroup <|-- IncidentWorker_TravelerGroup
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class StatWorker_MeleeAverageDPS {
+    + <<override>> ShouldShowFor(req:StatRequest) : bool
+    + <<override>> GetValueUnfinalized(req:StatRequest, applyPostProcess:bool) : float
+    + <<override>> GetExplanationUnfinalized(req:StatRequest, numberSense:ToStringNumberSense) : string
+    + {static} GetCurrentWeaponUser(weapon:Thing) : Pawn
+}
+StatWorker <|-- StatWorker_MeleeAverageDPS
+@enduml

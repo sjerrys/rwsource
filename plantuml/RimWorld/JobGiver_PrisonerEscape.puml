@@ -1,0 +1,5 @@
+@startuml
+class JobGiver_PrisonerEscape {
+}
+ThinkNode_JobGiver <|-- JobGiver_PrisonerEscape
+@enduml

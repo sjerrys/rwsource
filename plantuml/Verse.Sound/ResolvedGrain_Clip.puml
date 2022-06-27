@@ -1,0 +1,10 @@
+@startuml
+class ResolvedGrain_Clip {
+    + ResolvedGrain_Clip(clip:AudioClip)
+    + <<override>> ToString() : string
+    + <<override>> Equals(obj:object) : bool
+    + <<override>> GetHashCode() : int
+}
+ResolvedGrain <|-- ResolvedGrain_Clip
+ResolvedGrain_Clip --> "clip" AudioClip
+@enduml

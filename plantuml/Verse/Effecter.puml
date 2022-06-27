@@ -1,0 +1,15 @@
+@startuml
+class Effecter {
+    + ticksLeft : int
+    + scale : float = 1f
+    + Effecter(def:EffecterDef)
+    + EffectTick(A:TargetInfo, B:TargetInfo) : void
+    + Trigger(A:TargetInfo, B:TargetInfo) : void
+    + Cleanup() : void
+}
+class "List`1"<T> {
+}
+Effecter --> "def" EffecterDef
+Effecter o-> "children<SubEffecter>" "List`1"
+Effecter --> "offset" Vector3
+@enduml

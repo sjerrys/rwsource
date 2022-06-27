@@ -1,0 +1,7 @@
+@startuml
+class Trigger_Signal {
+    + Trigger_Signal(signal:string)
+    + <<override>> ActivateOn(lord:Lord, signal:TriggerSignal) : bool
+}
+Trigger <|-- Trigger_Signal
+@enduml

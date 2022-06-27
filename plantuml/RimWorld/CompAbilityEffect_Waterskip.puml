@@ -1,0 +1,8 @@
+@startuml
+class CompAbilityEffect_Waterskip {
+    + <<override>> Apply(target:LocalTargetInfo, dest:LocalTargetInfo) : void
+    + <<override>> DrawEffectPreview(target:LocalTargetInfo) : void
+    + <<override>> Valid(target:LocalTargetInfo, throwMessages:bool) : bool
+}
+CompAbilityEffect <|-- CompAbilityEffect_Waterskip
+@enduml

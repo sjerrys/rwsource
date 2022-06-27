@@ -1,0 +1,13 @@
+@startuml
+class GenStep_RocksFromGrid {
+    + <<override>> SeedPart : int <<get>>
+    + {static} RockDefAt(c:IntVec3) : ThingDef
+    + <<override>> Generate(map:Map, parms:GenStepParams) : void
+}
+class RoofThreshold {
+    + minGridVal : float
+}
+GenStep <|-- GenStep_RocksFromGrid
+GenStep_RocksFromGrid +-- RoofThreshold
+RoofThreshold --> "roofDef" RoofDef
+@enduml

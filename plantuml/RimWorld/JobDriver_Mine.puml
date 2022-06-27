@@ -1,0 +1,8 @@
+@startuml
+class JobDriver_Mine {
+    + <<const>> BaseTicksBetweenPickHits : int = 100
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+    + <<override>> ExposeData() : void
+}
+JobDriver <|-- JobDriver_Mine
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class IngestionOutcomeDoer_GiveHediff {
+    + severity : float
+    + <<override>> SpecialDisplayStats(parentDef:ThingDef) : IEnumerable<StatDrawEntry>
+}
+IngestionOutcomeDoer <|-- IngestionOutcomeDoer_GiveHediff
+IngestionOutcomeDoer_GiveHediff --> "hediffDef" HediffDef
+IngestionOutcomeDoer_GiveHediff --> "toleranceChemical" ChemicalDef
+@enduml

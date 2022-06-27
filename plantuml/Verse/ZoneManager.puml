@@ -1,0 +1,15 @@
+@startuml
+class ZoneManager <<sealed>> {
+    + ZoneManager(map:Map)
+    + ExposeData() : void
+    + RegisterZone(newZone:Zone) : void
+    + DeregisterZone(oldZone:Zone) : void
+    + ZoneAt(c:IntVec3) : Zone
+    + NewZoneName(nameBase:string) : string
+}
+class "List`1"<T> {
+}
+IExposable <|-- ZoneManager
+ZoneManager --> "map" Map
+ZoneManager --> "AllZones<Zone>" "List`1"
+@enduml

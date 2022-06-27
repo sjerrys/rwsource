@@ -1,0 +1,6 @@
+@startuml
+class WorldCameraConfig_SmoothZoom {
+    + WorldCameraConfig_SmoothZoom()
+}
+WorldCameraConfig <|-- WorldCameraConfig_SmoothZoom
+@enduml

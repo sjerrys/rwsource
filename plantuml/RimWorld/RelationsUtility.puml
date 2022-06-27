@@ -1,0 +1,8 @@
+@startuml
+class RelationsUtility <<static>> {
+    + {static} PawnsKnowEachOther(p1:Pawn, p2:Pawn) : bool
+    + {static} IsDisfigured(pawn:Pawn) : bool
+    + {static} TryDevelopBondRelation(humanlike:Pawn, animal:Pawn, baseChance:float) : bool
+    + {static} LabelWithBondInfo(humanlike:Pawn, animal:Pawn) : string
+}
+@enduml

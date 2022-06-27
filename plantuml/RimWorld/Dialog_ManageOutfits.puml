@@ -1,0 +1,13 @@
+@startuml
+class Dialog_ManageOutfits {
+    + <<const>> TopAreaHeight : float = 40f
+    + <<const>> TopButtonHeight : float = 35f
+    + <<const>> TopButtonWidth : float = 150f
+    + Dialog_ManageOutfits(selectedOutfit:Outfit)
+    + <<override>> DoWindowContents(inRect:Rect) : void
+    + <<override>> PreClose() : void
+    + {static} DoNameInputRect(rect:Rect, name:string) : void
+}
+Window <|-- Dialog_ManageOutfits
+Dialog_ManageOutfits --> "InitialSize" Vector2
+@enduml

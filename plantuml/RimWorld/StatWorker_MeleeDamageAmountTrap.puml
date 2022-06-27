@@ -1,0 +1,6 @@
+@startuml
+class StatWorker_MeleeDamageAmountTrap {
+    + <<override>> ShouldShowFor(req:StatRequest) : bool
+}
+StatWorker_MeleeDamageAmount <|-- StatWorker_MeleeDamageAmountTrap
+@enduml

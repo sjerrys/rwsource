@@ -1,0 +1,7 @@
+@startuml
+enum SkyfallerMovementType {
+    Accelerate,
+    ConstantSpeed,
+    Decelerate,
+}
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+abstract class PawnsArrivalModeWorker {
+    + <<virtual>> CanUseWith(parms:IncidentParms) : bool
+    + <<virtual>> GetSelectionWeight(parms:IncidentParms) : float
+    + {abstract} Arrive(pawns:List<Pawn>, parms:IncidentParms) : void
+    + <<virtual>> TravelingTransportPodsArrived(dropPods:List<ActiveDropPodInfo>, map:Map) : void
+    + {abstract} TryResolveRaidSpawnCenter(parms:IncidentParms) : bool
+}
+PawnsArrivalModeWorker --> "def" PawnsArrivalModeDef
+@enduml

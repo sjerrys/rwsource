@@ -1,0 +1,8 @@
+@startuml
+class HediffCompProperties_Effecter {
+    + HediffCompProperties_Effecter()
+}
+HediffCompProperties <|-- HediffCompProperties_Effecter
+HediffCompProperties_Effecter --> "stateEffecter" EffecterDef
+HediffCompProperties_Effecter o-> "severityIndices" IntRange
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class QuestPart_Filter_AnyPawnUnhealthy {
+    + inSignalRemovePawn : string
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> ExposeData() : void
+}
+class "List`1"<T> {
+}
+QuestPart_Filter <|-- QuestPart_Filter_AnyPawnUnhealthy
+QuestPart_Filter_AnyPawnUnhealthy --> "pawns<Pawn>" "List`1"
+@enduml

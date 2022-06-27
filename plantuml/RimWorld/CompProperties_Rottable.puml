@@ -1,0 +1,16 @@
+@startuml
+class CompProperties_Rottable {
+    + daysToRotStart : float = 2f
+    + rotDestroys : bool
+    + rotDamagePerDay : float = 40f
+    + daysToDessicated : float = 999f
+    + dessicatedDamagePerDay : float
+    + disableIfHatcher : bool
+    + TicksToRotStart : int <<get>>
+    + TicksToDessicated : int <<get>>
+    + CompProperties_Rottable()
+    + CompProperties_Rottable(daysToRotStart:float)
+    + <<override>> ConfigErrors(parentDef:ThingDef) : IEnumerable<string>
+}
+CompProperties <|-- CompProperties_Rottable
+@enduml

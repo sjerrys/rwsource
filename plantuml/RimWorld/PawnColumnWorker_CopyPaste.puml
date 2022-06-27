@@ -1,0 +1,8 @@
+@startuml
+abstract class PawnColumnWorker_CopyPaste {
+    + <<override>> DoCell(rect:Rect, pawn:Pawn, table:PawnTable) : void
+    + <<override>> GetMinWidth(table:PawnTable) : int
+    + <<override>> GetMaxWidth(table:PawnTable) : int
+}
+PawnColumnWorker <|-- PawnColumnWorker_CopyPaste
+@enduml

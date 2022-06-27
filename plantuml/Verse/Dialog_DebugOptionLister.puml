@@ -1,0 +1,6 @@
+@startuml
+abstract class Dialog_DebugOptionLister {
+    + Dialog_DebugOptionLister()
+}
+Dialog_OptionLister <|-- Dialog_DebugOptionLister
+@enduml

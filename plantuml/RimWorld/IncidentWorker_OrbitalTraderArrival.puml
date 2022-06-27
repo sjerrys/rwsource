@@ -1,0 +1,5 @@
+@startuml
+class IncidentWorker_OrbitalTraderArrival {
+}
+IncidentWorker <|-- IncidentWorker_OrbitalTraderArrival
+@enduml

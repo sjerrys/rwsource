@@ -1,0 +1,7 @@
+@startuml
+enum CheckJobOverrideOnDamageMode {
+    Never,
+    OnlyIfInstigatorNotJobTarget,
+    Always,
+}
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+class StatExtension <<static>> {
+    + {static} GetStatValue(thing:Thing, stat:StatDef, applyPostProcess:bool) : float
+    + {static} GetStatValueForPawn(thing:Thing, stat:StatDef, pawn:Pawn, applyPostProcess:bool) : float
+    + {static} GetStatValueAbstract(def:BuildableDef, stat:StatDef, stuff:ThingDef) : float
+    + {static} GetStatValueAbstract(def:AbilityDef, stat:StatDef) : float
+    + {static} StatBaseDefined(def:BuildableDef, stat:StatDef) : bool
+    + {static} SetStatBaseValue(def:BuildableDef, stat:StatDef, newBaseValue:float) : void
+}
+@enduml

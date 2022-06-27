@@ -1,0 +1,23 @@
+@startuml
+class TargetInfo <<struct>> {
+    + IsValid : bool <<get>>
+    + HasThing : bool <<get>>
+    + ThingDestroyed : bool <<get>>
+    + Label : string <<get>>
+    + Tile : int <<get>>
+    + TargetInfo(thing:Thing)
+    + TargetInfo(cell:IntVec3, map:Map, allowNullMap:bool)
+    + <<override>> Equals(obj:object) : bool
+    + Equals(other:TargetInfo) : bool
+    + <<override>> GetHashCode() : int
+    + <<override>> ToString() : string
+}
+class "IEquatable`1"<T> {
+}
+"IEquatable`1" "<TargetInfo>" <|-- TargetInfo
+TargetInfo --> "Thing" Thing
+TargetInfo --> "Invalid" TargetInfo
+TargetInfo --> "Cell" IntVec3
+TargetInfo --> "CenterVector3" Vector3
+TargetInfo --> "Map" Map
+@enduml

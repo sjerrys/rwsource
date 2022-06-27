@@ -1,0 +1,21 @@
+@startuml
+class SituationalThoughtHandler <<sealed>> {
+    + SituationalThoughtHandler(pawn:Pawn)
+    + SituationalThoughtInterval() : void
+    + AppendMoodThoughts(outThoughts:List<Thought>) : void
+    + AppendSocialThoughts(otherPawn:Pawn, outThoughts:List<ISocialThought>) : void
+    + Notify_SituationalThoughtsDirty() : void
+}
+class CachedSocialThoughts {
+    + lastRecalculationTick : int
+    + lastQueryTick : int
+    + Expired : bool <<get>>
+    + ShouldRecalculateState : bool <<get>>
+}
+class "List`1"<T> {
+}
+SituationalThoughtHandler --> "pawn" Pawn
+SituationalThoughtHandler +-- CachedSocialThoughts
+CachedSocialThoughts o-> "thoughts<Thought_SituationalSocial>" "List`1"
+CachedSocialThoughts o-> "activeThoughts<Thought_SituationalSocial>" "List`1"
+@enduml

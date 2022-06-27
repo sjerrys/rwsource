@@ -1,0 +1,13 @@
+@startuml
+class QuestNode_PawnsKilled {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_PawnsKilled
+QuestNode_PawnsKilled --> "inSignalEnable<string>" "SlateRef`1"
+QuestNode_PawnsKilled --> "outSignalComplete<string>" "SlateRef`1"
+QuestNode_PawnsKilled --> "outSignalPawnsNotAvailable<string>" "SlateRef`1"
+QuestNode_PawnsKilled --> "race<ThingDef>" "SlateRef`1"
+QuestNode_PawnsKilled --> "count<int>" "SlateRef`1"
+QuestNode_PawnsKilled --> "node" QuestNode
+@enduml

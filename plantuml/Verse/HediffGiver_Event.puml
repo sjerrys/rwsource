@@ -1,0 +1,6 @@
+@startuml
+class HediffGiver_Event {
+    + EventOccurred(pawn:Pawn) : bool
+}
+HediffGiver <|-- HediffGiver_Event
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class TransferableSorterDef {
+}
+Def <|-- TransferableSorterDef
+TransferableSorterDef --> "comparerClass" Type
+TransferableSorterDef --> "Comparer" TransferableComparer
+@enduml

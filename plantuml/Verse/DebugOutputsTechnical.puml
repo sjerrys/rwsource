@@ -1,0 +1,10 @@
+@startuml
+class DebugOutputsTechnical <<static>> {
+    + {static} KeyStrings() : void
+    + {static} DefNames() : void
+    + {static} DefNamesAll() : void
+    + {static} DefLabels() : void
+    + {static} BestThingRequestGroup() : void
+    + {static} DamageTest() : void
+}
+@enduml

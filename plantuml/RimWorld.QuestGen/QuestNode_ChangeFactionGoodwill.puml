@@ -1,0 +1,12 @@
+@startuml
+class QuestNode_ChangeFactionGoodwill {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_ChangeFactionGoodwill
+QuestNode_ChangeFactionGoodwill --> "inSignal<string>" "SlateRef`1"
+QuestNode_ChangeFactionGoodwill --> "faction<Faction>" "SlateRef`1"
+QuestNode_ChangeFactionGoodwill --> "factionOf<Thing>" "SlateRef`1"
+QuestNode_ChangeFactionGoodwill --> "change<int>" "SlateRef`1"
+QuestNode_ChangeFactionGoodwill --> "reason<string>" "SlateRef`1"
+@enduml

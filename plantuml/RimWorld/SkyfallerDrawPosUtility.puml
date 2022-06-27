@@ -1,0 +1,7 @@
+@startuml
+class SkyfallerDrawPosUtility <<static>> {
+    + {static} DrawPos_Accelerate(center:Vector3, ticksToImpact:int, angle:float, speed:float) : Vector3
+    + {static} DrawPos_ConstantSpeed(center:Vector3, ticksToImpact:int, angle:float, speed:float) : Vector3
+    + {static} DrawPos_Decelerate(center:Vector3, ticksToImpact:int, angle:float, speed:float) : Vector3
+}
+@enduml

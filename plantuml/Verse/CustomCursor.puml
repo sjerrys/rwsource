@@ -1,0 +1,6 @@
+@startuml
+class CustomCursor <<static>> {
+    + {static} Activate() : void
+    + {static} Deactivate() : void
+}
+@enduml

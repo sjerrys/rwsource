@@ -1,0 +1,9 @@
+@startuml
+class NewQuestLetter {
+    + <<override>> OpenLetter() : void
+}
+class "IEnumerable`1"<T> {
+}
+ChoiceLetter <|-- NewQuestLetter
+NewQuestLetter --> "Choices<DiaOption>" "IEnumerable`1"
+@enduml

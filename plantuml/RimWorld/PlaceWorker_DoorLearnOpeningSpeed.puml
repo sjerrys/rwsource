@@ -1,0 +1,6 @@
+@startuml
+class PlaceWorker_DoorLearnOpeningSpeed {
+    + <<override>> PostPlace(map:Map, def:BuildableDef, loc:IntVec3, rot:Rot4) : void
+}
+PlaceWorker <|-- PlaceWorker_DoorLearnOpeningSpeed
+@enduml

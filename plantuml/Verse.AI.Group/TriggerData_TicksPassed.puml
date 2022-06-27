@@ -1,0 +1,7 @@
+@startuml
+class TriggerData_TicksPassed {
+    + ticksPassed : int
+    + <<override>> ExposeData() : void
+}
+TriggerData <|-- TriggerData_TicksPassed
+@enduml

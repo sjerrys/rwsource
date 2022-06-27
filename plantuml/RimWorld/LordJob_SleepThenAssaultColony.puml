@@ -1,0 +1,10 @@
+@startuml
+class LordJob_SleepThenAssaultColony {
+    + <<override>> GuiltyOnDowned : bool <<get>>
+    + LordJob_SleepThenAssaultColony()
+    + LordJob_SleepThenAssaultColony(faction:Faction)
+    + <<override>> CreateGraph() : StateGraph
+    + <<override>> ExposeData() : void
+}
+LordJob <|-- LordJob_SleepThenAssaultColony
+@enduml

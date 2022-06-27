@@ -1,0 +1,22 @@
+@startuml
+class RestUtility <<static>> {
+    + {static} Reset() : void
+    + {static} IsValidBedFor(bedThing:Thing, sleeper:Pawn, traveler:Pawn, sleeperWillBePrisoner:bool, checkSocialProperness:bool, allowMedBedEvenIfSetToNoCare:bool, ignoreOtherReservations:bool) : bool
+    + {static} FindBedFor(p:Pawn) : Building_Bed
+    + {static} FindBedFor(sleeper:Pawn, traveler:Pawn, sleeperWillBePrisoner:bool, checkSocialProperness:bool, ignoreOtherReservations:bool) : Building_Bed
+    + {static} FindPatientBedFor(pawn:Pawn) : Building_Bed
+    + {static} GetBedSleepingSlotPosFor(pawn:Pawn, bed:Building_Bed) : IntVec3
+    + {static} CanUseBedEver(p:Pawn, bedDef:ThingDef) : bool
+    + {static} TimetablePreventsLayDown(pawn:Pawn) : bool
+    + {static} DisturbancePreventsLyingDown(pawn:Pawn) : bool
+    + {static} Awake(p:Pawn) : bool
+    + {static} CurrentBed(p:Pawn) : Building_Bed
+    + {static} InBed(p:Pawn) : bool
+    + {static} WakeUp(p:Pawn) : void
+    + {static} WakeThreshold(p:Pawn) : float
+    + {static} FallAsleepMaxLevel(p:Pawn) : float
+}
+class "List`1"<T> {
+}
+RestUtility --> "AllBedDefBestToWorst<ThingDef>" "List`1"
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class JobGiver_AIDefendMaster {
+}
+JobGiver_AIDefendPawn <|-- JobGiver_AIDefendMaster
+@enduml

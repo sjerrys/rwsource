@@ -1,0 +1,18 @@
+@startuml
+class TarFile {
+    + fullPath : string
+    + name : string
+    + <<override>> Name : string <<get>>
+    + <<override>> FullPath : string <<get>>
+    + <<override>> Exists : bool <<get>>
+    + <<override>> Length : long <<get>>
+    + TarFile(data:byte[], fullPath:string, name:string)
+    + <<override>> CreateReadStream() : Stream
+    + <<override>> ReadAllBytes() : byte[]
+    + <<override>> ReadAllLines() : string[]
+    + <<override>> ReadAllText() : string
+    + <<override>> ToString() : string
+}
+VirtualFile <|-- TarFile
+TarFile o-> "NotFound" TarFile
+@enduml

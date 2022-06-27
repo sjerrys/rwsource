@@ -1,0 +1,7 @@
+@startuml
+class TraderCaravanUtility <<static>> {
+    + {static} GetTraderCaravanRole(p:Pawn) : TraderCaravanRole
+    + {static} FindTrader(lord:Lord) : Pawn
+    + {static} GenerateGuardPoints() : float
+}
+@enduml

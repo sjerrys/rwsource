@@ -1,0 +1,19 @@
+@startuml
+class WorldCameraDriver {
+    + altitude : float
+    + <<const>> MinAltitude : float = 125f
+    + AltitudePercent : float <<get>>
+    + Awake() : void
+    + WorldCameraDriverOnGUI() : void
+    + Update() : void
+    + ResetAltitude() : void
+    + JumpTo(newLookAt:Vector3) : void
+    + JumpTo(tile:int) : void
+    + RotateSoNorthIsUp(interpolate:bool) : void
+}
+MonoBehaviour <|-- WorldCameraDriver
+WorldCameraDriver o-> "config" WorldCameraConfig
+WorldCameraDriver o-> "sphereRotation" Quaternion
+WorldCameraDriver --> "CurrentZoom" WorldCameraZoomRange
+WorldCameraDriver --> "CurrentlyLookingAtPointOnSphere" Vector3
+@enduml

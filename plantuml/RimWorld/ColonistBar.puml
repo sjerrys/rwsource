@@ -1,0 +1,47 @@
+@startuml
+class ColonistBar {
+    + <<const>> BaseSelectedTexJump : float = 20f
+    + <<const>> BaseSelectedTexScale : float = 0.4f
+    + <<const>> EntryInAnotherMapAlpha : float = 0.4f
+    + <<const>> BaseSpaceBetweenGroups : float = 25f
+    + <<const>> BaseSpaceBetweenColonistsHorizontal : float = 24f
+    + <<const>> BaseSpaceBetweenColonistsVertical : float = 32f
+    + <<const>> FactionIconSpacing : float = 2f
+    + Scale : float <<get>>
+    + SpaceBetweenColonistsHorizontal : float <<get>>
+    + MarkColonistsDirty() : void
+    + ColonistBarOnGUI() : void
+    + GetEntryRectAlpha(rect:Rect) : float
+    + Highlight(pawn:Pawn) : void
+    + Reorder(from:int, to:int, entryGroup:int) : void
+    + DrawColonistMouseAttachment(index:int, dragStartPos:Vector2, entryGroup:int) : void
+    + AnyColonistOrCorpseAt(pos:Vector2) : bool
+    + TryGetEntryAt(pos:Vector2, entry:Entry) : bool
+    + GetColonistsInOrder() : List<Pawn>
+    + ColonistsOrCorpsesInScreenRect(rect:Rect) : List<Thing>
+    + MapColonistsOrCorpsesInScreenRect(rect:Rect) : List<Thing>
+    + CaravanMembersInScreenRect(rect:Rect) : List<Pawn>
+    + CaravanMembersCaravansInScreenRect(rect:Rect) : List<Caravan>
+    + CaravanMemberCaravanAt(at:Vector2) : Caravan
+    + ColonistOrCorpseAt(pos:Vector2) : Thing
+}
+class Entry <<struct>> {
+    + group : int
+    + Entry(pawn:Pawn, map:Map, group:int)
+}
+class "List`1"<T> {
+}
+class "Action`2"<T1,T2> {
+}
+ColonistBar o-> "drawer" ColonistBarColonistDrawer
+ColonistBar o-> "BGTex" Texture2D
+ColonistBar o-> "BaseSize" Vector2
+ColonistBar --> "Entries<Entry>" "List`1"
+ColonistBar --> "DrawLocs<Vector2>" "List`1"
+ColonistBar --> "Size" Vector2
+ColonistBar +-- Entry
+Entry --> "pawn" Pawn
+Entry --> "map" Map
+Entry --> "reorderAction<int,int>" "Action`2"
+Entry --> "extraDraggedItemOnGUI<int,Vector2>" "Action`2"
+@enduml

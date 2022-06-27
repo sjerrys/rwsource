@@ -1,0 +1,10 @@
+@startuml
+class FuelingPortUtility <<static>> {
+    + {static} GetFuelingPortCell(podLauncher:Building) : IntVec3
+    + {static} GetFuelingPortCell(center:IntVec3, rot:Rot4) : IntVec3
+    + {static} AnyFuelingPortGiverAt(c:IntVec3, map:Map) : bool
+    + {static} FuelingPortGiverAt(c:IntVec3, map:Map) : Building
+    + {static} FuelingPortGiverAtFuelingPortCell(c:IntVec3, map:Map) : Building
+    + {static} LaunchableAt(c:IntVec3, map:Map) : CompLaunchable
+}
+@enduml

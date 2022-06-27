@@ -1,0 +1,10 @@
+@startuml
+class QuestPart_Filter_ArgEqual {
+    + name : string
+    + obj : object
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+}
+QuestPart_Filter <|-- QuestPart_Filter_ArgEqual
+QuestPart_Filter_ArgEqual --> "objLookMode" LookMode
+@enduml

@@ -1,0 +1,19 @@
+@startuml
+class RaidStrategyDef {
+    + minPawns : float = 1f
+    + arrivalTextFriendly : string
+    + arrivalTextEnemy : string
+    + letterLabelEnemy : string
+    + letterLabelFriendly : string
+    + pawnsCanBringFood : bool
+    + raidLootValueFactor : float = 1f
+}
+class "List`1"<T> {
+}
+Def <|-- RaidStrategyDef
+RaidStrategyDef --> "workerClass" Type
+RaidStrategyDef --> "selectionWeightPerPointsCurve" SimpleCurve
+RaidStrategyDef --> "pointsFactorCurve" SimpleCurve
+RaidStrategyDef --> "arriveModes<PawnsArrivalModeDef>" "List`1"
+RaidStrategyDef --> "Worker" RaidStrategyWorker
+@enduml

@@ -1,0 +1,26 @@
+@startuml
+class TreeNode_Editor {
+    + obj : object
+    + owningIndex : int
+    + ParentObj : object <<get>>
+    + Value : object <<get>> <<set>>
+    + IsListItem : bool <<get>>
+    + <<override>> Openable : bool <<get>>
+    + HasContentLines : bool <<get>>
+    + HasNewButton : bool <<get>>
+    + HasDeleteButton : bool <<get>>
+    + ExtraInfoText : string <<get>>
+    + LabelText : string <<get>>
+    + {static} NewRootNode(rootObj:object) : TreeNode_Editor
+    + {static} NewChildNodeFromField(parent:TreeNode_Editor, fieldInfo:FieldInfo) : TreeNode_Editor
+    + RebuildChildNodes() : void
+    + CheckLatentDelete() : void
+    + Delete() : void
+    + DoSpecialPreElements(listing:Listing_TreeDefs) : void
+    + <<override>> ToString() : string
+}
+TreeNode <|-- TreeNode_Editor
+TreeNode_Editor --> "owningField" FieldInfo
+TreeNode_Editor --> "nodeType" EditTreeNodeType
+TreeNode_Editor --> "ObjectType" Type
+@enduml

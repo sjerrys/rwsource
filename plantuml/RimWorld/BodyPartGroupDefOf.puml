@@ -1,0 +1,12 @@
+@startuml
+class BodyPartGroupDefOf <<static>> {
+    {static} BodyPartGroupDefOf()
+}
+BodyPartGroupDefOf --> "Torso" BodyPartGroupDef
+BodyPartGroupDefOf --> "Legs" BodyPartGroupDef
+BodyPartGroupDefOf --> "LeftHand" BodyPartGroupDef
+BodyPartGroupDefOf --> "RightHand" BodyPartGroupDef
+BodyPartGroupDefOf --> "FullHead" BodyPartGroupDef
+BodyPartGroupDefOf --> "UpperHead" BodyPartGroupDef
+BodyPartGroupDefOf --> "Eyes" BodyPartGroupDef
+@enduml

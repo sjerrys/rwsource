@@ -1,0 +1,16 @@
+@startuml
+class TerrainPatchMaker {
+    + perlinFrequency : float = 0.01f
+    + perlinLacunarity : float = 2f
+    + perlinPersistence : float = 0.5f
+    + perlinOctaves : int = 6
+    + minFertility : float
+    + maxFertility : float = 999f
+    + minSize : int
+    + Cleanup() : void
+    + TerrainAt(c:IntVec3, map:Map, fertility:float) : TerrainDef
+}
+class "List`1"<T> {
+}
+TerrainPatchMaker o-> "thresholds<TerrainThreshold>" "List`1"
+@enduml

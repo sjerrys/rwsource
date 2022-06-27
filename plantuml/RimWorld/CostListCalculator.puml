@@ -1,0 +1,28 @@
+@startuml
+class CostListCalculator <<static>> {
+    + {static} Reset() : void
+    + {static} CostListAdjusted(thing:Thing) : List<ThingDefCountClass>
+    + {static} CostListAdjusted(entDef:BuildableDef, stuff:ThingDef, errorOnNullStuff:bool) : List<ThingDefCountClass>
+}
+class CostListPair <<struct>> {
+    + CostListPair(buildable:BuildableDef, stuff:ThingDef)
+    + <<override>> GetHashCode() : int
+    + <<override>> Equals(obj:object) : bool
+    + Equals(other:CostListPair) : bool
+}
+class FastCostListPairComparer {
+    + Equals(x:CostListPair, y:CostListPair) : bool
+    + GetHashCode(obj:CostListPair) : int
+}
+class "IEquatable`1"<T> {
+}
+class "IEqualityComparer`1"<T> {
+}
+CostListCalculator +-- CostListPair
+"IEquatable`1" "<CostListPair>" <|-- CostListPair
+CostListPair --> "buildable" BuildableDef
+CostListPair --> "stuff" ThingDef
+CostListCalculator +-- FastCostListPairComparer
+"IEqualityComparer`1" "<CostListPair>" <|-- FastCostListPairComparer
+FastCostListPairComparer o-> "Instance" FastCostListPairComparer
+@enduml

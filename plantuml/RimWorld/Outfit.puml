@@ -1,0 +1,14 @@
+@startuml
+class Outfit {
+    + uniqueId : int
+    + label : string
+    + Outfit()
+    + Outfit(uniqueId:int, label:string)
+    + ExposeData() : void
+    + GetUniqueLoadID() : string
+}
+IExposable <|-- Outfit
+ILoadReferenceable <|-- Outfit
+Outfit o-> "filter" ThingFilter
+Outfit o-> "ValidNameRegex" Regex
+@enduml

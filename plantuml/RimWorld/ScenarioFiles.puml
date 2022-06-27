@@ -1,0 +1,9 @@
+@startuml
+class ScenarioFiles <<static>> {
+    + {static} RecacheData() : void
+}
+class "IEnumerable`1"<T> {
+}
+ScenarioFiles --> "AllScenariosLocal<Scenario>" "IEnumerable`1"
+ScenarioFiles --> "AllScenariosWorkshop<Scenario>" "IEnumerable`1"
+@enduml

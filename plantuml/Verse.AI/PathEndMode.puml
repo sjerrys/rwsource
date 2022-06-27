@@ -1,0 +1,9 @@
+@startuml
+enum PathEndMode {
+    None,
+    OnCell,
+    Touch,
+    ClosestTouch,
+    InteractionCell,
+}
+@enduml

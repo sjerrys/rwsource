@@ -1,0 +1,9 @@
+@startuml
+class SectionLayer_Zones {
+    + <<override>> Visible : bool <<get>>
+    + SectionLayer_Zones(section:Section)
+    + <<override>> DrawLayer() : void
+    + <<override>> Regenerate() : void
+}
+SectionLayer <|-- SectionLayer_Zones
+@enduml

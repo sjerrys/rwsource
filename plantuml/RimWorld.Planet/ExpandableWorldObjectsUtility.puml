@@ -1,0 +1,11 @@
+@startuml
+class ExpandableWorldObjectsUtility <<static>> {
+    + {static} TransitionPct : float <<get>>
+    + {static} ExpandMoreTransitionPct : float <<get>>
+    + {static} ExpandableWorldObjectsUpdate() : void
+    + {static} ExpandableWorldObjectsOnGUI() : void
+    + {static} ExpandedIconScreenRect(o:WorldObject) : Rect
+    + {static} IsExpanded(o:WorldObject) : bool
+    + {static} GetExpandedWorldObjectUnderMouse(mousePos:Vector2, outList:List<WorldObject>) : void
+}
+@enduml

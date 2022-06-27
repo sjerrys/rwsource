@@ -1,0 +1,7 @@
+@startuml
+class WorldGenStep_Lakes {
+    + <<override>> SeedPart : int <<get>>
+    + <<override>> GenerateFresh(seed:string) : void
+}
+WorldGenStep <|-- WorldGenStep_Lakes
+@enduml

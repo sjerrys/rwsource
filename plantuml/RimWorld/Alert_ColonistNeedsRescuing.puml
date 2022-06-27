@@ -1,0 +1,9 @@
+@startuml
+class Alert_ColonistNeedsRescuing {
+    + {static} NeedsRescue(p:Pawn) : bool
+    + <<override>> GetLabel() : string
+    + <<override>> GetExplanation() : TaggedString
+    + <<override>> GetReport() : AlertReport
+}
+Alert_Critical <|-- Alert_ColonistNeedsRescuing
+@enduml

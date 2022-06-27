@@ -1,0 +1,7 @@
+@startuml
+class SectionLayer_BuildingsDamage {
+    + SectionLayer_BuildingsDamage(section:Section)
+    + <<override>> Regenerate() : void
+}
+SectionLayer <|-- SectionLayer_BuildingsDamage
+@enduml

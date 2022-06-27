@@ -1,0 +1,6 @@
+@startuml
+class JobDriver_PlayMusicalInstrument {
+}
+JobDriver_SitFacingBuilding <|-- JobDriver_PlayMusicalInstrument
+JobDriver_PlayMusicalInstrument --> "MusicalInstrument" Building_MusicalInstrument
+@enduml

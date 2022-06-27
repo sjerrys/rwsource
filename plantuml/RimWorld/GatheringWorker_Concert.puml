@@ -1,0 +1,6 @@
+@startuml
+class GatheringWorker_Concert {
+    + {static} InstrumentAccessible(i:Building_MusicalInstrument, p:Pawn) : bool
+}
+GatheringWorker <|-- GatheringWorker_Concert
+@enduml

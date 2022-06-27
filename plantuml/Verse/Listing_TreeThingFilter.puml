@@ -1,0 +1,9 @@
+@startuml
+class Listing_TreeThingFilter {
+    + Listing_TreeThingFilter(filter:ThingFilter, parentFilter:ThingFilter, forceHiddenDefs:IEnumerable<ThingDef>, forceHiddenFilters:IEnumerable<SpecialThingFilterDef>, suppressSmallVolumeTags:List<ThingDef>)
+    + DoCategoryChildren(node:TreeNode_ThingCategory, indentLevel:int, openMask:int, map:Map, isRoot:bool) : void
+    + DoCategory(node:TreeNode_ThingCategory, indentLevel:int, openMask:int, map:Map) : void
+    + AllowanceStateOf(cat:TreeNode_ThingCategory) : MultiCheckboxState
+}
+Listing_Tree <|-- Listing_TreeThingFilter
+@enduml

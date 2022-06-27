@@ -1,0 +1,11 @@
+@startuml
+enum BeautyCategory {
+    Hideous,
+    VeryUgly,
+    Ugly,
+    Neutral,
+    Pretty,
+    VeryPretty,
+    Beautiful,
+}
+@enduml

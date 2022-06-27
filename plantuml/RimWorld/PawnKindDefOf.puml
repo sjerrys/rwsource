@@ -1,0 +1,25 @@
+@startuml
+class PawnKindDefOf <<static>> {
+    {static} PawnKindDefOf()
+}
+PawnKindDefOf --> "Colonist" PawnKindDef
+PawnKindDefOf --> "Slave" PawnKindDef
+PawnKindDefOf --> "Villager" PawnKindDef
+PawnKindDefOf --> "Drifter" PawnKindDef
+PawnKindDefOf --> "SpaceRefugee" PawnKindDef
+PawnKindDefOf --> "AncientSoldier" PawnKindDef
+PawnKindDefOf --> "WildMan" PawnKindDef
+PawnKindDefOf --> "Thrumbo" PawnKindDef
+PawnKindDefOf --> "Alphabeaver" PawnKindDef
+PawnKindDefOf --> "Muffalo" PawnKindDef
+PawnKindDefOf --> "Megascarab" PawnKindDef
+PawnKindDefOf --> "Spelopede" PawnKindDef
+PawnKindDefOf --> "Megaspider" PawnKindDef
+PawnKindDefOf --> "Empire_Royal_Bestower" PawnKindDef
+PawnKindDefOf --> "Empire_Royal_NobleWimp" PawnKindDef
+PawnKindDefOf --> "Empire_Fighter_Janissary" PawnKindDef
+PawnKindDefOf --> "Empire_Fighter_Trooper" PawnKindDef
+PawnKindDefOf --> "Empire_Fighter_Cataphract" PawnKindDef
+PawnKindDefOf --> "Empire_Common_Lodger" PawnKindDef
+PawnKindDefOf --> "Refugee" PawnKindDef
+@enduml

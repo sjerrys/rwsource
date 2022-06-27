@@ -1,0 +1,28 @@
+@startuml
+class Pawn_PathFollower {
+    + nextCellCostLeft : float
+    + nextCellCostTotal : float = 1f
+    + Moving : bool <<get>>
+    + MovingNow : bool <<get>>
+    + Pawn_PathFollower(newPawn:Pawn)
+    + ExposeData() : void
+    + StartPath(dest:LocalTargetInfo, peMode:PathEndMode) : void
+    + StopDead() : void
+    + PatherTick() : void
+    + TryResumePathingAfterLoading() : void
+    + Notify_Teleported_Int() : void
+    + ResetToCurrentPosition() : void
+    + BuildingBlockingNextPathCell() : Building
+    + WillCollideWithPawnOnNextPathCell() : bool
+    + NextCellDoorToWaitForOrManuallyOpen() : Building_Door
+    + PatherDraw() : void
+    + MovedRecently(ticks:int) : bool
+    + TryRecoverFromUnwalkablePosition(error:bool) : bool
+}
+IExposable <|-- Pawn_PathFollower
+Pawn_PathFollower --> "nextCell" IntVec3
+Pawn_PathFollower --> "curPath" PawnPath
+Pawn_PathFollower --> "lastPathedTargetPosition" IntVec3
+Pawn_PathFollower --> "Destination" LocalTargetInfo
+Pawn_PathFollower --> "LastPassableCellInPath" IntVec3
+@enduml

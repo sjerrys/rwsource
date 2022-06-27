@@ -1,0 +1,9 @@
+@startuml
+class LogSimple <<static>> {
+    + {static} Message(text:string) : void
+    + {static} BeginTabMessage(text:string) : void
+    + {static} EndTab() : void
+    + {static} FlushToFileAndOpen() : void
+    + {static} FlushToStandardLog() : void
+}
+@enduml

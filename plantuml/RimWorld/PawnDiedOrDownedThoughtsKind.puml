@@ -1,0 +1,9 @@
+@startuml
+enum PawnDiedOrDownedThoughtsKind {
+    Died,
+    Banished,
+    BanishedToDie,
+    Downed,
+    Lost,
+}
+@enduml

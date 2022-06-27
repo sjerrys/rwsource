@@ -1,0 +1,5 @@
+@startuml
+class TradeRequestUtility <<static>> {
+    + {static} RequestedThingLabel(def:ThingDef, count:int) : string
+}
+@enduml

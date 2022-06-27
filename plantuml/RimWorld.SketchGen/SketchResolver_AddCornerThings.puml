@@ -1,0 +1,5 @@
+@startuml
+class SketchResolver_AddCornerThings {
+}
+SketchResolver <|-- SketchResolver_AddCornerThings
+@enduml

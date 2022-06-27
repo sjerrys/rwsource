@@ -1,0 +1,5 @@
+@startuml
+class ThinkNode_ConditionalForcedGoto {
+}
+ThinkNode_Conditional <|-- ThinkNode_ConditionalForcedGoto
+@enduml

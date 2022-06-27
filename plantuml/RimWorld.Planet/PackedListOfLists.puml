@@ -1,0 +1,9 @@
+@startuml
+class PackedListOfLists <<static>> {
+    + {static} AddList(offsets:List<int>, values:List<T>, listToAdd:List<T>) : void
+    + {static} GetList(offsets:List<int>, values:List<T>, listIndex:int, outList:List<T>) : void
+    + {static} GetListValuesIndices(offsets:List<int>, values:List<T>, listIndex:int, outList:List<int>) : void
+    + {static} GetListCount(offsets:List<int>, values:List<T>, listIndex:int) : int
+    + {static} GenerateVertToTrisPackedList(verts:List<Vector3>, tris:List<TriangleIndices>, outOffsets:List<int>, outValues:List<int>) : void
+}
+@enduml

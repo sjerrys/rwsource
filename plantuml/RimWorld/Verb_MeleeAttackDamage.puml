@@ -1,0 +1,5 @@
+@startuml
+class Verb_MeleeAttackDamage {
+}
+Verb_MeleeAttack <|-- Verb_MeleeAttackDamage
+@enduml

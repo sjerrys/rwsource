@@ -1,0 +1,8 @@
+@startuml
+class ScenarioMaker <<static>> {
+    + {static} GenerateNewRandomScenario(seed:string) : Scenario
+    + {static} AddableParts(scen:Scenario) : IEnumerable<ScenPartDef>
+    + {static} MakeScenPart(def:ScenPartDef) : ScenPart
+}
+ScenarioMaker --> "GeneratingScenario" Scenario
+@enduml

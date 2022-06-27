@@ -1,0 +1,10 @@
+@startuml
+class LordToil_BestowingCeremony_MoveInPlace {
+    + pass : bool?
+    + LordToil_BestowingCeremony_MoveInPlace(spot:IntVec3, target:Pawn)
+    + <<override>> UpdateAllDuties() : void
+}
+LordToil <|-- LordToil_BestowingCeremony_MoveInPlace
+LordToil_BestowingCeremony_MoveInPlace --> "spot" IntVec3
+LordToil_BestowingCeremony_MoveInPlace --> "target" Pawn
+@enduml

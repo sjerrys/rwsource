@@ -1,0 +1,5 @@
+@startuml
+class DrugCategoryExtension <<static>> {
+    + {static} IncludedIn(lhs:DrugCategory, rhs:DrugCategory) : bool
+}
+@enduml

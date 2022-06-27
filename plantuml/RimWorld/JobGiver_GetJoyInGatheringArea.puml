@@ -1,0 +1,5 @@
+@startuml
+class JobGiver_GetJoyInGatheringArea {
+}
+JobGiver_GetJoy <|-- JobGiver_GetJoyInGatheringArea
+@enduml

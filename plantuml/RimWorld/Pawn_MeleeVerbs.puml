@@ -1,0 +1,17 @@
+@startuml
+class Pawn_MeleeVerbs {
+    + lastTerrainBasedVerbUseTick : int
+    + <<const>> TerrainBasedVerbUseDelay : int = 1200
+    + Pawn_MeleeVerbs(pawn:Pawn)
+    + {static} PawnMeleeVerbsStaticUpdate() : void
+    + TryGetMeleeVerb(target:Thing) : Verb
+    + TryMeleeAttack(target:Thing, verbToUse:Verb, surpriseAttack:bool) : bool
+    + GetUpdatedAvailableVerbsList(terrainTools:bool) : List<VerbEntry>
+    + Notify_PawnKilled() : void
+    + Notify_PawnDespawned() : void
+    + Notify_UsedTerrainBasedVerb() : void
+    + ExposeData() : void
+}
+IExposable <|-- Pawn_MeleeVerbs
+Pawn_MeleeVerbs --> "Pawn" Pawn
+@enduml

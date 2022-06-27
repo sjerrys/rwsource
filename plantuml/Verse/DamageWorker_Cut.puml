@@ -1,0 +1,5 @@
+@startuml
+class DamageWorker_Cut {
+}
+DamageWorker_AddInjury <|-- DamageWorker_Cut
+@enduml

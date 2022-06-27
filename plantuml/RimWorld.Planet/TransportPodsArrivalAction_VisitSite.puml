@@ -1,0 +1,13 @@
+@startuml
+class TransportPodsArrivalAction_VisitSite {
+    + TransportPodsArrivalAction_VisitSite()
+    + TransportPodsArrivalAction_VisitSite(site:Site, arrivalMode:PawnsArrivalModeDef)
+    + <<override>> ExposeData() : void
+    + <<override>> StillValid(pods:IEnumerable<IThingHolder>, destinationTile:int) : FloatMenuAcceptanceReport
+    + <<override>> ShouldUseLongEvent(pods:List<ActiveDropPodInfo>, tile:int) : bool
+    + <<override>> Arrived(pods:List<ActiveDropPodInfo>, tile:int) : void
+    + {static} CanVisit(pods:IEnumerable<IThingHolder>, site:Site) : FloatMenuAcceptanceReport
+    + {static} GetFloatMenuOptions(representative:CompLaunchable, pods:IEnumerable<IThingHolder>, site:Site) : IEnumerable<FloatMenuOption>
+}
+TransportPodsArrivalAction <|-- TransportPodsArrivalAction_VisitSite
+@enduml

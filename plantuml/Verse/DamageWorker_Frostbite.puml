@@ -1,0 +1,5 @@
+@startuml
+class DamageWorker_Frostbite {
+}
+DamageWorker_AddInjury <|-- DamageWorker_Frostbite
+@enduml

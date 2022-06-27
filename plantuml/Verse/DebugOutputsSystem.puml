@@ -1,0 +1,7 @@
+@startuml
+class DebugOutputsSystem <<static>> {
+    + {static} LoadedAssets() : void
+    + {static} DynamicDrawThingsList() : void
+    + {static} RandByCurveTests() : void
+}
+@enduml

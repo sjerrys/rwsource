@@ -1,0 +1,12 @@
+@startuml
+class DebugOutputsEcology <<static>> {
+    + {static} PlantsBasics() : void
+    + {static} PlantCurrentProportions() : void
+    + {static} Biomes() : void
+    + {static} BiomeAnimalsSpawnChances() : void
+    + {static} BiomeAnimalsTypicalCounts() : void
+    + {static} BiomePlantsExpectedCount() : void
+    + {static} AnimalWildCountsOnMap() : void
+    + {static} PlantCountsOnMap() : void
+}
+@enduml

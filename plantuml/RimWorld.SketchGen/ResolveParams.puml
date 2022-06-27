@@ -1,0 +1,40 @@
+@startuml
+class ResolveParams <<struct>> {
+    + rect : CellRect?
+    + allowWood : bool?
+    + points : float?
+    + totalPoints : float?
+    + symmetryOrigin : int?
+    + symmetryVertical : bool?
+    + symmetryOriginIncluded : bool?
+    + symmetryClear : bool?
+    + connectedGroupsSameStuff : bool?
+    + floorFillRoomsOnly : bool?
+    + singleFloorType : bool?
+    + onlyStoneFloors : bool?
+    + monumentSize : IntVec2?
+    + monumentOpen : bool?
+    + allowMonumentDoors : bool?
+    + allowConcrete : bool?
+    + allowFlammableWalls : bool?
+    + onlyBuildableByPlayer : bool?
+    + addFloors : bool?
+    + requireFloor : bool?
+    + mechClusterSize : IntVec2?
+    + mechClusterDormant : bool?
+    + forceNoConditionCauser : bool?
+    + SetCustom(name:string, obj:T, inherit:bool) : void
+    + RemoveCustom(name:string) : void
+    + TryGetCustom(name:string, obj:T) : bool
+    + GetCustom(name:string) : T
+    + <<override>> ToString() : string
+}
+ResolveParams --> "sketch" Sketch
+ResolveParams --> "assignRandomStuffTo" ThingDef
+ResolveParams --> "cornerThing" ThingDef
+ResolveParams --> "thingCentral" ThingDef
+ResolveParams --> "wallEdgeThing" ThingDef
+ResolveParams --> "allowedMonumentThings" ThingFilter
+ResolveParams --> "useOnlyStonesAvailableOnMap" Map
+ResolveParams --> "mechClusterForMap" Map
+@enduml

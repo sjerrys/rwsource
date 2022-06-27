@@ -1,0 +1,8 @@
+@startuml
+enum VerbCategory {
+    Undefined,
+    BeatFire,
+    Ignite,
+    Misc,
+}
+@enduml

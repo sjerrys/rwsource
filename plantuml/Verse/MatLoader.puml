@@ -1,0 +1,14 @@
+@startuml
+class MatLoader <<static>> {
+    + {static} LoadMat(matPath:string, renderQueue:int) : Material
+}
+class Request <<struct>> {
+    + path : string
+    + renderQueue : int
+    + <<override>> GetHashCode() : int
+    + <<override>> Equals(obj:object) : bool
+    + Equals(other:Request) : bool
+    + <<override>> ToString() : string
+}
+MatLoader +-- Request
+@enduml

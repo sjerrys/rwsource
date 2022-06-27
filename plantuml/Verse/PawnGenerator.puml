@@ -1,0 +1,22 @@
+@startuml
+class PawnGenerator <<static>> {
+    + <<const>> MaxStartMinorMentalBreakThreshold : float = 0.5f
+    + <<const>> MaxGeneratedMechanoidAge : float = 2500f
+    + {static} Reset() : void
+    + {static} GeneratePawn(kindDef:PawnKindDef, faction:Faction) : Pawn
+    + {static} GeneratePawn(request:PawnGenerationRequest) : Pawn
+    + {static} RedressPawn(pawn:Pawn, request:PawnGenerationRequest) : void
+    + {static} IsBeingGenerated(pawn:Pawn) : bool
+    + {static} RandomTraitDegree(traitDef:TraitDef) : int
+    + {static} PostProcessGeneratedGear(gear:Thing, pawn:Pawn) : void
+    + {static} PawnGenerationHistogram() : void
+}
+class PawnGenerationStatus <<struct>> {
+    + PawnGenerationStatus(pawn:Pawn, pawnsGeneratedInTheMeantime:List<Pawn>)
+}
+class "List`1"<T> {
+}
+PawnGenerator +-- PawnGenerationStatus
+PawnGenerationStatus --> "Pawn" Pawn
+PawnGenerationStatus --> "PawnsGeneratedInTheMeantime<Pawn>" "List`1"
+@enduml

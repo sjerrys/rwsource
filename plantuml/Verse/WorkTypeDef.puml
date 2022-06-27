@@ -1,0 +1,21 @@
+@startuml
+class WorkTypeDef {
+    + labelShort : string
+    + pawnLabel : string
+    + gerundLabel : string
+    + verb : string
+    + visible : bool = true
+    + naturalPriority : int
+    + alwaysStartActive : bool
+    + requireCapableColonist : bool
+    + <<override>> ConfigErrors() : IEnumerable<string>
+    + <<override>> ResolveReferences() : void
+    + <<override>> GetHashCode() : int
+}
+class "List`1"<T> {
+}
+Def <|-- WorkTypeDef
+WorkTypeDef --> "workTags" WorkTags
+WorkTypeDef o-> "relevantSkills<SkillDef>" "List`1"
+WorkTypeDef o-> "workGiversByPriority<WorkGiverDef>" "List`1"
+@enduml

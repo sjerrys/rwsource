@@ -1,0 +1,6 @@
+@startuml
+class JoyGiver_BuildSnowman {
+    + <<override>> TryGiveJob(pawn:Pawn) : Job
+}
+JoyGiver <|-- JoyGiver_BuildSnowman
+@enduml

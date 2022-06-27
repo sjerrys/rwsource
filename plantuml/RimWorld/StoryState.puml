@@ -1,0 +1,23 @@
+@startuml
+class StoryState {
+    + LastRoyalFavorQuestTick : int <<get>>
+    + LastThreatBigTick : int <<get>>
+    + StoryState(target:IIncidentTarget)
+    + ExposeData() : void
+    + Notify_IncidentFired(fi:FiringIncident) : void
+    + RecordRandomQuestFired(questScript:QuestScriptDef) : void
+    + RecordDecreeFired(questScript:QuestScriptDef) : void
+    + RecordPopulationIncrease() : void
+    + GetTicksFromColonistCount(count:int) : int
+    + CopyTo(other:StoryState) : void
+}
+class "Dictionary`2"<T1,T2> {
+}
+class "List`1"<T> {
+}
+IExposable <|-- StoryState
+StoryState o-> "lastFireTicks<IncidentDef,int>" "Dictionary`2"
+StoryState --> "Target" IIncidentTarget
+StoryState --> "RecentRandomQuests<QuestScriptDef>" "List`1"
+StoryState --> "RecentRandomDecrees<QuestScriptDef>" "List`1"
+@enduml

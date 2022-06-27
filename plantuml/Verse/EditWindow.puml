@@ -1,0 +1,8 @@
+@startuml
+abstract class EditWindow {
+    + EditWindow()
+    + <<override>> PostOpen() : void
+}
+Window <|-- EditWindow
+EditWindow --> "InitialSize" Vector2
+@enduml

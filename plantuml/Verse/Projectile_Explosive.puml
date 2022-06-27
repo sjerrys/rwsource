@@ -1,0 +1,7 @@
+@startuml
+class Projectile_Explosive {
+    + <<override>> ExposeData() : void
+    + <<override>> Tick() : void
+}
+Projectile <|-- Projectile_Explosive
+@enduml

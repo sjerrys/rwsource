@@ -1,0 +1,7 @@
+@startuml
+class CompProperties_ShipLandingBeacon {
+    + CompProperties_ShipLandingBeacon()
+}
+CompProperties <|-- CompProperties_ShipLandingBeacon
+CompProperties_ShipLandingBeacon --> "edgeLengthRange" FloatRange
+@enduml

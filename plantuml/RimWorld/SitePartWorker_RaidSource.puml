@@ -1,0 +1,7 @@
+@startuml
+class SitePartWorker_RaidSource {
+    + <<override>> SitePartWorkerTick(sitePart:SitePart) : void
+    + <<override>> Notify_GeneratedByQuestGen(part:SitePart, slate:Slate, outExtraDescriptionRules:List<Rule>, outExtraDescriptionConstants:Dictionary<string, string>) : void
+}
+SitePartWorker_Outpost <|-- SitePartWorker_RaidSource
+@enduml

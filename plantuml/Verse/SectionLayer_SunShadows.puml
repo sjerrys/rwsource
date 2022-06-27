@@ -1,0 +1,8 @@
+@startuml
+class SectionLayer_SunShadows {
+    + <<override>> Visible : bool <<get>>
+    + SectionLayer_SunShadows(section:Section)
+    + <<override>> Regenerate() : void
+}
+SectionLayer <|-- SectionLayer_SunShadows
+@enduml

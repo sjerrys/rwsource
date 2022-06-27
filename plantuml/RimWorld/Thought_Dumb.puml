@@ -1,0 +1,8 @@
+@startuml
+class Thought_Dumb {
+    + <<override>> CurStageIndex : int <<get>>
+    + SetForcedStage(stageIndex:int) : void
+    + <<override>> ExposeData() : void
+}
+Thought <|-- Thought_Dumb
+@enduml

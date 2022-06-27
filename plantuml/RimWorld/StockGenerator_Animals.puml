@@ -1,0 +1,8 @@
+@startuml
+class StockGenerator_Animals {
+    + <<override>> GenerateThings(forTile:int, faction:Faction) : IEnumerable<Thing>
+    + <<override>> HandlesThingDef(thingDef:ThingDef) : bool
+    + LogAnimalChances() : void
+}
+StockGenerator <|-- StockGenerator_Animals
+@enduml

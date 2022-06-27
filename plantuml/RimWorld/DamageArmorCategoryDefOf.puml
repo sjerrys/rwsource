@@ -1,0 +1,6 @@
+@startuml
+class DamageArmorCategoryDefOf <<static>> {
+    {static} DamageArmorCategoryDefOf()
+}
+DamageArmorCategoryDefOf --> "Sharp" DamageArmorCategoryDef
+@enduml

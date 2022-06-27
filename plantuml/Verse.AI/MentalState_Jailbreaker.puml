@@ -1,0 +1,7 @@
+@startuml
+class MentalState_Jailbreaker {
+    + <<override>> MentalStateTick() : void
+    + Notify_InducedPrisonerToEscape() : void
+}
+MentalState <|-- MentalState_Jailbreaker
+@enduml

@@ -1,0 +1,53 @@
+@startuml
+class Ability {
+    + CooldownTicksRemaining : int <<get>>
+    + CooldownTicksTotal : int <<get>>
+    + HasCooldown : bool <<get>>
+    + <<virtual>> CanCast : bool <<get>>
+    + Casting : bool <<get>>
+    + <<virtual>> CanQueueCast : bool <<get>>
+    + UniqueVerbOwnerID() : string
+    + VerbsStillUsableBy(p:Pawn) : bool
+    + Ability(pawn:Pawn)
+    + Ability(pawn:Pawn, def:AbilityDef)
+    + <<virtual>> CanApplyOn(target:LocalTargetInfo) : bool
+    + <<virtual>> CanApplyOn(target:GlobalTargetInfo) : bool
+    + ConfirmationDialogText(target:LocalTargetInfo) : string
+    + ConfirmationDialogText(target:GlobalTargetInfo) : string
+    + <<virtual>> Activate(target:LocalTargetInfo, dest:LocalTargetInfo) : bool
+    + <<virtual>> Activate(target:GlobalTargetInfo) : bool
+    + GetAffectedTargets(target:LocalTargetInfo) : IEnumerable<LocalTargetInfo>
+    + <<virtual>> QueueCastingJob(target:LocalTargetInfo, destination:LocalTargetInfo) : void
+    + <<virtual>> QueueCastingJob(target:GlobalTargetInfo) : void
+    + ValidateGlobalTarget(target:GlobalTargetInfo) : bool
+    + <<virtual>> GizmoDisabled(reason:string) : bool
+    + <<virtual>> AbilityTick() : void
+    + Notify_StartedCasting() : void
+    + DrawEffectPreviews(target:LocalTargetInfo) : void
+    + <<virtual>> GetGizmos() : IEnumerable<Command>
+    + StartCooldown(ticks:int) : void
+    + CompsOfType() : IEnumerable<T>
+    + CompOfType() : T
+    + Initialize() : void
+    + FinalPsyfocusCost(target:LocalTargetInfo) : float
+    + WorldMapExtraLabel(t:GlobalTargetInfo) : string
+    + AddEffecterToMaintain(eff:Effecter, pos:IntVec3, ticks:int) : void
+    + <<virtual>> ExposeData() : void
+    + GetUniqueLoadID() : string
+}
+class "List`1"<T> {
+}
+IVerbOwner <|-- Ability
+IExposable <|-- Ability
+ILoadReferenceable <|-- Ability
+Ability --> "pawn" Pawn
+Ability --> "def" AbilityDef
+Ability --> "comps<AbilityComp>" "List`1"
+Ability --> "verb" Verb
+Ability --> "Tools<Tool>" "List`1"
+Ability --> "ConstantCaster" Thing
+Ability --> "VerbProperties<VerbProperties>" "List`1"
+Ability --> "ImplementOwnerTypeDef" ImplementOwnerTypeDef
+Ability --> "VerbTracker" VerbTracker
+Ability --> "EffectComps<CompAbilityEffect>" "List`1"
+@enduml

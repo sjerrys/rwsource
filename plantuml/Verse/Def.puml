@@ -1,0 +1,28 @@
+@startuml
+class Def {
+    + defName : string = "UnnamedDef"
+    + label : string
+    + description : string
+    + ignoreConfigErrors : bool
+    + shortHash : ushort
+    + index : ushort
+    + fileName : string
+    + generated : bool
+    + debugRandomId : ushort
+    + <<const>> DefaultDefName : string = "UnnamedDef"
+    + <<virtual>> SpecialDisplayStats(req:StatRequest) : IEnumerable<StatDrawEntry>
+    + <<override>> ConfigErrors() : IEnumerable<string>
+    + <<virtual>> ClearCachedData() : void
+    + <<override>> ToString() : string
+    + <<override>> GetHashCode() : int
+    + GetModExtension() : T
+    + HasModExtension() : bool
+}
+class "List`1"<T> {
+}
+Editable <|-- Def
+Def --> "descriptionHyperlinks<DefHyperlink>" "List`1"
+Def --> "modExtensions<DefModExtension>" "List`1"
+Def --> "modContentPack" ModContentPack
+Def --> "LabelCap" TaggedString
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class SimpleCurveDrawInfo {
+    + label : string
+    + valueFormat : string
+}
+SimpleCurveDrawInfo --> "curve" SimpleCurve
+SimpleCurveDrawInfo o-> "color" Color
+@enduml

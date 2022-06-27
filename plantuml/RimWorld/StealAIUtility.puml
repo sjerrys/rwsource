@@ -1,0 +1,8 @@
+@startuml
+class StealAIUtility <<static>> {
+    + {static} TryFindBestItemToSteal(root:IntVec3, map:Map, maxDist:float, item:Thing, thief:Pawn, disallowed:List<Thing>) : bool
+    + {static} TotalMarketValueAround(pawns:List<Pawn>) : float
+    + {static} StartStealingMarketValueThreshold(lord:Lord) : float
+    + {static} GetValue(thing:Thing) : float
+}
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class WorldGlobalControls {
+    + <<const>> Width : float = 200f
+    + WorldGlobalControlsOnGUI() : void
+}
+@enduml

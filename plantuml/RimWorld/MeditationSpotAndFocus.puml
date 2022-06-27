@@ -1,0 +1,9 @@
+@startuml
+class MeditationSpotAndFocus <<struct>> {
+    + IsValid : bool <<get>>
+    + MeditationSpotAndFocus(spot:LocalTargetInfo)
+    + MeditationSpotAndFocus(spot:LocalTargetInfo, focus:LocalTargetInfo)
+}
+MeditationSpotAndFocus --> "spot" LocalTargetInfo
+MeditationSpotAndFocus --> "focus" LocalTargetInfo
+@enduml

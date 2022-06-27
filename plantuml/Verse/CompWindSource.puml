@@ -1,0 +1,7 @@
+@startuml
+class CompWindSource {
+    + wind : float
+    + <<override>> PostExposeData() : void
+}
+ThingComp <|-- CompWindSource
+@enduml

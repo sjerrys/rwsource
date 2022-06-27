@@ -1,0 +1,20 @@
+@startuml
+enum JobTag {
+    Misc,
+    MiscWork,
+    Fieldwork,
+    Idle,
+    InMentalState,
+    SatisfyingNeeds,
+    DraftedOrder,
+    UnspecifiedLordDuty,
+    WaitingForOthersToFinishGatheringItems,
+    TuckedIntoBed,
+    RestingForMedicalReasons,
+    ChangingApparel,
+    Escaping,
+    JoiningCaravan,
+    TrainedAnimalBehavior,
+    UnloadingOwnInventory,
+}
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class ThoughtWorker_BodyPuristDisgust {
+}
+ThoughtWorker <|-- ThoughtWorker_BodyPuristDisgust
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class StorytellerCompProperties_CategoryMTB {
+    + mtbDays : float
+    + StorytellerCompProperties_CategoryMTB()
+}
+StorytellerCompProperties <|-- StorytellerCompProperties_CategoryMTB
+StorytellerCompProperties_CategoryMTB --> "mtbDaysFactorByDaysPassedCurve" SimpleCurve
+StorytellerCompProperties_CategoryMTB --> "category" IncidentCategoryDef
+@enduml

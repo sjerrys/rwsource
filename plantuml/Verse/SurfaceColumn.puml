@@ -1,0 +1,7 @@
+@startuml
+class SurfaceColumn <<struct>> {
+    + x : float
+    + SurfaceColumn(x:float, y:SimpleCurve)
+}
+SurfaceColumn --> "y" SimpleCurve
+@enduml

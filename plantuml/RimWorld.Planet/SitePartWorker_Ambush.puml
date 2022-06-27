@@ -1,0 +1,6 @@
+@startuml
+class SitePartWorker_Ambush {
+    + <<override>> GenerateDefaultParams(myThreatPoints:float, tile:int, faction:Faction) : SitePartParams
+}
+SitePartWorker <|-- SitePartWorker_Ambush
+@enduml

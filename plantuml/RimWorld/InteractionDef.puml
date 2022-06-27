@@ -1,0 +1,19 @@
+@startuml
+class InteractionDef {
+    + socialFightBaseChance : float
+    + initiatorXpGainAmount : int
+    + recipientXpGainAmount : int
+    + ignoreTimeSinceLastInteraction : bool
+    + <<override>> ResolveReferences() : void
+}
+Def <|-- InteractionDef
+InteractionDef --> "interactionMote" ThingDef
+InteractionDef --> "initiatorThought" ThoughtDef
+InteractionDef --> "initiatorXpGainSkill" SkillDef
+InteractionDef --> "recipientThought" ThoughtDef
+InteractionDef --> "recipientXpGainSkill" SkillDef
+InteractionDef --> "logRulesInitiator" RulePack
+InteractionDef --> "logRulesRecipient" RulePack
+InteractionDef --> "Worker" InteractionWorker
+InteractionDef --> "Symbol" Texture2D
+@enduml

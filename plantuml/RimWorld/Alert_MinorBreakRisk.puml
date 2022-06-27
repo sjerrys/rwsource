@@ -1,0 +1,9 @@
+@startuml
+class Alert_MinorBreakRisk {
+    + Alert_MinorBreakRisk()
+    + <<override>> GetLabel() : string
+    + <<override>> GetExplanation() : TaggedString
+    + <<override>> GetReport() : AlertReport
+}
+Alert <|-- Alert_MinorBreakRisk
+@enduml

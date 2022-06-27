@@ -1,0 +1,6 @@
+@startuml
+class Designator_AreaHomeExpand {
+    + Designator_AreaHomeExpand()
+}
+Designator_AreaHome <|-- Designator_AreaHomeExpand
+@enduml

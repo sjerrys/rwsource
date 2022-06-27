@@ -1,0 +1,9 @@
+@startuml
+class NameUseChecker <<static>> {
+    + {static} NameWordIsUsed(singleName:string) : bool
+    + {static} NameSingleIsUsed(candidate:string) : bool
+}
+class "IEnumerable`1"<T> {
+}
+NameUseChecker --> "AllPawnsNamesEverUsed<Name>" "IEnumerable`1"
+@enduml

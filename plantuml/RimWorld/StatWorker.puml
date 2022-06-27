@@ -1,0 +1,22 @@
+@startuml
+class StatWorker {
+    + InitSetStat(newStat:StatDef) : void
+    + GetValue(thing:Thing, applyPostProcess:bool) : float
+    + GetValue(thing:Thing, pawn:Pawn, applyPostProcess:bool) : float
+    + GetValue(req:StatRequest, applyPostProcess:bool) : float
+    + GetValueAbstract(def:BuildableDef, stuffDef:ThingDef) : float
+    + GetValueAbstract(def:AbilityDef) : float
+    + <<virtual>> GetValueUnfinalized(req:StatRequest, applyPostProcess:bool) : float
+    + <<virtual>> GetExplanationUnfinalized(req:StatRequest, numberSense:ToStringNumberSense) : string
+    + <<virtual>> FinalizeValue(req:StatRequest, val:float, applyPostProcess:bool) : void
+    + <<virtual>> GetExplanationFinalizePart(req:StatRequest, numberSense:ToStringNumberSense, finalVal:float) : string
+    + GetExplanationFull(req:StatRequest, numberSense:ToStringNumberSense, value:float) : string
+    + <<virtual>> ShouldShowFor(req:StatRequest) : bool
+    + <<virtual>> IsDisabledFor(thing:Thing) : bool
+    + <<virtual>> GetStatDrawEntryLabel(stat:StatDef, value:float, numberSense:ToStringNumberSense, optionalReq:StatRequest, finalized:bool) : string
+    + {static} StatOffsetFromGear(gear:Thing, stat:StatDef) : float
+    + <<virtual>> ValueToString(val:float, finalized:bool, numberSense:ToStringNumberSense) : string
+    + <<virtual>> GetInfoCardHyperlinks(statRequest:StatRequest) : IEnumerable<Dialog_InfoCard.Hyperlink>
+    + {static} ScaleFactor(factor:float, scale:float) : float
+}
+@enduml

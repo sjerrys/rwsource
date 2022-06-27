@@ -1,0 +1,20 @@
+@startuml
+class Building_NutrientPasteDispenser {
+    + {static} CollectDuration : int = 50
+    + CanDispenseNow : bool <<get>>
+    + <<override>> SpawnSetup(map:Map, respawningAfterLoad:bool) : void
+    + <<virtual>> AdjacentReachableHopper(reacher:Pawn) : Building
+    + <<virtual>> TryDispenseFood() : Thing
+    + <<virtual>> FindFeedInAnyHopper() : Thing
+    + <<virtual>> HasEnoughFeedstockInHoppers() : bool
+    + {static} IsAcceptableFeedstock(def:ThingDef) : bool
+    + <<override>> GetInspectString() : string
+}
+class "List`1"<T> {
+}
+Building <|-- Building_NutrientPasteDispenser
+Building_NutrientPasteDispenser --> "powerComp" CompPowerTrader
+Building_NutrientPasteDispenser --> "AdjCellsCardinalInBounds<IntVec3>" "List`1"
+Building_NutrientPasteDispenser --> "DispensableDef" ThingDef
+Building_NutrientPasteDispenser --> "DrawColor" Color
+@enduml

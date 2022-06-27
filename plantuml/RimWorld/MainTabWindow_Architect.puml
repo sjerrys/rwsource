@@ -1,0 +1,14 @@
+@startuml
+class MainTabWindow_Architect {
+    + <<const>> WinWidth : float = 200f
+    + WinHeight : float <<get>>
+    + MainTabWindow_Architect()
+    + <<override>> PostOpen() : void
+    + <<override>> WindowUpdate() : void
+    + <<override>> ExtraOnGUI() : void
+    + <<override>> DoWindowContents(inRect:Rect) : void
+}
+MainTabWindow <|-- MainTabWindow_Architect
+MainTabWindow_Architect --> "selectedDesPanel" ArchitectCategoryTab
+MainTabWindow_Architect --> "RequestedTabSize" Vector2
+@enduml

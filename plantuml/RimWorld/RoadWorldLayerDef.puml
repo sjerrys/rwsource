@@ -1,0 +1,7 @@
+@startuml
+class RoadWorldLayerDef {
+    + order : int
+}
+Def <|-- RoadWorldLayerDef
+RoadWorldLayerDef --> "color" Color
+@enduml

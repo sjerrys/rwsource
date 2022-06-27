@@ -1,0 +1,15 @@
+@startuml
+class Reward_Goodwill {
+    + amount : int
+    + <<override>> InitFromValue(rewardValue:float, parms:RewardsGeneratorParams, valueActuallyUsed:float) : void
+    + <<override>> GenerateQuestParts(index:int, parms:RewardsGeneratorParams, customLetterLabel:string, customLetterText:string, customLetterLabelRules:RulePack, customLetterTextRules:RulePack) : IEnumerable<QuestPart>
+    + <<override>> GetDescription(parms:RewardsGeneratorParams) : string
+    + <<override>> ToString() : string
+    + <<override>> ExposeData() : void
+}
+class "IEnumerable`1"<T> {
+}
+Reward <|-- Reward_Goodwill
+Reward_Goodwill --> "faction" Faction
+Reward_Goodwill --> "StackElements<GenUI.AnonymousStackElement>" "IEnumerable`1"
+@enduml

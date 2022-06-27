@@ -1,0 +1,11 @@
+@startuml
+class DirectXmlLoader <<static>> {
+    + {static} XmlAssetsInModFolder(mod:ModContentPack, folderPath:string, foldersToLoadDebug:List<string>) : LoadableXmlAsset[]
+    + {static} LoadXmlDataInResourcesFolder(folderPath:string) : IEnumerable<T>
+    + {static} ItemFromXmlFile(filePath:string, resolveCrossRefs:bool) : T
+    + {static} ItemFromXmlFile(directory:VirtualDirectory, filePath:string, resolveCrossRefs:bool) : T
+    + {static} ItemFromXmlString(xmlContent:string, filePath:string, resolveCrossRefs:bool) : T
+    + {static} DefFromNode(node:XmlNode, loadingAsset:LoadableXmlAsset) : Def
+    + {static} AllGameItemsFromAsset(asset:LoadableXmlAsset) : IEnumerable<T>
+}
+@enduml

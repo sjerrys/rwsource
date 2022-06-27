@@ -1,0 +1,7 @@
+@startuml
+class CompProperties_TargetEffect_GoodwillImpact {
+    + goodwillImpact : int
+    + CompProperties_TargetEffect_GoodwillImpact()
+}
+CompProperties <|-- CompProperties_TargetEffect_GoodwillImpact
+@enduml

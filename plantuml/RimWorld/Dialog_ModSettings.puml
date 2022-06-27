@@ -1,0 +1,10 @@
+@startuml
+class Dialog_ModSettings {
+    + Dialog_ModSettings()
+    + <<override>> PreClose() : void
+    + <<override>> DoWindowContents(inRect:Rect) : void
+    + {static} HasSettings() : bool
+}
+Window <|-- Dialog_ModSettings
+Dialog_ModSettings --> "InitialSize" Vector2
+@enduml

@@ -1,0 +1,48 @@
+@startuml
+class WorldObjectsHolder {
+    + WorldObjectsCount : int <<get>>
+    + CaravansCount : int <<get>>
+    + RoutePlannerWaypointsCount : int <<get>>
+    + PlayerControlledCaravansCount : int <<get>>
+    + ExposeData() : void
+    + Add(o:WorldObject) : void
+    + Remove(o:WorldObject) : void
+    + WorldObjectsHolderTick() : void
+    + Contains(o:WorldObject) : bool
+    + ObjectsAt(tileID:int) : IEnumerable<WorldObject>
+    + AnyWorldObjectAt(tile:int) : bool
+    + AnyWorldObjectAt(tile:int) : bool
+    + WorldObjectAt(tile:int) : T
+    + AnyWorldObjectAt(tile:int, def:WorldObjectDef) : bool
+    + WorldObjectAt(tile:int, def:WorldObjectDef) : WorldObject
+    + AnySettlementAt(tile:int) : bool
+    + SettlementAt(tile:int) : Settlement
+    + AnySettlementBaseAt(tile:int) : bool
+    + SettlementBaseAt(tile:int) : Settlement
+    + AnySiteAt(tile:int) : bool
+    + SiteAt(tile:int) : Site
+    + AnyDestroyedSettlementAt(tile:int) : bool
+    + DestroyedSettlementAt(tile:int) : DestroyedSettlement
+    + AnyMapParentAt(tile:int) : bool
+    + MapParentAt(tile:int) : MapParent
+    + AnyWorldObjectOfDefAt(def:WorldObjectDef, tile:int) : bool
+    + WorldObjectOfDefAt(def:WorldObjectDef, tile:int) : WorldObject
+    + PlayerControlledCaravanAt(tile:int) : Caravan
+    + AnySettlementBaseAtOrAdjacent(tile:int) : bool
+    + RoutePlannerWaypointAt(tile:int) : RoutePlannerWaypoint
+    + GetPlayerControlledCaravansAt(tile:int, outCaravans:List<Caravan>) : void
+}
+class "List`1"<T> {
+}
+IExposable <|-- WorldObjectsHolder
+WorldObjectsHolder --> "AllWorldObjects<WorldObject>" "List`1"
+WorldObjectsHolder --> "Caravans<Caravan>" "List`1"
+WorldObjectsHolder --> "Settlements<Settlement>" "List`1"
+WorldObjectsHolder --> "TravelingTransportPods<TravelingTransportPods>" "List`1"
+WorldObjectsHolder --> "SettlementBases<Settlement>" "List`1"
+WorldObjectsHolder --> "DestroyedSettlements<DestroyedSettlement>" "List`1"
+WorldObjectsHolder --> "RoutePlannerWaypoints<RoutePlannerWaypoint>" "List`1"
+WorldObjectsHolder --> "MapParents<MapParent>" "List`1"
+WorldObjectsHolder --> "Sites<Site>" "List`1"
+WorldObjectsHolder --> "PeaceTalks<PeaceTalks>" "List`1"
+@enduml

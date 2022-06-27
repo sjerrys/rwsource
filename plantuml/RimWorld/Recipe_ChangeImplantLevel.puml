@@ -1,0 +1,7 @@
+@startuml
+class Recipe_ChangeImplantLevel {
+    + <<override>> GetPartsToApplyOn(pawn:Pawn, recipe:RecipeDef) : IEnumerable<BodyPartRecord>
+    + <<override>> ApplyOnPawn(pawn:Pawn, part:BodyPartRecord, billDoer:Pawn, ingredients:List<Thing>, bill:Bill) : void
+}
+Recipe_Surgery <|-- Recipe_ChangeImplantLevel
+@enduml

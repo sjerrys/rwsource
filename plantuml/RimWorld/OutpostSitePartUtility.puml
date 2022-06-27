@@ -1,0 +1,5 @@
+@startuml
+class OutpostSitePartUtility <<static>> {
+    + {static} GetPawnGroupMakerSeed(parms:SitePartParams) : int
+}
+@enduml

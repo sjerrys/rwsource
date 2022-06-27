@@ -1,0 +1,8 @@
+@startuml
+class LordToil_HuntEnemies {
+    + <<override>> ForceHighStoryDanger : bool <<get>>
+    + LordToil_HuntEnemies(fallbackLocation:IntVec3)
+    + <<override>> UpdateAllDuties() : void
+}
+LordToil <|-- LordToil_HuntEnemies
+@enduml

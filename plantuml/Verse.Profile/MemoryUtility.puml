@@ -1,0 +1,6 @@
+@startuml
+class MemoryUtility <<static>> {
+    + {static} UnloadUnusedUnityAssets() : void
+    + {static} ClearAllMapsAndWorld() : void
+}
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+class DebugOutputsWorldPawns {
+    + {static} ColonistRelativeChance() : void
+    + {static} KidnappedPawns() : void
+    + {static} WorldPawnList() : void
+    + {static} WorldPawnMothballInfo() : void
+    + {static} WorldPawnGcBreakdown() : void
+    + {static} WorldPawnDotgraph() : void
+    + {static} RunWorldPawnGc() : void
+    + {static} RunWorldPawnMothball() : void
+}
+@enduml

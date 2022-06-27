@@ -1,0 +1,8 @@
+@startuml
+class StockGenerator_BuyExpensiveSimple {
+    + minValuePerUnit : float = 15f
+    + <<override>> GenerateThings(forTile:int, faction:Faction) : IEnumerable<Thing>
+    + <<override>> HandlesThingDef(thingDef:ThingDef) : bool
+}
+StockGenerator <|-- StockGenerator_BuyExpensiveSimple
+@enduml

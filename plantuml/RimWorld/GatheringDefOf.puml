@@ -1,0 +1,8 @@
+@startuml
+class GatheringDefOf <<static>> {
+    {static} GatheringDefOf()
+}
+GatheringDefOf --> "Party" GatheringDef
+GatheringDefOf --> "MarriageCeremony" GatheringDef
+GatheringDefOf --> "ThroneSpeech" GatheringDef
+@enduml

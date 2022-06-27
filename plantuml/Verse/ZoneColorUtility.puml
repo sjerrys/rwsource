@@ -1,0 +1,7 @@
+@startuml
+class ZoneColorUtility <<static>> {
+    {static} ZoneColorUtility()
+    + {static} NextGrowingZoneColor() : Color
+    + {static} NextStorageZoneColor() : Color
+}
+@enduml

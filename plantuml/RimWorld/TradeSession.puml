@@ -1,0 +1,12 @@
+@startuml
+class TradeSession <<static>> {
+    + {static} giftMode : bool
+    + {static} Active : bool <<get>>
+    + {static} SetupWith(newTrader:ITrader, newPlayerNegotiator:Pawn, giftMode:bool) : void
+    + {static} Close() : void
+}
+TradeSession --> "trader" ITrader
+TradeSession --> "playerNegotiator" Pawn
+TradeSession --> "deal" TradeDeal
+TradeSession --> "TradeCurrency" TradeCurrency
+@enduml

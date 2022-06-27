@@ -1,0 +1,9 @@
+@startuml
+class HediffCompProperties_GetsPermanent {
+    + becomePermanentChanceFactor : float = 1f
+    + permanentLabel : string
+    + instantlyPermanentLabel : string
+    + HediffCompProperties_GetsPermanent()
+}
+HediffCompProperties <|-- HediffCompProperties_GetsPermanent
+@enduml

@@ -1,0 +1,21 @@
+@startuml
+class StatDrawEntry {
+    + hasOptionalReq : bool
+    + forceUnfinalizedMode : bool
+    + ShouldDisplay : bool <<get>>
+    + LabelCap : string <<get>>
+    + ValueString : string <<get>>
+    + DisplayPriorityWithinCategory : int <<get>>
+    + StatDrawEntry(category:StatCategoryDef, stat:StatDef, value:float, optionalReq:StatRequest, numberSense:ToStringNumberSense, overrideDisplayPriorityWithinCategory:int?, forceUnfinalizedMode:bool)
+    + StatDrawEntry(category:StatCategoryDef, label:string, valueString:string, reportText:string, displayPriorityWithinCategory:int, overrideReportTitle:string, hyperlinks:IEnumerable<Dialog_InfoCard.Hyperlink>, forceUnfinalizedMode:bool)
+    + StatDrawEntry(category:StatCategoryDef, stat:StatDef)
+    + GetHyperlinks(req:StatRequest) : IEnumerable<Dialog_InfoCard.Hyperlink>
+    + GetExplanationText(optionalReq:StatRequest) : string
+    + SetReportText(reportText:string) : StatDrawEntry
+    + Draw(x:float, y:float, width:float, selected:bool, clickedCallback:Action, mousedOverCallback:Action, scrollPosition:Vector2, scrollOutRect:Rect) : float
+    + <<override>> ToString() : string
+}
+StatDrawEntry --> "category" StatCategoryDef
+StatDrawEntry --> "stat" StatDef
+StatDrawEntry --> "optionalReq" StatRequest
+@enduml

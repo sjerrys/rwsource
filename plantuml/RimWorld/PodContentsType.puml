@@ -1,0 +1,10 @@
+@startuml
+enum PodContentsType {
+    Empty,
+    AncientFriendly,
+    AncientIncapped,
+    AncientHalfEaten,
+    AncientHostile,
+    Slave,
+}
+@enduml

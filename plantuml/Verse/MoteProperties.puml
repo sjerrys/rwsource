@@ -1,0 +1,21 @@
+@startuml
+class MoteProperties {
+    + realTime : bool
+    + fadeInTime : float
+    + solidTime : float = 1f
+    + fadeOutTime : float
+    + speedPerTime : float
+    + growthRate : float
+    + collide : bool
+    + needsMaintenance : bool
+    + rotateTowardsTarget : bool
+    + rotateTowardsMoveDirection : bool
+    + scaleToConnectTargets : bool
+    + attachedToHead : bool
+    + Lifespan : float <<get>>
+}
+MoteProperties o-> "acceleration" Vector3
+MoteProperties --> "landSound" SoundDef
+MoteProperties o-> "unattachedDrawOffset" Vector3
+MoteProperties --> "attachedDrawOffset" Vector3
+@enduml

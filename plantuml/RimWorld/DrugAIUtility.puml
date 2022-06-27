@@ -1,0 +1,5 @@
+@startuml
+class DrugAIUtility <<static>> {
+    + {static} IngestAndTakeToInventoryJob(drug:Thing, pawn:Pawn, maxNumToCarry:int) : Job
+}
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+abstract class CompAbilityEffect_WithDuration {
+    + GetDurationSeconds(target:Pawn) : float
+}
+CompAbilityEffect <|-- CompAbilityEffect_WithDuration
+CompAbilityEffect_WithDuration --> "Props" CompProperties_AbilityEffectWithDuration
+@enduml

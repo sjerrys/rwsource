@@ -1,0 +1,5 @@
+@startuml
+abstract class ScattererValidator {
+    + {abstract} Allows(c:IntVec3, map:Map) : bool
+}
+@enduml

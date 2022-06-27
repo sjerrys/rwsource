@@ -1,0 +1,8 @@
+@startuml
+class HediffCompProperties_ChanceToRemove {
+    + intervalTicks : int
+    + chance : float
+    + HediffCompProperties_ChanceToRemove()
+}
+HediffCompProperties <|-- HediffCompProperties_ChanceToRemove
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+class QuestPart_LendColonistsToFaction {
+    + returnLentColonistsInTicks : int
+    + <<override>> DescriptionPart : string <<get>>
+    + <<override>> QuestPartTick() : void
+    + <<override>> Notify_PawnKilled(pawn:Pawn, dinfo:DamageInfo?) : void
+    + <<override>> DoDebugWindowContents(innerRect:Rect, curY:float) : void
+    + <<override>> ExposeData() : void
+}
+class "List`1"<T> {
+}
+QuestPartActivable <|-- QuestPart_LendColonistsToFaction
+QuestPart_LendColonistsToFaction --> "shuttle" Thing
+QuestPart_LendColonistsToFaction --> "lendColonistsToFaction" Faction
+QuestPart_LendColonistsToFaction --> "returnMap" MapParent
+QuestPart_LendColonistsToFaction --> "LentColonistsListForReading<Thing>" "List`1"
+@enduml

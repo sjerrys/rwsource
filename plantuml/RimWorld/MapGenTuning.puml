@@ -1,0 +1,10 @@
+@startuml
+class MapGenTuning <<static>> {
+    + <<const>> ThresholdElevationRock : float = 0.7f
+    + {static} ElevationFactorFlat : float = 0.8f
+    + {static} ElevationFactorSmallHills : float = 0.9f
+    + {static} ElevationFactorLargeHills : float = 1f
+    + {static} ElevationFactorMountains : float = 1.1f
+    + {static} ElevationFactorImpassableMountains : float = 1.2f
+}
+@enduml

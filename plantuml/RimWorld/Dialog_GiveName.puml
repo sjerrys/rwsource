@@ -1,0 +1,8 @@
+@startuml
+abstract class Dialog_GiveName {
+    + Dialog_GiveName()
+    + <<override>> DoWindowContents(rect:Rect) : void
+}
+Window <|-- Dialog_GiveName
+Dialog_GiveName --> "InitialSize" Vector2
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+class "TableDataGetter`1"<T> {
+    + label : string
+    + TableDataGetter(label:string, getter:Func<T, string>)
+    + TableDataGetter(label:string, getter:Func<T, float>)
+    + TableDataGetter(label:string, getter:Func<T, int>)
+    + TableDataGetter(label:string, getter:Func<T, ThingDef>)
+    + TableDataGetter(label:string, getter:Func<T, object>)
+}
+class "Func`2"<T1,T2> {
+}
+"TableDataGetter`1" --> "getter<T,string>" "Func`2"
+@enduml

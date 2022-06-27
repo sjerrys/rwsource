@@ -1,0 +1,6 @@
+@startuml
+class MeditationFocusTypeAvailabilityCache <<static>> {
+    + {static} PawnCanUse(p:Pawn, type:MeditationFocusDef) : bool
+    + {static} ClearFor(p:Pawn) : void
+}
+@enduml

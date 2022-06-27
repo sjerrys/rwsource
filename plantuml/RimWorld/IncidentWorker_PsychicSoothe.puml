@@ -1,0 +1,5 @@
+@startuml
+class IncidentWorker_PsychicSoothe {
+}
+IncidentWorker_PsychicEmanation <|-- IncidentWorker_PsychicSoothe
+@enduml

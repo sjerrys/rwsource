@@ -1,0 +1,8 @@
+@startuml
+class Building_SteamGeyser {
+    + <<override>> SpawnSetup(map:Map, respawningAfterLoad:bool) : void
+    + <<override>> Tick() : void
+}
+Building <|-- Building_SteamGeyser
+Building_SteamGeyser --> "harvester" Building
+@enduml

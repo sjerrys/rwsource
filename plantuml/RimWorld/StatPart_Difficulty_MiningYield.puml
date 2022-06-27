@@ -1,0 +1,7 @@
+@startuml
+class StatPart_Difficulty_MiningYield {
+    + <<override>> TransformValue(req:StatRequest, val:float) : void
+    + <<override>> ExplanationPart(req:StatRequest) : string
+}
+StatPart <|-- StatPart_Difficulty_MiningYield
+@enduml

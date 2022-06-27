@@ -1,0 +1,7 @@
+@startuml
+class LordToilData_Stage {
+    + <<override>> ExposeData() : void
+}
+LordToilData <|-- LordToilData_Stage
+LordToilData_Stage --> "stagingPoint" IntVec3
+@enduml

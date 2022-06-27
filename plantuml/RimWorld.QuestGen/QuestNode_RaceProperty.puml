@@ -1,0 +1,10 @@
+@startuml
+abstract class QuestNode_RaceProperty {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_RaceProperty
+QuestNode_RaceProperty --> "value<object>" "SlateRef`1"
+QuestNode_RaceProperty --> "node" QuestNode
+QuestNode_RaceProperty --> "elseNode" QuestNode
+@enduml

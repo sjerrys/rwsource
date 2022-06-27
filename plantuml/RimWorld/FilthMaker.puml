@@ -1,0 +1,10 @@
+@startuml
+class FilthMaker <<static>> {
+    + {static} CanMakeFilth(c:IntVec3, map:Map, filthDef:ThingDef, additionalFlags:FilthSourceFlags) : bool
+    + {static} TerrainAcceptsFilth(terrainDef:TerrainDef, filthDef:ThingDef, additionalFlags:FilthSourceFlags) : bool
+    + {static} TryMakeFilth(c:IntVec3, map:Map, filthDef:ThingDef, count:int, additionalFlags:FilthSourceFlags) : bool
+    + {static} TryMakeFilth(c:IntVec3, map:Map, filthDef:ThingDef, source:string, count:int, additionalFlags:FilthSourceFlags) : bool
+    + {static} TryMakeFilth(c:IntVec3, map:Map, filthDef:ThingDef, sources:IEnumerable<string>, additionalFlags:FilthSourceFlags) : bool
+    + {static} RemoveAllFilth(c:IntVec3, map:Map) : void
+}
+@enduml

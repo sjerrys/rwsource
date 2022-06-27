@@ -1,0 +1,6 @@
+@startuml
+class GenStep_ScatterRuinsSimple {
+    + <<override>> SeedPart : int <<get>>
+}
+GenStep_Scatterer <|-- GenStep_ScatterRuinsSimple
+@enduml

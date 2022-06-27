@@ -1,0 +1,7 @@
+@startuml
+class GatherAnimalsAndSlavesForCaravanUtility <<static>> {
+    + {static} IsFollowingAnyone(p:Pawn) : bool
+    + {static} SetFollower(p:Pawn, follower:Pawn) : void
+    + {static} CheckArrived(lord:Lord, pawns:List<Pawn>, meetingPoint:IntVec3, memo:string, shouldCheckIfArrived:Predicate<Pawn>, extraValidator:Predicate<Pawn>) : void
+}
+@enduml

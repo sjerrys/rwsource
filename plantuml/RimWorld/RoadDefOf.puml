@@ -1,0 +1,8 @@
+@startuml
+class RoadDefOf <<static>> {
+    {static} RoadDefOf()
+}
+RoadDefOf --> "DirtRoad" RoadDef
+RoadDefOf --> "AncientAsphaltRoad" RoadDef
+RoadDefOf --> "AncientAsphaltHighway" RoadDef
+@enduml

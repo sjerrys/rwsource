@@ -1,0 +1,13 @@
+@startuml
+class Screen_Credits {
+    + wonGame : bool
+    + creationRealtime : float
+    + Screen_Credits()
+    + Screen_Credits(preCreditsMessage:string)
+    + <<override>> PreOpen() : void
+    + <<override>> WindowUpdate() : void
+    + <<override>> DoWindowContents(inRect:Rect) : void
+}
+Window <|-- Screen_Credits
+Screen_Credits --> "InitialSize" Vector2
+@enduml

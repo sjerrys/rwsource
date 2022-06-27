@@ -1,0 +1,9 @@
+@startuml
+class JobGiver_Work {
+    + emergency : bool
+    + <<override>> DeepCopy(resolve:bool) : ThinkNode
+    + <<override>> GetPriority(pawn:Pawn) : float
+    + <<override>> TryIssueJobPackage(pawn:Pawn, jobParams:JobIssueParams) : ThinkResult
+}
+ThinkNode <|-- JobGiver_Work
+@enduml

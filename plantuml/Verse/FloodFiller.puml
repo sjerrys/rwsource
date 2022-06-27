@@ -1,0 +1,10 @@
+@startuml
+class FloodFiller {
+    + FloodFiller(map:Map)
+    + FloodFill(root:IntVec3, passCheck:Predicate<IntVec3>, processor:Action<IntVec3>, maxCellsToProcess:int, rememberParents:bool, extraRoots:IEnumerable<IntVec3>) : void
+    + FloodFill(root:IntVec3, passCheck:Predicate<IntVec3>, processor:Action<IntVec3, int>, maxCellsToProcess:int, rememberParents:bool, extraRoots:IEnumerable<IntVec3>) : void
+    + FloodFill(root:IntVec3, passCheck:Predicate<IntVec3>, processor:Func<IntVec3, bool>, maxCellsToProcess:int, rememberParents:bool, extraRoots:IEnumerable<IntVec3>) : void
+    + FloodFill(root:IntVec3, passCheck:Predicate<IntVec3>, processor:Func<IntVec3, int, bool>, maxCellsToProcess:int, rememberParents:bool, extraRoots:IEnumerable<IntVec3>) : void
+    + ReconstructLastFloodFillPath(dest:IntVec3, outPath:List<IntVec3>) : void
+}
+@enduml

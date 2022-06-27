@@ -1,0 +1,10 @@
+@startuml
+class Toils_Goto <<static>> {
+    + {static} Goto(ind:TargetIndex, peMode:PathEndMode) : Toil
+    + {static} GotoThing(ind:TargetIndex, peMode:PathEndMode) : Toil
+    + {static} GotoThing(ind:TargetIndex, exactCell:IntVec3) : Toil
+    + {static} GotoCell(ind:TargetIndex, peMode:PathEndMode) : Toil
+    + {static} GotoCell(cell:IntVec3, peMode:PathEndMode) : Toil
+    + {static} MoveOffTargetBlueprint(targetInd:TargetIndex) : Toil
+}
+@enduml

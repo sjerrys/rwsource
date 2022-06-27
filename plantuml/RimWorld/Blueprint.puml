@@ -1,0 +1,17 @@
+@startuml
+abstract class Blueprint {
+    + <<override>> Label : string <<get>>
+    + <<override>> Draw() : void
+    + <<override>> GetGizmos() : IEnumerable<Gizmo>
+    + <<virtual>> TryReplaceWithSolidThing(workerPawn:Pawn, createdThing:Thing, jobEnded:bool) : bool
+    + <<override>> SpawnSetup(map:Map, respawningAfterLoad:bool) : void
+    + <<override>> DeSpawn(mode:DestroyMode) : void
+    + {abstract} MaterialsNeeded() : List<ThingDefCountClass>
+    + {abstract} EntityToBuildStuff() : ThingDef
+    + BlockingHaulableOnTop() : Thing
+    + <<override>> PathFindCostFor(p:Pawn) : ushort
+    + <<override>> GetInspectString() : string
+}
+ThingWithComps <|-- Blueprint
+IConstructible <|-- Blueprint
+@enduml

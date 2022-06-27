@@ -1,0 +1,5 @@
+@startuml
+class ColorIntUtility <<static>> {
+    + {static} AsColorInt(col:Color32) : ColorInt
+}
+@enduml

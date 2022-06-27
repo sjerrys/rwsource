@@ -1,0 +1,30 @@
+@startuml
+abstract class LogEntry {
+    + Age : int <<get>>
+    + Tick : int <<get>>
+    + LogID : int <<get>>
+    + Timestamp : int <<get>>
+    + LogEntry(def:LogEntryDef)
+    + <<virtual>> ExposeData() : void
+    + ToGameStringFromPOV(pov:Thing, forceLog:bool) : string
+    + GetTextHeight(pov:Thing, width:float) : float
+    + {abstract} Concerns(t:Thing) : bool
+    + {abstract} GetConcerns() : IEnumerable<Thing>
+    + <<virtual>> CanBeClickedFromPOV(pov:Thing) : bool
+    + <<virtual>> ClickedFromPOV(pov:Thing) : void
+    + <<virtual>> IconFromPOV(pov:Thing) : Texture2D
+    + <<virtual>> GetTipString() : string
+    + <<virtual>> ShowInCompactView() : bool
+    + Debug_OverrideTicks(newTicks:int) : void
+    + GetUniqueLoadID() : string
+}
+IExposable <|-- LogEntry
+ILoadReferenceable <|-- LogEntry
+LogEntry --> "def" LogEntryDef
+LogEntry o-> "Blood" Texture2D
+LogEntry o-> "BloodTarget" Texture2D
+LogEntry o-> "Downed" Texture2D
+LogEntry o-> "DownedTarget" Texture2D
+LogEntry o-> "Skull" Texture2D
+LogEntry o-> "SkullTarget" Texture2D
+@enduml

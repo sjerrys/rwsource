@@ -1,0 +1,8 @@
+@startuml
+class HediffGiver_RandomDrugEffect {
+    + baseMtbDays : float
+    + minSeverity : float
+    + <<override>> OnIntervalPassed(pawn:Pawn, cause:Hediff) : void
+}
+HediffGiver <|-- HediffGiver_RandomDrugEffect
+@enduml

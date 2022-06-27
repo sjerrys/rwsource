@@ -1,0 +1,46 @@
+@startuml
+class TargetingParameters {
+    + canTargetLocations : bool
+    + canTargetSelf : bool
+    + canTargetPawns : bool = true
+    + canTargetFires : bool
+    + canTargetBuildings : bool = true
+    + canTargetItems : bool
+    + canTargetAnimals : bool = true
+    + canTargetHumans : bool = true
+    + canTargetMechs : bool = true
+    + onlyTargetFlammables : bool
+    + mustBeSelectable : bool
+    + neverTargetDoors : bool
+    + neverTargetIncapacitated : bool
+    + neverTargetHostileFaction : bool
+    + onlyTargetThingsAffectingRegions : bool
+    + onlyTargetDamagedThings : bool
+    + mapObjectTargetsMustBeAutoAttackable : bool = true
+    + onlyTargetIncapacitatedPawns : bool
+    + onlyTargetControlledPawns : bool
+    + onlyTargetColonists : bool
+    + onlyTargetPrisonersOfColony : bool
+    + onlyTargetPsychicSensitive : bool
+    + CanTarget(targ:TargetInfo) : bool
+    + {static} ForSelf(p:Pawn) : TargetingParameters
+    + {static} ForArrest(arrester:Pawn) : TargetingParameters
+    + {static} ForAttackHostile() : TargetingParameters
+    + {static} ForAttackAny() : TargetingParameters
+    + {static} ForRescue(p:Pawn) : TargetingParameters
+    + {static} ForStrip(p:Pawn) : TargetingParameters
+    + {static} ForTrade() : TargetingParameters
+    + {static} ForDropPodsDestination() : TargetingParameters
+    + {static} ForQuestPawnsWhoWillJoinColony(p:Pawn) : TargetingParameters
+    + {static} ForOpen(p:Pawn) : TargetingParameters
+    + {static} ForShuttle(hauler:Pawn) : TargetingParameters
+}
+class "List`1"<T> {
+}
+class "Predicate`1"<T> {
+}
+TargetingParameters --> "onlyTargetFactions<Faction>" "List`1"
+TargetingParameters --> "validator<TargetInfo>" "Predicate`1"
+TargetingParameters --> "targetSpecificThing" Thing
+TargetingParameters --> "thingCategory" ThingCategory
+@enduml

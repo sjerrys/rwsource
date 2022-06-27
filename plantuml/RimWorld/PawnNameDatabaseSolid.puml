@@ -1,0 +1,8 @@
+@startuml
+class PawnNameDatabaseSolid <<static>> {
+    {static} PawnNameDatabaseSolid()
+    + {static} AddPlayerContentName(newName:NameTriple, genderPos:GenderPossibility) : void
+    + {static} GetListForGender(gp:GenderPossibility) : List<NameTriple>
+    + {static} AllNames() : IEnumerable<NameTriple>
+}
+@enduml

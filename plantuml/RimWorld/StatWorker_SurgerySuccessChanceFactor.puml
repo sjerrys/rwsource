@@ -1,0 +1,6 @@
+@startuml
+class StatWorker_SurgerySuccessChanceFactor {
+    + <<override>> ShouldShowFor(req:StatRequest) : bool
+}
+StatWorker <|-- StatWorker_SurgerySuccessChanceFactor
+@enduml

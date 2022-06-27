@@ -1,0 +1,9 @@
+@startuml
+class CompAssignableToPawn_Bed {
+    + <<override>> AssignedAnything(pawn:Pawn) : bool
+    + <<override>> TryAssignPawn(pawn:Pawn) : void
+    + <<override>> TryUnassignPawn(pawn:Pawn, sort:bool) : void
+    + <<override>> PostExposeData() : void
+}
+CompAssignableToPawn <|-- CompAssignableToPawn_Bed
+@enduml

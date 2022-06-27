@@ -1,0 +1,7 @@
+@startuml
+class LordToil_KidnapCover {
+    + <<override>> ForceHighStoryDanger : bool <<get>>
+    + <<override>> AllowSelfTend : bool <<get>>
+}
+LordToil_DoOpportunisticTaskOrCover <|-- LordToil_KidnapCover
+@enduml

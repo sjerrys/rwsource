@@ -1,0 +1,10 @@
+@startuml
+class JobDriver_LayDown {
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+    + <<override>> CanBeginNowWhileLyingDown() : bool
+    + <<override>> GetReport() : string
+}
+JobDriver <|-- JobDriver_LayDown
+JobDriver_LayDown o-> "BedOrRestSpotIndex" TargetIndex
+JobDriver_LayDown --> "Bed" Building_Bed
+@enduml

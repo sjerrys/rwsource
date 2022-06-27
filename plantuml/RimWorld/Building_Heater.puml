@@ -1,0 +1,6 @@
+@startuml
+class Building_Heater {
+    + <<override>> TickRare() : void
+}
+Building_TempControl <|-- Building_Heater
+@enduml

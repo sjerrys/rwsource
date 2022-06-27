@@ -1,0 +1,18 @@
+@startuml
+class ImmunityHandler {
+    + ImmunityHandler(pawn:Pawn)
+    + ExposeData() : void
+    + DiseaseContractChanceFactor(diseaseDef:HediffDef, part:BodyPartRecord) : float
+    + DiseaseContractChanceFactor(diseaseDef:HediffDef, immunityCause:HediffDef, part:BodyPartRecord) : float
+    + GetImmunity(def:HediffDef) : float
+    + GetImmunityRecord(def:HediffDef) : ImmunityRecord
+    + ImmunityRecordExists(def:HediffDef) : bool
+}
+class ImmunityInfo <<struct>> {
+}
+IExposable <|-- ImmunityHandler
+ImmunityHandler --> "pawn" Pawn
+ImmunityHandler +-- ImmunityInfo
+ImmunityInfo --> "immunity" HediffDef
+ImmunityInfo --> "source" HediffDef
+@enduml

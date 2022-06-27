@@ -1,0 +1,10 @@
+@startuml
+enum JoyCategory {
+    Empty,
+    VeryLow,
+    Low,
+    Satisfied,
+    High,
+    Extreme,
+}
+@enduml

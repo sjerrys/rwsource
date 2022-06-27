@@ -1,0 +1,10 @@
+@startuml
+abstract class Stance {
+    + <<virtual>> StanceBusy : bool <<get>>
+    + <<virtual>> StanceTick() : void
+    + <<virtual>> StanceDraw() : void
+    + <<virtual>> ExposeData() : void
+}
+IExposable <|-- Stance
+Stance --> "stanceTracker" Pawn_StanceTracker
+@enduml

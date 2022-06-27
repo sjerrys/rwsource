@@ -1,0 +1,22 @@
+@startuml
+class WorkGiver_DoBill {
+    + <<override>> MaxPathDanger(pawn:Pawn) : Danger
+    + {static} ResetStaticData() : void
+    + <<override>> ShouldSkip(pawn:Pawn, forced:bool) : bool
+    + <<override>> JobOnThing(pawn:Pawn, thing:Thing, forced:bool) : Job
+    + {static} TryStartNewDoBillJob(pawn:Pawn, bill:Bill, giver:IBillGiver, chosenIngThings:List<ThingCount>, haulOffJob:Job, dontCreateJobIfHaulOffRequired:bool) : Job
+    + ThingIsUsableBillGiver(thing:Thing) : bool
+}
+class DefCountList {
+    + Count : int <<get>>
+    + GetCount(index:int) : float
+    + SetCount(index:int, val:float) : void
+    + GetDef(index:int) : ThingDef
+    + Clear() : void
+    + GenerateFrom(things:List<Thing>) : void
+}
+WorkGiver_Scanner <|-- WorkGiver_DoBill
+WorkGiver_DoBill --> "PathEndMode" PathEndMode
+WorkGiver_DoBill --> "PotentialWorkThingRequest" ThingRequest
+WorkGiver_DoBill +-- DefCountList
+@enduml

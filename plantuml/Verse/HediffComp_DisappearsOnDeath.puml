@@ -1,0 +1,6 @@
+@startuml
+class HediffComp_DisappearsOnDeath {
+    + <<override>> Notify_PawnDied() : void
+}
+HediffComp <|-- HediffComp_DisappearsOnDeath
+@enduml

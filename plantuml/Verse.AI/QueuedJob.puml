@@ -1,0 +1,10 @@
+@startuml
+class QueuedJob {
+    + tag : JobTag?
+    + QueuedJob()
+    + QueuedJob(job:Job, tag:JobTag?)
+    + ExposeData() : void
+}
+IExposable <|-- QueuedJob
+QueuedJob --> "job" Job
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class QuestNode_GetMonumentSize {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GetMonumentSize
+QuestNode_GetMonumentSize --> "storeAs<string>" "SlateRef`1"
+QuestNode_GetMonumentSize --> "monumentMarker<MonumentMarker>" "SlateRef`1"
+@enduml

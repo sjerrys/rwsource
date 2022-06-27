@@ -1,0 +1,6 @@
+@startuml
+class PowerNetMaker <<static>> {
+    + {static} NewPowerNetStartingFrom(root:Building) : PowerNet
+    + {static} UpdateVisualLinkagesFor(net:PowerNet) : void
+}
+@enduml

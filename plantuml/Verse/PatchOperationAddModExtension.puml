@@ -1,0 +1,5 @@
+@startuml
+class PatchOperationAddModExtension {
+}
+PatchOperationPathed <|-- PatchOperationAddModExtension
+@enduml

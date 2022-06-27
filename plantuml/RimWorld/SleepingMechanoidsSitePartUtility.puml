@@ -1,0 +1,5 @@
+@startuml
+class SleepingMechanoidsSitePartUtility <<static>> {
+    + {static} GetPawnGroupMakerSeed(parms:SitePartParams) : int
+}
+@enduml

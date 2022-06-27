@@ -1,0 +1,5 @@
+@startuml
+class ThoughtWorker_PsychicEmanatorSoothe {
+}
+ThoughtWorker <|-- ThoughtWorker_PsychicEmanatorSoothe
+@enduml

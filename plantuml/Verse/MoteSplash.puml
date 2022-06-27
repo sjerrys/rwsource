@@ -1,0 +1,15 @@
+@startuml
+class MoteSplash {
+    + <<const>> VelocityFootstep : float = 1.5f
+    + <<const>> SizeFootstep : float = 2f
+    + <<const>> VelocityGunfire : float = 4f
+    + <<const>> SizeGunfire : float = 1f
+    + <<const>> VelocityExplosion : float = 20f
+    + <<const>> SizeExplosion : float = 6f
+    + <<override>> Alpha : float <<get>>
+    + Initialize(position:Vector3, size:float, velocity:float) : void
+    + CalculatedIntensity() : float
+    + CalculatedShockwaveSpan() : float
+}
+Mote <|-- MoteSplash
+@enduml

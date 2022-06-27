@@ -1,0 +1,9 @@
+@startuml
+class Dialog_WorkshopOperationInProgress {
+    + Dialog_WorkshopOperationInProgress()
+    + <<override>> DoWindowContents(inRect:Rect) : void
+    + {static} CloseAll() : void
+}
+Window <|-- Dialog_WorkshopOperationInProgress
+Dialog_WorkshopOperationInProgress --> "InitialSize" Vector2
+@enduml

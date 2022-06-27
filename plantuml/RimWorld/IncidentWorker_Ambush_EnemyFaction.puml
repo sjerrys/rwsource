@@ -1,0 +1,5 @@
+@startuml
+class IncidentWorker_Ambush_EnemyFaction {
+}
+IncidentWorker_Ambush <|-- IncidentWorker_Ambush_EnemyFaction
+@enduml

@@ -1,0 +1,41 @@
+@startuml
+class Prefs <<static>> {
+    + {static} VolumeGame : float <<get>> <<set>>
+    + {static} VolumeMusic : float <<get>> <<set>>
+    + {static} VolumeAmbient : float <<get>> <<set>>
+    + {static} ExtremeDifficultyUnlocked : bool <<get>> <<set>>
+    + {static} AdaptiveTrainingEnabled : bool <<get>> <<set>>
+    + {static} EdgeScreenScroll : bool <<get>> <<set>>
+    + {static} RunInBackground : bool <<get>> <<set>>
+    + {static} AutosaveIntervalDays : float <<get>> <<set>>
+    + {static} CustomCursorEnabled : bool <<get>> <<set>>
+    + {static} DevMode : bool <<get>> <<set>>
+    + {static} ResetModsConfigOnCrash : bool <<get>> <<set>>
+    + {static} SimulateNotOwningRoyalty : bool <<get>> <<set>>
+    + {static} LangFolderName : string <<get>> <<set>>
+    + {static} LogVerbose : bool <<get>> <<set>>
+    + {static} PauseOnError : bool <<get>> <<set>>
+    + {static} PauseOnLoad : bool <<get>> <<set>>
+    + {static} ShowRealtimeClock : bool <<get>> <<set>>
+    + {static} TestMapSizes : bool <<get>> <<set>>
+    + {static} MaxNumberOfPlayerSettlements : int <<get>> <<set>>
+    + {static} PlantWindSway : bool <<get>> <<set>>
+    + {static} ResourceReadoutCategorized : bool <<get>> <<set>>
+    + {static} UIScale : float <<get>> <<set>>
+    + {static} ScreenWidth : int <<get>> <<set>>
+    + {static} ScreenHeight : int <<get>> <<set>>
+    + {static} FullScreen : bool <<get>> <<set>>
+    + {static} HatsOnlyOnMap : bool <<get>> <<set>>
+    + {static} MapDragSensitivity : float <<get>> <<set>>
+    + {static} Init() : void
+    + {static} Save() : void
+    + {static} Apply() : void
+    + {static} RandomPreferredName() : NameTriple
+}
+class "List`1"<T> {
+}
+Prefs --> "TemperatureMode" TemperatureDisplayMode
+Prefs --> "AnimalNameMode" AnimalNameDisplayMode
+Prefs --> "PreferredNames<string>" "List`1"
+Prefs --> "AutomaticPauseMode" AutomaticPauseMode
+@enduml

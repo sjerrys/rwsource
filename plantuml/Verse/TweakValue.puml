@@ -1,0 +1,9 @@
+@startuml
+class TweakValue {
+    + category : string
+    + min : float
+    + max : float
+    + TweakValue(category:string, min:float, max:float)
+}
+Attribute <|-- TweakValue
+@enduml

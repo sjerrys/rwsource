@@ -1,0 +1,5 @@
+@startuml
+class MainTabWindowUtility <<static>> {
+    + {static} NotifyAllPawnTables_PawnsChanged() : void
+}
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class ThinkNode_ConditionalPackAnimalHasColonistToFollowWhilePacking {
+}
+ThinkNode_Conditional <|-- ThinkNode_ConditionalPackAnimalHasColonistToFollowWhilePacking
+@enduml

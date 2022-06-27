@@ -1,0 +1,22 @@
+@startuml
+class QuestGen_Misc <<static>> {
+    + {static} AddInvolvedFaction(quest:Quest, faction:Faction) : QuestPart_InvolvedFactions
+    + {static} SpawnSkyfaller(quest:Quest, map:Map, skyfallerDef:ThingDef, innerThings:IEnumerable<Thing>, factionForSafeSpot:Faction, cell:IntVec3?, inSignal:string, lookForSafeSpot:bool, tryLandInShipLandingZone:bool, tryLandNearThing:Thing, mapParentOfPawn:Pawn) : QuestPart_SpawnThing
+    + {static} JoinPlayer(quest:Quest, mapParent:MapParent, pawns:IEnumerable<Pawn>, joinPlayer:bool, makePrisoners:bool, inSignal:string) : QuestPart_JoinPlayer
+    + {static} LeavePlayer(quest:Quest, pawns:IEnumerable<Pawn>, inSignal:string, replacementFaction:Faction, inSignalRemovePawn:string) : QuestPart_LeavePlayer
+    + {static} DropPods(quest:Quest, mapParent:MapParent, contents:IEnumerable<Thing>, customLetterLabel:string, customLetterLabelRules:RulePack, customLetterText:string, customLetterTextRules:RulePack, sendStandardLetter:bool?, useTradeDropSpot:bool, joinPlayer:bool, makePrisoners:bool, inSignal:string, thingsToExcludeFromHyperlinks:IEnumerable<Thing>, signalListenMode:QuestPart.SignalListenMode, dropSpot:IntVec3?, destroyItemsOnCleanup:bool) : QuestPart_DropPods
+    + {static} AddMemoryThought(quest:Quest, pawns:IEnumerable<Pawn>, def:ThoughtDef, inSignal:string, otherPawn:Pawn, addToLookTargets:bool?) : void
+    + {static} Letter(quest:Quest, letterDef:LetterDef, inSignal:string, chosenPawnSignal:string, relatedFaction:Faction, useColonistsOnMap:MapParent, useColonistsFromCaravanArg:bool, signalListenMode:QuestPart.SignalListenMode, lookTargets:IEnumerable<object>, filterDeadPawnsFromLookTargets:bool, text:string, textRules:RulePack, label:string, labelRules:RulePack, getColonistsFromSignal:string) : QuestPart_Letter
+    + {static} PawnsArrive(quest:Quest, pawns:IEnumerable<Pawn>, inSignal:string, mapParent:MapParent, arrivalMode:PawnsArrivalModeDef, joinPlayer:bool, walkInSpot:IntVec3?, customLetterLabel:string, customLetterText:string, customLetterLabelRules:RulePack, customLetterTextRules:RulePack, isSingleReward:bool, rewardDetailsHidden:bool) : void
+    + {static} AddQuestRefugeeDelayedReward(quest:Quest, acceptee:Pawn, faction:Faction, pawns:IEnumerable<Pawn>, marketValueRange:FloatRange, inSignalRemovePawn:string) : QuestPart_AddQuestRefugeeDelayedReward
+    + {static} PawnJoinOffer(quest:Quest, pawn:Pawn, letterLabel:string, letterTitle:string, letterText:string, accepted:Action, inSignal:string, outSignalPawnAccepted:string) : QuestPart_PawnJoinOffer
+    + {static} RewardChoice(quest:Quest, choices:IEnumerable<QuestPart_Choice.Choice>, inSignalChoiceUsed:string) : QuestPart_Choice
+    + {static} BetrayalOffer(quest:Quest, pawns:IEnumerable<Pawn>, extraFaction:ExtraFaction, asker:Pawn, success:Action, failure:Action, enabled:Action, inSignals:IEnumerable<string>, inSignalEnable:string, signalListenMode:QuestPart.SignalListenMode) : QuestPart_BetrayalOffer
+    + {static} Leave(quest:Quest, pawns:IEnumerable<Pawn>, inSignal:string, sendStandardLetter:bool, leaveOnCleanup:bool, inSignalRemovePawn:string) : void
+    + {static} Alert(quest:Quest, label:string, explanation:string, lookTargets:LookTargets, critical:bool, getLookTargetsFromSignal:bool, inSignalEnable:string, inSignalDisable:string) : QuestPart_Alert
+    + {static} Message(quest:Quest, message:string, messageType:MessageTypeDef, getLookTargetsFromSignal:bool, rules:RulePack, lookTargets:LookTargets, inSignal:string) : QuestPart_Message
+    + {static} GoodwillChangeShuttleSentThings(quest:Quest, faction:Faction, pawns:IEnumerable<Pawn>, changeNotOnShuttle:int, inSignalEnable:string, inSignalsShuttleSent:IEnumerable<string>, inSignalShuttleDestroyed:string, reason:string, canSendMessage:bool, canSendHostilityLetter:bool, signalListenMode:QuestPart.SignalListenMode) : QuestPart_FactionGoodwillChange_ShuttleSentThings
+    + {static} BiocodeWeapons(quest:Quest, pawns:IEnumerable<Pawn>, inSignal:string) : QuestPart_BiocodeWeapons
+    + {static} DestroyThingsOrPassToWorld(quest:Quest, things:IEnumerable<Thing>, inSignal:string, questLookTargets:bool, signalListenMode:QuestPart.SignalListenMode) : QuestPart_DestroyThingsOrPassToWorld
+}
+@enduml

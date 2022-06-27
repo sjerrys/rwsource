@@ -1,0 +1,10 @@
+@startuml
+class CompColorable {
+    + Active : bool <<get>>
+    + <<override>> Initialize(props:CompProperties) : void
+    + <<override>> PostExposeData() : void
+    + <<override>> PostSplitOff(piece:Thing) : void
+}
+ThingComp <|-- CompColorable
+CompColorable --> "Color" Color
+@enduml

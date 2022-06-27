@@ -1,0 +1,7 @@
+@startuml
+class SoundParamSource_Random {
+    + <<override>> Label : string <<get>>
+    + <<override>> ValueFor(samp:Sample) : float
+}
+SoundParamSource <|-- SoundParamSource_Random
+@enduml

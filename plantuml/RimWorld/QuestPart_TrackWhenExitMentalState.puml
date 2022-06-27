@@ -1,0 +1,14 @@
+@startuml
+class QuestPart_TrackWhenExitMentalState {
+    + tag : string
+    + outSignal : string
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> ExposeData() : void
+}
+class "List`1"<T> {
+}
+QuestPart <|-- QuestPart_TrackWhenExitMentalState
+QuestPart_TrackWhenExitMentalState --> "inSignals<string>" "List`1"
+QuestPart_TrackWhenExitMentalState --> "mapParent" MapParent
+QuestPart_TrackWhenExitMentalState --> "mentalStateDef" MentalStateDef
+@enduml

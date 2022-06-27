@@ -1,0 +1,7 @@
+@startuml
+class Alert_MonumentMarkerMissingBlueprints {
+    + Alert_MonumentMarkerMissingBlueprints()
+    + <<override>> GetReport() : AlertReport
+}
+Alert <|-- Alert_MonumentMarkerMissingBlueprints
+@enduml

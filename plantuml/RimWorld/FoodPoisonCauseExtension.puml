@@ -1,0 +1,5 @@
+@startuml
+class FoodPoisonCauseExtension <<static>> {
+    + {static} ToStringHuman(cause:FoodPoisonCause) : string
+}
+@enduml

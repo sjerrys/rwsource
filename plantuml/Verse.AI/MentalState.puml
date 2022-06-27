@@ -1,0 +1,24 @@
+@startuml
+class MentalState {
+    + causedByMood : bool
+    + forceRecoverAfterTicks : int
+    + Age : int <<get>>
+    + <<virtual>> InspectLine : string <<get>>
+    + <<virtual>> ExposeData() : void
+    + <<virtual>> PostStart(reason:string) : void
+    + <<virtual>> PreStart() : void
+    + <<virtual>> PostEnd() : void
+    + <<virtual>> MentalStateTick() : void
+    + RecoverFromState() : void
+    + <<virtual>> ForceHostileTo(t:Thing) : bool
+    + <<virtual>> ForceHostileTo(f:Faction) : bool
+    + CurrentStateEffecter() : EffecterDef
+    + <<virtual>> SocialModeMax() : RandomSocialMode
+    + <<virtual>> GetBeginLetterText() : string
+    + <<virtual>> Notify_AttackedTarget(hitTarget:LocalTargetInfo) : void
+    + <<virtual>> Notify_SlaughteredAnimal() : void
+}
+IExposable <|-- MentalState
+MentalState --> "pawn" Pawn
+MentalState --> "def" MentalStateDef
+@enduml

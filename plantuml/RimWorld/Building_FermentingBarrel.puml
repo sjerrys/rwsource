@@ -1,0 +1,18 @@
+@startuml
+class Building_FermentingBarrel {
+    + <<const>> MaxCapacity : int = 25
+    + <<const>> MinIdealTemperature : float = 7f
+    + Progress : float <<get>> <<set>>
+    + SpaceLeftForWort : int <<get>>
+    + Fermented : bool <<get>>
+    + <<override>> ExposeData() : void
+    + <<override>> TickRare() : void
+    + AddWort(count:int) : void
+    + AddWort(wort:Thing) : void
+    + <<override>> GetInspectString() : string
+    + TakeOutBeer() : Thing
+    + <<override>> Draw() : void
+    + <<override>> GetGizmos() : IEnumerable<Gizmo>
+}
+Building <|-- Building_FermentingBarrel
+@enduml

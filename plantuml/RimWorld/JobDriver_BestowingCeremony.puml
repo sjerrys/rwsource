@@ -1,0 +1,10 @@
+@startuml
+class JobDriver_BestowingCeremony {
+    + <<const>> WarmupSoundLength : float = 5.125f
+    + <<const>> BestowTimeTicks : int = 471
+    + <<const>> PlayWarmupSoundAfterTicks : int = 307
+    + {static} AnalyzeThroneRoom(bestower:Pawn, target:Pawn) : bool
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+}
+JobDriver <|-- JobDriver_BestowingCeremony
+@enduml

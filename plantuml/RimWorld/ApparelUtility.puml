@@ -1,0 +1,17 @@
+@startuml
+class ApparelUtility <<static>> {
+    + {static} CanWearTogether(A:ThingDef, B:ThingDef, body:BodyDef) : bool
+    + {static} GenerateLayerGroupPairs(body:BodyDef, td:ThingDef, callback:Action<LayerGroupPair>) : void
+    + {static} HasPartsToWear(p:Pawn, apparel:ThingDef) : bool
+}
+class LayerGroupPair <<struct>> {
+    + LayerGroupPair(layer:ApparelLayerDef, group:BodyPartGroupDef)
+    + <<override>> Equals(rhs:object) : bool
+    + Equals(other:LayerGroupPair) : bool
+    + <<override>> GetHashCode() : int
+}
+class "IEquatable`1"<T> {
+}
+ApparelUtility +-- LayerGroupPair
+"IEquatable`1" "<LayerGroupPair>" <|-- LayerGroupPair
+@enduml

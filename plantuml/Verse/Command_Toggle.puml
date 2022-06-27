@@ -1,0 +1,16 @@
+@startuml
+class Command_Toggle {
+    + activateIfAmbiguous : bool = true
+    + <<override>> ProcessInput(ev:Event) : void
+    + <<override>> GizmoOnGUI(loc:Vector2, maxWidth:float) : GizmoResult
+    + <<override>> InheritInteractionsFrom(other:Gizmo) : bool
+}
+class "Func`1"<T> {
+}
+Command <|-- Command_Toggle
+Command_Toggle --> "isActive<bool>" "Func`1"
+Command_Toggle --> "toggleAction" Action
+Command_Toggle o-> "turnOnSound" SoundDef
+Command_Toggle o-> "turnOffSound" SoundDef
+Command_Toggle --> "CurActivateSound" SoundDef
+@enduml

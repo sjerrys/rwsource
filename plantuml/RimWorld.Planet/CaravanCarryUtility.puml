@@ -1,0 +1,6 @@
+@startuml
+class CaravanCarryUtility <<static>> {
+    + {static} CarriedByCaravan(p:Pawn) : bool
+    + {static} WouldBenefitFromBeingCarried(p:Pawn) : bool
+}
+@enduml

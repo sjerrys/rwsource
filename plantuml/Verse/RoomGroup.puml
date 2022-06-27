@@ -1,0 +1,28 @@
+@startuml
+class RoomGroup {
+    + ID : int
+    + RoomCount : int <<get>>
+    + Temperature : float <<get>> <<set>>
+    + UsesOutdoorTemperature : bool <<get>>
+    + CellCount : int <<get>>
+    + RegionCount : int <<get>>
+    + OpenRoofCount : int <<get>>
+    + AnyRoomTouchesMapEdge : bool <<get>>
+    + {static} MakeNew(map:Map) : RoomGroup
+    + AddRoom(room:Room) : void
+    + RemoveRoom(room:Room) : void
+    + PushHeat(energy:float) : bool
+    + Notify_RoofChanged() : void
+    + Notify_RoomGroupShapeChanged() : void
+    + DebugString() : string
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+RoomGroup --> "Rooms<Room>" "List`1"
+RoomGroup --> "Map" Map
+RoomGroup --> "TempTracker" RoomGroupTempTracker
+RoomGroup --> "Cells<IntVec3>" "IEnumerable`1"
+RoomGroup --> "Regions<Region>" "IEnumerable`1"
+@enduml

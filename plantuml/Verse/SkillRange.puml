@@ -1,0 +1,6 @@
+@startuml
+class SkillRange {
+}
+SkillRange --> "Skill" SkillDef
+SkillRange --> "Range" IntRange
+@enduml

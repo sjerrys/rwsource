@@ -1,0 +1,5 @@
+@startuml
+class IncidentWorker_GiveQuest {
+}
+IncidentWorker <|-- IncidentWorker_GiveQuest
+@enduml

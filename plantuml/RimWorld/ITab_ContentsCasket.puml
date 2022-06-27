@@ -1,0 +1,9 @@
+@startuml
+class ITab_ContentsCasket {
+    + ITab_ContentsCasket()
+}
+class "IList`1"<T> {
+}
+ITab_ContentsBase <|-- ITab_ContentsCasket
+ITab_ContentsCasket --> "container<Thing>" "IList`1"
+@enduml

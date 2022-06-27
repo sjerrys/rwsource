@@ -1,0 +1,8 @@
+@startuml
+class NumericStringComparer {
+    + Compare(x:string, y:string) : int
+}
+class "IComparer`1"<T> {
+}
+"IComparer`1" "<string>" <|-- NumericStringComparer
+@enduml

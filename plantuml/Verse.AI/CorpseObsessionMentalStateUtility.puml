@@ -1,0 +1,6 @@
+@startuml
+class CorpseObsessionMentalStateUtility <<static>> {
+    + {static} GetClosestCorpseToDigUp(pawn:Pawn) : Corpse
+    + {static} IsCorpseValid(corpse:Corpse, pawn:Pawn, ignoreReachability:bool) : bool
+}
+@enduml

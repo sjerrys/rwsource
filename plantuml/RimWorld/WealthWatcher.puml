@@ -1,0 +1,14 @@
+@startuml
+class WealthWatcher {
+    + HealthTotal : int <<get>>
+    + WealthTotal : float <<get>>
+    + WealthItems : float <<get>>
+    + WealthBuildings : float <<get>>
+    + WealthFloorsOnly : float <<get>>
+    + WealthPawns : float <<get>>
+    + {static} ResetStaticData() : void
+    + WealthWatcher(map:Map)
+    + ForceRecount(allowDuringInit:bool) : void
+    + {static} GetEquipmentApparelAndInventoryWealth(p:Pawn) : float
+}
+@enduml

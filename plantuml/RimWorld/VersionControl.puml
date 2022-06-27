@@ -1,0 +1,24 @@
+@startuml
+class VersionControl <<static>> {
+    + {static} CurrentVersionString : string <<get>>
+    + {static} CurrentVersionStringWithoutBuild : string <<get>>
+    + {static} CurrentVersionStringWithRev : string <<get>>
+    + {static} CurrentMajor : int <<get>>
+    + {static} CurrentMinor : int <<get>>
+    + {static} CurrentBuild : int <<get>>
+    + {static} CurrentRevision : int <<get>>
+    {static} VersionControl()
+    + {static} DrawInfoInCorner() : void
+    + {static} LogVersionNumber() : void
+    + {static} IsCompatible(v:Version) : bool
+    + {static} TryParseVersionString(str:string, version:Version) : bool
+    + {static} BuildFromVersionString(str:string) : int
+    + {static} MinorFromVersionString(str:string) : int
+    + {static} MajorFromVersionString(str:string) : int
+    + {static} VersionStringWithoutRev(str:string) : string
+    + {static} VersionFromString(str:string) : Version
+    + {static} IsWellFormattedVersionString(str:string) : bool
+}
+VersionControl --> "CurrentVersion" Version
+VersionControl --> "CurrentBuildDate" DateTime
+@enduml

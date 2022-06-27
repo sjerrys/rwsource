@@ -1,0 +1,44 @@
+@startuml
+class MapPawns <<sealed>> {
+    + ColonistCount : int <<get>>
+    + AllPawnsCount : int <<get>>
+    + AllPawnsUnspawnedCount : int <<get>>
+    + FreeColonistsCount : int <<get>>
+    + PrisonersOfColonyCount : int <<get>>
+    + FreeColonistsAndPrisonersCount : int <<get>>
+    + AnyPawnBlockingMapRemoval : bool <<get>>
+    + AllPawnsSpawnedCount : int <<get>>
+    + FreeColonistsSpawnedCount : int <<get>>
+    + PrisonersOfColonySpawnedCount : int <<get>>
+    + FreeColonistsAndPrisonersSpawnedCount : int <<get>>
+    + ColonistsSpawnedCount : int <<get>>
+    + FreeColonistsSpawnedOrInPlayerEjectablePodsCount : int <<get>>
+    + AnyColonistSpawned : bool <<get>>
+    + AnyFreeColonistSpawned : bool <<get>>
+    + MapPawns(map:Map)
+    + PawnsInFaction(faction:Faction) : List<Pawn>
+    + SpawnedPawnsInFaction(faction:Faction) : List<Pawn>
+    + FreeHumanlikesOfFaction(faction:Faction) : List<Pawn>
+    + FreeHumanlikesSpawnedOfFaction(faction:Faction) : List<Pawn>
+    + RegisterPawn(p:Pawn) : void
+    + DeRegisterPawn(p:Pawn) : void
+    + UpdateRegistryForPawn(p:Pawn) : void
+    + LogListedPawns() : void
+}
+class "List`1"<T> {
+}
+MapPawns --> "AllPawns<Pawn>" "List`1"
+MapPawns --> "AllPawnsUnspawned<Pawn>" "List`1"
+MapPawns --> "FreeColonists<Pawn>" "List`1"
+MapPawns --> "PrisonersOfColony<Pawn>" "List`1"
+MapPawns --> "FreeColonistsAndPrisoners<Pawn>" "List`1"
+MapPawns --> "AllPawnsSpawned<Pawn>" "List`1"
+MapPawns --> "FreeColonistsSpawned<Pawn>" "List`1"
+MapPawns --> "PrisonersOfColonySpawned<Pawn>" "List`1"
+MapPawns --> "FreeColonistsAndPrisonersSpawned<Pawn>" "List`1"
+MapPawns --> "SpawnedPawnsWithAnyHediff<Pawn>" "List`1"
+MapPawns --> "SpawnedHungryPawns<Pawn>" "List`1"
+MapPawns --> "SpawnedDownedPawns<Pawn>" "List`1"
+MapPawns --> "SpawnedPawnsWhoShouldHaveSurgeryDoneNow<Pawn>" "List`1"
+MapPawns --> "SpawnedPawnsWhoShouldHaveInventoryUnloaded<Pawn>" "List`1"
+@enduml

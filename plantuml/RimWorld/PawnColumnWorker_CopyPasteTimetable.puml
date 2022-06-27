@@ -1,0 +1,6 @@
+@startuml
+class PawnColumnWorker_CopyPasteTimetable {
+    + <<override>> DoCell(rect:Rect, pawn:Pawn, table:PawnTable) : void
+}
+PawnColumnWorker_CopyPaste <|-- PawnColumnWorker_CopyPasteTimetable
+@enduml

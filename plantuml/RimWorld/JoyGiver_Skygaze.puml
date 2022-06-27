@@ -1,0 +1,7 @@
+@startuml
+class JoyGiver_Skygaze {
+    + <<override>> GetChance(pawn:Pawn) : float
+    + <<override>> TryGiveJob(pawn:Pawn) : Job
+}
+JoyGiver <|-- JoyGiver_Skygaze
+@enduml

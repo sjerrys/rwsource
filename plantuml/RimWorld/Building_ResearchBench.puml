@@ -1,0 +1,5 @@
+@startuml
+class Building_ResearchBench {
+}
+Building <|-- Building_ResearchBench
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class BillRepeatModeDefOf <<static>> {
+    {static} BillRepeatModeDefOf()
+}
+BillRepeatModeDefOf --> "RepeatCount" BillRepeatModeDef
+BillRepeatModeDefOf --> "TargetCount" BillRepeatModeDef
+BillRepeatModeDefOf --> "Forever" BillRepeatModeDef
+@enduml

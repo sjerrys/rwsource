@@ -1,0 +1,8 @@
+@startuml
+class StuffCategoryDef {
+}
+Def <|-- StuffCategoryDef
+StuffCategoryDef --> "destroySoundSmall" SoundDef
+StuffCategoryDef --> "destroySoundMedium" SoundDef
+StuffCategoryDef --> "destroySoundLarge" SoundDef
+@enduml

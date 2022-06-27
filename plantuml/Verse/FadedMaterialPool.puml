@@ -1,0 +1,26 @@
+@startuml
+class FadedMaterialPool <<static>> {
+    + {static} TotalMaterialCount : int <<get>>
+    + {static} TotalMaterialBytes : long <<get>>
+    + {static} FadedVersionOf(sourceMat:Material, alpha:float) : Material
+}
+class FadedMatRequest <<struct>> {
+    + FadedMatRequest(mat:Material, alphaIndex:int)
+    + <<override>> Equals(obj:object) : bool
+    + Equals(other:FadedMatRequest) : bool
+    + <<override>> GetHashCode() : int
+}
+class FadedMatRequestComparer {
+    + Equals(x:FadedMatRequest, y:FadedMatRequest) : bool
+    + GetHashCode(obj:FadedMatRequest) : int
+}
+class "IEquatable`1"<T> {
+}
+class "IEqualityComparer`1"<T> {
+}
+FadedMaterialPool +-- FadedMatRequest
+"IEquatable`1" "<FadedMatRequest>" <|-- FadedMatRequest
+FadedMaterialPool +-- FadedMatRequestComparer
+"IEqualityComparer`1" "<FadedMatRequest>" <|-- FadedMatRequestComparer
+FadedMatRequestComparer o-> "Instance" FadedMatRequestComparer
+@enduml

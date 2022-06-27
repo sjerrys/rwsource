@@ -1,0 +1,10 @@
+@startuml
+class Scribe <<static>> {
+    + {static} ForceStop() : void
+    + {static} EnterNode(nodeName:string) : bool
+    + {static} ExitNode() : void
+}
+Scribe o-> "saver" ScribeSaver
+Scribe o-> "loader" ScribeLoader
+Scribe o-> "mode" LoadSaveMode
+@enduml

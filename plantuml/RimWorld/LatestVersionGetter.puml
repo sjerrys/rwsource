@@ -1,0 +1,6 @@
+@startuml
+class LatestVersionGetter {
+    + DrawAt(rect:Rect) : void
+}
+MonoBehaviour <|-- LatestVersionGetter
+@enduml

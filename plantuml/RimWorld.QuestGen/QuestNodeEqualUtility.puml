@@ -1,0 +1,5 @@
+@startuml
+class QuestNodeEqualUtility <<static>> {
+    + {static} Equal(value1:object, value2:object, compareAs:Type) : bool
+}
+@enduml

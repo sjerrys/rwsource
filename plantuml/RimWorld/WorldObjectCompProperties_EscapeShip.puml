@@ -1,0 +1,7 @@
+@startuml
+class WorldObjectCompProperties_EscapeShip {
+    + WorldObjectCompProperties_EscapeShip()
+    + <<override>> ConfigErrors(parentDef:WorldObjectDef) : IEnumerable<string>
+}
+WorldObjectCompProperties <|-- WorldObjectCompProperties_EscapeShip
+@enduml

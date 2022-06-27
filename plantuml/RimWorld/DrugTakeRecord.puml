@@ -1,0 +1,10 @@
+@startuml
+class DrugTakeRecord {
+    + lastTakenTicks : int
+    + LastTakenDays : int <<get>>
+    + TimesTakenThisDay : int <<get>> <<set>>
+    + ExposeData() : void
+}
+IExposable <|-- DrugTakeRecord
+DrugTakeRecord --> "drug" ThingDef
+@enduml

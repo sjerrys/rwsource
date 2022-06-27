@@ -1,0 +1,23 @@
+@startuml
+class SimpleCurveDrawerStyle {
+    + DrawBackground : bool <<get>> <<set>>
+    + DrawBackgroundLines : bool <<get>> <<set>>
+    + DrawMeasures : bool <<get>> <<set>>
+    + DrawPoints : bool <<get>> <<set>>
+    + DrawLegend : bool <<get>> <<set>>
+    + DrawCurveMousePoint : bool <<get>> <<set>>
+    + OnlyPositiveValues : bool <<get>> <<set>>
+    + UseFixedSection : bool <<get>> <<set>>
+    + UseFixedScale : bool <<get>> <<set>>
+    + UseAntiAliasedLines : bool <<get>> <<set>>
+    + PointsRemoveOptimization : bool <<get>> <<set>>
+    + MeasureLabelsXCount : int <<get>> <<set>>
+    + MeasureLabelsYCount : int <<get>> <<set>>
+    + XIntegersOnly : bool <<get>> <<set>>
+    + YIntegersOnly : bool <<get>> <<set>>
+    + LabelX : string <<get>> <<set>>
+    + SimpleCurveDrawerStyle()
+}
+SimpleCurveDrawerStyle --> "FixedSection" FloatRange
+SimpleCurveDrawerStyle --> "FixedScale" Vector2
+@enduml

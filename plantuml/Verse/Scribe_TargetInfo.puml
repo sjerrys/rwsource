@@ -1,0 +1,16 @@
+@startuml
+class Scribe_TargetInfo <<static>> {
+    + {static} Look(value:LocalTargetInfo, label:string) : void
+    + {static} Look(value:LocalTargetInfo, saveDestroyedThings:bool, label:string) : void
+    + {static} Look(value:LocalTargetInfo, label:string, defaultValue:LocalTargetInfo) : void
+    + {static} Look(value:LocalTargetInfo, saveDestroyedThings:bool, label:string, defaultValue:LocalTargetInfo) : void
+    + {static} Look(value:TargetInfo, label:string) : void
+    + {static} Look(value:TargetInfo, saveDestroyedThings:bool, label:string) : void
+    + {static} Look(value:TargetInfo, label:string, defaultValue:TargetInfo) : void
+    + {static} Look(value:TargetInfo, saveDestroyedThings:bool, label:string, defaultValue:TargetInfo) : void
+    + {static} Look(value:GlobalTargetInfo, label:string) : void
+    + {static} Look(value:GlobalTargetInfo, saveDestroyedThings:bool, label:string) : void
+    + {static} Look(value:GlobalTargetInfo, label:string, defaultValue:GlobalTargetInfo) : void
+    + {static} Look(value:GlobalTargetInfo, saveDestroyedThings:bool, label:string, defaultValue:GlobalTargetInfo) : void
+}
+@enduml

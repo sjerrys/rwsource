@@ -1,0 +1,15 @@
+@startuml
+class GlowGrid <<sealed>> {
+    + <<const>> AlphaOfNotOverlit : int = 0
+    + <<const>> AlphaOfOverlit : int = 1
+    + GlowGrid(map:Map)
+    + VisualGlowAt(c:IntVec3) : Color32
+    + GameGlowAt(c:IntVec3, ignoreCavePlants:bool) : float
+    + PsychGlowAt(c:IntVec3) : PsychGlow
+    + {static} PsychGlowAtGlow(glow:float) : PsychGlow
+    + RegisterGlower(newGlow:CompGlower) : void
+    + DeRegisterGlower(oldGlow:CompGlower) : void
+    + MarkGlowGridDirty(loc:IntVec3) : void
+    + GlowGridUpdate_First() : void
+}
+@enduml

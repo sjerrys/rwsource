@@ -1,0 +1,8 @@
+@startuml
+class Arbitrary {
+    + Arbitrary()
+    + Arbitrary(source:ModuleBase, processor:Func<double, double>)
+    + <<override>> GetValue(x:double, y:double, z:double) : double
+}
+ModuleBase <|-- Arbitrary
+@enduml

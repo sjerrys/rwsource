@@ -1,0 +1,12 @@
+@startuml
+class CompQuality {
+    + SetQuality(q:QualityCategory, source:ArtGenerationContext) : void
+    + <<override>> PostExposeData() : void
+    + <<override>> PostPostGeneratedForTrader(trader:TraderKindDef, forTile:int, forFaction:Faction) : void
+    + <<override>> AllowStackWith(other:Thing) : bool
+    + <<override>> PostSplitOff(piece:Thing) : void
+    + <<override>> CompInspectStringExtra() : string
+}
+ThingComp <|-- CompQuality
+CompQuality --> "Quality" QualityCategory
+@enduml

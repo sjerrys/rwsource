@@ -1,0 +1,8 @@
+@startuml
+class SectionLayer_BridgeProps {
+    + <<override>> Visible : bool <<get>>
+    + SectionLayer_BridgeProps(section:Section)
+    + <<override>> Regenerate() : void
+}
+SectionLayer <|-- SectionLayer_BridgeProps
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+class QuestNode_IsPermanentEnemy {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_IsPermanentEnemy
+QuestNode_IsPermanentEnemy --> "thing<Thing>" "SlateRef`1"
+QuestNode_IsPermanentEnemy --> "node" QuestNode
+QuestNode_IsPermanentEnemy --> "elseNode" QuestNode
+@enduml

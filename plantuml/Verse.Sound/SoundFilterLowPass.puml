@@ -1,0 +1,6 @@
+@startuml
+class SoundFilterLowPass {
+    + <<override>> SetupOn(source:AudioSource) : void
+}
+SoundFilter <|-- SoundFilterLowPass
+@enduml

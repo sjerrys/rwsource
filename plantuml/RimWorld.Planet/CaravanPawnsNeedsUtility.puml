@@ -1,0 +1,9 @@
+@startuml
+class CaravanPawnsNeedsUtility <<static>> {
+    + {static} CanEatForNutritionEver(food:ThingDef, pawn:Pawn) : bool
+    + {static} CanEatForNutritionNow(food:ThingDef, pawn:Pawn) : bool
+    + {static} CanEatForNutritionNow(food:Thing, pawn:Pawn) : bool
+    + {static} GetFoodScore(food:Thing, pawn:Pawn) : float
+    + {static} GetFoodScore(food:ThingDef, pawn:Pawn, singleFoodNutrition:float) : float
+}
+@enduml

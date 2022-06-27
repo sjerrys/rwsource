@@ -1,0 +1,13 @@
+@startuml
+class QuestNode_ExtraFaction {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_ExtraFaction
+QuestNode_ExtraFaction --> "factionOf<Thing>" "SlateRef`1"
+QuestNode_ExtraFaction --> "faction<Faction>" "SlateRef`1"
+QuestNode_ExtraFaction --> "pawns<IEnumerable<Pawn>>" "SlateRef`1"
+QuestNode_ExtraFaction --> "factionType<ExtraFactionType>" "SlateRef`1"
+QuestNode_ExtraFaction --> "areHelpers<bool>" "SlateRef`1"
+QuestNode_ExtraFaction --> "inSignalRemovePawn<string>" "SlateRef`1"
+@enduml

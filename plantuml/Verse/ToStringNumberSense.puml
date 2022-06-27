@@ -1,0 +1,8 @@
+@startuml
+enum ToStringNumberSense {
+    Undefined,
+    Absolute,
+    Factor,
+    Offset,
+}
+@enduml

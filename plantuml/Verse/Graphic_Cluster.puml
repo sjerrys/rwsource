@@ -1,0 +1,9 @@
+@startuml
+class Graphic_Cluster {
+    + <<override>> DrawWorker(loc:Vector3, rot:Rot4, thingDef:ThingDef, thing:Thing, extraRotation:float) : void
+    + <<override>> Print(layer:SectionLayer, thing:Thing) : void
+    + <<override>> ToString() : string
+}
+Graphic_Collection <|-- Graphic_Cluster
+Graphic_Cluster --> "MatSingle" Material
+@enduml

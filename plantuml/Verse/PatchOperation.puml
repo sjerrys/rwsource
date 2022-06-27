@@ -1,0 +1,14 @@
+@startuml
+class PatchOperation {
+    + sourceFile : string
+    + Apply(xml:XmlDocument) : bool
+    + <<virtual>> Complete(modIdentifier:string) : void
+}
+enum Success {
+    Normal,
+    Invert,
+    Always,
+    Never,
+}
+PatchOperation +-- Success
+@enduml

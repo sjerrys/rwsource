@@ -1,0 +1,19 @@
+@startuml
+class Dialog_LoadTransporters {
+    + autoLoot : bool
+    + CanChangeAssignedThingsAfterStarting : bool <<get>>
+    + LoadingInProgressOrReadyToLaunch : bool <<get>>
+    + CaravanMassUsage : float <<get>>
+    + Dialog_LoadTransporters(map:Map, transporters:List<CompTransporter>)
+    + <<override>> PostOpen() : void
+    + <<override>> DoWindowContents(inRect:Rect) : void
+    + <<override>> CausesMessageBackground() : bool
+}
+enum Tab {
+    Pawns,
+    Items,
+}
+Window <|-- Dialog_LoadTransporters
+Dialog_LoadTransporters --> "InitialSize" Vector2
+Dialog_LoadTransporters +-- Tab
+@enduml

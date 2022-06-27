@@ -1,0 +1,6 @@
+@startuml
+class Designator_ZoneAddStockpile_Expand {
+    + Designator_ZoneAddStockpile_Expand()
+}
+Designator_ZoneAddStockpile_Resources <|-- Designator_ZoneAddStockpile_Expand
+@enduml

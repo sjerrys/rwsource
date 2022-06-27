@@ -1,0 +1,13 @@
+@startuml
+class PawnColumnWorker_Outfit {
+    + <<const>> TopAreaHeight : int = 65
+    + <<const>> ManageOutfitsButtonHeight : int = 32
+    + <<override>> DoHeader(rect:Rect, table:PawnTable) : void
+    + <<override>> DoCell(rect:Rect, pawn:Pawn, table:PawnTable) : void
+    + <<override>> GetMinWidth(table:PawnTable) : int
+    + <<override>> GetOptimalWidth(table:PawnTable) : int
+    + <<override>> GetMinHeaderHeight(table:PawnTable) : int
+    + <<override>> Compare(a:Pawn, b:Pawn) : int
+}
+PawnColumnWorker <|-- PawnColumnWorker_Outfit
+@enduml

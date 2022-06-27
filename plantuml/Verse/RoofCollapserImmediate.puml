@@ -1,0 +1,7 @@
+@startuml
+class RoofCollapserImmediate <<static>> {
+    + {static} DropRoofInCells(c:IntVec3, map:Map, outCrushedThings:List<Thing>) : void
+    + {static} DropRoofInCells(cells:IEnumerable<IntVec3>, map:Map, outCrushedThings:List<Thing>) : void
+    + {static} DropRoofInCells(cells:List<IntVec3>, map:Map, outCrushedThings:List<Thing>) : void
+}
+@enduml

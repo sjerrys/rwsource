@@ -1,0 +1,14 @@
+@startuml
+class Dialog_Slider {
+    + from : int
+    + to : int
+    + Dialog_Slider(textGetter:Func<int, string>, from:int, to:int, confirmAction:Action<int>, startingValue:int)
+    + Dialog_Slider(text:string, from:int, to:int, confirmAction:Action<int>, startingValue:int)
+    + <<override>> DoWindowContents(inRect:Rect) : void
+}
+class "Func`2"<T1,T2> {
+}
+Window <|-- Dialog_Slider
+Dialog_Slider --> "textGetter<int,string>" "Func`2"
+Dialog_Slider --> "InitialSize" Vector2
+@enduml

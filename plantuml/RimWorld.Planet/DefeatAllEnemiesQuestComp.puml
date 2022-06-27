@@ -1,0 +1,19 @@
+@startuml
+class DefeatAllEnemiesQuestComp {
+    + relationsImprovement : int
+    + Active : bool <<get>>
+    + DefeatAllEnemiesQuestComp()
+    + StartQuest(requestingFaction:Faction, relationsImprovement:int, rewards:List<Thing>) : void
+    + StopQuest() : void
+    + <<override>> CompTick() : void
+    + <<override>> PostExposeData() : void
+    + GetChildHolders(outChildren:List<IThingHolder>) : void
+    + GetDirectlyHeldThings() : ThingOwner
+    + <<override>> PostDestroy() : void
+    + <<override>> CompInspectStringExtra() : string
+}
+WorldObjectComp <|-- DefeatAllEnemiesQuestComp
+IThingHolder <|-- DefeatAllEnemiesQuestComp
+DefeatAllEnemiesQuestComp --> "requestingFaction" Faction
+DefeatAllEnemiesQuestComp --> "rewards" ThingOwner
+@enduml

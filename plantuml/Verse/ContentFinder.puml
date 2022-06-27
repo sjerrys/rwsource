@@ -1,0 +1,6 @@
+@startuml
+class "ContentFinder`1"<T> <<static>> {
+    + {static} Get(itemPath:string, reportFailure:bool) : T
+    + {static} GetAllInFolder(folderPath:string) : IEnumerable<T>
+}
+@enduml

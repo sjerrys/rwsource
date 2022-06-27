@@ -1,0 +1,7 @@
+@startuml
+class ReservationLayerDefOf <<static>> {
+    {static} ReservationLayerDefOf()
+}
+ReservationLayerDefOf --> "Floor" ReservationLayerDef
+ReservationLayerDefOf --> "Ceiling" ReservationLayerDef
+@enduml

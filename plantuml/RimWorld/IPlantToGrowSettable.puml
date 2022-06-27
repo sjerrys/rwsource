@@ -1,0 +1,11 @@
+@startuml
+interface IPlantToGrowSettable {
+    GetPlantDefToGrow() : ThingDef
+    SetPlantDefToGrow(plantDef:ThingDef) : void
+    CanAcceptSowNow() : bool
+}
+class "IEnumerable`1"<T> {
+}
+IPlantToGrowSettable --> "Map" Map
+IPlantToGrowSettable --> "Cells<IntVec3>" "IEnumerable`1"
+@enduml

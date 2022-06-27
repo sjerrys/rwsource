@@ -1,0 +1,6 @@
+@startuml
+class JobGiver_FireStartingSpree {
+    + <<override>> DeepCopy(resolve:bool) : ThinkNode
+}
+ThinkNode_JobGiver <|-- JobGiver_FireStartingSpree
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class TerrainDefGenerator_Stone <<static>> {
+    + {static} ImpliedTerrainDefs() : IEnumerable<TerrainDef>
+}
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class RoofCollapseUtility <<static>> {
+    + <<const>> RoofMaxSupportDistance : float = 6.9f
+    + {static} <<readonly>> RoofSupportRadialCellsCount : int
+    + {static} WithinRangeOfRoofHolder(c:IntVec3, map:Map, assumeNonNoRoofCellsAreRoofed:bool) : bool
+    + {static} ConnectedToRoofHolder(c:IntVec3, map:Map, assumeRoofAtRoot:bool) : bool
+}
+@enduml

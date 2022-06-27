@@ -1,0 +1,30 @@
+@startuml
+class ToilFailConditions <<static>> {
+    + {static} FailOn(toil:Toil, condition:Func<Toil, bool>) : Toil
+    + {static} FailOn(f:T, condition:Func<bool>) : T
+    + {static} FailOnDestroyedOrNull(f:T, ind:TargetIndex) : T
+    + {static} FailOnDespawnedOrNull(f:T, ind:TargetIndex) : T
+    + {static} EndOnDespawnedOrNull(f:T, ind:TargetIndex, endCondition:JobCondition) : T
+    + {static} EndOnNoTargetInQueue(f:T, ind:TargetIndex, endCondition:JobCondition) : T
+    + {static} FailOnDowned(f:T, ind:TargetIndex) : T
+    + {static} FailOnDownedOrDead(f:T, ind:TargetIndex) : T
+    + {static} FailOnMobile(f:T, ind:TargetIndex) : T
+    + {static} FailOnNotDowned(f:T, ind:TargetIndex) : T
+    + {static} FailOnNotAwake(f:T, ind:TargetIndex) : T
+    + {static} FailOnNotCasualInterruptible(f:T, ind:TargetIndex) : T
+    + {static} FailOnMentalState(f:T, ind:TargetIndex) : T
+    + {static} FailOnAggroMentalState(f:T, ind:TargetIndex) : T
+    + {static} FailOnAggroMentalStateAndHostile(f:T, ind:TargetIndex) : T
+    + {static} FailOnSomeonePhysicallyInteracting(f:T, ind:TargetIndex) : T
+    + {static} FailOnForbidden(f:T, ind:TargetIndex) : T
+    + {static} FailOnDespawnedNullOrForbidden(f:T, ind:TargetIndex) : T
+    + {static} FailOnDestroyedNullOrForbidden(f:T, ind:TargetIndex) : T
+    + {static} FailOnThingMissingDesignation(f:T, ind:TargetIndex, desDef:DesignationDef) : T
+    + {static} FailOnThingHavingDesignation(f:T, ind:TargetIndex, desDef:DesignationDef) : T
+    + {static} FailOnCellMissingDesignation(f:T, ind:TargetIndex, desDef:DesignationDef) : T
+    + {static} FailOnBurningImmobile(f:T, ind:TargetIndex) : T
+    + {static} FailOnCannotTouch(f:T, ind:TargetIndex, peMode:PathEndMode) : T
+    + {static} FailOnIncapable(f:T, pawnCapacity:PawnCapacityDef) : T
+    + {static} FailOnDespawnedNullOrForbiddenPlacedThings(toil:Toil) : Toil
+}
+@enduml

@@ -1,0 +1,25 @@
+@startuml
+class Pawn_CarryTracker {
+    + Full : bool <<get>>
+    + Pawn_CarryTracker(pawn:Pawn)
+    + ExposeData() : void
+    + GetDirectlyHeldThings() : ThingOwner
+    + GetChildHolders(outChildren:List<IThingHolder>) : void
+    + AvailableStackSpace(td:ThingDef) : int
+    + MaxStackSpaceEver(td:ThingDef) : int
+    + TryStartCarry(item:Thing) : bool
+    + TryStartCarry(item:Thing, count:int, reserve:bool) : int
+    + TryDropCarriedThing(dropLoc:IntVec3, mode:ThingPlaceMode, resultingThing:Thing, placedAction:Action<Thing, int>) : bool
+    + TryDropCarriedThing(dropLoc:IntVec3, count:int, mode:ThingPlaceMode, resultingThing:Thing, placedAction:Action<Thing, int>) : bool
+    + DestroyCarriedThing() : void
+    + CarryHandsTick() : void
+}
+class "ThingOwner`1"<T> {
+}
+IThingHolder <|-- Pawn_CarryTracker
+IExposable <|-- Pawn_CarryTracker
+Pawn_CarryTracker --> "pawn" Pawn
+Pawn_CarryTracker --> "innerContainer<Thing>" "ThingOwner`1"
+Pawn_CarryTracker --> "CarriedThing" Thing
+Pawn_CarryTracker --> "ParentHolder" IThingHolder
+@enduml

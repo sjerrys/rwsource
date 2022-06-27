@@ -1,0 +1,11 @@
+@startuml
+class LordJob_DefendAndExpandHive {
+    + <<override>> CanBlockHostileVisitors : bool <<get>>
+    + <<override>> AddFleeToil : bool <<get>>
+    + LordJob_DefendAndExpandHive()
+    + LordJob_DefendAndExpandHive(parms:SpawnedPawnParams)
+    + <<override>> CreateGraph() : StateGraph
+    + <<override>> ExposeData() : void
+}
+LordJob <|-- LordJob_DefendAndExpandHive
+@enduml

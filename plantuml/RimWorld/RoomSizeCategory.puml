@@ -1,0 +1,8 @@
+@startuml
+enum RoomSizeCategory {
+    VeryCramped,
+    Cramped,
+    Normal,
+    Spacious,
+}
+@enduml

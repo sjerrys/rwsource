@@ -1,0 +1,20 @@
+@startuml
+class IncidentDefOf <<static>> {
+    {static} IncidentDefOf()
+}
+IncidentDefOf --> "RaidEnemy" IncidentDef
+IncidentDefOf --> "RaidFriendly" IncidentDef
+IncidentDefOf --> "VisitorGroup" IncidentDef
+IncidentDefOf --> "TravelerGroup" IncidentDef
+IncidentDefOf --> "TraderCaravanArrival" IncidentDef
+IncidentDefOf --> "Eclipse" IncidentDef
+IncidentDefOf --> "ToxicFallout" IncidentDef
+IncidentDefOf --> "SolarFlare" IncidentDef
+IncidentDefOf --> "ManhunterPack" IncidentDef
+IncidentDefOf --> "ShipChunkDrop" IncidentDef
+IncidentDefOf --> "OrbitalTraderArrival" IncidentDef
+IncidentDefOf --> "WandererJoin" IncidentDef
+IncidentDefOf --> "Infestation" IncidentDef
+IncidentDefOf --> "GiveQuest_Random" IncidentDef
+IncidentDefOf --> "MechCluster" IncidentDef
+@enduml

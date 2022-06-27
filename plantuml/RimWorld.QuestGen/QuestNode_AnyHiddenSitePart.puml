@@ -1,0 +1,10 @@
+@startuml
+class QuestNode_AnyHiddenSitePart {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_AnyHiddenSitePart
+QuestNode_AnyHiddenSitePart --> "sitePartDefs<IEnumerable<SitePartDef>>" "SlateRef`1"
+QuestNode_AnyHiddenSitePart --> "node" QuestNode
+QuestNode_AnyHiddenSitePart --> "elseNode" QuestNode
+@enduml

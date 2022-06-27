@@ -1,0 +1,7 @@
+@startuml
+class Alert_CannotBeUsedRoofed {
+    + Alert_CannotBeUsedRoofed()
+    + <<override>> GetReport() : AlertReport
+}
+Alert <|-- Alert_CannotBeUsedRoofed
+@enduml

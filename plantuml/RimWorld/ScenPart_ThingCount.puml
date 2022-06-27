@@ -1,0 +1,10 @@
+@startuml
+abstract class ScenPart_ThingCount {
+    + <<override>> ExposeData() : void
+    + <<override>> Randomize() : void
+    + <<override>> DoEditInterface(listing:Listing_ScenEdit) : void
+    + <<override>> TryMerge(other:ScenPart) : bool
+    + <<override>> HasNullDefs() : bool
+}
+ScenPart <|-- ScenPart_ThingCount
+@enduml

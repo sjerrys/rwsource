@@ -1,0 +1,11 @@
+@startuml
+class DistanceFromPlanetViewCenter {
+    + viewAngle : float
+    + invert : bool
+    + DistanceFromPlanetViewCenter()
+    + DistanceFromPlanetViewCenter(viewCenter:Vector3, viewAngle:float, invert:bool)
+    + <<override>> GetValue(x:double, y:double, z:double) : double
+}
+ModuleBase <|-- DistanceFromPlanetViewCenter
+DistanceFromPlanetViewCenter --> "viewCenter" Vector3
+@enduml

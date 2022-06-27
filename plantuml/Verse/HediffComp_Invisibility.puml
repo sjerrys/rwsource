@@ -1,0 +1,7 @@
+@startuml
+class HediffComp_Invisibility {
+    + <<override>> CompPostPostAdd(dinfo:DamageInfo?) : void
+    + <<override>> CompPostPostRemoved() : void
+}
+HediffComp <|-- HediffComp_Invisibility
+@enduml

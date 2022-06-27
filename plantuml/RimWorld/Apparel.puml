@@ -1,0 +1,18 @@
+@startuml
+class Apparel {
+    + WornByCorpse : bool <<get>>
+    + <<override>> DescriptionDetailed : string <<get>>
+    + Notify_PawnKilled() : void
+    + Notify_PawnResurrected() : void
+    + <<override>> ExposeData() : void
+    + <<virtual>> DrawWornExtras() : void
+    + <<virtual>> CheckPreAbsorbDamage(dinfo:DamageInfo) : bool
+    + <<virtual>> AllowVerbCast(root:IntVec3, map:Map, targ:LocalTargetInfo, verb:Verb) : bool
+    + <<virtual>> GetWornGizmos() : IEnumerable<Gizmo>
+    + <<override>> SpecialDisplayStats() : IEnumerable<StatDrawEntry>
+    + <<override>> GetInspectString() : string
+    + <<virtual>> GetSpecialApparelScoreOffset() : float
+}
+ThingWithComps <|-- Apparel
+Apparel --> "Wearer" Pawn
+@enduml

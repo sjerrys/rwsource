@@ -1,0 +1,7 @@
+@startuml
+class RoomRoleWorker_ThroneRoom {
+    + {static} Validate(room:Room) : string
+    + <<override>> GetScore(room:Room) : float
+}
+RoomRoleWorker <|-- RoomRoleWorker_ThroneRoom
+@enduml

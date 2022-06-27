@@ -1,0 +1,7 @@
+@startuml
+class HediffComp_SeverityFromEntropy {
+    + <<override>> CompShouldRemove : bool <<get>>
+    + <<override>> CompPostTick(severityAdjustment:float) : void
+}
+HediffComp <|-- HediffComp_SeverityFromEntropy
+@enduml

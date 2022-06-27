@@ -1,0 +1,7 @@
+@startuml
+class FloodFillerFog <<static>> {
+    + {static} FloodUnfog(root:IntVec3, map:Map) : FloodUnfogResult
+    + {static} DebugFloodUnfog(root:IntVec3, map:Map) : void
+    + {static} DebugRefogMap(map:Map) : void
+}
+@enduml

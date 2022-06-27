@@ -1,0 +1,7 @@
+@startuml
+class Autosaver <<sealed>> {
+    + <<const>> MaxPermadeathModeAutosaveInterval : float = 1f
+    + AutosaverTick() : void
+    + DoAutosave() : void
+}
+@enduml

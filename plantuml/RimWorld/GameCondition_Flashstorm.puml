@@ -1,0 +1,14 @@
+@startuml
+class GameCondition_Flashstorm {
+    + ambientSound : bool
+    + AreaRadius : int <<get>>
+    + <<override>> ExposeData() : void
+    + <<override>> Init() : void
+    + <<override>> GameConditionTick() : void
+    + <<override>> End() : void
+}
+GameCondition <|-- GameCondition_Flashstorm
+GameCondition_Flashstorm o-> "centerLocation" IntVec2
+GameCondition_Flashstorm o-> "areaRadiusOverride" IntRange
+GameCondition_Flashstorm o-> "initialStrikeDelay" IntRange
+@enduml

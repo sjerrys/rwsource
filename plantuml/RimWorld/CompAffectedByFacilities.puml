@@ -1,0 +1,28 @@
+@startuml
+class CompAffectedByFacilities {
+    + CanLinkTo(facility:Thing) : bool
+    + {static} CanPotentiallyLinkTo_Static(facility:Thing, myDef:ThingDef, myPos:IntVec3, myRot:Rot4) : bool
+    + CanPotentiallyLinkTo(facilityDef:ThingDef, facilityPos:IntVec3, facilityRot:Rot4) : bool
+    + {static} CanPotentiallyLinkTo_Static(facilityDef:ThingDef, facilityPos:IntVec3, facilityRot:Rot4, myDef:ThingDef, myPos:IntVec3, myRot:Rot4) : bool
+    + IsValidFacilityForMe(facility:Thing) : bool
+    + Notify_NewLink(facility:Thing) : void
+    + Notify_LinkRemoved(thing:Thing) : void
+    + Notify_FacilityDespawned() : void
+    + Notify_LOSBlockerSpawnedOrDespawned() : void
+    + Notify_ThingChanged() : void
+    + <<override>> PostSpawnSetup(respawningAfterLoad:bool) : void
+    + <<override>> PostDeSpawn(map:Map) : void
+    + <<override>> PostDrawExtraSelectionOverlays() : void
+    + {static} PotentialThingsToLinkTo(myDef:ThingDef, myPos:IntVec3, myRot:Rot4, map:Map) : IEnumerable<Thing>
+    + {static} DrawLinesToPotentialThingsToLinkTo(myDef:ThingDef, myPos:IntVec3, myRot:Rot4, map:Map) : void
+    + DrawRedLineToPotentiallySupplantedFacility(facilityDef:ThingDef, facilityPos:IntVec3, facilityRot:Rot4) : void
+    + GetStatOffset(stat:StatDef) : float
+    + GetStatsExplanation(stat:StatDef, sb:StringBuilder) : void
+    + IsFacilityActive(facility:Thing) : bool
+}
+class "List`1"<T> {
+}
+ThingComp <|-- CompAffectedByFacilities
+CompAffectedByFacilities o-> "InactiveFacilityLineMat" Material
+CompAffectedByFacilities --> "LinkedFacilitiesListForReading<Thing>" "List`1"
+@enduml

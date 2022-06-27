@@ -1,0 +1,13 @@
+@startuml
+class QuestNode_Incident {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_Incident
+QuestNode_Incident --> "inSignal<string>" "SlateRef`1"
+QuestNode_Incident --> "incidentDef<IncidentDef>" "SlateRef`1"
+QuestNode_Incident --> "customLetterLabel<string>" "SlateRef`1"
+QuestNode_Incident --> "customLetterText<string>" "SlateRef`1"
+QuestNode_Incident --> "customLetterLabelRules<RulePack>" "SlateRef`1"
+QuestNode_Incident --> "customLetterTextRules<RulePack>" "SlateRef`1"
+@enduml

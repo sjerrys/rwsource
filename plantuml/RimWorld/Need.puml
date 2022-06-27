@@ -1,0 +1,22 @@
+@startuml
+abstract class Need {
+    + <<const>> MaxDrawHeight : float = 70f
+    + LabelCap : string <<get>>
+    + CurInstantLevelPercentage : float <<get>>
+    + <<virtual>> GUIChangeArrow : int <<get>>
+    + <<virtual>> CurInstantLevel : float <<get>>
+    + <<virtual>> MaxLevel : float <<get>>
+    + <<virtual>> CurLevel : float <<get>> <<set>>
+    + CurLevelPercentage : float <<get>> <<set>>
+    + <<virtual>> ShowOnNeedList : bool <<get>>
+    + Need()
+    + Need(newPawn:Pawn)
+    + <<virtual>> ExposeData() : void
+    + {abstract} NeedInterval() : void
+    + <<virtual>> GetTipString() : string
+    + <<virtual>> SetInitialLevel() : void
+    + <<virtual>> DrawOnGUI(rect:Rect, maxThresholdMarkers:int, customMargin:float, drawArrows:bool, doTooltip:bool) : void
+}
+IExposable <|-- Need
+Need --> "def" NeedDef
+@enduml

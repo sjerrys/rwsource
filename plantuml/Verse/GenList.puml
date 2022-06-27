@@ -1,0 +1,11 @@
+@startuml
+class GenList <<static>> {
+    + {static} CountAllowNull(list:IList<T>) : int
+    + {static} NullOrEmpty(list:IList<T>) : bool
+    + {static} ListFullCopy(source:List<T>) : List<T>
+    + {static} ListFullCopyOrNull(source:List<T>) : List<T>
+    + {static} RemoveDuplicates(list:List<T>) : void
+    + {static} Shuffle(list:IList<T>) : void
+    + {static} InsertionSort(list:IList<T>, comparison:Comparison<T>) : void
+}
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+class QuestPart_ChangeGoodwillForAlivePawnsMissingFromShuttle {
+    + inSignal : string
+    + goodwillChange : int
+    + reason : string
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> ExposeData() : void
+}
+class "List`1"<T> {
+}
+QuestPart <|-- QuestPart_ChangeGoodwillForAlivePawnsMissingFromShuttle
+QuestPart_ChangeGoodwillForAlivePawnsMissingFromShuttle --> "pawns<Pawn>" "List`1"
+QuestPart_ChangeGoodwillForAlivePawnsMissingFromShuttle --> "faction" Faction
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+class OutfitForcedHandler {
+    + SomethingIsForced : bool <<get>>
+    + Reset() : void
+    + AllowedToAutomaticallyDrop(ap:Apparel) : bool
+    + SetForced(ap:Apparel, forced:bool) : void
+    + ExposeData() : void
+    + IsForced(ap:Apparel) : bool
+}
+class "List`1"<T> {
+}
+IExposable <|-- OutfitForcedHandler
+OutfitForcedHandler --> "ForcedApparel<Apparel>" "List`1"
+@enduml

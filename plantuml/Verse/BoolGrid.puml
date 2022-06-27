@@ -1,0 +1,18 @@
+@startuml
+class BoolGrid {
+    + TrueCount : int <<get>>
+    + BoolGrid()
+    + BoolGrid(map:Map)
+    + MapSizeMatches(map:Map) : bool
+    + ClearAndResizeTo(map:Map) : void
+    + ExposeData() : void
+    + Clear() : void
+    + <<virtual>> Set(c:IntVec3, value:bool) : void
+    + <<virtual>> Set(index:int, value:bool) : void
+    + Invert() : void
+}
+class "IEnumerable`1"<T> {
+}
+IExposable <|-- BoolGrid
+BoolGrid --> "ActiveCells<IntVec3>" "IEnumerable`1"
+@enduml

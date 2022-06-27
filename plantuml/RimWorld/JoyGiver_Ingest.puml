@@ -1,0 +1,7 @@
+@startuml
+class JoyGiver_Ingest {
+    + <<override>> TryGiveJob(pawn:Pawn) : Job
+    + <<override>> TryGiveJobInGatheringArea(pawn:Pawn, gatheringSpot:IntVec3) : Job
+}
+JoyGiver <|-- JoyGiver_Ingest
+@enduml

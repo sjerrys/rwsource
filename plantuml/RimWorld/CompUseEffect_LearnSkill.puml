@@ -1,0 +1,7 @@
+@startuml
+class CompUseEffect_LearnSkill {
+    + <<override>> DoEffect(user:Pawn) : void
+    + <<override>> CanBeUsedBy(p:Pawn, failReason:string) : bool
+}
+CompUseEffect <|-- CompUseEffect_LearnSkill
+@enduml

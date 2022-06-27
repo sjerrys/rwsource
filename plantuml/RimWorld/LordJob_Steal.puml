@@ -1,0 +1,7 @@
+@startuml
+class LordJob_Steal {
+    + <<override>> GuiltyOnDowned : bool <<get>>
+    + <<override>> CreateGraph() : StateGraph
+}
+LordJob <|-- LordJob_Steal
+@enduml

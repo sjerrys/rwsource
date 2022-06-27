@@ -1,0 +1,9 @@
+@startuml
+class FloatMenuMap {
+    + <<const>> RevalidateEveryFrame : int = 4
+    + FloatMenuMap(options:List<FloatMenuOption>, title:string, clickPos:Vector3)
+    + <<override>> DoWindowContents(inRect:Rect) : void
+    + <<override>> PreOptionChosen(opt:FloatMenuOption) : void
+}
+FloatMenu <|-- FloatMenuMap
+@enduml

@@ -1,0 +1,16 @@
+@startuml
+class ForagedFoodPerDayCalculator <<static>> {
+    + <<const>> NotMovingProgressFactor : float = 2f
+    + {static} ForagedFoodPerDay(pawns:List<Pawn>, biome:BiomeDef, faction:Faction, caravanMovingNow:bool, caravanNightResting:bool, explanation:StringBuilder) : Pair<ThingDef, float>
+    + {static} GetProgressPerTick(caravanMovingNow:bool, caravanNightResting:bool, explanation:StringBuilder) : float
+    + {static} GetForagedFoodCountPerInterval(pawns:List<Pawn>, biome:BiomeDef, faction:Faction, explanation:StringBuilder) : float
+    + {static} GetBaseForagedNutritionPerDay(p:Pawn, skip:bool) : float
+    + {static} ForagedFoodPerDay(caravan:Caravan, explanation:StringBuilder) : Pair<ThingDef, float>
+    + {static} GetProgressPerTick(caravan:Caravan, explanation:StringBuilder) : float
+    + {static} GetForagedFoodCountPerInterval(caravan:Caravan, explanation:StringBuilder) : float
+    + {static} ForagedFoodPerDay(transferables:List<TransferableOneWay>, biome:BiomeDef, faction:Faction, explanation:StringBuilder) : Pair<ThingDef, float>
+    + {static} ForagedFoodPerDayLeftAfterTransfer(transferables:List<TransferableOneWay>, biome:BiomeDef, faction:Faction, explanation:StringBuilder) : Pair<ThingDef, float>
+    + {static} ForagedFoodPerDayLeftAfterTradeableTransfer(allCurrentThings:List<Thing>, tradeables:List<Tradeable>, biome:BiomeDef, faction:Faction, explanation:StringBuilder) : Pair<ThingDef, float>
+    + {static} ForagedFoodPerDay(thingCounts:List<ThingCount>, biome:BiomeDef, faction:Faction, explanation:StringBuilder) : Pair<ThingDef, float>
+}
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+class CompProperties_EggLayer {
+    + eggLayIntervalDays : float = 1f
+    + eggFertilizationCountMax : int = 1
+    + eggLayFemaleOnly : bool = true
+    + eggProgressUnfertilizedMax : float = 1f
+    + CompProperties_EggLayer()
+}
+CompProperties <|-- CompProperties_EggLayer
+CompProperties_EggLayer o-> "eggCountRange" IntRange
+CompProperties_EggLayer --> "eggUnfertilizedDef" ThingDef
+CompProperties_EggLayer --> "eggFertilizedDef" ThingDef
+@enduml

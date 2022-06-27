@@ -1,0 +1,11 @@
+@startuml
+class QuestNode_GetRandomElement {
+}
+class "SlateRef`1"<T> {
+}
+class "List`1"<T> {
+}
+QuestNode <|-- QuestNode_GetRandomElement
+QuestNode_GetRandomElement --> "storeAs<string>" "SlateRef`1"
+QuestNode_GetRandomElement --> "options<SlateRef<object>>" "List`1"
+@enduml

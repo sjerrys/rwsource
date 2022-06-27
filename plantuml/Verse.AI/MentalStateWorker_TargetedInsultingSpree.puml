@@ -1,0 +1,6 @@
+@startuml
+class MentalStateWorker_TargetedInsultingSpree {
+    + <<override>> StateCanOccur(pawn:Pawn) : bool
+}
+MentalStateWorker <|-- MentalStateWorker_TargetedInsultingSpree
+@enduml

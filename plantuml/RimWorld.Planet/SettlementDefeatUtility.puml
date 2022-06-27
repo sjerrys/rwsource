@@ -1,0 +1,5 @@
+@startuml
+class SettlementDefeatUtility <<static>> {
+    + {static} CheckDefeated(factionBase:Settlement) : void
+}
+@enduml

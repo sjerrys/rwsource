@@ -1,0 +1,8 @@
+@startuml
+class DirectXmlSaver <<static>> {
+    + {static} IsSimpleTextType(type:Type) : bool
+    + {static} SaveDataObject(obj:object, filePath:string) : void
+    + {static} XElementFromObject(obj:object, expectedClass:Type) : XElement
+    + {static} XElementFromObject(obj:object, expectedType:Type, nodeName:string, owningField:FieldInfo, saveDefsAsRefs:bool) : XElement
+}
+@enduml

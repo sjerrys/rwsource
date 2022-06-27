@@ -1,0 +1,34 @@
+@startuml
+class PowerNetManager {
+    + PowerNetManager(map:Map)
+    + Notify_TransmitterSpawned(newTransmitter:CompPower) : void
+    + Notify_TransmitterDespawned(oldTransmitter:CompPower) : void
+    + Notfiy_TransmitterTransmitsPowerNowChanged(transmitter:CompPower) : void
+    + Notify_ConnectorWantsConnect(wantingCon:CompPower) : void
+    + Notify_ConnectorDespawned(oldCon:CompPower) : void
+    + NotifyDrawersForWireUpdate(root:IntVec3) : void
+    + RegisterPowerNet(newNet:PowerNet) : void
+    + DeletePowerNet(oldNet:PowerNet) : void
+    + PowerNetsTick() : void
+    + UpdatePowerNetsAndConnections_First() : void
+}
+enum DelayedActionType {
+    RegisterTransmitter,
+    DeregisterTransmitter,
+    RegisterConnector,
+    DeregisterConnector,
+}
+class DelayedAction <<struct>> {
+    + DelayedAction(type:DelayedActionType, compPower:CompPower)
+}
+class "List`1"<T> {
+}
+PowerNetManager --> "map" Map
+PowerNetManager --> "AllNetsListForReading<PowerNet>" "List`1"
+PowerNetManager +-- DelayedActionType
+PowerNetManager +-- DelayedAction
+DelayedAction --> "type" DelayedActionType
+DelayedAction --> "compPower" CompPower
+DelayedAction --> "position" IntVec3
+DelayedAction --> "rotation" Rot4
+@enduml

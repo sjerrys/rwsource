@@ -1,0 +1,8 @@
+@startuml
+class WorldReachability {
+    + WorldReachability()
+    + ClearCache() : void
+    + CanReach(c:Caravan, tile:int) : bool
+    + CanReach(startTile:int, destTile:int) : bool
+}
+@enduml

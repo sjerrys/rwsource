@@ -1,0 +1,8 @@
+@startuml
+class PowerBeam {
+    + <<const>> Radius : float = 15f
+    + <<override>> StartStrike() : void
+    + <<override>> Tick() : void
+}
+OrbitalStrike <|-- PowerBeam
+@enduml

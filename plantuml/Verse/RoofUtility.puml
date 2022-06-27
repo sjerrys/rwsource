@@ -1,0 +1,8 @@
+@startuml
+class RoofUtility <<static>> {
+    + {static} FirstBlockingThing(pos:IntVec3, map:Map) : Thing
+    + {static} IsAnyCellUnderRoof(thing:Thing) : bool
+    + {static} CanHandleBlockingThing(blocker:Thing, worker:Pawn, forced:bool) : bool
+    + {static} HandleBlockingThingJob(blocker:Thing, worker:Pawn, forced:bool) : Job
+}
+@enduml

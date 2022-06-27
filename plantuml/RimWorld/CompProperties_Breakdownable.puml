@@ -1,0 +1,6 @@
+@startuml
+class CompProperties_Breakdownable {
+    + CompProperties_Breakdownable()
+}
+CompProperties <|-- CompProperties_Breakdownable
+@enduml

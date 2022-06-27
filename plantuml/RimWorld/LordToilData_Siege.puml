@@ -1,0 +1,13 @@
+@startuml
+class LordToilData_Siege {
+    + baseRadius : float = 16f
+    + blueprintPoints : float
+    + desiredBuilderFraction : float = 0.5f
+    + <<override>> ExposeData() : void
+}
+class "List`1"<T> {
+}
+LordToilData <|-- LordToilData_Siege
+LordToilData_Siege --> "siegeCenter" IntVec3
+LordToilData_Siege o-> "blueprints<Blueprint>" "List`1"
+@enduml

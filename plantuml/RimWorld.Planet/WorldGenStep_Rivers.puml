@@ -1,0 +1,11 @@
+@startuml
+class WorldGenStep_Rivers {
+    + <<override>> SeedPart : int <<get>>
+    + <<override>> GenerateFresh(seed:string) : void
+    + {static} CalculateEvaporationConstant(temperature:float) : float
+    + {static} CalculateRiverSurfaceArea(flow:float) : float
+    + {static} CalculateEvaporativeArea(flow:float) : float
+    + {static} CalculateTotalEvaporation(flow:float, temperature:float) : float
+}
+WorldGenStep <|-- WorldGenStep_Rivers
+@enduml

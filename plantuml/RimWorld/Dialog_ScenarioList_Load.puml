@@ -1,0 +1,6 @@
+@startuml
+class Dialog_ScenarioList_Load {
+    + Dialog_ScenarioList_Load(scenarioReturner:Action<Scenario>)
+}
+Dialog_ScenarioList <|-- Dialog_ScenarioList_Load
+@enduml

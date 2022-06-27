@@ -1,0 +1,5 @@
+@startuml
+class IncidentWorker_DiseaseAnimal {
+}
+IncidentWorker_Disease <|-- IncidentWorker_DiseaseAnimal
+@enduml

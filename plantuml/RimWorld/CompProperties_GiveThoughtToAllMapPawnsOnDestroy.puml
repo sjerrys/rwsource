@@ -1,0 +1,8 @@
+@startuml
+class CompProperties_GiveThoughtToAllMapPawnsOnDestroy {
+    + message : string
+    + CompProperties_GiveThoughtToAllMapPawnsOnDestroy()
+}
+CompProperties <|-- CompProperties_GiveThoughtToAllMapPawnsOnDestroy
+CompProperties_GiveThoughtToAllMapPawnsOnDestroy --> "thought" ThoughtDef
+@enduml

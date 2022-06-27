@@ -1,0 +1,6 @@
+@startuml
+class CompReportWorkSpeed {
+    + <<override>> CompInspectStringExtra() : string
+}
+ThingComp <|-- CompReportWorkSpeed
+@enduml

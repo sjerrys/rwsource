@@ -1,0 +1,8 @@
+@startuml
+class RoadDefGenStep_DryWithFallback {
+    + <<override>> Place(map:Map, position:IntVec3, rockDef:TerrainDef, origin:IntVec3, distance:GenStep_Roads.DistanceElement[,]) : void
+    + {static} PlaceWorker(map:Map, position:IntVec3, fallback:TerrainDef) : void
+}
+RoadDefGenStep <|-- RoadDefGenStep_DryWithFallback
+RoadDefGenStep_DryWithFallback --> "fallback" TerrainDef
+@enduml

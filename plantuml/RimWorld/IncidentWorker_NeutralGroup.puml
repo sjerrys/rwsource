@@ -1,0 +1,5 @@
+@startuml
+abstract class IncidentWorker_NeutralGroup {
+}
+IncidentWorker_PawnsArrive <|-- IncidentWorker_NeutralGroup
+@enduml

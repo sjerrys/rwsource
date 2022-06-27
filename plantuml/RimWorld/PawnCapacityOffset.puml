@@ -1,0 +1,8 @@
+@startuml
+class PawnCapacityOffset {
+    + scale : float = 1f
+    + max : float = 9999f
+    + GetOffset(capacityEfficiency:float) : float
+}
+PawnCapacityOffset --> "capacity" PawnCapacityDef
+@enduml

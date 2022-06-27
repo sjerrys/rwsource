@@ -1,0 +1,48 @@
+@startuml
+class BiomeDef {
+    + implemented : bool = true
+    + canBuildBase : bool = true
+    + canAutoChoose : bool = true
+    + allowRoads : bool = true
+    + allowRivers : bool = true
+    + animalDensity : float
+    + plantDensity : float
+    + diseaseMtbDays : float = 60f
+    + settlementSelectionWeight : float = 1f
+    + impassable : bool
+    + hasVirtualPlants : bool = true
+    + forageability : float
+    + wildPlantsCareAboutLocalFertility : bool = true
+    + wildPlantRegrowDays : float = 25f
+    + movementDifficulty : float = 1f
+    + hasBedrock : bool = true
+    + isExtremeBiome : bool
+    + texture : string
+    + MaxWildAndCavePlantsClusterRadius : int <<get>>
+    + LowestWildAndCavePlantOrder : float <<get>>
+    + PlantCommonalitiesSum : float <<get>>
+    + TreeDensity : float <<get>>
+    + CommonalityOfAnimal(animalDef:PawnKindDef) : float
+    + CommonalityOfPlant(plantDef:ThingDef) : float
+    + CommonalityPctOfPlant(plantDef:ThingDef) : float
+    + CommonalityOfDisease(diseaseInc:IncidentDef) : float
+    + IsPackAnimalAllowed(pawn:ThingDef) : bool
+    + {static} Named(defName:string) : BiomeDef
+    + <<override>> ConfigErrors() : IEnumerable<string>
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+Def <|-- BiomeDef
+BiomeDef o-> "workerClass" Type
+BiomeDef --> "foragedFood" ThingDef
+BiomeDef o-> "baseWeatherCommonalities<WeatherCommonalityRecord>" "List`1"
+BiomeDef o-> "terrainsByFertility<TerrainThreshold>" "List`1"
+BiomeDef o-> "soundsAmbient<SoundDef>" "List`1"
+BiomeDef o-> "terrainPatchMakers<TerrainPatchMaker>" "List`1"
+BiomeDef --> "Worker" BiomeWorker
+BiomeDef --> "DrawMaterial" Material
+BiomeDef --> "AllWildPlants<ThingDef>" "List`1"
+BiomeDef --> "AllWildAnimals<PawnKindDef>" "IEnumerable`1"
+@enduml

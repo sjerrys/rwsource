@@ -1,0 +1,15 @@
+@startuml
+class RoomRoleDefOf <<static>> {
+    {static} RoomRoleDefOf()
+}
+RoomRoleDefOf --> "None" RoomRoleDef
+RoomRoleDefOf --> "Bedroom" RoomRoleDef
+RoomRoleDefOf --> "Barracks" RoomRoleDef
+RoomRoleDefOf --> "PrisonCell" RoomRoleDef
+RoomRoleDefOf --> "PrisonBarracks" RoomRoleDef
+RoomRoleDefOf --> "DiningRoom" RoomRoleDef
+RoomRoleDefOf --> "RecRoom" RoomRoleDef
+RoomRoleDefOf --> "Hospital" RoomRoleDef
+RoomRoleDefOf --> "Laboratory" RoomRoleDef
+RoomRoleDefOf --> "ThroneRoom" RoomRoleDef
+@enduml

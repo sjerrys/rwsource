@@ -1,0 +1,9 @@
+@startuml
+class WorldGenStep_Components {
+    + <<override>> SeedPart : int <<get>>
+    + <<override>> GenerateFresh(seed:string) : void
+    + <<override>> GenerateWithoutWorldData(seed:string) : void
+    + <<override>> GenerateFromScribe(seed:string) : void
+}
+WorldGenStep <|-- WorldGenStep_Components
+@enduml

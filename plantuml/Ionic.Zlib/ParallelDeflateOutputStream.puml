@@ -1,0 +1,49 @@
+@startuml
+class ParallelDeflateOutputStream {
+    + MaxBufferPairs : int <<get>> <<set>>
+    + BufferSize : int <<get>> <<set>>
+    + Crc32 : int <<get>>
+    + BytesProcessed : long <<get>>
+    + <<override>> CanSeek : bool <<get>>
+    + <<override>> CanRead : bool <<get>>
+    + <<override>> CanWrite : bool <<get>>
+    + <<override>> Length : long <<get>>
+    + <<override>> Position : long <<get>> <<set>>
+    + ParallelDeflateOutputStream(stream:Stream)
+    + ParallelDeflateOutputStream(stream:Stream, level:CompressionLevel)
+    + ParallelDeflateOutputStream(stream:Stream, leaveOpen:bool)
+    + ParallelDeflateOutputStream(stream:Stream, level:CompressionLevel, leaveOpen:bool)
+    + ParallelDeflateOutputStream(stream:Stream, level:CompressionLevel, strategy:CompressionStrategy, leaveOpen:bool)
+    + <<override>> Write(buffer:byte[], offset:int, count:int) : void
+    + <<override>> Flush() : void
+    + <<override>> Close() : void
+    + <<new>> Dispose() : void
+    + Reset(stream:Stream) : void
+    + <<override>> Read(buffer:byte[], offset:int, count:int) : int
+    + <<override>> Seek(offset:long, origin:SeekOrigin) : long
+    + <<override>> SetLength(value:long) : void
+}
+enum TraceBits {
+    None= 0x0u,
+    NotUsed1= 0x1u,
+    EmitLock= 0x2u,
+    EmitEnter= 0x4u,
+    EmitBegin= 0x8u,
+    EmitDone= 0x10u,
+    EmitSkip= 0x20u,
+    EmitAll= 0x3Au,
+    Flush= 0x40u,
+    Lifecycle= 0x80u,
+    Session= 0x100u,
+    Synch= 0x200u,
+    Instance= 0x400u,
+    Compress= 0x800u,
+    Write= 0x1000u,
+    WriteEnter= 0x2000u,
+    WriteTake= 0x4000u,
+    All= uint.MaxValue,
+}
+Stream <|-- ParallelDeflateOutputStream
+ParallelDeflateOutputStream --> "Strategy" CompressionStrategy
+ParallelDeflateOutputStream +-- TraceBits
+@enduml

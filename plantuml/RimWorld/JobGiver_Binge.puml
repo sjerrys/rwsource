@@ -1,0 +1,5 @@
+@startuml
+abstract class JobGiver_Binge {
+}
+ThinkNode_JobGiver <|-- JobGiver_Binge
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+abstract class Entity {
+    + {abstract} LabelCap : string <<get>>
+    + {abstract} Label : string <<get>>
+    + <<virtual>> LabelShort : string <<get>>
+    + <<virtual>> LabelMouseover : string <<get>>
+    + <<virtual>> LabelShortCap : string <<get>>
+    + {abstract} SpawnSetup(map:Map, respawningAfterLoad:bool) : void
+    + {abstract} DeSpawn(mode:DestroyMode) : void
+    + <<virtual>> Tick() : void
+    + <<virtual>> TickRare() : void
+    + <<virtual>> TickLong() : void
+    + <<override>> ToString() : string
+}
+@enduml

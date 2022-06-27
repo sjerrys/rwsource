@@ -1,0 +1,8 @@
+@startuml
+class ResolveParamsUtility <<static>> {
+    + {static} SetCustom(custom:Dictionary<string, object>, name:string, obj:T, inherit:bool) : void
+    + {static} RemoveCustom(custom:Dictionary<string, object>, name:string) : void
+    + {static} TryGetCustom(custom:Dictionary<string, object>, name:string, obj:T) : bool
+    + {static} GetCustom(custom:Dictionary<string, object>, name:string) : T
+}
+@enduml

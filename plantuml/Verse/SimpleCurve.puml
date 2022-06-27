@@ -1,0 +1,28 @@
+@startuml
+class SimpleCurve {
+    + PointsCount : int <<get>>
+    + HasView : bool <<get>>
+    + SimpleCurve(points:IEnumerable<CurvePoint>)
+    + SimpleCurve()
+    GetEnumerator() : IEnumerator
+    + GetEnumerator() : IEnumerator<CurvePoint>
+    + SetPoints(newPoints:IEnumerable<CurvePoint>) : void
+    + Add(x:float, y:float, sort:bool) : void
+    + Add(newPoint:CurvePoint, sort:bool) : void
+    + SortPoints() : void
+    + ClampToCurve(value:float) : float
+    + RemovePointNear(point:CurvePoint) : void
+    + Evaluate(x:float) : float
+    + EvaluateInverted(y:float) : float
+    + PeriodProbabilityFromCumulative(startX:float, span:float) : float
+    + ConfigErrors(prefix:string) : IEnumerable<string>
+}
+class "IEnumerable`1"<T> {
+}
+class "List`1"<T> {
+}
+"IEnumerable`1" "<CurvePoint>" <|-- SimpleCurve
+IEnumerable <|-- SimpleCurve
+SimpleCurve --> "Points<CurvePoint>" "List`1"
+SimpleCurve --> "View" SimpleCurveView
+@enduml

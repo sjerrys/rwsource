@@ -1,0 +1,10 @@
+@startuml
+class QuestNode_Chance {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_Chance
+QuestNode_Chance --> "chance<float>" "SlateRef`1"
+QuestNode_Chance --> "node" QuestNode
+QuestNode_Chance --> "elseNode" QuestNode
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+class SitePartParams {
+    + randomValue : int
+    + threatPoints : float
+    + turretsCount : int
+    + mortarsCount : int
+    + ExposeData() : void
+}
+IExposable <|-- SitePartParams
+SitePartParams --> "preciousLumpResources" ThingDef
+SitePartParams --> "animalKind" PawnKindDef
+@enduml

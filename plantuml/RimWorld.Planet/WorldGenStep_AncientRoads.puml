@@ -1,0 +1,10 @@
+@startuml
+class WorldGenStep_AncientRoads {
+    + maximumSiteCurve : float
+    + minimumChain : float
+    + maximumSegmentCurviness : float
+    + <<override>> SeedPart : int <<get>>
+    + <<override>> GenerateFresh(seed:string) : void
+}
+WorldGenStep <|-- WorldGenStep_AncientRoads
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+class EquipmentUtility <<static>> {
+    + {static} CanEquip(thing:Thing, pawn:Pawn) : bool
+    + {static} CanEquip(thing:Thing, pawn:Pawn, cantReason:string) : bool
+    + {static} CanEquip_NewTmp(thing:Thing, pawn:Pawn, cantReason:string, checkBonded:bool) : bool
+    + {static} AlreadyBondedToWeapon(thing:Thing, pawn:Pawn) : bool
+    + {static} GetPersonaWeaponConfirmationText(item:Thing, p:Pawn) : string
+    + {static} IsBiocoded(thing:Thing) : bool
+    + {static} IsBiocodedFor(thing:Thing, pawn:Pawn) : bool
+    + {static} IsBondedTo(thing:Thing, pawn:Pawn) : bool
+    + {static} QuestLodgerCanEquip(thing:Thing, pawn:Pawn) : bool
+    + {static} QuestLodgerCanUnequip(thing:Thing, pawn:Pawn) : bool
+}
+@enduml

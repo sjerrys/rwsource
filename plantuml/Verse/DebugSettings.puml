@@ -1,0 +1,26 @@
+@startuml
+class DebugSettings <<static>> {
+    + <<const>> DebugBuild : bool = false
+    + {static} enableDamage : bool = true
+    + {static} enablePlayerDamage : bool = true
+    + {static} enableRandomMentalStates : bool = true
+    + {static} enableStoryteller : bool = true
+    + {static} enableRandomDiseases : bool = true
+    + {static} godMode : bool = false
+    + {static} noAnimals : bool = false
+    + {static} unlimitedPower : bool = false
+    + {static} pathThroughWalls : bool = false
+    + {static} instantRecruit : bool = false
+    + {static} alwaysSocialFight : bool = false
+    + {static} alwaysDoLovin : bool = false
+    + {static} detectRegionListersBugs : bool = false
+    + {static} instantVisitorsGift : bool = false
+    + {static} lowFPS : bool = false
+    + {static} fastResearch : bool = false
+    + {static} fastLearning : bool = false
+    + {static} fastEcology : bool = false
+    + {static} fastEcologyRegrowRateOnly : bool = false
+    + {static} fastCrafting : bool = false
+    + {static} fastCaravans : bool = false
+}
+@enduml

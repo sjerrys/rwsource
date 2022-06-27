@@ -1,0 +1,6 @@
+@startuml
+class SitePartWorker_UnknownThreatMarker {
+    + <<override>> GetPostProcessedThreatLabel(site:Site, sitePart:SitePart) : string
+}
+SitePartWorker <|-- SitePartWorker_UnknownThreatMarker
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+abstract class ThinkNode_JobGiver {
+    + <<override>> TryIssueJobPackage(pawn:Pawn, jobParams:JobIssueParams) : ThinkResult
+}
+ThinkNode <|-- ThinkNode_JobGiver
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class AbilityCompProperties {
+    + <<virtual>> OverridesPsyfocusCost : bool <<get>>
+    + <<virtual>> PsyfocusCostExplanation : string <<get>>
+    + <<virtual>> ConfigErrors(parentDef:AbilityDef) : IEnumerable<string>
+}
+AbilityCompProperties --> "compClass" Type
+AbilityCompProperties --> "PsyfocusCostRange" FloatRange
+@enduml

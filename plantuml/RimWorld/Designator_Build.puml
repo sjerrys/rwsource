@@ -1,0 +1,26 @@
+@startuml
+class Designator_Build {
+    + <<override>> Label : string <<get>>
+    + <<override>> Desc : string <<get>>
+    + <<override>> Visible : bool <<get>>
+    + <<override>> DraggableDimensions : int <<get>>
+    + <<override>> DragDrawMeasurements : bool <<get>>
+    + <<override>> PanelReadoutTitleExtraRightMargin : float <<get>>
+    + <<override>> HighlightTag : string <<get>>
+    + Designator_Build(entDef:BuildableDef)
+    + <<override>> GizmoOnGUI(topLeft:Vector2, maxWidth:float) : GizmoResult
+    + ResolvedIcon() : Texture2D
+    + ResetStuffToDefault() : void
+    + <<override>> DrawMouseAttachments() : void
+    + <<override>> ProcessInput(ev:Event) : void
+    + <<override>> CanDesignateCell(c:IntVec3) : AcceptanceReport
+    + <<override>> DesignateSingleCell(c:IntVec3) : void
+    + <<override>> SelectedUpdate() : void
+    + <<override>> DrawPanelReadout(curY:float, width:float) : void
+    + SetStuffDef(stuffDef:ThingDef) : void
+    + <<override>> RenderHighlight(dragCells:List<IntVec3>) : void
+}
+Designator_Place <|-- Designator_Build
+Designator_Build --> "PlacingDef" BuildableDef
+Designator_Build --> "IconDrawColor" Color
+@enduml

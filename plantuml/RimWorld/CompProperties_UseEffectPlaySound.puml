@@ -1,0 +1,7 @@
+@startuml
+class CompProperties_UseEffectPlaySound {
+    + CompProperties_UseEffectPlaySound()
+}
+CompProperties_Usable <|-- CompProperties_UseEffectPlaySound
+CompProperties_UseEffectPlaySound --> "soundOnUsed" SoundDef
+@enduml

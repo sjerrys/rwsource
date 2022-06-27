@@ -1,0 +1,16 @@
+@startuml
+class ThingSetMaker_RandomOption {
+    + <<override>> ResolveReferences() : void
+}
+class Option {
+    + weight : float
+    + weightIfPlayerHasNoItem : float?
+}
+class "List`1"<T> {
+}
+ThingSetMaker <|-- ThingSetMaker_RandomOption
+ThingSetMaker_RandomOption --> "options<Option>" "List`1"
+ThingSetMaker_RandomOption +-- Option
+Option --> "thingSetMaker" ThingSetMaker
+Option --> "weightIfPlayerHasNoItemItem" ThingDef
+@enduml

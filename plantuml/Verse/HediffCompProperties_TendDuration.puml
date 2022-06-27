@@ -1,0 +1,17 @@
+@startuml
+class HediffCompProperties_TendDuration {
+    + tendAllAtOnce : bool
+    + disappearsAtTotalTendQuality : int
+    + severityPerDayTended : float
+    + showTendQuality : bool = true
+    + labelTendedWell : string
+    + labelTendedWellInner : string
+    + labelSolidTendedWell : string
+    + TendIsPermanent : bool <<get>>
+    + TendTicksFull : int <<get>>
+    + TendTicksBase : int <<get>>
+    + TendTicksOverlap : int <<get>>
+    + HediffCompProperties_TendDuration()
+}
+HediffCompProperties <|-- HediffCompProperties_TendDuration
+@enduml

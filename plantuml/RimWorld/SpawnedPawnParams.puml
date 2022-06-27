@@ -1,0 +1,8 @@
+@startuml
+class SpawnedPawnParams {
+    + aggressive : bool
+    + defendRadius : float
+}
+SpawnedPawnParams --> "spawnerThing" Thing
+SpawnedPawnParams --> "defSpot" IntVec3
+@enduml

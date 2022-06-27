@@ -1,0 +1,14 @@
+@startuml
+class Designator_Mine {
+    + <<override>> DraggableDimensions : int <<get>>
+    + <<override>> DragDrawMeasurements : bool <<get>>
+    + Designator_Mine()
+    + <<override>> CanDesignateCell(c:IntVec3) : AcceptanceReport
+    + <<override>> CanDesignateThing(t:Thing) : AcceptanceReport
+    + <<override>> DesignateSingleCell(loc:IntVec3) : void
+    + <<override>> DesignateThing(t:Thing) : void
+    + <<override>> SelectedUpdate() : void
+    + <<override>> RenderHighlight(dragCells:List<IntVec3>) : void
+}
+Designator <|-- Designator_Mine
+@enduml

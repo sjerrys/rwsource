@@ -1,0 +1,6 @@
+@startuml
+class DownedRefugeeQuestUtility <<static>> {
+    + {static} GenerateRefugee(tile:int) : Pawn
+    + {static} GetRandomFactionForRefugee() : Faction
+}
+@enduml

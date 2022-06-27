@@ -1,0 +1,12 @@
+@startuml
+class ScatterableDef {
+    + texturePath : string
+    + minSize : float
+    + maxSize : float
+    + selectionWeight : float = 100f
+    + scatterType : string = ""
+    + <<override>> PostLoad() : void
+}
+Def <|-- ScatterableDef
+ScatterableDef --> "mat" Material
+@enduml

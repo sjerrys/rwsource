@@ -1,0 +1,5 @@
+@startuml
+class IncidentWorker_ShipChunkDrop {
+}
+IncidentWorker <|-- IncidentWorker_ShipChunkDrop
+@enduml

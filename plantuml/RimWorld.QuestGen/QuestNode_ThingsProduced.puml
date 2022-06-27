@@ -1,0 +1,13 @@
+@startuml
+class QuestNode_ThingsProduced {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_ThingsProduced
+QuestNode_ThingsProduced --> "inSignalEnable<string>" "SlateRef`1"
+QuestNode_ThingsProduced --> "outSignalComplete<string>" "SlateRef`1"
+QuestNode_ThingsProduced --> "def<ThingDef>" "SlateRef`1"
+QuestNode_ThingsProduced --> "stuff<ThingDef>" "SlateRef`1"
+QuestNode_ThingsProduced --> "count<int>" "SlateRef`1"
+QuestNode_ThingsProduced --> "node" QuestNode
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class SymbolResolver_ThingSet {
+    + <<override>> Resolve(rp:ResolveParams) : void
+}
+SymbolResolver <|-- SymbolResolver_ThingSet
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+abstract class JobDriver_AffectFloor {
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+    + <<override>> ExposeData() : void
+}
+JobDriver <|-- JobDriver_AffectFloor
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class RaidLootDistributor {
+    + RaidLootDistributor(parms:IncidentParms, allPawns:List<Pawn>, loot:List<Thing>)
+    + DistributeLoot() : void
+}
+@enduml

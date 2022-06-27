@@ -1,0 +1,46 @@
+@startuml
+class HediffStage {
+    + minSeverity : float
+    + label : string
+    + untranslatedLabel : string
+    + becomeVisible : bool = true
+    + lifeThreatening : bool
+    + vomitMtbDays : float
+    + deathMtbDays : float
+    + painFactor : float = 1f
+    + painOffset : float
+    + totalBleedFactor : float = 1f
+    + naturalHealingFactor : float
+    + forgetMemoryThoughtMtbDays : float
+    + pctConditionalThoughtsNullified : float
+    + opinionOfOthersFactor : float = 1f
+    + hungerRateFactor : float = 1f
+    + hungerRateFactorOffset : float
+    + restFallFactor : float = 1f
+    + restFallFactorOffset : float
+    + socialFightChanceFactor : float = 1f
+    + foodPoisoningChanceFactor : float = 1f
+    + mentalBreakMtbDays : float
+    + partEfficiencyOffset : float
+    + partIgnoreMissingHP : bool
+    + destroyPart : bool
+    + AffectsMemory : bool <<get>>
+    + AffectsSocialInteractions : bool <<get>>
+    + PostLoad() : void
+    + SpecialDisplayStats() : IEnumerable<StatDrawEntry>
+}
+class "List`1"<T> {
+}
+HediffStage --> "tale" TaleDef
+HediffStage --> "allowedMentalBreakIntensities<MentalBreakIntensity>" "List`1"
+HediffStage --> "makeImmuneTo<HediffDef>" "List`1"
+HediffStage o-> "capMods<PawnCapacityModifier>" "List`1"
+HediffStage --> "hediffGivers<HediffGiver>" "List`1"
+HediffStage --> "mentalStateGivers<MentalStateGiver>" "List`1"
+HediffStage --> "statOffsets<StatModifier>" "List`1"
+HediffStage --> "statFactors<StatModifier>" "List`1"
+HediffStage --> "statOffsetEffectMultiplier" StatDef
+HediffStage --> "statFactorEffectMultiplier" StatDef
+HediffStage --> "capacityFactorEffectMultiplier" StatDef
+HediffStage --> "disabledWorkTags" WorkTags
+@enduml

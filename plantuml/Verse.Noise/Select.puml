@@ -1,0 +1,14 @@
+@startuml
+class Select {
+    + FallOff : double <<get>> <<set>>
+    + Maximum : double <<get>> <<set>>
+    + Minimum : double <<get>> <<set>>
+    + Select()
+    + Select(inputA:ModuleBase, inputB:ModuleBase, controller:ModuleBase)
+    + Select(min:double, max:double, fallOff:double, inputA:ModuleBase, inputB:ModuleBase)
+    + SetBounds(min:double, max:double) : void
+    + <<override>> GetValue(x:double, y:double, z:double) : double
+}
+ModuleBase <|-- Select
+Select --> "Controller" ModuleBase
+@enduml

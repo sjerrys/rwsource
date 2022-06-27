@@ -1,0 +1,7 @@
+@startuml
+class PawnsArrivalModeWorker_EdgeWalkIn {
+    + <<override>> Arrive(pawns:List<Pawn>, parms:IncidentParms) : void
+    + <<override>> TryResolveRaidSpawnCenter(parms:IncidentParms) : bool
+}
+PawnsArrivalModeWorker <|-- PawnsArrivalModeWorker_EdgeWalkIn
+@enduml

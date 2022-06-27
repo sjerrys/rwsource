@@ -1,0 +1,10 @@
+@startuml
+class WorkGiver_FillFermentingBarrel {
+    + {static} ResetStaticData() : void
+    + <<override>> HasJobOnThing(pawn:Pawn, t:Thing, forced:bool) : bool
+    + <<override>> JobOnThing(pawn:Pawn, t:Thing, forced:bool) : Job
+}
+WorkGiver_Scanner <|-- WorkGiver_FillFermentingBarrel
+WorkGiver_FillFermentingBarrel --> "PotentialWorkThingRequest" ThingRequest
+WorkGiver_FillFermentingBarrel --> "PathEndMode" PathEndMode
+@enduml

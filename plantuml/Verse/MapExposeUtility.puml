@@ -1,0 +1,5 @@
+@startuml
+class MapExposeUtility <<static>> {
+    + {static} ExposeUshort(map:Map, shortReader:Func<IntVec3, ushort>, shortWriter:Action<IntVec3, ushort>, label:string) : void
+}
+@enduml

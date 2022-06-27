@@ -1,0 +1,5 @@
+@startuml
+class TimetableUtility <<static>> {
+    + {static} GetTimeAssignment(pawn:Pawn) : TimeAssignmentDef
+}
+@enduml

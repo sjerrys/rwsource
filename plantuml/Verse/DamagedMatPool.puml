@@ -1,0 +1,6 @@
+@startuml
+class DamagedMatPool <<static>> {
+    + {static} MatCount : int <<get>>
+    + {static} GetDamageFlashMat(baseMat:Material, damPct:float) : Material
+}
+@enduml

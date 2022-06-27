@@ -1,0 +1,6 @@
+@startuml
+class LordToil_DefendSelf {
+    + <<override>> UpdateAllDuties() : void
+}
+LordToil <|-- LordToil_DefendSelf
+@enduml

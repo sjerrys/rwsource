@@ -1,0 +1,15 @@
+@startuml
+class GenThreading <<static>> {
+    + {static} ProcessorCount : int <<get>>
+    + {static} SliceWork(fromInclusive:int, toExclusive:int, maxBatches:int) : List<Slice>
+    + {static} SliceWork(list:List<T>, maxBatches:int) : List<List<T>>
+    + {static} ParallelForEach(list:List<T>, callback:Action<T>, maxDegreeOfParallelism:int) : void
+    + {static} ParallelFor(fromInclusive:int, toExclusive:int, callback:Action<int>, maxDegreeOfParallelism:int) : void
+}
+class Slice <<struct>> {
+    + <<readonly>> fromInclusive : int
+    + <<readonly>> toExclusive : int
+    + Slice(fromInclusive:int, toExclusive:int)
+}
+GenThreading +-- Slice
+@enduml

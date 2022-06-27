@@ -1,0 +1,5 @@
+@startuml
+class Stance_Mobile {
+}
+Stance <|-- Stance_Mobile
+@enduml

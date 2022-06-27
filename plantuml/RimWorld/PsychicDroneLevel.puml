@@ -1,0 +1,10 @@
+@startuml
+enum PsychicDroneLevel {
+    None,
+    GoodMedium,
+    BadLow,
+    BadMedium,
+    BadHigh,
+    BadExtreme,
+}
+@enduml

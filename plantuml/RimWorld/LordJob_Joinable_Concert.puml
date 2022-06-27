@@ -1,0 +1,8 @@
+@startuml
+class LordJob_Joinable_Concert {
+    + LordJob_Joinable_Concert()
+    + LordJob_Joinable_Concert(spot:IntVec3, organizer:Pawn, gatheringDef:GatheringDef)
+    + <<override>> GetReport(pawn:Pawn) : string
+}
+LordJob_Joinable_Party <|-- LordJob_Joinable_Concert
+@enduml

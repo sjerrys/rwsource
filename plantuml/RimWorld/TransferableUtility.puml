@@ -1,0 +1,13 @@
+@startuml
+class TransferableUtility <<static>> {
+    + {static} Transfer(things:List<Thing>, count:int, transferred:Action<Thing, IThingHolder>) : void
+    + {static} TransferNoSplit(things:List<Thing>, count:int, transfer:Action<Thing, int>, removeIfTakingEntireThing:bool, errorIfNotEnoughThings:bool) : void
+    + {static} TransferAsOne(a:Thing, b:Thing, mode:TransferAsOneMode) : bool
+    + {static} CanStack(thing:Thing) : bool
+    + {static} TransferableMatching(thing:Thing, transferables:List<T>, mode:TransferAsOneMode) : T
+    + {static} TradeableMatching(thing:Thing, tradeables:List<Tradeable>) : Tradeable
+    + {static} TransferableMatchingDesperate(thing:Thing, transferables:List<TransferableOneWay>, mode:TransferAsOneMode) : TransferableOneWay
+    + {static} GetPawnsFromTransferables(transferables:List<TransferableOneWay>) : List<Pawn>
+    + {static} SimulateTradeableTransfer(all:List<Thing>, tradeables:List<Tradeable>, outThingsAfterTransfer:List<ThingCount>) : void
+}
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class WorkshopItem_Scenario {
+    + GetScenario() : Scenario
+}
+WorkshopItem <|-- WorkshopItem_Scenario
+WorkshopItem_Scenario --> "PublishedFileId" PublishedFileId_t
+@enduml

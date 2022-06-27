@@ -1,0 +1,9 @@
+@startuml
+class Instruction_BuildRoomWalls {
+    + <<override>> OnActivated() : void
+    + <<override>> LessonOnGUI() : void
+    + <<override>> LessonUpdate() : void
+    + <<override>> AllowAction(ep:EventPack) : AcceptanceReport
+}
+Lesson_Instruction <|-- Instruction_BuildRoomWalls
+@enduml

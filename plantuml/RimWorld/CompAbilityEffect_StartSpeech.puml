@@ -1,0 +1,7 @@
+@startuml
+class CompAbilityEffect_StartSpeech {
+    + <<override>> Apply(target:LocalTargetInfo, dest:LocalTargetInfo) : void
+    + <<override>> GizmoDisabled(reason:string) : bool
+}
+CompAbilityEffect <|-- CompAbilityEffect_StartSpeech
+@enduml

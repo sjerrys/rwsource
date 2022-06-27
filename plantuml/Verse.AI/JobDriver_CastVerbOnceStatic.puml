@@ -1,0 +1,5 @@
+@startuml
+class JobDriver_CastVerbOnceStatic {
+}
+JobDriver_CastVerbOnce <|-- JobDriver_CastVerbOnceStatic
+@enduml

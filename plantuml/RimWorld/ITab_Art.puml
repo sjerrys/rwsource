@@ -1,0 +1,7 @@
+@startuml
+class ITab_Art {
+    + <<override>> IsVisible : bool <<get>>
+    + ITab_Art()
+}
+ITab <|-- ITab_Art
+@enduml

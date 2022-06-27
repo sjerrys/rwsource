@@ -1,0 +1,25 @@
+@startuml
+class Selector {
+    + FirstSelectedObject : object <<get>>
+    + SingleSelectedObject : object <<get>>
+    + NumSelected : int <<get>>
+    + SelectorOnGUI() : void
+    + IsSelected(obj:object) : bool
+    + ClearSelection() : void
+    + Deselect(obj:object) : void
+    + ShelveSelected(obj:object) : void
+    + Unshelve(obj:object, playSound:bool, forceDesignatorDeselect:bool) : void
+    + Select(obj:object, playSound:bool, forceDesignatorDeselect:bool) : void
+    + Notify_DialogOpened() : void
+    + {static} SelectableObjectsAt(c:IntVec3, map:Map) : IEnumerable<object>
+    + SelectNextAt(c:IntVec3, map:Map) : void
+}
+class "List`1"<T> {
+}
+Selector o-> "dragBox" DragBox
+Selector --> "SelectedObjects<object>" "List`1"
+Selector --> "SelectedObjectsListForReading<object>" "List`1"
+Selector --> "SingleSelectedThing" Thing
+Selector --> "SelectedPawns<Pawn>" "List`1"
+Selector --> "SelectedZone" Zone
+@enduml

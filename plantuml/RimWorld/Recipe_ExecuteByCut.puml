@@ -1,0 +1,6 @@
+@startuml
+class Recipe_ExecuteByCut {
+    + <<override>> ApplyOnPawn(pawn:Pawn, part:BodyPartRecord, billDoer:Pawn, ingredients:List<Thing>, bill:Bill) : void
+}
+RecipeWorker <|-- Recipe_ExecuteByCut
+@enduml

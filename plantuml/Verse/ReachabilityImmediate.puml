@@ -1,0 +1,8 @@
+@startuml
+class ReachabilityImmediate <<static>> {
+    + {static} CanReachImmediate(start:IntVec3, target:LocalTargetInfo, map:Map, peMode:PathEndMode, pawn:Pawn) : bool
+    + {static} CanReachImmediate(pawn:Pawn, target:LocalTargetInfo, peMode:PathEndMode) : bool
+    + {static} CanReachImmediateNonLocal(pawn:Pawn, target:TargetInfo, peMode:PathEndMode) : bool
+    + {static} CanReachImmediate(start:IntVec3, rect:CellRect, map:Map, peMode:PathEndMode, pawn:Pawn) : bool
+}
+@enduml

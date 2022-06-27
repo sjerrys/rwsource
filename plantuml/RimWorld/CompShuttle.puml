@@ -1,0 +1,53 @@
+@startuml
+class CompShuttle {
+    + requiredColonistCount : int
+    + maxColonistCount : int
+    + acceptColonists : bool
+    + onlyAcceptColonists : bool
+    + onlyAcceptHealthy : bool
+    + dropEverythingIfUnsatisfied : bool
+    + dropNonRequiredIfUnsatisfied : bool = true
+    + leaveImmediatelyWhenSatisfied : bool
+    + dropEverythingOnArrival : bool
+    + stayAfterDroppedEverythingOnArrival : bool
+    + permitShuttle : bool
+    + hideControls : bool
+    + leaveASAP : bool
+    + leaveAfterTicks : int
+    + Autoload : bool <<get>>
+    + LoadingInProgressOrReadyToLaunch : bool <<get>>
+    + CanAutoLoot : bool <<get>>
+    + ShowLoadingGizmos : bool <<get>>
+    + AnyInGroupIsUnderRoof : bool <<get>>
+    + AllRequiredThingsLoaded : bool <<get>>
+    + IsMissionShuttle : bool <<get>>
+    + <<override>> PostSpawnSetup(respawningAfterLoad:bool) : void
+    + <<override>> CompGetGizmosExtra() : IEnumerable<Gizmo>
+    + <<override>> CompFloatMenuOptions(selPawn:Pawn) : IEnumerable<FloatMenuOption>
+    + <<override>> CompMultiSelectFloatMenuOptions(selPawns:List<Pawn>) : IEnumerable<FloatMenuOption>
+    + <<override>> CompTick() : void
+    + <<override>> CompInspectStringExtra() : string
+    + Send() : void
+    + SendLaunchedSignals(transporters:List<CompTransporter>) : void
+    + <<override>> PostExposeData() : void
+    + IsRequired(thing:Thing) : bool
+    + IsAllowed(t:Thing) : bool
+    + IsAllowedNow(t:Thing) : bool
+    + CleanUpLoadingVars() : void
+}
+class "List`1"<T> {
+}
+ThingComp <|-- CompShuttle
+CompShuttle o-> "requiredItems<ThingDefCount>" "List`1"
+CompShuttle o-> "requiredPawns<Pawn>" "List`1"
+CompShuttle --> "sendAwayIfAllDespawned<Thing>" "List`1"
+CompShuttle --> "sendAwayIfAllPawnsLeftToLoadAreNotOfFaction" Faction
+CompShuttle --> "sendAwayIfQuestFinished" Quest
+CompShuttle --> "missionShuttleTarget" WorldObject
+CompShuttle --> "missionShuttleHome" WorldObject
+CompShuttle o-> "TargeterMouseAttachment" Texture2D
+CompShuttle o-> "DropoffSpotOffset" IntVec3
+CompShuttle --> "TransportersInGroup<CompTransporter>" "List`1"
+CompShuttle --> "Transporter" CompTransporter
+CompShuttle --> "RequiredThingsLabel" TaggedString
+@enduml

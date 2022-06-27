@@ -1,0 +1,11 @@
+@startuml
+class DebugOutputsHealth <<static>> {
+    + {static} Bodies() : void
+    + {static} InstallableBodyParts() : void
+    + {static} BodyParts() : void
+    + {static} Surgeries() : void
+    + {static} HitsToKill() : void
+    + {static} Prosthetics() : void
+    + {static} TranshumanistBodyParts() : void
+}
+@enduml

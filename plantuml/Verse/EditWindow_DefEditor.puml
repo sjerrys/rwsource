@@ -1,0 +1,10 @@
+@startuml
+class EditWindow_DefEditor {
+    + <<override>> IsDebug : bool <<get>>
+    + EditWindow_DefEditor(def:Def)
+    + <<override>> DoWindowContents(inRect:Rect) : void
+}
+EditWindow <|-- EditWindow_DefEditor
+EditWindow_DefEditor --> "def" Def
+EditWindow_DefEditor --> "InitialSize" Vector2
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+enum ExpansionStatus {
+    Active,
+    Installed,
+    NotInstalled,
+}
+@enduml

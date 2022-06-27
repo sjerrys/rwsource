@@ -1,0 +1,11 @@
+@startuml
+class MainTabWindow_Menu {
+    + MainTabWindow_Menu()
+    + <<override>> PreOpen() : void
+    + <<override>> ExtraOnGUI() : void
+    + <<override>> DoWindowContents(rect:Rect) : void
+}
+MainTabWindow <|-- MainTabWindow_Menu
+MainTabWindow_Menu --> "RequestedTabSize" Vector2
+MainTabWindow_Menu --> "Anchor" MainTabWindowAnchor
+@enduml

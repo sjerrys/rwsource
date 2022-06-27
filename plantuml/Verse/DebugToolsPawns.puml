@@ -1,0 +1,4 @@
+@startuml
+class DebugToolsPawns <<static>> {
+}
+@enduml

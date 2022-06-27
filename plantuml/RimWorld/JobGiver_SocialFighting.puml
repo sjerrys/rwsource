@@ -1,0 +1,5 @@
+@startuml
+class JobGiver_SocialFighting {
+}
+ThinkNode_JobGiver <|-- JobGiver_SocialFighting
+@enduml

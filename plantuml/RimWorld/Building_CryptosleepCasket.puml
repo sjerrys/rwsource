@@ -1,0 +1,10 @@
+@startuml
+class Building_CryptosleepCasket {
+    + <<override>> TryAcceptThing(thing:Thing, allowSpecialEffects:bool) : bool
+    + <<override>> GetFloatMenuOptions(myPawn:Pawn) : IEnumerable<FloatMenuOption>
+    + <<override>> GetGizmos() : IEnumerable<Gizmo>
+    + <<override>> EjectContents() : void
+    + {static} FindCryptosleepCasketFor(p:Pawn, traveler:Pawn, ignoreOtherReservations:bool) : Building_CryptosleepCasket
+}
+Building_Casket <|-- Building_CryptosleepCasket
+@enduml

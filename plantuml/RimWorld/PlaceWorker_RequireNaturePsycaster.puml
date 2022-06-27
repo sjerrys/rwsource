@@ -1,0 +1,6 @@
+@startuml
+class PlaceWorker_RequireNaturePsycaster {
+    + <<override>> IsBuildDesignatorVisible(def:BuildableDef) : bool
+}
+PlaceWorker <|-- PlaceWorker_RequireNaturePsycaster
+@enduml

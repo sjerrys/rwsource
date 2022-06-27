@@ -1,0 +1,29 @@
+@startuml
+class ActiveDropPodInfo {
+    + openDelay : int = 110
+    + leaveSlag : bool
+    + savePawnsWithReferenceMode : bool
+    + despawnPodBeforeSpawningThing : bool
+    + spawnWipeMode : WipeMode?
+    + setRotation : Rot4?
+    + moveItemsAsideBeforeSpawning : bool
+    + <<const>> DefaultOpenDelay : int = 110
+    + ActiveDropPodInfo()
+    + ActiveDropPodInfo(parent:IThingHolder)
+    + ExposeData() : void
+    + GetDirectlyHeldThings() : ThingOwner
+    + GetChildHolders(outChildren:List<IThingHolder>) : void
+}
+class "List`1"<T> {
+}
+IThingHolder <|-- ActiveDropPodInfo
+IExposable <|-- ActiveDropPodInfo
+ActiveDropPodInfo --> "parent" IThingHolder
+ActiveDropPodInfo --> "innerContainer" ThingOwner
+ActiveDropPodInfo --> "missionShuttleTarget" WorldObject
+ActiveDropPodInfo --> "missionShuttleHome" WorldObject
+ActiveDropPodInfo --> "sendAwayIfQuestFinished" Quest
+ActiveDropPodInfo --> "questTags<string>" "List`1"
+ActiveDropPodInfo --> "SingleContainedThing" Thing
+ActiveDropPodInfo --> "ParentHolder" IThingHolder
+@enduml

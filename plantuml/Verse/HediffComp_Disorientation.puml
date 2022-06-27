@@ -1,0 +1,6 @@
+@startuml
+class HediffComp_Disorientation {
+    + <<override>> CompPostTick(severityAdjustment:float) : void
+}
+HediffComp <|-- HediffComp_Disorientation
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+enum GameFont {
+    Tiny,
+    Small,
+    Medium,
+}
+@enduml

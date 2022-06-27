@@ -1,0 +1,5 @@
+@startuml
+class SlaughterDesignatorUtility <<static>> {
+    + {static} CheckWarnAboutBondedAnimal(designated:Pawn) : void
+}
+@enduml

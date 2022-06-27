@@ -1,0 +1,35 @@
+@startuml
+class CompProperties_Refuelable {
+    + fuelConsumptionRate : float = 1f
+    + fuelCapacity : float = 2f
+    + initialFuelPercent : float
+    + autoRefuelPercent : float = 0.3f
+    + fuelConsumptionPerTickInRain : float
+    + destroyOnNoFuel : bool
+    + consumeFuelOnlyWhenUsed : bool
+    + showFuelGizmo : bool
+    + initialAllowAutoRefuel : bool = true
+    + showAllowAutoRefuelToggle : bool
+    + targetFuelLevelConfigurable : bool
+    + initialConfigurableTargetFuelLevel : float
+    + drawOutOfFuelOverlay : bool = true
+    + minimumFueledThreshold : float
+    + drawFuelGaugeInMap : bool
+    + atomicFueling : bool
+    + factorByDifficulty : bool
+    + fuelLabel : string
+    + fuelGizmoLabel : string
+    + outOfFuelMessage : string
+    + fuelIconPath : string
+    + FuelLabel : string <<get>>
+    + FuelGizmoLabel : string <<get>>
+    + FuelMultiplierCurrentDifficulty : float <<get>>
+    + CompProperties_Refuelable()
+    + <<override>> ResolveReferences(parentDef:ThingDef) : void
+    + <<override>> ConfigErrors(parentDef:ThingDef) : IEnumerable<string>
+    + <<override>> SpecialDisplayStats(req:StatRequest) : IEnumerable<StatDrawEntry>
+}
+CompProperties <|-- CompProperties_Refuelable
+CompProperties_Refuelable --> "fuelFilter" ThingFilter
+CompProperties_Refuelable --> "FuelIcon" Texture2D
+@enduml

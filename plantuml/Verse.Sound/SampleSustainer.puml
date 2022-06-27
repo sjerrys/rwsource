@@ -1,0 +1,15 @@
+@startuml
+class SampleSustainer {
+    + scheduledEndTime : float
+    + resolvedSkipAttack : bool
+    + <<override>> ParentStartRealTime : float <<get>>
+    + <<override>> ParentStartTick : float <<get>>
+    + <<override>> ParentHashCode : float <<get>>
+    + {static} TryMakeAndPlay(subSus:SubSustainer, clip:AudioClip, scheduledEndTime:float) : SampleSustainer
+    + <<override>> SampleCleanup() : void
+}
+Sample <|-- SampleSustainer
+SampleSustainer --> "subSustainer" SubSustainer
+SampleSustainer --> "ExternalParams" SoundParams
+SampleSustainer --> "Info" SoundInfo
+@enduml

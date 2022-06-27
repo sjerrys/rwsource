@@ -1,0 +1,7 @@
+@startuml
+abstract class WorkGiver_ConstructDeliverResources {
+    + <<override>> MaxPathDanger(pawn:Pawn) : Danger
+    + {static} ResetStaticData() : void
+}
+WorkGiver_Scanner <|-- WorkGiver_ConstructDeliverResources
+@enduml

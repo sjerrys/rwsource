@@ -1,0 +1,9 @@
+@startuml
+class QuestPart_ExitOnShuttle {
+    + addFleeToil : bool = true
+    + QuestPart_ExitOnShuttle()
+    + <<override>> ExposeData() : void
+}
+QuestPart_MakeLord <|-- QuestPart_ExitOnShuttle
+QuestPart_ExitOnShuttle --> "shuttle" Thing
+@enduml

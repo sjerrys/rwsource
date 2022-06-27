@@ -1,0 +1,11 @@
+@startuml
+class RoofDef {
+    + isNatural : bool
+    + isThickRoof : bool
+    + VanishOnCollapse : bool <<get>>
+}
+Def <|-- RoofDef
+RoofDef --> "collapseLeavingThingDef" ThingDef
+RoofDef --> "filthLeaving" ThingDef
+RoofDef --> "soundPunchThrough" SoundDef
+@enduml

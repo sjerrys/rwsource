@@ -1,0 +1,13 @@
+@startuml
+class TransportPodsArrivalActionUtility <<static>> {
+    + {static} GetFloatMenuOptions(acceptanceReportGetter:Func<FloatMenuAcceptanceReport>, arrivalActionGetter:Func<T>, label:string, representative:CompLaunchable, destinationTile:int, uiConfirmationCallback:Action<Action>) : IEnumerable<FloatMenuOption>
+    + {static} GetFloatMenuOptions(acceptanceReportGetter:Func<FloatMenuAcceptanceReport>, arrivalActionGetter:Func<T>, label:string, launchAction:Action<int, TransportPodsArrivalAction>, destinationTile:int) : IEnumerable<FloatMenuOption>
+    + {static} AnyNonDownedColonist(pods:IEnumerable<IThingHolder>) : bool
+    + {static} AnyPotentialCaravanOwner(pods:IEnumerable<IThingHolder>, faction:Faction) : bool
+    + {static} GetLookTarget(pods:List<ActiveDropPodInfo>) : Thing
+    + {static} DropTravelingTransportPods(dropPods:List<ActiveDropPodInfo>, near:IntVec3, map:Map) : void
+    + {static} DropShuttle_NewTemp(pods:List<ActiveDropPodInfo>, map:Map, cell:IntVec3, faction:Faction) : Thing
+    + {static} DropShuttle(pods:List<ActiveDropPodInfo>, map:Map, cell:IntVec3, faction:Faction) : void
+    + {static} RemovePawnsFromWorldPawns(pods:List<ActiveDropPodInfo>) : void
+}
+@enduml

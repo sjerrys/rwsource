@@ -1,0 +1,16 @@
+@startuml
+class PawnSkinColors <<static>> {
+    + {static} IsDarkSkin(color:Color) : bool
+    + {static} GetSkinColor(melanin:float) : Color
+    + {static} RandomMelanin(fac:Faction) : float
+    + {static} GetMelaninCommonalityFactor(melanin:float) : float
+    + {static} GetRandomMelaninSimilarTo(value:float, clampMin:float, clampMax:float) : float
+}
+class SkinColorData <<struct>> {
+    + melanin : float
+    + selector : float
+    + SkinColorData(melanin:float, selector:float, color:Color)
+}
+PawnSkinColors +-- SkinColorData
+SkinColorData --> "color" Color
+@enduml

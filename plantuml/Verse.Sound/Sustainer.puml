@@ -1,0 +1,16 @@
+@startuml
+class Sustainer {
+    + Ended : bool <<get>>
+    + TimeSinceEnd : float <<get>>
+    + CameraDistanceSquared : float <<get>>
+    + Sustainer(def:SoundDef, info:SoundInfo)
+    + SustainerUpdate() : void
+    + Maintain() : void
+    + End() : void
+    + DebugString() : string
+}
+Sustainer --> "def" SoundDef
+Sustainer --> "info" SoundInfo
+Sustainer o-> "externalParams" SoundParams
+Sustainer o-> "scopeFader" SustainerScopeFader
+@enduml

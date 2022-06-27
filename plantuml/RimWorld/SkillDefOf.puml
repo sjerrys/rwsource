@@ -1,0 +1,17 @@
+@startuml
+class SkillDefOf <<static>> {
+    {static} SkillDefOf()
+}
+SkillDefOf --> "Construction" SkillDef
+SkillDefOf --> "Plants" SkillDef
+SkillDefOf --> "Intellectual" SkillDef
+SkillDefOf --> "Mining" SkillDef
+SkillDefOf --> "Shooting" SkillDef
+SkillDefOf --> "Melee" SkillDef
+SkillDefOf --> "Social" SkillDef
+SkillDefOf --> "Animals" SkillDef
+SkillDefOf --> "Cooking" SkillDef
+SkillDefOf --> "Medicine" SkillDef
+SkillDefOf --> "Artistic" SkillDef
+SkillDefOf --> "Crafting" SkillDef
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+class CellGrid {
+    + CellsCount : int <<get>>
+    + CellGrid()
+    + CellGrid(map:Map)
+    + MapSizeMatches(map:Map) : bool
+    + ClearAndResizeTo(map:Map) : void
+    + Clear() : void
+}
+@enduml

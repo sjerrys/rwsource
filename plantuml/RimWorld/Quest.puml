@@ -1,0 +1,64 @@
+@startuml
+class Quest {
+    + id : int
+    + name : string
+    + points : float
+    + challengeRating : int
+    + lastSlateStateDebug : string
+    + hidden : bool
+    + appearanceTick : int
+    + acceptanceTick : int
+    + initiallyAccepted : bool
+    + dismissed : bool
+    + hiddenInUI : bool
+    + ticksUntilAcceptanceExpiry : int
+    + cleanupTick : int
+    + <<const>> MaxSignalsReceivedDebugCount : int = 25
+    + TicksSinceAppeared : int <<get>>
+    + TicksSinceAccepted : int <<get>>
+    + TicksSinceCleanup : int <<get>>
+    + AccepterPawnLabelCap : string <<get>>
+    + InitiateSignal : string <<get>>
+    + EverAccepted : bool <<get>>
+    + RequiresAccepter : bool <<get>>
+    + Historical : bool <<get>>
+    + IncreasesPopulation : bool <<get>>
+    + {static} MakeRaw() : Quest
+    + QuestTick() : void
+    + AddPart(part:QuestPart) : void
+    + RemovePart(part:QuestPart) : void
+    + Accept(by:Pawn) : void
+    + End(outcome:QuestEndOutcome, sendLetter:bool) : void
+    + QuestReserves(p:Pawn) : bool
+    + QuestReserves(f:Faction) : bool
+    + SetInitiallyAccepted() : void
+    + ExposeData() : void
+    + Notify_PawnDiscarded(pawn:Pawn) : void
+    + Notify_SignalReceived(signal:Signal) : void
+    + Initiate() : void
+    + CleanupQuestParts() : void
+    + Notify_ThingsProduced(worker:Pawn, things:List<Thing>) : void
+    + Notify_PlantHarvested(worker:Pawn, harvested:Thing) : void
+    + Notify_PawnKilled(pawn:Pawn, dinfo:DamageInfo?) : void
+    + Notify_FactionRemoved(faction:Faction) : void
+    + GetUniqueLoadID() : string
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+IExposable <|-- Quest
+ILoadReferenceable <|-- Quest
+ISignalReceiver <|-- Quest
+Quest --> "description" TaggedString
+Quest o-> "tags<string>" "List`1"
+Quest --> "root" QuestScriptDef
+Quest --> "signalsReceivedDebug<string>" "List`1"
+Quest --> "PartsListForReading<QuestPart>" "List`1"
+Quest --> "AccepterPawn" Pawn
+Quest --> "State" QuestState
+Quest --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+Quest --> "QuestSelectTargets<GlobalTargetInfo>" "IEnumerable`1"
+Quest --> "InvolvedFactions<Faction>" "IEnumerable`1"
+Quest --> "Hyperlinks<Dialog_InfoCard.Hyperlink>" "IEnumerable`1"
+@enduml

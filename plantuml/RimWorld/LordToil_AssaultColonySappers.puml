@@ -1,0 +1,11 @@
+@startuml
+class LordToil_AssaultColonySappers {
+    + <<override>> AllowSatisfyLongNeeds : bool <<get>>
+    + <<override>> ForceHighStoryDanger : bool <<get>>
+    + LordToil_AssaultColonySappers()
+    + <<override>> Init() : void
+    + <<override>> UpdateAllDuties() : void
+    + <<override>> Notify_ReachedDutyLocation(pawn:Pawn) : void
+}
+LordToil <|-- LordToil_AssaultColonySappers
+@enduml

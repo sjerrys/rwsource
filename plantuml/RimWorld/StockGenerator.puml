@@ -1,0 +1,18 @@
+@startuml
+abstract class StockGenerator {
+    + <<virtual>> ResolveReferences(trader:TraderKindDef) : void
+    + <<virtual>> ConfigErrors(parentDef:TraderKindDef) : IEnumerable<string>
+    + {abstract} GenerateThings(forTile:int, faction:Faction) : IEnumerable<Thing>
+    + {abstract} HandlesThingDef(thingDef:ThingDef) : bool
+    + TryGetPriceType(thingDef:ThingDef, action:TradeAction, priceType:PriceType) : bool
+}
+class "List`1"<T> {
+}
+StockGenerator --> "trader" TraderKindDef
+StockGenerator o-> "countRange" IntRange
+StockGenerator --> "customCountRanges<ThingDefCountRangeClass>" "List`1"
+StockGenerator o-> "totalPriceRange" FloatRange
+StockGenerator o-> "maxTechLevelGenerate" TechLevel
+StockGenerator o-> "maxTechLevelBuy" TechLevel
+StockGenerator o-> "price" PriceType
+@enduml

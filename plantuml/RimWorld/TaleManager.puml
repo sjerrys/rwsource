@@ -1,0 +1,22 @@
+@startuml
+class TaleManager <<sealed>> {
+    + ExposeData() : void
+    + TaleManagerTick() : void
+    + Add(tale:Tale) : void
+    + GetRandomTaleReferenceForArt(source:ArtGenerationContext) : TaleReference
+    + GetRandomTaleReferenceForArtConcerning(th:Thing) : TaleReference
+    + GetLatestTale(def:TaleDef, pawn:Pawn) : Tale
+    + Notify_PawnDestroyed(pawn:Pawn) : void
+    + Notify_PawnDiscarded(p:Pawn, silentlyRemoveReferences:bool) : void
+    + Notify_FactionRemoved(faction:Faction) : void
+    + AnyActiveTaleConcerns(p:Pawn) : bool
+    + AnyTaleConcerns(p:Pawn) : bool
+    + GetMaxHistoricalTaleDay() : float
+    + LogTales() : void
+    + LogTaleInterestSummary() : void
+}
+class "List`1"<T> {
+}
+IExposable <|-- TaleManager
+TaleManager --> "AllTalesListForReading<Tale>" "List`1"
+@enduml

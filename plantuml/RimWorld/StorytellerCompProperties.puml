@@ -1,0 +1,18 @@
+@startuml
+class StorytellerCompProperties {
+    + minDaysPassed : float
+    + minIncChancePopulationIntentFactor : float = 0.05f
+    + Enabled : bool <<get>>
+    + StorytellerCompProperties()
+    + StorytellerCompProperties(compClass:Type)
+    + <<virtual>> ConfigErrors(parentDef:StorytellerDef) : IEnumerable<string>
+    + <<virtual>> ResolveReferences(parentDef:StorytellerDef) : void
+}
+class "List`1"<T> {
+}
+StorytellerCompProperties --> "compClass" Type
+StorytellerCompProperties --> "allowedTargetTags<IncidentTargetTagDef>" "List`1"
+StorytellerCompProperties --> "disallowedTargetTags<IncidentTargetTagDef>" "List`1"
+StorytellerCompProperties --> "enableIfAnyModActive<string>" "List`1"
+StorytellerCompProperties --> "disableIfAnyModActive<string>" "List`1"
+@enduml

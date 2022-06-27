@@ -1,0 +1,23 @@
+@startuml
+class TerrainDefOf <<static>> {
+    {static} TerrainDefOf()
+}
+TerrainDefOf --> "Sand" TerrainDef
+TerrainDefOf --> "Soil" TerrainDef
+TerrainDefOf --> "Underwall" TerrainDef
+TerrainDefOf --> "Concrete" TerrainDef
+TerrainDefOf --> "MetalTile" TerrainDef
+TerrainDefOf --> "Gravel" TerrainDef
+TerrainDefOf --> "WaterDeep" TerrainDef
+TerrainDefOf --> "WaterShallow" TerrainDef
+TerrainDefOf --> "WaterMovingChestDeep" TerrainDef
+TerrainDefOf --> "WaterMovingShallow" TerrainDef
+TerrainDefOf --> "WaterOceanDeep" TerrainDef
+TerrainDefOf --> "WaterOceanShallow" TerrainDef
+TerrainDefOf --> "PavedTile" TerrainDef
+TerrainDefOf --> "WoodPlankFloor" TerrainDef
+TerrainDefOf --> "TileSandstone" TerrainDef
+TerrainDefOf --> "Ice" TerrainDef
+TerrainDefOf --> "FlagstoneSandstone" TerrainDef
+TerrainDefOf --> "Bridge" TerrainDef
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class FacilitiesUtility <<static>> {
+    + {static} NotifyFacilitiesAboutChangedLOSBlockers(affectedRegions:List<Region>) : void
+}
+@enduml

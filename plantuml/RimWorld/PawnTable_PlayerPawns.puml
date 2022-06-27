@@ -1,0 +1,6 @@
+@startuml
+class PawnTable_PlayerPawns {
+    + PawnTable_PlayerPawns(def:PawnTableDef, pawnsGetter:Func<IEnumerable<Pawn>>, uiWidth:int, uiHeight:int)
+}
+PawnTable <|-- PawnTable_PlayerPawns
+@enduml

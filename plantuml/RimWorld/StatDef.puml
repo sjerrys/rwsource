@@ -1,0 +1,64 @@
+@startuml
+class StatDef {
+    + labelForFullStatList : string
+    + forInformationOnly : bool
+    + hideAtValue : float
+    + alwaysHide : bool
+    + showNonAbstract : bool = true
+    + showIfUndefined : bool = true
+    + showOnPawns : bool = true
+    + showOnHumanlikes : bool = true
+    + showOnNonWildManHumanlikes : bool = true
+    + showOnAnimals : bool = true
+    + showOnMechanoids : bool = true
+    + showOnNonWorkTables : bool = true
+    + showOnDefaultValue : bool = true
+    + showOnUnhaulables : bool = true
+    + showOnUntradeables : bool = true
+    + neverDisabled : bool
+    + showZeroBaseValue : bool
+    + displayPriorityInCategory : int
+    + formatString : string
+    + formatStringUnfinalized : string
+    + finalizeEquippedStatOffset : bool = true
+    + defaultBaseValue : float = 1f
+    + noSkillOffset : float
+    + applyFactorsIfNegative : bool = true
+    + noSkillFactor : float = 1f
+    + minValue : float
+    + maxValue : float = 9999999f
+    + valueIfMissing : float
+    + roundValue : bool
+    + roundToFiveOver : float
+    + minifiedThingInherits : bool
+    + supressDisabledError : bool
+    + scenarioRandomizable : bool
+    + LabelForFullStatList : string <<get>>
+    + LabelForFullStatListCap : string <<get>>
+    + <<override>> ConfigErrors() : IEnumerable<string>
+    + ValueToString(val:float, numberSense:ToStringNumberSense, finalized:bool) : string
+    + {static} Named(defName:string) : StatDef
+    + <<override>> PostLoad() : void
+    + GetStatPart() : T
+    + CanShowWithLoadedMods() : bool
+}
+class "List`1"<T> {
+}
+Def <|-- StatDef
+StatDef --> "category" StatCategoryDef
+StatDef o-> "workerClass" Type
+StatDef --> "showIfModsLoaded<string>" "List`1"
+StatDef --> "showIfHediffsPresent<HediffDef>" "List`1"
+StatDef o-> "toStringNumberSense" ToStringNumberSense
+StatDef --> "toStringStyle" ToStringStyle
+StatDef --> "skillNeedOffsets<SkillNeed>" "List`1"
+StatDef --> "capacityOffsets<PawnCapacityOffset>" "List`1"
+StatDef --> "statFactors<StatDef>" "List`1"
+StatDef --> "skillNeedFactors<SkillNeed>" "List`1"
+StatDef --> "capacityFactors<PawnCapacityFactor>" "List`1"
+StatDef --> "postProcessCurve" SimpleCurve
+StatDef --> "postProcessStatFactors<StatDef>" "List`1"
+StatDef --> "parts<StatPart>" "List`1"
+StatDef --> "Worker" StatWorker
+StatDef --> "ToStringStyleUnfinalized" ToStringStyle
+@enduml

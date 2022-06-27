@@ -1,0 +1,7 @@
+@startuml
+class DebugSoundEventsLog <<static>> {
+    + {static} EventsListingDebugString : string <<get>>
+    + {static} Notify_SoundEvent(def:SoundDef, info:SoundInfo) : void
+    + {static} Notify_SustainerEnded(sustainer:Sustainer, info:SoundInfo) : void
+}
+@enduml

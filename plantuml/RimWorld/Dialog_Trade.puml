@@ -1,0 +1,13 @@
+@startuml
+class Dialog_Trade {
+    + {static} lastCurrencyFlashTime : float
+    + Dialog_Trade(playerNegotiator:Pawn, trader:ITrader, giftsOnly:bool)
+    + <<override>> PostOpen() : void
+    + <<override>> DoWindowContents(inRect:Rect) : void
+    + <<override>> Close(doCloseSound:bool) : void
+    + FlashSilver() : void
+    + <<override>> CausesMessageBackground() : bool
+}
+Window <|-- Dialog_Trade
+Dialog_Trade --> "InitialSize" Vector2
+@enduml

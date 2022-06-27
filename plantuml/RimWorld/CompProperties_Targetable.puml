@@ -1,0 +1,14 @@
+@startuml
+class CompProperties_Targetable {
+    + psychicSensitiveTargetsOnly : bool
+    + fleshCorpsesOnly : bool
+    + nonDessicatedCorpsesOnly : bool
+    + nonDownedPawnOnly : bool
+    + ignoreQuestLodgerPawns : bool
+    + ignorePlayerFactionPawns : bool
+    + CompProperties_Targetable()
+}
+CompProperties_UseEffect <|-- CompProperties_Targetable
+CompProperties_Targetable --> "moteOnTarget" ThingDef
+CompProperties_Targetable --> "moteConnecting" ThingDef
+@enduml

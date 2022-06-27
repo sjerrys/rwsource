@@ -1,0 +1,10 @@
+@startuml
+class ModAssetBundlesHandler {
+    + ModAssetBundlesHandler(mod:ModContentPack)
+    + ReloadAll() : void
+    + ClearDestroy() : void
+}
+class "List`1"<T> {
+}
+ModAssetBundlesHandler o-> "loadedAssetBundles<AssetBundle>" "List`1"
+@enduml

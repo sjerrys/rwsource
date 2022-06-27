@@ -1,0 +1,9 @@
+@startuml
+class ShadowData {
+    + BaseX : float <<get>>
+    + BaseY : float <<get>>
+    + BaseZ : float <<get>>
+}
+ShadowData o-> "volume" Vector3
+ShadowData o-> "offset" Vector3
+@enduml

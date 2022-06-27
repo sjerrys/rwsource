@@ -1,0 +1,5 @@
+@startuml
+class MayTranslateAttribute {
+}
+Attribute <|-- MayTranslateAttribute
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+class Instruction_BuildSandbags {
+    + <<override>> OnActivated() : void
+    + <<override>> ExposeData() : void
+    + <<override>> LessonOnGUI() : void
+    + <<override>> LessonUpdate() : void
+    + <<override>> AllowAction(ep:EventPack) : AcceptanceReport
+}
+Lesson_Instruction <|-- Instruction_BuildSandbags
+@enduml

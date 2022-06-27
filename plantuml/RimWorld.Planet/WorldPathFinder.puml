@@ -1,0 +1,29 @@
+@startuml
+class WorldPathFinder {
+    + WorldPathFinder()
+    + FindPath(startTile:int, destTile:int, caravan:Caravan, terminator:Func<float, bool>) : WorldPath
+    + FloodPathsWithCost(startTiles:List<int>, costFunc:Func<int, int, int>, impassable:Func<int, bool>, terminator:Func<int, float, bool>) : void
+    + FloodPathsWithCostForTree(startTiles:List<int>, costFunc:Func<int, int, int>, impassable:Func<int, bool>, terminator:Func<int, float, bool>) : List<int>[]
+}
+class CostNode <<struct>> {
+    + tile : int
+    + cost : int
+    + CostNode(tile:int, cost:int)
+}
+class PathFinderNodeFast <<struct>> {
+    + knownCost : int
+    + heuristicCost : int
+    + parentTile : int
+    + costNodeCost : int
+    + status : ushort
+}
+class CostNodeComparer {
+    + Compare(a:CostNode, b:CostNode) : int
+}
+class "IComparer`1"<T> {
+}
+WorldPathFinder +-- CostNode
+WorldPathFinder +-- PathFinderNodeFast
+WorldPathFinder +-- CostNodeComparer
+"IComparer`1" "<CostNode>" <|-- CostNodeComparer
+@enduml

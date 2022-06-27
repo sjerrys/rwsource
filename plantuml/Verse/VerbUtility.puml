@@ -1,0 +1,29 @@
+@startuml
+class VerbUtility <<static>> {
+    + {static} GetProjectile(verb:Verb) : ThingDef
+    + {static} GetDamageDef(verb:Verb) : DamageDef
+    + {static} IsIncendiary(verb:Verb) : bool
+    + {static} ProjectileFliesOverhead(verb:Verb) : bool
+    + {static} HarmsHealth(verb:Verb) : bool
+    + {static} IsEMP(verb:Verb) : bool
+    + {static} UsesExplosiveProjectiles(verb:Verb) : bool
+    + {static} GetConcreteExampleVerbs(def:Def, stuff:ThingDef) : List<Verb>
+    + {static} CalculateAdjustedForcedMiss(forcedMiss:float, vector:IntVec3) : float
+    + {static} InterceptChanceFactorFromDistance(origin:Vector3, c:IntVec3) : float
+    + {static} GetAllVerbProperties(verbProps:List<VerbProperties>, tools:List<Tool>) : IEnumerable<VerbPropertiesWithSource>
+    + {static} AllowAdjacentShot(target:LocalTargetInfo, caster:Thing) : bool
+    + {static} GetSelectionCategory(v:Verb, p:Pawn, highestWeight:float) : VerbSelectionCategory
+    + {static} InitialVerbWeight(v:Verb, p:Pawn) : float
+    + {static} DPS(v:Verb, p:Pawn) : float
+    + {static} FinalSelectionWeight(verb:Verb, p:Pawn, allMeleeVerbs:List<Verb>, highestWeight:float) : float
+}
+class VerbPropertiesWithSource <<struct>> {
+    + VerbPropertiesWithSource(verbProps:VerbProperties)
+    + VerbPropertiesWithSource(verbProps:VerbProperties, tool:Tool, maneuver:ManeuverDef)
+}
+VerbUtility +-- VerbPropertiesWithSource
+VerbPropertiesWithSource --> "verbProps" VerbProperties
+VerbPropertiesWithSource --> "tool" Tool
+VerbPropertiesWithSource --> "maneuver" ManeuverDef
+VerbPropertiesWithSource --> "ToolCapacity" ToolCapacityDef
+@enduml

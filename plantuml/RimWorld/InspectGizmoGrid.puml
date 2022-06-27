@@ -1,0 +1,5 @@
+@startuml
+class InspectGizmoGrid <<static>> {
+    + {static} DrawInspectGizmoGridFor(selectedObjects:IEnumerable<object>, mouseoverGizmo:Gizmo) : void
+}
+@enduml

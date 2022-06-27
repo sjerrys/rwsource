@@ -1,0 +1,28 @@
+@startuml
+class InstructionDef {
+    + text : string
+    + startCentered : bool
+    + tutorialModeOnly : bool = true
+    + eventTagInitiate : string
+    + rejectInputMessage : string
+    + onMapInstruction : string
+    + targetCount : int
+    + recipeTargetCount : int = 1
+    + giveOnActivateCount : int
+    + endTutorial : bool
+    + resetBuildDesignatorStuffs : bool
+    + <<override>> ConfigErrors() : IEnumerable<string>
+}
+class "List`1"<T> {
+}
+Def <|-- InstructionDef
+InstructionDef o-> "instructionClass" Type
+InstructionDef --> "eventTagInitiateSource" InstructionDef
+InstructionDef --> "eventTagsEnd<string>" "List`1"
+InstructionDef --> "actionTagsAllowed<string>" "List`1"
+InstructionDef --> "concept" ConceptDef
+InstructionDef --> "highlightTags<string>" "List`1"
+InstructionDef --> "thingDef" ThingDef
+InstructionDef --> "recipeDef" RecipeDef
+InstructionDef --> "giveOnActivateDef" ThingDef
+@enduml

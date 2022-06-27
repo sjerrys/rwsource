@@ -1,0 +1,6 @@
+@startuml
+class JobGiver_Steal {
+    + <<const>> ItemsSearchRadiusInitial : float = 7f
+}
+ThinkNode_JobGiver <|-- JobGiver_Steal
+@enduml

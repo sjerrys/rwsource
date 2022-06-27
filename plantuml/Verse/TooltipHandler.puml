@@ -1,0 +1,12 @@
+@startuml
+class TooltipHandler <<static>> {
+    + {static} ClearTooltipsFrom(rect:Rect) : void
+    + {static} TipRegion(rect:Rect, textGetter:Func<string>, uniqueId:int) : void
+    + {static} TipRegionByKey(rect:Rect, key:string) : void
+    + {static} TipRegionByKey(rect:Rect, key:string, arg1:NamedArgument) : void
+    + {static} TipRegionByKey(rect:Rect, key:string, arg1:NamedArgument, arg2:NamedArgument) : void
+    + {static} TipRegionByKey(rect:Rect, key:string, arg1:NamedArgument, arg2:NamedArgument, arg3:NamedArgument) : void
+    + {static} TipRegion(rect:Rect, tip:TipSignal) : void
+    + {static} DoTooltipGUI() : void
+}
+@enduml

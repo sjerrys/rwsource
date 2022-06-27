@@ -1,0 +1,9 @@
+@startuml
+class Tutor {
+    + ExposeData() : void
+}
+IExposable <|-- Tutor
+Tutor o-> "activeLesson" ActiveLessonHandler
+Tutor o-> "learningReadout" LearningReadout
+Tutor o-> "tutorialState" TutorialState
+@enduml

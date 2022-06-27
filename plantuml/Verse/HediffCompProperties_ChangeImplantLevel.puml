@@ -1,0 +1,12 @@
+@startuml
+class HediffCompProperties_ChangeImplantLevel {
+    + levelOffset : int
+    + HediffCompProperties_ChangeImplantLevel()
+    + <<override>> ConfigErrors(parentDef:HediffDef) : IEnumerable<string>
+}
+class "List`1"<T> {
+}
+HediffCompProperties <|-- HediffCompProperties_ChangeImplantLevel
+HediffCompProperties_ChangeImplantLevel --> "implant" HediffDef
+HediffCompProperties_ChangeImplantLevel --> "probabilityPerStage<ChangeImplantLevel_Probability>" "List`1"
+@enduml

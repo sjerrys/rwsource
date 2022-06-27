@@ -1,0 +1,17 @@
+@startuml
+interface ITrader {
+    RandomPriceFactorSeed : int <<get>>
+    TraderName : string <<get>>
+    CanTradeNow : bool <<get>>
+    TradePriceImprovementOffsetForPlayer : float <<get>>
+    ColonyThingsWillingToBuy(playerNegotiator:Pawn) : IEnumerable<Thing>
+    GiveSoldThingToTrader(toGive:Thing, countToGive:int, playerNegotiator:Pawn) : void
+    GiveSoldThingToPlayer(toGive:Thing, countToGive:int, playerNegotiator:Pawn) : void
+}
+class "IEnumerable`1"<T> {
+}
+ITrader --> "TraderKind" TraderKindDef
+ITrader --> "Goods<Thing>" "IEnumerable`1"
+ITrader --> "Faction" Faction
+ITrader --> "TradeCurrency" TradeCurrency
+@enduml

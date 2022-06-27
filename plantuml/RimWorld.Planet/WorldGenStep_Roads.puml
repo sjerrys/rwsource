@@ -1,0 +1,19 @@
+@startuml
+class WorldGenStep_Roads {
+    + <<override>> SeedPart : int <<get>>
+    + <<override>> GenerateFresh(seed:string) : void
+    + <<override>> GenerateWithoutWorldData(seed:string) : void
+}
+class Link <<struct>> {
+    + distance : float
+    + indexA : int
+    + indexB : int
+}
+class Connectedness {
+    + Group() : Connectedness
+}
+WorldGenStep <|-- WorldGenStep_Roads
+WorldGenStep_Roads +-- Link
+WorldGenStep_Roads +-- Connectedness
+Connectedness --> "parent" Connectedness
+@enduml

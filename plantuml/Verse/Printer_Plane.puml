@@ -1,0 +1,5 @@
+@startuml
+class Printer_Plane <<static>> {
+    + {static} PrintPlane(layer:SectionLayer, center:Vector3, size:Vector2, mat:Material, rot:float, flipUv:bool, uvs:Vector2[], colors:Color32[], topVerticesAltitudeBias:float, uvzPayload:float) : void
+}
+@enduml

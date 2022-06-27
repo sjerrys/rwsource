@@ -1,0 +1,13 @@
+@startuml
+class ManhunterPackIncidentUtility <<static>> {
+    + <<const>> MinAnimalCount : int = 2
+    + <<const>> MaxAnimalCount : int = 100
+    + <<const>> MinPoints : float = 70f
+    + {static} ManhunterAnimalWeight(animal:PawnKindDef, points:float) : float
+    + {static} TryFindManhunterAnimalKind(points:float, tile:int, animalKind:PawnKindDef) : bool
+    + {static} GetAnimalsCount(animalKind:PawnKindDef, points:float) : int
+    + {static} GenerateAnimals(animalKind:PawnKindDef, tile:int, points:float) : List<Pawn>
+    + {static} GenerateAnimals_NewTmp(animalKind:PawnKindDef, tile:int, points:float, animalCount:int) : List<Pawn>
+    + {static} ManhunterResults() : void
+}
+@enduml

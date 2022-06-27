@@ -1,0 +1,38 @@
+@startuml
+class ThingFilter {
+    + allowedHitPointsConfigurable : bool = true
+    + allowedQualitiesConfigurable : bool = true
+    + customSummary : string
+    + Summary : string <<get>>
+    + AllowedDefCount : int <<get>>
+    + ThingFilter()
+    + ThingFilter(settingsChangedCallback:Action)
+    + <<virtual>> ExposeData() : void
+    + ResolveReferences() : void
+    + RecalculateDisplayRootCategory() : void
+    + IsAlwaysDisallowedDueToSpecialFilters(def:ThingDef) : bool
+    + <<virtual>> CopyAllowancesFrom(other:ThingFilter) : void
+    + SetAllow(thingDef:ThingDef, allow:bool) : void
+    + SetAllow(sfDef:SpecialThingFilterDef, allow:bool) : void
+    + SetAllow(categoryDef:ThingCategoryDef, allow:bool, exceptedDefs:IEnumerable<ThingDef>, exceptedFilters:IEnumerable<SpecialThingFilterDef>) : void
+    + SetAllow(cat:StuffCategoryDef, allow:bool) : void
+    + SetAllowAllWhoCanMake(thing:ThingDef) : void
+    + SetFromPreset(preset:StorageSettingsPreset) : void
+    + SetDisallowAll(exceptedDefs:IEnumerable<ThingDef>, exceptedFilters:IEnumerable<SpecialThingFilterDef>) : void
+    + SetAllowAll(parentFilter:ThingFilter, includeNonStorable:bool) : void
+    + <<virtual>> Allows(t:Thing) : bool
+    + Allows(def:ThingDef) : bool
+    + Allows(sf:SpecialThingFilterDef) : bool
+    + GetThingRequest() : ThingRequest
+    + <<override>> ToString() : string
+}
+class "IEnumerable`1"<T> {
+}
+IExposable <|-- ThingFilter
+ThingFilter --> "BestThingRequest" ThingRequest
+ThingFilter --> "AnyAllowedDef" ThingDef
+ThingFilter --> "AllowedThingDefs<ThingDef>" "IEnumerable`1"
+ThingFilter --> "AllowedHitPointsPercents" FloatRange
+ThingFilter --> "AllowedQualityLevels" QualityRange
+ThingFilter --> "DisplayRootCategory" TreeNode_ThingCategory
+@enduml

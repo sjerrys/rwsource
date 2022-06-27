@@ -1,0 +1,5 @@
+@startuml
+class Instruction_ExpandAreaHome {
+}
+Instruction_ExpandArea <|-- Instruction_ExpandAreaHome
+@enduml

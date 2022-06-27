@@ -1,0 +1,13 @@
+@startuml
+class BillUtility <<static>> {
+    + {static} TryDrawIngredientSearchRadiusOnMap(bill:Bill, center:IntVec3) : void
+    + {static} MakeNewBill(recipe:RecipeDef) : Bill
+    + {static} GlobalBillGivers() : IEnumerable<IBillGiver>
+    + {static} GlobalBills() : IEnumerable<Bill>
+    + {static} Notify_ZoneStockpileRemoved(stockpile:Zone_Stockpile) : void
+    + {static} Notify_ColonistUnavailable(pawn:Pawn) : void
+    + {static} GetWorkgiver(billGiver:IBillGiver) : WorkGiverDef
+    + {static} IsSurgeryViolationOnExtraFactionMember(bill:Bill_Medical, billDoer:Pawn) : bool
+}
+BillUtility --> "Clipboard" Bill
+@enduml

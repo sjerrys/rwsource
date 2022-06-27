@@ -1,0 +1,7 @@
+@startuml
+class HediffComp_ChangeNeed {
+    + <<override>> CompPostTick(severityAdjustment:float) : void
+}
+HediffComp <|-- HediffComp_ChangeNeed
+HediffComp_ChangeNeed --> "Props" HediffCompProperties_ChangeNeed
+@enduml

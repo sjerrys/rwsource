@@ -1,0 +1,6 @@
+@startuml
+class KeyBindingDefGenerator <<static>> {
+    + {static} ImpliedKeyBindingCategoryDefs() : IEnumerable<KeyBindingCategoryDef>
+    + {static} ImpliedKeyBindingDefs() : IEnumerable<KeyBindingDef>
+}
+@enduml

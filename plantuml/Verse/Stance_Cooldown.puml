@@ -1,0 +1,8 @@
+@startuml
+class Stance_Cooldown {
+    + Stance_Cooldown()
+    + Stance_Cooldown(ticks:int, focusTarg:LocalTargetInfo, verb:Verb)
+    + <<override>> StanceDraw() : void
+}
+Stance_Busy <|-- Stance_Cooldown
+@enduml

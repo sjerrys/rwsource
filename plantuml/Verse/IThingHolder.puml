@@ -1,0 +1,7 @@
+@startuml
+interface IThingHolder {
+    GetChildHolders(outChildren:List<IThingHolder>) : void
+    GetDirectlyHeldThings() : ThingOwner
+}
+IThingHolder --> "ParentHolder" IThingHolder
+@enduml

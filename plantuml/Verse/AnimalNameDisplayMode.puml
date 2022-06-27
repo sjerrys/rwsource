@@ -1,0 +1,7 @@
+@startuml
+enum AnimalNameDisplayMode {
+    None,
+    TameNamed,
+    TameAll,
+}
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class ThinkNode_ConditionalCanDoConstantThinkTreeJobNow {
+}
+ThinkNode_Conditional <|-- ThinkNode_ConditionalCanDoConstantThinkTreeJobNow
+@enduml

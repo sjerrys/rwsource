@@ -1,0 +1,9 @@
+@startuml
+class GenStepDef {
+    + order : float
+    + <<override>> PostLoad() : void
+}
+Def <|-- GenStepDef
+GenStepDef --> "linkWithSite" SitePartDef
+GenStepDef --> "genStep" GenStep
+@enduml

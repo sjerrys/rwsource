@@ -1,0 +1,7 @@
+@startuml
+class PrisonerInteractionModeDef {
+    + listOrder : int
+    + allowOnWildMan : bool = true
+}
+Def <|-- PrisonerInteractionModeDef
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+class QuestNode_LendColonistsToFaction {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_LendColonistsToFaction
+QuestNode_LendColonistsToFaction --> "inSignalEnable<string>" "SlateRef`1"
+QuestNode_LendColonistsToFaction --> "outSignalComplete<string>" "SlateRef`1"
+QuestNode_LendColonistsToFaction --> "shuttle<Thing>" "SlateRef`1"
+QuestNode_LendColonistsToFaction --> "lendColonistsToFactionOf<Pawn>" "SlateRef`1"
+QuestNode_LendColonistsToFaction --> "returnLentColonistsInTicks<int>" "SlateRef`1"
+@enduml

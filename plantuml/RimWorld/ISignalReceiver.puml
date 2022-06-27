@@ -1,0 +1,5 @@
+@startuml
+interface ISignalReceiver {
+    Notify_SignalReceived(signal:Signal) : void
+}
+@enduml

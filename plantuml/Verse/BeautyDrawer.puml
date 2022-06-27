@@ -1,0 +1,6 @@
+@startuml
+class BeautyDrawer <<static>> {
+    + {static} BeautyDrawerOnGUI() : void
+    + {static} BeautyColor(beauty:float, scale:float) : Color
+}
+@enduml

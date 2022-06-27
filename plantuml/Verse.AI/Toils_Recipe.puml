@@ -1,0 +1,7 @@
+@startuml
+class Toils_Recipe <<static>> {
+    + {static} MakeUnfinishedThingIfNeeded() : Toil
+    + {static} DoRecipeWork() : Toil
+    + {static} FinishRecipeAndStartStoringProduct() : Toil
+}
+@enduml

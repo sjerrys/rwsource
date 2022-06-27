@@ -1,0 +1,7 @@
+@startuml
+class WorkshopUtility <<static>> {
+    + {static} GetLabel(stage:WorkshopInteractStage) : string
+    + {static} GetLabel(status:EItemUpdateStatus) : string
+    + {static} GetLabel(result:EResult) : string
+}
+@enduml

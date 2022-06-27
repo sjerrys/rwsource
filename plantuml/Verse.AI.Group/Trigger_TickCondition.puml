@@ -1,0 +1,7 @@
+@startuml
+class Trigger_TickCondition {
+    + Trigger_TickCondition(condition:Func<bool>, checkEveryTicks:int)
+    + <<override>> ActivateOn(lord:Lord, signal:TriggerSignal) : bool
+}
+Trigger <|-- Trigger_TickCondition
+@enduml

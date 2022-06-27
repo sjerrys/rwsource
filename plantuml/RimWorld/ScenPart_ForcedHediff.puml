@@ -1,0 +1,11 @@
+@startuml
+class ScenPart_ForcedHediff {
+    + <<override>> DoEditInterface(listing:Listing_ScenEdit) : void
+    + <<override>> ExposeData() : void
+    + <<override>> Summary(scen:Scenario) : string
+    + <<override>> Randomize() : void
+    + <<override>> TryMerge(other:ScenPart) : bool
+    + <<override>> AllowPlayerStartingPawn(pawn:Pawn, tryingToRedress:bool, req:PawnGenerationRequest) : bool
+}
+ScenPart_PawnModifier <|-- ScenPart_ForcedHediff
+@enduml

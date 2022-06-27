@@ -1,0 +1,4 @@
+@startuml
+class DebugActionsMisc <<static>> {
+}
+@enduml

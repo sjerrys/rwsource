@@ -1,0 +1,9 @@
+@startuml
+class ModIncompatibility {
+    + <<override>> RequirementTypeLabel : string <<get>>
+    + <<override>> IsSatisfied : bool <<get>>
+    + <<override>> Tooltip : string <<get>>
+    + <<override>> OnClicked(window:Page_ModsConfig) : void
+}
+ModRequirement <|-- ModIncompatibility
+@enduml

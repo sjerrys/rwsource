@@ -1,0 +1,11 @@
+@startuml
+class ShipLandingBeaconUtility <<static>> {
+    + {static} GetLandingZones(map:Map) : List<ShipLandingArea>
+    + {static} DrawLinesToNearbyBeacons(myDef:ThingDef, myPos:IntVec3, myRot:Rot4, map:Map, thing:Thing) : void
+    + {static} AlignedDistanceTooShort(position:IntVec3, otherPos:IntVec3, minEdgeDistance:float) : bool
+    + {static} CanLinkTo(position:IntVec3, other:CompShipLandingBeacon) : bool
+}
+class "List`1"<T> {
+}
+ShipLandingBeaconUtility o-> "tmpShipLandingAreas<ShipLandingArea>" "List`1"
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class Verb_CastTargetEffect {
+}
+Verb_CastBase <|-- Verb_CastTargetEffect
+@enduml

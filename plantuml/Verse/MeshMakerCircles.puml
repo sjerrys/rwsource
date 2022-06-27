@@ -1,0 +1,6 @@
+@startuml
+class MeshMakerCircles <<static>> {
+    + {static} MakePieMesh(DegreesWide:int) : Mesh
+    + {static} MakeCircleMesh(radius:float) : Mesh
+}
+@enduml

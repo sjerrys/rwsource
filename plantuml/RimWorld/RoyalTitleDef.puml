@@ -1,0 +1,78 @@
+@startuml
+class RoyalTitleDef {
+    + seniority : int
+    + favorCost : int
+    + labelFemale : string
+    + changeHeirQuestPoints : int
+    + commonality : float = 1f
+    + suppressIdleAlert : bool
+    + canBeInherited : bool
+    + allowDignifiedMeditationFocus : bool = true
+    + permitPointsAwarded : int
+    + recruitmentDifficultyOffset : float
+    + recruitmentResistanceFactor : float = 1f
+    + recruitmentResistanceOffset : float
+    + decreeMtbDays : float
+    + decreeMinIntervalDays : float = 2f
+    + decreeMentalBreakCommonality : float
+    + maxPsylinkLevel : int
+    + Awardable : bool <<get>>
+    + MinThroneRoomImpressiveness : float <<get>>
+    + GetInheritanceWorker(faction:Faction) : RoyalTitleInheritanceWorker
+    + GetLabelFor(p:Pawn) : string
+    + GetLabelFor(g:Gender) : string
+    + GetLabelForBothGenders() : string
+    + GetLabelCapForBothGenders() : string
+    + GetLabelCapFor(p:Pawn) : string
+    + GetBedroomRequirements(p:Pawn) : IEnumerable<RoomRequirement>
+    + GetReportText(faction:Faction) : string
+    + JoyKindDisabled(joyKind:JoyKindDef) : bool
+    + HasSameThroneroomRequirement(otherReq:RoomRequirement) : bool
+    + HasSameBedroomRequirement(otherReq:RoomRequirement) : bool
+    + MaxAllowedPsylinkLevel(faction:FactionDef) : int
+    + SatisfyingMeals(includeDrugs:bool) : IEnumerable<ThingDef>
+    + <<override>> SpecialDisplayStats(req:StatRequest) : IEnumerable<StatDrawEntry>
+    + GetHyperlinks(faction:Faction) : IEnumerable<DefHyperlink>
+    + <<override>> ConfigErrors() : IEnumerable<string>
+}
+class ApparelRequirement {
+    + AllAllowedApparelForPawn(p:Pawn, ignoreGender:bool, includeWorn:bool) : IEnumerable<ThingDef>
+    + AllRequiredApparelForPawn(p:Pawn, ignoreGender:bool, includeWorn:bool) : IEnumerable<ThingDef>
+    + AllRequiredApparel(gender:Gender) : IEnumerable<ThingDef>
+    + ApparelMeetsRequirement(thingDef:ThingDef, allowUnmatched:bool) : bool
+    + IsMet(p:Pawn) : bool
+    + RandomRequiredApparelForPawnInGeneration(p:Pawn, validator:Func<ThingDef, bool>) : ThingDef
+    + <<override>> ToString() : string
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+Def <|-- RoyalTitleDef
+RoyalTitleDef --> "disabledWorkTags" WorkTags
+RoyalTitleDef --> "inheritanceWorkerOverrideClass" Type
+RoyalTitleDef --> "requiredMinimumApparelQuality" QualityCategory
+RoyalTitleDef --> "requiredApparel<ApparelRequirement>" "List`1"
+RoyalTitleDef --> "permits<RoyalTitlePermitDef>" "List`1"
+RoyalTitleDef --> "minExpectation" ExpectationDef
+RoyalTitleDef --> "disabledJoyKinds<JoyKindDef>" "List`1"
+RoyalTitleDef --> "tags<string>" "List`1"
+RoyalTitleDef --> "rewards<ThingDefCountClass>" "List`1"
+RoyalTitleDef --> "awardWorkerClass" Type
+RoyalTitleDef --> "awardThought" ThoughtDef
+RoyalTitleDef --> "lostThought" ThoughtDef
+RoyalTitleDef --> "throneRoomRequirements<RoomRequirement>" "List`1"
+RoyalTitleDef --> "bedroomRequirements<RoomRequirement>" "List`1"
+RoyalTitleDef --> "foodRequirement" RoyalTitleFoodRequirement
+RoyalTitleDef --> "replaceOnRecruited" RoyalTitleDef
+RoyalTitleDef --> "decreeTags<string>" "List`1"
+RoyalTitleDef o-> "grantedAbilities<AbilityDef>" "List`1"
+RoyalTitleDef --> "speechCooldown" IntRange
+RoyalTitleDef --> "DisabledWorkTypes<WorkTypeDef>" "IEnumerable`1"
+RoyalTitleDef --> "InheritanceWorkerOverride" RoyalTitleInheritanceWorker
+RoyalTitleDef --> "AwardWorker" RoyalTitleAwardWorker
+RoyalTitleDef +-- ApparelRequirement
+ApparelRequirement --> "bodyPartGroupsMatchAny<BodyPartGroupDef>" "List`1"
+ApparelRequirement --> "requiredTags<string>" "List`1"
+ApparelRequirement --> "allowedTags<string>" "List`1"
+@enduml

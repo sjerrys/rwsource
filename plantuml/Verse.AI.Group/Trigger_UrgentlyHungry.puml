@@ -1,0 +1,6 @@
+@startuml
+class Trigger_UrgentlyHungry {
+    + <<override>> ActivateOn(lord:Lord, signal:TriggerSignal) : bool
+}
+Trigger <|-- Trigger_UrgentlyHungry
+@enduml

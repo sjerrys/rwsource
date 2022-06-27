@@ -1,0 +1,12 @@
+@startuml
+class Clamp {
+    + Maximum : double <<get>> <<set>>
+    + Minimum : double <<get>> <<set>>
+    + Clamp()
+    + Clamp(input:ModuleBase)
+    + Clamp(min:double, max:double, input:ModuleBase)
+    + SetBounds(min:double, max:double) : void
+    + <<override>> GetValue(x:double, y:double, z:double) : double
+}
+ModuleBase <|-- Clamp
+@enduml

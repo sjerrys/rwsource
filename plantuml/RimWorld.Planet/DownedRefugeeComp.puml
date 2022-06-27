@@ -1,0 +1,7 @@
+@startuml
+class DownedRefugeeComp {
+    + <<override>> CompInspectStringExtra() : string
+}
+ImportantPawnComp <|-- DownedRefugeeComp
+IThingHolder <|-- DownedRefugeeComp
+@enduml

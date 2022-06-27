@@ -1,0 +1,7 @@
+@startuml
+class InstructionDefOf <<static>> {
+    {static} InstructionDefOf()
+}
+InstructionDefOf --> "RandomizeCharacter" InstructionDef
+InstructionDefOf --> "ChooseLandingSite" InstructionDef
+@enduml

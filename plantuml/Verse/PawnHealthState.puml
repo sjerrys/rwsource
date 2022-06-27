@@ -1,0 +1,7 @@
+@startuml
+enum PawnHealthState {
+    Dead,
+    Down,
+    Mobile,
+}
+@enduml

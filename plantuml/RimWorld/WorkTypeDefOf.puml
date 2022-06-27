@@ -1,0 +1,16 @@
+@startuml
+class WorkTypeDefOf <<static>> {
+    {static} WorkTypeDefOf()
+}
+WorkTypeDefOf --> "Mining" WorkTypeDef
+WorkTypeDefOf --> "Growing" WorkTypeDef
+WorkTypeDefOf --> "Construction" WorkTypeDef
+WorkTypeDefOf --> "Warden" WorkTypeDef
+WorkTypeDefOf --> "Doctor" WorkTypeDef
+WorkTypeDefOf --> "Firefighter" WorkTypeDef
+WorkTypeDefOf --> "Hunting" WorkTypeDef
+WorkTypeDefOf --> "Handling" WorkTypeDef
+WorkTypeDefOf --> "Crafting" WorkTypeDef
+WorkTypeDefOf --> "Hauling" WorkTypeDef
+WorkTypeDefOf --> "Research" WorkTypeDef
+@enduml

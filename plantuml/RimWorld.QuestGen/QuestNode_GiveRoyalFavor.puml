@@ -1,0 +1,14 @@
+@startuml
+class QuestNode_GiveRoyalFavor {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GiveRoyalFavor
+QuestNode_GiveRoyalFavor --> "giveTo<Pawn>" "SlateRef`1"
+QuestNode_GiveRoyalFavor --> "giveToAccepter<bool>" "SlateRef`1"
+QuestNode_GiveRoyalFavor --> "inSignal<string>" "SlateRef`1"
+QuestNode_GiveRoyalFavor --> "faction<Faction>" "SlateRef`1"
+QuestNode_GiveRoyalFavor --> "factionOf<Thing>" "SlateRef`1"
+QuestNode_GiveRoyalFavor --> "amount<int>" "SlateRef`1"
+QuestNode_GiveRoyalFavor --> "isSingleReward<bool>" "SlateRef`1"
+@enduml

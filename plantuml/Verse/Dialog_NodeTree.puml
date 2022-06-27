@@ -1,0 +1,14 @@
+@startuml
+class Dialog_NodeTree {
+    + Dialog_NodeTree(nodeRoot:DiaNode, delayInteractivity:bool, radioMode:bool, title:string)
+    + <<override>> PreClose() : void
+    + <<override>> PostClose() : void
+    + <<override>> WindowOnGUI() : void
+    + <<override>> DoWindowContents(inRect:Rect) : void
+    + GotoNode(node:DiaNode) : void
+}
+Window <|-- Dialog_NodeTree
+Dialog_NodeTree --> "closeAction" Action
+Dialog_NodeTree o-> "screenFillColor" Color
+Dialog_NodeTree --> "InitialSize" Vector2
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+class PawnTableDefOf <<static>> {
+    {static} PawnTableDefOf()
+}
+PawnTableDefOf --> "Work" PawnTableDef
+PawnTableDefOf --> "Assign" PawnTableDef
+PawnTableDefOf --> "Restrict" PawnTableDef
+PawnTableDefOf --> "Animals" PawnTableDef
+PawnTableDefOf --> "Wildlife" PawnTableDef
+@enduml

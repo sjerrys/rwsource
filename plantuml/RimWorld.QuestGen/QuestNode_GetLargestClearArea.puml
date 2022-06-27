@@ -1,0 +1,11 @@
+@startuml
+class QuestNode_GetLargestClearArea {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GetLargestClearArea
+QuestNode_GetLargestClearArea --> "map<Map>" "SlateRef`1"
+QuestNode_GetLargestClearArea --> "storeAs<string>" "SlateRef`1"
+QuestNode_GetLargestClearArea --> "failIfSmaller<int>" "SlateRef`1"
+QuestNode_GetLargestClearArea --> "max<int>" "SlateRef`1"
+@enduml

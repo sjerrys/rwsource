@@ -1,0 +1,7 @@
+@startuml
+class JobGiver_Idle {
+    + ticks : int = 50
+    + <<override>> DeepCopy(resolve:bool) : ThinkNode
+}
+ThinkNode_JobGiver <|-- JobGiver_Idle
+@enduml

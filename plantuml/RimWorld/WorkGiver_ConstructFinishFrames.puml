@@ -1,0 +1,9 @@
+@startuml
+class WorkGiver_ConstructFinishFrames {
+    + <<override>> MaxPathDanger(pawn:Pawn) : Danger
+    + <<override>> JobOnThing(pawn:Pawn, t:Thing, forced:bool) : Job
+}
+WorkGiver_Scanner <|-- WorkGiver_ConstructFinishFrames
+WorkGiver_ConstructFinishFrames --> "PathEndMode" PathEndMode
+WorkGiver_ConstructFinishFrames --> "PotentialWorkThingRequest" ThingRequest
+@enduml

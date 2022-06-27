@@ -1,0 +1,5 @@
+@startuml
+class CreditsAssembler {
+    + {static} AllCredits() : IEnumerable<CreditsEntry>
+}
+@enduml

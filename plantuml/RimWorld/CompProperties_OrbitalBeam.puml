@@ -1,0 +1,10 @@
+@startuml
+class CompProperties_OrbitalBeam {
+    + width : float = 8f
+    + CompProperties_OrbitalBeam()
+    + <<override>> ConfigErrors(parentDef:ThingDef) : IEnumerable<string>
+}
+CompProperties <|-- CompProperties_OrbitalBeam
+CompProperties_OrbitalBeam o-> "color" Color
+CompProperties_OrbitalBeam --> "sound" SoundDef
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class SelfDefenseUtility <<static>> {
+    + <<const>> FleeWhenDistToHostileLessThan : float = 8f
+    + {static} ShouldStartFleeing(pawn:Pawn) : bool
+    + {static} ShouldFleeFrom(t:Thing, pawn:Pawn, checkDistance:bool, checkLOS:bool) : bool
+}
+@enduml

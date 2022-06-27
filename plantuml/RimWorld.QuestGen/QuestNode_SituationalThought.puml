@@ -1,0 +1,12 @@
+@startuml
+class QuestNode_SituationalThought {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_SituationalThought
+QuestNode_SituationalThought --> "inSignalEnable<string>" "SlateRef`1"
+QuestNode_SituationalThought --> "inSignalDisable<string>" "SlateRef`1"
+QuestNode_SituationalThought --> "def<ThoughtDef>" "SlateRef`1"
+QuestNode_SituationalThought --> "pawn<Pawn>" "SlateRef`1"
+QuestNode_SituationalThought --> "delayTicks<int>" "SlateRef`1"
+@enduml

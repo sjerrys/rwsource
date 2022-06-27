@@ -1,0 +1,7 @@
+@startuml
+class SpecialThingFilterWorker_Rotten {
+    + <<override>> Matches(t:Thing) : bool
+    + <<override>> CanEverMatch(def:ThingDef) : bool
+}
+SpecialThingFilterWorker <|-- SpecialThingFilterWorker_Rotten
+@enduml

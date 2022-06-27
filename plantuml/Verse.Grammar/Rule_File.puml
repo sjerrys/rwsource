@@ -1,0 +1,14 @@
+@startuml
+class Rule_File {
+    + path : string
+    + <<override>> BaseSelectionWeight : float <<get>>
+    + <<override>> DeepCopy() : Rule
+    + <<override>> Generate() : string
+    + <<override>> Init() : void
+    + <<override>> ToString() : string
+}
+class "List`1"<T> {
+}
+Rule <|-- Rule_File
+Rule_File o-> "pathList<string>" "List`1"
+@enduml

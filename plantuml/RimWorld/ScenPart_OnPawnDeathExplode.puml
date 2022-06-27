@@ -1,0 +1,10 @@
+@startuml
+class ScenPart_OnPawnDeathExplode {
+    + <<override>> Randomize() : void
+    + <<override>> ExposeData() : void
+    + <<override>> Summary(scen:Scenario) : string
+    + <<override>> DoEditInterface(listing:Listing_ScenEdit) : void
+    + <<override>> Notify_PawnDied(corpse:Corpse) : void
+}
+ScenPart <|-- ScenPart_OnPawnDeathExplode
+@enduml

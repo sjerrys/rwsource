@@ -1,0 +1,5 @@
+@startuml
+class UIMenuBackgroundManager <<static>> {
+}
+UIMenuBackgroundManager --> "background" UIMenuBackground
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class RecipeWorkerCounter_ButcherAnimals {
+    + <<override>> CanCountProducts(bill:Bill_Production) : bool
+    + <<override>> CountProducts(bill:Bill_Production) : int
+    + <<override>> ProductsDescription(bill:Bill_Production) : string
+    + <<override>> CanPossiblyStoreInStockpile(bill:Bill_Production, stockpile:Zone_Stockpile) : bool
+}
+RecipeWorkerCounter <|-- RecipeWorkerCounter_ButcherAnimals
+@enduml

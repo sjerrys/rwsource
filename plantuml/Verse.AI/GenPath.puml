@@ -1,0 +1,6 @@
+@startuml
+class GenPath <<static>> {
+    + {static} ResolvePathMode(pawn:Pawn, dest:TargetInfo, peMode:PathEndMode) : TargetInfo
+    + {static} ResolveClosestTouchPathMode(pawn:Pawn, map:Map, target:IntVec3) : PathEndMode
+}
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class WorkGiver_Milk {
+}
+WorkGiver_GatherAnimalBodyResources <|-- WorkGiver_Milk
+@enduml

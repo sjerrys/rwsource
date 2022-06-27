@@ -1,0 +1,7 @@
+@startuml
+class StorytellerComp_Triggered {
+    + <<override>> Notify_PawnEvent(p:Pawn, ev:AdaptationEvent, dinfo:DamageInfo?) : void
+    + <<override>> ToString() : string
+}
+StorytellerComp <|-- StorytellerComp_Triggered
+@enduml

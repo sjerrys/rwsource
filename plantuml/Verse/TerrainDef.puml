@@ -1,0 +1,56 @@
+@startuml
+class TerrainDef {
+    + texturePath : string
+    + waterDepthShader : string
+    + renderPrecedence : int
+    + layerable : bool
+    + scatterType : string
+    + takeFootprints : bool
+    + takeSplashes : bool
+    + avoidWander : bool
+    + changeable : bool = true
+    + holdSnow : bool = true
+    + extinguishesFire : bool
+    + extraDeteriorationFactor : float
+    + destroyOnBombDamageThreshold : float
+    + destroyBuildingsOnDestroyed : bool
+    + extraDraftedPerceivedPathCost : int
+    + extraNonDraftedPerceivedPathCost : int
+    + autoRebuildable : bool
+    + Removable : bool <<get>>
+    + IsCarpet : bool <<get>>
+    + IsRiver : bool <<get>>
+    + IsWater : bool <<get>>
+    + IsFine : bool <<get>>
+    + <<override>> PostLoad() : void
+    + <<override>> ConfigErrors() : IEnumerable<string>
+    + {static} Named(defName:string) : TerrainDef
+    + HasTag(tag:string) : bool
+    + <<override>> SpecialDisplayStats(req:StatRequest) : IEnumerable<StatDrawEntry>
+}
+enum TerrainEdgeType {
+    Hard,
+    Fade,
+    FadeRough,
+    Water,
+}
+class "List`1"<T> {
+}
+BuildableDef <|-- TerrainDef
+TerrainDef --> "edgeType" TerrainEdgeType
+TerrainDef --> "waterDepthShaderParameters<ShaderParameter>" "List`1"
+TerrainDef o-> "affordances<TerrainAffordanceDef>" "List`1"
+TerrainDef --> "smoothedTerrain" TerrainDef
+TerrainDef o-> "color" Color
+TerrainDef --> "driesTo" TerrainDef
+TerrainDef --> "tags<string>" "List`1"
+TerrainDef --> "burnedDef" TerrainDef
+TerrainDef --> "tools<Tool>" "List`1"
+TerrainDef --> "traversedThought" ThoughtDef
+TerrainDef --> "destroyEffect" EffecterDef
+TerrainDef --> "destroyEffectWater" EffecterDef
+TerrainDef --> "generatedFilth" ThingDef
+TerrainDef o-> "filthAcceptanceMask" FilthSourceFlags
+TerrainDef --> "waterDepthMaterial" Material
+TerrainDef +-- TerrainEdgeType
+@enduml

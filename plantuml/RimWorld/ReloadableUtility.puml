@@ -1,0 +1,10 @@
+@startuml
+class ReloadableUtility <<static>> {
+    + {static} FindSomeReloadableComponent(pawn:Pawn, allowForcedReload:bool) : CompReloadable
+    + {static} FindEnoughAmmo(pawn:Pawn, rootCell:IntVec3, comp:CompReloadable, forceReload:bool) : List<Thing>
+    + {static} FindPotentiallyReloadableGear(pawn:Pawn, potentialAmmo:List<Thing>) : IEnumerable<Pair<CompReloadable, Thing>>
+    + {static} WearerOf(comp:CompReloadable) : Pawn
+    + {static} TotalChargesFromQueuedJobs(pawn:Pawn, gear:ThingWithComps) : int
+    + {static} CanUseConsideringQueuedJobs(pawn:Pawn, gear:ThingWithComps, showMessage:bool) : bool
+}
+@enduml

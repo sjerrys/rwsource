@@ -1,0 +1,6 @@
+@startuml
+class PawnCapacityWorker {
+    + <<virtual>> CalculateCapacityLevel(diffSet:HediffSet, impactors:List<PawnCapacityUtility.CapacityImpactor>) : float
+    + <<virtual>> CanHaveCapacity(body:BodyDef) : bool
+}
+@enduml

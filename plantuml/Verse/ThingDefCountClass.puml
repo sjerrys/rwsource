@@ -1,0 +1,16 @@
+@startuml
+class ThingDefCountClass <<sealed>> {
+    + count : int
+    + Label : string <<get>>
+    + LabelCap : string <<get>>
+    + Summary : string <<get>>
+    + ThingDefCountClass()
+    + ThingDefCountClass(thingDef:ThingDef, count:int)
+    + ExposeData() : void
+    + LoadDataFromXmlCustom(xmlRoot:XmlNode) : void
+    + <<override>> ToString() : string
+    + <<override>> GetHashCode() : int
+}
+IExposable <|-- ThingDefCountClass
+ThingDefCountClass --> "thingDef" ThingDef
+@enduml

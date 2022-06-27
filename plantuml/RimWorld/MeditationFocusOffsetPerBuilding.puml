@@ -1,0 +1,9 @@
+@startuml
+class MeditationFocusOffsetPerBuilding {
+    + offset : float
+    + MeditationFocusOffsetPerBuilding()
+    + MeditationFocusOffsetPerBuilding(building:ThingDef, offset:float)
+    + LoadDataFromXmlCustom(xmlRoot:XmlNode) : void
+}
+MeditationFocusOffsetPerBuilding --> "building" ThingDef
+@enduml

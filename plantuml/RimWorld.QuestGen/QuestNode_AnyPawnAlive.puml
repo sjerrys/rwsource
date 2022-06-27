@@ -1,0 +1,10 @@
+@startuml
+class QuestNode_AnyPawnAlive {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_AnyPawnAlive
+QuestNode_AnyPawnAlive --> "inSignal<string>" "SlateRef`1"
+QuestNode_AnyPawnAlive --> "pawns<List<Pawn>>" "SlateRef`1"
+QuestNode_AnyPawnAlive --> "node" QuestNode
+@enduml

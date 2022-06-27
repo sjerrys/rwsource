@@ -1,0 +1,6 @@
+@startuml
+class CaravanItemsTabUtility <<static>> {
+    + {static} DoRows(size:Vector2, things:List<TransferableImmutable>, caravan:Caravan, scrollPosition:Vector2, scrollViewHeight:float) : void
+    + {static} GetSize(things:List<TransferableImmutable>, paneTopY:float, doNeeds:bool) : Vector2
+}
+@enduml

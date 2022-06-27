@@ -1,0 +1,16 @@
+@startuml
+class MentalStateHandler {
+    + neverFleeIndividual : bool
+    + InMentalState : bool <<get>>
+    + MentalStateHandler()
+    + MentalStateHandler(pawn:Pawn)
+    + ExposeData() : void
+    + Reset() : void
+    + MentalStateHandlerTick() : void
+    + TryStartMentalState(stateDef:MentalStateDef, reason:string, forceWake:bool, causedByMood:bool, otherPawn:Pawn, transitionSilently:bool) : bool
+    + Notify_DamageTaken(dinfo:DamageInfo) : void
+}
+IExposable <|-- MentalStateHandler
+MentalStateHandler --> "CurStateDef" MentalStateDef
+MentalStateHandler --> "CurState" MentalState
+@enduml

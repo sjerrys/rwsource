@@ -1,0 +1,11 @@
+@startuml
+class Tale_DoublePawnAndTrader {
+    + Tale_DoublePawnAndTrader()
+    + Tale_DoublePawnAndTrader(firstPawn:Pawn, secondPawn:Pawn, trader:ITrader)
+    + <<override>> Concerns(th:Thing) : bool
+    + <<override>> ExposeData() : void
+    + <<override>> GenerateTestData() : void
+}
+Tale_DoublePawn <|-- Tale_DoublePawnAndTrader
+Tale_DoublePawnAndTrader --> "traderData" TaleData_Trader
+@enduml

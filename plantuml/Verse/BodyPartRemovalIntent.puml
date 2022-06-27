@@ -1,0 +1,6 @@
+@startuml
+enum BodyPartRemovalIntent {
+    Harvest,
+    Amputate,
+}
+@enduml

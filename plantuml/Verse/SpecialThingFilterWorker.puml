@@ -1,0 +1,7 @@
+@startuml
+abstract class SpecialThingFilterWorker {
+    + {abstract} Matches(t:Thing) : bool
+    + <<virtual>> AlwaysMatches(def:ThingDef) : bool
+    + <<virtual>> CanEverMatch(def:ThingDef) : bool
+}
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class SymbolResolver_CultivatedPlants {
+    + <<override>> CanResolve(rp:ResolveParams) : bool
+    + <<override>> Resolve(rp:ResolveParams) : void
+    + {static} DeterminePlantDef(rect:CellRect) : ThingDef
+}
+SymbolResolver <|-- SymbolResolver_CultivatedPlants
+@enduml

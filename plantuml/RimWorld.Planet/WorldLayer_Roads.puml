@@ -1,0 +1,7 @@
+@startuml
+class WorldLayer_Roads {
+    + <<override>> Regenerate() : IEnumerable
+    + <<override>> FinalizePoint(inp:Vector3, distortionFrequency:float, distortionIntensity:float) : Vector3
+}
+WorldLayer_Paths <|-- WorldLayer_Roads
+@enduml

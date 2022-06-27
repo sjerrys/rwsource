@@ -1,0 +1,6 @@
+@startuml
+class PlantPosIndices <<static>> {
+    {static} PlantPosIndices()
+    + {static} GetPositionIndices(p:Plant) : int[]
+}
+@enduml

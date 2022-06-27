@@ -1,0 +1,13 @@
+@startuml
+class CompMeditationFocus {
+    + <<override>> GetStatOffset(pawn:Pawn) : float
+    + <<override>> GetExplanation() : IEnumerable<string>
+    + CanPawnUse(pawn:Pawn) : bool
+    + WillBeAffectedBy(def:ThingDef, faction:Faction, pos:IntVec3, rotation:Rot4) : bool
+    + <<override>> CompInspectStringExtra() : string
+    + <<override>> SpecialDisplayStats() : IEnumerable<StatDrawEntry>
+    + <<override>> PostDrawExtraSelectionOverlays() : void
+}
+CompStatOffsetBase <|-- CompMeditationFocus
+CompMeditationFocus --> "Props" CompProperties_MeditationFocus
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class Gizmo_EnergyShieldStatus {
+    + Gizmo_EnergyShieldStatus()
+    + <<override>> GetWidth(maxWidth:float) : float
+    + <<override>> GizmoOnGUI(topLeft:Vector2, maxWidth:float) : GizmoResult
+}
+Gizmo <|-- Gizmo_EnergyShieldStatus
+Gizmo_EnergyShieldStatus --> "shield" ShieldBelt
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class LifeStageUtility <<static>> {
+    + {static} PlayNearestLifestageSound(pawn:Pawn, getter:Func<LifeStageAge, SoundDef>, volumeFactor:float) : void
+}
+@enduml

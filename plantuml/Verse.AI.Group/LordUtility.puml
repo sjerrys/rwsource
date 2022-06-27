@@ -1,0 +1,6 @@
+@startuml
+class LordUtility <<static>> {
+    + {static} GetLord(p:Pawn) : Lord
+    + {static} GetLord(b:Building) : Lord
+}
+@enduml

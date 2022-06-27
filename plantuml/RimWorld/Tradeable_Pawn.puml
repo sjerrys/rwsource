@@ -1,0 +1,9 @@
+@startuml
+class Tradeable_Pawn {
+    + <<override>> Label : string <<get>>
+    + <<override>> TipDescription : string <<get>>
+    + <<override>> ResolveTrade() : void
+}
+Tradeable <|-- Tradeable_Pawn
+Tradeable_Pawn --> "NewInfoDialog" Window
+@enduml

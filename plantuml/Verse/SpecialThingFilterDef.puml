@@ -1,0 +1,13 @@
+@startuml
+class SpecialThingFilterDef {
+    + saveKey : string
+    + allowedByDefault : bool
+    + configurable : bool = true
+    + <<override>> ConfigErrors() : IEnumerable<string>
+    + {static} Named(defName:string) : SpecialThingFilterDef
+}
+Def <|-- SpecialThingFilterDef
+SpecialThingFilterDef --> "parentCategory" ThingCategoryDef
+SpecialThingFilterDef --> "workerClass" Type
+SpecialThingFilterDef --> "Worker" SpecialThingFilterWorker
+@enduml

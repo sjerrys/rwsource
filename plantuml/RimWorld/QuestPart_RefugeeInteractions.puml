@@ -1,0 +1,43 @@
+@startuml
+class QuestPart_RefugeeInteractions {
+    + inSignalDestroyed : string
+    + inSignalArrested : string
+    + inSignalSurgeryViolation : string
+    + inSignalRecruited : string
+    + inSignalKidnapped : string
+    + inSignalAssaultColony : string
+    + inSignalLeftMap : string
+    + inSignalBanished : string
+    + outSignalDestroyed_AssaultColony : string
+    + outSignalDestroyed_LeaveColony : string
+    + outSignalDestroyed_BadThought : string
+    + outSignalArrested_AssaultColony : string
+    + outSignalArrested_LeaveColony : string
+    + outSignalArrested_BadThought : string
+    + outSignalSurgeryViolation_AssaultColony : string
+    + outSignalSurgeryViolation_LeaveColony : string
+    + outSignalSurgeryViolation_BadThought : string
+    + outSignalLast_Arrested : string
+    + outSignalLast_Destroyed : string
+    + outSignalLast_Kidnapped : string
+    + outSignalLast_Recruited : string
+    + outSignalLast_LeftMapAllHealthy : string
+    + outSignalLast_LeftMapAllNotHealthy : string
+    + outSignalLast_Banished : string
+    + pawnsLeftUnhealthy : int
+    + <<override>> Notify_FactionRemoved(f:Faction) : void
+    + <<override>> ExposeData() : void
+}
+enum InteractionResponseType {
+    AssaultColony,
+    Leave,
+    BadThought,
+}
+class "List`1"<T> {
+}
+QuestPartActivable <|-- QuestPart_RefugeeInteractions
+QuestPart_RefugeeInteractions o-> "pawns<Pawn>" "List`1"
+QuestPart_RefugeeInteractions --> "faction" Faction
+QuestPart_RefugeeInteractions --> "mapParent" MapParent
+QuestPart_RefugeeInteractions +-- InteractionResponseType
+@enduml

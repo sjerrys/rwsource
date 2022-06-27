@@ -1,0 +1,12 @@
+@startuml
+class Hediff_ImplantWithLevel {
+    + level : int = 1
+    + <<override>> Label : string <<get>>
+    + <<override>> ShouldRemove : bool <<get>>
+    + <<override>> Tick() : void
+    + <<virtual>> ChangeLevel(levelOffset:int) : void
+    + <<virtual>> SetLevelTo(targetLevel:int) : void
+    + <<override>> ExposeData() : void
+}
+Hediff_Implant <|-- Hediff_ImplantWithLevel
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+class CrossRefHandler {
+    + RegisterForCrossRefResolve(s:IExposable) : void
+    + ResolveAllCrossReferences() : void
+    + TakeResolvedRef(pathRelToParent:string, parent:IExposable) : T
+    + TakeResolvedRef(toAppendToPathRelToParent:string) : T
+    + TakeResolvedRefList(pathRelToParent:string, parent:IExposable) : List<T>
+    + TakeResolvedRefList(toAppendToPathRelToParent:string) : List<T>
+    + Clear(errorIfNotEmpty:bool) : void
+}
+class "List`1"<T> {
+}
+CrossRefHandler o-> "loadIDs" LoadIDsWantedBank
+CrossRefHandler o-> "crossReferencingExposables<IExposable>" "List`1"
+@enduml

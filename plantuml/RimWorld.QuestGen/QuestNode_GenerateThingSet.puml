@@ -1,0 +1,12 @@
+@startuml
+class QuestNode_GenerateThingSet {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GenerateThingSet
+QuestNode_GenerateThingSet --> "storeAs<string>" "SlateRef`1"
+QuestNode_GenerateThingSet --> "thingSetMaker<ThingSetMakerDef>" "SlateRef`1"
+QuestNode_GenerateThingSet --> "totalMarketValueRange<FloatRange?>" "SlateRef`1"
+QuestNode_GenerateThingSet --> "factionOf<Thing>" "SlateRef`1"
+QuestNode_GenerateThingSet --> "qualityGenerator<QualityGenerator?>" "SlateRef`1"
+@enduml

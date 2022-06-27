@@ -1,0 +1,8 @@
+@startuml
+enum HungerCategory {
+    Fed,
+    Hungry,
+    UrgentlyHungry,
+    Starving,
+}
+@enduml

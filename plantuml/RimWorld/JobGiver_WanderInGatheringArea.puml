@@ -1,0 +1,5 @@
+@startuml
+class JobGiver_WanderInGatheringArea {
+}
+JobGiver_Wander <|-- JobGiver_WanderInGatheringArea
+@enduml

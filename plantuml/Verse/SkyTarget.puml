@@ -1,0 +1,12 @@
+@startuml
+class SkyTarget <<struct>> {
+    + glow : float
+    + lightsourceShineSize : float
+    + lightsourceShineIntensity : float
+    + SkyTarget(glow:float, colorSet:SkyColorSet, lightsourceShineSize:float, lightsourceShineIntensity:float)
+    + {static} Lerp(A:SkyTarget, B:SkyTarget, t:float) : SkyTarget
+    + {static} LerpDarken(A:SkyTarget, B:SkyTarget, t:float) : SkyTarget
+    + <<override>> ToString() : string
+}
+SkyTarget --> "colors" SkyColorSet
+@enduml

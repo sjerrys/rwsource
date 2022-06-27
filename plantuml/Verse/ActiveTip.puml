@@ -1,0 +1,12 @@
+@startuml
+class ActiveTip {
+    + firstTriggerTime : double
+    + lastTriggerFrame : int
+    + ActiveTip(signal:TipSignal)
+    + ActiveTip(cloneSource:ActiveTip)
+    + DrawTooltip(pos:Vector2) : float
+}
+ActiveTip --> "signal" TipSignal
+ActiveTip o-> "TooltipBGAtlas" Texture2D
+ActiveTip --> "TipRect" Rect
+@enduml

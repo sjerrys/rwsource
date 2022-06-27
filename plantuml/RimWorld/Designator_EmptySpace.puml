@@ -1,0 +1,8 @@
+@startuml
+class Designator_EmptySpace {
+    + <<override>> GizmoOnGUI(loc:Vector2, maxWidth:float) : GizmoResult
+    + <<override>> CanDesignateCell(c:IntVec3) : AcceptanceReport
+    + <<override>> DesignateSingleCell(c:IntVec3) : void
+}
+Designator <|-- Designator_EmptySpace
+@enduml

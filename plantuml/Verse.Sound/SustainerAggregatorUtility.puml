@@ -1,0 +1,5 @@
+@startuml
+class SustainerAggregatorUtility <<static>> {
+    + {static} AggregateOrSpawnSustainerFor(reporter:ISizeReporter, def:SoundDef, info:SoundInfo) : Sustainer
+}
+@enduml

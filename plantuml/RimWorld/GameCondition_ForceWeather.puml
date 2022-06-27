@@ -1,0 +1,10 @@
+@startuml
+class GameCondition_ForceWeather {
+    + <<override>> Init() : void
+    + <<override>> ExposeData() : void
+    + <<override>> ForcedWeather() : WeatherDef
+    + <<override>> RandomizeSettings(points:float, map:Map, outExtraDescriptionRules:List<Rule>, outExtraDescriptionConstants:Dictionary<string, string>) : void
+}
+GameCondition <|-- GameCondition_ForceWeather
+GameCondition_ForceWeather --> "weather" WeatherDef
+@enduml

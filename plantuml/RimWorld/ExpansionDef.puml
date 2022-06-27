@@ -1,0 +1,22 @@
+@startuml
+class ExpansionDef {
+    + iconPath : string
+    + backgroundPath : string
+    + linkedMod : string
+    + steamUrl : string
+    + siteUrl : string
+    + previewImagesFolderPath : string
+    + isCore : bool
+    + StoreURL : string <<get>>
+    + StatusDescription : string <<get>>
+    + <<override>> PostLoad() : void
+    + <<override>> ConfigErrors() : IEnumerable<string>
+}
+class "List`1"<T> {
+}
+Def <|-- ExpansionDef
+ExpansionDef --> "Icon" Texture2D
+ExpansionDef --> "BackgroundImage" Texture2D
+ExpansionDef --> "PreviewImages<Texture2D>" "List`1"
+ExpansionDef --> "Status" ExpansionStatus
+@enduml

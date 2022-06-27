@@ -1,0 +1,5 @@
+@startuml
+class ThoughtWorker_IsUndergroundForUndergrounder {
+}
+ThoughtWorker <|-- ThoughtWorker_IsUndergroundForUndergrounder
+@enduml

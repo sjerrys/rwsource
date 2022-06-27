@@ -1,0 +1,17 @@
+@startuml
+class BaseGenUtility <<static>> {
+    + {static} RandomCheapWallStuff(faction:Faction, notVeryFlammable:bool) : ThingDef
+    + {static} RandomCheapWallStuff(techLevel:TechLevel, notVeryFlammable:bool) : ThingDef
+    + {static} IsCheapWallStuff(d:ThingDef) : bool
+    + {static} RandomHightechWallStuff() : ThingDef
+    + {static} RandomHightechFloorDef() : TerrainDef
+    + {static} RandomBasicFloorDef(faction:Faction, allowCarpet:bool) : TerrainDef
+    + {static} TryRandomInexpensiveFloor(floor:TerrainDef, validator:Predicate<TerrainDef>) : bool
+    + {static} CorrespondingTerrainDef(stuffDef:ThingDef, beautiful:bool) : TerrainDef
+    + {static} RegionalRockTerrainDef(tile:int, beautiful:bool) : TerrainDef
+    + {static} AnyDoorAdjacentCardinalTo(cell:IntVec3, map:Map) : bool
+    + {static} AnyDoorAdjacentCardinalTo(rect:CellRect, map:Map) : bool
+    + {static} WallStuffAt(c:IntVec3, map:Map) : ThingDef
+    + {static} CheckSpawnBridgeUnder(thingDef:ThingDef, c:IntVec3, rot:Rot4) : void
+}
+@enduml

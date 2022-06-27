@@ -1,0 +1,9 @@
+@startuml
+class CompAbilityEffect_TransferEntropy {
+    + <<override>> Apply(target:LocalTargetInfo, dest:LocalTargetInfo) : void
+    + <<override>> GizmoDisabled(reason:string) : bool
+    + <<override>> Valid(target:LocalTargetInfo, throwMessages:bool) : bool
+}
+CompAbilityEffect <|-- CompAbilityEffect_TransferEntropy
+CompAbilityEffect_TransferEntropy --> "Props" CompProperties_AbilityTransferEntropy
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class VersionUpdateDialogMaker <<static>> {
+    + {static} CreateVersionUpdateDialogIfNecessary() : void
+}
+@enduml

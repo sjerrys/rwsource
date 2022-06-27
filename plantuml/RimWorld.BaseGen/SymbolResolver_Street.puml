@@ -1,0 +1,6 @@
+@startuml
+class SymbolResolver_Street {
+    + <<override>> Resolve(rp:ResolveParams) : void
+}
+SymbolResolver <|-- SymbolResolver_Street
+@enduml

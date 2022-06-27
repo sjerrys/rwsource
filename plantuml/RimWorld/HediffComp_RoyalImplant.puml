@@ -1,0 +1,9 @@
+@startuml
+class HediffComp_RoyalImplant {
+    + {static} GetImplantLevel(implant:Hediff) : int
+    + IsViolatingRulesOf(faction:Faction, violationSourceLevel:int) : bool
+    + <<override>> Notify_ImplantUsed(violationSourceName:string, detectionChance:float, violationSourceLevel:int) : void
+}
+HediffComp <|-- HediffComp_RoyalImplant
+HediffComp_RoyalImplant --> "Props" HediffCompProperties_RoyalImplant
+@enduml

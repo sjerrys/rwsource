@@ -1,0 +1,6 @@
+@startuml
+class ThoughtWorker_IsIndoorsForUndergrounder {
+    + {static} IsAwakeAndIndoors(p:Pawn, isNaturalRoof:bool) : bool
+}
+ThoughtWorker <|-- ThoughtWorker_IsIndoorsForUndergrounder
+@enduml

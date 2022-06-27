@@ -1,0 +1,10 @@
+@startuml
+class GenColor <<static>> {
+    + {static} SaturationChanged(col:Color, change:float) : Color
+    + {static} IndistinguishableFrom(colA:Color, colB:Color) : bool
+    + {static} Colors32Equal(a:Color, b:Color) : bool
+    + {static} RandomColorOpaque() : Color
+    + {static} FromBytes(r:int, g:int, b:int, a:int) : Color
+    + {static} FromHex(hex:string) : Color
+}
+@enduml

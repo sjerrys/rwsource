@@ -1,0 +1,6 @@
+@startuml
+class JoyGiver_VisitGrave {
+    + <<override>> TryGiveJob(pawn:Pawn) : Job
+}
+JoyGiver <|-- JoyGiver_VisitGrave
+@enduml

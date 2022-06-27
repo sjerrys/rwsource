@@ -1,0 +1,5 @@
+@startuml
+class PawnColumnWorker_FollowFieldwork {
+}
+PawnColumnWorker_Checkbox <|-- PawnColumnWorker_FollowFieldwork
+@enduml

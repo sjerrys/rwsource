@@ -1,0 +1,6 @@
+@startuml
+class ThinkNode_ConditionalCloseToDutyTarget {
+    + <<override>> DeepCopy(resolve:bool) : ThinkNode
+}
+ThinkNode_Conditional <|-- ThinkNode_ConditionalCloseToDutyTarget
+@enduml

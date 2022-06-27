@@ -1,0 +1,8 @@
+@startuml
+class JobDriver_WatchBuilding {
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+    + <<override>> CanBeginNowWhileLyingDown() : bool
+    + <<override>> TaleParameters() : object[]
+}
+JobDriver <|-- JobDriver_WatchBuilding
+@enduml

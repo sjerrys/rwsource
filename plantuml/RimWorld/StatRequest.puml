@@ -1,0 +1,31 @@
+@startuml
+class StatRequest <<struct>> {
+    + ForAbility : bool <<get>>
+    + HasThing : bool <<get>>
+    + Empty : bool <<get>>
+    + {static} For(thing:Thing) : StatRequest
+    + {static} For(thing:Thing, pawn:Pawn) : StatRequest
+    + {static} For(def:BuildableDef, stuffDef:ThingDef, quality:QualityCategory) : StatRequest
+    + {static} For(def:AbilityDef) : StatRequest
+    + {static} For(def:RoyalTitleDef, faction:Faction) : StatRequest
+    + {static} ForEmpty() : StatRequest
+    + <<override>> ToString() : string
+    + <<override>> GetHashCode() : int
+    + <<override>> Equals(obj:object) : bool
+    + Equals(other:StatRequest) : bool
+}
+class "IEquatable`1"<T> {
+}
+class "List`1"<T> {
+}
+"IEquatable`1" "<StatRequest>" <|-- StatRequest
+StatRequest --> "Thing" Thing
+StatRequest --> "Def" Def
+StatRequest --> "BuildableDef" BuildableDef
+StatRequest --> "AbilityDef" AbilityDef
+StatRequest --> "Faction" Faction
+StatRequest --> "Pawn" Pawn
+StatRequest --> "StatBases<StatModifier>" "List`1"
+StatRequest --> "StuffDef" ThingDef
+StatRequest --> "QualityCategory" QualityCategory
+@enduml

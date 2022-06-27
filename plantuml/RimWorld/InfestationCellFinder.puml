@@ -1,0 +1,12 @@
+@startuml
+class InfestationCellFinder <<static>> {
+    + {static} TryFindCell(cell:IntVec3, map:Map) : bool
+    + {static} DebugDraw() : void
+}
+class LocationCandidate <<struct>> {
+    + score : float
+    + LocationCandidate(cell:IntVec3, score:float)
+}
+InfestationCellFinder +-- LocationCandidate
+LocationCandidate --> "cell" IntVec3
+@enduml

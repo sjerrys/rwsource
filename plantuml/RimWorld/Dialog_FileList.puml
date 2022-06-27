@@ -1,0 +1,9 @@
+@startuml
+abstract class Dialog_FileList {
+    + Dialog_FileList()
+    + <<override>> DoWindowContents(inRect:Rect) : void
+    + {static} DrawDateAndVersion(sfi:SaveFileInfo, rect:Rect) : void
+}
+Window <|-- Dialog_FileList
+Dialog_FileList --> "InitialSize" Vector2
+@enduml

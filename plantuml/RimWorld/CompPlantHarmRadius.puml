@@ -1,0 +1,11 @@
+@startuml
+class CompPlantHarmRadius {
+    + AgeDays : float <<get>>
+    + CurrentRadius : float <<get>>
+    + <<override>> PostExposeData() : void
+    + <<override>> PostSpawnSetup(respawningAfterLoad:bool) : void
+    + <<override>> CompInspectStringExtra() : string
+    + <<override>> CompTick() : void
+}
+ThingComp <|-- CompPlantHarmRadius
+@enduml

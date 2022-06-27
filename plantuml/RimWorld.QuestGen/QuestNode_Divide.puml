@@ -1,0 +1,10 @@
+@startuml
+class QuestNode_Divide {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_Divide
+QuestNode_Divide --> "value1<double>" "SlateRef`1"
+QuestNode_Divide --> "value2<double>" "SlateRef`1"
+QuestNode_Divide --> "storeAs<string>" "SlateRef`1"
+@enduml

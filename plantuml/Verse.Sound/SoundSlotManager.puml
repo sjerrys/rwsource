@@ -1,0 +1,6 @@
+@startuml
+class SoundSlotManager <<static>> {
+    + {static} CanPlayNow(slotName:string) : bool
+    + {static} Notify_Played(slot:string, duration:float) : void
+}
+@enduml

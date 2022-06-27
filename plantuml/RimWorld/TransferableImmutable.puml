@@ -1,0 +1,23 @@
+@startuml
+class TransferableImmutable {
+    + <<override>> HasAnyThing : bool <<get>>
+    + <<override>> Label : string <<get>>
+    + <<override>> Interactive : bool <<get>>
+    + <<override>> TipDescription : string <<get>>
+    + <<override>> CountToTransfer : int <<get>> <<protected set>>
+    + LabelWithTotalStackCount : string <<get>>
+    + LabelCapWithTotalStackCount : string <<get>>
+    + TotalStackCount : int <<get>>
+    + <<override>> GetMinimumToTransfer() : int
+    + <<override>> GetMaximumToTransfer() : int
+    + <<override>> OverflowReport() : AcceptanceReport
+    + <<override>> ExposeData() : void
+}
+class "List`1"<T> {
+}
+Transferable <|-- TransferableImmutable
+TransferableImmutable o-> "things<Thing>" "List`1"
+TransferableImmutable --> "AnyThing" Thing
+TransferableImmutable --> "ThingDef" ThingDef
+TransferableImmutable --> "PositiveCountDirection" TransferablePositiveCountDirection
+@enduml

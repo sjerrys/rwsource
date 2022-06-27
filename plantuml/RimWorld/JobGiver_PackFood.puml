@@ -1,0 +1,6 @@
+@startuml
+class JobGiver_PackFood {
+}
+ThinkNode_JobGiver <|-- JobGiver_PackFood
+JobGiver_PackFood o-> "MinFoodPreferability" FoodPreferability
+@enduml

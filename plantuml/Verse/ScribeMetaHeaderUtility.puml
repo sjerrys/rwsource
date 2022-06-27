@@ -1,0 +1,26 @@
+@startuml
+class ScribeMetaHeaderUtility {
+    + {static} loadedGameVersion : string
+    + <<const>> MetaNodeName : string = "meta"
+    + <<const>> GameVersionNodeName : string = "gameVersion"
+    + <<const>> ModIdsNodeName : string = "modIds"
+    + <<const>> ModNamesNodeName : string = "modNames"
+    + {static} WriteMetaHeader() : void
+    + {static} LoadGameDataHeader(mode:ScribeHeaderMode, logVersionConflictWarning:bool) : void
+    + {static} TryCreateDialogsForVersionMismatchWarnings(confirmedAction:Action) : bool
+    + {static} LoadedModsMatchesActiveMods(loadedModsSummary:string, runningModsSummary:string) : bool
+    + {static} GameVersionOf(file:FileInfo) : string
+    + {static} ReadToMetaElement(textReader:XmlTextReader) : bool
+}
+enum ScribeHeaderMode {
+    None,
+    Map,
+    World,
+    Scenario,
+}
+class "List`1"<T> {
+}
+ScribeMetaHeaderUtility --> "loadedModIdsList<string>" "List`1"
+ScribeMetaHeaderUtility --> "loadedModNamesList<string>" "List`1"
+ScribeMetaHeaderUtility +-- ScribeHeaderMode
+@enduml

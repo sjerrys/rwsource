@@ -1,0 +1,5 @@
+@startuml
+class WorldPawnsUtility <<static>> {
+    + {static} IsWorldPawn(p:Pawn) : bool
+}
+@enduml

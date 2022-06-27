@@ -1,0 +1,6 @@
+@startuml
+class XmlContainer {
+    + LoadDataFromXmlCustom(xmlRoot:XmlNode) : void
+}
+XmlContainer --> "node" XmlNode
+@enduml

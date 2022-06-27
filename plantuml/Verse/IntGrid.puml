@@ -1,0 +1,11 @@
+@startuml
+class IntGrid <<sealed>> {
+    + CellsCount : int <<get>>
+    + IntGrid()
+    + IntGrid(map:Map)
+    + MapSizeMatches(map:Map) : bool
+    + ClearAndResizeTo(map:Map) : void
+    + Clear(value:int) : void
+    + DebugDraw() : void
+}
+@enduml

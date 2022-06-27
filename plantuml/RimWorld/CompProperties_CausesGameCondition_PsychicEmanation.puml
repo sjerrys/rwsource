@@ -1,0 +1,8 @@
+@startuml
+class CompProperties_CausesGameCondition_PsychicEmanation {
+    + droneLevelIncreaseInterval : int
+    + CompProperties_CausesGameCondition_PsychicEmanation()
+}
+CompProperties_CausesGameCondition <|-- CompProperties_CausesGameCondition_PsychicEmanation
+CompProperties_CausesGameCondition_PsychicEmanation o-> "droneLevel" PsychicDroneLevel
+@enduml

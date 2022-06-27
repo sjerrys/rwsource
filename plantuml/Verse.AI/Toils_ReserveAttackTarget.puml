@@ -1,0 +1,5 @@
+@startuml
+class Toils_ReserveAttackTarget <<static>> {
+    + {static} TryReserve(ind:TargetIndex) : Toil
+}
+@enduml

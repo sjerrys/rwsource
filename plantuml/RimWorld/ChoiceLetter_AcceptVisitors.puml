@@ -1,0 +1,15 @@
+@startuml
+class ChoiceLetter_AcceptVisitors {
+    + acceptedSignal : string
+    + <<override>> CanDismissWithRightClick : bool <<get>>
+    + <<override>> CanShowInLetterStack : bool <<get>>
+    + <<override>> ExposeData() : void
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+ChoiceLetter <|-- ChoiceLetter_AcceptVisitors
+ChoiceLetter_AcceptVisitors o-> "pawns<Pawn>" "List`1"
+ChoiceLetter_AcceptVisitors --> "Choices<DiaOption>" "IEnumerable`1"
+@enduml

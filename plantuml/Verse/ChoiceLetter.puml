@@ -1,0 +1,18 @@
+@startuml
+abstract class ChoiceLetter {
+    + title : string
+    + radioMode : bool
+    + <<override>> ExposeData() : void
+    + <<override>> OpenLetter() : void
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+LetterWithTimeout <|-- ChoiceLetter
+ChoiceLetter --> "text" TaggedString
+ChoiceLetter --> "quest" Quest
+ChoiceLetter --> "hyperlinkThingDefs<ThingDef>" "List`1"
+ChoiceLetter --> "hyperlinkHediffDefs<HediffDef>" "List`1"
+ChoiceLetter --> "Choices<DiaOption>" "IEnumerable`1"
+@enduml

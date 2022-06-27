@@ -1,0 +1,18 @@
+@startuml
+class MechClusterGenerator <<static>> {
+    + <<const>> MechClusterMemberTag : string = "MechClusterMember"
+    + <<const>> MechClusterMemberGoodTag : string = "MechClusterMemberGood"
+    + <<const>> MechClusterMemberLampTag : string = "MechClusterMemberLamp"
+    + <<const>> MechClusterActivatorTag : string = "MechClusterActivator"
+    + <<const>> MechClusterCombatThreatTag : string = "MechClusterCombatThreat"
+    + <<const>> MechClusterProblemCauserTag : string = "MechClusterProblemCauser"
+    + <<const>> MaxPoints : float = 10000f
+    + {static} GenerateClusterSketch(points:float, startDormant:bool) : MechClusterSketch
+    + {static} GenerateClusterSketch(points:float, map:Map, startDormant:bool) : MechClusterSketch
+    + {static} GenerateClusterSketch_NewTemp(points:float, map:Map, startDormant:bool, forceNoConditionCauser:bool) : MechClusterSketch
+    + {static} ResolveSketch(parms:ResolveParams) : void
+    + {static} MechClusterBuildingSelection() : void
+}
+MechClusterGenerator o-> "PointsToPawnsChanceCurve" SimpleCurve
+MechClusterGenerator o-> "PawnPointsRandomPercentOfTotalCurve" SimpleCurve
+@enduml

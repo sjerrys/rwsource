@@ -1,0 +1,8 @@
+@startuml
+class Graphic_Mote {
+    + <<override>> DrawWorker(loc:Vector3, rot:Rot4, thingDef:ThingDef, thing:Thing, extraRotation:float) : void
+    + DrawMoteInternal(loc:Vector3, rot:Rot4, thingDef:ThingDef, thing:Thing, layer:int) : void
+    + <<override>> ToString() : string
+}
+Graphic_Single <|-- Graphic_Mote
+@enduml

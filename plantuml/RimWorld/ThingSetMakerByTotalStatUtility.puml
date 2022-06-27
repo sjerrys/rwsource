@@ -1,0 +1,10 @@
+@startuml
+class ThingSetMakerByTotalStatUtility <<static>> {
+    + {static} GenerateDefsWithPossibleTotalValue(countRange:IntRange, totalValue:float, allowed:IEnumerable<ThingDef>, techLevel:TechLevel, qualityGenerator:QualityGenerator, getMinValue:Func<ThingStuffPairWithQuality, float>, getMaxValue:Func<ThingStuffPairWithQuality, float>, weightSelector:Func<ThingDef, float>, tries:int, maxMass:float) : List<ThingStuffPairWithQuality>
+    + {static} GenerateDefsWithPossibleTotalValue_NewTmp(countRange:IntRange, totalValue:float, allowed:IEnumerable<ThingDef>, techLevel:TechLevel, qualityGenerator:QualityGenerator, getMinValue:Func<ThingStuffPairWithQuality, float>, getMaxValue:Func<ThingStuffPairWithQuality, float>, weightSelector:Func<ThingDef, float>, tries:int, maxMass:float, allowNonStackableDuplicates:bool) : List<ThingStuffPairWithQuality>
+    + {static} GenerateDefsWithPossibleTotalValue_NewTmp2(countRange:IntRange, totalValue:float, allowed:IEnumerable<ThingDef>, techLevel:TechLevel, qualityGenerator:QualityGenerator, getMinValue:Func<ThingStuffPairWithQuality, float>, getMaxValue:Func<ThingStuffPairWithQuality, float>, weightSelector:Func<ThingDef, float>, tries:int, maxMass:float, allowNonStackableDuplicates:bool, minSingleItemValue:float) : List<ThingStuffPairWithQuality>
+    + {static} GenerateDefsWithPossibleTotalValue_NewTmp3(countRange:IntRange, totalValue:float, allowed:IEnumerable<ThingDef>, techLevel:TechLevel, qualityGenerator:QualityGenerator, getMinValue:Func<ThingStuffPairWithQuality, float>, getMaxValue:Func<ThingStuffPairWithQuality, float>, getSingleThingValue:Func<ThingStuffPairWithQuality, float>, weightSelector:Func<ThingDef, float>, tries:int, maxMass:float, allowNonStackableDuplicates:bool, minSingleItemValue:float) : List<ThingStuffPairWithQuality>
+    + {static} IncreaseStackCountsToTotalValue(things:List<Thing>, totalValue:float, getValue:Func<Thing, float>, maxMass:float) : void
+    + {static} IncreaseStackCountsToTotalValue_NewTemp(things:List<Thing>, totalValue:float, getValue:Func<Thing, float>, maxMass:float, satisfyMinRewardCount:bool) : void
+}
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class CompAbilityEffect_MoteOnTarget {
+    + <<override>> Apply(target:LocalTargetInfo, dest:LocalTargetInfo) : void
+    + <<override>> GetPreCastActions() : IEnumerable<PreCastAction>
+}
+CompAbilityEffect <|-- CompAbilityEffect_MoteOnTarget
+CompAbilityEffect_MoteOnTarget --> "Props" CompProperties_AbilityMoteOnTarget
+@enduml

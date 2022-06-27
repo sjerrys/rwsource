@@ -1,0 +1,21 @@
+@startuml
+class QuestTuning <<static>> {
+    + <<const>> RecentQuestSelectionWeightFactor0 : float = 0.01f
+    + <<const>> RecentQuestSelectionWeightFactor1 : float = 0.3f
+    + <<const>> RecentQuestSelectionWeightFactor2 : float = 0.5f
+    + <<const>> RecentQuestSelectionWeightFactor3 : float = 0.7f
+    + <<const>> RecentQuestSelectionWeightFactor4 : float = 0.9f
+    + <<const>> MinFavorAtOnce : int = 1
+    + <<const>> MaxFavorAtOnce : int = 12
+    + <<const>> MaxGoodwillToAllowGoodwillReward : int = 92
+    + <<const>> FutureResearchProjectTechprintSelectionWeightFactor : float = 0.02f
+    + <<const>> MinDaysBetweenRaidSourceRaids : float = 1.5f
+    + <<const>> RaidSourceRaidThreatPointsFactor : float = 0.6f
+}
+QuestTuning o-> "IncreasesPopQuestChanceByPopIntentCurve" SimpleCurve
+QuestTuning o-> "NonFavorQuestSelectionWeightFactorByDaysSinceFavorQuestCurve" SimpleCurve
+QuestTuning o-> "PointsToRewardMarketValueCurve" SimpleCurve
+QuestTuning o-> "PopIncreasingRewardWeightByPopIntentCurve" SimpleCurve
+QuestTuning o-> "DaysSincePsylinkAvailableToGuaranteedNeuroformerChance" SimpleCurve
+QuestTuning o-> "PointsToRaidSourceRaidsMTBDaysCurve" SimpleCurve
+@enduml

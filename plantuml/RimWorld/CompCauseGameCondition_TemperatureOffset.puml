@@ -1,0 +1,13 @@
+@startuml
+class CompCauseGameCondition_TemperatureOffset {
+    + temperatureOffset : float
+    + <<override>> Initialize(props:CompProperties) : void
+    + <<override>> PostExposeData() : void
+    + SetTemperatureOffset(offset:float) : void
+    + <<override>> CompGetGizmosExtra() : IEnumerable<Gizmo>
+    + <<override>> CompInspectStringExtra() : string
+    + <<override>> RandomizeSettings_NewTemp_NewTemp(site:Site) : void
+}
+CompCauseGameCondition <|-- CompCauseGameCondition_TemperatureOffset
+CompCauseGameCondition_TemperatureOffset --> "Props" CompProperties_CausesGameCondition_ClimateAdjuster
+@enduml

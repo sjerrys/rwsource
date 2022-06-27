@@ -1,0 +1,7 @@
+@startuml
+class Designator_RemoveBridge {
+    + Designator_RemoveBridge()
+    + <<override>> CanDesignateCell(c:IntVec3) : AcceptanceReport
+}
+Designator_RemoveFloor <|-- Designator_RemoveBridge
+@enduml

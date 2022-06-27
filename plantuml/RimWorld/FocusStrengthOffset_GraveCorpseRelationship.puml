@@ -1,0 +1,9 @@
+@startuml
+class FocusStrengthOffset_GraveCorpseRelationship {
+    + <<override>> DependsOnPawn : bool <<get>>
+    + <<override>> GetExplanationAbstract(def:ThingDef) : string
+    + <<override>> GetOffset(parent:Thing, user:Pawn) : float
+    + <<override>> CanApply(parent:Thing, user:Pawn) : bool
+}
+FocusStrengthOffset <|-- FocusStrengthOffset_GraveCorpseRelationship
+@enduml

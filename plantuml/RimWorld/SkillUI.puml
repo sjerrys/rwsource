@@ -1,0 +1,15 @@
+@startuml
+class SkillUI <<static>> {
+    + <<const>> SkillHeight : float = 24f
+    + <<const>> SkillYSpacing : float = 3f
+    + {static} Reset() : void
+    + {static} DrawSkillsOf(p:Pawn, offset:Vector2, mode:SkillDrawMode) : void
+    + {static} DrawSkill(skill:SkillRecord, topLeft:Vector2, mode:SkillDrawMode, tooltipPrefix:string) : void
+    + {static} DrawSkill(skill:SkillRecord, holdingRect:Rect, mode:SkillDrawMode, tooltipPrefix:string) : void
+}
+enum SkillDrawMode {
+    Gameplay,
+    Menu,
+}
+SkillUI +-- SkillDrawMode
+@enduml

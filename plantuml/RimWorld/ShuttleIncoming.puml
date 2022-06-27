@@ -1,0 +1,8 @@
+@startuml
+class ShuttleIncoming {
+}
+Skyfaller <|-- ShuttleIncoming
+IActiveDropPod <|-- ShuttleIncoming
+IThingHolder <|-- ShuttleIncoming
+ShuttleIncoming --> "Contents" ActiveDropPodInfo
+@enduml

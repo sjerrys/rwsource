@@ -1,0 +1,6 @@
+@startuml
+class CompAbilityEffect_PutToSleep {
+    + <<override>> Apply(target:LocalTargetInfo, dest:LocalTargetInfo) : void
+}
+CompAbilityEffect <|-- CompAbilityEffect_PutToSleep
+@enduml

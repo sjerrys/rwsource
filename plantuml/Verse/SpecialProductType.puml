@@ -1,0 +1,6 @@
+@startuml
+enum SpecialProductType {
+    Butchery,
+    Smelted,
+}
+@enduml

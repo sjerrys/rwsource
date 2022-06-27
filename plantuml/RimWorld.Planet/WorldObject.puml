@@ -1,0 +1,70 @@
+@startuml
+class WorldObject {
+    + ID : int
+    + creationGameTicks : int
+    + <<virtual>> ShowRelatedQuests : bool <<get>>
+    + Destroyed : bool <<get>>
+    + Tile : int <<get>> <<set>>
+    + Spawned : bool <<get>>
+    + <<virtual>> Label : string <<get>>
+    + LabelCap : string <<get>>
+    + <<virtual>> LabelShort : string <<get>>
+    + <<virtual>> LabelShortCap : string <<get>>
+    + <<virtual>> HasName : bool <<get>>
+    + <<virtual>> SelectableNow : bool <<get>>
+    + <<virtual>> NeverMultiSelect : bool <<get>>
+    + <<virtual>> ExpandingIconPriority : float <<get>>
+    + <<virtual>> ExpandMore : bool <<get>>
+    + <<virtual>> AppendFactionToInspectString : bool <<get>>
+    + <<virtual>> ExpandingIconRotation : float <<get>>
+    + <<virtual>> ExpandingIconFlipHorizontal : bool <<get>>
+    + <<virtual>> IncidentTargetTags() : IEnumerable<IncidentTargetTagDef>
+    + <<virtual>> ExposeData() : void
+    + <<virtual>> SetFaction(newFaction:Faction) : void
+    + <<virtual>> GetInspectString() : string
+    + <<virtual>> Tick() : void
+    + <<virtual>> ExtraSelectionOverlaysOnGUI() : void
+    + <<virtual>> DrawExtraSelectionOverlays() : void
+    + <<virtual>> PostMake() : void
+    + <<virtual>> PostAdd() : void
+    + <<virtual>> SpawnSetup() : void
+    + <<virtual>> PostRemove() : void
+    + <<virtual>> Destroy() : void
+    + <<virtual>> Print(subMesh:LayerSubMesh) : void
+    + <<virtual>> Draw() : void
+    + GetComponent() : T
+    + GetComponent(type:Type) : WorldObjectComp
+    + <<virtual>> GetGizmos() : IEnumerable<Gizmo>
+    + <<virtual>> GetCaravanGizmos(caravan:Caravan) : IEnumerable<Gizmo>
+    + <<virtual>> GetFloatMenuOptions(caravan:Caravan) : IEnumerable<FloatMenuOption>
+    + <<virtual>> GetTransportPodsFloatMenuOptions(pods:IEnumerable<IThingHolder>, representative:CompLaunchable) : IEnumerable<FloatMenuOption>
+    + <<virtual>> GetShuttleFloatMenuOptions(pods:IEnumerable<IThingHolder>, launchAction:Action<int, TransportPodsArrivalAction>) : IEnumerable<FloatMenuOption>
+    + <<virtual>> GetInspectTabs() : IEnumerable<InspectTabBase>
+    + <<virtual>> AllMatchingObjectsOnScreenMatchesWith(other:WorldObject) : bool
+    + <<override>> ToString() : string
+    + <<override>> GetHashCode() : int
+    + GetUniqueLoadID() : string
+    + <<virtual>> GetDescription() : string
+}
+class "List`1"<T> {
+}
+class "ThingOwner`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+IExposable <|-- WorldObject
+ILoadReferenceable <|-- WorldObject
+ISelectable <|-- WorldObject
+WorldObject --> "def" WorldObjectDef
+WorldObject --> "questTags<string>" "List`1"
+WorldObject --> "rewards<Thing>" "ThingOwner`1"
+WorldObject --> "AllComps<WorldObjectComp>" "List`1"
+WorldObject --> "DrawPos" Vector3
+WorldObject --> "Faction" Faction
+WorldObject --> "Material" Material
+WorldObject --> "ExpandingIcon" Texture2D
+WorldObject --> "ExpandingIconColor" Color
+WorldObject --> "ParentHolder" IThingHolder
+WorldObject --> "SpecialDisplayStats<StatDrawEntry>" "IEnumerable`1"
+WorldObject --> "Biome" BiomeDef
+@enduml

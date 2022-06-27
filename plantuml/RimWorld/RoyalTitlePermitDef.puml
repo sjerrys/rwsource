@@ -1,0 +1,19 @@
+@startuml
+class RoyalTitlePermitDef {
+    + cooldownDays : float
+    + permitPointCost : int
+    + usableOnWorldMap : bool
+    + CooldownTicks : int <<get>>
+    + AvailableForPawn(pawn:Pawn, faction:Faction) : bool
+    + IsPrerequisiteOfHeldPermit(pawn:Pawn, faction:Faction) : bool
+    + <<override>> ConfigErrors() : IEnumerable<string>
+}
+Def <|-- RoyalTitlePermitDef
+RoyalTitlePermitDef o-> "workerClass" Type
+RoyalTitlePermitDef --> "royalAid" RoyalAid
+RoyalTitlePermitDef --> "minTitle" RoyalTitleDef
+RoyalTitlePermitDef --> "faction" FactionDef
+RoyalTitlePermitDef --> "prerequisite" RoyalTitlePermitDef
+RoyalTitlePermitDef --> "uiPosition" Vector2
+RoyalTitlePermitDef --> "Worker" RoyalTitlePermitWorker
+@enduml

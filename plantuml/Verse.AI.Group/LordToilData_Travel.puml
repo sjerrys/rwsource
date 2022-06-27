@@ -1,0 +1,7 @@
+@startuml
+class LordToilData_Travel {
+    + <<override>> ExposeData() : void
+}
+LordToilData <|-- LordToilData_Travel
+LordToilData_Travel --> "dest" IntVec3
+@enduml

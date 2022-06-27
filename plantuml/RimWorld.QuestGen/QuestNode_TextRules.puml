@@ -1,0 +1,9 @@
+@startuml
+class QuestNode_TextRules {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_TextRules
+QuestNode_TextRules --> "rules<RulePack>" "SlateRef`1"
+QuestNode_TextRules --> "target<TextRulesTarget>" "SlateRef`1"
+@enduml

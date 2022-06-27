@@ -1,0 +1,7 @@
+@startuml
+enum TradeAction {
+    None,
+    PlayerBuys,
+    PlayerSells,
+}
+@enduml

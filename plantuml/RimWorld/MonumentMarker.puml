@@ -1,0 +1,30 @@
+@startuml
+class MonumentMarker {
+    + ticksSinceDisallowedBuilding : int
+    + complete : bool
+    + <<const>> DestroyAfterTicksSinceDisallowedBuilding : int = 60000
+    + <<override>> CustomRectForSelector : CellRect? <<get>>
+    + AllDone : bool <<get>>
+    + AnyDisallowedBuilding : bool <<get>>
+    + DisallowedBuildingTicksExpired : bool <<get>>
+    + <<override>> SpawnSetup(map:Map, respawningAfterLoad:bool) : void
+    + <<override>> Tick() : void
+    + <<override>> ExposeData() : void
+    + <<override>> DrawAt(drawLoc:Vector3, flip:bool) : void
+    + DrawGhost(at:IntVec3, placingMode:bool) : void
+    + DrawGhost_NewTmp(at:IntVec3, placingMode:bool, rotation:Rot4) : void
+    + FindMyBlueprint(rect:CellRect, map:Map) : Blueprint_Install
+    + <<override>> GetGizmos() : IEnumerable<Gizmo>
+    + DebugBuildAll() : void
+    + <<override>> GetInspectString() : string
+    + IsPart(thing:Thing) : bool
+    + AllowsPlacingBlueprint(buildable:BuildableDef, pos:IntVec3, rot:Rot4, stuff:ThingDef) : bool
+    + AllowedStuffs() : IEnumerable<ThingDef>
+    + AllowedStuffsFor(buildable:SketchBuildable) : List<ThingDef>
+}
+Thing <|-- MonumentMarker
+MonumentMarker o-> "sketch" Sketch
+MonumentMarker --> "Size" IntVec2
+MonumentMarker --> "FirstDisallowedBuilding" Thing
+MonumentMarker --> "FirstEntityWithMissingBlueprint" SketchEntity
+@enduml

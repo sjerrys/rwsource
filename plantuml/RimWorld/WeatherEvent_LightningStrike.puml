@@ -1,0 +1,9 @@
+@startuml
+class WeatherEvent_LightningStrike {
+    + WeatherEvent_LightningStrike(map:Map)
+    + WeatherEvent_LightningStrike(map:Map, forcedStrikeLoc:IntVec3)
+    + <<override>> FireEvent() : void
+    + <<override>> WeatherEventDraw() : void
+}
+WeatherEvent_LightningFlash <|-- WeatherEvent_LightningStrike
+@enduml

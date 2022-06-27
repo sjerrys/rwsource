@@ -1,0 +1,13 @@
+@startuml
+class LogMessage {
+    + text : string
+    + repeats : int = 1
+    + StackTrace : string <<get>>
+    + LogMessage(text:string)
+    + LogMessage(type:LogMessageType, text:string, stackTrace:string)
+    + <<override>> ToString() : string
+    + CanCombineWith(other:LogMessage) : bool
+}
+LogMessage --> "type" LogMessageType
+LogMessage --> "Color" Color
+@enduml

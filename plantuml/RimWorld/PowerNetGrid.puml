@@ -1,0 +1,9 @@
+@startuml
+class PowerNetGrid {
+    + PowerNetGrid(map:Map)
+    + TransmittedPowerNetAt(c:IntVec3) : PowerNet
+    + Notify_PowerNetCreated(newNet:PowerNet) : void
+    + Notify_PowerNetDeleted(deadNet:PowerNet) : void
+    + DrawDebugPowerNetGrid() : void
+}
+@enduml

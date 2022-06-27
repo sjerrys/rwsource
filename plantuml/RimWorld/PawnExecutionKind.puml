@@ -1,0 +1,7 @@
+@startuml
+enum PawnExecutionKind {
+    GenericBrutal,
+    GenericHumane,
+    OrganHarvesting,
+}
+@enduml

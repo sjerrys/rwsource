@@ -1,0 +1,22 @@
+@startuml
+class QuestNode_GeneratePawn {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GeneratePawn
+QuestNode_GeneratePawn --> "storeAs<string>" "SlateRef`1"
+QuestNode_GeneratePawn --> "addToList<string>" "SlateRef`1"
+QuestNode_GeneratePawn --> "addToLists<IEnumerable<string>>" "SlateRef`1"
+QuestNode_GeneratePawn --> "kindDef<PawnKindDef>" "SlateRef`1"
+QuestNode_GeneratePawn --> "faction<Faction>" "SlateRef`1"
+QuestNode_GeneratePawn --> "forbidAnyTitle<bool>" "SlateRef`1"
+QuestNode_GeneratePawn --> "ensureNonNumericName<bool>" "SlateRef`1"
+QuestNode_GeneratePawn --> "forcedTraits<IEnumerable<TraitDef>>" "SlateRef`1"
+QuestNode_GeneratePawn --> "prohibitedTraits<IEnumerable<TraitDef>>" "SlateRef`1"
+QuestNode_GeneratePawn --> "extraPawnForExtraRelationChance<Pawn>" "SlateRef`1"
+QuestNode_GeneratePawn --> "relationWithExtraPawnChanceFactor<float>" "SlateRef`1"
+QuestNode_GeneratePawn --> "allowAddictions<bool?>" "SlateRef`1"
+QuestNode_GeneratePawn --> "biocodeWeaponChance<float>" "SlateRef`1"
+QuestNode_GeneratePawn --> "biocodeApparelChance<float>" "SlateRef`1"
+QuestNode_GeneratePawn --> "mustBeCapableOfViolence<bool>" "SlateRef`1"
+@enduml

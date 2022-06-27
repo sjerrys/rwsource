@@ -1,0 +1,12 @@
+@startuml
+class CompCauseGameCondition_PsychicSuppression {
+    + <<override>> Initialize(props:CompProperties) : void
+    + <<override>> PostExposeData() : void
+    + <<override>> CompGetGizmosExtra() : IEnumerable<Gizmo>
+    + <<override>> CompTick() : void
+    + <<override>> CompInspectStringExtra() : string
+    + <<override>> RandomizeSettings_NewTemp_NewTemp(site:Site) : void
+}
+CompCauseGameCondition <|-- CompCauseGameCondition_PsychicSuppression
+CompCauseGameCondition_PsychicSuppression --> "gender" Gender
+@enduml

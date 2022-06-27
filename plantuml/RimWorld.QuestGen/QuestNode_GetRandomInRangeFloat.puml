@@ -1,0 +1,9 @@
+@startuml
+class QuestNode_GetRandomInRangeFloat {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GetRandomInRangeFloat
+QuestNode_GetRandomInRangeFloat --> "storeAs<string>" "SlateRef`1"
+QuestNode_GetRandomInRangeFloat --> "range<FloatRange>" "SlateRef`1"
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+abstract class UIRoot {
+    + <<virtual>> Init() : void
+    + <<virtual>> UIRootOnGUI() : void
+    + <<virtual>> UIRootUpdate() : void
+}
+UIRoot o-> "windows" WindowStack
+UIRoot o-> "screenshotMode" ScreenshotModeHandler
+UIRoot o-> "feedbackFloaters" FeedbackFloaters
+@enduml

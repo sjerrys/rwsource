@@ -1,0 +1,9 @@
+@startuml
+class QuestNode_GetFactionOf {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GetFactionOf
+QuestNode_GetFactionOf --> "thing<Thing>" "SlateRef`1"
+QuestNode_GetFactionOf --> "storeAs<string>" "SlateRef`1"
+@enduml

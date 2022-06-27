@@ -1,0 +1,14 @@
+@startuml
+class TwelfthUtility <<static>> {
+    + {static} GetQuadrum(twelfth:Twelfth) : Quadrum
+    + {static} PreviousTwelfth(twelfth:Twelfth) : Twelfth
+    + {static} NextTwelfth(twelfth:Twelfth) : Twelfth
+    + {static} GetMiddleYearPct(twelfth:Twelfth) : float
+    + {static} GetBeginningYearPct(twelfth:Twelfth) : float
+    + {static} FindStartingWarmTwelfth(tile:int) : Twelfth
+    + {static} GetLeftMostTwelfth(twelfths:List<Twelfth>, rootTwelfth:Twelfth) : Twelfth
+    + {static} GetRightMostTwelfth(twelfths:List<Twelfth>, rootTwelfth:Twelfth) : Twelfth
+    + {static} TwelfthBefore(m:Twelfth) : Twelfth
+    + {static} TwelfthAfter(m:Twelfth) : Twelfth
+}
+@enduml

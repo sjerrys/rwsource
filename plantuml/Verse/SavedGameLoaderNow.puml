@@ -1,0 +1,5 @@
+@startuml
+class SavedGameLoaderNow {
+    + {static} LoadGameFromSaveFileNow(fileName:string) : void
+}
+@enduml

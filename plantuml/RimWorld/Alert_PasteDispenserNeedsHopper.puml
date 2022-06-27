@@ -1,0 +1,7 @@
+@startuml
+class Alert_PasteDispenserNeedsHopper {
+    + Alert_PasteDispenserNeedsHopper()
+    + <<override>> GetReport() : AlertReport
+}
+Alert <|-- Alert_PasteDispenserNeedsHopper
+@enduml

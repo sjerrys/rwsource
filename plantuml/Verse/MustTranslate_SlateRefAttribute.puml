@@ -1,0 +1,5 @@
+@startuml
+class MustTranslate_SlateRefAttribute {
+}
+Attribute <|-- MustTranslate_SlateRefAttribute
+@enduml

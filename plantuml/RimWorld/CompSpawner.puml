@@ -1,0 +1,14 @@
+@startuml
+class CompSpawner {
+    + <<override>> PostSpawnSetup(respawningAfterLoad:bool) : void
+    + <<override>> CompTick() : void
+    + <<override>> CompTickRare() : void
+    + TryDoSpawn() : bool
+    + {static} TryFindSpawnCell(parent:Thing, thingToSpawn:ThingDef, spawnCount:int, result:IntVec3) : bool
+    + <<override>> PostExposeData() : void
+    + <<override>> CompGetGizmosExtra() : IEnumerable<Gizmo>
+    + <<override>> CompInspectStringExtra() : string
+}
+ThingComp <|-- CompSpawner
+CompSpawner --> "PropsSpawner" CompProperties_Spawner
+@enduml

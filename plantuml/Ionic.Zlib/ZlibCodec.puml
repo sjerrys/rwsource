@@ -1,0 +1,34 @@
+@startuml
+class ZlibCodec <<sealed>> {
+    + NextIn : int
+    + AvailableBytesIn : int
+    + TotalBytesIn : long
+    + NextOut : int
+    + AvailableBytesOut : int
+    + TotalBytesOut : long
+    + Message : string
+    + WindowBits : int = 15
+    + Adler32 : int <<get>>
+    + ZlibCodec()
+    + ZlibCodec(mode:CompressionMode)
+    + InitializeInflate() : int
+    + InitializeInflate(expectRfc1950Header:bool) : int
+    + InitializeInflate(windowBits:int) : int
+    + InitializeInflate(windowBits:int, expectRfc1950Header:bool) : int
+    + Inflate(flush:FlushType) : int
+    + EndInflate() : int
+    + SyncInflate() : int
+    + InitializeDeflate() : int
+    + InitializeDeflate(level:CompressionLevel) : int
+    + InitializeDeflate(level:CompressionLevel, wantRfc1950Header:bool) : int
+    + InitializeDeflate(level:CompressionLevel, bits:int) : int
+    + InitializeDeflate(level:CompressionLevel, bits:int, wantRfc1950Header:bool) : int
+    + Deflate(flush:FlushType) : int
+    + EndDeflate() : int
+    + ResetDeflate() : void
+    + SetDeflateParams(level:CompressionLevel, strategy:CompressionStrategy) : int
+    + SetDictionary(dictionary:byte[]) : int
+}
+ZlibCodec o-> "CompressLevel" CompressionLevel
+ZlibCodec --> "Strategy" CompressionStrategy
+@enduml

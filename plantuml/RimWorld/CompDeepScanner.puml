@@ -1,0 +1,8 @@
+@startuml
+class CompDeepScanner {
+    + <<override>> PostDrawExtraSelectionOverlays() : void
+    + ShouldShowDeepResourceOverlay() : bool
+}
+CompScanner <|-- CompDeepScanner
+CompDeepScanner --> "Props" CompProperties_ScannerMineralsDeep
+@enduml

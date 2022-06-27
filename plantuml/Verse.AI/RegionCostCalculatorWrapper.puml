@@ -1,0 +1,7 @@
+@startuml
+class RegionCostCalculatorWrapper {
+    + RegionCostCalculatorWrapper(map:Map)
+    + Init(end:CellRect, traverseParms:TraverseParms, moveTicksCardinal:int, moveTicksDiagonal:int, avoidGrid:ByteGrid, allowedArea:Area, drafted:bool, disallowedCorners:List<int>) : void
+    + GetPathCostFromDestToRegion(cellIndex:int) : int
+}
+@enduml

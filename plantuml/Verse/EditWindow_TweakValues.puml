@@ -1,0 +1,18 @@
+@startuml
+class EditWindow_TweakValues {
+    + {static} CategoryWidth : float = 180f
+    + {static} TitleWidth : float = 300f
+    + {static} NumberWidth : float = 140f
+    + <<override>> IsDebug : bool <<get>>
+    + EditWindow_TweakValues()
+    + <<override>> DoWindowContents(inRect:Rect) : void
+}
+class TweakInfo <<struct>> {
+    + initial : float
+}
+EditWindow <|-- EditWindow_TweakValues
+EditWindow_TweakValues --> "InitialSize" Vector2
+EditWindow_TweakValues +-- TweakInfo
+TweakInfo --> "field" FieldInfo
+TweakInfo --> "tweakValue" TweakValue
+@enduml

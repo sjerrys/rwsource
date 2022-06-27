@@ -1,0 +1,5 @@
+@startuml
+class ThinkNode_ConditionalNoTarget {
+}
+ThinkNode_Conditional <|-- ThinkNode_ConditionalNoTarget
+@enduml

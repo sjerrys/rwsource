@@ -1,0 +1,6 @@
+@startuml
+class PawnNameColorUtility <<static>> {
+    {static} PawnNameColorUtility()
+    + {static} PawnNameColorOf(pawn:Pawn) : Color
+}
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class ColorExtension <<static>> {
+    + {static} ToOpaque(c:Color) : Color
+}
+@enduml

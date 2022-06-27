@@ -1,0 +1,6 @@
+@startuml
+class SymbolResolver_EdgeSandbags {
+    + <<override>> Resolve(rp:ResolveParams) : void
+}
+SymbolResolver <|-- SymbolResolver_EdgeSandbags
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+class CompDeepDrill {
+    + {static} WorkPerPortionCurrentDifficulty : float <<get>>
+    + ProgressToNextPortionPercent : float <<get>>
+    + <<override>> PostSpawnSetup(respawningAfterLoad:bool) : void
+    + <<override>> PostExposeData() : void
+    + DrillWorkDone(driller:Pawn) : void
+    + <<override>> PostDeSpawn(map:Map) : void
+    + CanDrillNow() : bool
+    + ValuableResourcesPresent() : bool
+    + UsedLastTick() : bool
+    + <<override>> CompInspectStringExtra() : string
+}
+ThingComp <|-- CompDeepDrill
+@enduml

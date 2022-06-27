@@ -1,0 +1,6 @@
+@startuml
+class SettleInExistingMapUtility <<static>> {
+    + {static} SettleCommand(map:Map, requiresNoEnemies:bool) : Command
+    + {static} Settle(map:Map) : void
+}
+@enduml

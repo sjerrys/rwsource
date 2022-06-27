@@ -1,0 +1,20 @@
+@startuml
+class Verb_CastAbility {
+    + <<override>> ReportLabel : string <<get>>
+    + <<override>> MultiSelect : bool <<get>>
+    + <<override>> OrderForceTarget(target:LocalTargetInfo) : void
+    + <<virtual>> IsApplicableTo(target:LocalTargetInfo, showMessages:bool) : bool
+    + <<override>> ValidateTarget(target:LocalTargetInfo) : bool
+    + <<override>> CanHitTarget(targ:LocalTargetInfo) : bool
+    + <<override>> OnGUI(target:LocalTargetInfo) : void
+    + DrawRadius() : void
+    + <<override>> TryStartCastOn(castTarg:LocalTargetInfo, destTarg:LocalTargetInfo, surpriseAttack:bool, canHitNonTargetPawns:bool) : bool
+    + <<override>> DrawHighlight(target:LocalTargetInfo) : void
+    + <<override>> ExposeData() : void
+}
+Verb <|-- Verb_CastAbility
+Verb_CastAbility --> "ability" Ability
+Verb_CastAbility --> "RadiusHighlightColor" Color
+Verb_CastAbility --> "DestinationSelector" ITargetingSource
+Verb_CastAbility --> "UIIcon" Texture2D
+@enduml

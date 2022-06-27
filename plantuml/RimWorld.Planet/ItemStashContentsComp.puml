@@ -1,0 +1,12 @@
+@startuml
+class ItemStashContentsComp {
+    + ItemStashContentsComp()
+    + <<override>> PostExposeData() : void
+    + GetChildHolders(outChildren:List<IThingHolder>) : void
+    + GetDirectlyHeldThings() : ThingOwner
+    + <<override>> PostDestroy() : void
+}
+WorldObjectComp <|-- ItemStashContentsComp
+IThingHolder <|-- ItemStashContentsComp
+ItemStashContentsComp --> "contents" ThingOwner
+@enduml

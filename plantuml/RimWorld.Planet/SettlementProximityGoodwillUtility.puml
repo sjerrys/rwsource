@@ -1,0 +1,10 @@
+@startuml
+class SettlementProximityGoodwillUtility <<static>> {
+    + {static} MaxDist : int <<get>>
+    + {static} CheckSettlementProximityGoodwillChange() : void
+    + {static} AppendProximityGoodwillOffsets(tile:int, outOffsets:List<Pair<Settlement, int>>, ignoreIfAlreadyMinGoodwill:bool, ignorePermanentlyHostile:bool) : void
+    + {static} SortProximityGoodwillOffsets(offsets:List<Pair<Settlement, int>>) : void
+    + {static} ProximityGoodwillOffsetsToString(offsets:List<Pair<Settlement, int>>) : string
+    + {static} CheckConfirmSettle(tile:int, settleAction:Action) : void
+}
+@enduml

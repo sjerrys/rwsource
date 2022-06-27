@@ -1,0 +1,7 @@
+@startuml
+class DirectXmlSaveLoadUtility <<static>> {
+    + {static} GetXPath(node:XmlNode) : string
+    + {static} GetInnerXml(element:XElement) : string
+}
+DirectXmlSaveLoadUtility o-> "FieldGetFlags" BindingFlags
+@enduml

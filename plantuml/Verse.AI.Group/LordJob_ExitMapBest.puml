@@ -1,0 +1,9 @@
+@startuml
+class LordJob_ExitMapBest {
+    + LordJob_ExitMapBest()
+    + LordJob_ExitMapBest(locomotion:LocomotionUrgency, canDig:bool, canDefendSelf:bool)
+    + <<override>> CreateGraph() : StateGraph
+    + <<override>> ExposeData() : void
+}
+LordJob <|-- LordJob_ExitMapBest
+@enduml

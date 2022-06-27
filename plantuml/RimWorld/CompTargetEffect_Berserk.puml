@@ -1,0 +1,6 @@
+@startuml
+class CompTargetEffect_Berserk {
+    + <<override>> DoEffectOn(user:Pawn, target:Thing) : void
+}
+CompTargetEffect <|-- CompTargetEffect_Berserk
+@enduml

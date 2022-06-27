@@ -1,0 +1,7 @@
+@startuml
+class Graphic_Terrain {
+    + <<override>> Init(req:GraphicRequest) : void
+    + <<override>> ToString() : string
+}
+Graphic_Single <|-- Graphic_Terrain
+@enduml

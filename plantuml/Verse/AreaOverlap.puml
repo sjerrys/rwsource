@@ -1,0 +1,7 @@
+@startuml
+enum AreaOverlap {
+    None,
+    Entire,
+    Partial,
+}
+@enduml

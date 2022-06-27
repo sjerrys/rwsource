@@ -1,0 +1,8 @@
+@startuml
+class DefaultValueAttribute {
+    + value : object
+    + DefaultValueAttribute(value:object)
+    + <<virtual>> ObjIsDefault(obj:object) : bool
+}
+Attribute <|-- DefaultValueAttribute
+@enduml

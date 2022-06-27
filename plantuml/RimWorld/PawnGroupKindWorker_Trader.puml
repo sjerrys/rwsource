@@ -1,0 +1,8 @@
+@startuml
+class PawnGroupKindWorker_Trader {
+    + <<override>> MinPointsToGenerateAnything(groupMaker:PawnGroupMaker) : float
+    + <<override>> CanGenerateFrom(parms:PawnGroupMakerParms, groupMaker:PawnGroupMaker) : bool
+    + <<override>> GeneratePawnKindsExample(parms:PawnGroupMakerParms, groupMaker:PawnGroupMaker) : IEnumerable<PawnKindDef>
+}
+PawnGroupKindWorker <|-- PawnGroupKindWorker_Trader
+@enduml

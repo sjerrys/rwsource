@@ -1,0 +1,10 @@
+@startuml
+class MapInfo <<sealed>> {
+    + Tile : int <<get>>
+    + NumCells : int <<get>>
+    + ExposeData() : void
+}
+IExposable <|-- MapInfo
+MapInfo --> "parent" MapParent
+MapInfo --> "Size" IntVec3
+@enduml

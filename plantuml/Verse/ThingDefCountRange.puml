@@ -1,0 +1,23 @@
+@startuml
+class ThingDefCountRange <<struct>> {
+    + Min : int <<get>>
+    + Max : int <<get>>
+    + TrueMin : int <<get>>
+    + TrueMax : int <<get>>
+    + ThingDefCountRange(thingDef:ThingDef, min:int, max:int)
+    + ThingDefCountRange(thingDef:ThingDef, countRange:IntRange)
+    + ExposeData() : void
+    + WithCountRange(newCountRange:IntRange) : ThingDefCountRange
+    + WithCountRange(newMin:int, newMax:int) : ThingDefCountRange
+    + <<override>> Equals(obj:object) : bool
+    + Equals(other:ThingDefCountRange) : bool
+    + <<override>> GetHashCode() : int
+    + <<override>> ToString() : string
+}
+class "IEquatable`1"<T> {
+}
+"IEquatable`1" "<ThingDefCountRange>" <|-- ThingDefCountRange
+IExposable <|-- ThingDefCountRange
+ThingDefCountRange --> "ThingDef" ThingDef
+ThingDefCountRange --> "CountRange" IntRange
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class ScenSummaryList <<static>> {
+    + {static} SummaryWithList(scen:Scenario, tag:string, intro:string) : string
+}
+@enduml

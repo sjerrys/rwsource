@@ -1,0 +1,7 @@
+@startuml
+class HediffComp_ReactOnDamage {
+    + <<override>> Notify_PawnPostApplyDamage(dinfo:DamageInfo, totalDamageDealt:float) : void
+}
+HediffComp <|-- HediffComp_ReactOnDamage
+HediffComp_ReactOnDamage --> "Props" HediffCompProperties_ReactOnDamage
+@enduml

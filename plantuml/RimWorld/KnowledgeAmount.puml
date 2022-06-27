@@ -1,0 +1,13 @@
+@startuml
+enum KnowledgeAmount {
+    None,
+    FrameDisplayed,
+    FrameInteraction,
+    TinyInteraction,
+    SmallInteraction,
+    SpecificInteraction,
+    Total,
+    NoteClosed,
+    NoteTaught,
+}
+@enduml

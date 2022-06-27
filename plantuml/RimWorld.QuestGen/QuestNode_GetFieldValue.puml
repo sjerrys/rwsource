@@ -1,0 +1,11 @@
+@startuml
+class QuestNode_GetFieldValue {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GetFieldValue
+QuestNode_GetFieldValue --> "storeAs<string>" "SlateRef`1"
+QuestNode_GetFieldValue --> "obj<object>" "SlateRef`1"
+QuestNode_GetFieldValue --> "field<string>" "SlateRef`1"
+QuestNode_GetFieldValue --> "type<Type>" "SlateRef`1"
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class DamageWorker_AddGlobal {
+    + <<override>> Apply(dinfo:DamageInfo, thing:Thing) : DamageResult
+}
+DamageWorker <|-- DamageWorker_AddGlobal
+@enduml

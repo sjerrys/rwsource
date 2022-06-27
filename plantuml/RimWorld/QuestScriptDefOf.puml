@@ -1,0 +1,14 @@
+@startuml
+class QuestScriptDefOf <<static>> {
+}
+QuestScriptDefOf --> "OpportunitySite_ItemStash" QuestScriptDef
+QuestScriptDefOf --> "LongRangeMineralScannerLump" QuestScriptDef
+QuestScriptDefOf --> "Util_SendItemPods" QuestScriptDef
+QuestScriptDefOf --> "Util_JoinerWalkIn" QuestScriptDef
+QuestScriptDefOf --> "Util_JoinerDropIn" QuestScriptDef
+QuestScriptDefOf --> "ChangeRoyalHeir" QuestScriptDef
+QuestScriptDefOf --> "Permit_CallLaborers" QuestScriptDef
+QuestScriptDefOf --> "Permit_CallShuttle" QuestScriptDef
+QuestScriptDefOf --> "RefugeeDelayedReward" QuestScriptDef
+QuestScriptDefOf --> "BestowingCeremony" QuestScriptDef
+@enduml

@@ -1,0 +1,23 @@
+@startuml
+class Pawn_StanceTracker {
+    + <<const>> StaggerMeleeAttackTicks : int = 95
+    + <<const>> StaggerBulletImpactTicks : int = 95
+    + <<const>> StaggerExplosionImpactTicks : int = 95
+    + debugLog : bool
+    + FullBodyBusy : bool <<get>>
+    + Staggered : bool <<get>>
+    + Pawn_StanceTracker(newPawn:Pawn)
+    + StanceTrackerTick() : void
+    + StanceTrackerDraw() : void
+    + ExposeData() : void
+    + StaggerFor(ticks:int) : void
+    + CancelBusyStanceSoft() : void
+    + CancelBusyStanceHard() : void
+    + SetStance(newStance:Stance) : void
+    + Notify_DamageTaken(dinfo:DamageInfo) : void
+}
+IExposable <|-- Pawn_StanceTracker
+Pawn_StanceTracker --> "pawn" Pawn
+Pawn_StanceTracker o-> "curStance" Stance
+Pawn_StanceTracker --> "stunner" StunHandler
+@enduml

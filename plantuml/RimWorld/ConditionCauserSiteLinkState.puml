@@ -1,0 +1,7 @@
+@startuml
+enum ConditionCauserSiteLinkState {
+    NULL,
+    LINKED,
+    UNLINKED,
+}
+@enduml

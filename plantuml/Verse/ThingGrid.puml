@@ -1,0 +1,16 @@
+@startuml
+class ThingGrid <<sealed>> {
+    + ThingGrid(map:Map)
+    + Register(t:Thing) : void
+    + Deregister(t:Thing, doEvenIfDespawned:bool) : void
+    + ThingsAt(c:IntVec3) : IEnumerable<Thing>
+    + ThingsListAt(c:IntVec3) : List<Thing>
+    + ThingsListAtFast(c:IntVec3) : List<Thing>
+    + ThingsListAtFast(index:int) : List<Thing>
+    + CellContains(c:IntVec3, cat:ThingCategory) : bool
+    + ThingAt(c:IntVec3, cat:ThingCategory) : Thing
+    + CellContains(c:IntVec3, def:ThingDef) : bool
+    + ThingAt(c:IntVec3, def:ThingDef) : Thing
+    + ThingAt(c:IntVec3) : T
+}
+@enduml

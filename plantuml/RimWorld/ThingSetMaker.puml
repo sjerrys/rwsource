@@ -1,0 +1,16 @@
+@startuml
+abstract class ThingSetMaker {
+    {static} ThingSetMaker()
+    + Generate() : List<Thing>
+    + Generate(parms:ThingSetMakerParams) : List<Thing>
+    + CanGenerate(parms:ThingSetMakerParams) : bool
+    + AllGeneratableThingsDebug() : IEnumerable<ThingDef>
+    + AllGeneratableThingsDebug(parms:ThingSetMakerParams) : IEnumerable<ThingDef>
+    + <<virtual>> ExtraSelectionWeightFactor(parms:ThingSetMakerParams) : float
+    + <<virtual>> ResolveReferences() : void
+}
+class "List`1"<T> {
+}
+ThingSetMaker --> "fixedParams" ThingSetMakerParams
+ThingSetMaker --> "thingsBeingGeneratedNow<List<Thing>>" "List`1"
+@enduml

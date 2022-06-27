@@ -1,0 +1,6 @@
+@startuml
+class CompProperties_BiocodableWeapon {
+    + CompProperties_BiocodableWeapon()
+}
+CompProperties <|-- CompProperties_BiocodableWeapon
+@enduml

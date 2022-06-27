@@ -1,0 +1,5 @@
+@startuml
+class Adler <<sealed>> {
+    + {static} Adler32(adler:uint, buf:byte[], index:int, len:int) : uint
+}
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+class SitePartWorker {
+    + <<virtual>> SitePartWorkerTick(sitePart:SitePart) : void
+    + <<virtual>> Notify_GeneratedByQuestGen(part:SitePart, slate:Slate, outExtraDescriptionRules:List<Rule>, outExtraDescriptionConstants:Dictionary<string, string>) : void
+    + <<virtual>> PostMapGenerate(map:Map) : void
+    + <<virtual>> FactionCanOwn(faction:Faction) : bool
+    + <<virtual>> GetArrivedLetterPart(map:Map, preferredLetterDef:LetterDef, lookTargets:LookTargets) : string
+    + <<virtual>> GetPostProcessedThreatLabel(site:Site, sitePart:SitePart) : string
+    + <<virtual>> GenerateDefaultParams(myThreatPoints:float, tile:int, faction:Faction) : SitePartParams
+    + <<virtual>> IncreasesPopulation(parms:SitePartParams) : bool
+    + <<virtual>> Init(site:Site, sitePart:SitePart) : void
+    + <<virtual>> PostDrawExtraSelectionOverlays(sitePart:SitePart) : void
+    + <<virtual>> PostDestroy(sitePart:SitePart) : void
+    + <<virtual>> Notify_SiteMapAboutToBeRemoved(sitePart:SitePart) : void
+}
+SitePartWorker --> "def" SitePartDef
+@enduml

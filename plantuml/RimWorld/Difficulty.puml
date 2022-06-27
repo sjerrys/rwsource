@@ -1,0 +1,53 @@
+@startuml
+class Difficulty {
+    + <<const>> DiseaseIntervalFactorCutoff : float = 100f
+    + <<const>> FriendlyFireDefault : float = 0.4f
+    + <<const>> AllowInstantKillChanceDefault : float = 1f
+    + <<const>> MaintenanceCostFactorMin : float = 0.01f
+    + threatScale : float = 1f
+    + allowBigThreats : bool = true
+    + allowIntroThreats : bool = true
+    + allowCaveHives : bool = true
+    + peacefulTemples : bool
+    + allowViolentQuests : bool = true
+    + predatorsHuntHumanlikes : bool = true
+    + scariaRotChance : float
+    + colonistMoodOffset : float
+    + tradePriceFactorLoss : float
+    + cropYieldFactor : float = 1f
+    + mineYieldFactor : float = 1f
+    + butcherYieldFactor : float = 1f
+    + researchSpeedFactor : float = 1f
+    + diseaseIntervalFactor : float = 1f
+    + enemyReproductionRateFactor : float = 1f
+    + playerPawnInfectionChanceFactor : float = 1f
+    + manhunterChanceOnDamageFactor : float = 1f
+    + deepDrillInfestationChanceFactor : float = 1f
+    + foodPoisonChanceFactor : float = 1f
+    + maintenanceCostFactor : float = 1f
+    + enemyDeathOnDownedChanceFactor : float = 1f
+    + adaptationGrowthRateFactorOverZero : float = 1f
+    + adaptationEffectFactor : float = 1f
+    + questRewardValueFactor : float = 1f
+    + raidLootPointsFactor : float = 1f
+    + allowTraps : bool = true
+    + allowTurrets : bool = true
+    + allowMortars : bool = true
+    + allowExtremeWeatherIncidents : bool = true
+    + fixedWealthMode : bool
+    + fixedWealthTimeFactor : float = 1f
+    + friendlyFireChanceFactor : float = 0.4f
+    + allowInstantKillChance : float = 1f
+    + EffectiveQuestRewardValueFactor : float <<get>>
+    + EffectiveRaidLootPointsFactor : float <<get>>
+    + Difficulty()
+    + Difficulty(src:DifficultyDef)
+    + AllowedToBuild(def:BuildableDef) : bool
+    + AllowedBy(cfg:DifficultyConditionConfig) : bool
+    + CopyFrom(src:DifficultyDef) : void
+    + ExposeData() : void
+    + DebugString() : string
+    + {static} DifficultyDetails() : void
+}
+IExposable <|-- Difficulty
+@enduml

@@ -1,0 +1,32 @@
+@startuml
+class WeatherDef {
+    + repeatable : bool
+    + isBad : bool
+    + rainRate : float
+    + snowRate : float
+    + windSpeedFactor : float = 1f
+    + windSpeedOffset : float
+    + moveSpeedMultiplier : float = 1f
+    + accuracyMultiplier : float = 1f
+    + perceivePriority : float
+    + <<override>> PostLoad() : void
+    + <<override>> ConfigErrors() : IEnumerable<string>
+    + {static} Named(defName:string) : WeatherDef
+}
+class "List`1"<T> {
+}
+Def <|-- WeatherDef
+WeatherDef o-> "durationRange" IntRange
+WeatherDef o-> "favorability" Favorability
+WeatherDef o-> "temperatureRange" FloatRange
+WeatherDef --> "commonalityRainfallFactor" SimpleCurve
+WeatherDef --> "exposedThought" ThoughtDef
+WeatherDef o-> "ambientSounds<SoundDef>" "List`1"
+WeatherDef o-> "eventMakers<WeatherEventMaker>" "List`1"
+WeatherDef o-> "overlayClasses<Type>" "List`1"
+WeatherDef --> "skyColorsNightMid" SkyColorSet
+WeatherDef --> "skyColorsNightEdge" SkyColorSet
+WeatherDef --> "skyColorsDay" SkyColorSet
+WeatherDef --> "skyColorsDusk" SkyColorSet
+WeatherDef --> "Worker" WeatherWorker
+@enduml

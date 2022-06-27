@@ -1,0 +1,6 @@
+@startuml
+class JobGiver_MaintainHives {
+    + <<override>> DeepCopy(resolve:bool) : ThinkNode
+}
+JobGiver_AIFightEnemies <|-- JobGiver_MaintainHives
+@enduml

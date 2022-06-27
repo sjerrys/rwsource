@@ -1,0 +1,23 @@
+@startuml
+class LanguageWorker_Russian {
+    + <<override>> PostProcessedKeyedTranslation(translation:string) : string
+    + <<override>> PostProcessed(str:string) : string
+    + <<override>> ToTitleCase(str:string) : string
+    + <<override>> Pluralize(str:string, gender:Gender, count:int) : string
+}
+interface IResolver {
+    Resolve(arguments:string[]) : string
+}
+class ReplaceResolver {
+    + Resolve(arguments:string[]) : string
+}
+class NumberCaseResolver {
+    + Resolve(arguments:string[]) : string
+}
+LanguageWorker <|-- LanguageWorker_Russian
+LanguageWorker_Russian +-- IResolver
+LanguageWorker_Russian +-- ReplaceResolver
+IResolver <|-- ReplaceResolver
+LanguageWorker_Russian +-- NumberCaseResolver
+IResolver <|-- NumberCaseResolver
+@enduml

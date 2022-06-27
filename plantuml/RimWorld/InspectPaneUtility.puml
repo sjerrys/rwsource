@@ -1,0 +1,18 @@
+@startuml
+class InspectPaneUtility <<static>> {
+    + <<const>> TabWidth : float = 72f
+    + <<const>> TabHeight : float = 30f
+    + <<const>> CornerButtonsSize : float = 24f
+    + <<const>> PaneInnerMargin : float = 12f
+    + <<const>> PaneHeight : float = 165f
+    + {static} Reset() : void
+    + {static} PaneWidthFor(pane:IInspectPane) : float
+    + {static} PaneSizeFor(pane:IInspectPane) : Vector2
+    + {static} CanInspectTogether(A:object, B:object) : bool
+    + {static} AdjustedLabelFor(selected:List<object>, rect:Rect) : string
+    + {static} ExtraOnGUI(pane:IInspectPane) : void
+    + {static} UpdateTabs(pane:IInspectPane) : void
+    + {static} InspectPaneOnGUI(inRect:Rect, pane:IInspectPane) : void
+    + {static} OpenTab(inspectTabType:Type) : InspectTabBase
+}
+@enduml

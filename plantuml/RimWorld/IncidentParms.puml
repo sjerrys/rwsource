@@ -1,0 +1,42 @@
+@startuml
+class IncidentParms {
+    + points : float
+    + forced : bool
+    + customLetterLabel : string
+    + customLetterText : string
+    + inSignalEnd : string
+    + generateFightersOnly : bool
+    + dontUseSingleUseRocketLaunchers : bool
+    + raidForceOneIncap : bool
+    + raidNeverFleeIndividual : bool
+    + raidArrivalModeForQuickMilitaryAid : bool
+    + biocodeApparelChance : float
+    + biocodeWeaponsChance : float
+    + pawnGroupMakerSeed : int?
+    + pawnCount : int
+    + podOpenDelay : int = 140
+    + questTag : string
+    + ExposeData() : void
+    + <<override>> ToString() : string
+}
+class "List`1"<T> {
+}
+class "Dictionary`2"<T1,T2> {
+}
+IExposable <|-- IncidentParms
+IncidentParms --> "target" IIncidentTarget
+IncidentParms --> "faction" Faction
+IncidentParms --> "customLetterDef" LetterDef
+IncidentParms --> "letterHyperlinkThingDefs<ThingDef>" "List`1"
+IncidentParms --> "letterHyperlinkHediffDefs<HediffDef>" "List`1"
+IncidentParms o-> "spawnCenter" IntVec3
+IncidentParms o-> "spawnRotation" Rot4
+IncidentParms --> "raidStrategy" RaidStrategyDef
+IncidentParms --> "raidArrivalMode" PawnsArrivalModeDef
+IncidentParms --> "pawnGroups<Pawn,int>" "Dictionary`2"
+IncidentParms --> "pawnKind" PawnKindDef
+IncidentParms --> "traderKind" TraderKindDef
+IncidentParms --> "quest" Quest
+IncidentParms --> "questScriptDef" QuestScriptDef
+IncidentParms --> "mechClusterSketch" MechClusterSketch
+@enduml

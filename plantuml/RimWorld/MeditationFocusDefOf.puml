@@ -1,0 +1,6 @@
+@startuml
+class MeditationFocusDefOf <<static>> {
+    {static} MeditationFocusDefOf()
+}
+MeditationFocusDefOf --> "Natural" MeditationFocusDef
+@enduml

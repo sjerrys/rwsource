@@ -1,0 +1,11 @@
+@startuml
+class InjuryProps {
+    + painPerSeverity : float = 1f
+    + averagePainPerSeverityPermanent : float = 0.5f
+    + bleedRate : float
+    + canMerge : bool
+    + destroyedLabel : string
+    + destroyedOutLabel : string
+    + useRemovedLabel : bool
+}
+@enduml

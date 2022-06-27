@@ -1,0 +1,9 @@
+@startuml
+class BattleLogEntry_AbilityUsed {
+    + BattleLogEntry_AbilityUsed()
+    + BattleLogEntry_AbilityUsed(caster:Pawn, target:Thing, ability:AbilityDef, eventDef:RulePackDef)
+    + <<override>> ExposeData() : void
+}
+BattleLogEntry_Event <|-- BattleLogEntry_AbilityUsed
+BattleLogEntry_AbilityUsed --> "abilityUsed" AbilityDef
+@enduml

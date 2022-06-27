@@ -1,0 +1,5 @@
+@startuml
+class ThoughtWorker_TranshumanistAppreciation {
+}
+ThoughtWorker <|-- ThoughtWorker_TranshumanistAppreciation
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class ItemAvailability {
+    + ItemAvailability(map:Map)
+    + Tick() : void
+    + ThingsAvailableAnywhere(need:ThingDefCountClass, pawn:Pawn) : bool
+}
+@enduml

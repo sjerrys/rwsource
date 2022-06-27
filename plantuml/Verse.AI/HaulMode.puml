@@ -1,0 +1,8 @@
+@startuml
+enum HaulMode {
+    Undefined,
+    ToCellStorage,
+    ToCellNonStorage,
+    ToContainer,
+}
+@enduml

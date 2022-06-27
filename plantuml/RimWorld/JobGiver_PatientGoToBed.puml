@@ -1,0 +1,7 @@
+@startuml
+class JobGiver_PatientGoToBed {
+    + respectTimetable : bool = true
+    + <<override>> TryIssueJobPackage(pawn:Pawn, jobParams:JobIssueParams) : ThinkResult
+}
+ThinkNode <|-- JobGiver_PatientGoToBed
+@enduml

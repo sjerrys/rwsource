@@ -1,0 +1,9 @@
+@startuml
+enum SnowCategory {
+    None,
+    Dusting,
+    Thin,
+    Medium,
+    Thick,
+}
+@enduml

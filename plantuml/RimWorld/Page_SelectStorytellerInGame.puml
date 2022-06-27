@@ -1,0 +1,9 @@
+@startuml
+class Page_SelectStorytellerInGame {
+    + <<override>> PageTitle : string <<get>>
+    + Page_SelectStorytellerInGame()
+    + <<override>> PreOpen() : void
+    + <<override>> DoWindowContents(rect:Rect) : void
+}
+Page <|-- Page_SelectStorytellerInGame
+@enduml

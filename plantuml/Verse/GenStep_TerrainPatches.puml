@@ -1,0 +1,10 @@
+@startuml
+class GenStep_TerrainPatches {
+    + <<override>> SeedPart : int <<get>>
+    + <<override>> Generate(map:Map, parms:GenStepParams) : void
+}
+GenStep <|-- GenStep_TerrainPatches
+GenStep_TerrainPatches --> "terrainDef" TerrainDef
+GenStep_TerrainPatches --> "patchesPer10kCellsRange" FloatRange
+GenStep_TerrainPatches --> "patchSizeRange" FloatRange
+@enduml

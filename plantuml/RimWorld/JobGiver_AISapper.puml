@@ -1,0 +1,6 @@
+@startuml
+class JobGiver_AISapper {
+    + <<override>> DeepCopy(resolve:bool) : ThinkNode
+}
+ThinkNode_JobGiver <|-- JobGiver_AISapper
+@enduml

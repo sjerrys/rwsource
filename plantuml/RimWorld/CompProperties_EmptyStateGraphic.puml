@@ -1,0 +1,7 @@
+@startuml
+class CompProperties_EmptyStateGraphic {
+    + CompProperties_EmptyStateGraphic()
+}
+CompProperties <|-- CompProperties_EmptyStateGraphic
+CompProperties_EmptyStateGraphic --> "graphicData" GraphicData
+@enduml

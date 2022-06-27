@@ -1,0 +1,12 @@
+@startuml
+class DaysWorthOfFoodCalculator <<static>> {
+    + <<const>> InfiniteDaysWorthOfFood : float = 600f
+    + {static} ApproxDaysWorthOfFood(caravan:Caravan) : float
+    + {static} ApproxDaysWorthOfFood(transferables:List<TransferableOneWay>, tile:int, ignoreInventory:IgnorePawnsInventoryMode, faction:Faction, path:WorldPath, nextTileCostLeft:float, caravanTicksPerMove:int) : float
+    + {static} ApproxDaysWorthOfFoodLeftAfterTransfer(transferables:List<TransferableOneWay>, tile:int, ignoreInventory:IgnorePawnsInventoryMode, faction:Faction, path:WorldPath, nextTileCostLeft:float, caravanTicksPerMove:int) : float
+    + {static} ApproxDaysWorthOfFood(pawns:List<Pawn>, potentiallyFood:List<Thing>, tile:int, ignoreInventory:IgnorePawnsInventoryMode, faction:Faction) : float
+    + {static} ApproxDaysWorthOfFood(pawns:List<Pawn>, potentiallyFood:List<ThingCount>, tile:int, ignoreInventory:IgnorePawnsInventoryMode, faction:Faction) : float
+    + {static} ApproxDaysWorthOfFoodLeftAfterTradeableTransfer(allCurrentThings:List<Thing>, tradeables:List<Tradeable>, tile:int, ignoreInventory:IgnorePawnsInventoryMode, faction:Faction) : float
+    + {static} AnyFoodEatingPawn(pawns:List<Pawn>) : bool
+}
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+abstract class Designator_Zone {
+    + <<override>> DraggableDimensions : int <<get>>
+    + <<override>> DragDrawMeasurements : bool <<get>>
+    + <<override>> SelectedUpdate() : void
+    + <<override>> RenderHighlight(dragCells:List<IntVec3>) : void
+}
+Designator <|-- Designator_Zone
+@enduml

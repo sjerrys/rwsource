@@ -1,0 +1,11 @@
+@startuml
+abstract class Dialog_OptionLister {
+    + <<override>> IsDebug : bool <<get>>
+    + Dialog_OptionLister()
+    + <<override>> PostOpen() : void
+    + <<override>> DoWindowContents(inRect:Rect) : void
+    + <<override>> PostClose() : void
+}
+Window <|-- Dialog_OptionLister
+Dialog_OptionLister --> "InitialSize" Vector2
+@enduml

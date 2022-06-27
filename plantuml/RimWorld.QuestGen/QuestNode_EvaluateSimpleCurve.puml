@@ -1,0 +1,11 @@
+@startuml
+class QuestNode_EvaluateSimpleCurve {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_EvaluateSimpleCurve
+QuestNode_EvaluateSimpleCurve --> "storeAs<string>" "SlateRef`1"
+QuestNode_EvaluateSimpleCurve --> "curve<SimpleCurve>" "SlateRef`1"
+QuestNode_EvaluateSimpleCurve --> "value<float>" "SlateRef`1"
+QuestNode_EvaluateSimpleCurve --> "roundRandom<bool>" "SlateRef`1"
+@enduml

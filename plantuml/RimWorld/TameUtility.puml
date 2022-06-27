@@ -1,0 +1,8 @@
+@startuml
+class TameUtility <<static>> {
+    + <<const>> MinTameInterval : int = 30000
+    + {static} ShowDesignationWarnings(pawn:Pawn, showManhunterOnTameFailWarning:bool) : void
+    + {static} CanTame(pawn:Pawn) : bool
+    + {static} TriedToTameTooRecently(animal:Pawn) : bool
+}
+@enduml

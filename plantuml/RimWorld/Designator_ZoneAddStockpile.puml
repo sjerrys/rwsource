@@ -1,0 +1,7 @@
+@startuml
+abstract class Designator_ZoneAddStockpile {
+    + Designator_ZoneAddStockpile()
+    + <<override>> CanDesignateCell(c:IntVec3) : AcceptanceReport
+}
+Designator_ZoneAdd <|-- Designator_ZoneAddStockpile
+@enduml

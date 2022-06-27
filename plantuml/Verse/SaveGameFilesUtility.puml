@@ -1,0 +1,8 @@
+@startuml
+class SaveGameFilesUtility <<static>> {
+    + {static} IsAutoSave(fileName:string) : bool
+    + {static} SavedGameNamedExists(fileName:string) : bool
+    + {static} UnusedDefaultFileName(factionLabel:string) : string
+    + {static} GetAutostartSaveFile() : FileInfo
+}
+@enduml

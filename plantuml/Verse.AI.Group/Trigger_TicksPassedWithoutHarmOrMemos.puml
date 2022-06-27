@@ -1,0 +1,7 @@
+@startuml
+class Trigger_TicksPassedWithoutHarmOrMemos {
+    + Trigger_TicksPassedWithoutHarmOrMemos(tickLimit:int, memos:string[])
+    + <<override>> ActivateOn(lord:Lord, signal:TriggerSignal) : bool
+}
+Trigger_TicksPassed <|-- Trigger_TicksPassedWithoutHarmOrMemos
+@enduml

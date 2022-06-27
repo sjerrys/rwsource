@@ -1,0 +1,20 @@
+@startuml
+class TrainableDef {
+    + difficulty : float
+    + minBodySize : float
+    + defaultTrainable : bool
+    + steps : int = 1
+    + listPriority : float
+    + icon : string
+    + indent : int
+    + MatchesTag(tag:string) : bool
+    + <<override>> ConfigErrors() : IEnumerable<string>
+}
+class "List`1"<T> {
+}
+Def <|-- TrainableDef
+TrainableDef --> "prerequisites<TrainableDef>" "List`1"
+TrainableDef o-> "tags<string>" "List`1"
+TrainableDef --> "requiredTrainability" TrainabilityDef
+TrainableDef --> "Icon" Texture2D
+@enduml

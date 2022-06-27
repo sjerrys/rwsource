@@ -1,0 +1,8 @@
+@startuml
+enum Tradeability {
+    None,
+    Sellable,
+    Buyable,
+    All,
+}
+@enduml

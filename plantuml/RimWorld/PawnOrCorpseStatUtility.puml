@@ -1,0 +1,5 @@
+@startuml
+class PawnOrCorpseStatUtility <<static>> {
+    + {static} TryGetPawnOrCorpseStat(req:StatRequest, pawnStatGetter:Func<Pawn, float>, pawnDefStatGetter:Func<ThingDef, float>, stat:float) : bool
+}
+@enduml

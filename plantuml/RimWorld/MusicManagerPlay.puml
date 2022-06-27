@@ -1,0 +1,18 @@
+@startuml
+class MusicManagerPlay {
+    + disabled : bool
+    + subtleAmbienceSoundVolumeMultiplier : float = 1f
+    + CurSanitizedVolume : float <<get>>
+    + IsPlaying : bool <<get>>
+    + ForceSilenceFor(time:float) : void
+    + MusicUpdate() : void
+    + ForceStartSong(song:SongDef, ignorePrefsVolume:bool) : void
+    + DebugString() : string
+    + SongSelectionData() : void
+}
+enum MusicManagerState {
+    Normal,
+    Fadeout,
+}
+MusicManagerPlay +-- MusicManagerState
+@enduml

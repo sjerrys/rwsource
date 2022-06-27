@@ -1,0 +1,18 @@
+@startuml
+class GameCondition_ToxicFallout {
+    + <<const>> CheckInterval : int = 3451
+    + <<override>> TransitionTicks : int <<get>>
+    + <<override>> Init() : void
+    + <<override>> GameConditionTick() : void
+    + {static} DoPawnToxicDamage(p:Pawn) : void
+    + <<override>> DoCellSteadyEffects(c:IntVec3, map:Map) : void
+    + <<override>> GameConditionDraw(map:Map) : void
+    + <<override>> SkyTargetLerpFactor(map:Map) : float
+    + <<override>> SkyTarget(map:Map) : SkyTarget?
+    + <<override>> AnimalDensityFactor(map:Map) : float
+    + <<override>> PlantDensityFactor(map:Map) : float
+    + <<override>> AllowEnjoyableOutsideNow(map:Map) : bool
+    + <<override>> SkyOverlays(map:Map) : List<SkyOverlay>
+}
+GameCondition <|-- GameCondition_ToxicFallout
+@enduml

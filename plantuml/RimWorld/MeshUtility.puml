@@ -1,0 +1,9 @@
+@startuml
+class MeshUtility <<static>> {
+    + {static} RemoveVertices(verts:List<Vector3>, tris:List<TriangleIndices>, predicate:Predicate<Vector3>) : void
+    + {static} RemoveUnusedVertices(verts:List<Vector3>, tris:List<TriangleIndices>) : void
+    + {static} Visible(point:Vector3, radius:float, viewCenter:Vector3, viewAngle:float) : bool
+    + {static} VisibleForWorldgen(point:Vector3, radius:float, viewCenter:Vector3, viewAngle:float) : bool
+    + {static} MutateAlpha(input:Color32, newAlpha:byte) : Color32
+}
+@enduml

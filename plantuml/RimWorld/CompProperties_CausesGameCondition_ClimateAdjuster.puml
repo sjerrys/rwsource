@@ -1,0 +1,7 @@
+@startuml
+class CompProperties_CausesGameCondition_ClimateAdjuster {
+    + CompProperties_CausesGameCondition_ClimateAdjuster()
+}
+CompProperties_CausesGameCondition <|-- CompProperties_CausesGameCondition_ClimateAdjuster
+CompProperties_CausesGameCondition_ClimateAdjuster o-> "temperatureOffsetRange" FloatRange
+@enduml

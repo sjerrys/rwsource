@@ -1,0 +1,9 @@
+@startuml
+class TemporaryThingDrawer {
+    + Tick() : void
+    + Draw() : void
+    + AddThing(t:Thing, position:Vector3, ticks:int) : void
+    + ExposeData() : void
+}
+IExposable <|-- TemporaryThingDrawer
+@enduml

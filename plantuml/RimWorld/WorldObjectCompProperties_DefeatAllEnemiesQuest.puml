@@ -1,0 +1,7 @@
+@startuml
+class WorldObjectCompProperties_DefeatAllEnemiesQuest {
+    + WorldObjectCompProperties_DefeatAllEnemiesQuest()
+    + <<override>> ConfigErrors(parentDef:WorldObjectDef) : IEnumerable<string>
+}
+WorldObjectCompProperties <|-- WorldObjectCompProperties_DefeatAllEnemiesQuest
+@enduml

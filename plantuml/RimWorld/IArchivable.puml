@@ -1,0 +1,14 @@
+@startuml
+interface IArchivable {
+    ArchivedLabel : string <<get>>
+    ArchivedTooltip : string <<get>>
+    CreatedTicksGame : int <<get>>
+    CanCullArchivedNow : bool <<get>>
+    OpenArchived() : void
+}
+IExposable <|-- IArchivable
+ILoadReferenceable <|-- IArchivable
+IArchivable --> "ArchivedIcon" Texture
+IArchivable --> "ArchivedIconColor" Color
+IArchivable --> "LookTargets" LookTargets
+@enduml

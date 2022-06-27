@@ -1,0 +1,15 @@
+@startuml
+class ToilEffects <<static>> {
+    + {static} PlaySoundAtStart(toil:Toil, sound:SoundDef) : Toil
+    + {static} PlaySoundAtEnd(toil:Toil, sound:SoundDef) : Toil
+    + {static} PlaySustainerOrSound(toil:Toil, soundDef:SoundDef) : Toil
+    + {static} PlaySustainerOrSound(toil:Toil, soundDefGetter:Func<SoundDef>) : Toil
+    + {static} WithEffect(toil:Toil, effectDef:EffecterDef, ind:TargetIndex) : Toil
+    + {static} WithEffect(toil:Toil, effecterDefGetter:Func<EffecterDef>, ind:TargetIndex) : Toil
+    + {static} WithEffect(toil:Toil, effecterDefGetter:Func<EffecterDef>, thing:Thing) : Toil
+    + {static} WithEffect(toil:Toil, effecterDefGetter:Func<EffecterDef>, effectTargetGetter:Func<LocalTargetInfo>) : Toil
+    + {static} WithProgressBar(toil:Toil, ind:TargetIndex, progressGetter:Func<float>, interpolateBetweenActorAndTarget:bool, offsetZ:float) : Toil
+    + {static} WithProgressBarToilDelay(toil:Toil, ind:TargetIndex, interpolateBetweenActorAndTarget:bool, offsetZ:float) : Toil
+    + {static} WithProgressBarToilDelay(toil:Toil, ind:TargetIndex, toilDuration:int, interpolateBetweenActorAndTarget:bool, offsetZ:float) : Toil
+}
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class WorkGiverDefOf <<static>> {
+    {static} WorkGiverDefOf()
+}
+WorkGiverDefOf --> "Refuel" WorkGiverDef
+WorkGiverDefOf --> "Repair" WorkGiverDef
+WorkGiverDefOf --> "DoBillsMedicalHumanOperation" WorkGiverDef
+@enduml

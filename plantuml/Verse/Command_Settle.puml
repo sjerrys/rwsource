@@ -1,0 +1,5 @@
+@startuml
+class Command_Settle {
+}
+Command_Action <|-- Command_Settle
+@enduml

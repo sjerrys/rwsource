@@ -1,0 +1,10 @@
+@startuml
+class GenStep_ScatterLumpsMineable {
+    + forcedLumpSize : int
+    + maxValue : float
+    + <<override>> SeedPart : int <<get>>
+    + <<override>> Generate(map:Map, parms:GenStepParams) : void
+}
+GenStep_Scatterer <|-- GenStep_ScatterLumpsMineable
+GenStep_ScatterLumpsMineable --> "forcedDefToScatter" ThingDef
+@enduml

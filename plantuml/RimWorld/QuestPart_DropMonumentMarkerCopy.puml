@@ -1,0 +1,16 @@
+@startuml
+class QuestPart_DropMonumentMarkerCopy {
+    + inSignal : string
+    + outSignalResult : string
+    + destroyOrPassToWorldOnCleanup : bool
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> Cleanup() : void
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart <|-- QuestPart_DropMonumentMarkerCopy
+QuestPart_DropMonumentMarkerCopy --> "mapParent" MapParent
+QuestPart_DropMonumentMarkerCopy --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+@enduml

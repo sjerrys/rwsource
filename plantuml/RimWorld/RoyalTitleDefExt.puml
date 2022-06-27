@@ -1,0 +1,8 @@
+@startuml
+class RoyalTitleDefExt <<static>> {
+    + {static} GetNextTitle(currentTitle:RoyalTitleDef, faction:Faction) : RoyalTitleDef
+    + {static} GetPreviousTitle(currentTitle:RoyalTitleDef, faction:Faction) : RoyalTitleDef
+    + {static} GetPreviousTitle_IncludeNonRewardable(currentTitle:RoyalTitleDef, faction:Faction) : RoyalTitleDef
+    + {static} TryInherit(title:RoyalTitleDef, from:Pawn, faction:Faction, outcome:RoyalTitleInheritanceOutcome) : bool
+}
+@enduml

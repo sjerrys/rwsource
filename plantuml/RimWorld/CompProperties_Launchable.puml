@@ -1,0 +1,9 @@
+@startuml
+class CompProperties_Launchable {
+    + requireFuel : bool = true
+    + fixedLaunchDistanceMax : int
+    + CompProperties_Launchable()
+}
+CompProperties <|-- CompProperties_Launchable
+CompProperties_Launchable --> "skyfallerLeaving" ThingDef
+@enduml

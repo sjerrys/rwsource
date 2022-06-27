@@ -1,0 +1,18 @@
+@startuml
+class TaleData_Surroundings {
+    + tile : int
+    + temperature : float
+    + snowDepth : float
+    + roomImpressiveness : float
+    + roomBeauty : float
+    + roomCleanliness : float
+    + Outdoors : bool <<get>>
+    + <<override>> ExposeData() : void
+    + <<override>> GetRules() : IEnumerable<Rule>
+    + {static} GenerateFrom(c:IntVec3, map:Map) : TaleData_Surroundings
+    + {static} GenerateRandom(map:Map) : TaleData_Surroundings
+}
+TaleData <|-- TaleData_Surroundings
+TaleData_Surroundings --> "weather" WeatherDef
+TaleData_Surroundings --> "roomRole" RoomRoleDef
+@enduml

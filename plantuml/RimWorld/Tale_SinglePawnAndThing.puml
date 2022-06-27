@@ -1,0 +1,11 @@
+@startuml
+class Tale_SinglePawnAndThing {
+    + Tale_SinglePawnAndThing()
+    + Tale_SinglePawnAndThing(pawn:Pawn, item:Thing)
+    + <<override>> Concerns(th:Thing) : bool
+    + <<override>> ExposeData() : void
+    + <<override>> GenerateTestData() : void
+}
+Tale_SinglePawn <|-- Tale_SinglePawnAndThing
+Tale_SinglePawnAndThing --> "thingData" TaleData_Thing
+@enduml

@@ -1,0 +1,34 @@
+@startuml
+class WorldMaterials <<static>> {
+    + {static} DebugTileRenderQueue : int
+    + {static} WorldObjectRenderQueue : int
+    + {static} WorldLineRenderQueue : int
+    + {static} DynamicObjectRenderQueue : int
+    + {static} FeatureNameRenderQueue : int
+    {static} WorldMaterials()
+    + {static} MatForFertilityOverlay(fert:float) : Material
+    + {static} MatForTemperature(temp:float) : Material
+    + {static} MatForElevation(elev:float) : Material
+    + {static} MatForRainfallOverlay(rain:float) : Material
+}
+WorldMaterials --> "WorldTerrain" Material
+WorldMaterials --> "WorldIce" Material
+WorldMaterials --> "WorldOcean" Material
+WorldMaterials --> "UngeneratedPlanetParts" Material
+WorldMaterials --> "Rivers" Material
+WorldMaterials --> "RiversBorder" Material
+WorldMaterials --> "Roads" Material
+WorldMaterials --> "MouseTile" Material
+WorldMaterials --> "SelectedTile" Material
+WorldMaterials --> "CurrentMapTile" Material
+WorldMaterials --> "Stars" Material
+WorldMaterials --> "Sun" Material
+WorldMaterials --> "PlanetGlow" Material
+WorldMaterials --> "SmallHills" Material
+WorldMaterials --> "LargeHills" Material
+WorldMaterials --> "Mountains" Material
+WorldMaterials --> "ImpassableMountains" Material
+WorldMaterials --> "VertexColor" Material
+WorldMaterials --> "OverlayModeMatOcean" Material
+WorldMaterials --> "CurTargetingMat" Material
+@enduml

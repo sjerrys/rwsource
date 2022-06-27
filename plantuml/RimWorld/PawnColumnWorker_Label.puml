@@ -1,0 +1,8 @@
+@startuml
+class PawnColumnWorker_Label {
+    + <<override>> DoCell(rect:Rect, pawn:Pawn, table:PawnTable) : void
+    + <<override>> GetMinWidth(table:PawnTable) : int
+    + <<override>> GetOptimalWidth(table:PawnTable) : int
+}
+PawnColumnWorker <|-- PawnColumnWorker_Label
+@enduml

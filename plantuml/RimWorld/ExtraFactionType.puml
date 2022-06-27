@@ -1,0 +1,7 @@
+@startuml
+enum ExtraFactionType {
+    HomeFaction,
+    HostFaction,
+    MiniFaction,
+}
+@enduml

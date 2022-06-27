@@ -1,0 +1,6 @@
+@startuml
+class JobDriver_VisitGrave {
+    + <<override>> TaleParameters() : object[]
+}
+JobDriver_VisitJoyThing <|-- JobDriver_VisitGrave
+@enduml

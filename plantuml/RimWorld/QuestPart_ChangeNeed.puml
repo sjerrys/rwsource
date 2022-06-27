@@ -1,0 +1,16 @@
+@startuml
+class QuestPart_ChangeNeed {
+    + inSignal : string
+    + offset : float
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+    + <<override>> ReplacePawnReferences(replace:Pawn, with:Pawn) : void
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart <|-- QuestPart_ChangeNeed
+QuestPart_ChangeNeed --> "pawn" Pawn
+QuestPart_ChangeNeed --> "need" NeedDef
+QuestPart_ChangeNeed --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+@enduml

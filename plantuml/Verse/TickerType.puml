@@ -1,0 +1,8 @@
+@startuml
+enum TickerType {
+    Never,
+    Normal,
+    Rare,
+    Long,
+}
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class PawnGroupKindDef {
+}
+Def <|-- PawnGroupKindDef
+PawnGroupKindDef o-> "workerClass" Type
+PawnGroupKindDef --> "Worker" PawnGroupKindWorker
+@enduml

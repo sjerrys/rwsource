@@ -1,0 +1,13 @@
+@startuml
+class TransportPodsArrivalAction_AttackSettlement {
+    + TransportPodsArrivalAction_AttackSettlement()
+    + TransportPodsArrivalAction_AttackSettlement(settlement:Settlement, arrivalMode:PawnsArrivalModeDef)
+    + <<override>> ExposeData() : void
+    + <<override>> StillValid(pods:IEnumerable<IThingHolder>, destinationTile:int) : FloatMenuAcceptanceReport
+    + <<override>> ShouldUseLongEvent(pods:List<ActiveDropPodInfo>, tile:int) : bool
+    + <<override>> Arrived(pods:List<ActiveDropPodInfo>, tile:int) : void
+    + {static} CanAttack(pods:IEnumerable<IThingHolder>, settlement:Settlement) : FloatMenuAcceptanceReport
+    + {static} GetFloatMenuOptions(representative:CompLaunchable, pods:IEnumerable<IThingHolder>, settlement:Settlement) : IEnumerable<FloatMenuOption>
+}
+TransportPodsArrivalAction <|-- TransportPodsArrivalAction_AttackSettlement
+@enduml

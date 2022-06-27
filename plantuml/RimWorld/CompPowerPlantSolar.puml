@@ -1,0 +1,6 @@
+@startuml
+class CompPowerPlantSolar {
+    + <<override>> PostDraw() : void
+}
+CompPowerPlant <|-- CompPowerPlantSolar
+@enduml

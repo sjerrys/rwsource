@@ -1,0 +1,23 @@
+@startuml
+class Skyfaller {
+    + ticksToImpact : int
+    + angle : float
+    + shrapnelDirection : float
+    + <<const>> DefaultAngle : float
+    + Skyfaller()
+    + <<override>> ExposeData() : void
+    + <<override>> PostMake() : void
+    + <<override>> SpawnSetup(map:Map, respawningAfterLoad:bool) : void
+    + <<override>> Destroy(mode:DestroyMode) : void
+    + <<override>> DrawAt(drawLoc:Vector3, flip:bool) : void
+    + <<override>> Tick() : void
+    + GetDirectlyHeldThings() : ThingOwner
+    + GetChildHolders(outChildren:List<IThingHolder>) : void
+    + {static} DrawDropSpotShadow(center:Vector3, rot:Rot4, material:Material, shadowSize:Vector2, ticksToImpact:int) : void
+}
+Thing <|-- Skyfaller
+IThingHolder <|-- Skyfaller
+Skyfaller --> "innerContainer" ThingOwner
+Skyfaller --> "Graphic" Graphic
+Skyfaller --> "DrawPos" Vector3
+@enduml

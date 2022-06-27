@@ -1,0 +1,15 @@
+@startuml
+class "DefMap`2"<D,V> {
+    + Count : int <<get>>
+    + DefMap()
+    + ExposeData() : void
+    + SetAll(val:V) : void
+    GetEnumerator() : IEnumerator
+    + GetEnumerator() : IEnumerator<KeyValuePair<D, V>>
+}
+class "IEnumerable`1"<T> {
+}
+IExposable <|-- "DefMap`2"
+"IEnumerable`1" "<KeyValuePair<D, V>>" <|-- "DefMap`2"
+IEnumerable <|-- "DefMap`2"
+@enduml

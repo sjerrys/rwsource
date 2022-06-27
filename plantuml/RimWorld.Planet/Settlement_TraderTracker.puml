@@ -1,0 +1,29 @@
+@startuml
+class Settlement_TraderTracker {
+    + RandomPriceFactorSeed : int <<get>>
+    + EverVisited : bool <<get>>
+    + RestockedSinceLastVisit : bool <<get>>
+    + NextRestockTick : int <<get>>
+    + <<virtual>> TraderName : string <<get>>
+    + <<virtual>> CanTradeNow : bool <<get>>
+    + <<virtual>> TradePriceImprovementOffsetForPlayer : float <<get>>
+    + Settlement_TraderTracker(settlement:Settlement)
+    + <<virtual>> ExposeData() : void
+    + <<virtual>> ColonyThingsWillingToBuy(playerNegotiator:Pawn) : IEnumerable<Thing>
+    + <<virtual>> GiveSoldThingToTrader(toGive:Thing, countToGive:int, playerNegotiator:Pawn) : void
+    + <<virtual>> GiveSoldThingToPlayer(toGive:Thing, countToGive:int, playerNegotiator:Pawn) : void
+    + <<virtual>> TraderTrackerTick() : void
+    + TryDestroyStock() : void
+    + ContainsPawn(p:Pawn) : bool
+    + GetDirectlyHeldThings() : ThingOwner
+    + GetChildHolders(outChildren:List<IThingHolder>) : void
+}
+class "List`1"<T> {
+}
+IThingHolder <|-- Settlement_TraderTracker
+IExposable <|-- Settlement_TraderTracker
+Settlement_TraderTracker --> "settlement" Settlement
+Settlement_TraderTracker --> "ParentHolder" IThingHolder
+Settlement_TraderTracker --> "StockListForReading<Thing>" "List`1"
+Settlement_TraderTracker --> "TraderKind" TraderKindDef
+@enduml

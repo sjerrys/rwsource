@@ -1,0 +1,6 @@
+@startuml
+class Hediff_High {
+    + <<override>> SeverityLabel : string <<get>>
+}
+HediffWithComps <|-- Hediff_High
+@enduml

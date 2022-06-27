@@ -1,0 +1,7 @@
+@startuml
+enum QualityMode {
+    Low,
+    Medium,
+    High,
+}
+@enduml

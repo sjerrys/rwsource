@@ -1,0 +1,11 @@
+@startuml
+class QuestNode_AllSignals {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_AllSignals
+QuestNode_AllSignals --> "inSignals<IEnumerable<string>>" "SlateRef`1"
+QuestNode_AllSignals --> "outSignals<IEnumerable<string>>" "SlateRef`1"
+QuestNode_AllSignals --> "node" QuestNode
+QuestNode_AllSignals --> "signalListenMode<QuestPart.SignalListenMode?>" "SlateRef`1"
+@enduml

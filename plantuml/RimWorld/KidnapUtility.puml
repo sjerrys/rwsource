@@ -1,0 +1,5 @@
+@startuml
+class KidnapUtility <<static>> {
+    + {static} IsKidnapped(pawn:Pawn) : bool
+}
+@enduml

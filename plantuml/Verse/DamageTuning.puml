@@ -1,0 +1,5 @@
+@startuml
+class DamageTuning <<static>> {
+    + <<const>> SpreadDamageChance : float = 0.5f
+}
+@enduml

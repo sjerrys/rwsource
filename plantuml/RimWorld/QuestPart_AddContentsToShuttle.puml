@@ -1,0 +1,18 @@
+@startuml
+class QuestPart_AddContentsToShuttle {
+    + inSignal : string
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> QuestPartReserves(p:Pawn) : bool
+    + <<override>> ReplacePawnReferences(replace:Pawn, with:Pawn) : void
+    + <<override>> Cleanup() : void
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart <|-- QuestPart_AddContentsToShuttle
+QuestPart_AddContentsToShuttle --> "shuttle" Thing
+QuestPart_AddContentsToShuttle --> "Things<Thing>" "IEnumerable`1"
+QuestPart_AddContentsToShuttle --> "Hyperlinks<Dialog_InfoCard.Hyperlink>" "IEnumerable`1"
+QuestPart_AddContentsToShuttle --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+class WorkGiver_RemoveRoof {
+    + <<override>> Prioritized : bool <<get>>
+    + <<override>> PotentialWorkCellsGlobal(pawn:Pawn) : IEnumerable<IntVec3>
+    + <<override>> ShouldSkip(pawn:Pawn, forced:bool) : bool
+    + <<override>> HasJobOnCell(pawn:Pawn, c:IntVec3, forced:bool) : bool
+    + <<override>> JobOnCell(pawn:Pawn, c:IntVec3, forced:bool) : Job
+    + <<override>> GetPriority(pawn:Pawn, t:TargetInfo) : float
+}
+WorkGiver_Scanner <|-- WorkGiver_RemoveRoof
+WorkGiver_RemoveRoof --> "PathEndMode" PathEndMode
+@enduml

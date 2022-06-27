@@ -1,0 +1,13 @@
+@startuml
+class GenGeneric <<static>> {
+    + {static} InvokeGenericMethod(objectToInvoke:object, genericParam:Type, methodName:string, args:object[]) : void
+    + {static} InvokeStaticMethodOnGenericType(genericBase:Type, genericParam:Type, methodName:string, args:object[]) : object
+    + {static} InvokeStaticMethodOnGenericType(genericBase:Type, genericParam:Type, methodName:string) : object
+    + {static} InvokeStaticGenericMethod(baseClass:Type, genericParam:Type, methodName:string) : object
+    + {static} InvokeStaticGenericMethod(baseClass:Type, genericParam:Type, methodName:string, args:object[]) : object
+    + {static} GetStaticPropertyOnGenericType(genericBase:Type, genericParam:Type, propertyName:string) : object
+    + {static} HasGenericDefinition(type:Type, Def:Type) : bool
+    + {static} GetTypeWithGenericDefinition(type:Type, Def:Type) : Type
+}
+GenGeneric o-> "BindingFlagsAll" BindingFlags
+@enduml

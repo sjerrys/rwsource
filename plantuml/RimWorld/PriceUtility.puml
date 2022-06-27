@@ -1,0 +1,6 @@
+@startuml
+class PriceUtility <<static>> {
+    + {static} PawnQualityPriceFactor(pawn:Pawn, explanation:StringBuilder) : float
+    + {static} PawnQualityPriceOffset(pawn:Pawn, explanation:StringBuilder) : float
+}
+@enduml

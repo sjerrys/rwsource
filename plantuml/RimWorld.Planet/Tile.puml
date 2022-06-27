@@ -1,0 +1,30 @@
+@startuml
+class Tile {
+    + <<const>> Invalid : int
+    + elevation : float = 100f
+    + temperature : float = 20f
+    + rainfall : float
+    + swampiness : float
+    + WaterCovered : bool <<get>>
+    + <<override>> ToString() : string
+}
+class RoadLink <<struct>> {
+    + neighbor : int
+}
+class RiverLink <<struct>> {
+    + neighbor : int
+}
+class "List`1"<T> {
+}
+Tile --> "biome" BiomeDef
+Tile --> "hilliness" Hilliness
+Tile --> "feature" WorldFeature
+Tile --> "potentialRoads<RoadLink>" "List`1"
+Tile --> "potentialRivers<RiverLink>" "List`1"
+Tile --> "Roads<RoadLink>" "List`1"
+Tile --> "Rivers<RiverLink>" "List`1"
+Tile +-- RoadLink
+RoadLink --> "road" RoadDef
+Tile +-- RiverLink
+RiverLink --> "river" RiverDef
+@enduml

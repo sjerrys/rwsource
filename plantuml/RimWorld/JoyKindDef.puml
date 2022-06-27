@@ -1,0 +1,10 @@
+@startuml
+class JoyKindDef {
+    + needsThing : bool = true
+    + PawnCanDo(pawn:Pawn) : bool
+}
+class "List`1"<T> {
+}
+Def <|-- JoyKindDef
+JoyKindDef --> "titleRequiredAny<RoyalTitleDef>" "List`1"
+@enduml

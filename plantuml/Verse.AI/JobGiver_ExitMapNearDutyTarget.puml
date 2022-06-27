@@ -1,0 +1,5 @@
+@startuml
+class JobGiver_ExitMapNearDutyTarget {
+}
+JobGiver_ExitMap <|-- JobGiver_ExitMapNearDutyTarget
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class SitePartWorker_SleepingMechanoids {
+    + <<override>> GetArrivedLetterPart(map:Map, preferredLetterDef:LetterDef, lookTargets:LookTargets) : string
+    + <<override>> Notify_GeneratedByQuestGen(part:SitePart, slate:Slate, outExtraDescriptionRules:List<Rule>, outExtraDescriptionConstants:Dictionary<string, string>) : void
+    + <<override>> GetPostProcessedThreatLabel(site:Site, sitePart:SitePart) : string
+    + <<override>> GenerateDefaultParams(myThreatPoints:float, tile:int, faction:Faction) : SitePartParams
+}
+SitePartWorker <|-- SitePartWorker_SleepingMechanoids
+@enduml

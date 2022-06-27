@@ -1,0 +1,8 @@
+@startuml
+class LordToil_TakeWoundedGuest {
+    + <<override>> AllowSatisfyLongNeeds : bool <<get>>
+    + <<override>> AllowSelfTend : bool <<get>>
+    + <<override>> UpdateAllDuties() : void
+}
+LordToil <|-- LordToil_TakeWoundedGuest
+@enduml

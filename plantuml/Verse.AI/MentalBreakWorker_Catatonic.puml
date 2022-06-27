@@ -1,0 +1,7 @@
+@startuml
+class MentalBreakWorker_Catatonic {
+    + <<override>> BreakCanOccur(pawn:Pawn) : bool
+    + <<override>> TryStart(pawn:Pawn, reason:string, causedByMood:bool) : bool
+}
+MentalBreakWorker <|-- MentalBreakWorker_Catatonic
+@enduml

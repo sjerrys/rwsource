@@ -1,0 +1,7 @@
+@startuml
+class CoverGrid <<sealed>> {
+    + CoverGrid(map:Map)
+    + Register(t:Thing) : void
+    + DeRegister(t:Thing) : void
+}
+@enduml

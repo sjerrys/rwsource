@@ -1,0 +1,17 @@
+@startuml
+class MaterialAllocator <<static>> {
+    + {static} nextWarningThreshold : int
+    + {static} Create(material:Material) : Material
+    + {static} Create(shader:Shader) : Material
+    + {static} Destroy(material:Material) : void
+    + {static} TryReport() : void
+    + {static} MaterialWarningThreshold() : int
+    + {static} MaterialReport() : void
+    + {static} MaterialSnapshot() : void
+    + {static} MaterialDelta() : void
+}
+class MaterialInfo <<struct>> {
+    + stackTrace : string
+}
+MaterialAllocator +-- MaterialInfo
+@enduml

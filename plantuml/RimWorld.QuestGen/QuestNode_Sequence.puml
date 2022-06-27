@@ -1,0 +1,8 @@
+@startuml
+class QuestNode_Sequence {
+}
+class "List`1"<T> {
+}
+QuestNode <|-- QuestNode_Sequence
+QuestNode_Sequence o-> "nodes<QuestNode>" "List`1"
+@enduml

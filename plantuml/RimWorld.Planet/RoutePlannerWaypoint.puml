@@ -1,0 +1,8 @@
+@startuml
+class RoutePlannerWaypoint {
+    + <<override>> Label : string <<get>>
+    + <<override>> GetInspectString() : string
+    + <<override>> GetGizmos() : IEnumerable<Gizmo>
+}
+WorldObject <|-- RoutePlannerWaypoint
+@enduml

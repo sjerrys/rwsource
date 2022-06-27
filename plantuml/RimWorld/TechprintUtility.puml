@@ -1,0 +1,9 @@
+@startuml
+class TechprintUtility <<static>> {
+    + {static} GetResearchProjectsNeedingTechprintsNow(faction:Faction, alreadyGeneratedTechprints:List<ThingDef>, maxMarketValue:float) : IEnumerable<ResearchProjectDef>
+    + {static} GetSelectionWeight(project:ResearchProjectDef) : float
+    + {static} TryGetTechprintDefToGenerate(faction:Faction, result:ThingDef, alreadyGeneratedTechprints:List<ThingDef>, maxMarketValue:float) : bool
+    + {static} TechprintsFromFactions() : void
+    + {static} TechprintsFromFactionsChances() : void
+}
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class SignalArgsUtility <<static>> {
+    + {static} TryGetLookTargets(args:SignalArgs, name:string, lookTargets:LookTargets) : bool
+}
+@enduml

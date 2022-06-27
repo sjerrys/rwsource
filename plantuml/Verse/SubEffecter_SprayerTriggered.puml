@@ -1,0 +1,7 @@
+@startuml
+class SubEffecter_SprayerTriggered {
+    + SubEffecter_SprayerTriggered(def:SubEffecterDef, parent:Effecter)
+    + <<override>> SubTrigger(A:TargetInfo, B:TargetInfo) : void
+}
+SubEffecter_Sprayer <|-- SubEffecter_SprayerTriggered
+@enduml

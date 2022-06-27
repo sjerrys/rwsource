@@ -1,0 +1,11 @@
+@startuml
+class QuestPart_RemoveEquipmentFromPawns {
+    + inSignal : string
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> ExposeData() : void
+}
+class "List`1"<T> {
+}
+QuestPart <|-- QuestPart_RemoveEquipmentFromPawns
+QuestPart_RemoveEquipmentFromPawns o-> "pawns<Pawn>" "List`1"
+@enduml

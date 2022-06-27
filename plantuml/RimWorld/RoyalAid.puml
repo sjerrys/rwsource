@@ -1,0 +1,19 @@
+@startuml
+class RoyalAid {
+    + favorCost : int
+    + points : int
+    + pawnCount : int
+    + targetingRange : float
+    + targetingRequireLOS : bool = true
+    + aidDurationDays : float
+    + radius : float
+    + intervalTicks : int
+    + explosionCount : int
+    + warmupTicks : int
+}
+class "List`1"<T> {
+}
+RoyalAid --> "pawnKindDef" PawnKindDef
+RoyalAid --> "explosionRadiusRange" FloatRange
+RoyalAid --> "itemsToDrop<ThingDefCountClass>" "List`1"
+@enduml

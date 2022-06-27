@@ -1,0 +1,7 @@
+@startuml
+class Instruction_LearnConcept {
+    + <<override>> OnActivated() : void
+    + <<override>> LessonUpdate() : void
+}
+Lesson_Instruction <|-- Instruction_LearnConcept
+@enduml

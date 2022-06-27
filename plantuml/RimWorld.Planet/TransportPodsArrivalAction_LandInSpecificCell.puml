@@ -1,0 +1,12 @@
+@startuml
+class TransportPodsArrivalAction_LandInSpecificCell {
+    + TransportPodsArrivalAction_LandInSpecificCell()
+    + TransportPodsArrivalAction_LandInSpecificCell(mapParent:MapParent, cell:IntVec3)
+    + TransportPodsArrivalAction_LandInSpecificCell(mapParent:MapParent, cell:IntVec3, landInShuttle:bool)
+    + <<override>> ExposeData() : void
+    + <<override>> StillValid(pods:IEnumerable<IThingHolder>, destinationTile:int) : FloatMenuAcceptanceReport
+    + <<override>> Arrived(pods:List<ActiveDropPodInfo>, tile:int) : void
+    + {static} CanLandInSpecificCell(pods:IEnumerable<IThingHolder>, mapParent:MapParent) : bool
+}
+TransportPodsArrivalAction <|-- TransportPodsArrivalAction_LandInSpecificCell
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class LordToil_DefendBase {
+    + LordToil_DefendBase(baseCenter:IntVec3)
+    + <<override>> UpdateAllDuties() : void
+}
+LordToil <|-- LordToil_DefendBase
+LordToil_DefendBase --> "baseCenter" IntVec3
+LordToil_DefendBase --> "FlagLoc" IntVec3
+@enduml

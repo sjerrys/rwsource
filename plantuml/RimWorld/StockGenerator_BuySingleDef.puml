@@ -1,0 +1,8 @@
+@startuml
+class StockGenerator_BuySingleDef {
+    + <<override>> GenerateThings(forTile:int, faction:Faction) : IEnumerable<Thing>
+    + <<override>> HandlesThingDef(thingDef:ThingDef) : bool
+}
+StockGenerator <|-- StockGenerator_BuySingleDef
+StockGenerator_BuySingleDef --> "thingDef" ThingDef
+@enduml

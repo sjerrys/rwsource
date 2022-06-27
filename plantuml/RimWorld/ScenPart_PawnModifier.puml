@@ -1,0 +1,10 @@
+@startuml
+class ScenPart_PawnModifier {
+    + <<override>> ExposeData() : void
+    + <<override>> Randomize() : void
+    + <<override>> Notify_NewPawnGenerating(pawn:Pawn, context:PawnGenerationContext) : void
+    + <<override>> Notify_PawnGenerated(pawn:Pawn, context:PawnGenerationContext, redressed:bool) : void
+    + <<override>> PostMapGenerate(map:Map) : void
+}
+ScenPart <|-- ScenPart_PawnModifier
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class WorkGiver_DeepDrill {
+    + <<override>> MaxPathDanger(pawn:Pawn) : Danger
+    + <<override>> ShouldSkip(pawn:Pawn, forced:bool) : bool
+    + <<override>> HasJobOnThing(pawn:Pawn, t:Thing, forced:bool) : bool
+    + <<override>> JobOnThing(pawn:Pawn, t:Thing, forced:bool) : Job
+}
+WorkGiver_Scanner <|-- WorkGiver_DeepDrill
+WorkGiver_DeepDrill --> "PotentialWorkThingRequest" ThingRequest
+WorkGiver_DeepDrill --> "PathEndMode" PathEndMode
+@enduml

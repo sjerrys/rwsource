@@ -1,0 +1,8 @@
+@startuml
+class Dialog_AdvancedGameConfig {
+    + Dialog_AdvancedGameConfig(selTile:int)
+    + <<override>> DoWindowContents(inRect:Rect) : void
+}
+Window <|-- Dialog_AdvancedGameConfig
+Dialog_AdvancedGameConfig --> "InitialSize" Vector2
+@enduml

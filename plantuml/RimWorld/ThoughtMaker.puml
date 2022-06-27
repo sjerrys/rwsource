@@ -1,0 +1,6 @@
+@startuml
+class ThoughtMaker <<static>> {
+    + {static} MakeThought(def:ThoughtDef) : Thought
+    + {static} MakeThought(def:ThoughtDef, forcedStage:int) : Thought_Memory
+}
+@enduml

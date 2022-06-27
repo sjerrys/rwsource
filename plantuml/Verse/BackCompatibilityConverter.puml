@@ -1,0 +1,13 @@
+@startuml
+abstract class BackCompatibilityConverter {
+    + {abstract} AppliesToVersion(majorVer:int, minorVer:int) : bool
+    + {abstract} BackCompatibleDefName(defType:Type, defName:string, forDefInjections:bool, node:XmlNode) : string
+    + {abstract} GetBackCompatibleType(baseType:Type, providedClassName:string, node:XmlNode) : Type
+    + <<virtual>> GetBackCompatibleBodyPartIndex(body:BodyDef, index:int) : int
+    + {abstract} PostExposeData(obj:object) : void
+    + <<virtual>> PostCouldntLoadDef(defName:string) : void
+    + <<virtual>> PreLoadSavegame(loadingVersion:string) : void
+    + <<virtual>> PostLoadSavegame(loadingVersion:string) : void
+    + AppliesToLoadedGameVersion(allowInactiveScribe:bool) : bool
+}
+@enduml

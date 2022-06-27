@@ -1,0 +1,5 @@
+@startuml
+class PawnColumnWorker_Predator {
+}
+PawnColumnWorker_Icon <|-- PawnColumnWorker_Predator
+@enduml

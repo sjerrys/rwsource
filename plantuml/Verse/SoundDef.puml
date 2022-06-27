@@ -1,0 +1,27 @@
+@startuml
+class SoundDef {
+    + sustain : bool
+    + maxVoices : int = 4
+    + maxSimultaneous : int = 3
+    + slot : string = ""
+    + sustainFadeoutTime : float
+    + isUndefined : bool
+    + HasSubSoundsInWorld : bool <<get>>
+    + MaxSimultaneousSamples : int <<get>>
+    + <<override>> ResolveReferences() : void
+    + <<override>> ConfigErrors() : IEnumerable<string>
+    + DoEditWidgets(widgetRow:WidgetRow) : void
+    + {static} Named(defName:string) : SoundDef
+}
+class "List`1"<T> {
+}
+Def <|-- SoundDef
+SoundDef --> "context" SoundContext
+SoundDef o-> "eventNames<string>" "List`1"
+SoundDef --> "priorityMode" VoicePriorityMode
+SoundDef --> "sustainStartSound" SoundDef
+SoundDef --> "sustainStopSound" SoundDef
+SoundDef o-> "subSounds<SubSoundDef>" "List`1"
+SoundDef --> "testSustainer" Sustainer
+SoundDef --> "Duration" FloatRange
+@enduml

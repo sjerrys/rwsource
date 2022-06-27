@@ -1,0 +1,8 @@
+@startuml
+class CompProperties_AnimalInsanityPulser {
+    + radius : int = 25
+    + CompProperties_AnimalInsanityPulser()
+}
+CompProperties <|-- CompProperties_AnimalInsanityPulser
+CompProperties_AnimalInsanityPulser o-> "pulseInterval" IntRange
+@enduml

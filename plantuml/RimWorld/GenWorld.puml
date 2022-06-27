@@ -1,0 +1,7 @@
+@startuml
+class GenWorld <<static>> {
+    + <<const>> MaxRayLength : float = 1500f
+    + {static} MouseTile(snapToExpandableWorldObjects:bool) : int
+    + {static} TileAt(clickPos:Vector2, snapToExpandableWorldObjects:bool) : int
+}
+@enduml

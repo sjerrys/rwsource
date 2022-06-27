@@ -1,0 +1,10 @@
+@startuml
+class LordToil_PrisonerEscape {
+    + <<override>> AllowSatisfyLongNeeds : bool <<get>>
+    + LordToil_PrisonerEscape(dest:IntVec3, sapperThingID:int)
+    + <<override>> UpdateAllDuties() : void
+    + <<override>> LordToilTick() : void
+}
+LordToil_Travel <|-- LordToil_PrisonerEscape
+LordToil_PrisonerEscape --> "FlagLoc" IntVec3
+@enduml

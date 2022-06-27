@@ -1,0 +1,8 @@
+@startuml
+class TerrainThreshold {
+    + min : float
+    + max : float = 1000f
+    + {static} TerrainAtValue(threshes:List<TerrainThreshold>, val:float) : TerrainDef
+}
+TerrainThreshold --> "terrain" TerrainDef
+@enduml

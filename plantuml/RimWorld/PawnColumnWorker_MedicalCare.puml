@@ -1,0 +1,10 @@
+@startuml
+class PawnColumnWorker_MedicalCare {
+    + <<override>> DoHeader(rect:Rect, table:PawnTable) : void
+    + <<override>> GetMinWidth(table:PawnTable) : int
+    + <<override>> GetMaxWidth(table:PawnTable) : int
+    + <<override>> DoCell(rect:Rect, pawn:Pawn, table:PawnTable) : void
+    + <<override>> Compare(a:Pawn, b:Pawn) : int
+}
+PawnColumnWorker <|-- PawnColumnWorker_MedicalCare
+@enduml

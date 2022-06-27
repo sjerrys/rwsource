@@ -1,0 +1,14 @@
+@startuml
+class QuestPart_DestroyThingsOrPassToWorldOnCleanup {
+    + questLookTargets : bool = true
+    + <<override>> Cleanup() : void
+    + <<override>> ExposeData() : void
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart <|-- QuestPart_DestroyThingsOrPassToWorldOnCleanup
+QuestPart_DestroyThingsOrPassToWorldOnCleanup o-> "things<Thing>" "List`1"
+QuestPart_DestroyThingsOrPassToWorldOnCleanup --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+@enduml

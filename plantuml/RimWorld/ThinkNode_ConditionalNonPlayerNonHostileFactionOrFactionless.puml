@@ -1,0 +1,5 @@
+@startuml
+class ThinkNode_ConditionalNonPlayerNonHostileFactionOrFactionless {
+}
+ThinkNode_Conditional <|-- ThinkNode_ConditionalNonPlayerNonHostileFactionOrFactionless
+@enduml

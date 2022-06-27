@@ -1,0 +1,6 @@
+@startuml
+class RegionMaker {
+    + RegionMaker(map:Map)
+    + TryGenerateRegionFrom(root:IntVec3) : Region
+}
+@enduml

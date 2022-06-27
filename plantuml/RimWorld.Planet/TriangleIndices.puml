@@ -1,0 +1,10 @@
+@startuml
+class TriangleIndices <<struct>> {
+    + v1 : int
+    + v2 : int
+    + v3 : int
+    + TriangleIndices(v1:int, v2:int, v3:int)
+    + SharesAnyVertexWith(t:TriangleIndices, otherThan:int) : bool
+    + GetNextOrderedVertex(root:int) : int
+}
+@enduml

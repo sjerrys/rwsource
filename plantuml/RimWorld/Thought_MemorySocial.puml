@@ -1,0 +1,15 @@
+@startuml
+class Thought_MemorySocial {
+    + opinionOffset : float
+    + <<override>> ShouldDiscard : bool <<get>>
+    + <<override>> VisibleInNeedsTab : bool <<get>>
+    + <<virtual>> OpinionOffset() : float
+    + OtherPawn() : Pawn
+    + <<override>> ExposeData() : void
+    + <<override>> Init() : void
+    + <<override>> TryMergeWithExistingMemory(showBubble:bool) : bool
+    + <<override>> GroupsWith(other:Thought) : bool
+}
+Thought_Memory <|-- Thought_MemorySocial
+ISocialThought <|-- Thought_MemorySocial
+@enduml

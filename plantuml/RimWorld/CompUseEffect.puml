@@ -1,0 +1,10 @@
+@startuml
+abstract class CompUseEffect {
+    + <<virtual>> OrderPriority : float <<get>>
+    + <<virtual>> DoEffect(usedBy:Pawn) : void
+    + <<virtual>> ConfirmMessage(p:Pawn) : TaggedString
+    + <<virtual>> SelectedUseOption(p:Pawn) : bool
+    + <<virtual>> CanBeUsedBy(p:Pawn, failReason:string) : bool
+}
+ThingComp <|-- CompUseEffect
+@enduml

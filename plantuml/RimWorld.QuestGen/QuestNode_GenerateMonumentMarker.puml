@@ -1,0 +1,9 @@
+@startuml
+class QuestNode_GenerateMonumentMarker {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GenerateMonumentMarker
+QuestNode_GenerateMonumentMarker --> "storeAs<string>" "SlateRef`1"
+QuestNode_GenerateMonumentMarker --> "sketch<Sketch>" "SlateRef`1"
+@enduml

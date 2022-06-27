@@ -1,0 +1,6 @@
+@startuml
+class DebugOutputsTerrain <<static>> {
+    + {static} Terrains() : void
+    + {static} TerrainAffordances() : void
+}
+@enduml

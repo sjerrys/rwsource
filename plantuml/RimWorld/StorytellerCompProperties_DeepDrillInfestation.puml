@@ -1,0 +1,7 @@
+@startuml
+class StorytellerCompProperties_DeepDrillInfestation {
+    + baseMtbDaysPerDrill : float
+    + StorytellerCompProperties_DeepDrillInfestation()
+}
+StorytellerCompProperties <|-- StorytellerCompProperties_DeepDrillInfestation
+@enduml

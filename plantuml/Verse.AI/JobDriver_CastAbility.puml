@@ -1,0 +1,7 @@
+@startuml
+class JobDriver_CastAbility {
+    + <<override>> Notify_Starting() : void
+    + <<override>> GetReport() : string
+}
+JobDriver_CastVerbOnce <|-- JobDriver_CastAbility
+@enduml

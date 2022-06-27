@@ -1,0 +1,15 @@
+@startuml
+class CameraJumper <<static>> {
+    + {static} TryJumpAndSelect(target:GlobalTargetInfo) : void
+    + {static} TrySelect(target:GlobalTargetInfo) : void
+    + {static} TryJump(target:GlobalTargetInfo) : void
+    + {static} TryJump(cell:IntVec3, map:Map) : void
+    + {static} TryJump(tile:int) : void
+    + {static} CanJump(target:GlobalTargetInfo) : bool
+    + {static} GetAdjustedTarget(target:GlobalTargetInfo) : GlobalTargetInfo
+    + {static} GetWorldTarget(target:GlobalTargetInfo) : GlobalTargetInfo
+    + {static} GetWorldTargetOfMap(map:Map) : GlobalTargetInfo
+    + {static} TryHideWorld() : bool
+    + {static} TryShowWorld() : bool
+}
+@enduml

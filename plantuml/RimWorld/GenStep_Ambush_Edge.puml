@@ -1,0 +1,6 @@
+@startuml
+class GenStep_Ambush_Edge {
+    + <<override>> SeedPart : int <<get>>
+}
+GenStep_Ambush <|-- GenStep_Ambush_Edge
+@enduml

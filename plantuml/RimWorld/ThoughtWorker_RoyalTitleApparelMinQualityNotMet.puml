@@ -1,0 +1,7 @@
+@startuml
+class ThoughtWorker_RoyalTitleApparelMinQualityNotMet {
+    + <<override>> PostProcessLabel(p:Pawn, label:string) : string
+    + <<override>> PostProcessDescription(p:Pawn, description:string) : string
+}
+ThoughtWorker <|-- ThoughtWorker_RoyalTitleApparelMinQualityNotMet
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class ThoughtWorker_Woman {
+}
+ThoughtWorker <|-- ThoughtWorker_Woman
+@enduml

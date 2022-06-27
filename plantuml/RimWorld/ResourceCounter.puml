@@ -1,0 +1,17 @@
+@startuml
+class ResourceCounter <<sealed>> {
+    + Silver : int <<get>>
+    + TotalHumanEdibleNutrition : float <<get>>
+    + {static} ResetDefs() : void
+    + ResourceCounter(map:Map)
+    + ResetResourceCounts() : void
+    + GetCount(rDef:ThingDef) : int
+    + GetCountIn(group:ThingRequestGroup) : int
+    + GetCountIn(cat:ThingCategoryDef) : int
+    + ResourceCounterTick() : void
+    + UpdateResourceCounts() : void
+}
+class "Dictionary`2"<T1,T2> {
+}
+ResourceCounter --> "AllCountedAmounts<ThingDef,int>" "Dictionary`2"
+@enduml

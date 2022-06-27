@@ -1,0 +1,9 @@
+@startuml
+class ModAssemblyHandler {
+    + ModAssemblyHandler(mod:ModContentPack)
+    + ReloadAll() : void
+}
+class "List`1"<T> {
+}
+ModAssemblyHandler o-> "loadedAssemblies<Assembly>" "List`1"
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+class QuestPart_SetAllApparelLocked {
+    + inSignal : string
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> ExposeData() : void
+    + <<override>> ReplacePawnReferences(replace:Pawn, with:Pawn) : void
+}
+class "List`1"<T> {
+}
+QuestPart <|-- QuestPart_SetAllApparelLocked
+QuestPart_SetAllApparelLocked o-> "pawns<Pawn>" "List`1"
+@enduml

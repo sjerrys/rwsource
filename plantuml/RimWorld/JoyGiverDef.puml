@@ -1,0 +1,20 @@
+@startuml
+class JoyGiverDef {
+    + baseChance : float
+    + requireChair : bool = true
+    + desireSit : bool = true
+    + pctPawnsEverDo : float = 1f
+    + unroofedOnly : bool
+    + canDoWhileInBed : bool
+    + <<override>> ConfigErrors() : IEnumerable<string>
+}
+class "List`1"<T> {
+}
+Def <|-- JoyGiverDef
+JoyGiverDef --> "giverClass" Type
+JoyGiverDef --> "thingDefs<ThingDef>" "List`1"
+JoyGiverDef --> "jobDef" JobDef
+JoyGiverDef --> "joyKind" JoyKindDef
+JoyGiverDef o-> "requiredCapacities<PawnCapacityDef>" "List`1"
+JoyGiverDef --> "Worker" JoyGiver
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class SketchResolver_AddWallEdgeThings {
+}
+SketchResolver <|-- SketchResolver_AddWallEdgeThings
+@enduml

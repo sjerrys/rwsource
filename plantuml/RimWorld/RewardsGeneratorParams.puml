@@ -1,0 +1,20 @@
+@startuml
+class RewardsGeneratorParams <<struct>> {
+    + rewardValue : float
+    + chosenPawnSignal : string
+    + giveToCaravan : bool
+    + minGeneratedRewardValue : float
+    + thingRewardDisallowed : bool
+    + thingRewardRequired : bool
+    + thingRewardItemsOnly : bool
+    + allowRoyalFavor : bool
+    + allowGoodwill : bool
+    + populationIntent : float
+    + ConfigError() : string
+    + <<override>> ToString() : string
+}
+class "List`1"<T> {
+}
+RewardsGeneratorParams --> "giverFaction" Faction
+RewardsGeneratorParams --> "disallowedThingDefs<ThingDef>" "List`1"
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+class QuestPart_Message {
+    + inSignal : string
+    + message : string
+    + historical : bool = true
+    + getLookTargetsFromSignal : bool = true
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart <|-- QuestPart_Message
+QuestPart_Message --> "messageType" MessageTypeDef
+QuestPart_Message --> "lookTargets" LookTargets
+QuestPart_Message --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+@enduml

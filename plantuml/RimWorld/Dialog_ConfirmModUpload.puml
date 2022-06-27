@@ -1,0 +1,7 @@
+@startuml
+class Dialog_ConfirmModUpload {
+    + Dialog_ConfirmModUpload(mod:ModMetaData, acceptAction:Action)
+    + <<override>> DoWindowContents(inRect:Rect) : void
+}
+Dialog_MessageBox <|-- Dialog_ConfirmModUpload
+@enduml

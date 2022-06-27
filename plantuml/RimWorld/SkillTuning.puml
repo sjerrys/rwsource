@@ -1,0 +1,25 @@
+@startuml
+class SkillTuning <<static>> {
+    + <<const>> XpPerTickDefault : float = 0.1f
+    + <<const>> XpPerTickRecipeBase : float = 0.1f
+    + <<const>> XpPerTickMining : float = 0.07f
+    + <<const>> XpPerTickMiningDrilling : float = 0.065f
+    + <<const>> XpPerTickResearch : float = 0.035f
+    + <<const>> XpPerTickScanning : float = 0.035f
+    + <<const>> XpPerTickMeditating : float = 0.0180000011f
+    + <<const>> XpPerTickConstruction : float = 0.25f
+    + <<const>> XpPerTickRepair : float = 0.05f
+    + <<const>> XpPerTickDeconstruction : float = 0.25f
+    + <<const>> XpPerTickSmoothingWork : float = 0.1f
+    + <<const>> XpPerTickGrowing : float = 0.085f
+    + <<const>> XpPerTickAnimalGather : float = 0.13f
+    + <<const>> XpPerSecondFiringNonHostile : float = 20f
+    + <<const>> XpPerSecondFiringHostile : float = 170f
+    + <<const>> XpPerSecondMelee : float = 200f
+    + <<const>> XpPerTendHumanlike : float = 500f
+    + <<const>> XpPerTendAnimal : float = 175f
+    + <<const>> XpPerTendFactor_NoMedicine : float = 0.5f
+    + <<const>> XpPerPeaceTalks : float = 6000f
+    + <<const>> XpPerSpeech : float = 0.3f
+}
+@enduml

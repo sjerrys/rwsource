@@ -1,0 +1,5 @@
+@startuml
+class JobGiver_Manhunter {
+}
+ThinkNode_JobGiver <|-- JobGiver_Manhunter
+@enduml

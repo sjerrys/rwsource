@@ -1,0 +1,7 @@
+@startuml
+class ScenPart_Naked {
+    + <<override>> Summary(scen:Scenario) : string
+    + <<override>> DoEditInterface(listing:Listing_ScenEdit) : void
+}
+ScenPart_PawnModifier <|-- ScenPart_Naked
+@enduml

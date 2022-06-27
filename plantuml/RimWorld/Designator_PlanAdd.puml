@@ -1,0 +1,6 @@
+@startuml
+class Designator_PlanAdd {
+    + Designator_PlanAdd()
+}
+Designator_Plan <|-- Designator_PlanAdd
+@enduml

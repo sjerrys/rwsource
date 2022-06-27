@@ -1,0 +1,7 @@
+@startuml
+class ThinkTreeKeyAssigner <<static>> {
+    + {static} Reset() : void
+    + {static} AssignKeys(rootNode:ThinkNode, startHash:int) : void
+    + {static} AssignSingleKey(node:ThinkNode, startHash:int) : void
+}
+@enduml

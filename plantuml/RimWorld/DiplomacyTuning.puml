@@ -1,0 +1,50 @@
+@startuml
+class DiplomacyTuning <<static>> {
+    + <<const>> MaxGoodwill : int = 100
+    + <<const>> MinGoodwill : int
+    + <<const>> BecomeHostileThreshold : int
+    + <<const>> BecomeNeutralThreshold : int = 0
+    + <<const>> BecomeAllyThreshold : int = 75
+    + <<const>> InitialHostileThreshold : int
+    + <<const>> InitialAllyThreshold : int = 75
+    + <<const>> MinGoodwillToRequestAICoreQuest : int = 40
+    + <<const>> RequestAICoreQuestSilverCost : int = 1500
+    + <<const>> Goodwill_NaturalChangeStep : int = 10
+    + <<const>> Goodwill_PerDirectDamageToPawn : float
+    + <<const>> Goodwill_PerDirectDamageToBuilding : float
+    + <<const>> Goodwill_MemberCrushed_Humanlike : int
+    + <<const>> Goodwill_MemberCrushed_Animal : int
+    + <<const>> Goodwill_MemberNeutrallyDied_Humanlike : int
+    + <<const>> Goodwill_MemberNeutrallyDied_Animal : int
+    + <<const>> Goodwill_BodyPartRemovalViolation : int
+    + <<const>> Goodwill_MemberEuthanized : int
+    + <<const>> Goodwill_AttackedSettlement : int
+    + <<const>> Goodwill_MilitaryAidRequested : int
+    + <<const>> Goodwill_TraderRequested : int
+    + <<const>> Goodwill_MemberStripped : int
+    + <<const>> Goodwill_BaseGiftSilverForOneGoodwill : float = 40f
+    + <<const>> Goodwill_GiftPrisonerOfTheirFactionValueFactor : float = 2f
+    + <<const>> Goodwill_TradedMarketValueforOneGoodwill : float = 600f
+    + <<const>> Goodwill_DestroyedMutualEnemyBase : int = 20
+    + <<const>> Goodwill_MemberExitedMapHealthy : int = 12
+    + <<const>> Goodwill_MemberExitedMapHealthy_LeaderBonus : int = 40
+    + <<const>> Goodwill_PerTend : float = 1f
+    + <<const>> Goodwill_MaxTimesTendedTo : int = 10
+    + <<const>> Goodwill_QuestTradeRequestCompleted : int = 12
+    + <<const>> VisitorGiftChanceBase : float = 0.25f
+}
+DiplomacyTuning o-> "ForcedStartingEnemyGoodwillRange" IntRange
+DiplomacyTuning o-> "RansomFeeMarketValueFactorRange" FloatRange
+DiplomacyTuning o-> "Goodwill_PerQuadrumFromSettlementProximity" SimpleCurve
+DiplomacyTuning o-> "GiftGoodwillFactorRelationsCurve" SimpleCurve
+DiplomacyTuning o-> "Goodwill_PeaceTalksDisasterRange" IntRange
+DiplomacyTuning o-> "Goodwill_PeaceTalksBackfireRange" IntRange
+DiplomacyTuning o-> "Goodwill_PeaceTalksSuccessRange" IntRange
+DiplomacyTuning o-> "Goodwill_PeaceTalksTriumphRange" IntRange
+DiplomacyTuning o-> "RoyalFavor_PeaceTalksSuccessRange" IntRange
+DiplomacyTuning o-> "VisitorGiftChanceFactorFromPlayerWealthCurve" SimpleCurve
+DiplomacyTuning o-> "VisitorGiftChanceFactorFromGoodwillCurve" SimpleCurve
+DiplomacyTuning o-> "VisitorGiftTotalMarketValueRangeBase" FloatRange
+DiplomacyTuning o-> "VisitorGiftTotalMarketValueFactorFromPlayerWealthCurve" SimpleCurve
+DiplomacyTuning o-> "RequestedMilitaryAidPointsRange" FloatRange
+@enduml

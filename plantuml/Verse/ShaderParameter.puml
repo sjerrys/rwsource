@@ -1,0 +1,13 @@
+@startuml
+class ShaderParameter {
+    + Apply(mat:Material) : void
+    + LoadDataFromXmlCustom(xmlRoot:XmlNode) : void
+}
+enum Type {
+    Float,
+    Vector,
+    Matrix,
+    Texture,
+}
+ShaderParameter +-- Type
+@enduml

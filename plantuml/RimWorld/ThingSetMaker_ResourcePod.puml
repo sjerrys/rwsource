@@ -1,0 +1,6 @@
+@startuml
+class ThingSetMaker_ResourcePod {
+    + {static} RandomPodContentsDef(mustBeResource:bool) : ThingDef
+}
+ThingSetMaker <|-- ThingSetMaker_ResourcePod
+@enduml

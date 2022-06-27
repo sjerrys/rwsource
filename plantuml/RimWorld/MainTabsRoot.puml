@@ -1,0 +1,10 @@
+@startuml
+class MainTabsRoot {
+    + HandleLowPriorityShortcuts() : void
+    + EscapeCurrentTab(playSound:bool) : void
+    + SetCurrentTab(tab:MainButtonDef, playSound:bool) : void
+    + ToggleTab(newTab:MainButtonDef, playSound:bool) : void
+    + Notify_SelectedObjectDespawned() : void
+}
+MainTabsRoot --> "OpenTab" MainButtonDef
+@enduml

@@ -1,0 +1,32 @@
+@startuml
+class ApparelProperties {
+    + wornGraphicPath : string = ""
+    + useWornGraphicMask : bool
+    + canBeGeneratedToSatisfyWarmth : bool = true
+    + wearPerDay : float = 0.4f
+    + careIfWornByCorpse : bool = true
+    + careIfDamaged : bool = true
+    + hatRenderedFrontOfFace : bool
+    + shellRenderedBehindHead : bool
+    + useDeflectMetalEffect : bool
+    + scoreOffset : float
+    + HumanBodyCoverage : float <<get>>
+    + CorrectGenderForWearing(wearerGender:Gender) : bool
+    + {static} ResetStaticData() : void
+    + ConfigErrors(parentDef:ThingDef) : IEnumerable<string>
+    + PostLoadSpecial(thingDef:ThingDef) : void
+    + CoversBodyPart(partRec:BodyPartRecord) : bool
+    + GetCoveredOuterPartsString(body:BodyDef) : string
+    + GetLayersString() : string
+    + GetInterferingBodyPartGroups(body:BodyDef) : BodyPartGroupDef[]
+}
+class "List`1"<T> {
+}
+ApparelProperties o-> "bodyPartGroups<BodyPartGroupDef>" "List`1"
+ApparelProperties o-> "layers<ApparelLayerDef>" "List`1"
+ApparelProperties --> "wornGraphicData" WornGraphicData
+ApparelProperties o-> "tags<string>" "List`1"
+ApparelProperties --> "defaultOutfitTags<string>" "List`1"
+ApparelProperties --> "gender" Gender
+ApparelProperties --> "LastLayer" ApparelLayerDef
+@enduml

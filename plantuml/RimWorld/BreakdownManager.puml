@@ -1,0 +1,15 @@
+@startuml
+class BreakdownManager {
+    + <<const>> CheckIntervalTicks : int = 1041
+    + BreakdownManager(map:Map)
+    + Register(c:CompBreakdownable) : void
+    + Deregister(c:CompBreakdownable) : void
+    + <<override>> MapComponentTick() : void
+    + Notify_BrokenDown(thing:Thing) : void
+    + Notify_Repaired(thing:Thing) : void
+}
+class "HashSet`1"<T> {
+}
+MapComponent <|-- BreakdownManager
+BreakdownManager o-> "brokenDownThings<Thing>" "HashSet`1"
+@enduml

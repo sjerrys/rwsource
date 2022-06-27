@@ -1,0 +1,10 @@
+@startuml
+class DebugCellDrawer <<sealed>> {
+    + FlashCell(c:IntVec3, colorPct:float, text:string, duration:int) : void
+    + FlashCell(c:IntVec3, mat:Material, text:string, duration:int) : void
+    + FlashLine(a:IntVec3, b:IntVec3, duration:int, color:SimpleColor) : void
+    + DebugDrawerUpdate() : void
+    + DebugDrawerTick() : void
+    + DebugDrawerOnGUI() : void
+}
+@enduml

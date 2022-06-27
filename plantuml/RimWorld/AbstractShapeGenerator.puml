@@ -1,0 +1,5 @@
+@startuml
+class AbstractShapeGenerator <<static>> {
+    + {static} Generate(width:int, height:int, horizontalSymmetry:bool, verticalSymmetry:bool, allTruesMustBeConnected:bool, allowEnclosedFalses:bool, preferOutlines:bool, wipedCircleRadiusPct:float) : bool[,]
+}
+@enduml

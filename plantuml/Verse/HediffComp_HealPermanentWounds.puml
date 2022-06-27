@@ -1,0 +1,10 @@
+@startuml
+class HediffComp_HealPermanentWounds {
+    + <<override>> CompPostMake() : void
+    + <<override>> CompPostTick(severityAdjustment:float) : void
+    + <<override>> CompExposeData() : void
+    + <<override>> CompDebugString() : string
+}
+HediffComp <|-- HediffComp_HealPermanentWounds
+HediffComp_HealPermanentWounds --> "Props" HediffCompProperties_HealPermanentWounds
+@enduml

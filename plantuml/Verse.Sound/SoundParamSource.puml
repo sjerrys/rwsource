@@ -1,0 +1,6 @@
+@startuml
+abstract class SoundParamSource {
+    + {abstract} Label : string <<get>>
+    + {abstract} ValueFor(samp:Sample) : float
+}
+@enduml

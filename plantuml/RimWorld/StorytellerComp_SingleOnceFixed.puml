@@ -1,0 +1,6 @@
+@startuml
+class StorytellerComp_SingleOnceFixed {
+    + <<override>> MakeIntervalIncidents(target:IIncidentTarget) : IEnumerable<FiringIncident>
+}
+StorytellerComp <|-- StorytellerComp_SingleOnceFixed
+@enduml

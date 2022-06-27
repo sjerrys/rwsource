@@ -1,0 +1,18 @@
+@startuml
+class TraitSet {
+    + HungerRateFactor : float <<get>>
+    + TraitSet(pawn:Pawn)
+    + ExposeData() : void
+    + GainTrait(trait:Trait) : void
+    + HasTrait(tDef:TraitDef) : bool
+    + GetTrait(tDef:TraitDef) : Trait
+    + DegreeOfTrait(tDef:TraitDef) : int
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+IExposable <|-- TraitSet
+TraitSet o-> "allTraits<Trait>" "List`1"
+TraitSet --> "TheOnlyAllowedMentalBreaks<MentalBreakDef>" "IEnumerable`1"
+@enduml

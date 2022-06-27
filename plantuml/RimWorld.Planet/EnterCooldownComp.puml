@@ -1,0 +1,17 @@
+@startuml
+class EnterCooldownComp {
+    + Active : bool <<get>>
+    + BlocksEntering : bool <<get>>
+    + TicksLeft : int <<get>>
+    + DaysLeft : float <<get>>
+    + Start(durationDays:float?) : void
+    + Stop() : void
+    + <<override>> CompTick() : void
+    + <<override>> PostMapGenerate() : void
+    + <<override>> PostMyMapRemoved() : void
+    + <<override>> PostExposeData() : void
+    + <<override>> GetGizmos() : IEnumerable<Gizmo>
+}
+WorldObjectComp <|-- EnterCooldownComp
+EnterCooldownComp --> "Props" WorldObjectCompProperties_EnterCooldown
+@enduml

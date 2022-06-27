@@ -1,0 +1,9 @@
+@startuml
+class CompProperties_Shearable {
+    + shearIntervalDays : int
+    + woolAmount : int = 1
+    + CompProperties_Shearable()
+}
+CompProperties <|-- CompProperties_Shearable
+CompProperties_Shearable --> "woolDef" ThingDef
+@enduml

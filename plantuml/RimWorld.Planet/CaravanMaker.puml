@@ -1,0 +1,5 @@
+@startuml
+class CaravanMaker <<static>> {
+    + {static} MakeCaravan(pawns:IEnumerable<Pawn>, faction:Faction, startingTile:int, addToWorldPawnsIfNotAlready:bool) : Caravan
+}
+@enduml

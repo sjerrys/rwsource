@@ -1,0 +1,29 @@
+@startuml
+class Reward_Items {
+    + <<override>> TotalMarketValue : float <<get>>
+    + <<override>> Notify_Used() : void
+    + <<override>> Notify_PreCleanup() : void
+    + <<override>> InitFromValue(rewardValue:float, parms:RewardsGeneratorParams, valueActuallyUsed:float) : void
+    + <<override>> GenerateQuestParts(index:int, parms:RewardsGeneratorParams, customLetterLabel:string, customLetterText:string, customLetterLabelRules:RulePack, customLetterTextRules:RulePack) : IEnumerable<QuestPart>
+    + <<override>> GetDescription(parms:RewardsGeneratorParams) : string
+    + <<override>> ToString() : string
+    + <<override>> ExposeData() : void
+}
+class RememberedItem <<struct>> {
+    + stackCount : int
+    + label : string
+    + RememberedItem(thing:ThingStuffPairWithQuality, stackCount:int, label:string)
+    + ExposeData() : void
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+Reward <|-- Reward_Items
+Reward_Items o-> "items<Thing>" "List`1"
+Reward_Items --> "ItemsListForReading<Thing>" "List`1"
+Reward_Items --> "StackElements<GenUI.AnonymousStackElement>" "IEnumerable`1"
+Reward_Items +-- RememberedItem
+IExposable <|-- RememberedItem
+RememberedItem --> "thing" ThingStuffPairWithQuality
+@enduml

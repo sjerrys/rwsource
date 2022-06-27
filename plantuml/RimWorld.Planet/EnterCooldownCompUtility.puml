@@ -1,0 +1,8 @@
+@startuml
+class EnterCooldownCompUtility <<static>> {
+    + {static} EnterCooldownBlocksEntering(worldObject:MapParent) : bool
+    + {static} EnterCooldownDaysLeft(worldObject:MapParent) : float
+    + {static} EnterCooldownHoursLeft(worldObject:MapParent) : float
+    + {static} EnterCooldownTicksLeft(worldObject:MapParent) : int
+}
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class ThingSetMaker_SubTree {
+}
+ThingSetMaker <|-- ThingSetMaker_SubTree
+ThingSetMaker_SubTree --> "def" ThingSetMakerDef
+@enduml

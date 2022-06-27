@@ -1,0 +1,19 @@
+@startuml
+class ThingDefCount <<struct>> {
+    + Count : int <<get>>
+    + Label : string <<get>>
+    + LabelCap : string <<get>>
+    + ThingDefCount(thingDef:ThingDef, count:int)
+    + ExposeData() : void
+    + WithCount(newCount:int) : ThingDefCount
+    + <<override>> Equals(obj:object) : bool
+    + Equals(other:ThingDefCount) : bool
+    + <<override>> GetHashCode() : int
+    + <<override>> ToString() : string
+}
+class "IEquatable`1"<T> {
+}
+"IEquatable`1" "<ThingDefCount>" <|-- ThingDefCount
+IExposable <|-- ThingDefCount
+ThingDefCount --> "ThingDef" ThingDef
+@enduml

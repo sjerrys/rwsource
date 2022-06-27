@@ -1,0 +1,18 @@
+@startuml
+class WorkshopItemHook {
+    + Name : string <<get>>
+    + Description : string <<get>>
+    + PreviewImagePath : string <<get>>
+    + MayHaveAuthorNotCurrentUser : bool <<get>>
+    + WorkshopItemHook(owner:WorkshopUploadable)
+    + PrepareForWorkshopUpload() : void
+}
+class "IList`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+WorkshopItemHook --> "PublishedFileId" PublishedFileId_t
+WorkshopItemHook --> "Tags<string>" "IList`1"
+WorkshopItemHook --> "Directory" DirectoryInfo
+WorkshopItemHook --> "SupportedVersions<System.Version>" "IEnumerable`1"
+@enduml

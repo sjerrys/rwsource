@@ -1,0 +1,5 @@
+@startuml
+class JobGiver_ExtinguishSelf {
+}
+ThinkNode_JobGiver <|-- JobGiver_ExtinguishSelf
+@enduml

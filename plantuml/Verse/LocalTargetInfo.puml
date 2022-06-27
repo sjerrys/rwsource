@@ -1,0 +1,24 @@
+@startuml
+class LocalTargetInfo <<struct>> {
+    + IsValid : bool <<get>>
+    + HasThing : bool <<get>>
+    + ThingDestroyed : bool <<get>>
+    + Label : string <<get>>
+    + LocalTargetInfo(thing:Thing)
+    + LocalTargetInfo(cell:IntVec3)
+    + ToTargetInfo(map:Map) : TargetInfo
+    + ToGlobalTargetInfo(map:Map) : GlobalTargetInfo
+    + <<override>> Equals(obj:object) : bool
+    + Equals(other:LocalTargetInfo) : bool
+    + <<override>> GetHashCode() : int
+    + <<override>> ToString() : string
+}
+class "IEquatable`1"<T> {
+}
+"IEquatable`1" "<LocalTargetInfo>" <|-- LocalTargetInfo
+LocalTargetInfo --> "Thing" Thing
+LocalTargetInfo --> "Pawn" Pawn
+LocalTargetInfo --> "Invalid" LocalTargetInfo
+LocalTargetInfo --> "Cell" IntVec3
+LocalTargetInfo --> "CenterVector3" Vector3
+@enduml

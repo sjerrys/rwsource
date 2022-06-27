@@ -1,0 +1,30 @@
+@startuml
+class GenTypes <<static>> {
+    + {static} AllTypesWithAttribute() : IEnumerable<Type>
+    + {static} AllSubclasses(baseType:Type) : IEnumerable<Type>
+    + {static} AllSubclassesNonAbstract(baseType:Type) : IEnumerable<Type>
+    + {static} AllLeafSubclasses(baseType:Type) : IEnumerable<Type>
+    + {static} InstantiableDescendantsAndSelf(baseType:Type) : IEnumerable<Type>
+    + {static} GetTypeInAnyAssembly(typeName:string, namespaceIfAmbiguous:string) : Type
+    + {static} GetTypeNameWithoutIgnoredNamespaces(type:Type) : string
+    + {static} IsCustomType(type:Type) : bool
+}
+class TypeCacheKey <<struct>> {
+    + typeName : string
+    + namespaceIfAmbiguous : string
+    + <<override>> GetHashCode() : int
+    + Equals(other:TypeCacheKey) : bool
+    + <<override>> Equals(obj:object) : bool
+    + TypeCacheKey(typeName:string, namespaceIfAmbigous:string)
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+class "IEquatable`1"<T> {
+}
+GenTypes o-> "IgnoredNamespaceNames<string>" "List`1"
+GenTypes --> "AllTypes<Type>" "IEnumerable`1"
+GenTypes +-- TypeCacheKey
+"IEquatable`1" "<TypeCacheKey>" <|-- TypeCacheKey
+@enduml

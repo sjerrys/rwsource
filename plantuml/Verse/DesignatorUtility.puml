@@ -1,0 +1,9 @@
+@startuml
+class DesignatorUtility <<static>> {
+    + {static} FindAllowedDesignator() : Designator
+    + {static} RenderHighlightOverSelectableCells(designator:Designator, dragCells:List<IntVec3>) : void
+    + {static} RenderHighlightOverSelectableThings(designator:Designator, dragCells:List<IntVec3>) : void
+}
+DesignatorUtility o-> "DragHighlightCellMat" Material
+DesignatorUtility o-> "DragHighlightThingMat" Material
+@enduml

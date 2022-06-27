@@ -1,0 +1,5 @@
+@startuml
+class ThingIDMaker <<static>> {
+    + {static} GiveIDTo(t:Thing) : void
+}
+@enduml

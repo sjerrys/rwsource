@@ -1,0 +1,7 @@
+@startuml
+class SiteTuning <<static>> {
+}
+SiteTuning o-> "QuestSiteTimeoutDaysRange" IntRange
+SiteTuning o-> "SitePointRandomFactorRange" FloatRange
+SiteTuning o-> "ThreatPointsToSiteThreatPointsCurve" SimpleCurve
+@enduml

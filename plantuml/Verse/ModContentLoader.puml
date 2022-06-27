@@ -1,0 +1,7 @@
+@startuml
+class "ModContentLoader`1"<T> <<static>> {
+    + {static} IsAcceptableExtension(extension:string) : bool
+    + {static} LoadAllForMod(mod:ModContentPack) : IEnumerable<Pair<string, LoadedContentItem<T>>>
+    + {static} LoadItem(file:VirtualFile) : LoadedContentItem<T>
+}
+@enduml

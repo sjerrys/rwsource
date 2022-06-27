@@ -1,0 +1,30 @@
+@startuml
+class SketchThing {
+    + stackCount : int
+    + quality : QualityCategory?
+    + hitPoints : int?
+    + <<override>> Label : string <<get>>
+    + <<override>> LabelCap : string <<get>>
+    + <<override>> SpawnOrder : float <<get>>
+    + MaxHitPoints : int <<get>>
+    + Instantiate() : Thing
+    + <<override>> DrawGhost(at:IntVec3, color:Color) : void
+    + GetSameSpawned(at:IntVec3, map:Map) : Thing
+    + <<override>> IsSameSpawned(at:IntVec3, map:Map) : bool
+    + <<override>> GetSpawnedBlueprintOrFrame(at:IntVec3, map:Map) : Thing
+    + <<override>> IsSpawningBlocked(at:IntVec3, map:Map, thingToIgnore:Thing, wipeIfCollides:bool) : bool
+    + <<override>> IsSpawningBlockedPermanently(at:IntVec3, map:Map, thingToIgnore:Thing, wipeIfCollides:bool) : bool
+    + <<override>> CanBuildOnTerrain(at:IntVec3, map:Map) : bool
+    + <<override>> Spawn(at:IntVec3, map:Map, faction:Faction, spawnMode:Sketch.SpawnMode, wipeIfCollides:bool, spawnedThings:List<Thing>, dormant:bool) : bool
+    + <<override>> SameForSubtracting(other:SketchEntity) : bool
+    + <<override>> DeepCopy() : SketchEntity
+    + <<override>> ExposeData() : void
+}
+SketchBuildable <|-- SketchThing
+SketchThing --> "def" ThingDef
+SketchThing --> "stuff" ThingDef
+SketchThing --> "rot" Rot4
+SketchThing --> "Buildable" BuildableDef
+SketchThing --> "Stuff" ThingDef
+SketchThing --> "OccupiedRect" CellRect
+@enduml

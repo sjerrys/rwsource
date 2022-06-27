@@ -1,0 +1,22 @@
+@startuml
+class RegionGrid <<sealed>> {
+    + RegionGrid(map:Map)
+    + GetValidRegionAt(c:IntVec3) : Region
+    + GetValidRegionAt_NoRebuild(c:IntVec3) : Region
+    + GetRegionAt_NoRebuild_InvalidAllowed(c:IntVec3) : Region
+    + SetRegionAt(c:IntVec3, reg:Region) : void
+    + UpdateClean() : void
+    + DebugDraw() : void
+}
+class "List`1"<T> {
+}
+class "HashSet`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+RegionGrid o-> "allRooms<Room>" "List`1"
+RegionGrid o-> "allRegionsYielded<Region>" "HashSet`1"
+RegionGrid o-> "drawnRegions<Region>" "HashSet`1"
+RegionGrid --> "AllRegions_NoRebuild_InvalidAllowed<Region>" "IEnumerable`1"
+RegionGrid --> "AllRegions<Region>" "IEnumerable`1"
+@enduml

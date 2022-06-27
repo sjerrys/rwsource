@@ -1,0 +1,20 @@
+@startuml
+class QuestPart_InitiateTradeRequest {
+    + inSignal : string
+    + requestedCount : int
+    + requestDuration : int
+    + keepAfterQuestEnds : bool
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> Cleanup() : void
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart <|-- QuestPart_InitiateTradeRequest
+QuestPart_InitiateTradeRequest --> "settlement" Settlement
+QuestPart_InitiateTradeRequest --> "requestedThingDef" ThingDef
+QuestPart_InitiateTradeRequest --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+QuestPart_InitiateTradeRequest --> "InvolvedFactions<Faction>" "IEnumerable`1"
+QuestPart_InitiateTradeRequest --> "Hyperlinks<Dialog_InfoCard.Hyperlink>" "IEnumerable`1"
+@enduml

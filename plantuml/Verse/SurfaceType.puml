@@ -1,0 +1,7 @@
+@startuml
+enum SurfaceType {
+    None,
+    Item,
+    Eat,
+}
+@enduml

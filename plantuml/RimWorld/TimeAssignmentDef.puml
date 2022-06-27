@@ -1,0 +1,11 @@
+@startuml
+class TimeAssignmentDef {
+    + allowRest : bool = true
+    + allowJoy : bool = true
+    + cachedHighlightNotSelectedTag : string
+    + <<override>> PostLoad() : void
+}
+Def <|-- TimeAssignmentDef
+TimeAssignmentDef --> "color" Color
+TimeAssignmentDef --> "ColorTexture" Texture2D
+@enduml

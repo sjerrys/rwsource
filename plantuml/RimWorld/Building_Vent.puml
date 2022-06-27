@@ -1,0 +1,9 @@
+@startuml
+class Building_Vent {
+    + <<override>> SpawnSetup(map:Map, respawningAfterLoad:bool) : void
+    + <<override>> TickRare() : void
+    + <<override>> GetInspectString() : string
+}
+Building_TempControl <|-- Building_Vent
+Building_Vent --> "Graphic" Graphic
+@enduml

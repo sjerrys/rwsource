@@ -1,0 +1,6 @@
+@startuml
+class WeaponTraitWorker_PsyfocusOnKill {
+    + <<override>> Notify_KilledPawn(pawn:Pawn) : void
+}
+WeaponTraitWorker <|-- WeaponTraitWorker_PsyfocusOnKill
+@enduml

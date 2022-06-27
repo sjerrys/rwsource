@@ -1,0 +1,6 @@
+@startuml
+class WorkGiver_Deconstruct {
+    + <<override>> HasJobOnThing(pawn:Pawn, t:Thing, forced:bool) : bool
+}
+WorkGiver_RemoveBuilding <|-- WorkGiver_Deconstruct
+@enduml

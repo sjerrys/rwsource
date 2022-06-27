@@ -1,0 +1,6 @@
+@startuml
+class CompProperties_AbilityWordOfLove {
+    + CompProperties_AbilityWordOfLove()
+}
+CompProperties_EffectWithDest <|-- CompProperties_AbilityWordOfLove
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class QuestPart_DelayRandom {
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+}
+QuestPart_Delay <|-- QuestPart_DelayRandom
+QuestPart_DelayRandom --> "delayTicksRange" IntRange
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class JobGiver_WanderNearMaster {
+    + JobGiver_WanderNearMaster()
+}
+JobGiver_Wander <|-- JobGiver_WanderNearMaster
+@enduml

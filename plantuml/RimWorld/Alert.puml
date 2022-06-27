@@ -1,0 +1,18 @@
+@startuml
+abstract class Alert {
+    + <<const>> Width : float = 154f
+    + <<const>> InfoRectWidth : float = 330f
+    + Active : bool <<get>>
+    + Label : string <<get>>
+    + Height : float <<get>>
+    + {abstract} GetReport() : AlertReport
+    + <<virtual>> GetExplanation() : TaggedString
+    + <<virtual>> GetLabel() : string
+    + Notify_Started() : void
+    + Recalculate() : void
+    + <<virtual>> AlertActiveUpdate() : void
+    + <<virtual>> DrawAt(topY:float, minimized:bool) : Rect
+    + DrawInfoPane() : void
+}
+Alert --> "Priority" AlertPriority
+@enduml

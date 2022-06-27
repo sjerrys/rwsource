@@ -1,0 +1,15 @@
+@startuml
+class DrugPolicyEntry {
+    + allowedForAddiction : bool
+    + allowedForJoy : bool
+    + allowScheduled : bool
+    + daysFrequency : float = 1f
+    + onlyIfMoodBelow : float = 1f
+    + onlyIfJoyBelow : float = 1f
+    + takeToInventory : int
+    + takeToInventoryTempBuffer : string
+    + ExposeData() : void
+}
+IExposable <|-- DrugPolicyEntry
+DrugPolicyEntry --> "drug" ThingDef
+@enduml

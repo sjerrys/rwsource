@@ -1,0 +1,10 @@
+@startuml
+class GenFile <<static>> {
+    + {static} TextFromRawFile(filePath:string) : string
+    + {static} TextFromResourceFile(filePath:string) : string
+    + {static} GetTextWithoutBOM(textAsset:TextAsset) : string
+    + {static} LinesFromFile(filePath:string) : IEnumerable<string>
+    + {static} DirectoryCopy(sourceDirName:string, destDirName:string, copySubDirs:bool, useLinuxLineEndings:bool) : void
+    + {static} SanitizedFileName(fileName:string) : string
+}
+@enduml

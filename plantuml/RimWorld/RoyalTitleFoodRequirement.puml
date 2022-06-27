@@ -1,0 +1,11 @@
+@startuml
+class RoyalTitleFoodRequirement <<struct>> {
+    + Defined : bool <<get>>
+    + Acceptable(food:ThingDef) : bool
+}
+class "List`1"<T> {
+}
+RoyalTitleFoodRequirement --> "minQuality" FoodPreferability
+RoyalTitleFoodRequirement --> "allowedTypes" FoodTypeFlags
+RoyalTitleFoodRequirement --> "allowedDefs<ThingDef>" "List`1"
+@enduml

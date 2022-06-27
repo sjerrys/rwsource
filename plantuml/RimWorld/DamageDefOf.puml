@@ -1,0 +1,27 @@
+@startuml
+class DamageDefOf <<static>> {
+    {static} DamageDefOf()
+}
+DamageDefOf --> "Cut" DamageDef
+DamageDefOf --> "Crush" DamageDef
+DamageDefOf --> "Arrow" DamageDef
+DamageDefOf --> "Blunt" DamageDef
+DamageDefOf --> "Stab" DamageDef
+DamageDefOf --> "Bullet" DamageDef
+DamageDefOf --> "Bomb" DamageDef
+DamageDefOf --> "Scratch" DamageDef
+DamageDefOf --> "TornadoScratch" DamageDef
+DamageDefOf --> "Bite" DamageDef
+DamageDefOf --> "Flame" DamageDef
+DamageDefOf --> "Burn" DamageDef
+DamageDefOf --> "SurgicalCut" DamageDef
+DamageDefOf --> "ExecutionCut" DamageDef
+DamageDefOf --> "Frostbite" DamageDef
+DamageDefOf --> "Stun" DamageDef
+DamageDefOf --> "EMP" DamageDef
+DamageDefOf --> "Extinguish" DamageDef
+DamageDefOf --> "Smoke" DamageDef
+DamageDefOf --> "Deterioration" DamageDef
+DamageDefOf --> "Mining" DamageDef
+DamageDefOf --> "Rotting" DamageDef
+@enduml

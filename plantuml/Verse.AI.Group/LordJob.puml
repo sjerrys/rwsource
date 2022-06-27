@@ -1,0 +1,29 @@
+@startuml
+abstract class LordJob {
+    + <<virtual>> LostImportantReferenceDuringLoading : bool <<get>>
+    + <<virtual>> AllowStartNewGatherings : bool <<get>>
+    + <<virtual>> NeverInRestraints : bool <<get>>
+    + <<virtual>> GuiltyOnDowned : bool <<get>>
+    + <<virtual>> CanBlockHostileVisitors : bool <<get>>
+    + <<virtual>> AddFleeToil : bool <<get>>
+    + <<virtual>> OrganizerIsStartingPawn : bool <<get>>
+    + <<virtual>> KeepExistingWhileHasAnyBuilding : bool <<get>>
+    + <<virtual>> AlwaysShowWeapon : bool <<get>>
+    + <<virtual>> IsCaravanSendable : bool <<get>>
+    + <<virtual>> RemoveDownedPawns : bool <<get>>
+    + {abstract} CreateGraph() : StateGraph
+    + <<virtual>> LordJobTick() : void
+    + <<virtual>> ExposeData() : void
+    + <<virtual>> Cleanup() : void
+    + <<virtual>> Notify_PawnAdded(p:Pawn) : void
+    + <<virtual>> Notify_PawnLost(p:Pawn, condition:PawnLostCondition) : void
+    + <<virtual>> Notify_BuildingAdded(b:Building) : void
+    + <<virtual>> Notify_BuildingLost(b:Building) : void
+    + <<virtual>> Notify_LordDestroyed() : void
+    + <<virtual>> GetReport(pawn:Pawn) : string
+    + <<virtual>> CanOpenAnyDoor(p:Pawn) : bool
+    + <<virtual>> ValidateAttackTarget(searcher:Pawn, target:Thing) : bool
+}
+IExposable <|-- LordJob
+LordJob --> "lord" Lord
+@enduml

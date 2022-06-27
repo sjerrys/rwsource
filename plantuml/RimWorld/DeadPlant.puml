@@ -1,0 +1,12 @@
+@startuml
+class DeadPlant {
+    + <<override>> GrowthRate : float <<get>>
+    + <<override>> CurrentDyingDamagePerTick : float <<get>>
+    + <<override>> LabelMouseover : string <<get>>
+    + <<override>> GetInspectStringLowPriority() : string
+    + <<override>> GetInspectString() : string
+    + <<override>> CropBlighted() : void
+}
+Plant <|-- DeadPlant
+DeadPlant --> "LifeStage" PlantLifeStage
+@enduml

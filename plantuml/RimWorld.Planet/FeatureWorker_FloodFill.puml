@@ -1,0 +1,6 @@
+@startuml
+abstract class FeatureWorker_FloodFill {
+    + <<override>> GenerateWhereAppropriate() : void
+}
+FeatureWorker <|-- FeatureWorker_FloodFill
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class WorkItem {
+    + crc : int
+    + index : int
+    + ordinal : int
+    + inputBytesAvailable : int
+    + compressedBytesAvailable : int
+    + WorkItem(size:int, compressLevel:CompressionLevel, strategy:CompressionStrategy, ix:int)
+}
+WorkItem --> "compressor" ZlibCodec
+@enduml

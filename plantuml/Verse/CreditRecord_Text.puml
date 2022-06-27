@@ -1,0 +1,11 @@
+@startuml
+class CreditRecord_Text {
+    + text : string
+    + CreditRecord_Text()
+    + CreditRecord_Text(text:string, anchor:TextAnchor)
+    + <<override>> DrawHeight(width:float) : float
+    + <<override>> Draw(r:Rect) : void
+}
+CreditsEntry <|-- CreditRecord_Text
+CreditRecord_Text --> "anchor" TextAnchor
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class PawnWeaponGenerator <<static>> {
+    + {static} Reset() : void
+    + {static} TryGenerateWeaponFor(pawn:Pawn, request:PawnGenerationRequest) : void
+    + {static} IsDerpWeapon(thing:ThingDef, stuff:ThingDef) : bool
+    + {static} CheapestNonDerpPriceFor(weaponDef:ThingDef) : float
+}
+@enduml

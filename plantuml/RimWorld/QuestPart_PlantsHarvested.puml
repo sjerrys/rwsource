@@ -1,0 +1,14 @@
+@startuml
+class QuestPart_PlantsHarvested {
+    + count : int
+    + <<override>> DescriptionPart : string <<get>>
+    + <<override>> Notify_PlantHarvested(actor:Pawn, harvested:Thing) : void
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+}
+class "IEnumerable`1"<T> {
+}
+QuestPartActivable <|-- QuestPart_PlantsHarvested
+QuestPart_PlantsHarvested --> "plant" ThingDef
+QuestPart_PlantsHarvested --> "Hyperlinks<Dialog_InfoCard.Hyperlink>" "IEnumerable`1"
+@enduml

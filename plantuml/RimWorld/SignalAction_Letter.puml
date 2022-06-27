@@ -1,0 +1,7 @@
+@startuml
+class SignalAction_Letter {
+    + <<override>> ExposeData() : void
+}
+SignalAction <|-- SignalAction_Letter
+SignalAction_Letter --> "letter" Letter
+@enduml

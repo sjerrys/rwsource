@@ -1,0 +1,16 @@
+@startuml
+abstract class HediffGiver {
+    + canAffectAnyLivePart : bool
+    + allowOnLodgers : bool = true
+    + allowOnQuestRewardPawns : bool = true
+    + countToAffect : int = 1
+    + <<virtual>> OnIntervalPassed(pawn:Pawn, cause:Hediff) : void
+    + <<virtual>> OnHediffAdded(pawn:Pawn, hediff:Hediff) : bool
+    + TryApply(pawn:Pawn, outAddedHediffs:List<Hediff>) : bool
+    + <<virtual>> ConfigErrors() : IEnumerable<string>
+}
+class "List`1"<T> {
+}
+HediffGiver --> "hediff" HediffDef
+HediffGiver --> "partsToAffect<BodyPartDef>" "List`1"
+@enduml

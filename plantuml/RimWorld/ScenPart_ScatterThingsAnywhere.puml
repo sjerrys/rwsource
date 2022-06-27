@@ -1,0 +1,8 @@
+@startuml
+class ScenPart_ScatterThingsAnywhere {
+    + <<const>> MapScatteredWithTag : string = "MapScatteredWith"
+    + <<override>> Summary(scen:Scenario) : string
+    + <<override>> GetSummaryListEntries(tag:string) : IEnumerable<string>
+}
+ScenPart_ScatterThings <|-- ScenPart_ScatterThingsAnywhere
+@enduml

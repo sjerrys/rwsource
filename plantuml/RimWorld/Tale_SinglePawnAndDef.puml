@@ -1,0 +1,10 @@
+@startuml
+class Tale_SinglePawnAndDef {
+    + Tale_SinglePawnAndDef()
+    + Tale_SinglePawnAndDef(pawn:Pawn, def:Def)
+    + <<override>> ExposeData() : void
+    + <<override>> GenerateTestData() : void
+}
+Tale_SinglePawn <|-- Tale_SinglePawnAndDef
+Tale_SinglePawnAndDef --> "defData" TaleData_Def
+@enduml

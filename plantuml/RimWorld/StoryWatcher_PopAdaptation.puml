@@ -1,0 +1,10 @@
+@startuml
+class StoryWatcher_PopAdaptation {
+    + AdaptDays : float <<get>>
+    + Notify_PawnEvent(p:Pawn, ev:PopAdaptationEvent) : void
+    + PopAdaptationWatcherTick() : void
+    + ExposeData() : void
+    + Debug_OffsetAdaptDays(days:float) : void
+}
+IExposable <|-- StoryWatcher_PopAdaptation
+@enduml

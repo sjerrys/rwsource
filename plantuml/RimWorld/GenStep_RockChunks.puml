@@ -1,0 +1,7 @@
+@startuml
+class GenStep_RockChunks {
+    + <<override>> SeedPart : int <<get>>
+    + <<override>> Generate(map:Map, parms:GenStepParams) : void
+}
+GenStep <|-- GenStep_RockChunks
+@enduml

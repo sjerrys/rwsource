@@ -1,0 +1,13 @@
+@startuml
+class QuestPart_IsPrisoner {
+    + <<override>> QuestPartTick() : void
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+    + <<override>> ReplacePawnReferences(replace:Pawn, with:Pawn) : void
+}
+class "IEnumerable`1"<T> {
+}
+QuestPartActivable <|-- QuestPart_IsPrisoner
+QuestPart_IsPrisoner --> "pawn" Pawn
+QuestPart_IsPrisoner --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class Dialog_NamePlayerSettlement {
+    + Dialog_NamePlayerSettlement(settlement:Settlement)
+    + <<override>> PostOpen() : void
+}
+Dialog_GiveName <|-- Dialog_NamePlayerSettlement
+@enduml

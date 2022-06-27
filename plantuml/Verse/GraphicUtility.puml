@@ -1,0 +1,6 @@
+@startuml
+class GraphicUtility <<static>> {
+    + {static} ExtractInnerGraphicFor(outerGraphic:Graphic, thing:Thing) : Graphic
+    + {static} WrapLinked(subGraphic:Graphic, linkDrawerType:LinkDrawerType) : Graphic_Linked
+}
+@enduml

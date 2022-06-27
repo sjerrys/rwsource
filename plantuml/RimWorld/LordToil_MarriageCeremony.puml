@@ -1,0 +1,12 @@
+@startuml
+class LordToil_MarriageCeremony {
+    + LordToil_MarriageCeremony(firstPawn:Pawn, secondPawn:Pawn, spot:IntVec3)
+    + <<override>> Init() : void
+    + <<override>> VoluntaryJoinDutyHookFor(p:Pawn) : ThinkTreeDutyHook
+    + <<override>> UpdateAllDuties() : void
+    + FianceStandingSpotFor(pawn:Pawn) : IntVec3
+}
+LordToil <|-- LordToil_MarriageCeremony
+LordToil_MarriageCeremony o-> "OtherFianceNoMarriageSpotCellOffset" IntVec3
+LordToil_MarriageCeremony --> "Data" LordToilData_MarriageCeremony
+@enduml

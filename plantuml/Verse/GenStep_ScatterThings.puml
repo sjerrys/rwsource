@@ -1,0 +1,13 @@
+@startuml
+class GenStep_ScatterThings {
+    + clearSpaceSize : int
+    + clusterSize : int = 1
+    + terrainValidationRadius : float
+    + <<override>> SeedPart : int <<get>>
+    + <<override>> Generate(map:Map, parms:GenStepParams) : void
+    + {static} CountDividedIntoStacks(count:int, stackSizeRange:IntRange) : List<int>
+}
+GenStep_Scatterer <|-- GenStep_ScatterThings
+GenStep_ScatterThings --> "thingDef" ThingDef
+GenStep_ScatterThings --> "stuff" ThingDef
+@enduml

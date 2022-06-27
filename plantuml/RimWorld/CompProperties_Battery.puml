@@ -1,0 +1,8 @@
+@startuml
+class CompProperties_Battery {
+    + storedEnergyMax : float = 1000f
+    + efficiency : float = 0.5f
+    + CompProperties_Battery()
+}
+CompProperties_Power <|-- CompProperties_Battery
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class JobGiver_PrisonerWaitInsteadOfEscaping {
+}
+JobGiver_Wander <|-- JobGiver_PrisonerWaitInsteadOfEscaping
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class RaidStrategyWorker_ImmediateAttack {
+}
+RaidStrategyWorker <|-- RaidStrategyWorker_ImmediateAttack
+@enduml

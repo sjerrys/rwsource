@@ -1,0 +1,8 @@
+@startuml
+enum GizmoState {
+    Clear,
+    Mouseover,
+    Interacted,
+    OpenedFloatMenu,
+}
+@enduml

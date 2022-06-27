@@ -1,0 +1,17 @@
+@startuml
+class ScenPartDef {
+    + summaryPriority : float
+    + selectionWeight : float = 1f
+    + maxUses : int = 999999
+    + gameConditionTargetsWorld : bool
+    + PlayerAddRemovable : bool <<get>>
+    + <<override>> ConfigErrors() : IEnumerable<string>
+}
+Def <|-- ScenPartDef
+ScenPartDef --> "category" ScenPartCategory
+ScenPartDef --> "scenPartClass" Type
+ScenPartDef --> "pageClass" Type
+ScenPartDef --> "gameCondition" GameConditionDef
+ScenPartDef o-> "durationRandomRange" FloatRange
+ScenPartDef --> "designatorType" Type
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+class ThingUtility <<static>> {
+    + {static} DestroyedOrNull(t:Thing) : bool
+    + {static} DestroyOrPassToWorld(t:Thing, mode:DestroyMode) : void
+    + {static} TryAbsorbStackNumToTake(thing:Thing, other:Thing, respectStackLimit:bool) : int
+    + {static} RoundedResourceStackCount(stackCount:int) : int
+    + {static} InteractionCellWhenAt(def:ThingDef, center:IntVec3, rot:Rot4, map:Map) : IntVec3
+    + {static} PrimaryMeleeWeaponDamageType(thing:ThingDef) : DamageDef
+    + {static} PrimaryMeleeWeaponDamageType(tools:List<Tool>) : DamageDef
+    + {static} CheckAutoRebuildOnDestroyed(thing:Thing, mode:DestroyMode, map:Map, buildingDef:BuildableDef) : void
+    + {static} CheckAutoRebuildTerrainOnDestroyed(terrainDef:TerrainDef, pos:IntVec3, map:Map) : void
+    + {static} FindPawn(things:List<Thing>) : Pawn
+    + {static} GetTerrainAffordanceNeed(def:BuildableDef, stuffDef:ThingDef) : TerrainAffordanceDef
+}
+@enduml

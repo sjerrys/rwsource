@@ -1,0 +1,10 @@
+@startuml
+class WorkGiver_LoadTransporters {
+    + <<override>> MaxPathDanger(pawn:Pawn) : Danger
+    + <<override>> HasJobOnThing(pawn:Pawn, t:Thing, forced:bool) : bool
+    + <<override>> JobOnThing(pawn:Pawn, t:Thing, forced:bool) : Job
+}
+WorkGiver_Scanner <|-- WorkGiver_LoadTransporters
+WorkGiver_LoadTransporters --> "PotentialWorkThingRequest" ThingRequest
+WorkGiver_LoadTransporters --> "PathEndMode" PathEndMode
+@enduml

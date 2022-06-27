@@ -1,0 +1,6 @@
+@startuml
+class RaidStrategyWorker_Siege {
+    + <<override>> CanUseWith(parms:IncidentParms, groupKind:PawnGroupKindDef) : bool
+}
+RaidStrategyWorker <|-- RaidStrategyWorker_Siege
+@enduml

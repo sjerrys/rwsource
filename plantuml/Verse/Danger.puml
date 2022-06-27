@@ -1,0 +1,8 @@
+@startuml
+enum Danger {
+    Unspecified,
+    None,
+    Some,
+    Deadly,
+}
+@enduml

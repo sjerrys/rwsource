@@ -1,0 +1,8 @@
+@startuml
+class CompProperties_AbilitySpawn {
+    + allowOnBuildings : bool = true
+    + CompProperties_AbilitySpawn()
+}
+CompProperties_AbilityEffect <|-- CompProperties_AbilitySpawn
+CompProperties_AbilitySpawn --> "thingDef" ThingDef
+@enduml

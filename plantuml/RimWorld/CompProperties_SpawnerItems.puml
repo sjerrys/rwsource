@@ -1,0 +1,16 @@
+@startuml
+class CompProperties_SpawnerItems {
+    + approxMarketValuePerDay : float
+    + spawnInterval : int = 60000
+    + CompProperties_SpawnerItems()
+    + <<override>> ConfigErrors(parentDef:ThingDef) : IEnumerable<string>
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+CompProperties <|-- CompProperties_SpawnerItems
+CompProperties_SpawnerItems o-> "stuffCategories<StuffCategoryDef>" "List`1"
+CompProperties_SpawnerItems o-> "categories<ThingCategoryDef>" "List`1"
+CompProperties_SpawnerItems --> "MatchingItems<ThingDef>" "IEnumerable`1"
+@enduml

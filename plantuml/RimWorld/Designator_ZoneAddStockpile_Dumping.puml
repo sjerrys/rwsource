@@ -1,0 +1,6 @@
+@startuml
+class Designator_ZoneAddStockpile_Dumping {
+    + Designator_ZoneAddStockpile_Dumping()
+}
+Designator_ZoneAddStockpile <|-- Designator_ZoneAddStockpile_Dumping
+@enduml

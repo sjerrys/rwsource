@@ -1,0 +1,5 @@
+@startuml
+class QuestNode_SlateDump {
+}
+QuestNode <|-- QuestNode_SlateDump
+@enduml

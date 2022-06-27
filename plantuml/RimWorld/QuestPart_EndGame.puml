@@ -1,0 +1,11 @@
+@startuml
+class QuestPart_EndGame {
+    + inSignal : string
+    + introText : string
+    + endingText : string
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+}
+QuestPart <|-- QuestPart_EndGame
+@enduml

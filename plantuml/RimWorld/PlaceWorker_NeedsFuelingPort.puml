@@ -1,0 +1,7 @@
+@startuml
+class PlaceWorker_NeedsFuelingPort {
+    + <<override>> AllowsPlacing(def:BuildableDef, center:IntVec3, rot:Rot4, map:Map, thingToIgnore:Thing, thing:Thing) : AcceptanceReport
+    + <<override>> DrawGhost(def:ThingDef, center:IntVec3, rot:Rot4, ghostCol:Color, thing:Thing) : void
+}
+PlaceWorker <|-- PlaceWorker_NeedsFuelingPort
+@enduml

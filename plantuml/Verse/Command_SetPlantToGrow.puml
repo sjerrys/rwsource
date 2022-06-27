@@ -1,0 +1,10 @@
+@startuml
+class Command_SetPlantToGrow {
+    + Command_SetPlantToGrow()
+    + <<override>> ProcessInput(ev:Event) : void
+    + <<override>> InheritInteractionsFrom(other:Gizmo) : bool
+    + {static} IsPlantAvailable(plantDef:ThingDef, map:Map) : bool
+}
+Command <|-- Command_SetPlantToGrow
+Command_SetPlantToGrow --> "settable" IPlantToGrowSettable
+@enduml

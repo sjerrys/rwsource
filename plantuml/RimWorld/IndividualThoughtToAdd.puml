@@ -1,0 +1,9 @@
+@startuml
+class IndividualThoughtToAdd <<struct>> {
+    + LabelCap : string <<get>>
+    + IndividualThoughtToAdd(thoughtDef:ThoughtDef, addTo:Pawn, otherPawn:Pawn, moodPowerFactor:float, opinionOffsetFactor:float)
+    + Add() : void
+}
+IndividualThoughtToAdd --> "thought" Thought_Memory
+IndividualThoughtToAdd --> "addTo" Pawn
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class QuestNode_GenerateWorldObject {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GenerateWorldObject
+QuestNode_GenerateWorldObject --> "def<WorldObjectDef>" "SlateRef`1"
+QuestNode_GenerateWorldObject --> "tile<int>" "SlateRef`1"
+QuestNode_GenerateWorldObject --> "faction<Faction>" "SlateRef`1"
+QuestNode_GenerateWorldObject --> "storeAs<string>" "SlateRef`1"
+@enduml

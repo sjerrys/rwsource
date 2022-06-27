@@ -1,0 +1,8 @@
+@startuml
+class Dialog_AssignBuildingOwner {
+    + Dialog_AssignBuildingOwner(assignable:CompAssignableToPawn)
+    + <<override>> DoWindowContents(inRect:Rect) : void
+}
+Window <|-- Dialog_AssignBuildingOwner
+Dialog_AssignBuildingOwner --> "InitialSize" Vector2
+@enduml

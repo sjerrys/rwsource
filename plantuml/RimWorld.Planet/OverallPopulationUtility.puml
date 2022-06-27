@@ -1,0 +1,6 @@
+@startuml
+class OverallPopulationUtility <<static>> {
+    + {static} EnumValuesCount : int <<get>>
+    + {static} GetScaleFactor(population:OverallPopulation) : float
+}
+@enduml

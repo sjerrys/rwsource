@@ -1,0 +1,9 @@
+@startuml
+class FocusStrengthOffset_ArtificialBuildings {
+    + radius : float = 10f
+    + <<override>> CanApply(parent:Thing, user:Pawn) : bool
+    + <<override>> PostDrawExtraSelectionOverlays(parent:Thing, user:Pawn) : void
+    + <<override>> InspectStringExtra(parent:Thing, user:Pawn) : string
+}
+FocusStrengthOffset_Curve <|-- FocusStrengthOffset_ArtificialBuildings
+@enduml

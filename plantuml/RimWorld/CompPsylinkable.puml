@@ -1,0 +1,14 @@
+@startuml
+class CompPsylinkable {
+    + <<const>> MaxDistance : float = 3.9f
+    + <<override>> PostSpawnSetup(respawningAfterLoad:bool) : void
+    + CanPsylink(pawn:Pawn, knownSpot:LocalTargetInfo?) : AcceptanceReport
+    + TryFindLinkSpot(pawn:Pawn, spot:LocalTargetInfo) : bool
+    + <<override>> CompFloatMenuOptions(pawn:Pawn) : IEnumerable<FloatMenuOption>
+    + FinishLinkingRitual(pawn:Pawn) : void
+    + <<override>> PostExposeData() : void
+}
+ThingComp <|-- CompPsylinkable
+CompPsylinkable --> "Props" CompProperties_Psylinkable
+CompPsylinkable --> "CompSubplant" CompSpawnSubplant
+@enduml

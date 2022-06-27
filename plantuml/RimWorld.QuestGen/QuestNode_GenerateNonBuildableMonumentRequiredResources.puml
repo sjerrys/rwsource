@@ -1,0 +1,9 @@
+@startuml
+class QuestNode_GenerateNonBuildableMonumentRequiredResources {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GenerateNonBuildableMonumentRequiredResources
+QuestNode_GenerateNonBuildableMonumentRequiredResources --> "addToList<string>" "SlateRef`1"
+QuestNode_GenerateNonBuildableMonumentRequiredResources --> "monumentMarker<MonumentMarker>" "SlateRef`1"
+@enduml

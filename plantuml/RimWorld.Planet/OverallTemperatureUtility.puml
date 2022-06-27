@@ -1,0 +1,6 @@
+@startuml
+class OverallTemperatureUtility <<static>> {
+    + {static} EnumValuesCount : int <<get>>
+    + {static} GetTemperatureCurve(overallTemperature:OverallTemperature) : SimpleCurve
+}
+@enduml

@@ -1,0 +1,26 @@
+@startuml
+class TaleData_Pawn {
+    + age : int
+    + chronologicalAge : int
+    + relationInfo : string
+    + everBeenColonistOrTameAnimal : bool
+    + everBeenQuestLodger : bool
+    + isFactionLeader : bool
+    + title : string
+    + <<override>> ExposeData() : void
+    + <<override>> GetRules(prefix:string) : IEnumerable<Rule>
+    + {static} GenerateFrom(pawn:Pawn) : TaleData_Pawn
+    + {static} GenerateRandom() : TaleData_Pawn
+}
+class "List`1"<T> {
+}
+TaleData <|-- TaleData_Pawn
+TaleData_Pawn --> "pawn" Pawn
+TaleData_Pawn --> "kind" PawnKindDef
+TaleData_Pawn --> "faction" Faction
+TaleData_Pawn --> "gender" Gender
+TaleData_Pawn --> "royalTitles<RoyalTitle>" "List`1"
+TaleData_Pawn --> "name" Name
+TaleData_Pawn --> "primaryEquipment" ThingDef
+TaleData_Pawn --> "notableApparel" ThingDef
+@enduml

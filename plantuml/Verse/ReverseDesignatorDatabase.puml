@@ -1,0 +1,9 @@
+@startuml
+class ReverseDesignatorDatabase {
+    + Reinit() : void
+    + Get() : T
+}
+class "List`1"<T> {
+}
+ReverseDesignatorDatabase --> "AllDesignators<Designator>" "List`1"
+@enduml

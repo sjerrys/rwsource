@@ -1,0 +1,5 @@
+@startuml
+class XmlInheritanceAllowDuplicateNodes {
+}
+Attribute <|-- XmlInheritanceAllowDuplicateNodes
+@enduml

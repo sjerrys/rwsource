@@ -1,0 +1,6 @@
+@startuml
+class SoundDefHelper <<static>> {
+    + {static} NullOrUndefined(def:SoundDef) : bool
+    + {static} CorrectContextNow(def:SoundDef, sourceMap:Map) : bool
+}
+@enduml

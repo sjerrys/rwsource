@@ -1,0 +1,9 @@
+@startuml
+class LordJob_DefendBase {
+    + LordJob_DefendBase()
+    + LordJob_DefendBase(faction:Faction, baseCenter:IntVec3)
+    + <<override>> CreateGraph() : StateGraph
+    + <<override>> ExposeData() : void
+}
+LordJob <|-- LordJob_DefendBase
+@enduml

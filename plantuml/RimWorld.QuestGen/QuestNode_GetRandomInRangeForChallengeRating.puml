@@ -1,0 +1,13 @@
+@startuml
+class QuestNode_GetRandomInRangeForChallengeRating {
+    + GetRangeFromRating() : FloatRange
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GetRandomInRangeForChallengeRating
+QuestNode_GetRandomInRangeForChallengeRating --> "storeAs<string>" "SlateRef`1"
+QuestNode_GetRandomInRangeForChallengeRating --> "oneStarRange<FloatRange>" "SlateRef`1"
+QuestNode_GetRandomInRangeForChallengeRating --> "twoStarRange<FloatRange>" "SlateRef`1"
+QuestNode_GetRandomInRangeForChallengeRating --> "threeStarRange<FloatRange>" "SlateRef`1"
+QuestNode_GetRandomInRangeForChallengeRating --> "roundRandom<bool>" "SlateRef`1"
+@enduml

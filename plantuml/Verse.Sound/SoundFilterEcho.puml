@@ -1,0 +1,6 @@
+@startuml
+class SoundFilterEcho {
+    + <<override>> SetupOn(source:AudioSource) : void
+}
+SoundFilter <|-- SoundFilterEcho
+@enduml

@@ -1,0 +1,29 @@
+@startuml
+class MeditationUtility {
+    + {static} FocusObjectSearchRadius : float = 3.9f
+    + {static} GetMeditationJob(pawn:Pawn, forJoy:bool) : Job
+    + {static} FindMeditationSpot(pawn:Pawn) : MeditationSpotAndFocus
+    + {static} AllMeditationSpotCandidates(pawn:Pawn, allowFallbackSpots:bool) : IEnumerable<LocalTargetInfo>
+    + {static} SafeEnvironmentalConditions(pawn:Pawn, cell:IntVec3, map:Map) : bool
+    + {static} CanMeditateNow(pawn:Pawn) : bool
+    + {static} CanOnlyMeditateInBed(pawn:Pawn) : bool
+    + {static} ShouldMeditateInBed(pawn:Pawn) : bool
+    + {static} BestFocusAt(spot:LocalTargetInfo, pawn:Pawn) : LocalTargetInfo
+    + {static} FocusSpotsInTheRoom(pawn:Pawn, r:Room) : IEnumerable<LocalTargetInfo>
+    + {static} MeditationSpotForFocus(t:Thing, p:Pawn, validator:Func<IntVec3, bool>) : LocalTargetInfo
+    + {static} FocusTypesAvailableForPawn(pawn:Pawn) : IEnumerable<MeditationFocusDef>
+    + {static} FocusTypesAvailableForPawnString(pawn:Pawn) : string
+    + {static} FocusObjectsForPawnHyperlinks(pawn:Pawn) : IEnumerable<Dialog_InfoCard.Hyperlink>
+    + {static} FocusTypeAvailableExplanation(pawn:Pawn) : string
+    + {static} DrawMeditationSpotOverlay(center:IntVec3, map:Map) : void
+    + {static} CanUseRoomToMeditate(r:Room, p:Pawn) : bool
+    + {static} GetMeditationFociAffectedByBuilding(map:Map, def:ThingDef, faction:Faction, pos:IntVec3, rotation:Rot4) : IEnumerable<Thing>
+    + {static} DrawMeditationFociAffectedByBuildingOverlay(map:Map, def:ThingDef, faction:Faction, pos:IntVec3, rotation:Rot4) : void
+    + {static} CountsAsArtificialBuilding(def:ThingDef, faction:Faction) : bool
+    + {static} CountsAsArtificialBuilding(t:Thing) : bool
+    + {static} DrawArtificialBuildingOverlay(pos:IntVec3, def:ThingDef, map:Map, radius:float) : void
+    + {static} PsyfocusGainPerTick(pawn:Pawn, focus:Thing) : float
+    + {static} CheckMeditationScheduleTeachOpportunity(pawn:Pawn) : void
+}
+MeditationUtility o-> "ArtificialBuildingRingColor" Color
+@enduml

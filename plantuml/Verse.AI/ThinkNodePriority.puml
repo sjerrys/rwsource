@@ -1,0 +1,16 @@
+@startuml
+class ThinkNodePriority <<static>> {
+    + <<const>> Food : float = 9.5f
+    + <<const>> DrugDesire : float = 9.25f
+    + <<const>> AssignedWork : float = 9f
+    + <<const>> Rest : float = 8f
+    + <<const>> DrugPolicySchedule : float = 7.5f
+    + <<const>> Meditation : float = 7.1f
+    + <<const>> AssignedJoy : float = 7f
+    + <<const>> AnythingJoy : float = 6f
+    + <<const>> Reload : float = 5.9f
+    + <<const>> AnythingWork : float = 5.5f
+    + <<const>> AvoidIdle_SleepAssignmentWork : float = 3f
+    + <<const>> AvoidIdle : float = 2f
+}
+@enduml

@@ -1,0 +1,19 @@
+@startuml
+class GameDataSaveLoader <<static>> {
+    + <<const>> SavedScenarioParentNodeName : string = "savedscenario"
+    + <<const>> SavedWorldParentNodeName : string = "savedworld"
+    + <<const>> SavedGameParentNodeName : string = "savegame"
+    + <<const>> GameNodeName : string = "game"
+    + <<const>> WorldNodeName : string = "world"
+    + <<const>> ScenarioNodeName : string = "scenario"
+    + <<const>> AutosavePrefix : string = "Autosave"
+    + <<const>> AutostartSaveName : string = "autostart"
+    + {static} CurrentGameStateIsValuable : bool <<get>>
+    + {static} SaveScenario(scen:Scenario, absFilePath:string) : void
+    + {static} TryLoadScenario(absPath:string, category:ScenarioCategory, scen:Scenario) : bool
+    + {static} SaveGame(fileName:string) : void
+    + {static} CheckVersionAndLoadGame(saveFileName:string) : void
+    + {static} LoadGame(saveFileName:string) : void
+    + {static} LoadGame(saveFile:FileInfo) : void
+}
+@enduml

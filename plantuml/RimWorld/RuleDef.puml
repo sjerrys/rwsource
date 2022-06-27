@@ -1,0 +1,9 @@
+@startuml
+class RuleDef {
+    + symbol : string
+}
+class "List`1"<T> {
+}
+Def <|-- RuleDef
+RuleDef --> "resolvers<SymbolResolver>" "List`1"
+@enduml

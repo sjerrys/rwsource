@@ -1,0 +1,7 @@
+@startuml
+class GenExplosion <<static>> {
+    + {static} DoExplosion(center:IntVec3, map:Map, radius:float, damType:DamageDef, instigator:Thing, damAmount:int, armorPenetration:float, explosionSound:SoundDef, weapon:ThingDef, projectile:ThingDef, intendedTarget:Thing, postExplosionSpawnThingDef:ThingDef, postExplosionSpawnChance:float, postExplosionSpawnThingCount:int, applyDamageToExplosionCellsNeighbors:bool, preExplosionSpawnThingDef:ThingDef, preExplosionSpawnChance:float, preExplosionSpawnThingCount:int, chanceToStartFire:float, damageFalloff:bool, direction:float?, ignoredThings:List<Thing>) : void
+    + {static} RenderPredictedAreaOfEffect(loc:IntVec3, radius:float) : void
+    + {static} NotifyNearbyPawnsOfDangerousExplosive(exploder:Thing, damage:DamageDef, onlyFaction:Faction) : void
+}
+@enduml

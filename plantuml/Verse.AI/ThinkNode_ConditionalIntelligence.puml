@@ -1,0 +1,7 @@
+@startuml
+class ThinkNode_ConditionalIntelligence {
+    + <<override>> DeepCopy(resolve:bool) : ThinkNode
+}
+ThinkNode_Conditional <|-- ThinkNode_ConditionalIntelligence
+ThinkNode_ConditionalIntelligence o-> "minIntelligence" Intelligence
+@enduml

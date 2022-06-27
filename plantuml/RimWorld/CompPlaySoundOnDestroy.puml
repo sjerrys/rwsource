@@ -1,0 +1,6 @@
+@startuml
+class CompPlaySoundOnDestroy {
+    + <<override>> PostDestroy(mode:DestroyMode, previousMap:Map) : void
+}
+ThingComp <|-- CompPlaySoundOnDestroy
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class RestCategoryUtility <<static>> {
+    + {static} GetLabel(fatigue:RestCategory) : string
+}
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class Gizmo_CaravanInfo {
+    + Gizmo_CaravanInfo(caravan:Caravan)
+    + <<override>> GetWidth(maxWidth:float) : float
+    + <<override>> GizmoOnGUI(topLeft:Vector2, maxWidth:float) : GizmoResult
+}
+Gizmo <|-- Gizmo_CaravanInfo
+@enduml

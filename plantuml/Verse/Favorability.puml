@@ -1,0 +1,9 @@
+@startuml
+enum Favorability {
+    VeryBad,
+    Bad,
+    Neutral,
+    Good,
+    VeryGood,
+}
+@enduml

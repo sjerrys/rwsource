@@ -1,0 +1,7 @@
+@startuml
+class LordToil_WanderClose {
+    + LordToil_WanderClose(location:IntVec3)
+    + <<override>> UpdateAllDuties() : void
+}
+LordToil <|-- LordToil_WanderClose
+@enduml

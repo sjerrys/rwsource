@@ -1,0 +1,7 @@
+@startuml
+class WorldObjectCompProperties_Abandon {
+    + WorldObjectCompProperties_Abandon()
+    + <<override>> ConfigErrors(parentDef:WorldObjectDef) : IEnumerable<string>
+}
+WorldObjectCompProperties <|-- WorldObjectCompProperties_Abandon
+@enduml

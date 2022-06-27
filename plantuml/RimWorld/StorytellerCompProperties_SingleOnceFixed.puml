@@ -1,0 +1,11 @@
+@startuml
+class StorytellerCompProperties_SingleOnceFixed {
+    + fireAfterDaysPassed : int
+    + skipIfOnExtremeBiome : bool
+    + minColonistCount : int
+    + StorytellerCompProperties_SingleOnceFixed()
+}
+StorytellerCompProperties <|-- StorytellerCompProperties_SingleOnceFixed
+StorytellerCompProperties_SingleOnceFixed --> "incident" IncidentDef
+StorytellerCompProperties_SingleOnceFixed --> "skipIfColonistHasMinTitle" RoyalTitleDef
+@enduml

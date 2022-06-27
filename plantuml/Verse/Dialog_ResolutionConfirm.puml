@@ -1,0 +1,11 @@
+@startuml
+class Dialog_ResolutionConfirm {
+    + Dialog_ResolutionConfirm(oldFullscreen:bool)
+    + Dialog_ResolutionConfirm(oldRes:IntVec2)
+    + Dialog_ResolutionConfirm(oldUIScale:float)
+    + <<override>> DoWindowContents(inRect:Rect) : void
+    + <<override>> WindowUpdate() : void
+}
+Window <|-- Dialog_ResolutionConfirm
+Dialog_ResolutionConfirm --> "InitialSize" Vector2
+@enduml

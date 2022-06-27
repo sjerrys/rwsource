@@ -1,0 +1,8 @@
+@startuml
+class Root_Entry {
+    + <<override>> Start() : void
+    + <<override>> Update() : void
+}
+Root <|-- Root_Entry
+Root_Entry --> "musicManagerEntry" MusicManagerEntry
+@enduml

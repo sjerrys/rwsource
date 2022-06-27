@@ -1,0 +1,8 @@
+@startuml
+class StorytellerComp_RefiringUniqueQuest {
+    + <<override>> MakeIntervalIncidents(target:IIncidentTarget) : IEnumerable<FiringIncident>
+    + <<override>> Initialize() : void
+    + <<override>> ToString() : string
+}
+StorytellerComp <|-- StorytellerComp_RefiringUniqueQuest
+@enduml

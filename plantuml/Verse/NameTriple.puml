@@ -1,0 +1,24 @@
+@startuml
+class NameTriple {
+    + First : string <<get>>
+    + Nick : string <<get>>
+    + Last : string <<get>>
+    + <<override>> ToStringFull : string <<get>>
+    + <<override>> ToStringShort : string <<get>>
+    + <<override>> IsValid : bool <<get>>
+    + <<override>> Numerical : bool <<get>>
+    + NameTriple()
+    + NameTriple(first:string, nick:string, last:string)
+    + <<override>> ExposeData() : void
+    + PostLoad() : void
+    + ResolveMissingPieces(overrideLastName:string) : void
+    + <<override>> ConfusinglySimilarTo(other:Name) : bool
+    + {static} FromString(rawName:string) : NameTriple
+    + CapitalizeNick() : void
+    + <<override>> ToString() : string
+    + <<override>> Equals(obj:object) : bool
+    + <<override>> GetHashCode() : int
+}
+Name <|-- NameTriple
+NameTriple --> "Invalid" NameTriple
+@enduml

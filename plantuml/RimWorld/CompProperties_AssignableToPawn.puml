@@ -1,0 +1,12 @@
+@startuml
+class CompProperties_AssignableToPawn {
+    + maxAssignedPawnsCount : int = 1
+    + drawAssignmentOverlay : bool = true
+    + drawUnownedAssignmentOverlay : bool = true
+    + singleton : string
+    + CompProperties_AssignableToPawn()
+    + <<override>> ConfigErrors(parentDef:ThingDef) : IEnumerable<string>
+    + <<override>> PostLoadSpecial(parent:ThingDef) : void
+}
+CompProperties <|-- CompProperties_AssignableToPawn
+@enduml

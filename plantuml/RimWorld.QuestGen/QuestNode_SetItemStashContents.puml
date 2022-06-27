@@ -1,0 +1,15 @@
+@startuml
+class QuestNode_SetItemStashContents {
+}
+class ThingCategoryCount {
+    + allowDuplicates : bool = true
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_SetItemStashContents
+QuestNode_SetItemStashContents --> "items<IEnumerable<ThingDef>>" "SlateRef`1"
+QuestNode_SetItemStashContents --> "categories<List<ThingCategoryCount>>" "SlateRef`1"
+QuestNode_SetItemStashContents +-- ThingCategoryCount
+ThingCategoryCount --> "category" ThingCategoryDef
+ThingCategoryCount --> "amount" IntRange
+@enduml

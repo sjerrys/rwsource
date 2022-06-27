@@ -1,0 +1,12 @@
+@startuml
+class BreakRiskAlertUtility <<static>> {
+    + {static} AlertLabel : string <<get>>
+    + {static} AlertExplanation : string <<get>>
+    + {static} Clear() : void
+}
+class "List`1"<T> {
+}
+BreakRiskAlertUtility --> "PawnsAtRiskExtreme<Pawn>" "List`1"
+BreakRiskAlertUtility --> "PawnsAtRiskMajor<Pawn>" "List`1"
+BreakRiskAlertUtility --> "PawnsAtRiskMinor<Pawn>" "List`1"
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class ExpectationDefOf <<static>> {
+    {static} ExpectationDefOf()
+}
+ExpectationDefOf --> "ExtremelyLow" ExpectationDef
+ExpectationDefOf --> "VeryLow" ExpectationDef
+ExpectationDefOf --> "Low" ExpectationDef
+ExpectationDefOf --> "Moderate" ExpectationDef
+ExpectationDefOf --> "High" ExpectationDef
+ExpectationDefOf --> "SkyHigh" ExpectationDef
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+class CellLine <<struct>> {
+    + ZIntercept : float <<get>>
+    + Slope : float <<get>>
+    + CellLine(zIntercept:float, slope:float)
+    + CellLine(cell:IntVec3, slope:float)
+    + {static} Between(a:IntVec3, b:IntVec3) : CellLine
+    + CellIsAbove(c:IntVec3) : bool
+}
+@enduml

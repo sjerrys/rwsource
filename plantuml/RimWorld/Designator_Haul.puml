@@ -1,0 +1,12 @@
+@startuml
+class Designator_Haul {
+    + <<override>> DraggableDimensions : int <<get>>
+    + Designator_Haul()
+    + <<override>> CanDesignateCell(c:IntVec3) : AcceptanceReport
+    + <<override>> DesignateSingleCell(c:IntVec3) : void
+    + <<override>> CanDesignateThing(t:Thing) : AcceptanceReport
+    + <<override>> DesignateThing(t:Thing) : void
+    + <<override>> SelectedUpdate() : void
+}
+Designator <|-- Designator_Haul
+@enduml

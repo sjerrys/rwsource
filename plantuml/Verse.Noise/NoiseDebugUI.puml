@@ -1,0 +1,26 @@
+@startuml
+class NoiseDebugUI <<static>> {
+    + {static} StoreTexture(texture:Texture2D, name:string) : void
+    + {static} StoreNoiseRender(noise:ModuleBase, name:string, renderSize:IntVec2) : void
+    + {static} StoreNoiseRender(noise:ModuleBase, name:string) : void
+    + {static} StorePlanetNoise(noise:ModuleBase, name:string) : void
+    + {static} NoiseDebugOnGUI() : void
+    + {static} RenderPlanetNoise() : void
+    + {static} Clear() : void
+    + {static} ClearPlanetNoises() : void
+}
+class Noise2D {
+    + name : string
+    + Noise2D(tex:Texture2D, name:string)
+    + Noise2D(noise:ModuleBase, name:string)
+}
+class NoisePlanet {
+    + name : string
+    + NoisePlanet(noise:ModuleBase, name:string)
+}
+NoiseDebugUI --> "RenderSize" IntVec2
+NoiseDebugUI +-- Noise2D
+Noise2D --> "Texture" Texture2D
+NoiseDebugUI +-- NoisePlanet
+NoisePlanet --> "noise" ModuleBase
+@enduml

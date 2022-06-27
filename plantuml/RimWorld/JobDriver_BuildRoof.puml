@@ -1,0 +1,5 @@
+@startuml
+class JobDriver_BuildRoof {
+}
+JobDriver_AffectRoof <|-- JobDriver_BuildRoof
+@enduml

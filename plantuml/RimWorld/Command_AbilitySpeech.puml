@@ -1,0 +1,7 @@
+@startuml
+class Command_AbilitySpeech {
+    + <<override>> Tooltip : string <<get>>
+    + Command_AbilitySpeech(ability:Ability)
+}
+Command_Ability <|-- Command_AbilitySpeech
+@enduml

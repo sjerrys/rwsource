@@ -1,0 +1,6 @@
+@startuml
+class IncidentWorker_RaidFriendly {
+    + <<override>> ResolveRaidStrategy(parms:IncidentParms, groupKind:PawnGroupKindDef) : void
+}
+IncidentWorker_Raid <|-- IncidentWorker_RaidFriendly
+@enduml

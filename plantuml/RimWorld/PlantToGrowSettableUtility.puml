@@ -1,0 +1,5 @@
+@startuml
+class PlantToGrowSettableUtility <<static>> {
+    + {static} SetPlantToGrowCommand(settable:IPlantToGrowSettable) : Command_SetPlantToGrow
+}
+@enduml

@@ -1,0 +1,23 @@
+@startuml
+class TraderKindDef {
+    + orbital : bool
+    + requestable : bool = true
+    + hideThingsNotWillingToTrade : bool
+    + commonality : float = 1f
+    + category : string
+    + CalculatedCommonality : float <<get>>
+    + <<override>> ResolveReferences() : void
+    + <<override>> ConfigErrors() : IEnumerable<string>
+    + WillTrade(td:ThingDef) : bool
+    + PriceTypeFor(thingDef:ThingDef, action:TradeAction) : PriceType
+}
+class "List`1"<T> {
+}
+Def <|-- TraderKindDef
+TraderKindDef o-> "stockGenerators<StockGenerator>" "List`1"
+TraderKindDef --> "tradeCurrency" TradeCurrency
+TraderKindDef --> "commonalityMultFromPopulationIntent" SimpleCurve
+TraderKindDef --> "faction" FactionDef
+TraderKindDef --> "permitRequiredForTrading" RoyalTitlePermitDef
+TraderKindDef --> "TitleRequiredToTrade" RoyalTitleDef
+@enduml

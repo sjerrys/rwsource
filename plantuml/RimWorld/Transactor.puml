@@ -1,0 +1,6 @@
+@startuml
+enum Transactor {
+    Colony,
+    Trader,
+}
+@enduml

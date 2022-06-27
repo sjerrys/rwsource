@@ -1,0 +1,6 @@
+@startuml
+abstract class Dialog_SaveFileList {
+    + <<override>> PostClose() : void
+}
+Dialog_FileList <|-- Dialog_SaveFileList
+@enduml

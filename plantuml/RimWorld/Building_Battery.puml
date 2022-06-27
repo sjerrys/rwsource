@@ -1,0 +1,9 @@
+@startuml
+class Building_Battery {
+    + <<override>> ExposeData() : void
+    + <<override>> Draw() : void
+    + <<override>> Tick() : void
+    + <<override>> PostApplyDamage(dinfo:DamageInfo, totalDamageDealt:float) : void
+}
+Building <|-- Building_Battery
+@enduml

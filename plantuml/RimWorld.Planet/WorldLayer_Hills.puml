@@ -1,0 +1,6 @@
+@startuml
+class WorldLayer_Hills {
+    + <<override>> Regenerate() : IEnumerable
+}
+WorldLayer <|-- WorldLayer_Hills
+@enduml

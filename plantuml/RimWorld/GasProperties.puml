@@ -1,0 +1,8 @@
+@startuml
+class GasProperties {
+    + blockTurretTracking : bool
+    + accuracyPenalty : float
+    + rotationSpeed : float
+}
+GasProperties o-> "expireSeconds" FloatRange
+@enduml

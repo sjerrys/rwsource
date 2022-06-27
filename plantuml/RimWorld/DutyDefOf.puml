@@ -1,0 +1,43 @@
+@startuml
+class DutyDefOf <<static>> {
+    {static} DutyDefOf()
+}
+DutyDefOf --> "TravelOrLeave" DutyDef
+DutyDefOf --> "TravelOrWait" DutyDef
+DutyDefOf --> "Kidnap" DutyDef
+DutyDefOf --> "Steal" DutyDef
+DutyDefOf --> "TakeWoundedGuest" DutyDef
+DutyDefOf --> "Follow" DutyDef
+DutyDefOf --> "PrisonerEscape" DutyDef
+DutyDefOf --> "PrisonerEscapeSapper" DutyDef
+DutyDefOf --> "DefendAndExpandHive" DutyDef
+DutyDefOf --> "DefendHiveAggressively" DutyDef
+DutyDefOf --> "LoadAndEnterTransporters" DutyDef
+DutyDefOf --> "EnterTransporter" DutyDef
+DutyDefOf --> "ManClosestTurret" DutyDef
+DutyDefOf --> "SleepForever" DutyDef
+DutyDefOf --> "Idle" DutyDef
+DutyDefOf --> "WanderClose" DutyDef
+DutyDefOf --> "AssaultColony" DutyDef
+DutyDefOf --> "Sapper" DutyDef
+DutyDefOf --> "Escort" DutyDef
+DutyDefOf --> "Defend" DutyDef
+DutyDefOf --> "Build" DutyDef
+DutyDefOf --> "HuntEnemiesIndividual" DutyDef
+DutyDefOf --> "DefendBase" DutyDef
+DutyDefOf --> "AssaultThing" DutyDef
+DutyDefOf --> "ExitMapRandom" DutyDef
+DutyDefOf --> "ExitMapBest" DutyDef
+DutyDefOf --> "ExitMapBestAndDefendSelf" DutyDef
+DutyDefOf --> "ExitMapNearDutyTarget" DutyDef
+DutyDefOf --> "MarryPawn" DutyDef
+DutyDefOf --> "GiveSpeech" DutyDef
+DutyDefOf --> "Spectate" DutyDef
+DutyDefOf --> "Party" DutyDef
+DutyDefOf --> "BestowingCeremony_MoveInPlace" DutyDef
+DutyDefOf --> "PrepareCaravan_GatherItems" DutyDef
+DutyDefOf --> "PrepareCaravan_Wait" DutyDef
+DutyDefOf --> "PrepareCaravan_GatherPawns" DutyDef
+DutyDefOf --> "PrepareCaravan_GatherDownedPawns" DutyDef
+DutyDefOf --> "PrepareCaravan_Pause" DutyDef
+@enduml

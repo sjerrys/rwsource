@@ -1,0 +1,11 @@
+@startuml
+class GenStep_AnimaTrees {
+    + {static} <<readonly>> Density : float = 1.25E-05f
+    + <<override>> SeedPart : int <<get>>
+    + <<override>> Generate(map:Map, parms:GenStepParams) : void
+    + {static} TrySpawnAt(cell:IntVec3, map:Map, growth:float, plant:Thing) : bool
+    + {static} CanSpawnAt(c:IntVec3, map:Map, minProximityToArtificialStructures:int, minProximityToCenter:int, minFertileUnroofedCells:int, maxFertileUnroofedCellRadius:int) : bool
+    + {static} DesiredTreeCountForMap(map:Map) : int
+}
+GenStep <|-- GenStep_AnimaTrees
+@enduml

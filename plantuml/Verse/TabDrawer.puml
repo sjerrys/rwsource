@@ -1,0 +1,8 @@
+@startuml
+class TabDrawer <<static>> {
+    + <<const>> TabHeight : float = 32f
+    + <<const>> TabHoriztonalOverlap : float = 10f
+    + {static} DrawTabs(baseRect:Rect, tabs:List<TabRecord>, rows:int) : TabRecord
+    + {static} DrawTabs(baseRect:Rect, tabs:List<TabRecord>, maxTabWidth:float) : TabRecord
+}
+@enduml

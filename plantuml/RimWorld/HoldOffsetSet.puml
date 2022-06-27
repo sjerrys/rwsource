@@ -1,0 +1,9 @@
+@startuml
+class HoldOffsetSet {
+    + Pick(rotation:Rot4) : HoldOffset
+}
+HoldOffsetSet --> "northDefault" HoldOffset
+HoldOffsetSet --> "east" HoldOffset
+HoldOffsetSet --> "south" HoldOffset
+HoldOffsetSet --> "west" HoldOffset
+@enduml

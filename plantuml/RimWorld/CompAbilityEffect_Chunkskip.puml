@@ -1,0 +1,13 @@
+@startuml
+class CompAbilityEffect_Chunkskip {
+    + <<override>> Apply(target:LocalTargetInfo, dest:LocalTargetInfo) : void
+    + <<override>> GetPreCastActions() : IEnumerable<PreCastAction>
+    + <<override>> DrawEffectPreview(target:LocalTargetInfo) : void
+    + <<override>> Valid(target:LocalTargetInfo, throwMessages:bool) : bool
+    + <<override>> CanApplyOn(target:LocalTargetInfo, dest:LocalTargetInfo) : bool
+    + <<override>> ExtraLabel(target:LocalTargetInfo) : string
+}
+CompAbilityEffect <|-- CompAbilityEffect_Chunkskip
+CompAbilityEffect_Chunkskip o-> "DustColor" Color
+CompAbilityEffect_Chunkskip --> "Props" CompProperties_AbilityChunkskip
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class Alert_NeedDoctor {
+    + Alert_NeedDoctor()
+    + <<override>> GetExplanation() : TaggedString
+    + <<override>> GetReport() : AlertReport
+}
+Alert <|-- Alert_NeedDoctor
+@enduml

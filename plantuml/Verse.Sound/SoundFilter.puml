@@ -1,0 +1,5 @@
+@startuml
+abstract class SoundFilter {
+    + {abstract} SetupOn(source:AudioSource) : void
+}
+@enduml

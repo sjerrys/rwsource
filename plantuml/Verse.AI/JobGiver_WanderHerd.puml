@@ -1,0 +1,6 @@
+@startuml
+class JobGiver_WanderHerd {
+    + JobGiver_WanderHerd()
+}
+JobGiver_Wander <|-- JobGiver_WanderHerd
+@enduml

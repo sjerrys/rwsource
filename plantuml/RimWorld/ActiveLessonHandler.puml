@@ -1,0 +1,14 @@
+@startuml
+class ActiveLessonHandler {
+    + ActiveLessonVisible : bool <<get>>
+    + ExposeData() : void
+    + Activate(id:InstructionDef) : void
+    + Activate(lesson:Lesson) : void
+    + Deactivate() : void
+    + ActiveLessonOnGUI() : void
+    + ActiveLessonUpdate() : void
+    + Notify_KnowledgeDemonstrated(conc:ConceptDef) : void
+}
+IExposable <|-- ActiveLessonHandler
+ActiveLessonHandler --> "Current" Lesson
+@enduml

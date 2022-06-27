@@ -1,0 +1,10 @@
+@startuml
+class SampleOneShotManager {
+    + CanAddPlayingOneShot(def:SoundDef, info:SoundInfo) : bool
+    + TryAddPlayingOneShot(newSample:SampleOneShot) : void
+    + SampleOneShotManagerUpdate() : void
+}
+class "IEnumerable`1"<T> {
+}
+SampleOneShotManager --> "PlayingOneShots<SampleOneShot>" "IEnumerable`1"
+@enduml

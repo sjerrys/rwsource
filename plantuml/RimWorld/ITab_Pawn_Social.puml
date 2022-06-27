@@ -1,0 +1,8 @@
+@startuml
+class ITab_Pawn_Social {
+    + <<const>> Width : float = 540f
+    + <<override>> IsVisible : bool <<get>>
+    + ITab_Pawn_Social()
+}
+ITab <|-- ITab_Pawn_Social
+@enduml

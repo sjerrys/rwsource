@@ -1,0 +1,7 @@
+@startuml
+class Verb_MechCluster {
+    + <<const>> Points : float = 2500f
+    + <<override>> HighlightFieldRadiusAroundTarget(needLOSToCenter:bool) : float
+}
+Verb_CastBase <|-- Verb_MechCluster
+@enduml

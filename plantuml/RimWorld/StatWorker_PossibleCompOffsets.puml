@@ -1,0 +1,9 @@
+@startuml
+class StatWorker_PossibleCompOffsets {
+    + <<override>> GetValueUnfinalized(req:StatRequest, applyPostProcess:bool) : float
+    + <<override>> GetExplanationUnfinalized(req:StatRequest, numberSense:ToStringNumberSense) : string
+    + <<override>> GetStatDrawEntryLabel(stat:StatDef, value:float, numberSense:ToStringNumberSense, optionalReq:StatRequest, finalized:bool) : string
+    + <<override>> GetExplanationFinalizePart(req:StatRequest, numberSense:ToStringNumberSense, finalVal:float) : string
+}
+StatWorker <|-- StatWorker_PossibleCompOffsets
+@enduml

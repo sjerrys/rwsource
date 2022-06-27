@@ -1,0 +1,19 @@
+@startuml
+class Graphic_Multi {
+    + GraphicPath : string <<get>>
+    + <<override>> WestFlipped : bool <<get>>
+    + <<override>> EastFlipped : bool <<get>>
+    + <<override>> ShouldDrawRotated : bool <<get>>
+    + <<override>> DrawRotatedExtraAngleOffset : float <<get>>
+    + <<override>> Init(req:GraphicRequest) : void
+    + <<override>> GetColoredVersion(newShader:Shader, newColor:Color, newColorTwo:Color) : Graphic
+    + <<override>> ToString() : string
+    + <<override>> GetHashCode() : int
+}
+Graphic <|-- Graphic_Multi
+Graphic_Multi --> "MatSingle" Material
+Graphic_Multi --> "MatWest" Material
+Graphic_Multi --> "MatSouth" Material
+Graphic_Multi --> "MatEast" Material
+Graphic_Multi --> "MatNorth" Material
+@enduml

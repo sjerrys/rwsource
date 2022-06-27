@@ -1,0 +1,8 @@
+@startuml
+class HediffComp_ExplodeOnDeath {
+    + <<override>> Notify_PawnKilled() : void
+    + <<override>> Notify_PawnDied() : void
+}
+HediffComp <|-- HediffComp_ExplodeOnDeath
+HediffComp_ExplodeOnDeath --> "Props" HediffCompProperties_ExplodeOnDeath
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class Building_SunLamp {
+    + <<override>> GetGizmos() : IEnumerable<Gizmo>
+}
+class "IEnumerable`1"<T> {
+}
+Building <|-- Building_SunLamp
+Building_SunLamp --> "GrowableCells<IntVec3>" "IEnumerable`1"
+@enduml

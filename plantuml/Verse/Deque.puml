@@ -1,0 +1,10 @@
+@startuml
+class "Deque`1"<T> {
+    + Empty : bool <<get>>
+    + Deque()
+    + PushFront(item:T) : void
+    + PushBack(item:T) : void
+    + PopFront() : T
+    + Clear() : void
+}
+@enduml

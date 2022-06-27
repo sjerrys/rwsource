@@ -1,0 +1,16 @@
+@startuml
+class CompProperties_Spawner {
+    + spawnCount : int = 1
+    + spawnMaxAdjacent : int
+    + spawnForbidden : bool
+    + requiresPower : bool
+    + writeTimeLeftToSpawn : bool
+    + showMessageIfOwned : bool
+    + saveKeysPrefix : string
+    + inheritFaction : bool
+    + CompProperties_Spawner()
+}
+CompProperties <|-- CompProperties_Spawner
+CompProperties_Spawner --> "thingToSpawn" ThingDef
+CompProperties_Spawner o-> "spawnIntervalRange" IntRange
+@enduml

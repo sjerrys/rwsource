@@ -1,0 +1,14 @@
+@startuml
+abstract class CameraMapConfig {
+    + dollyRateKeys : float = 50f
+    + dollyRateScreenEdge : float = 35f
+    + camSpeedDecayFactor : float = 0.85f
+    + moveSpeedScale : float = 2f
+    + zoomSpeed : float = 2.6f
+    + minSize : float = 11f
+    + zoomPreserveFactor : float
+    + smoothZoom : bool
+    + <<virtual>> ConfigFixedUpdate_60(velocity:Vector3) : void
+    + <<virtual>> ConfigOnGUI() : void
+}
+@enduml

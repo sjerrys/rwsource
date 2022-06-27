@@ -1,0 +1,11 @@
+@startuml
+class SitePartWorker_ConditionCauser {
+    + <<override>> GetPostProcessedThreatLabel(site:Site, sitePart:SitePart) : string
+    + <<override>> Init(site:Site, sitePart:SitePart) : void
+    + <<override>> SitePartWorkerTick(sitePart:SitePart) : void
+    + <<override>> PostDrawExtraSelectionOverlays(sitePart:SitePart) : void
+    + <<override>> Notify_SiteMapAboutToBeRemoved(sitePart:SitePart) : void
+    + <<override>> Notify_GeneratedByQuestGen(part:SitePart, slate:Slate, outExtraDescriptionRules:List<Rule>, outExtraDescriptionConstants:Dictionary<string, string>) : void
+}
+SitePartWorker <|-- SitePartWorker_ConditionCauser
+@enduml

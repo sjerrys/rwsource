@@ -1,0 +1,8 @@
+@startuml
+class Trigger_FractionColonyDamageTaken {
+    + Trigger_FractionColonyDamageTaken(desiredColonyDamageFraction:float, minDamage:float)
+    + <<override>> SourceToilBecameActive(transition:Transition, previousToil:LordToil) : void
+    + <<override>> ActivateOn(lord:Lord, signal:TriggerSignal) : bool
+}
+Trigger <|-- Trigger_FractionColonyDamageTaken
+@enduml

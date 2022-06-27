@@ -1,0 +1,9 @@
+@startuml
+class CompProperties_ProximityFuse {
+    + radius : float
+    + CompProperties_ProximityFuse()
+    + <<override>> ConfigErrors(parentDef:ThingDef) : IEnumerable<string>
+}
+CompProperties <|-- CompProperties_ProximityFuse
+CompProperties_ProximityFuse --> "target" ThingDef
+@enduml

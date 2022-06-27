@@ -1,0 +1,9 @@
+@startuml
+class Building_AncientCryptosleepCasket {
+    + groupID : int
+    + <<override>> ExposeData() : void
+    + <<override>> PreApplyDamage(dinfo:DamageInfo, absorbed:bool) : void
+    + <<override>> EjectContents() : void
+}
+Building_CryptosleepCasket <|-- Building_AncientCryptosleepCasket
+@enduml

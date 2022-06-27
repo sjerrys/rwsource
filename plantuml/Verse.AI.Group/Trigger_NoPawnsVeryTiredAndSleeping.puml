@@ -1,0 +1,7 @@
+@startuml
+class Trigger_NoPawnsVeryTiredAndSleeping {
+    + Trigger_NoPawnsVeryTiredAndSleeping(extraRestThreshOffset:float)
+    + <<override>> ActivateOn(lord:Lord, signal:TriggerSignal) : bool
+}
+Trigger <|-- Trigger_NoPawnsVeryTiredAndSleeping
+@enduml

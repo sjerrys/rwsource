@@ -1,0 +1,27 @@
+@startuml
+class ZlibBaseStream {
+    + <<override>> CanRead : bool <<get>>
+    + <<override>> CanSeek : bool <<get>>
+    + <<override>> CanWrite : bool <<get>>
+    + <<override>> Length : long <<get>>
+    + <<override>> Position : long <<get>> <<set>>
+    + ZlibBaseStream(stream:Stream, compressionMode:CompressionMode, level:CompressionLevel, flavor:ZlibStreamFlavor, leaveOpen:bool)
+    + <<override>> Write(buffer:byte[], offset:int, count:int) : void
+    + <<override>> Close() : void
+    + <<override>> Flush() : void
+    + <<override>> Seek(offset:long, origin:SeekOrigin) : long
+    + <<override>> SetLength(value:long) : void
+    + <<override>> Read(buffer:byte[], offset:int, count:int) : int
+    + {static} CompressString(s:string, compressor:Stream) : void
+    + {static} CompressBuffer(b:byte[], compressor:Stream) : void
+    + {static} UncompressString(compressed:byte[], decompressor:Stream) : string
+    + {static} UncompressBuffer(compressed:byte[], decompressor:Stream) : byte[]
+}
+enum StreamMode {
+    Writer,
+    Reader,
+    Undefined,
+}
+Stream <|-- ZlibBaseStream
+ZlibBaseStream +-- StreamMode
+@enduml

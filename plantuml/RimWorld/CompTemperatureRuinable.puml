@@ -1,0 +1,16 @@
+@startuml
+class CompTemperatureRuinable {
+    + <<const>> RuinedSignal : string = "RuinedByTemperature"
+    + Ruined : bool <<get>>
+    + <<override>> PostExposeData() : void
+    + Reset() : void
+    + <<override>> CompTick() : void
+    + <<override>> CompTickRare() : void
+    + <<override>> PreAbsorbStack(otherStack:Thing, count:int) : void
+    + <<override>> AllowStackWith(other:Thing) : bool
+    + <<override>> PostSplitOff(piece:Thing) : void
+    + <<override>> CompInspectStringExtra() : string
+}
+ThingComp <|-- CompTemperatureRuinable
+CompTemperatureRuinable --> "Props" CompProperties_TemperatureRuinable
+@enduml

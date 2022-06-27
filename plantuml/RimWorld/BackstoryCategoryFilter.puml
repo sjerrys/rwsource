@@ -1,0 +1,11 @@
+@startuml
+class BackstoryCategoryFilter {
+    + commonality : float = 1f
+    + Matches(bio:PawnBio) : bool
+    + Matches(backstory:Backstory) : bool
+}
+class "List`1"<T> {
+}
+BackstoryCategoryFilter --> "categories<string>" "List`1"
+BackstoryCategoryFilter --> "exclude<string>" "List`1"
+@enduml

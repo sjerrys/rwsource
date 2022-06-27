@@ -1,0 +1,11 @@
+@startuml
+class CompProperties_EffectWithDest {
+    + requiresLineOfSight : bool
+    + range : float
+    + destClamorRadius : int
+}
+CompProperties_AbilityEffect <|-- CompProperties_EffectWithDest
+CompProperties_EffectWithDest --> "destination" AbilityEffectDestination
+CompProperties_EffectWithDest --> "randomRange" FloatRange
+CompProperties_EffectWithDest --> "destClamorType" ClamorDef
+@enduml

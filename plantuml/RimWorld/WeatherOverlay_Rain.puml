@@ -1,0 +1,6 @@
+@startuml
+class WeatherOverlay_Rain {
+    + WeatherOverlay_Rain()
+}
+SkyOverlay <|-- WeatherOverlay_Rain
+@enduml

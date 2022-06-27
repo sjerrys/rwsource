@@ -1,0 +1,15 @@
+@startuml
+class ScenPartDefOf <<static>> {
+    {static} ScenPartDefOf()
+}
+ScenPartDefOf --> "PlayerFaction" ScenPartDef
+ScenPartDefOf --> "ConfigPage_ConfigureStartingPawns" ScenPartDef
+ScenPartDefOf --> "PlayerPawnsArriveMethod" ScenPartDef
+ScenPartDefOf --> "ForcedTrait" ScenPartDef
+ScenPartDefOf --> "ForcedHediff" ScenPartDef
+ScenPartDefOf --> "StartingAnimal" ScenPartDef
+ScenPartDefOf --> "ScatterThingsNearPlayerStart" ScenPartDef
+ScenPartDefOf --> "StartingThing_Defined" ScenPartDef
+ScenPartDefOf --> "ScatterThingsAnywhere" ScenPartDef
+ScenPartDefOf --> "GameStartDialog" ScenPartDef
+@enduml

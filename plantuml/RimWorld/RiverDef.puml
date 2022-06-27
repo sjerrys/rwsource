@@ -1,0 +1,21 @@
+@startuml
+class RiverDef {
+    + spawnFlowThreshold : int
+    + spawnChance : float = 1f
+    + degradeThreshold : int
+    + widthOnWorld : float = 0.5f
+    + widthOnMap : float = 10f
+    + debugOpacity : float
+}
+class Branch {
+    + minFlow : int
+    + chance : float = 1f
+}
+class "List`1"<T> {
+}
+Def <|-- RiverDef
+RiverDef --> "degradeChild" RiverDef
+RiverDef --> "branches<Branch>" "List`1"
+RiverDef +-- Branch
+Branch --> "child" RiverDef
+@enduml

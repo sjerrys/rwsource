@@ -1,0 +1,13 @@
+@startuml
+class CompIngredients {
+    + <<override>> PostExposeData() : void
+    + RegisterIngredient(def:ThingDef) : void
+    + <<override>> PostSplitOff(piece:Thing) : void
+    + <<override>> PreAbsorbStack(otherStack:Thing, count:int) : void
+    + <<override>> CompInspectStringExtra() : string
+}
+class "List`1"<T> {
+}
+ThingComp <|-- CompIngredients
+CompIngredients o-> "ingredients<ThingDef>" "List`1"
+@enduml

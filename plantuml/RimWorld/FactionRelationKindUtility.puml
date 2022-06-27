@@ -1,0 +1,6 @@
+@startuml
+class FactionRelationKindUtility <<static>> {
+    + {static} GetLabel(kind:FactionRelationKind) : string
+    + {static} GetColor(kind:FactionRelationKind) : Color
+}
+@enduml

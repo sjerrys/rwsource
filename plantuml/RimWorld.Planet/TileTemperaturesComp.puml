@@ -1,0 +1,26 @@
+@startuml
+class TileTemperaturesComp {
+    + TileTemperaturesComp(world:World)
+    + <<override>> WorldComponentTick() : void
+    + GetOutdoorTemp(tile:int) : float
+    + GetSeasonalTemp(tile:int) : float
+    + OutdoorTemperatureAt(tile:int, absTick:int) : float
+    + OffsetFromDailyRandomVariation(tile:int, absTick:int) : float
+    + AverageTemperatureForTwelfth(tile:int, twelfth:Twelfth) : float
+    + SeasonAcceptableFor(tile:int, animalRace:ThingDef) : bool
+    + OutdoorTemperatureAcceptableFor(tile:int, animalRace:ThingDef) : bool
+    + SeasonAndOutdoorTemperatureAcceptableFor(tile:int, animalRace:ThingDef) : bool
+    + ClearCaches() : void
+}
+class CachedTileTemperatureData {
+    + CachedTileTemperatureData(tile:int)
+    + GetOutdoorTemp() : float
+    + GetSeasonalTemp() : float
+    + OutdoorTemperatureAt(absTick:int) : float
+    + OffsetFromDailyRandomVariation(absTick:int) : float
+    + AverageTemperatureForTwelfth(twelfth:Twelfth) : float
+    + CheckCache() : void
+}
+WorldComponent <|-- TileTemperaturesComp
+TileTemperaturesComp +-- CachedTileTemperatureData
+@enduml

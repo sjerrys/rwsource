@@ -1,0 +1,24 @@
+@startuml
+class GenStep_Roads {
+    + <<override>> SeedPart : int <<get>>
+    + <<override>> Generate(map:Map, parms:GenStepParams) : void
+}
+class NeededRoad <<struct>> {
+    + angle : float
+}
+class DrawCommand <<struct>> {
+}
+class DistanceElement <<struct>> {
+    + fromRoad : float
+    + alongPath : float
+    + touched : bool
+}
+GenStep <|-- GenStep_Roads
+GenStep_Roads +-- NeededRoad
+NeededRoad --> "road" RoadDef
+GenStep_Roads +-- DrawCommand
+DrawCommand --> "roadDef" RoadDef
+DrawCommand --> "action" Action
+GenStep_Roads +-- DistanceElement
+DistanceElement --> "origin" IntVec3
+@enduml

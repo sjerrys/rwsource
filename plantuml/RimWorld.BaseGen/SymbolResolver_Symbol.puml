@@ -1,0 +1,8 @@
+@startuml
+class SymbolResolver_Symbol {
+    + symbol : string
+    + <<override>> CanResolve(rp:ResolveParams) : bool
+    + <<override>> Resolve(rp:ResolveParams) : void
+}
+SymbolResolver <|-- SymbolResolver_Symbol
+@enduml

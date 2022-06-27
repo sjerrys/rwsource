@@ -1,0 +1,11 @@
+@startuml
+class StrikeRecord <<struct>> {
+    + ticksGame : int
+    + Expired : bool <<get>>
+    + ExposeData() : void
+    + <<override>> ToString() : string
+}
+IExposable <|-- StrikeRecord
+StrikeRecord --> "cell" IntVec3
+StrikeRecord --> "def" ThingDef
+@enduml

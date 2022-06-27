@@ -1,0 +1,11 @@
+@startuml
+enum OverallTemperature {
+    VeryCold,
+    Cold,
+    LittleBitColder,
+    Normal,
+    LittleBitWarmer,
+    Hot,
+    VeryHot,
+}
+@enduml

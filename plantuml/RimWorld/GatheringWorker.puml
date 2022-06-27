@@ -1,0 +1,7 @@
+@startuml
+abstract class GatheringWorker {
+    + <<virtual>> CanExecute(map:Map, organizer:Pawn) : bool
+    + <<virtual>> TryExecute(map:Map, organizer:Pawn) : bool
+}
+GatheringWorker --> "def" GatheringDef
+@enduml

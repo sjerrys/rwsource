@@ -1,0 +1,10 @@
+@startuml
+class TickList {
+    + TickList(tickType:TickerType)
+    + Reset() : void
+    + RemoveWhere(predicate:Predicate<Thing>) : void
+    + RegisterThing(t:Thing) : void
+    + DeregisterThing(t:Thing) : void
+    + Tick() : void
+}
+@enduml

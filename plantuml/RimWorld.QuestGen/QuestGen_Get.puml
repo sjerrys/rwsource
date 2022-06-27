@@ -1,0 +1,5 @@
+@startuml
+class QuestGen_Get <<static>> {
+    + {static} GetMap(mustBeInfestable:bool, preferMapWithMinFreeColonists:int?) : Map
+}
+@enduml

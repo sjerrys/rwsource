@@ -1,0 +1,13 @@
+@startuml
+class Hediff_Psylink {
+    + suppressPostAddLetter : bool
+    + <<override>> PostAdd(dinfo:DamageInfo?) : void
+    + ChangeLevel(levelOffset:int, sendLetter:bool) : void
+    + <<override>> ChangeLevel(levelOffset:int) : void
+    + {static} MakeLetterTextNewPsylinkLevel(pawn:Pawn, abilityLevel:int, newAbilities:IEnumerable<AbilityDef>) : string
+    + TryGiveAbilityOfLevel_NewTemp(abilityLevel:int, sendLetter:bool) : void
+    + TryGiveAbilityOfLevel(abilityLevel:int) : void
+    + <<override>> PostRemoved() : void
+}
+Hediff_ImplantWithLevel <|-- Hediff_Psylink
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+class TimedDetectionRaids {
+    + <<const>> RaidThreatPointsMultiplier : float = 2.5f
+    + NextRaidCountdownActiveAndVisible : bool <<get>>
+    + DetectionCountdownTimeLeftString : string <<get>>
+    + StartDetectionCountdown(ticks:int, notifyTicks:int) : void
+    + ResetCountdown() : void
+    + SetNotifiedSilently() : void
+    + <<override>> PostExposeData() : void
+    + <<override>> CompInspectStringExtra() : string
+    + <<override>> CompTick() : void
+    + {static} GetDetectionCountdownTimeLeftString(ticksLeft:int) : string
+    + <<override>> GetGizmos() : IEnumerable<Gizmo>
+    + CopyFrom(other:TimedDetectionRaids) : void
+}
+WorldObjectComp <|-- TimedDetectionRaids
+@enduml

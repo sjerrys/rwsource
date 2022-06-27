@@ -1,0 +1,11 @@
+@startuml
+class GenStep_PreciousLump {
+    + <<override>> SeedPart : int <<get>>
+    + <<override>> Generate(map:Map, parms:GenStepParams) : void
+}
+class "List`1"<T> {
+}
+GenStep_ScatterLumpsMineable <|-- GenStep_PreciousLump
+GenStep_PreciousLump --> "mineables<ThingDef>" "List`1"
+GenStep_PreciousLump o-> "totalValueRange" FloatRange
+@enduml

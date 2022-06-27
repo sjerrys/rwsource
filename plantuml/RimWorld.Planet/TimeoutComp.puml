@@ -1,0 +1,13 @@
+@startuml
+class TimeoutComp {
+    + Active : bool <<get>>
+    + Passed : bool <<get>>
+    + TicksLeft : int <<get>>
+    + StartTimeout(ticks:int) : void
+    + StopTimeout() : void
+    + <<override>> CompTick() : void
+    + <<override>> PostExposeData() : void
+    + <<override>> CompInspectStringExtra() : string
+}
+WorldObjectComp <|-- TimeoutComp
+@enduml

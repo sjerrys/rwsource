@@ -1,0 +1,8 @@
+@startuml
+class AlertsReadout {
+    + <<const>> AlertListWidth : float = 164f
+    + AlertsReadout()
+    + AlertsReadoutUpdate() : void
+    + AlertsReadoutOnGUI() : void
+}
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+class CompProperties_SpawnerFilth {
+    + spawnCountOnSpawn : int = 5
+    + spawnMtbHours : float = 12f
+    + spawnRadius : float = 3f
+    + spawnEveryDays : float
+    + requiredRotStage : RotStage?
+    + CompProperties_SpawnerFilth()
+}
+CompProperties <|-- CompProperties_SpawnerFilth
+CompProperties_SpawnerFilth --> "filthDef" ThingDef
+@enduml

@@ -1,0 +1,26 @@
+@startuml
+class GenCelestial <<static>> {
+    + <<const>> ShadowMaxLengthDay : float = 15f
+    + <<const>> ShadowMaxLengthNight : float = 15f
+    + {static} CurCelestialSunGlow(map:Map) : float
+    + {static} CelestialSunGlow(map:Map, ticksAbs:int) : float
+    + {static} CurShadowStrength(map:Map) : float
+    + {static} GetLightSourceInfo(map:Map, type:LightType) : LightInfo
+    + {static} CurSunPositionInWorldSpace() : Vector3
+    + {static} IsDaytime(glow:float) : bool
+    + {static} AverageGlow(latitude:float, dayOfYear:int) : float
+    + {static} LogSunGlowForYear() : void
+    + {static} LogSunAngleForYear() : void
+}
+class LightInfo <<struct>> {
+    + intensity : float
+}
+enum LightType {
+    Shadow,
+    LightingSun,
+    LightingMoon,
+}
+GenCelestial +-- LightInfo
+LightInfo --> "vector" Vector2
+GenCelestial +-- LightType
+@enduml

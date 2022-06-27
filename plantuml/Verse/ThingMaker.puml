@@ -1,0 +1,5 @@
+@startuml
+class ThingMaker <<static>> {
+    + {static} MakeThing(def:ThingDef, stuff:ThingDef) : Thing
+}
+@enduml

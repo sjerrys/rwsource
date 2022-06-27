@@ -1,0 +1,6 @@
+@startuml
+class SectionLayer_ThingsGeneral {
+    + SectionLayer_ThingsGeneral(section:Section)
+}
+SectionLayer_Things <|-- SectionLayer_ThingsGeneral
+@enduml

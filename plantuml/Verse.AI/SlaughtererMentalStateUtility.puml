@@ -1,0 +1,5 @@
+@startuml
+class SlaughtererMentalStateUtility <<static>> {
+    + {static} FindAnimal(pawn:Pawn) : Pawn
+}
+@enduml

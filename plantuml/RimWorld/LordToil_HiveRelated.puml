@@ -1,0 +1,6 @@
+@startuml
+abstract class LordToil_HiveRelated {
+    + LordToil_HiveRelated()
+}
+LordToil <|-- LordToil_HiveRelated
+@enduml

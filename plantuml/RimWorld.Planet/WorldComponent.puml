@@ -1,0 +1,11 @@
+@startuml
+abstract class WorldComponent {
+    + WorldComponent(world:World)
+    + <<virtual>> WorldComponentUpdate() : void
+    + <<virtual>> WorldComponentTick() : void
+    + <<virtual>> ExposeData() : void
+    + <<virtual>> FinalizeInit() : void
+}
+IExposable <|-- WorldComponent
+WorldComponent --> "world" World
+@enduml

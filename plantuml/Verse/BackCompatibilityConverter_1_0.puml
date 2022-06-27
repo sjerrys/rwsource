@@ -1,0 +1,19 @@
+@startuml
+class BackCompatibilityConverter_1_0 {
+    + <<override>> AppliesToVersion(majorVer:int, minorVer:int) : bool
+    + <<override>> BackCompatibleDefName(defType:Type, defName:string, forDefInjections:bool, node:XmlNode) : string
+    + <<override>> GetBackCompatibleType(baseType:Type, providedClassName:string, node:XmlNode) : Type
+    + <<override>> GetBackCompatibleBodyPartIndex(body:BodyDef, index:int) : int
+    + <<override>> PostExposeData(obj:object) : void
+    + {static} MakeAndAddWorldObjectQuest(destination:WorldObject, description:string) : Quest
+    + {static} MakeAndAddTradeRequestQuest(destination:WorldObject, description:string, tradeRequest:TradeRequestComp) : Quest
+    + <<override>> PreLoadSavegame(loadingVersion:string) : void
+    + <<override>> PostLoadSavegame(loadingVersion:string) : void
+}
+class UpgradedCrashedShipPart <<struct>> {
+    + originalDefName : string
+}
+BackCompatibilityConverter <|-- BackCompatibilityConverter_1_0
+BackCompatibilityConverter_1_0 +-- UpgradedCrashedShipPart
+UpgradedCrashedShipPart --> "thing" Thing
+@enduml

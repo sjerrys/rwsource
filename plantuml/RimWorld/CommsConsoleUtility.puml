@@ -1,0 +1,6 @@
+@startuml
+class CommsConsoleUtility <<static>> {
+    + {static} PlayerHasPoweredCommsConsole(map:Map) : bool
+    + {static} PlayerHasPoweredCommsConsole() : bool
+}
+@enduml

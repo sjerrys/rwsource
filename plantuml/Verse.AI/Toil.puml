@@ -1,0 +1,29 @@
+@startuml
+class Toil <<sealed>> {
+    + atomicWithPrevious : bool
+    + defaultDuration : int
+    + handlingFacing : bool
+    + Cleanup(myIndex:int, jobDriver:JobDriver) : void
+    + GetActor() : Pawn
+    + AddFailCondition(newFailCondition:Func<bool>) : void
+    + AddEndCondition(newEndCondition:Func<JobCondition>) : void
+    + AddPreInitAction(newAct:Action) : void
+    + AddPreTickAction(newAct:Action) : void
+    + AddFinishAction(newAct:Action) : void
+}
+class "List`1"<T> {
+}
+class "Func`1"<T> {
+}
+IJobEndable <|-- Toil
+Toil --> "actor" Pawn
+Toil --> "initAction" Action
+Toil --> "tickAction" Action
+Toil o-> "endConditions<Func<JobCondition>>" "List`1"
+Toil --> "preInitActions<Action>" "List`1"
+Toil --> "preTickActions<Action>" "List`1"
+Toil --> "finishActions<Action>" "List`1"
+Toil o-> "socialMode" RandomSocialMode
+Toil --> "activeSkill<SkillDef>" "Func`1"
+Toil o-> "defaultCompleteMode" ToilCompleteMode
+@enduml

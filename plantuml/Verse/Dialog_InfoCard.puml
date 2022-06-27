@@ -1,0 +1,43 @@
+@startuml
+class Dialog_InfoCard {
+    + {static} DefsToHyperlinks(defs:IEnumerable<ThingDef>) : IEnumerable<Hyperlink>
+    + {static} DefsToHyperlinks(links:IEnumerable<DefHyperlink>) : IEnumerable<Hyperlink>
+    + {static} TitleDefsToHyperlinks(links:IEnumerable<DefHyperlink>) : IEnumerable<Hyperlink>
+    + {static} PushCurrentToHistoryAndClose() : void
+    + Dialog_InfoCard(thing:Thing)
+    + Dialog_InfoCard(onlyDef:Def)
+    + Dialog_InfoCard(thingDef:ThingDef, stuff:ThingDef)
+    + Dialog_InfoCard(titleDef:RoyalTitleDef, faction:Faction)
+    + Dialog_InfoCard(faction:Faction)
+    + Dialog_InfoCard(worldObject:WorldObject)
+    + <<override>> Close(doCloseSound:bool) : void
+    + SetTab(infoCardTab:InfoCardTab) : void
+    + <<override>> DoWindowContents(inRect:Rect) : void
+}
+enum InfoCardTab {
+    Stats,
+    Character,
+    Health,
+    Records,
+    Permits,
+}
+class Hyperlink <<struct>> {
+    + selectedStatIndex : int
+    + Label : string <<get>>
+    + Hyperlink(infoCard:Dialog_InfoCard, statIndex:int)
+    + Hyperlink(def:Def, statIndex:int)
+    + Hyperlink(titleDef:RoyalTitleDef, faction:Faction, statIndex:int)
+    + Hyperlink(thing:Thing, statIndex:int)
+    + OpenDialog() : void
+}
+Window <|-- Dialog_InfoCard
+Dialog_InfoCard --> "InitialSize" Vector2
+Dialog_InfoCard +-- InfoCardTab
+Dialog_InfoCard +-- Hyperlink
+Hyperlink --> "thing" Thing
+Hyperlink --> "stuff" ThingDef
+Hyperlink --> "def" Def
+Hyperlink --> "worldObject" WorldObject
+Hyperlink --> "titleDef" RoyalTitleDef
+Hyperlink --> "faction" Faction
+@enduml

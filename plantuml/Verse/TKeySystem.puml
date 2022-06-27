@@ -1,0 +1,28 @@
+@startuml
+class TKeySystem <<static>> {
+    + <<const>> AttributeName : string = "TKey"
+    + {static} Clear() : void
+    + {static} Parse(document:XmlDocument) : void
+    + {static} MarkTreatAsList(node:XmlNode) : void
+    + {static} BuildMappings() : void
+    + {static} TryGetNormalizedPath(tKeyPath:string, normalizedPath:string) : bool
+    + {static} TrySuggestTKeyPath(translationPath:string, tKeyPath:string, lookup:Dictionary<string, string>) : bool
+}
+class TKeyRef <<struct>> {
+    + defName : string
+    + defTypeName : string
+    + tKey : string
+    + tKeyPath : string
+}
+class PossibleDefInjection <<struct>> {
+    + normalizedPath : string
+    + path : string
+}
+class "List`1"<T> {
+}
+TKeySystem o-> "loadErrors<string>" "List`1"
+TKeySystem +-- TKeyRef
+TKeyRef --> "defRootNode" XmlNode
+TKeyRef --> "node" XmlNode
+TKeySystem +-- PossibleDefInjection
+@enduml

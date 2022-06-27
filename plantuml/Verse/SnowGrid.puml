@@ -1,0 +1,14 @@
+@startuml
+class SnowGrid <<sealed>> {
+    + <<const>> MaxDepth : float = 1f
+    + TotalDepth : float <<get>>
+    + SnowGrid(map:Map)
+    + ExposeData() : void
+    + {static} CanCoexistWithSnow(def:ThingDef) : bool
+    + AddDepth(c:IntVec3, depthToAdd:float) : void
+    + SetDepth(c:IntVec3, newDepth:float) : void
+    + GetDepth(c:IntVec3) : float
+    + GetCategory(c:IntVec3) : SnowCategory
+}
+IExposable <|-- SnowGrid
+@enduml

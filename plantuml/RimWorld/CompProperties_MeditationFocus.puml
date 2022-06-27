@@ -1,0 +1,11 @@
+@startuml
+class CompProperties_MeditationFocus {
+    + CompProperties_MeditationFocus()
+    + <<override>> GetExplanationAbstract(def:ThingDef) : IEnumerable<string>
+    + <<override>> ResolveReferences(parent:ThingDef) : void
+}
+class "List`1"<T> {
+}
+CompProperties_StatOffsetBase <|-- CompProperties_MeditationFocus
+CompProperties_MeditationFocus o-> "focusTypes<MeditationFocusDef>" "List`1"
+@enduml

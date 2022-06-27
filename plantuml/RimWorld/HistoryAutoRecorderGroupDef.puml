@@ -1,0 +1,14 @@
+@startuml
+class HistoryAutoRecorderGroupDef {
+    + useFixedScale : bool
+    + integersOnly : bool
+    + onlyPositiveValues : bool = true
+    + devModeOnly : bool
+    + {static} Named(defName:string) : HistoryAutoRecorderGroupDef
+}
+class "List`1"<T> {
+}
+Def <|-- HistoryAutoRecorderGroupDef
+HistoryAutoRecorderGroupDef --> "fixedScale" Vector2
+HistoryAutoRecorderGroupDef o-> "historyAutoRecorderDefs<HistoryAutoRecorderDef>" "List`1"
+@enduml

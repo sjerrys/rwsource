@@ -1,0 +1,11 @@
+@startuml
+class StatPart_Food {
+    + factorStarving : float = 1f
+    + factorUrgentlyHungry : float = 1f
+    + factorHungry : float = 1f
+    + factorFed : float = 1f
+    + <<override>> TransformValue(req:StatRequest, val:float) : void
+    + <<override>> ExplanationPart(req:StatRequest) : string
+}
+StatPart <|-- StatPart_Food
+@enduml

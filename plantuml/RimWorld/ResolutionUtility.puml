@@ -1,0 +1,17 @@
+@startuml
+class ResolutionUtility <<static>> {
+    + <<const>> MinResolutionWidth : int = 1024
+    + <<const>> MinResolutionHeight : int = 768
+    + <<const>> MinRecommendedResolutionWidth : int = 1700
+    + <<const>> MinRecommendedResolutionHeight : int = 910
+    + {static} SafeSetResolution(res:Resolution) : void
+    + {static} SafeSetFullscreen(fullScreen:bool) : void
+    + {static} SafeSetUIScale(newScale:float) : void
+    + {static} UIScaleSafeWithResolution(scale:float, w:int, h:int) : bool
+    + {static} SetResolutionRaw(w:int, h:int, fullScreen:bool) : void
+    + {static} SetNativeResolutionRaw() : void
+    + {static} GetRecommendedUIScale(screenWidth:int, screenHeight:int) : float
+    + {static} Update() : void
+}
+ResolutionUtility --> "NativeResolution" Resolution
+@enduml

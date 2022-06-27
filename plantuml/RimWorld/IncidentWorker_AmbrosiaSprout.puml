@@ -1,0 +1,5 @@
+@startuml
+class IncidentWorker_AmbrosiaSprout {
+}
+IncidentWorker <|-- IncidentWorker_AmbrosiaSprout
+@enduml

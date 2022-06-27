@@ -1,0 +1,14 @@
+@startuml
+class HealthCardUtility <<static>> {
+    + <<const>> TopPadding : float = 20f
+    + {static} DrawPawnHealthCard(outRect:Rect, pawn:Pawn, allowOperations:bool, showBloodLoss:bool, thingForMedBills:Thing) : void
+    + {static} DrawHealthSummary(rect:Rect, pawn:Pawn, allowOperations:bool, thingForMedBills:Thing) : void
+    + {static} DrawHediffListing(rect:Rect, pawn:Pawn, showBloodLoss:bool) : void
+    + {static} GetPainTip(pawn:Pawn) : string
+    + {static} GetPawnCapacityTip(pawn:Pawn, capacity:PawnCapacityDef) : string
+    + {static} GetEfficiencyLabel(pawn:Pawn, activity:PawnCapacityDef) : Pair<string, Color>
+    + {static} GetEfficiencyEstimateLabel(eff:float) : string
+    + {static} EfficiencyValueToEstimate(eff:float) : EfficiencyEstimate
+    + {static} GetPainLabel(pawn:Pawn) : Pair<string, Color>
+}
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class WorkGiver_GrowerHarvest {
+    + <<override>> HasJobOnCell(pawn:Pawn, c:IntVec3, forced:bool) : bool
+    + <<override>> ShouldSkip(pawn:Pawn, forced:bool) : bool
+    + <<override>> JobOnCell(pawn:Pawn, c:IntVec3, forced:bool) : Job
+}
+WorkGiver_Grower <|-- WorkGiver_GrowerHarvest
+WorkGiver_GrowerHarvest --> "PathEndMode" PathEndMode
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class BackstoryTranslationUtility <<static>> {
+    + <<const>> BackstoriesFolder : string = "Backstories"
+    + <<const>> BackstoriesFileName : string = "Backstories.xml"
+    + {static} LoadAndInjectBackstoryData(folderPaths:IEnumerable<Tuple<VirtualDirectory, ModContentPack, string>>, loadErrors:List<string>) : void
+    + {static} MissingBackstoryTranslations(lang:LoadedLanguage) : List<string>
+    + {static} BackstoryTranslationsMatchingEnglish(lang:LoadedLanguage) : List<string>
+}
+@enduml

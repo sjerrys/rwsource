@@ -1,0 +1,10 @@
+@startuml
+class Page_CreateWorldParams {
+    + <<override>> PageTitle : string <<get>>
+    + <<override>> PreOpen() : void
+    + <<override>> PostOpen() : void
+    + Reset() : void
+    + <<override>> DoWindowContents(rect:Rect) : void
+}
+Page <|-- Page_CreateWorldParams
+@enduml

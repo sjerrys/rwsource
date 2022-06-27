@@ -1,0 +1,6 @@
+@startuml
+class DangerUtility <<static>> {
+    + {static} NormalMaxDanger(p:Pawn) : Danger
+    + {static} GetDangerFor(c:IntVec3, p:Pawn, map:Map) : Danger
+}
+@enduml

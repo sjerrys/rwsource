@@ -1,0 +1,16 @@
+@startuml
+class Reward_RoyalFavor {
+    + amount : int
+    + <<override>> MakesUseOfChosenPawnSignal : bool <<get>>
+    + <<override>> InitFromValue(rewardValue:float, parms:RewardsGeneratorParams, valueActuallyUsed:float) : void
+    + <<override>> GenerateQuestParts(index:int, parms:RewardsGeneratorParams, customLetterLabel:string, customLetterText:string, customLetterLabelRules:RulePack, customLetterTextRules:RulePack) : IEnumerable<QuestPart>
+    + <<override>> GetDescription(parms:RewardsGeneratorParams) : string
+    + <<override>> ToString() : string
+    + <<override>> ExposeData() : void
+}
+class "IEnumerable`1"<T> {
+}
+Reward <|-- Reward_RoyalFavor
+Reward_RoyalFavor --> "faction" Faction
+Reward_RoyalFavor --> "StackElements<GenUI.AnonymousStackElement>" "IEnumerable`1"
+@enduml

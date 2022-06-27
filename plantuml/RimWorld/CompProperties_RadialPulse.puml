@@ -1,0 +1,10 @@
+@startuml
+class CompProperties_RadialPulse {
+    + ticksBetweenPulses : int = 300
+    + ticksPerPulse : int = 60
+    + radius : float
+    + CompProperties_RadialPulse()
+}
+CompProperties <|-- CompProperties_RadialPulse
+CompProperties_RadialPulse --> "color" Color
+@enduml

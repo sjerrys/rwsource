@@ -1,0 +1,10 @@
+@startuml
+class PawnTableDef {
+    + minWidth : int = 998
+}
+class "List`1"<T> {
+}
+Def <|-- PawnTableDef
+PawnTableDef --> "columns<PawnColumnDef>" "List`1"
+PawnTableDef o-> "workerClass" Type
+@enduml

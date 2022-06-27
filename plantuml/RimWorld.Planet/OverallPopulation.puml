@@ -1,0 +1,11 @@
+@startuml
+enum OverallPopulation {
+    AlmostNone,
+    Little,
+    LittleBitLess,
+    Normal,
+    LittleBitMore,
+    High,
+    VeryHigh,
+}
+@enduml

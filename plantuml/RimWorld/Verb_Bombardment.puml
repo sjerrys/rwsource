@@ -1,0 +1,7 @@
+@startuml
+class Verb_Bombardment {
+    + <<const>> DurationTicks : int = 540
+    + <<override>> HighlightFieldRadiusAroundTarget(needLOSToCenter:bool) : float
+}
+Verb_CastBase <|-- Verb_Bombardment
+@enduml

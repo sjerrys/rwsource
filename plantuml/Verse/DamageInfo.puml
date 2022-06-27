@@ -1,0 +1,40 @@
+@startuml
+class DamageInfo <<struct>> {
+    + Amount : float <<get>>
+    + ArmorPenetrationInt : float <<get>>
+    + Angle : float <<get>>
+    + InstantPermanentInjury : bool <<get>>
+    + AllowDamagePropagation : bool <<get>>
+    + IgnoreArmor : bool <<get>>
+    + IgnoreInstantKillProtection : bool <<get>>
+    + DamageInfo(def:DamageDef, amount:float, armorPenetration:float, angle:float, instigator:Thing, hitPart:BodyPartRecord, weapon:ThingDef, category:SourceCategory, intendedTarget:Thing)
+    + DamageInfo(cloneSource:DamageInfo)
+    + SetAmount(newAmount:float) : void
+    + SetIgnoreArmor(ignoreArmor:bool) : void
+    + SetIgnoreInstantKillProtection(ignore:bool) : void
+    + SetBodyRegion(height:BodyPartHeight, depth:BodyPartDepth) : void
+    + SetHitPart(forceHitPart:BodyPartRecord) : void
+    + SetInstantPermanentInjury(val:bool) : void
+    + SetWeaponBodyPartGroup(gr:BodyPartGroupDef) : void
+    + SetWeaponHediff(hd:HediffDef) : void
+    + SetAllowDamagePropagation(val:bool) : void
+    + SetAngle(vec:Vector3) : void
+    + <<override>> ToString() : string
+}
+enum SourceCategory {
+    ThingOrUnknown,
+    Collapse,
+}
+DamageInfo --> "intendedTargetInt" Thing
+DamageInfo --> "Def" DamageDef
+DamageInfo --> "Instigator" Thing
+DamageInfo --> "Category" SourceCategory
+DamageInfo --> "IntendedTarget" Thing
+DamageInfo --> "HitPart" BodyPartRecord
+DamageInfo --> "Height" BodyPartHeight
+DamageInfo --> "Depth" BodyPartDepth
+DamageInfo --> "Weapon" ThingDef
+DamageInfo --> "WeaponBodyPartGroup" BodyPartGroupDef
+DamageInfo --> "WeaponLinkedHediff" HediffDef
+DamageInfo +-- SourceCategory
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class HediffGiver_Refresh {
+    + <<override>> OnIntervalPassed(pawn:Pawn, cause:Hediff) : void
+}
+HediffGiver <|-- HediffGiver_Refresh
+@enduml

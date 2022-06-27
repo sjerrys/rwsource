@@ -1,0 +1,6 @@
+@startuml
+class CompressUtility <<static>> {
+    + {static} Compress(input:byte[]) : byte[]
+    + {static} Decompress(input:byte[]) : byte[]
+}
+@enduml

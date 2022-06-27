@@ -1,0 +1,17 @@
+@startuml
+class Reachability {
+    + Reachability(map:Map)
+    + ClearCache() : void
+    + ClearCacheFor(pawn:Pawn) : void
+    + ClearCacheForHostile(hostileTo:Thing) : void
+    + CanReachNonLocal(start:IntVec3, dest:TargetInfo, peMode:PathEndMode, traverseMode:TraverseMode, maxDanger:Danger) : bool
+    + CanReachNonLocal(start:IntVec3, dest:TargetInfo, peMode:PathEndMode, traverseParams:TraverseParms) : bool
+    + CanReach(start:IntVec3, dest:LocalTargetInfo, peMode:PathEndMode, traverseMode:TraverseMode, maxDanger:Danger) : bool
+    + CanReach(start:IntVec3, dest:LocalTargetInfo, peMode:PathEndMode, traverseParams:TraverseParms) : bool
+    + CanReachColony(c:IntVec3) : bool
+    + CanReachFactionBase(c:IntVec3, factionBaseFaction:Faction) : bool
+    + CanReachBiggestMapEdgeRoom(c:IntVec3) : bool
+    + CanReachMapEdge(c:IntVec3, traverseParms:TraverseParms) : bool
+    + CanReachUnfogged(c:IntVec3, traverseParms:TraverseParms) : bool
+}
+@enduml

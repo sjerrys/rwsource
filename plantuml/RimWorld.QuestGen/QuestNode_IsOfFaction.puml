@@ -1,0 +1,11 @@
+@startuml
+class QuestNode_IsOfFaction {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_IsOfFaction
+QuestNode_IsOfFaction --> "thing<Thing>" "SlateRef`1"
+QuestNode_IsOfFaction --> "faction<Faction>" "SlateRef`1"
+QuestNode_IsOfFaction --> "node" QuestNode
+QuestNode_IsOfFaction --> "elseNode" QuestNode
+@enduml

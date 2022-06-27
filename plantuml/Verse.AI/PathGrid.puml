@@ -1,0 +1,17 @@
+@startuml
+class PathGrid <<sealed>> {
+    + <<const>> ImpassableCost : int = 10000
+    + PathGrid(map:Map)
+    + ResetPathGrid() : void
+    + Walkable(loc:IntVec3) : bool
+    + WalkableFast(loc:IntVec3) : bool
+    + WalkableFast(x:int, z:int) : bool
+    + WalkableFast(index:int) : bool
+    + PerceivedPathCostAt(loc:IntVec3) : int
+    + RecalculatePerceivedPathCostUnderThing(t:Thing) : void
+    + RecalculatePerceivedPathCostAt(c:IntVec3) : void
+    + RecalculateAllPerceivedPathCosts() : void
+    + CalculatedCostAt(c:IntVec3, perceivedStatic:bool, prevCell:IntVec3) : int
+    + {static} ThingPathCostsIgnoreRepeaters() : void
+}
+@enduml

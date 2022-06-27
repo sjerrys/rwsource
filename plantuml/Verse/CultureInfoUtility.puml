@@ -1,0 +1,5 @@
+@startuml
+class CultureInfoUtility <<static>> {
+    + {static} EnsureEnglish() : void
+}
+@enduml

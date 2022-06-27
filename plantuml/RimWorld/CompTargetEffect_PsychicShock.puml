@@ -1,0 +1,6 @@
+@startuml
+class CompTargetEffect_PsychicShock {
+    + <<override>> DoEffectOn(user:Pawn, target:Thing) : void
+}
+CompTargetEffect <|-- CompTargetEffect_PsychicShock
+@enduml

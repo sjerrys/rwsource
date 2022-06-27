@@ -1,0 +1,11 @@
+@startuml
+class QuestPart_Pass {
+    + inSignal : string
+    + outSignal : string
+    + outSignalOutcomeArg : QuestEndOutcome?
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+}
+QuestPart <|-- QuestPart_Pass
+@enduml

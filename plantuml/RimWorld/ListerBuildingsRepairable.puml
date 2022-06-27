@@ -1,0 +1,10 @@
+@startuml
+class ListerBuildingsRepairable {
+    + RepairableBuildings(fac:Faction) : List<Thing>
+    + Contains(fac:Faction, b:Building) : bool
+    + Notify_BuildingSpawned(b:Building) : void
+    + Notify_BuildingDeSpawned(b:Building) : void
+    + Notify_BuildingTookDamage(b:Building) : void
+    + Notify_BuildingRepaired(b:Building) : void
+}
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class TaleFactory <<static>> {
+    + {static} MakeRawTale(def:TaleDef, args:object[]) : Tale
+    + {static} MakeRandomTestTale(def:TaleDef) : Tale
+}
+@enduml

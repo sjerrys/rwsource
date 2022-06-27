@@ -1,0 +1,19 @@
+@startuml
+class CaravanInventoryUtility <<static>> {
+    + {static} AllInventoryItems(caravan:Caravan) : List<Thing>
+    + {static} CaravanInventoryUtilityStaticUpdate() : void
+    + {static} GetOwnerOf(caravan:Caravan, item:Thing) : Pawn
+    + {static} TryGetBestFood(caravan:Caravan, forPawn:Pawn, food:Thing, owner:Pawn) : bool
+    + {static} TryGetDrugToSatisfyChemicalNeed(caravan:Caravan, forPawn:Pawn, chemical:Need_Chemical, drug:Thing, owner:Pawn) : bool
+    + {static} TryGetBestMedicine(caravan:Caravan, patient:Pawn, medicine:Medicine, owner:Pawn) : bool
+    + {static} TryGetThingOfDef(caravan:Caravan, thingDef:ThingDef, thing:Thing, owner:Pawn) : bool
+    + {static} MoveAllInventoryToSomeoneElse(from:Pawn, candidates:List<Pawn>, ignoreCandidates:List<Pawn>) : void
+    + {static} MoveInventoryToSomeoneElse(itemOwner:Pawn, item:Thing, candidates:List<Pawn>, ignoreCandidates:List<Pawn>, numToMove:int) : void
+    + {static} FindPawnToMoveInventoryTo(item:Thing, candidates:List<Pawn>, ignoreCandidates:List<Pawn>, currentItemOwner:Pawn) : Pawn
+    + {static} MoveAllApparelToSomeonesInventory(moveFrom:Pawn, candidates:List<Pawn>, moveLocked:bool) : void
+    + {static} MoveAllEquipmentToSomeonesInventory(moveFrom:Pawn, candidates:List<Pawn>) : void
+    + {static} TakeThings(caravan:Caravan, takeQuantity:Func<Thing, int>) : List<Thing>
+    + {static} GiveThing(caravan:Caravan, thing:Thing) : void
+    + {static} HasThings(caravan:Caravan, thingDef:ThingDef, count:int, validator:Func<Thing, bool>) : bool
+}
+@enduml

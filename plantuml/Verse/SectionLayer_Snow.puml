@@ -1,0 +1,8 @@
+@startuml
+class SectionLayer_Snow {
+    + <<override>> Visible : bool <<get>>
+    + SectionLayer_Snow(section:Section)
+    + <<override>> Regenerate() : void
+}
+SectionLayer <|-- SectionLayer_Snow
+@enduml

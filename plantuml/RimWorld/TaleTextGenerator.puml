@@ -1,0 +1,5 @@
+@startuml
+class TaleTextGenerator <<static>> {
+    + {static} GenerateTextFromTale(purpose:TextGenerationPurpose, tale:Tale, seed:int, extraInclude:RulePackDef) : TaggedString
+}
+@enduml

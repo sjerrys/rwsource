@@ -1,0 +1,13 @@
+@startuml
+class CompProperties_MoteEmitter {
+    + emissionInterval : int
+    + maintain : bool
+    + saveKeysPrefix : string
+    + CompProperties_MoteEmitter()
+    + <<override>> ConfigErrors(parentDef:ThingDef) : IEnumerable<string>
+}
+CompProperties <|-- CompProperties_MoteEmitter
+CompProperties_MoteEmitter --> "mote" ThingDef
+CompProperties_MoteEmitter --> "offset" Vector3
+CompProperties_MoteEmitter --> "soundOnEmission" SoundDef
+@enduml

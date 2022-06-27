@@ -1,0 +1,9 @@
+@startuml
+enum DrugCategory {
+    None,
+    Medical,
+    Social,
+    Hard,
+    Any,
+}
+@enduml

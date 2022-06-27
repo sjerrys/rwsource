@@ -1,0 +1,6 @@
+@startuml
+class HistoryAutoRecorderWorker_PopAdaptation {
+    + <<override>> PullRecord() : float
+}
+HistoryAutoRecorderWorker <|-- HistoryAutoRecorderWorker_PopAdaptation
+@enduml

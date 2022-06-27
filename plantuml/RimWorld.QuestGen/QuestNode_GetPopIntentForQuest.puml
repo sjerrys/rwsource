@@ -1,0 +1,8 @@
+@startuml
+class QuestNode_GetPopIntentForQuest {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GetPopIntentForQuest
+QuestNode_GetPopIntentForQuest --> "storeAs<string>" "SlateRef`1"
+@enduml

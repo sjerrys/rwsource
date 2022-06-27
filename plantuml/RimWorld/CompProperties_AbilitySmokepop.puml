@@ -1,0 +1,7 @@
+@startuml
+class CompProperties_AbilitySmokepop {
+    + smokeRadius : float
+    + CompProperties_AbilitySmokepop()
+}
+CompProperties_AbilityEffect <|-- CompProperties_AbilitySmokepop
+@enduml

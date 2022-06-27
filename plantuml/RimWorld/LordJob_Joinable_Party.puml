@@ -1,0 +1,12 @@
+@startuml
+class LordJob_Joinable_Party {
+    + <<override>> AllowStartNewGatherings : bool <<get>>
+    + DurationTicks : int <<get>>
+    + LordJob_Joinable_Party()
+    + LordJob_Joinable_Party(spot:IntVec3, organizer:Pawn, gatheringDef:GatheringDef)
+    + <<override>> GetReport(pawn:Pawn) : string
+    + <<override>> CreateGraph() : StateGraph
+    + <<override>> ExposeData() : void
+}
+LordJob_Joinable_Gathering <|-- LordJob_Joinable_Party
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class JobGiver_IdleError {
+}
+ThinkNode_JobGiver <|-- JobGiver_IdleError
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class SymbolResolver_BasePart_Outdoors_Leaf_LandingPad {
+    + <<const>> Size : int = 9
+    + <<override>> CanResolve(rp:ResolveParams) : bool
+    + <<override>> Resolve(rp:ResolveParams) : void
+}
+SymbolResolver <|-- SymbolResolver_BasePart_Outdoors_Leaf_LandingPad
+@enduml

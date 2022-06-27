@@ -1,0 +1,10 @@
+@startuml
+class HediffCompProperties_GrowthMode {
+    + severityPerDayGrowing : float
+    + severityPerDayRemission : float
+    + HediffCompProperties_GrowthMode()
+}
+HediffCompProperties <|-- HediffCompProperties_GrowthMode
+HediffCompProperties_GrowthMode o-> "severityPerDayGrowingRandomFactor" FloatRange
+HediffCompProperties_GrowthMode o-> "severityPerDayRemissionRandomFactor" FloatRange
+@enduml

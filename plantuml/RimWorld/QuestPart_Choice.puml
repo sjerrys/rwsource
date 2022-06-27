@@ -1,0 +1,24 @@
+@startuml
+class QuestPart_Choice {
+    + inSignalChoiceUsed : string
+    + choiceUsed : bool
+    + <<override>> PreventsAutoAccept : bool <<get>>
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> Notify_PreCleanup() : void
+    + Choose(choice:Choice) : void
+    + <<override>> PreQuestAccept() : void
+    + <<override>> PostQuestAdded() : void
+    + <<override>> ExposeData() : void
+}
+class Choice {
+    + ExposeData() : void
+}
+class "List`1"<T> {
+}
+QuestPart <|-- QuestPart_Choice
+QuestPart_Choice o-> "choices<Choice>" "List`1"
+QuestPart_Choice +-- Choice
+IExposable <|-- Choice
+Choice o-> "questParts<QuestPart>" "List`1"
+Choice o-> "rewards<Reward>" "List`1"
+@enduml

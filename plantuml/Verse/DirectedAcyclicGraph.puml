@@ -1,0 +1,9 @@
+@startuml
+class DirectedAcyclicGraph {
+    + DirectedAcyclicGraph(numVertices:int)
+    + AddEdge(from:int, to:int) : void
+    + TopologicalSort() : List<int>
+    + IsCyclic() : bool
+    + FindCycle() : int
+}
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class ITab_Storage {
+    + <<override>> IsVisible : bool <<get>>
+    + ITab_Storage()
+}
+ITab <|-- ITab_Storage
+@enduml

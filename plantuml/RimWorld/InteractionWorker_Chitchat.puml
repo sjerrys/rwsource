@@ -1,0 +1,6 @@
+@startuml
+class InteractionWorker_Chitchat {
+    + <<override>> RandomSelectionWeight(initiator:Pawn, recipient:Pawn) : float
+}
+InteractionWorker <|-- InteractionWorker_Chitchat
+@enduml

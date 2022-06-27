@@ -1,0 +1,7 @@
+@startuml
+class UIHighlighter <<static>> {
+    + {static} HighlightTag(tag:string) : void
+    + {static} HighlightOpportunity(rect:Rect, tag:string) : void
+    + {static} UIHighlighterUpdate() : void
+}
+@enduml

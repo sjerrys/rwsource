@@ -1,0 +1,38 @@
+@startuml
+abstract class Command {
+    + defaultLabel : string
+    + defaultDesc : string = "No description."
+    + iconAngle : float
+    + iconDrawScale : float = 1f
+    + groupKey : int
+    + tutorTag : string = "TutorTagNotSet"
+    + shrinkable : bool
+    + <<virtual>> Label : string <<get>>
+    + <<virtual>> LabelCap : string <<get>>
+    + <<virtual>> TopRightLabel : string <<get>>
+    + <<virtual>> Desc : string <<get>>
+    + <<virtual>> HighlightTag : string <<get>>
+    + <<virtual>> TutorTagSelect : string <<get>>
+    + GetShrunkSize : float <<get>>
+    + <<override>> GetWidth(maxWidth:float) : float
+    + <<override>> GizmoOnGUI(topLeft:Vector2, maxWidth:float) : GizmoResult
+    + <<virtual>> GizmoOnGUIShrunk(topLeft:Vector2, size:float) : GizmoResult
+    + <<override>> GroupsWith(other:Gizmo) : bool
+    + <<override>> ProcessInput(ev:Event) : void
+    + <<override>> ToString() : string
+}
+Gizmo <|-- Command
+Command --> "icon" Texture2D
+Command o-> "iconProportions" Vector2
+Command o-> "iconTexCoords" Rect
+Command --> "iconOffset" Vector2
+Command o-> "defaultIconColor" Color
+Command --> "hotKey" KeyBindingDef
+Command --> "activateSound" SoundDef
+Command o-> "BGTex" Texture2D
+Command o-> "BGTexShrunk" Texture2D
+Command --> "IconDrawColor" Color
+Command --> "CurActivateSound" SoundDef
+Command --> "BGTexture" Texture2D
+Command --> "BGTextureShrunk" Texture2D
+@enduml

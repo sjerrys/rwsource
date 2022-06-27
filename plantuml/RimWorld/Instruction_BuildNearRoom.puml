@@ -1,0 +1,5 @@
+@startuml
+class Instruction_BuildNearRoom {
+}
+Instruction_BuildAtRoom <|-- Instruction_BuildNearRoom
+@enduml

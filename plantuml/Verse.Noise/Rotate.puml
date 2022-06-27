@@ -1,0 +1,12 @@
+@startuml
+class Rotate {
+    + X : double <<get>> <<set>>
+    + Y : double <<get>> <<set>>
+    + Z : double <<get>> <<set>>
+    + Rotate()
+    + Rotate(input:ModuleBase)
+    + Rotate(x:double, y:double, z:double, input:ModuleBase)
+    + <<override>> GetValue(x:double, y:double, z:double) : double
+}
+ModuleBase <|-- Rotate
+@enduml

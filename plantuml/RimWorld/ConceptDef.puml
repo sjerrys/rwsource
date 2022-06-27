@@ -1,0 +1,18 @@
+@startuml
+class ConceptDef {
+    + priority : float
+    + noteTeaches : bool
+    + needsOpportunity : bool
+    + opportunityDecays : bool = true
+    + TriggeredDirect : bool <<get>>
+    + HelpTextAdjusted : string <<get>>
+    + <<override>> ConfigErrors() : IEnumerable<string>
+    + {static} Named(defName:string) : ConceptDef
+    + HighlightAllTags() : void
+}
+class "List`1"<T> {
+}
+Def <|-- ConceptDef
+ConceptDef o-> "gameMode" ProgramState
+ConceptDef --> "highlightTags<string>" "List`1"
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class CompProperties_SnowExpand {
+    + expandInterval : int = 500
+    + addAmount : float = 0.12f
+    + maxRadius : float = 55f
+    + CompProperties_SnowExpand()
+}
+CompProperties <|-- CompProperties_SnowExpand
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class DynamicDrawManager <<sealed>> {
+    + DynamicDrawManager(map:Map)
+    + RegisterDrawable(t:Thing) : void
+    + DeRegisterDrawable(t:Thing) : void
+    + DrawDynamicThings() : void
+    + LogDynamicDrawThings() : void
+}
+@enduml

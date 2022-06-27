@@ -1,0 +1,7 @@
+@startuml
+class LoadedObjectDirectory {
+    + Clear() : void
+    + RegisterLoaded(reffable:ILoadReferenceable) : void
+    + ObjectWithLoadID(loadID:string) : T
+}
+@enduml

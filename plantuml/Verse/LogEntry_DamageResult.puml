@@ -1,0 +1,8 @@
+@startuml
+abstract class LogEntry_DamageResult {
+    + LogEntry_DamageResult(def:LogEntryDef)
+    + FillTargets(recipientParts:List<BodyPartRecord>, recipientPartsDestroyed:List<bool>, deflected:bool) : void
+    + <<override>> ExposeData() : void
+}
+LogEntry <|-- LogEntry_DamageResult
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class DistFromAxis {
+    + span : float
+    + DistFromAxis()
+    + DistFromAxis(span:float)
+    + <<override>> GetValue(x:double, y:double, z:double) : double
+}
+ModuleBase <|-- DistFromAxis
+@enduml

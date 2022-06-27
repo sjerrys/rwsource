@@ -1,0 +1,9 @@
+@startuml
+class CompPowerPlant {
+    + <<override>> PostSpawnSetup(respawningAfterLoad:bool) : void
+    + <<override>> PostDeSpawn(map:Map) : void
+    + <<override>> CompTick() : void
+    + UpdateDesiredPowerOutput() : void
+}
+CompPowerTrader <|-- CompPowerPlant
+@enduml

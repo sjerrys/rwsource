@@ -1,0 +1,7 @@
+@startuml
+class Alert_ImmobileCaravan {
+    + Alert_ImmobileCaravan()
+    + <<override>> GetReport() : AlertReport
+}
+Alert_Critical <|-- Alert_ImmobileCaravan
+@enduml

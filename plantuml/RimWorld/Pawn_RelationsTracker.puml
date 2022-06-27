@@ -1,0 +1,49 @@
+@startuml
+class Pawn_RelationsTracker {
+    + everSeenByPlayer : bool
+    + canGetRescuedThought : bool = true
+    + <<const>> FriendOpinionThreshold : int = 20
+    + <<const>> RivalOpinionThreshold : int
+    + ChildrenCount : int <<get>>
+    + RelatedToAnyoneOrAnyoneRelatedToMe : bool <<get>>
+    + Pawn_RelationsTracker(pawn:Pawn)
+    + ExposeData() : void
+    + RelationsTrackerTick() : void
+    + GetDirectRelation(def:PawnRelationDef, otherPawn:Pawn) : DirectPawnRelation
+    + GetFirstDirectRelationPawn(def:PawnRelationDef, predicate:Predicate<Pawn>) : Pawn
+    + DirectRelationExists(def:PawnRelationDef, otherPawn:Pawn) : bool
+    + AddDirectRelation(def:PawnRelationDef, otherPawn:Pawn) : void
+    + RemoveDirectRelation(relation:DirectPawnRelation) : void
+    + RemoveDirectRelation(def:PawnRelationDef, otherPawn:Pawn) : void
+    + TryRemoveDirectRelation(def:PawnRelationDef, otherPawn:Pawn) : bool
+    + OpinionOf(other:Pawn) : int
+    + OpinionExplanation(other:Pawn) : string
+    + SecondaryLovinChanceFactor(otherPawn:Pawn) : float
+    + SecondaryRomanceChanceFactor(otherPawn:Pawn) : float
+    + CompatibilityWith(otherPawn:Pawn) : float
+    + ConstantPerPawnsPairCompatibilityOffset(otherPawnID:int) : float
+    + ClearAllRelations() : void
+    + Notify_PassedToWorld() : void
+    + Notify_ExitedMap() : void
+    + Notify_ChangedFaction() : void
+    + Notify_PawnSold(playerNegotiator:Pawn) : void
+    + Notify_PawnKidnapped() : void
+    + Notify_RescuedBy(rescuer:Pawn) : void
+    + Notify_FailedRescueQuest() : void
+    + GetFriendDiedThoughtPowerFactor(opinion:int) : float
+    + GetRivalDiedThoughtPowerFactor(opinion:int) : float
+    + CheckAppendBondedAnimalDiedInfo(letter:TaggedString, label:TaggedString) : void
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+IExposable <|-- Pawn_RelationsTracker
+Pawn_RelationsTracker --> "relativeInvolvedInRescueQuest" Pawn
+Pawn_RelationsTracker --> "nextMarriageNameChange" MarriageNameChange
+Pawn_RelationsTracker --> "DirectRelations<DirectPawnRelation>" "List`1"
+Pawn_RelationsTracker --> "Children<Pawn>" "IEnumerable`1"
+Pawn_RelationsTracker --> "FamilyByBlood<Pawn>" "IEnumerable`1"
+Pawn_RelationsTracker --> "PotentiallyRelatedPawns<Pawn>" "IEnumerable`1"
+Pawn_RelationsTracker --> "RelatedPawns<Pawn>" "IEnumerable`1"
+@enduml

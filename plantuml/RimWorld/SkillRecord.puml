@@ -1,0 +1,38 @@
+@startuml
+class SkillRecord {
+    + levelInt : int
+    + xpSinceLastLevel : float
+    + xpSinceMidnight : float
+    + <<const>> IntervalTicks : int = 200
+    + <<const>> MinLevel : int = 0
+    + <<const>> MaxLevel : int = 20
+    + <<const>> MaxFullRateXpPerDay : int = 4000
+    + <<const>> MasterSkillThreshold : int = 14
+    + <<const>> SaturatedLearningFactor : float = 0.2f
+    + <<const>> LearnFactorPassionNone : float = 0.35f
+    + <<const>> LearnFactorPassionMinor : float = 1f
+    + <<const>> LearnFactorPassionMajor : float = 1.5f
+    + <<const>> MinXPAmount : float
+    + Level : int <<get>> <<set>>
+    + XpRequiredForLevelUp : float <<get>>
+    + XpProgressPercent : float <<get>>
+    + XpTotalEarned : float <<get>>
+    + TotallyDisabled : bool <<get>>
+    + LevelDescriptor : string <<get>>
+    + LearningSaturatedToday : bool <<get>>
+    + SkillRecord()
+    + SkillRecord(pawn:Pawn)
+    + SkillRecord(pawn:Pawn, def:SkillDef)
+    + ExposeData() : void
+    + Interval() : void
+    + {static} XpRequiredToLevelUpFrom(startingLevel:int) : float
+    + Learn(xp:float, direct:bool) : void
+    + LearnRateFactor(direct:bool) : float
+    + EnsureMinLevelWithMargin(minLevel:int) : void
+    + Notify_SkillDisablesChanged() : void
+    + <<override>> ToString() : string
+}
+IExposable <|-- SkillRecord
+SkillRecord --> "def" SkillDef
+SkillRecord --> "passion" Passion
+@enduml

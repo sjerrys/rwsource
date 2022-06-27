@@ -1,0 +1,10 @@
+@startuml
+class Page_ConfigureStartingPawns {
+    + <<override>> PageTitle : string <<get>>
+    + <<override>> PreOpen() : void
+    + <<override>> PostOpen() : void
+    + <<override>> DoWindowContents(rect:Rect) : void
+    + SelectPawn(c:Pawn) : void
+}
+Page <|-- Page_ConfigureStartingPawns
+@enduml

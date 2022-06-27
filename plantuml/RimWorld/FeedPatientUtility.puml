@@ -1,0 +1,6 @@
+@startuml
+class FeedPatientUtility <<static>> {
+    + {static} ShouldBeFed(p:Pawn) : bool
+    + {static} IsHungry(p:Pawn) : bool
+}
+@enduml

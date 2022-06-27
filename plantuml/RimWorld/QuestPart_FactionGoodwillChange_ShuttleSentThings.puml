@@ -1,0 +1,21 @@
+@startuml
+class QuestPart_FactionGoodwillChange_ShuttleSentThings {
+    + inSignalShuttleDestroyed : string
+    + changeNotOnShuttle : int
+    + canSendMessage : bool = true
+    + canSendHostilityLetter : bool = true
+    + reason : string
+    + <<override>> Cleanup() : void
+    + <<override>> ExposeData() : void
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+QuestPartActivable <|-- QuestPart_FactionGoodwillChange_ShuttleSentThings
+QuestPart_FactionGoodwillChange_ShuttleSentThings o-> "inSignalsShuttleSent<string>" "List`1"
+QuestPart_FactionGoodwillChange_ShuttleSentThings --> "faction" Faction
+QuestPart_FactionGoodwillChange_ShuttleSentThings o-> "things<Thing>" "List`1"
+QuestPart_FactionGoodwillChange_ShuttleSentThings --> "InvolvedFactions<Faction>" "IEnumerable`1"
+QuestPart_FactionGoodwillChange_ShuttleSentThings --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+@enduml

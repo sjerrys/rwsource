@@ -1,0 +1,5 @@
+@startuml
+class WindTurbineUtility <<static>> {
+    + {static} CalculateWindCells(center:IntVec3, rot:Rot4, size:IntVec2) : IEnumerable<IntVec3>
+}
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class GameComponent_OnetimeNotification {
+    + sendAICoreRequestReminder : bool = true
+    + GameComponent_OnetimeNotification(game:Game)
+    + <<override>> GameComponentTick() : void
+    + <<override>> ExposeData() : void
+}
+GameComponent <|-- GameComponent_OnetimeNotification
+@enduml

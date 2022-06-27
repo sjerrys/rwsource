@@ -1,0 +1,7 @@
+@startuml
+class ShadowMeshPool <<static>> {
+    + {static} GetShadowMesh(sha:ShadowData) : Mesh
+    + {static} GetShadowMesh(baseEdgeLength:float, tallness:float) : Mesh
+    + {static} GetShadowMesh(baseWidth:float, baseHeight:float, tallness:float) : Mesh
+}
+@enduml

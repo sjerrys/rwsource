@@ -1,0 +1,8 @@
+@startuml
+class CurveMark <<struct>> {
+    + X : float <<get>>
+    + Message : string <<get>>
+    + CurveMark(x:float, message:string, color:Color)
+}
+CurveMark --> "Color" Color
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+enum MaintainableStage {
+    Healthy,
+    NeedsMaintenance,
+    Damaging,
+}
+@enduml

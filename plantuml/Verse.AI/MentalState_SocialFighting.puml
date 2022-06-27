@@ -1,0 +1,10 @@
+@startuml
+class MentalState_SocialFighting {
+    + <<override>> MentalStateTick() : void
+    + <<override>> PostEnd() : void
+    + <<override>> ExposeData() : void
+    + <<override>> SocialModeMax() : RandomSocialMode
+}
+MentalState <|-- MentalState_SocialFighting
+MentalState_SocialFighting --> "otherPawn" Pawn
+@enduml

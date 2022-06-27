@@ -1,0 +1,6 @@
+@startuml
+class Building_BlastingCharge {
+    + <<override>> GetGizmos() : IEnumerable<Gizmo>
+}
+Building <|-- Building_BlastingCharge
+@enduml

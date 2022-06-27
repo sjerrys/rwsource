@@ -1,0 +1,6 @@
+@startuml
+class WalkPathFinder <<static>> {
+    + {static} TryFindWalkPath(pawn:Pawn, root:IntVec3, result:List<IntVec3>) : bool
+    + {static} DebugFlashWalkPath(root:IntVec3, numEntries:int) : void
+}
+@enduml

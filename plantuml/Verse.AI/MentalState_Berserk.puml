@@ -1,0 +1,8 @@
+@startuml
+class MentalState_Berserk {
+    + <<override>> ForceHostileTo(t:Thing) : bool
+    + <<override>> ForceHostileTo(f:Faction) : bool
+    + <<override>> SocialModeMax() : RandomSocialMode
+}
+MentalState <|-- MentalState_Berserk
+@enduml

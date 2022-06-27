@@ -1,0 +1,8 @@
+@startuml
+class OverlayDrawHandler <<static>> {
+    + {static} ShouldDrawPowerGrid : bool <<get>>
+    + {static} ShouldDrawZones : bool <<get>>
+    + {static} DrawPowerGridOverlayThisFrame() : void
+    + {static} DrawZonesThisFrame() : void
+}
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class WorkGiver_Uninstall {
+    + <<override>> HasJobOnThing(pawn:Pawn, t:Thing, forced:bool) : bool
+}
+WorkGiver_RemoveBuilding <|-- WorkGiver_Uninstall
+@enduml

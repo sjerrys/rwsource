@@ -1,0 +1,12 @@
+@startuml
+class QuestPart_WorldObjectTimeout {
+    + <<override>> ExtraInspectString(target:ISelectable) : string
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart_Delay <|-- QuestPart_WorldObjectTimeout
+QuestPart_WorldObjectTimeout --> "worldObject" WorldObject
+QuestPart_WorldObjectTimeout --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+@enduml

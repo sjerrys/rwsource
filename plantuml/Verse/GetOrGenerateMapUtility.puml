@@ -1,0 +1,6 @@
+@startuml
+class GetOrGenerateMapUtility <<static>> {
+    + {static} GetOrGenerateMap(tile:int, size:IntVec3, suggestedMapParentDef:WorldObjectDef) : Map
+    + {static} GetOrGenerateMap(tile:int, suggestedMapParentDef:WorldObjectDef) : Map
+}
+@enduml

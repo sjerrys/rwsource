@@ -1,0 +1,6 @@
+@startuml
+class PawnColumnWorker_Age {
+    + <<override>> Compare(a:Pawn, b:Pawn) : int
+}
+PawnColumnWorker_Text <|-- PawnColumnWorker_Age
+@enduml

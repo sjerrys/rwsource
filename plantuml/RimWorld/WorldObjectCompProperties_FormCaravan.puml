@@ -1,0 +1,7 @@
+@startuml
+class WorldObjectCompProperties_FormCaravan {
+    + WorldObjectCompProperties_FormCaravan()
+    + <<override>> ConfigErrors(parentDef:WorldObjectDef) : IEnumerable<string>
+}
+WorldObjectCompProperties <|-- WorldObjectCompProperties_FormCaravan
+@enduml

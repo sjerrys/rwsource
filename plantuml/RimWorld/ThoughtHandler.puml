@@ -1,0 +1,21 @@
+@startuml
+class ThoughtHandler <<sealed>> {
+    + ThoughtHandler(pawn:Pawn)
+    + ExposeData() : void
+    + ThoughtInterval() : void
+    + GetAllMoodThoughts(outThoughts:List<Thought>) : void
+    + GetMoodThoughts(group:Thought, outThoughts:List<Thought>) : void
+    + MoodOffsetOfGroup(group:Thought) : float
+    + GetDistinctMoodThoughtGroups(outThoughts:List<Thought>) : void
+    + TotalMoodOffset() : float
+    + GetSocialThoughts(otherPawn:Pawn, outThoughts:List<ISocialThought>) : void
+    + GetSocialThoughts(otherPawn:Pawn, group:ISocialThought, outThoughts:List<ISocialThought>) : void
+    + OpinionOffsetOfGroup(group:ISocialThought, otherPawn:Pawn) : int
+    + GetDistinctSocialThoughtGroups(otherPawn:Pawn, outThoughts:List<ISocialThought>) : void
+    + TotalOpinionOffset(otherPawn:Pawn) : int
+}
+IExposable <|-- ThoughtHandler
+ThoughtHandler --> "pawn" Pawn
+ThoughtHandler --> "memories" MemoryThoughtHandler
+ThoughtHandler --> "situational" SituationalThoughtHandler
+@enduml

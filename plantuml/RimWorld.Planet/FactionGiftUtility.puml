@@ -1,0 +1,10 @@
+@startuml
+class FactionGiftUtility <<static>> {
+    + {static} OfferGiftsCommand(caravan:Caravan, settlement:Settlement) : Command
+    + {static} GiveGift(tradeables:List<Tradeable>, giveTo:Faction, lookTarget:GlobalTargetInfo) : void
+    + {static} GiveGift(pods:List<ActiveDropPodInfo>, giveTo:Settlement) : void
+    + {static} CheckCanCarryGift(tradeables:List<Tradeable>, trader:ITrader) : bool
+    + {static} GetGoodwillChange(pods:IEnumerable<IThingHolder>, giveTo:Settlement) : int
+    + {static} GetGoodwillChange(tradeables:List<Tradeable>, theirFaction:Faction) : int
+}
+@enduml

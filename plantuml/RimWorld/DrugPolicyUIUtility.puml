@@ -1,0 +1,6 @@
+@startuml
+class DrugPolicyUIUtility <<static>> {
+    + <<const>> AssigningDrugsTutorHighlightTag : string = "ButtonAssignDrugs"
+    + {static} DoAssignDrugPolicyButtons(rect:Rect, pawn:Pawn) : void
+}
+@enduml

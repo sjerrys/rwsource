@@ -1,0 +1,5 @@
+@startuml
+class SketchResolver_AssignRandomStuff {
+}
+SketchResolver <|-- SketchResolver_AssignRandomStuff
+@enduml

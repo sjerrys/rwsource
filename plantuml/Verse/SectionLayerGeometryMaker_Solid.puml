@@ -1,0 +1,5 @@
+@startuml
+class SectionLayerGeometryMaker_Solid <<static>> {
+    + {static} MakeBaseGeometry(section:Section, sm:LayerSubMesh, altitudeLayer:AltitudeLayer) : void
+}
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class IncidentWorker_WandererJoinTransportPod {
+    + <<override>> CanSpawnJoiner(map:Map) : bool
+    + <<override>> SpawnJoiner(map:Map, pawn:Pawn) : void
+}
+IncidentWorker_WandererJoin <|-- IncidentWorker_WandererJoinTransportPod
+@enduml

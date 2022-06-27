@@ -1,0 +1,7 @@
+@startuml
+class Editable {
+    + <<virtual>> ResolveReferences() : void
+    + <<virtual>> PostLoad() : void
+    + <<virtual>> ConfigErrors() : IEnumerable<string>
+}
+@enduml

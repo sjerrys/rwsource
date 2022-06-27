@@ -1,0 +1,5 @@
+@startuml
+class JobGiver_ConfigurableHostilityResponse {
+}
+ThinkNode_JobGiver <|-- JobGiver_ConfigurableHostilityResponse
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class PatchOperationReplace {
+}
+PatchOperationPathed <|-- PatchOperationReplace
+@enduml

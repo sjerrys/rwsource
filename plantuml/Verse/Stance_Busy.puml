@@ -1,0 +1,15 @@
+@startuml
+abstract class Stance_Busy {
+    + ticksLeft : int
+    + neverAimWeapon : bool
+    + <<override>> StanceBusy : bool <<get>>
+    + Stance_Busy()
+    + Stance_Busy(ticks:int, focusTarg:LocalTargetInfo, verb:Verb)
+    + Stance_Busy(ticks:int)
+    + <<override>> ExposeData() : void
+    + <<override>> StanceTick() : void
+}
+Stance <|-- Stance_Busy
+Stance_Busy --> "verb" Verb
+Stance_Busy --> "focusTarg" LocalTargetInfo
+@enduml

@@ -1,0 +1,25 @@
+@startuml
+class GrammarResolver <<static>> {
+    + <<const>> SymbolStartChar : char = '['
+    + <<const>> SymbolEndChar : char = ']'
+    + {static} Resolve(rootKeyword:string, request:GrammarRequest, debugLabel:string, forceLog:bool, untranslatedRootKeyword:string, extraTags:List<string>, outTags:List<string>, capitalizeFirstSentence:bool) : string
+    + {static} ResolveUnsafe(rootKeyword:string, request:GrammarRequest, debugLabel:string, forceLog:bool, useUntranslatedRules:bool, extraTags:List<string>, outTags:List<string>, capitalizeFirstSentence:bool) : string
+    + {static} ResolveUnsafe(rootKeyword:string, request:GrammarRequest, success:bool, debugLabel:string, forceLog:bool, useUntranslatedRules:bool, extraTags:List<string>, outTags:List<string>, capitalizeFirstSentence:bool) : string
+    + {static} ContainsSpecialChars(str:string) : bool
+}
+class RuleEntry {
+    + knownUnresolvable : bool
+    + constantConstraintsChecked : bool
+    + constantConstraintsValid : bool
+    + uses : int
+    + SelectionWeight : float <<get>>
+    + Priority : float <<get>>
+    + RuleEntry(rule:Rule)
+    + MarkKnownUnresolvable() : void
+    + ValidateConstantConstraints(constraints:Dictionary<string, string>) : bool
+    + ValidateRequiredTag(extraTags:List<string>, resolvedTags:List<string>) : bool
+    + <<override>> ToString() : string
+}
+GrammarResolver +-- RuleEntry
+RuleEntry --> "rule" Rule
+@enduml

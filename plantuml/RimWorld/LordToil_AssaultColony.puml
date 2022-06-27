@@ -1,0 +1,10 @@
+@startuml
+class LordToil_AssaultColony {
+    + <<override>> ForceHighStoryDanger : bool <<get>>
+    + <<override>> AllowSatisfyLongNeeds : bool <<get>>
+    + LordToil_AssaultColony(attackDownedIfStarving:bool)
+    + <<override>> Init() : void
+    + <<override>> UpdateAllDuties() : void
+}
+LordToil <|-- LordToil_AssaultColony
+@enduml

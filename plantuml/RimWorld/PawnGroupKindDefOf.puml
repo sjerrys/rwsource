@@ -1,0 +1,9 @@
+@startuml
+class PawnGroupKindDefOf <<static>> {
+    {static} PawnGroupKindDefOf()
+}
+PawnGroupKindDefOf --> "Combat" PawnGroupKindDef
+PawnGroupKindDefOf --> "Trader" PawnGroupKindDef
+PawnGroupKindDefOf --> "Peaceful" PawnGroupKindDef
+PawnGroupKindDefOf --> "Settlement" PawnGroupKindDef
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+abstract class MainTabWindow_PawnTable {
+    + <<override>> PostOpen() : void
+    + <<override>> DoWindowContents(rect:Rect) : void
+    + Notify_PawnsChanged() : void
+    + <<override>> Notify_ResolutionChanged() : void
+}
+MainTabWindow <|-- MainTabWindow_PawnTable
+MainTabWindow_PawnTable --> "RequestedTabSize" Vector2
+@enduml

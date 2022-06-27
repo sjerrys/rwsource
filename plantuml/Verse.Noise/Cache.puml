@@ -1,0 +1,8 @@
+@startuml
+class Cache {
+    + Cache()
+    + Cache(input:ModuleBase)
+    + <<override>> GetValue(x:double, y:double, z:double) : double
+}
+ModuleBase <|-- Cache
+@enduml

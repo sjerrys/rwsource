@@ -1,0 +1,11 @@
+@startuml
+class LordJob_AssaultColony {
+    + <<override>> GuiltyOnDowned : bool <<get>>
+    + LordJob_AssaultColony()
+    + LordJob_AssaultColony(parms:SpawnedPawnParams)
+    + LordJob_AssaultColony(assaulterFaction:Faction, canKidnap:bool, canTimeoutOrFlee:bool, sappers:bool, useAvoidGridSmart:bool, canSteal:bool)
+    + <<override>> CreateGraph() : StateGraph
+    + <<override>> ExposeData() : void
+}
+LordJob <|-- LordJob_AssaultColony
+@enduml

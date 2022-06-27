@@ -1,0 +1,14 @@
+@startuml
+class CompPawnSpawnOnWakeup {
+    + points : float
+    + CanSpawn : bool <<get>>
+    + <<override>> Initialize(props:CompProperties) : void
+    + <<override>> CompTick() : void
+    + <<override>> CompGetGizmosExtra() : IEnumerable<Gizmo>
+    + <<override>> PostExposeData() : void
+}
+class "List`1"<T> {
+}
+ThingComp <|-- CompPawnSpawnOnWakeup
+CompPawnSpawnOnWakeup o-> "spawnedPawns<Pawn>" "List`1"
+@enduml

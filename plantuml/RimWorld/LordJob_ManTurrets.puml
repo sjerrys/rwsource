@@ -1,0 +1,6 @@
+@startuml
+class LordJob_ManTurrets {
+    + <<override>> CreateGraph() : StateGraph
+}
+LordJob <|-- LordJob_ManTurrets
+@enduml

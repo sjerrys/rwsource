@@ -1,0 +1,6 @@
+@startuml
+class Trigger_NoFightingSappers {
+    + <<override>> ActivateOn(lord:Lord, signal:TriggerSignal) : bool
+}
+Trigger <|-- Trigger_NoFightingSappers
+@enduml

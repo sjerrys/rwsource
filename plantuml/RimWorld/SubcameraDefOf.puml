@@ -1,0 +1,6 @@
+@startuml
+class SubcameraDefOf <<static>> {
+    {static} SubcameraDefOf()
+}
+SubcameraDefOf --> "WaterDepth" SubcameraDef
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class BodyPartTagDef {
+    + vital : bool
+}
+Def <|-- BodyPartTagDef
+@enduml

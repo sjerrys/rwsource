@@ -1,0 +1,5 @@
+@startuml
+class EditTreeNodeDatabase <<static>> {
+    + {static} RootOf(obj:object) : TreeNode_Editor
+}
+@enduml

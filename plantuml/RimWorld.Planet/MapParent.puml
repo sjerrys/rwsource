@@ -1,0 +1,35 @@
+@startuml
+class MapParent {
+    + forceRemoveWorldObjectWhenMapRemoved : bool
+    + HasMap : bool <<get>>
+    + <<override>> ExpandMore : bool <<get>>
+    + <<virtual>> HandlesConditionCausers : bool <<get>>
+    + <<virtual>> PostMapGenerate() : void
+    + <<virtual>> Notify_MyMapAboutToBeRemoved() : void
+    + <<virtual>> Notify_MyMapRemoved(map:Map) : void
+    + <<virtual>> Notify_CaravanFormed(caravan:Caravan) : void
+    + <<virtual>> Notify_HibernatableChanged() : void
+    + <<virtual>> FinalizeLoading() : void
+    + <<virtual>> ShouldRemoveMapNow(alsoRemoveWorldObject:bool) : bool
+    + <<override>> PostRemove() : void
+    + <<override>> Tick() : void
+    + <<override>> ExposeData() : void
+    + <<override>> GetGizmos() : IEnumerable<Gizmo>
+    + <<override>> IncidentTargetTags() : IEnumerable<IncidentTargetTagDef>
+    + <<override>> GetFloatMenuOptions(caravan:Caravan) : IEnumerable<FloatMenuOption>
+    + <<override>> GetTransportPodsFloatMenuOptions(pods:IEnumerable<IThingHolder>, representative:CompLaunchable) : IEnumerable<FloatMenuOption>
+    + <<override>> GetShuttleFloatMenuOptions(pods:IEnumerable<IThingHolder>, launchAction:Action<int, TransportPodsArrivalAction>) : IEnumerable<FloatMenuOption>
+    + CheckRemoveMapNow() : void
+    + <<override>> GetInspectString() : string
+    + <<override>> DrawExtraSelectionOverlays() : void
+    + GetDirectlyHeldThings() : ThingOwner
+    + <<virtual>> GetChildHolders(outChildren:List<IThingHolder>) : void
+}
+class "IEnumerable`1"<T> {
+}
+WorldObject <|-- MapParent
+IThingHolder <|-- MapParent
+MapParent --> "Map" Map
+MapParent --> "MapGeneratorDef" MapGeneratorDef
+MapParent --> "ExtraGenStepDefs<GenStepWithParams>" "IEnumerable`1"
+@enduml

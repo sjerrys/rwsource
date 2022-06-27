@@ -1,0 +1,8 @@
+@startuml
+class Root_Play {
+    + <<override>> Start() : void
+    + <<override>> Update() : void
+}
+Root <|-- Root_Play
+Root_Play --> "musicManagerPlay" MusicManagerPlay
+@enduml

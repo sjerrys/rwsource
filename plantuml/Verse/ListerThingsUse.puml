@@ -1,0 +1,7 @@
+@startuml
+enum ListerThingsUse {
+    Undefined,
+    Global,
+    Region,
+}
+@enduml

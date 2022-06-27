@@ -1,0 +1,37 @@
+@startuml
+class WindowStack {
+    + Count : int <<get>>
+    + WindowsForcePause : bool <<get>>
+    + WindowsPreventCameraMotion : bool <<get>>
+    + WindowsPreventDrawTutor : bool <<get>>
+    + SecondsSinceClosedGameStartDialog : float <<get>>
+    + MouseObscuredNow : bool <<get>>
+    + CurrentWindowGetsInput : bool <<get>>
+    + NonImmediateDialogWindowOpen : bool <<get>>
+    + WindowsUpdate() : void
+    + HandleEventsHighPriority() : void
+    + WindowStackOnGUI() : void
+    + Notify_ClickedInsideWindow(window:Window) : void
+    + Notify_ManuallySetFocus(window:Window) : void
+    + Notify_PressedCancel() : void
+    + Notify_PressedAccept() : void
+    + Notify_GameStartDialogOpened() : void
+    + Notify_GameStartDialogClosed() : void
+    + IsOpen() : bool
+    + IsOpen(type:Type) : bool
+    + IsOpen(window:Window) : bool
+    + WindowOfType() : WindowType
+    + GetsInput(window:Window) : bool
+    + Add(window:Window) : void
+    + ImmediateWindow(ID:int, rect:Rect, layer:WindowLayer, doWindowFunc:Action, doBackground:bool, absorbInputAroundWindow:bool, shadowAlpha:float) : void
+    + TryRemove(windowType:Type, doCloseSound:bool) : bool
+    + TryRemoveAssignableFromType(windowType:Type, doCloseSound:bool) : bool
+    + TryRemove(window:Window, doCloseSound:bool) : bool
+    + GetWindowAt(pos:Vector2) : Window
+}
+class "IList`1"<T> {
+}
+WindowStack --> "currentlyDrawnWindow" Window
+WindowStack --> "Windows<Window>" "IList`1"
+WindowStack --> "FloatMenu" FloatMenu
+@enduml

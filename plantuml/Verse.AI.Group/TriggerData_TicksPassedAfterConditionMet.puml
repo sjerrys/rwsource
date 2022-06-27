@@ -1,0 +1,7 @@
+@startuml
+class TriggerData_TicksPassedAfterConditionMet {
+    + conditionMet : bool
+    + <<override>> ExposeData() : void
+}
+TriggerData_TicksPassed <|-- TriggerData_TicksPassedAfterConditionMet
+@enduml

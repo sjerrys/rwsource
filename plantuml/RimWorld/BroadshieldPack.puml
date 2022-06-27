@@ -1,0 +1,6 @@
+@startuml
+class BroadshieldPack {
+    + <<override>> Notify_BulletImpactNearby(impactData:BulletImpactData) : void
+}
+Apparel <|-- BroadshieldPack
+@enduml

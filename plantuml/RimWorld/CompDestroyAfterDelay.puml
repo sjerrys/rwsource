@@ -1,0 +1,11 @@
+@startuml
+class CompDestroyAfterDelay {
+    + spawnTick : int
+    + <<override>> CompTick() : void
+    + <<override>> CompInspectStringExtra() : string
+    + <<override>> PostSpawnSetup(respawningAfterLoad:bool) : void
+    + <<override>> PostExposeData() : void
+}
+ThingComp <|-- CompDestroyAfterDelay
+CompDestroyAfterDelay --> "Props" CompProperties_DestroyAfterDelay
+@enduml

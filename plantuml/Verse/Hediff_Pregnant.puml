@@ -1,0 +1,11 @@
+@startuml
+class Hediff_Pregnant {
+    + GestationProgress : float <<get>>
+    + <<override>> Tick() : void
+    + {static} DoBirthSpawn(mother:Pawn, father:Pawn) : void
+    + <<override>> ExposeData() : void
+    + <<override>> DebugString() : string
+}
+HediffWithComps <|-- Hediff_Pregnant
+Hediff_Pregnant --> "father" Pawn
+@enduml

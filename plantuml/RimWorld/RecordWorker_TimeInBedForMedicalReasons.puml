@@ -1,0 +1,6 @@
+@startuml
+class RecordWorker_TimeInBedForMedicalReasons {
+    + <<override>> ShouldMeasureTimeNow(pawn:Pawn) : bool
+}
+RecordWorker <|-- RecordWorker_TimeInBedForMedicalReasons
+@enduml

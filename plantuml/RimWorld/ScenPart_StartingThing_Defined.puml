@@ -1,0 +1,10 @@
+@startuml
+class ScenPart_StartingThing_Defined {
+    + <<const>> PlayerStartWithTag : string = "PlayerStartsWith"
+    + {static} PlayerStartWithIntro : string <<get>>
+    + <<override>> Summary(scen:Scenario) : string
+    + <<override>> GetSummaryListEntries(tag:string) : IEnumerable<string>
+    + <<override>> PlayerStartingThings() : IEnumerable<Thing>
+}
+ScenPart_ThingCount <|-- ScenPart_StartingThing_Defined
+@enduml

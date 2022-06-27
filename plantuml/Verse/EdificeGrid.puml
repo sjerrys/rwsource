@@ -1,0 +1,7 @@
+@startuml
+class EdificeGrid <<sealed>> {
+    + EdificeGrid(map:Map)
+    + Register(ed:Building) : void
+    + DeRegister(ed:Building) : void
+}
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+class QuestPart_ThingsProduced {
+    + count : int
+    + <<override>> DescriptionPart : string <<get>>
+    + <<override>> Notify_ThingsProduced(actor:Pawn, things:List<Thing>) : void
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+}
+class "IEnumerable`1"<T> {
+}
+QuestPartActivable <|-- QuestPart_ThingsProduced
+QuestPart_ThingsProduced --> "def" ThingDef
+QuestPart_ThingsProduced --> "stuff" ThingDef
+QuestPart_ThingsProduced --> "Hyperlinks<Dialog_InfoCard.Hyperlink>" "IEnumerable`1"
+@enduml

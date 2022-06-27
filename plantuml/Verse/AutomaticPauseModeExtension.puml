@@ -1,0 +1,5 @@
+@startuml
+class AutomaticPauseModeExtension <<static>> {
+    + {static} ToStringHuman(mode:AutomaticPauseMode) : string
+}
+@enduml

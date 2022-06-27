@@ -1,0 +1,9 @@
+@startuml
+class KeyBindingData {
+    + KeyBindingData()
+    + KeyBindingData(keyBindingA:KeyCode, keyBindingB:KeyCode)
+    + <<override>> ToString() : string
+}
+KeyBindingData --> "keyBindingA" KeyCode
+KeyBindingData --> "keyBindingB" KeyCode
+@enduml

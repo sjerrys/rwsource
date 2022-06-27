@@ -1,0 +1,12 @@
+@startuml
+class LordToil_PrepareCaravan_Leave {
+    + <<override>> AllowSatisfyLongNeeds : bool <<get>>
+    + <<override>> CustomWakeThreshold : float? <<get>>
+    + <<override>> AllowRestingInBed : bool <<get>>
+    + <<override>> AllowSelfTend : bool <<get>>
+    + LordToil_PrepareCaravan_Leave(exitSpot:IntVec3)
+    + <<override>> UpdateAllDuties() : void
+    + <<override>> LordToilTick() : void
+}
+LordToil <|-- LordToil_PrepareCaravan_Leave
+@enduml

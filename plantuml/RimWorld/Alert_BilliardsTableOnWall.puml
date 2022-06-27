@@ -1,0 +1,7 @@
+@startuml
+class Alert_BilliardsTableOnWall {
+    + Alert_BilliardsTableOnWall()
+    + <<override>> GetReport() : AlertReport
+}
+Alert <|-- Alert_BilliardsTableOnWall
+@enduml

@@ -1,0 +1,45 @@
+@startuml
+abstract class ThingComp {
+    + <<virtual>> Initialize(props:CompProperties) : void
+    + <<virtual>> ReceiveCompSignal(signal:string) : void
+    + <<virtual>> PostExposeData() : void
+    + <<virtual>> PostSpawnSetup(respawningAfterLoad:bool) : void
+    + <<virtual>> PostDeSpawn(map:Map) : void
+    + <<virtual>> PostDestroy(mode:DestroyMode, previousMap:Map) : void
+    + <<virtual>> PostPostMake() : void
+    + <<virtual>> CompTick() : void
+    + <<virtual>> CompTickRare() : void
+    + <<virtual>> CompTickLong() : void
+    + <<virtual>> PostPreApplyDamage(dinfo:DamageInfo, absorbed:bool) : void
+    + <<virtual>> PostPostApplyDamage(dinfo:DamageInfo, totalDamageDealt:float) : void
+    + <<virtual>> PostDraw() : void
+    + <<virtual>> PostDrawExtraSelectionOverlays() : void
+    + <<virtual>> PostPrintOnto(layer:SectionLayer) : void
+    + <<virtual>> CompPrintForPowerGrid(layer:SectionLayer) : void
+    + <<virtual>> PreAbsorbStack(otherStack:Thing, count:int) : void
+    + <<virtual>> PostSplitOff(piece:Thing) : void
+    + <<virtual>> TransformLabel(label:string) : string
+    + <<virtual>> CompGetGizmosExtra() : IEnumerable<Gizmo>
+    + <<virtual>> CompGetWornGizmosExtra() : IEnumerable<Gizmo>
+    + <<virtual>> AllowStackWith(other:Thing) : bool
+    + <<virtual>> CompInspectStringExtra() : string
+    + <<virtual>> GetDescriptionPart() : string
+    + <<virtual>> CompFloatMenuOptions(selPawn:Pawn) : IEnumerable<FloatMenuOption>
+    + <<virtual>> CompMultiSelectFloatMenuOptions(selPawns:List<Pawn>) : IEnumerable<FloatMenuOption>
+    + <<virtual>> PrePreTraded(action:TradeAction, playerNegotiator:Pawn, trader:ITrader) : void
+    + <<virtual>> PrePostIngested(ingester:Pawn) : void
+    + <<virtual>> PostIngested(ingester:Pawn) : void
+    + <<virtual>> PostPostGeneratedForTrader(trader:TraderKindDef, forTile:int, forFaction:Faction) : void
+    + <<virtual>> Notify_SignalReceived(signal:Signal) : void
+    + <<virtual>> Notify_LordDestroyed() : void
+    + <<virtual>> DrawGUIOverlay() : void
+    + <<virtual>> SpecialDisplayStats() : IEnumerable<StatDrawEntry>
+    + <<virtual>> Notify_Equipped(pawn:Pawn) : void
+    + <<virtual>> Notify_UsedWeapon(pawn:Pawn) : void
+    + <<virtual>> Notify_KilledPawn(pawn:Pawn) : void
+    + <<override>> ToString() : string
+}
+ThingComp --> "parent" ThingWithComps
+ThingComp --> "props" CompProperties
+ThingComp --> "ParentHolder" IThingHolder
+@enduml

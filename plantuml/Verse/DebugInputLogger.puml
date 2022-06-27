@@ -1,0 +1,6 @@
+@startuml
+class DebugInputLogger <<static>> {
+    + {static} InputLogOnGUI() : void
+    + {static} ToStringFull(ev:Event) : string
+}
+@enduml

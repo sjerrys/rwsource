@@ -1,0 +1,15 @@
+@startuml
+class ScribeLoader {
+    + curPathRelToParent : string
+    + InitLoading(filePath:string) : void
+    + InitLoadingMetaHeaderOnly(filePath:string) : void
+    + FinalizeLoading() : void
+    + EnterNode(nodeName:string) : bool
+    + ExitNode() : void
+    + ForceStop() : void
+}
+ScribeLoader o-> "crossRefs" CrossRefHandler
+ScribeLoader o-> "initer" PostLoadIniter
+ScribeLoader --> "curParent" IExposable
+ScribeLoader --> "curXmlParent" XmlNode
+@enduml

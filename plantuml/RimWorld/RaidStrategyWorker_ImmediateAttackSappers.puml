@@ -1,0 +1,10 @@
+@startuml
+class RaidStrategyWorker_ImmediateAttackSappers {
+    + <<override>> CanUseWith(parms:IncidentParms, groupKind:PawnGroupKindDef) : bool
+    + <<override>> MinimumPoints(faction:Faction, groupKind:PawnGroupKindDef) : float
+    + <<override>> MinMaxAllowedPawnGenOptionCost(faction:Faction, groupKind:PawnGroupKindDef) : float
+    + <<override>> CanUsePawnGenOption(opt:PawnGenOption, chosenOpts:List<PawnGenOption>) : bool
+    + <<override>> CanUsePawn(p:Pawn, otherPawns:List<Pawn>) : bool
+}
+RaidStrategyWorker <|-- RaidStrategyWorker_ImmediateAttackSappers
+@enduml

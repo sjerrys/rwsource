@@ -1,0 +1,5 @@
+@startuml
+class SendShuttleAwayQuestPartUtility <<static>> {
+    + {static} SendAway(shuttle:Thing, dropEverything:bool) : void
+}
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class WorldObjectMaker <<static>> {
+    + {static} MakeWorldObject(def:WorldObjectDef) : WorldObject
+}
+@enduml

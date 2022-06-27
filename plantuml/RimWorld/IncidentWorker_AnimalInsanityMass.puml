@@ -1,0 +1,7 @@
+@startuml
+class IncidentWorker_AnimalInsanityMass {
+    + {static} AnimalUsable(p:Pawn) : bool
+    + {static} DriveInsane(p:Pawn) : void
+}
+IncidentWorker <|-- IncidentWorker_AnimalInsanityMass
+@enduml

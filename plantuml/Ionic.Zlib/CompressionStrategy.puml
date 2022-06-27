@@ -1,0 +1,7 @@
+@startuml
+enum CompressionStrategy {
+    Default,
+    Filtered,
+    HuffmanOnly,
+}
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class Building_Sarcophagus {
+    + <<override>> ExposeData() : void
+    + <<override>> TryAcceptThing(thing:Thing, allowSpecialEffects:bool) : bool
+    + <<override>> Notify_CorpseBuried(worker:Pawn) : void
+}
+Building_Grave <|-- Building_Sarcophagus
+@enduml

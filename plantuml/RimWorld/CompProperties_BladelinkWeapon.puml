@@ -1,0 +1,6 @@
+@startuml
+class CompProperties_BladelinkWeapon {
+    + CompProperties_BladelinkWeapon()
+}
+CompProperties <|-- CompProperties_BladelinkWeapon
+@enduml

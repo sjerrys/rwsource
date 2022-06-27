@@ -1,0 +1,9 @@
+@startuml
+class Alert_ActivatorCountdown {
+    + Alert_ActivatorCountdown()
+    + <<override>> GetReport() : AlertReport
+    + <<override>> GetLabel() : string
+    + <<override>> GetExplanation() : TaggedString
+}
+Alert <|-- Alert_ActivatorCountdown
+@enduml

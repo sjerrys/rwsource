@@ -1,0 +1,5 @@
+@startuml
+class QuickStarter <<static>> {
+    + {static} CheckQuickStart() : bool
+}
+@enduml

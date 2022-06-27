@@ -1,0 +1,6 @@
+@startuml
+class MessageTypeDef {
+}
+Def <|-- MessageTypeDef
+MessageTypeDef --> "sound" SoundDef
+@enduml

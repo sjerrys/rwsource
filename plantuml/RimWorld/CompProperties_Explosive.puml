@@ -1,0 +1,37 @@
+@startuml
+class CompProperties_Explosive {
+    + explosiveRadius : float = 1.9f
+    + damageAmountBase : int
+    + armorPenetrationBase : float
+    + postExplosionSpawnChance : float
+    + postExplosionSpawnThingCount : int = 1
+    + applyDamageToExplosionCellsNeighbors : bool
+    + preExplosionSpawnChance : float
+    + preExplosionSpawnThingCount : int = 1
+    + chanceToStartFire : float
+    + damageFalloff : bool
+    + explodeOnKilled : bool
+    + explosiveExpandPerStackcount : float
+    + explosiveExpandPerFuel : float
+    + startWickHitPointsPercent : float = 0.2f
+    + wickScale : float = 1f
+    + chanceNeverExplodeFromDamage : float
+    + destroyThingOnExplosionSize : float
+    + countdownTicks : IntRange?
+    + extraInspectStringKey : string
+    + CompProperties_Explosive()
+    + <<override>> ResolveReferences(parentDef:ThingDef) : void
+    + <<override>> ConfigErrors(parentDef:ThingDef) : IEnumerable<string>
+}
+class "List`1"<T> {
+}
+CompProperties <|-- CompProperties_Explosive
+CompProperties_Explosive --> "explosiveDamageType" DamageDef
+CompProperties_Explosive --> "postExplosionSpawnThingDef" ThingDef
+CompProperties_Explosive --> "preExplosionSpawnThingDef" ThingDef
+CompProperties_Explosive --> "explosionEffect" EffecterDef
+CompProperties_Explosive --> "explosionSound" SoundDef
+CompProperties_Explosive --> "startWickOnDamageTaken<DamageDef>" "List`1"
+CompProperties_Explosive o-> "wickTicks" IntRange
+CompProperties_Explosive --> "requiredDamageTypeToExplode" DamageDef
+@enduml

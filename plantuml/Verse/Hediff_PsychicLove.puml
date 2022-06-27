@@ -1,0 +1,6 @@
+@startuml
+class Hediff_PsychicLove {
+    + <<override>> Notify_RelationAdded(otherPawn:Pawn, relationDef:PawnRelationDef) : void
+}
+HediffWithTarget <|-- Hediff_PsychicLove
+@enduml

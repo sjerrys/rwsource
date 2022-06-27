@@ -1,0 +1,6 @@
+@startuml
+class JobGiver_EnterTransporter {
+    + {static} FindMyTransporter(transporters:List<CompTransporter>, me:Pawn) : CompTransporter
+}
+ThinkNode_JobGiver <|-- JobGiver_EnterTransporter
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+class TreeNode_ThingCategory {
+    + Label : string <<get>>
+    + LabelCap : string <<get>>
+    + TreeNode_ThingCategory(def:ThingCategoryDef)
+    + <<override>> ToString() : string
+}
+class "IEnumerable`1"<T> {
+}
+TreeNode <|-- TreeNode_ThingCategory
+TreeNode_ThingCategory --> "catDef" ThingCategoryDef
+TreeNode_ThingCategory --> "ChildCategoryNodesAndThis<TreeNode_ThingCategory>" "IEnumerable`1"
+TreeNode_ThingCategory --> "ChildCategoryNodes<TreeNode_ThingCategory>" "IEnumerable`1"
+@enduml

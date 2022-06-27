@@ -1,0 +1,7 @@
+@startuml
+class CompAbilityEffect_Flashstorm {
+    + <<override>> Apply(target:LocalTargetInfo, dest:LocalTargetInfo) : void
+    + <<override>> Valid(target:LocalTargetInfo, throwMessages:bool) : bool
+}
+CompAbilityEffect <|-- CompAbilityEffect_Flashstorm
+@enduml

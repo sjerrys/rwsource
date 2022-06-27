@@ -1,0 +1,21 @@
+@startuml
+class Zone_Growing {
+    + allowSow : bool = true
+    + <<override>> IsMultiselectable : bool <<get>>
+    + Zone_Growing()
+    + Zone_Growing(zoneManager:ZoneManager)
+    + <<override>> ExposeData() : void
+    + <<override>> GetInspectString() : string
+    + {static} GrowingQuadrumsDescription(tile:int) : string
+    + <<override>> GetGizmos() : IEnumerable<Gizmo>
+    + <<override>> GetZoneAddGizmos() : IEnumerable<Gizmo>
+    + GetPlantDefToGrow() : ThingDef
+    + SetPlantDefToGrow(plantDef:ThingDef) : void
+    + CanAcceptSowNow() : bool
+}
+class "IEnumerable`1"<T> {
+}
+Zone <|-- Zone_Growing
+IPlantToGrowSettable <|-- Zone_Growing
+Zone_Growing --> "Cells<IntVec3>" "IEnumerable`1"
+@enduml

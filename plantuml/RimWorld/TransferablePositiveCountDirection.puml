@@ -1,0 +1,6 @@
+@startuml
+enum TransferablePositiveCountDirection {
+    Source,
+    Destination,
+}
+@enduml

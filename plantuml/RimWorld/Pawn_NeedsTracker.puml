@@ -1,0 +1,26 @@
+@startuml
+class Pawn_NeedsTracker {
+    + Pawn_NeedsTracker()
+    + Pawn_NeedsTracker(newPawn:Pawn)
+    + ExposeData() : void
+    + NeedsTrackerTick() : void
+    + TryGetNeed() : T
+    + TryGetNeed(def:NeedDef) : Need
+    + SetInitialLevels() : void
+    + AddOrRemoveNeedsAsAppropriate() : void
+}
+class "List`1"<T> {
+}
+IExposable <|-- Pawn_NeedsTracker
+Pawn_NeedsTracker --> "mood" Need_Mood
+Pawn_NeedsTracker --> "food" Need_Food
+Pawn_NeedsTracker --> "rest" Need_Rest
+Pawn_NeedsTracker --> "joy" Need_Joy
+Pawn_NeedsTracker --> "beauty" Need_Beauty
+Pawn_NeedsTracker --> "roomsize" Need_RoomSize
+Pawn_NeedsTracker --> "outdoors" Need_Outdoors
+Pawn_NeedsTracker --> "drugsDesire" Need_Chemical_Any
+Pawn_NeedsTracker --> "comfort" Need_Comfort
+Pawn_NeedsTracker --> "authority" Need_Authority
+Pawn_NeedsTracker --> "AllNeeds<Need>" "List`1"
+@enduml

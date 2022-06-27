@@ -1,0 +1,22 @@
+@startuml
+class DiaOption {
+    + resolveTree : bool
+    + disabled : bool
+    + disabledReason : string
+    + DiaOption()
+    + DiaOption(text:string)
+    + DiaOption(hyperlink:Dialog_InfoCard.Hyperlink)
+    + DiaOption(def:DiaOptionMold)
+    + Disable(newDisabledReason:string) : void
+    + SetText(newText:string) : void
+    + OptOnGUI(rect:Rect, active:bool) : float
+}
+class "Func`1"<T> {
+}
+DiaOption --> "dialog" Window
+DiaOption --> "link" DiaNode
+DiaOption --> "linkLateBind<DiaNode>" "Func`1"
+DiaOption --> "action" Action
+DiaOption o-> "clickSound" SoundDef
+DiaOption --> "DefaultOK" DiaOption
+@enduml

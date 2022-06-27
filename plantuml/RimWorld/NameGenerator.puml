@@ -1,0 +1,7 @@
+@startuml
+class NameGenerator <<static>> {
+    + {static} GenerateName(rootPack:RulePackDef, extantNames:IEnumerable<string>, appendNumberIfNameUsed:bool, rootKeyword:string) : string
+    + {static} GenerateName(rootPack:RulePackDef, validator:Predicate<string>, appendNumberIfNameUsed:bool, rootKeyword:string, testPawnNameSymbol:string) : string
+    + {static} GenerateName(request:GrammarRequest, validator:Predicate<string>, appendNumberIfNameUsed:bool, rootKeyword:string, untranslatedRootKeyword:string) : string
+}
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class Instruction_UnforbidStartingResources {
+    + <<override>> PostDeactivated() : void
+    + <<override>> LessonOnGUI() : void
+    + <<override>> LessonUpdate() : void
+}
+Lesson_Instruction <|-- Instruction_UnforbidStartingResources
+@enduml

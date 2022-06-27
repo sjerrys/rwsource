@@ -1,0 +1,9 @@
+@startuml
+class TextureAndColor <<struct>> {
+    + HasValue : bool <<get>>
+    + TextureAndColor(texture:Texture2D, color:Color)
+}
+TextureAndColor --> "Texture" Texture2D
+TextureAndColor --> "Color" Color
+TextureAndColor --> "None" TextureAndColor
+@enduml

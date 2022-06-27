@@ -1,0 +1,12 @@
+@startuml
+class ExpectationDef {
+    + order : int
+    + thoughtStage : int
+    + maxMapWealth : float
+    + joyToleranceDropPerDay : float
+    + joyKindsNeeded : int
+    + WealthTriggered : bool <<get>>
+    + <<override>> ConfigErrors() : IEnumerable<string>
+}
+Def <|-- ExpectationDef
+@enduml

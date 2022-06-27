@@ -1,0 +1,7 @@
+@startuml
+class UnsavedAttribute {
+    + allowLoading : bool
+    + UnsavedAttribute(allowLoading:bool)
+}
+Attribute <|-- UnsavedAttribute
+@enduml

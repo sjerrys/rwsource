@@ -1,0 +1,12 @@
+@startuml
+class CompTempControl {
+    + operatingAtHighPower : bool
+    + targetTemperature : float
+    + <<override>> PostSpawnSetup(respawningAfterLoad:bool) : void
+    + <<override>> PostExposeData() : void
+    + <<override>> CompGetGizmosExtra() : IEnumerable<Gizmo>
+    + <<override>> CompInspectStringExtra() : string
+}
+ThingComp <|-- CompTempControl
+CompTempControl --> "Props" CompProperties_TempControl
+@enduml

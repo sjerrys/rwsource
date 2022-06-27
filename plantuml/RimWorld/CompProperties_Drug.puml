@@ -1,0 +1,18 @@
+@startuml
+class CompProperties_Drug {
+    + addictiveness : float
+    + minToleranceToAddict : float
+    + existingAddictionSeverityOffset : float = 0.1f
+    + needLevelOffset : float = 1f
+    + largeOverdoseChance : float
+    + isCombatEnhancingDrug : bool
+    + listOrder : float
+    + Addictive : bool <<get>>
+    + CanCauseOverdose : bool <<get>>
+    + CompProperties_Drug()
+    + <<override>> ConfigErrors(parentDef:ThingDef) : IEnumerable<string>
+}
+CompProperties <|-- CompProperties_Drug
+CompProperties_Drug --> "chemical" ChemicalDef
+CompProperties_Drug o-> "overdoseSeverityOffset" FloatRange
+@enduml

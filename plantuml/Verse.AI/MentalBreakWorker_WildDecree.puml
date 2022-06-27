@@ -1,0 +1,8 @@
+@startuml
+class MentalBreakWorker_WildDecree {
+    + <<override>> BreakCanOccur(pawn:Pawn) : bool
+    + <<override>> CommonalityFor(pawn:Pawn, moodCaused:bool) : float
+    + <<override>> TryStart(pawn:Pawn, reason:string, causedByMood:bool) : bool
+}
+MentalBreakWorker <|-- MentalBreakWorker_WildDecree
+@enduml

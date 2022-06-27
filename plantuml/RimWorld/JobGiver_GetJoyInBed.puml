@@ -1,0 +1,5 @@
+@startuml
+class JobGiver_GetJoyInBed {
+}
+JobGiver_GetJoy <|-- JobGiver_GetJoyInBed
+@enduml

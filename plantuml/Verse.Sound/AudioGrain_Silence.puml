@@ -1,0 +1,8 @@
+@startuml
+class AudioGrain_Silence {
+    + <<override>> GetResolvedGrains() : IEnumerable<ResolvedGrain>
+    + <<override>> GetHashCode() : int
+}
+AudioGrain <|-- AudioGrain_Silence
+AudioGrain_Silence o-> "durationRange" FloatRange
+@enduml

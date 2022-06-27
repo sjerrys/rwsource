@@ -1,0 +1,8 @@
+@startuml
+class CompProperties_Lifespan {
+    + lifespanTicks : int = 100
+    + CompProperties_Lifespan()
+}
+CompProperties <|-- CompProperties_Lifespan
+CompProperties_Lifespan --> "expireEffect" EffecterDef
+@enduml

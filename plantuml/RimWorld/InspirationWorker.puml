@@ -1,0 +1,7 @@
+@startuml
+class InspirationWorker {
+    + <<virtual>> CommonalityFor(pawn:Pawn) : float
+    + <<virtual>> InspirationCanOccur(pawn:Pawn) : bool
+}
+InspirationWorker --> "def" InspirationDef
+@enduml

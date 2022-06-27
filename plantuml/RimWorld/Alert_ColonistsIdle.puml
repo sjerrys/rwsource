@@ -1,0 +1,9 @@
+@startuml
+class Alert_ColonistsIdle {
+    + <<const>> MinDaysPassed : int = 1
+    + <<override>> GetLabel() : string
+    + <<override>> GetExplanation() : TaggedString
+    + <<override>> GetReport() : AlertReport
+}
+Alert <|-- Alert_ColonistsIdle
+@enduml

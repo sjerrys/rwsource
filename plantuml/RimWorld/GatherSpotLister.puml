@@ -1,0 +1,9 @@
+@startuml
+class GatherSpotLister {
+    + RegisterActivated(spot:CompGatherSpot) : void
+    + RegisterDeactivated(spot:CompGatherSpot) : void
+}
+class "List`1"<T> {
+}
+GatherSpotLister o-> "activeSpots<CompGatherSpot>" "List`1"
+@enduml

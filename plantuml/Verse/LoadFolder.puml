@@ -1,0 +1,17 @@
+@startuml
+class LoadFolder {
+    + folderName : string
+    + ShouldLoad : bool <<get>>
+    + LoadFolder(folderName:string, requiredPackageIds:List<string>, disallowedPackageIds:List<string>)
+    + Equals(other:LoadFolder) : bool
+    + <<override>> Equals(obj:object) : bool
+    + <<override>> GetHashCode() : int
+}
+class "IEquatable`1"<T> {
+}
+class "List`1"<T> {
+}
+"IEquatable`1" "<LoadFolder>" <|-- LoadFolder
+LoadFolder --> "requiredPackageIds<string>" "List`1"
+LoadFolder --> "disallowedPackageIds<string>" "List`1"
+@enduml

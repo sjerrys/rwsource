@@ -1,0 +1,30 @@
+@startuml
+class FloatRange <<struct>> {
+    + min : float
+    + max : float
+    + Average : float <<get>>
+    + RandomInRange : float <<get>>
+    + TrueMin : float <<get>>
+    + TrueMax : float <<get>>
+    + Span : float <<get>>
+    + FloatRange(min:float, max:float)
+    + ClampToRange(value:float) : float
+    + RandomInRangeSeeded(seed:int) : float
+    + LerpThroughRange(lerpPct:float) : float
+    + InverseLerpThroughRange(f:float) : float
+    + Includes(f:float) : bool
+    + IncludesEpsilon(f:float) : bool
+    + ExpandedBy(f:float) : FloatRange
+    + {static} FromString(s:string) : FloatRange
+    + <<override>> ToString() : string
+    + <<override>> GetHashCode() : int
+    + <<override>> Equals(obj:object) : bool
+    + Equals(other:FloatRange) : bool
+}
+class "IEquatable`1"<T> {
+}
+"IEquatable`1" "<FloatRange>" <|-- FloatRange
+FloatRange --> "Zero" FloatRange
+FloatRange --> "One" FloatRange
+FloatRange --> "ZeroToOne" FloatRange
+@enduml

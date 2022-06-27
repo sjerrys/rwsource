@@ -1,0 +1,7 @@
+@startuml
+class StorytellerComp_CategoryMTB {
+    + <<override>> MakeIntervalIncidents(target:IIncidentTarget) : IEnumerable<FiringIncident>
+    + <<override>> ToString() : string
+}
+StorytellerComp <|-- StorytellerComp_CategoryMTB
+@enduml

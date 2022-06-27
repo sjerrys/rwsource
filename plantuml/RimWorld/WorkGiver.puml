@@ -1,0 +1,8 @@
+@startuml
+abstract class WorkGiver {
+    + <<virtual>> ShouldSkip(pawn:Pawn, forced:bool) : bool
+    + <<virtual>> NonScanJob(pawn:Pawn) : Job
+    + MissingRequiredCapacity(pawn:Pawn) : PawnCapacityDef
+}
+WorkGiver --> "def" WorkGiverDef
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+class TaleData_Trader {
+    + name : string
+    + pawnID : int
+    + <<override>> ExposeData() : void
+    + <<override>> GetRules(prefix:string) : IEnumerable<Rule>
+    + {static} GenerateFrom(trader:ITrader) : TaleData_Trader
+    + {static} GenerateRandom() : TaleData_Trader
+}
+TaleData <|-- TaleData_Trader
+TaleData_Trader o-> "gender" Gender
+@enduml

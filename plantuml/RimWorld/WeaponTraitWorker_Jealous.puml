@@ -1,0 +1,6 @@
+@startuml
+class WeaponTraitWorker_Jealous {
+    + <<override>> Notify_OtherWeaponWielded(weapon:CompBladelinkWeapon) : void
+}
+WeaponTraitWorker <|-- WeaponTraitWorker_Jealous
+@enduml

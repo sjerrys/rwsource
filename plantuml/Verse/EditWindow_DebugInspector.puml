@@ -1,0 +1,12 @@
+@startuml
+class EditWindow_DebugInspector {
+    + fullMode : bool
+    + <<override>> IsDebug : bool <<get>>
+    + EditWindow_DebugInspector()
+    + <<override>> WindowUpdate() : void
+    + <<override>> DoWindowContents(inRect:Rect) : void
+    + AppendDebugString(str:string) : void
+}
+EditWindow <|-- EditWindow_DebugInspector
+EditWindow_DebugInspector --> "InitialSize" Vector2
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+abstract class WorkGiver_InteractAnimal {
+    + {static} ResetStaticData() : void
+}
+WorkGiver_Scanner <|-- WorkGiver_InteractAnimal
+WorkGiver_InteractAnimal --> "PathEndMode" PathEndMode
+@enduml

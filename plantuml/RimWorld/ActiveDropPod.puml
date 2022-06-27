@@ -1,0 +1,14 @@
+@startuml
+class ActiveDropPod {
+    + age : int
+    + <<override>> ExposeData() : void
+    + GetDirectlyHeldThings() : ThingOwner
+    + GetChildHolders(outChildren:List<IThingHolder>) : void
+    + <<override>> Tick() : void
+    + <<override>> Destroy(mode:DestroyMode) : void
+}
+Thing <|-- ActiveDropPod
+IActiveDropPod <|-- ActiveDropPod
+IThingHolder <|-- ActiveDropPod
+ActiveDropPod --> "Contents" ActiveDropPodInfo
+@enduml

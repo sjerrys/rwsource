@@ -1,0 +1,10 @@
+@startuml
+class RoadInfo {
+    + RoadInfo(map:Map)
+    + <<override>> ExposeData() : void
+}
+class "List`1"<T> {
+}
+MapComponent <|-- RoadInfo
+RoadInfo o-> "roadEdgeTiles<IntVec3>" "List`1"
+@enduml

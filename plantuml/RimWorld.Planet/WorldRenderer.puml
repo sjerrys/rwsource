@@ -1,0 +1,13 @@
+@startuml
+class WorldRenderer {
+    + WorldRenderer()
+    + SetAllLayersDirty() : void
+    + SetDirty() : void
+    + RegenerateAllLayersNow() : void
+    + Notify_StaticWorldObjectPosChanged() : void
+    + CheckActivateWorldCamera() : void
+    + DrawWorldLayers() : void
+    + GetTileIDFromRayHit(hit:RaycastHit) : int
+}
+WorldRenderer --> "wantedMode" WorldRenderMode
+@enduml

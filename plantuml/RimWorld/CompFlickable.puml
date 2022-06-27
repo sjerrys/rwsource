@@ -1,0 +1,14 @@
+@startuml
+class CompFlickable {
+    + <<const>> FlickedOnSignal : string = "FlickedOn"
+    + <<const>> FlickedOffSignal : string = "FlickedOff"
+    + SwitchIsOn : bool <<get>> <<set>>
+    + <<override>> PostExposeData() : void
+    + WantsFlick() : bool
+    + DoFlick() : void
+    + ResetToOn() : void
+    + <<override>> CompGetGizmosExtra() : IEnumerable<Gizmo>
+}
+ThingComp <|-- CompFlickable
+CompFlickable --> "CurrentGraphic" Graphic
+@enduml

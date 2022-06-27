@@ -1,0 +1,7 @@
+@startuml
+class CompProperties_Neurotrainer {
+}
+CompProperties_Usable <|-- CompProperties_Neurotrainer
+CompProperties_Neurotrainer --> "skill" SkillDef
+CompProperties_Neurotrainer --> "ability" AbilityDef
+@enduml

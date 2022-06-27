@@ -1,0 +1,9 @@
+@startuml
+class Page_SelectScenario {
+    + <<override>> PageTitle : string <<get>>
+    + <<override>> PreOpen() : void
+    + <<override>> DoWindowContents(rect:Rect) : void
+    + {static} BeginScenarioConfiguration(scen:Scenario, originPage:Page) : void
+}
+Page <|-- Page_SelectScenario
+@enduml

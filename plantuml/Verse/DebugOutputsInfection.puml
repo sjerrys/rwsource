@@ -1,0 +1,21 @@
+@startuml
+class DebugOutputsInfection <<static>> {
+    + {static} Infections() : void
+    + {static} InfectionSimulator() : void
+}
+enum InfectionLuck {
+    Bad,
+    Normal,
+    Good,
+}
+class InfectionSimRow <<struct>> {
+    + skill : int
+    + deathChance : float
+    + recoveryTimeDays : float
+    + medicineUsed : float
+}
+DebugOutputsInfection +-- InfectionLuck
+DebugOutputsInfection +-- InfectionSimRow
+InfectionSimRow --> "illness" HediffDef
+InfectionSimRow --> "medicine" ThingDef
+@enduml

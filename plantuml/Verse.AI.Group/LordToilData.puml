@@ -1,0 +1,6 @@
+@startuml
+abstract class LordToilData {
+    + {abstract} ExposeData() : void
+}
+IExposable <|-- LordToilData
+@enduml

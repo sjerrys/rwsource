@@ -1,0 +1,14 @@
+@startuml
+class QuestPart_DestroyWorldObject {
+    + inSignal : string
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+    + {static} TryRemove(worldObject:WorldObject) : void
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart <|-- QuestPart_DestroyWorldObject
+QuestPart_DestroyWorldObject --> "worldObject" WorldObject
+QuestPart_DestroyWorldObject --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+enum Quadrum {
+    Aprimay,
+    Jugust,
+    Septober,
+    Decembary,
+    Undefined,
+}
+@enduml

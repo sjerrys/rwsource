@@ -1,0 +1,14 @@
+@startuml
+class QuestPart_RequirementsToAcceptColonistWithTitle {
+    + <<override>> RequiresAccepter : bool <<get>>
+    + <<override>> CanAccept() : AcceptanceReport
+    + <<override>> CanPawnAccept(p:Pawn) : bool
+    + <<override>> ExposeData() : void
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart_RequirementsToAccept <|-- QuestPart_RequirementsToAcceptColonistWithTitle
+QuestPart_RequirementsToAcceptColonistWithTitle --> "minimumTitle" RoyalTitleDef
+QuestPart_RequirementsToAcceptColonistWithTitle --> "faction" Faction
+QuestPart_RequirementsToAcceptColonistWithTitle --> "Hyperlinks<Dialog_InfoCard.Hyperlink>" "IEnumerable`1"
+@enduml

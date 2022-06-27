@@ -1,0 +1,25 @@
+@startuml
+class QuestNode_SplitRandomly {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_SplitRandomly
+QuestNode_SplitRandomly --> "storeAsFormat<string>" "SlateRef`1"
+QuestNode_SplitRandomly --> "storeAs1<string>" "SlateRef`1"
+QuestNode_SplitRandomly --> "storeAs2<string>" "SlateRef`1"
+QuestNode_SplitRandomly --> "storeAs3<string>" "SlateRef`1"
+QuestNode_SplitRandomly --> "storeAs4<string>" "SlateRef`1"
+QuestNode_SplitRandomly --> "storeAs5<string>" "SlateRef`1"
+QuestNode_SplitRandomly --> "valueToSplit<float?>" "SlateRef`1"
+QuestNode_SplitRandomly --> "countToSplit<int>" "SlateRef`1"
+QuestNode_SplitRandomly --> "zeroIfFractionBelow1<float>" "SlateRef`1"
+QuestNode_SplitRandomly --> "zeroIfFractionBelow2<float>" "SlateRef`1"
+QuestNode_SplitRandomly --> "zeroIfFractionBelow3<float>" "SlateRef`1"
+QuestNode_SplitRandomly --> "zeroIfFractionBelow4<float>" "SlateRef`1"
+QuestNode_SplitRandomly --> "zeroIfFractionBelow5<float>" "SlateRef`1"
+QuestNode_SplitRandomly --> "minFraction1<float>" "SlateRef`1"
+QuestNode_SplitRandomly --> "minFraction2<float>" "SlateRef`1"
+QuestNode_SplitRandomly --> "minFraction3<float>" "SlateRef`1"
+QuestNode_SplitRandomly --> "minFraction4<float>" "SlateRef`1"
+QuestNode_SplitRandomly --> "minFraction5<float>" "SlateRef`1"
+@enduml

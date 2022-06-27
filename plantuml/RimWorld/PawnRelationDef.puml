@@ -1,0 +1,31 @@
+@startuml
+class PawnRelationDef {
+    + labelFemale : string
+    + importance : float
+    + implied : bool
+    + reflexive : bool
+    + opinionOffset : int
+    + generationChanceFactor : float
+    + romanceChanceFactor : float = 1f
+    + incestOpinionOffset : float
+    + familyByBloodRelation : bool
+    + GetGenderSpecificLabel(pawn:Pawn) : string
+    + GetGenderSpecificLabelCap(pawn:Pawn) : string
+    + GetGenderSpecificDiedThought(killed:Pawn) : ThoughtDef
+    + GetGenderSpecificLostThought(killed:Pawn) : ThoughtDef
+    + GetGenderSpecificKilledThought(killed:Pawn) : ThoughtDef
+    + <<override>> ConfigErrors() : IEnumerable<string>
+}
+class "List`1"<T> {
+}
+Def <|-- PawnRelationDef
+PawnRelationDef o-> "workerClass" Type
+PawnRelationDef --> "diedThought" ThoughtDef
+PawnRelationDef --> "diedThoughtFemale" ThoughtDef
+PawnRelationDef --> "lostThought" ThoughtDef
+PawnRelationDef --> "lostThoughtFemale" ThoughtDef
+PawnRelationDef --> "soldThoughts<ThoughtDef>" "List`1"
+PawnRelationDef --> "killedThought" ThoughtDef
+PawnRelationDef --> "killedThoughtFemale" ThoughtDef
+PawnRelationDef --> "Worker" PawnRelationWorker
+@enduml

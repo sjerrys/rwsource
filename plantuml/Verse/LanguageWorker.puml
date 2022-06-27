@@ -1,0 +1,18 @@
+@startuml
+abstract class LanguageWorker {
+    + <<virtual>> WithIndefiniteArticle(str:string, gender:Gender, plural:bool, name:bool) : string
+    + WithIndefiniteArticle(str:string, plural:bool, name:bool) : string
+    + WithIndefiniteArticlePostProcessed(str:string, gender:Gender, plural:bool, name:bool) : string
+    + WithIndefiniteArticlePostProcessed(str:string, plural:bool, name:bool) : string
+    + <<virtual>> WithDefiniteArticle(str:string, gender:Gender, plural:bool, name:bool) : string
+    + WithDefiniteArticle(str:string, plural:bool, name:bool) : string
+    + WithDefiniteArticlePostProcessed(str:string, gender:Gender, plural:bool, name:bool) : string
+    + WithDefiniteArticlePostProcessed(str:string, plural:bool, name:bool) : string
+    + <<virtual>> OrdinalNumber(number:int, gender:Gender) : string
+    + <<virtual>> PostProcessed(str:string) : string
+    + <<virtual>> ToTitleCase(str:string) : string
+    + <<virtual>> Pluralize(str:string, gender:Gender, count:int) : string
+    + Pluralize(str:string, count:int) : string
+    + <<virtual>> PostProcessedKeyedTranslation(translation:string) : string
+}
+@enduml

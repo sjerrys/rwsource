@@ -1,0 +1,5 @@
+@startuml
+class ThingRequestGroupUtility <<static>> {
+    + {static} StoreInRegion(group:ThingRequestGroup) : bool
+}
+@enduml

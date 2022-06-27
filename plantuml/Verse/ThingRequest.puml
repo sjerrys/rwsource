@@ -1,0 +1,13 @@
+@startuml
+class ThingRequest <<struct>> {
+    + IsUndefined : bool <<get>>
+    + CanBeFoundInRegion : bool <<get>>
+    + {static} ForUndefined() : ThingRequest
+    + {static} ForDef(singleDef:ThingDef) : ThingRequest
+    + {static} ForGroup(group:ThingRequestGroup) : ThingRequest
+    + Accepts(t:Thing) : bool
+    + <<override>> ToString() : string
+}
+ThingRequest --> "singleDef" ThingDef
+ThingRequest --> "group" ThingRequestGroup
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class ScaleBias {
+    + Bias : double <<get>> <<set>>
+    + Scale : double <<get>> <<set>>
+    + ScaleBias()
+    + ScaleBias(input:ModuleBase)
+    + ScaleBias(scale:double, bias:double, input:ModuleBase)
+    + <<override>> GetValue(x:double, y:double, z:double) : double
+}
+ModuleBase <|-- ScaleBias
+@enduml

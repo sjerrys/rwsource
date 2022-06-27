@@ -1,0 +1,12 @@
+@startuml
+interface IBillGiver {
+    LabelShort : string <<get>>
+    CurrentlyUsableForBills() : bool
+    UsableForBillsAfterFueling() : bool
+}
+class "IEnumerable`1"<T> {
+}
+IBillGiver --> "Map" Map
+IBillGiver --> "BillStack" BillStack
+IBillGiver --> "IngredientStackCells<IntVec3>" "IEnumerable`1"
+@enduml

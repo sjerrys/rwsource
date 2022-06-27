@@ -1,0 +1,16 @@
+@startuml
+class QuestNode_GetRandomElementByWeight {
+}
+class Option {
+    + weight : float
+}
+class "SlateRef`1"<T> {
+}
+class "List`1"<T> {
+}
+QuestNode <|-- QuestNode_GetRandomElementByWeight
+QuestNode_GetRandomElementByWeight --> "storeAs<string>" "SlateRef`1"
+QuestNode_GetRandomElementByWeight o-> "options<Option>" "List`1"
+QuestNode_GetRandomElementByWeight +-- Option
+Option --> "element<object>" "SlateRef`1"
+@enduml

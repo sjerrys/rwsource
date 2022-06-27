@@ -1,0 +1,41 @@
+@startuml
+class TraitDegreeData {
+    + label : string
+    + labelMale : string
+    + labelFemale : string
+    + untranslatedLabel : string
+    + description : string
+    + degree : int
+    + commonality : float = 1f
+    + mentalBreakInspirationGainReasonText : string
+    + mentalBreakInspirationGainChance : float
+    + socialFightChanceFactor : float = 1f
+    + marketValueFactorOffset : float
+    + randomDiseaseMtbDays : float
+    + hungerRateFactor : float = 1f
+    + LabelCap : string <<get>>
+    + GetLabelFor(pawn:Pawn) : string
+    + GetLabelCapFor(pawn:Pawn) : string
+    + GetLabelFor(gender:Gender) : string
+    + GetLabelCapFor(gender:Gender) : string
+    + PostLoad() : void
+}
+class "List`1"<T> {
+}
+class "Dictionary`2"<T1,T2> {
+}
+TraitDegreeData --> "statOffsets<StatModifier>" "List`1"
+TraitDegreeData --> "statFactors<StatModifier>" "List`1"
+TraitDegreeData --> "thinkTree" ThinkTreeDef
+TraitDegreeData --> "randomMentalState" MentalStateDef
+TraitDegreeData --> "randomMentalStateMtbDaysMoodCurve" SimpleCurve
+TraitDegreeData --> "disallowedMentalStates<MentalStateDef>" "List`1"
+TraitDegreeData --> "disallowedInspirations<InspirationDef>" "List`1"
+TraitDegreeData --> "mentalBreakInspirationGainSet<InspirationDef>" "List`1"
+TraitDegreeData --> "allowedMeditationFocusTypes<MeditationFocusDef>" "List`1"
+TraitDegreeData --> "disallowedMeditationFocusTypes<MeditationFocusDef>" "List`1"
+TraitDegreeData --> "theOnlyAllowedMentalBreaks<MentalBreakDef>" "List`1"
+TraitDegreeData o-> "skillGains<SkillDef,int>" "Dictionary`2"
+TraitDegreeData o-> "mentalStateGiverClass" Type
+TraitDegreeData --> "MentalStateGiver" TraitMentalStateGiver
+@enduml

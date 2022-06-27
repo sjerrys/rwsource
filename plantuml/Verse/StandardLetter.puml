@@ -1,0 +1,8 @@
+@startuml
+class StandardLetter {
+}
+class "IEnumerable`1"<T> {
+}
+ChoiceLetter <|-- StandardLetter
+StandardLetter --> "Choices<DiaOption>" "IEnumerable`1"
+@enduml

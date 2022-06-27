@@ -1,0 +1,10 @@
+@startuml
+class Need_RoomSize {
+    + {static} <<readonly>> SampleNumCells : int
+    + <<override>> CurInstantLevel : float <<get>>
+    + Need_RoomSize(pawn:Pawn)
+    + SpacePerceptibleNow() : float
+}
+Need_Seeker <|-- Need_RoomSize
+Need_RoomSize --> "CurCategory" RoomSizeCategory
+@enduml

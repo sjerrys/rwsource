@@ -1,0 +1,8 @@
+@startuml
+class DragSliderManager <<static>> {
+    + {static} ForceStop() : void
+    + {static} DragSlider(rect:Rect, rateFactor:float, newStartMethod:DragSliderCallback, newDraggingUpdateMethod:DragSliderCallback, newCompletedMethod:DragSliderCallback) : bool
+    + {static} DragSlidersOnGUI() : void
+    + {static} DragSlidersUpdate() : void
+}
+@enduml

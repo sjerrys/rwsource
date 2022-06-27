@@ -1,0 +1,6 @@
+@startuml
+class ChangeImplantLevel_Probability {
+    + mtbDays : float
+    + minIntervalDays : float
+}
+@enduml

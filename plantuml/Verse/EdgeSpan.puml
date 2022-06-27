@@ -1,0 +1,14 @@
+@startuml
+class EdgeSpan <<struct>> {
+    + length : int
+    + IsValid : bool <<get>>
+    + <<override>> ToString() : string
+    + EdgeSpan(root:IntVec3, dir:SpanDirection, length:int)
+    + UniqueHashCode() : ulong
+}
+class "IEnumerable`1"<T> {
+}
+EdgeSpan --> "root" IntVec3
+EdgeSpan --> "dir" SpanDirection
+EdgeSpan --> "Cells<IntVec3>" "IEnumerable`1"
+@enduml

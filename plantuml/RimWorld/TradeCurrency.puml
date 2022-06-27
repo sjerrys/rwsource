@@ -1,0 +1,6 @@
+@startuml
+enum TradeCurrency {
+    Silver,
+    Favor,
+}
+@enduml

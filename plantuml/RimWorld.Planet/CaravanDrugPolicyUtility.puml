@@ -1,0 +1,6 @@
+@startuml
+class CaravanDrugPolicyUtility <<static>> {
+    + {static} CheckTakeScheduledDrugs(caravan:Caravan) : void
+    + {static} TryTakeScheduledDrugs(caravan:Caravan) : void
+}
+@enduml

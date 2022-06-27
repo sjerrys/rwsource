@@ -1,0 +1,11 @@
+@startuml
+class SaveFileInfo <<struct>> {
+    + Valid : bool <<get>>
+    + GameVersion : string <<get>>
+    + SaveFileInfo(fileInfo:FileInfo)
+}
+SaveFileInfo o-> "UnimportantTextColor" Color
+SaveFileInfo --> "FileInfo" FileInfo
+SaveFileInfo --> "VersionColor" Color
+SaveFileInfo --> "CompatibilityTip" TipSignal
+@enduml

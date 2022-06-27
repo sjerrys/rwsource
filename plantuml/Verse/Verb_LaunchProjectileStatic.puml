@@ -1,0 +1,9 @@
+@startuml
+class Verb_LaunchProjectileStatic {
+    + <<override>> MultiSelect : bool <<get>>
+    + <<override>> ValidateTarget(target:LocalTargetInfo) : bool
+    + <<override>> OrderForceTarget(target:LocalTargetInfo) : void
+}
+Verb_LaunchProjectile <|-- Verb_LaunchProjectileStatic
+Verb_LaunchProjectileStatic --> "UIIcon" Texture2D
+@enduml

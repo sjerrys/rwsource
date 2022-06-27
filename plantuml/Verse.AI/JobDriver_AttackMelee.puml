@@ -1,0 +1,9 @@
+@startuml
+class JobDriver_AttackMelee {
+    + <<override>> ExposeData() : void
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+    + <<override>> Notify_PatherFailed() : void
+    + <<override>> IsContinuation(j:Job) : bool
+}
+JobDriver <|-- JobDriver_AttackMelee
+@enduml

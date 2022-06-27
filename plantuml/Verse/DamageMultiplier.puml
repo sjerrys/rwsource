@@ -1,0 +1,6 @@
+@startuml
+class DamageMultiplier {
+    + multiplier : float = 1f
+}
+DamageMultiplier --> "damageDef" DamageDef
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class NamePlayerFactionAndSettlementUtility <<static>> {
+    + {static} CanNameFactionNow() : bool
+    + {static} CanNameSettlementNow(factionBase:Settlement) : bool
+    + {static} CanNameFactionSoon() : bool
+    + {static} CanNameSettlementSoon(factionBase:Settlement) : bool
+}
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class MonumentMarkerUtility <<static>> {
+    + {static} GetFirstAdjacentBuilding(entity:SketchEntity, offset:IntVec3, monumentThings:List<Thing>, map:Map) : Building
+}
+@enduml

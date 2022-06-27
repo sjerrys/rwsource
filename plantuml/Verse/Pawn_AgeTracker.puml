@@ -1,0 +1,28 @@
+@startuml
+class Pawn_AgeTracker {
+    + BirthAbsTicks : long <<get>> <<set>>
+    + AgeBiologicalYears : int <<get>>
+    + AgeBiologicalYearsFloat : float <<get>>
+    + AgeBiologicalTicks : long <<get>> <<set>>
+    + AgeChronologicalTicks : long <<get>> <<set>>
+    + AgeChronologicalYears : int <<get>>
+    + AgeChronologicalYearsFloat : float <<get>>
+    + BirthYear : int <<get>>
+    + BirthDayOfSeasonZeroBased : int <<get>>
+    + BirthDayOfYear : int <<get>>
+    + AgeNumberString : string <<get>>
+    + AgeTooltipString : string <<get>>
+    + CurLifeStageIndex : int <<get>>
+    + Pawn_AgeTracker(newPawn:Pawn)
+    + ExposeData() : void
+    + AgeTick() : void
+    + AgeTickMothballed(interval:int) : void
+    + DebugForceBirthdayBiological() : void
+    + DebugMake1YearOlder() : void
+}
+IExposable <|-- Pawn_AgeTracker
+Pawn_AgeTracker --> "BirthQuadrum" Quadrum
+Pawn_AgeTracker --> "CurLifeStage" LifeStageDef
+Pawn_AgeTracker --> "CurLifeStageRace" LifeStageAge
+Pawn_AgeTracker --> "CurKindLifeStage" PawnKindLifeStage
+@enduml

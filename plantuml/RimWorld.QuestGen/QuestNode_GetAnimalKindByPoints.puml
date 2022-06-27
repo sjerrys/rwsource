@@ -1,0 +1,5 @@
+@startuml
+class QuestNode_GetAnimalKindByPoints {
+}
+QuestNode <|-- QuestNode_GetAnimalKindByPoints
+@enduml

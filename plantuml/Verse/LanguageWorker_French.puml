@@ -1,0 +1,12 @@
+@startuml
+class LanguageWorker_French {
+    + <<override>> WithIndefiniteArticle(str:string, gender:Gender, plural:bool, name:bool) : string
+    + <<override>> WithDefiniteArticle(str:string, gender:Gender, plural:bool, name:bool) : string
+    + <<override>> OrdinalNumber(number:int, gender:Gender) : string
+    + <<override>> Pluralize(str:string, gender:Gender, count:int) : string
+    + <<override>> PostProcessed(str:string) : string
+    + <<override>> PostProcessedKeyedTranslation(translation:string) : string
+    + IsVowel(ch:char) : bool
+}
+LanguageWorker <|-- LanguageWorker_French
+@enduml

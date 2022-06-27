@@ -1,0 +1,11 @@
+@startuml
+abstract class Trigger {
+    + {abstract} ActivateOn(lord:Lord, signal:TriggerSignal) : bool
+    + <<virtual>> SourceToilBecameActive(transition:Transition, previousToil:LordToil) : void
+    + <<override>> ToString() : string
+}
+class "List`1"<T> {
+}
+Trigger --> "data" TriggerData
+Trigger --> "filters<TriggerFilter>" "List`1"
+@enduml

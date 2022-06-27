@@ -1,0 +1,5 @@
+@startuml
+class IncidentWorker_ShortCircuit {
+}
+IncidentWorker <|-- IncidentWorker_ShortCircuit
+@enduml

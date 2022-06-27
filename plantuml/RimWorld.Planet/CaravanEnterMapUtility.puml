@@ -1,0 +1,7 @@
+@startuml
+class CaravanEnterMapUtility <<static>> {
+    + {static} Enter(caravan:Caravan, map:Map, enterMode:CaravanEnterMode, dropInventoryMode:CaravanDropInventoryMode, draftColonists:bool, extraCellValidator:Predicate<IntVec3>) : void
+    + {static} Enter(caravan:Caravan, map:Map, spawnCellGetter:Func<Pawn, IntVec3>, dropInventoryMode:CaravanDropInventoryMode, draftColonists:bool) : void
+    + {static} DropAllInventory(pawns:List<Pawn>) : void
+}
+@enduml

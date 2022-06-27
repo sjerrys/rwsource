@@ -1,0 +1,11 @@
+@startuml
+class RecipeWorkerCounter {
+    + <<virtual>> CanCountProducts(bill:Bill_Production) : bool
+    + <<virtual>> CountProducts(bill:Bill_Production) : int
+    + CountValidThings(things:List<Thing>, bill:Bill_Production, def:ThingDef) : int
+    + CountValidThing(thing:Thing, bill:Bill_Production, def:ThingDef) : bool
+    + <<virtual>> ProductsDescription(bill:Bill_Production) : string
+    + <<virtual>> CanPossiblyStoreInStockpile(bill:Bill_Production, stockpile:Zone_Stockpile) : bool
+}
+RecipeWorkerCounter --> "recipe" RecipeDef
+@enduml

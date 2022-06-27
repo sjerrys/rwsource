@@ -1,0 +1,5 @@
+@startuml
+class CameraMapConfig_Normal {
+}
+CameraMapConfig <|-- CameraMapConfig_Normal
+@enduml

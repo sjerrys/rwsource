@@ -1,0 +1,6 @@
+@startuml
+class CompTargetEffect_BrainDamageChance {
+    + <<override>> DoEffectOn(user:Pawn, target:Thing) : void
+}
+CompTargetEffect <|-- CompTargetEffect_BrainDamageChance
+@enduml

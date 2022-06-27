@@ -1,0 +1,5 @@
+@startuml
+abstract class BiomeWorker {
+    + {abstract} GetScore(tile:Tile, tileID:int) : float
+}
+@enduml

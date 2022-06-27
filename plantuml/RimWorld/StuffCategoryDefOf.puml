@@ -1,0 +1,10 @@
+@startuml
+class StuffCategoryDefOf <<static>> {
+    {static} StuffCategoryDefOf()
+}
+StuffCategoryDefOf --> "Metallic" StuffCategoryDef
+StuffCategoryDefOf --> "Woody" StuffCategoryDef
+StuffCategoryDefOf --> "Stony" StuffCategoryDef
+StuffCategoryDefOf --> "Fabric" StuffCategoryDef
+StuffCategoryDefOf --> "Leathery" StuffCategoryDef
+@enduml

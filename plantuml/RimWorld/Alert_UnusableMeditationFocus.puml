@@ -1,0 +1,15 @@
+@startuml
+class Alert_UnusableMeditationFocus {
+    + Alert_UnusableMeditationFocus()
+    + <<override>> GetExplanation() : TaggedString
+    + <<override>> GetReport() : AlertReport
+}
+class Alert_PermitAvailable {
+    + Alert_PermitAvailable()
+    + <<override>> GetReport() : AlertReport
+    + <<override>> GetExplanation() : TaggedString
+}
+Alert <|-- Alert_UnusableMeditationFocus
+Alert_UnusableMeditationFocus +-- Alert_PermitAvailable
+Alert <|-- Alert_PermitAvailable
+@enduml

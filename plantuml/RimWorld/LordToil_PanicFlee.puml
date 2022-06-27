@@ -1,0 +1,9 @@
+@startuml
+class LordToil_PanicFlee {
+    + <<override>> AllowSatisfyLongNeeds : bool <<get>>
+    + <<override>> AllowSelfTend : bool <<get>>
+    + <<override>> Init() : void
+    + <<override>> UpdateAllDuties() : void
+}
+LordToil <|-- LordToil_PanicFlee
+@enduml

@@ -1,0 +1,25 @@
+@startuml
+class PawnDuty {
+    + radius : float
+    + canDig : bool
+    + transportersGroup : int
+    + attackDownedIfStarving : bool
+    + wanderRadius : float?
+    + PawnDuty()
+    + PawnDuty(def:DutyDef)
+    + PawnDuty(def:DutyDef, focus:LocalTargetInfo, radius:float)
+    + PawnDuty(def:DutyDef, focus:LocalTargetInfo, focusSecond:LocalTargetInfo, radius:float)
+    + ExposeData() : void
+    + <<override>> ToString() : string
+}
+IExposable <|-- PawnDuty
+PawnDuty --> "def" DutyDef
+PawnDuty o-> "focus" LocalTargetInfo
+PawnDuty o-> "focusSecond" LocalTargetInfo
+PawnDuty --> "locomotion" LocomotionUrgency
+PawnDuty --> "maxDanger" Danger
+PawnDuty --> "spectateRect" CellRect
+PawnDuty o-> "spectateRectAllowedSides" SpectateRectSide
+PawnDuty --> "spectateRectPreferredSide" SpectateRectSide
+PawnDuty --> "pawnsToGather" PawnsToGather
+@enduml

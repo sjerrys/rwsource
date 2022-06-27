@@ -1,0 +1,8 @@
+@startuml
+class Alert_LowFood {
+    + Alert_LowFood()
+    + <<override>> GetExplanation() : TaggedString
+    + <<override>> GetReport() : AlertReport
+}
+Alert <|-- Alert_LowFood
+@enduml

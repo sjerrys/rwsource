@@ -1,0 +1,21 @@
+@startuml
+class TerrainGrid <<sealed>> {
+    + TerrainGrid(map:Map)
+    + ResetGrids() : void
+    + TerrainAt(ind:int) : TerrainDef
+    + TerrainAt(c:IntVec3) : TerrainDef
+    + UnderTerrainAt(ind:int) : TerrainDef
+    + UnderTerrainAt(c:IntVec3) : TerrainDef
+    + SetTerrain(c:IntVec3, newTerr:TerrainDef) : void
+    + SetUnderTerrain(c:IntVec3, newTerr:TerrainDef) : void
+    + RemoveTopLayer(c:IntVec3, doLeavings:bool) : void
+    + CanRemoveTopLayerAt(c:IntVec3) : bool
+    + ExposeData() : void
+    + Notify_TerrainBurned(c:IntVec3) : void
+    + Notify_TerrainDestroyed(c:IntVec3) : void
+    + DebugStringAt(c:IntVec3) : string
+    + TerrainGridUpdate() : void
+}
+IExposable <|-- TerrainGrid
+TerrainGrid --> "Drawer" CellBoolDrawer
+@enduml

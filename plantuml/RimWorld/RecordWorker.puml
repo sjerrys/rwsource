@@ -1,0 +1,6 @@
+@startuml
+class RecordWorker {
+    + <<virtual>> ShouldMeasureTimeNow(pawn:Pawn) : bool
+}
+RecordWorker --> "def" RecordDef
+@enduml

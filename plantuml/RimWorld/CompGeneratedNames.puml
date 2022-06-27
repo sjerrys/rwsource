@@ -1,0 +1,10 @@
+@startuml
+class CompGeneratedNames {
+    + Name : string <<get>>
+    + <<override>> TransformLabel(label:string) : string
+    + <<override>> Initialize(props:CompProperties) : void
+    + <<override>> PostExposeData() : void
+}
+ThingComp <|-- CompGeneratedNames
+CompGeneratedNames --> "Props" CompProperties_GeneratedName
+@enduml

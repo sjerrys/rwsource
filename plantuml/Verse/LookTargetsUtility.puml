@@ -1,0 +1,7 @@
+@startuml
+class LookTargetsUtility <<static>> {
+    + {static} IsValid(lookTargets:LookTargets) : bool
+    + {static} TryGetPrimaryTarget(lookTargets:LookTargets) : GlobalTargetInfo
+    + {static} TryHighlight(lookTargets:LookTargets, arrow:bool, colonistBar:bool, circleOverlay:bool) : void
+}
+@enduml

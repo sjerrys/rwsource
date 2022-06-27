@@ -1,0 +1,6 @@
+@startuml
+abstract class Listing_Lines {
+    + lineHeight : float = 20f
+}
+Listing <|-- Listing_Lines
+@enduml

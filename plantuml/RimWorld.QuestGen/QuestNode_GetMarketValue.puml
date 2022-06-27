@@ -1,0 +1,9 @@
+@startuml
+class QuestNode_GetMarketValue {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GetMarketValue
+QuestNode_GetMarketValue --> "storeAs<string>" "SlateRef`1"
+QuestNode_GetMarketValue --> "things<IEnumerable<Thing>>" "SlateRef`1"
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class CompAbilityEffect_Wallraise {
+    + <<override>> Apply(target:LocalTargetInfo, dest:LocalTargetInfo) : void
+    + <<override>> CanApplyOn(target:LocalTargetInfo, dest:LocalTargetInfo) : bool
+    + <<override>> DrawEffectPreview(target:LocalTargetInfo) : void
+    + <<override>> Valid(target:LocalTargetInfo, throwMessages:bool) : bool
+}
+CompAbilityEffect <|-- CompAbilityEffect_Wallraise
+CompAbilityEffect_Wallraise o-> "DustColor" Color
+CompAbilityEffect_Wallraise --> "Props" CompProperties_AbilityWallraise
+@enduml

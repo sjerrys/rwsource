@@ -1,0 +1,13 @@
+@startuml
+enum MenuOptionPriority {
+    DisabledOption,
+    VeryLow,
+    Low,
+    GoHere,
+    Default,
+    High,
+    AttackEnemy,
+    InitiateSocial,
+    RescueOrCapture,
+}
+@enduml

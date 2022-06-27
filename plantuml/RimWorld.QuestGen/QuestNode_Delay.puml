@@ -1,0 +1,19 @@
+@startuml
+class QuestNode_Delay {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_Delay
+QuestNode_Delay --> "inSignalEnable<string>" "SlateRef`1"
+QuestNode_Delay --> "inSignalDisable<string>" "SlateRef`1"
+QuestNode_Delay --> "outSignalComplete<string>" "SlateRef`1"
+QuestNode_Delay --> "expiryInfoPart<string>" "SlateRef`1"
+QuestNode_Delay --> "expiryInfoPartTip<string>" "SlateRef`1"
+QuestNode_Delay --> "inspectString<string>" "SlateRef`1"
+QuestNode_Delay --> "inspectStringTargets<IEnumerable<ISelectable>>" "SlateRef`1"
+QuestNode_Delay --> "delayTicks<int>" "SlateRef`1"
+QuestNode_Delay --> "delayTicksRange<IntRange?>" "SlateRef`1"
+QuestNode_Delay --> "isQuestTimeout<bool>" "SlateRef`1"
+QuestNode_Delay --> "reactivatable<bool>" "SlateRef`1"
+QuestNode_Delay --> "node" QuestNode
+@enduml

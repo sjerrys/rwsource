@@ -1,0 +1,9 @@
+@startuml
+class HediffComp_SelfHeal {
+    + ticksSinceHeal : int
+    + <<override>> CompExposeData() : void
+    + <<override>> CompPostTick(severityAdjustment:float) : void
+}
+HediffComp <|-- HediffComp_SelfHeal
+HediffComp_SelfHeal --> "Props" HediffCompProperties_SelfHeal
+@enduml

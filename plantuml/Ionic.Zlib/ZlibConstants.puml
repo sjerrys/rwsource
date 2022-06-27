@@ -1,0 +1,14 @@
+@startuml
+class ZlibConstants <<static>> {
+    + <<const>> WindowBitsMax : int = 15
+    + <<const>> WindowBitsDefault : int = 15
+    + <<const>> Z_OK : int = 0
+    + <<const>> Z_STREAM_END : int = 1
+    + <<const>> Z_NEED_DICT : int = 2
+    + <<const>> Z_STREAM_ERROR : int
+    + <<const>> Z_DATA_ERROR : int
+    + <<const>> Z_BUF_ERROR : int
+    + <<const>> WorkingBufferSizeDefault : int = 16384
+    + <<const>> WorkingBufferSizeMin : int = 1024
+}
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class CompProperties_Maintainable {
+    + ticksHealthy : int = 1000
+    + ticksNeedsMaintenance : int = 1000
+    + damagePerTickRare : int = 10
+    + CompProperties_Maintainable()
+}
+CompProperties <|-- CompProperties_Maintainable
+@enduml

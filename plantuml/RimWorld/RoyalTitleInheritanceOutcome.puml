@@ -1,0 +1,9 @@
+@startuml
+class RoyalTitleInheritanceOutcome <<struct>> {
+    + heirTitleHigher : bool
+    + FoundHeir : bool <<get>>
+    + HeirHasTitle : bool <<get>>
+}
+RoyalTitleInheritanceOutcome --> "heir" Pawn
+RoyalTitleInheritanceOutcome --> "heirCurrentTitle" RoyalTitleDef
+@enduml

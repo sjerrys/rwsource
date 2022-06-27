@@ -1,0 +1,8 @@
+@startuml
+class SettlementUtility {
+    + {static} IsPlayerAttackingAnySettlementOf(faction:Faction) : bool
+    + {static} Attack(caravan:Caravan, settlement:Settlement) : void
+    + {static} AffectRelationsOnAttacked(settlement:Settlement, letterText:TaggedString) : void
+    + {static} AffectRelationsOnAttacked_NewTmp(mapParent:MapParent, letterText:TaggedString) : void
+}
+@enduml

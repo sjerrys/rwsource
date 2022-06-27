@@ -1,0 +1,10 @@
+@startuml
+class InspirationDefOf <<static>> {
+    {static} InspirationDefOf()
+}
+InspirationDefOf --> "Inspired_Trade" InspirationDef
+InspirationDefOf --> "Inspired_Recruitment" InspirationDef
+InspirationDefOf --> "Inspired_Taming" InspirationDef
+InspirationDefOf --> "Inspired_Surgery" InspirationDef
+InspirationDefOf --> "Inspired_Creativity" InspirationDef
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class QuestGen_Debug <<static>> {
+    + {static} Log(quest:Quest, message:string, inSignal:string, signalListenMode:QuestPart.SignalListenMode) : void
+}
+@enduml

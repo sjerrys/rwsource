@@ -1,0 +1,8 @@
+@startuml
+class UIRoot_Entry {
+    + <<override>> Init() : void
+    + <<override>> UIRootOnGUI() : void
+    + <<override>> UIRootUpdate() : void
+}
+UIRoot <|-- UIRoot_Entry
+@enduml

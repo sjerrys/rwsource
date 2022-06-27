@@ -1,0 +1,6 @@
+@startuml
+class RaidStrategyWorker_ImmediateAttackFriendly {
+    + <<override>> CanUseWith(parms:IncidentParms, groupKind:PawnGroupKindDef) : bool
+}
+RaidStrategyWorker_ImmediateAttack <|-- RaidStrategyWorker_ImmediateAttackFriendly
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class Alert_Exhaustion {
+    + Alert_Exhaustion()
+    + <<override>> GetExplanation() : TaggedString
+    + <<override>> GetReport() : AlertReport
+}
+Alert <|-- Alert_Exhaustion
+@enduml

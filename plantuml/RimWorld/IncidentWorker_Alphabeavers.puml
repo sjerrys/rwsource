@@ -1,0 +1,5 @@
+@startuml
+class IncidentWorker_Alphabeavers {
+}
+IncidentWorker <|-- IncidentWorker_Alphabeavers
+@enduml

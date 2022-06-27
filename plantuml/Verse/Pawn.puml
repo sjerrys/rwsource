@@ -1,0 +1,186 @@
+@startuml
+class Pawn {
+    + becameWorldPawnTickAbs : int
+    + teleporting : bool
+    + <<const>> MaxMoveTicks : int = 450
+    + Downed : bool <<get>>
+    + Dead : bool <<get>>
+    + KindLabel : string <<get>>
+    + InMentalState : bool <<get>>
+    + InAggroMentalState : bool <<get>>
+    + Inspired : bool <<get>>
+    + IsColonist : bool <<get>>
+    + IsFreeColonist : bool <<get>>
+    + Drafted : bool <<get>>
+    + IsPrisoner : bool <<get>>
+    + IsPrisonerOfColony : bool <<get>>
+    + IsColonistPlayerControlled : bool <<get>>
+    + InContainerEnclosed : bool <<get>>
+    + <<override>> LabelNoCount : string <<get>>
+    + <<override>> LabelShort : string <<get>>
+    + RandomPriceFactorSeed : int <<get>>
+    + TraderName : string <<get>>
+    + CanTradeNow : bool <<get>>
+    + TradePriceImprovementOffsetForPlayer : float <<get>>
+    + BodySize : float <<get>>
+    + HealthScale : float <<get>>
+    + TargetPriorityFactor : float <<get>>
+    + LastAttackTargetTick : int <<get>>
+    + TicksPerMoveCardinal : int <<get>>
+    + TicksPerMoveDiagonal : int <<get>>
+    + HasPsylink : bool <<get>>
+    UniqueVerbOwnerID() : string
+    VerbsStillUsableBy(p:Pawn) : bool
+    + GetRootTile() : int
+    + GetDirectlyHeldThings() : ThingOwner
+    + GetChildHolders(outChildren:List<IThingHolder>) : void
+    + GetKindLabelPlural(count:int) : string
+    + {static} ResetStaticData() : void
+    + <<override>> ExposeData() : void
+    + <<override>> ToString() : string
+    + <<override>> SpawnSetup(map:Map, respawningAfterLoad:bool) : void
+    + <<override>> PostMapInit() : void
+    + <<override>> DrawAt(drawLoc:Vector3, flip:bool) : void
+    + <<override>> DrawGUIOverlay() : void
+    + <<override>> DrawExtraSelectionOverlays() : void
+    + <<override>> TickRare() : void
+    + <<override>> Tick() : void
+    + TickMothballed(interval:int) : void
+    + Notify_Teleported(endCurrentJob:bool, resetTweenedPos:bool) : void
+    + Notify_PassedToWorld() : void
+    + <<override>> PreApplyDamage(dinfo:DamageInfo, absorbed:bool) : void
+    + <<override>> PostApplyDamage(dinfo:DamageInfo, totalDamageDealt:float) : void
+    + <<override>> SplitOff(count:int) : Thing
+    + <<override>> Kill(dinfo:DamageInfo?, exactCulprit:Hediff) : void
+    + <<override>> Destroy(mode:DestroyMode) : void
+    + <<override>> DeSpawn(mode:DestroyMode) : void
+    + <<override>> Discard(silentlyRemoveReferences:bool) : void
+    + MakeCorpse(assignedGrave:Building_Grave, inBed:bool, bedRotation:float) : Corpse
+    + ExitMap(allowedToJoinOrCreateCaravan:bool, exitDir:Rot4) : void
+    + <<override>> PreTraded(action:TradeAction, playerNegotiator:Pawn, trader:ITrader) : void
+    + PreKidnapped(kidnapper:Pawn) : void
+    + <<override>> SetFaction(newFaction:Faction, recruiter:Pawn) : void
+    + ClearMind(ifLayingKeepLaying:bool, clearInspiration:bool, clearMentalState:bool) : void
+    + ClearAllReservations(releaseDestinationsOnlyIfObsolete:bool) : void
+    + ClearReservationsForJob(job:Job) : void
+    + VerifyReservations() : void
+    + DropAndForbidEverything(keepInventoryAndEquipmentIfInBed:bool) : void
+    + GenerateNecessaryName() : void
+    + TryGetAttackVerb(target:Thing, allowManualCastWeapons:bool) : Verb
+    + TryStartAttack(targ:LocalTargetInfo) : bool
+    + <<override>> ButcherProducts(butcher:Pawn, efficiency:float) : IEnumerable<Thing>
+    + MainDesc(writeFaction:bool) : string
+    + <<override>> GetInspectString() : string
+    + <<override>> GetGizmos() : IEnumerable<Gizmo>
+    + <<virtual>> GetExtraFloatMenuOptionsFor(sq:IntVec3) : IEnumerable<FloatMenuOption>
+    + <<override>> GetTooltip() : TipSignal
+    + <<override>> SpecialDisplayStats() : IEnumerable<StatDrawEntry>
+    + CurrentlyUsableForBills() : bool
+    + UsableForBillsAfterFueling() : bool
+    + AnythingToStrip() : bool
+    + Strip() : void
+    + ColonyThingsWillingToBuy(playerNegotiator:Pawn) : IEnumerable<Thing>
+    + GiveSoldThingToTrader(toGive:Thing, countToGive:int, playerNegotiator:Pawn) : void
+    + GiveSoldThingToPlayer(toGive:Thing, countToGive:int, playerNegotiator:Pawn) : void
+    + HearClamor(source:Thing, type:ClamorDef) : void
+    + <<override>> Notify_Explosion(explosion:Explosion) : void
+    + <<override>> Notify_BulletImpactNearby(impactData:BulletImpactData) : void
+    + GetAcceptArrestChance(arrester:Pawn) : float
+    + CheckAcceptArrest(arrester:Pawn) : bool
+    + ThreatDisabled(disabledFor:IAttackTargetSearcher) : bool
+    + GetDisabledWorkTypes(permanentOnly:bool) : List<WorkTypeDef>
+    + WorkTypeIsDisabled(w:WorkTypeDef) : bool
+    + OneOfWorkTypesIsDisabled(wts:List<WorkTypeDef>) : bool
+    + Notify_DisabledWorkTypesChanged() : void
+    + WorkTagIsDisabled(w:WorkTags) : bool
+    + <<override>> PreventPlayerSellingThingsNearby(reason:string) : bool
+    + ChangeKind(newKindDef:PawnKindDef) : void
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+ThingWithComps <|-- Pawn
+IStrippable <|-- Pawn
+IBillGiver <|-- Pawn
+IVerbOwner <|-- Pawn
+ITrader <|-- Pawn
+IAttackTarget <|-- Pawn
+ILoadReferenceable <|-- Pawn
+IAttackTargetSearcher <|-- Pawn
+IThingHolder <|-- Pawn
+Pawn --> "kindDef" PawnKindDef
+Pawn --> "gender" Gender
+Pawn --> "ageTracker" Pawn_AgeTracker
+Pawn --> "health" Pawn_HealthTracker
+Pawn --> "records" Pawn_RecordsTracker
+Pawn --> "inventory" Pawn_InventoryTracker
+Pawn --> "meleeVerbs" Pawn_MeleeVerbs
+Pawn --> "verbTracker" VerbTracker
+Pawn --> "carryTracker" Pawn_CarryTracker
+Pawn --> "needs" Pawn_NeedsTracker
+Pawn --> "mindState" Pawn_MindState
+Pawn --> "rotationTracker" Pawn_RotationTracker
+Pawn --> "pather" Pawn_PathFollower
+Pawn --> "thinker" Pawn_Thinker
+Pawn --> "jobs" Pawn_JobTracker
+Pawn --> "stances" Pawn_StanceTracker
+Pawn --> "natives" Pawn_NativeVerbs
+Pawn --> "filth" Pawn_FilthTracker
+Pawn --> "equipment" Pawn_EquipmentTracker
+Pawn --> "apparel" Pawn_ApparelTracker
+Pawn --> "ownership" Pawn_Ownership
+Pawn --> "skills" Pawn_SkillTracker
+Pawn --> "story" Pawn_StoryTracker
+Pawn --> "guest" Pawn_GuestTracker
+Pawn --> "guilt" Pawn_GuiltTracker
+Pawn --> "royalty" Pawn_RoyaltyTracker
+Pawn --> "abilities" Pawn_AbilityTracker
+Pawn --> "workSettings" Pawn_WorkSettings
+Pawn --> "trader" Pawn_TraderTracker
+Pawn --> "training" Pawn_TrainingTracker
+Pawn --> "caller" Pawn_CallTracker
+Pawn --> "relations" Pawn_RelationsTracker
+Pawn --> "psychicEntropy" Pawn_PsychicEntropyTracker
+Pawn --> "interactions" Pawn_InteractionsTracker
+Pawn --> "playerSettings" Pawn_PlayerSettings
+Pawn --> "outfits" Pawn_OutfitTracker
+Pawn --> "drugs" Pawn_DrugPolicyTracker
+Pawn --> "foodRestriction" Pawn_FoodRestrictionTracker
+Pawn --> "timetable" Pawn_TimetableTracker
+Pawn --> "drafter" Pawn_DraftController
+Pawn --> "Name" Name
+Pawn --> "RaceProps" RaceProperties
+Pawn --> "CurJob" Job
+Pawn --> "CurJobDef" JobDef
+Pawn --> "MentalState" MentalState
+Pawn --> "MentalStateDef" MentalStateDef
+Pawn --> "Inspiration" Inspiration
+Pawn --> "InspirationDef" InspirationDef
+Pawn --> "DrawPos" Vector3
+Pawn --> "VerbTracker" VerbTracker
+Pawn --> "VerbProperties<VerbProperties>" "List`1"
+Pawn --> "Tools<Tool>" "List`1"
+Pawn --> "HostFaction" Faction
+Pawn --> "IngredientStackCells<IntVec3>" "IEnumerable`1"
+Pawn --> "Corpse" Corpse
+Pawn --> "CarriedBy" Pawn
+Pawn --> "LabelNoCountColored" TaggedString
+Pawn --> "NameShortColored" TaggedString
+Pawn --> "NameFullColored" TaggedString
+Pawn --> "Drawer" Pawn_DrawTracker
+Pawn --> "FactionOrExtraMiniOrHomeFaction" Faction
+Pawn --> "BillStack" BillStack
+Pawn --> "InteractionCell" IntVec3
+Pawn --> "TraderKind" TraderKindDef
+Pawn --> "Goods<Thing>" "IEnumerable`1"
+Pawn --> "Thing" Thing
+Pawn --> "TargetCurrentlyAimingAt" LocalTargetInfo
+Pawn --> "Thing" Thing
+Pawn --> "LastAttackedTarget" LocalTargetInfo
+Pawn --> "CurrentEffectiveVerb" Verb
+Pawn --> "ConstantCaster" Thing
+Pawn --> "ImplementOwnerTypeDef" ImplementOwnerTypeDef
+Pawn --> "TradeCurrency" TradeCurrency
+Pawn --> "CombinedDisabledWorkTags" WorkTags
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class ScenarioUI <<static>> {
+    + {static} DrawScenarioInfo(rect:Rect, scen:Scenario, infoScrollPosition:Vector2) : void
+    + {static} DrawScenarioEditInterface(rect:Rect, scen:Scenario, infoScrollPosition:Vector2) : void
+}
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class Dialog_RewardPrefsConfig {
+    + Dialog_RewardPrefsConfig()
+    + <<override>> DoWindowContents(inRect:Rect) : void
+}
+Window <|-- Dialog_RewardPrefsConfig
+Dialog_RewardPrefsConfig --> "InitialSize" Vector2
+@enduml

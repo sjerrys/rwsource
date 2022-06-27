@@ -1,0 +1,22 @@
+@startuml
+class PawnCapacityDef {
+    + listOrder : int
+    + labelMechanoids : string = ""
+    + labelAnimals : string = ""
+    + showOnHumanlikes : bool = true
+    + showOnAnimals : bool = true
+    + showOnMechanoids : bool = true
+    + lethalFlesh : bool
+    + lethalMechanoids : bool
+    + minForCapable : float
+    + minValue : float
+    + zeroIfCannotBeAwake : bool
+    + showOnCaravanHealthTab : bool
+    + GetLabelFor(pawn:Pawn) : string
+    + GetLabelFor(isFlesh:bool, isHumanlike:bool) : string
+    + CanShowOnPawn(p:Pawn) : bool
+}
+Def <|-- PawnCapacityDef
+PawnCapacityDef o-> "workerClass" Type
+PawnCapacityDef --> "Worker" PawnCapacityWorker
+@enduml

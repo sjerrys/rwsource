@@ -1,0 +1,25 @@
+@startuml
+class Building_TurretGun {
+    + Active : bool <<get>>
+    + IsMannable : bool <<get>>
+    + Building_TurretGun()
+    + <<override>> SpawnSetup(map:Map, respawningAfterLoad:bool) : void
+    + <<override>> PostMake() : void
+    + <<override>> DeSpawn(mode:DestroyMode) : void
+    + <<override>> ExposeData() : void
+    + <<override>> ClaimableBy(by:Faction) : bool
+    + <<override>> OrderAttack(targ:LocalTargetInfo) : void
+    + <<override>> Tick() : void
+    + <<override>> GetInspectString() : string
+    + <<override>> Draw() : void
+    + <<override>> DrawExtraSelectionOverlays() : void
+    + <<override>> GetGizmos() : IEnumerable<Gizmo>
+    + MakeGun() : void
+}
+Building_Turret <|-- Building_TurretGun
+Building_TurretGun --> "gun" Thing
+Building_TurretGun o-> "ForcedTargetLineMat" Material
+Building_TurretGun --> "GunCompEq" CompEquippable
+Building_TurretGun --> "CurrentTarget" LocalTargetInfo
+Building_TurretGun --> "AttackVerb" Verb
+@enduml

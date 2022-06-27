@@ -1,0 +1,5 @@
+@startuml
+class Toils_Refuel {
+    + {static} FinalizeRefueling(refuelableInd:TargetIndex, fuelInd:TargetIndex) : Toil
+}
+@enduml

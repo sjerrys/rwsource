@@ -1,0 +1,12 @@
+@startuml
+class HediffCompProperties_VerbGiver {
+    + HediffCompProperties_VerbGiver()
+    + <<override>> PostLoad() : void
+    + <<override>> ConfigErrors(parentDef:HediffDef) : IEnumerable<string>
+}
+class "List`1"<T> {
+}
+HediffCompProperties <|-- HediffCompProperties_VerbGiver
+HediffCompProperties_VerbGiver --> "verbs<VerbProperties>" "List`1"
+HediffCompProperties_VerbGiver --> "tools<Tool>" "List`1"
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class IncidentParmsUtility <<static>> {
+    + {static} GetDefaultPawnGroupMakerParms(groupKind:PawnGroupKindDef, parms:IncidentParms, ensureCanGenerateAtLeastOnePawn:bool) : PawnGroupMakerParms
+    + {static} SplitIntoGroups(pawns:List<Pawn>, groups:Dictionary<Pawn, int>) : List<List<Pawn>>
+}
+@enduml

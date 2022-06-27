@@ -1,0 +1,6 @@
+@startuml
+class KidnapAIUtility <<static>> {
+    + {static} TryFindGoodKidnapVictim(kidnapper:Pawn, maxDist:float, victim:Pawn, disallowed:List<Thing>) : bool
+    + {static} ReachableWoundedGuest(searcher:Pawn) : Pawn
+}
+@enduml

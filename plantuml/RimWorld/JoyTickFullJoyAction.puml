@@ -1,0 +1,7 @@
+@startuml
+enum JoyTickFullJoyAction {
+    EndJob,
+    GoToNextToil,
+    None,
+}
+@enduml

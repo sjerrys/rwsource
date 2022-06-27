@@ -1,0 +1,15 @@
+@startuml
+class TutorUtility <<static>> {
+    + {static} BuildingOrBlueprintOrFrameCenterExists(c:IntVec3, map:Map, buildingDef:ThingDef) : bool
+    + {static} FindUsableRect(width:int, height:int, map:Map, minFertility:float, noItems:bool) : CellRect
+    + {static} DrawLabelOnThingOnGUI(t:Thing, label:string) : void
+    + {static} DrawLabelOnGUI(mapPos:Vector3, label:string) : void
+    + {static} DrawCellRectOnGUI(cellRect:CellRect, label:string) : void
+    + {static} DrawCellRectUpdate(cellRect:CellRect) : void
+    + {static} DoModalDialogIfNotKnown(conc:ConceptDef, input:string[]) : void
+    + {static} DoModalDialogWithArgsIfNotKnown(conc:ConceptDef, args:NamedArgument[]) : void
+    + {static} DoModalDialogWithArgsIfNotKnown(conc:ConceptDef, buttonAText:string, buttonAAction:Action, buttonBText:string, buttonBAction:Action, args:NamedArgument[]) : void
+    + {static} EventCellsMatchExactly(ep:EventPack, targetCells:List<IntVec3>) : bool
+    + {static} EventCellsAreWithin(ep:EventPack, targetCells:List<IntVec3>) : bool
+}
+@enduml

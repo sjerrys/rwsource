@@ -1,0 +1,8 @@
+@startuml
+class TransferableCountToTransferStoppingPoint <<struct>> {
+    + threshold : int
+    + leftLabel : string
+    + rightLabel : string
+    + TransferableCountToTransferStoppingPoint(threshold:int, leftLabel:string, rightLabel:string)
+}
+@enduml

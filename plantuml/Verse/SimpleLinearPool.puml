@@ -1,0 +1,6 @@
+@startuml
+class "SimpleLinearPool`1"<T> {
+    + Get() : T
+    + Clear() : void
+}
+@enduml

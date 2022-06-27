@@ -1,0 +1,5 @@
+@startuml
+class UnloadCarriersJobGiverUtility <<static>> {
+    + {static} HasJobOnThing(pawn:Pawn, t:Thing, forced:bool) : bool
+}
+@enduml

@@ -1,0 +1,66 @@
+@startuml
+class Hediff {
+    + ageTicks : int
+    + loadID : int
+    + combatLogText : string
+    + temp_partIndexToSetLater : int
+    + <<virtual>> LabelBase : string <<get>>
+    + LabelBaseCap : string <<get>>
+    + <<virtual>> Label : string <<get>>
+    + LabelCap : string <<get>>
+    + <<virtual>> LabelInBrackets : string <<get>>
+    + <<virtual>> SeverityLabel : string <<get>>
+    + <<virtual>> UIGroupKey : int <<get>>
+    + <<virtual>> TipStringExtra : string <<get>>
+    + <<virtual>> ShouldRemove : bool <<get>>
+    + <<virtual>> Visible : bool <<get>>
+    + <<virtual>> BleedRate : float <<get>>
+    + Bleeding : bool <<get>>
+    + <<virtual>> PainOffset : float <<get>>
+    + <<virtual>> PainFactor : float <<get>>
+    + <<virtual>> SummaryHealthPercentImpact : float <<get>>
+    + <<virtual>> TendPriority : float <<get>>
+    + <<virtual>> CurStageIndex : int <<get>>
+    + <<virtual>> Severity : float <<get>> <<set>>
+    + <<virtual>> TendableNow(ignoreTimer:bool) : bool
+    + <<virtual>> ExposeData() : void
+    + <<virtual>> Tick() : void
+    + <<virtual>> PostMake() : void
+    + <<virtual>> PostAdd(dinfo:DamageInfo?) : void
+    + <<virtual>> PostRemoved() : void
+    + <<virtual>> PostTick() : void
+    + <<virtual>> Tended(quality:float, batchPosition:int) : void
+    + <<virtual>> Tended_NewTemp(quality:float, maxQuality:float, batchPosition:int) : void
+    + <<virtual>> Heal(amount:float) : void
+    + <<virtual>> ModifyChemicalEffect(chem:ChemicalDef, effect:float) : void
+    + <<virtual>> TryMergeWith(other:Hediff) : bool
+    + <<virtual>> CauseDeathNow() : bool
+    + <<virtual>> Notify_PawnDied() : void
+    + <<virtual>> Notify_PawnKilled() : void
+    + <<virtual>> Notify_PawnPostApplyDamage(dinfo:DamageInfo, totalDamageDealt:float) : void
+    + <<virtual>> Notify_PawnUsedVerb(verb:Verb, targets:LocalTargetInfo) : void
+    + <<virtual>> Notify_EntropyGained(baseAmount:float, finalAmount:float, source:Thing) : void
+    + <<virtual>> Notify_RelationAdded(otherPawn:Pawn, relationDef:PawnRelationDef) : void
+    + <<virtual>> Notify_ImplantUsed(violationSourceName:string, detectionChance:float, violationSourceLevel:int) : void
+    + <<virtual>> DebugString() : string
+    + <<override>> ToString() : string
+    + GetUniqueLoadID() : string
+}
+class "WeakReference`1"<T> {
+}
+class "List`1"<T> {
+}
+IExposable <|-- Hediff
+ILoadReferenceable <|-- Hediff
+Hediff --> "def" HediffDef
+Hediff --> "source" ThingDef
+Hediff --> "sourceBodyPartGroup" BodyPartGroupDef
+Hediff --> "sourceHediffDef" HediffDef
+Hediff --> "combatLogEntry<LogEntry>" "WeakReference`1"
+Hediff --> "pawn" Pawn
+Hediff --> "LabelColor" Color
+Hediff --> "CurStage" HediffStage
+Hediff --> "CapMods<PawnCapacityModifier>" "List`1"
+Hediff --> "StateIcon" TextureAndColor
+Hediff --> "Part" BodyPartRecord
+@enduml

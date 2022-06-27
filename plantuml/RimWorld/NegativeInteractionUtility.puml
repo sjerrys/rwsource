@@ -1,0 +1,6 @@
+@startuml
+class NegativeInteractionUtility <<static>> {
+    + <<const>> AbrasiveSelectionChanceFactor : float = 2.3f
+    + {static} NegativeInteractionChanceFactor(initiator:Pawn, recipient:Pawn) : float
+}
+@enduml

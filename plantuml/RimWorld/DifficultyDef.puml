@@ -1,0 +1,41 @@
+@startuml
+class DifficultyDef <<sealed>> {
+    + isExtreme : bool
+    + isCustom : bool
+    + difficulty : int
+    + threatScale : float = 1f
+    + allowBigThreats : bool = true
+    + allowIntroThreats : bool = true
+    + allowCaveHives : bool = true
+    + peacefulTemples : bool
+    + allowViolentQuests : bool = true
+    + predatorsHuntHumanlikes : bool = true
+    + scariaRotChance : float
+    + colonistMoodOffset : float
+    + tradePriceFactorLoss : float
+    + cropYieldFactor : float = 1f
+    + mineYieldFactor : float = 1f
+    + butcherYieldFactor : float = 1f
+    + researchSpeedFactor : float = 1f
+    + diseaseIntervalFactor : float = 1f
+    + enemyReproductionRateFactor : float = 1f
+    + playerPawnInfectionChanceFactor : float = 1f
+    + manhunterChanceOnDamageFactor : float = 1f
+    + deepDrillInfestationChanceFactor : float = 1f
+    + foodPoisonChanceFactor : float = 1f
+    + threatsGeneratorThreatCountFactor : float = 1f
+    + maintenanceCostFactor : float = 1f
+    + enemyDeathOnDownedChanceFactor : float = 1f
+    + adaptationGrowthRateFactorOverZero : float = 1f
+    + adaptationEffectFactor : float = 1f
+    + questRewardValueFactor : float = 1f
+    + raidLootPointsFactor : float = 1f
+    + allowTraps : bool = true
+    + allowTurrets : bool = true
+    + allowMortars : bool = true
+    + allowExtremeWeatherIncidents : bool = true
+    + fixedWealthMode : bool
+}
+Def <|-- DifficultyDef
+DifficultyDef o-> "drawColor" Color
+@enduml

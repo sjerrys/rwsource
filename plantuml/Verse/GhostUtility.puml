@@ -1,0 +1,5 @@
+@startuml
+class GhostUtility <<static>> {
+    + {static} GhostGraphicFor(baseGraphic:Graphic, thingDef:ThingDef, ghostCol:Color) : Graphic
+}
+@enduml

@@ -1,0 +1,39 @@
+@startuml
+class Listing_Standard {
+    + Listing_Standard(font:GameFont)
+    + Listing_Standard()
+    + <<override>> Begin(rect:Rect) : void
+    + BeginScrollView(rect:Rect, scrollPosition:Vector2, viewRect:Rect) : void
+    + <<override>> End() : void
+    + EndScrollView(viewRect:Rect) : void
+    + Label(label:TaggedString, maxHeight:float, tooltip:string) : Rect
+    + Label(label:string, maxHeight:float, tooltip:string) : Rect
+    + LabelDouble(leftLabel:string, rightLabel:string, tip:string) : void
+    + RadioButton(label:string, active:bool, tabIn:float, tooltip:string) : bool
+    + RadioButton_NewTemp(label:string, active:bool, tabIn:float, tooltip:string, tooltipDelay:float?) : bool
+    + CheckboxLabeled(label:string, checkOn:bool, tooltip:string) : void
+    + CheckboxLabeledSelectable(label:string, selected:bool, checkOn:bool) : bool
+    + ButtonText(label:string, highlightTag:string) : bool
+    + ButtonTextLabeled(label:string, buttonLabel:string) : bool
+    + ButtonImage(tex:Texture2D, width:float, height:float) : bool
+    + None() : void
+    + TextEntry(text:string, lineCount:int) : string
+    + TextEntryLabeled(label:string, text:string, lineCount:int) : string
+    + TextFieldNumeric(val:T, buffer:string, min:float, max:float) : void
+    + TextFieldNumericLabeled(label:string, val:T, buffer:string, min:float, max:float) : void
+    + IntRange(range:IntRange, min:int, max:int) : void
+    + Slider(val:float, min:float, max:float) : float
+    + IntAdjuster(val:int, countChange:int, min:int) : void
+    + IntSetter(val:int, target:int, label:string, width:float) : void
+    + IntEntry(val:int, editBuffer:string, multiplier:int) : void
+    + BeginSection(height:float) : Listing_Standard
+    + BeginSection_NewTemp(height:float, sectionBorder:float, bottomBorder:float) : Listing_Standard
+    + EndSection(listing:Listing_Standard) : void
+    + SelectableDef(name:string, selected:bool, deleteCallback:Action) : bool
+    + LabelCheckboxDebug(label:string, checkOn:bool) : void
+    + LabelCheckboxDebug_NewTmp(label:string, checkOn:bool, highlight:bool) : void
+    + ButtonDebug(label:string) : bool
+    + ButtonDebug_NewTmp(label:string, highlight:bool) : bool
+}
+Listing <|-- Listing_Standard
+@enduml

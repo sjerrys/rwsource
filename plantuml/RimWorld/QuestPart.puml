@@ -1,0 +1,46 @@
+@startuml
+abstract class QuestPart {
+    + debugLabel : string
+    + <<virtual>> DescriptionPart : string <<get>>
+    + Index : int <<get>>
+    + <<virtual>> QuestSelectTargetsLabel : string <<get>>
+    + <<virtual>> IncreasesPopulation : bool <<get>>
+    + <<virtual>> RequiresAccepter : bool <<get>>
+    + <<virtual>> PreventsAutoAccept : bool <<get>>
+    + <<virtual>> QuestPartReserves(p:Pawn) : bool
+    + <<virtual>> QuestPartReserves(f:Faction) : bool
+    + <<virtual>> Cleanup() : void
+    + <<virtual>> AssignDebugData() : void
+    + <<virtual>> PreQuestAccept() : void
+    + <<virtual>> ExposeData() : void
+    + <<virtual>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<virtual>> Notify_ThingsProduced(worker:Pawn, things:List<Thing>) : void
+    + <<virtual>> Notify_PlantHarvested(worker:Pawn, harvested:Thing) : void
+    + <<virtual>> Notify_PawnKilled(pawn:Pawn, dinfo:DamageInfo?) : void
+    + <<virtual>> Notify_FactionRemoved(faction:Faction) : void
+    + <<virtual>> Notify_PreCleanup() : void
+    + <<virtual>> PostQuestAdded() : void
+    + <<virtual>> ReplacePawnReferences(replace:Pawn, with:Pawn) : void
+    + <<virtual>> DoDebugWindowContents(innerRect:Rect, curY:float) : void
+    + <<override>> ToString() : string
+    + GetUniqueLoadID() : string
+}
+enum SignalListenMode {
+    OngoingOnly,
+    NotYetAcceptedOnly,
+    OngoingOrNotYetAccepted,
+    HistoricalOnly,
+    Always,
+}
+class "IEnumerable`1"<T> {
+}
+IExposable <|-- QuestPart
+ILoadReferenceable <|-- QuestPart
+QuestPart --> "quest" Quest
+QuestPart --> "signalListenMode" SignalListenMode
+QuestPart --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+QuestPart --> "QuestSelectTargets<GlobalTargetInfo>" "IEnumerable`1"
+QuestPart --> "InvolvedFactions<Faction>" "IEnumerable`1"
+QuestPart --> "Hyperlinks<Dialog_InfoCard.Hyperlink>" "IEnumerable`1"
+QuestPart +-- SignalListenMode
+@enduml

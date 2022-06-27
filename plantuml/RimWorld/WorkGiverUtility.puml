@@ -1,0 +1,5 @@
+@startuml
+class WorkGiverUtility <<static>> {
+    + {static} HaulStuffOffBillGiverJob(pawn:Pawn, giver:IBillGiver, thingToIgnore:Thing) : Job
+}
+@enduml

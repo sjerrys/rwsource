@@ -1,0 +1,6 @@
+@startuml
+class ColorForStuff {
+}
+ColorForStuff --> "Stuff" ThingDef
+ColorForStuff --> "Color" Color
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class Dialog_SaveFileList_Load {
+    + Dialog_SaveFileList_Load()
+}
+Dialog_SaveFileList <|-- Dialog_SaveFileList_Load
+@enduml

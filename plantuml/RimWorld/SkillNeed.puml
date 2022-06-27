@@ -1,0 +1,7 @@
+@startuml
+class SkillNeed {
+    + <<virtual>> ValueFor(pawn:Pawn) : float
+    + <<virtual>> ConfigErrors() : IEnumerable<string>
+}
+SkillNeed --> "skill" SkillDef
+@enduml

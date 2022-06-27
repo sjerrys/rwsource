@@ -1,0 +1,212 @@
+@startuml
+class ThingDef {
+    + stackLimit : int = 1
+    + destroyable : bool = true
+    + rotatable : bool = true
+    + smallVolume : bool
+    + useHitPoints : bool = true
+    + receivesSignals : bool
+    + smeltable : bool
+    + burnableByRecipe : bool
+    + randomizeRotationOnSpawn : bool
+    + isTechHediff : bool
+    + isUnfinishedThing : bool
+    + leaveResourcesWhenKilled : bool
+    + isFrameInt : bool
+    + hasInteractionCell : bool
+    + interactionCellIconReverse : bool
+    + forceDebugSpawnable : bool
+    + intricate : bool
+    + scatterableOnMapGen : bool = true
+    + deepCommonality : float
+    + deepCountPerCell : int = 300
+    + deepCountPerPortion : int
+    + generateCommonality : float = 1f
+    + generateAllowChance : float = 1f
+    + alwaysFlee : bool
+    + messageOnDeteriorateInStorage : bool = true
+    + canLoadIntoCaravan : bool = true
+    + isMechClusterThreat : bool
+    + minRewardCount : int = 1
+    + preventSkyfallersLandingOn : bool
+    + drawOffscreen : bool
+    + hideAtSnowDepth : float = 99999f
+    + drawDamagedOverlay : bool = true
+    + castEdgeShadows : bool
+    + staticSunShadowHeight : float
+    + useSameGraphicForGhost : bool
+    + selectable : bool
+    + neverMultiSelect : bool
+    + isAutoAttackableMapObject : bool
+    + hasTooltip : bool
+    + seeThroughFog : bool
+    + drawGUIOverlay : bool
+    + drawGUIOverlayQuality : bool = true
+    + resourceReadoutAlwaysShow : bool
+    + drawPlaceWorkersWhileSelected : bool
+    + drawPlaceWorkersWhileInstallBlueprintSelected : bool
+    + uiIconScale : float = 1f
+    + hasCustomRectForSelector : bool
+    + alwaysHaulable : bool
+    + designateHaulable : bool
+    + mineable : bool
+    + socialPropernessMatters : bool
+    + stealable : bool = true
+    + saveCompressible : bool
+    + isSaveable : bool = true
+    + holdsRoof : bool
+    + fillPercent : float
+    + coversFloor : bool
+    + neverOverlapFloors : bool
+    + blockPlants : bool
+    + blockLight : bool
+    + blockWind : bool
+    + tradeNeverStack : bool
+    + healthAffectsPrice : bool = true
+    + equippedAngleOffset : float
+    + destroyOnDrop : bool
+    + canBeUsedUnderRoof : bool = true
+    + <<const>> SmallUnitPerVolume : int = 10
+    + <<const>> SmallVolumePerUnit : float = 0.1f
+    + EverHaulable : bool <<get>>
+    + VolumePerUnit : float <<get>>
+    + DiscardOnDestroyed : bool <<get>>
+    + BaseMaxHitPoints : int <<get>>
+    + BaseFlammability : float <<get>>
+    + BaseMarketValue : float <<get>> <<set>>
+    + BaseMass : float <<get>>
+    + PlayerAcquirable : bool <<get>>
+    + EverTransmitsPower : bool <<get>>
+    + Minifiable : bool <<get>>
+    + HasThingIDNumber : bool <<get>>
+    + ConnectToPower : bool <<get>>
+    + CoexistsWithFloors : bool <<get>>
+    + MakeFog : bool <<get>>
+    + CanOverlapZones : bool <<get>>
+    + CountAsResource : bool <<get>>
+    + BlockPlanting : bool <<get>>
+    + CanHaveFaction : bool <<get>>
+    + Claimable : bool <<get>>
+    + MedicineTendXpGainFactor : float <<get>>
+    + CanEverDeteriorate : bool <<get>>
+    + CanInteractThroughCorners : bool <<get>>
+    + AffectsRegions : bool <<get>>
+    + AffectsReachability : bool <<get>>
+    + DescriptionDetailed : string <<get>>
+    + IsApparel : bool <<get>>
+    + IsBed : bool <<get>>
+    + IsCorpse : bool <<get>>
+    + IsFrame : bool <<get>>
+    + IsBlueprint : bool <<get>>
+    + IsStuff : bool <<get>>
+    + IsMedicine : bool <<get>>
+    + IsDoor : bool <<get>>
+    + IsFilth : bool <<get>>
+    + IsIngestible : bool <<get>>
+    + IsNutritionGivingIngestible : bool <<get>>
+    + IsWeapon : bool <<get>>
+    + IsCommsConsole : bool <<get>>
+    + IsOrbitalTradeBeacon : bool <<get>>
+    + IsFoodDispenser : bool <<get>>
+    + IsDrug : bool <<get>>
+    + IsPleasureDrug : bool <<get>>
+    + IsNonMedicalDrug : bool <<get>>
+    + IsTable : bool <<get>>
+    + IsWorkTable : bool <<get>>
+    + IsShell : bool <<get>>
+    + IsArt : bool <<get>>
+    + IsSmoothable : bool <<get>>
+    + IsSmoothed : bool <<get>>
+    + IsMetal : bool <<get>>
+    + IsAddictiveDrug : bool <<get>>
+    + IsMeat : bool <<get>>
+    + IsLeather : bool <<get>>
+    + IsRangedWeapon : bool <<get>>
+    + IsMeleeWeapon : bool <<get>>
+    + IsWeaponUsingProjectiles : bool <<get>>
+    + IsBuildingArtificial : bool <<get>>
+    + IsNonResourceNaturalRock : bool <<get>>
+    + LabelAsStuff : string <<get>>
+    + BlocksPlanting(canWipePlants:bool) : bool
+    + EverStorable(willMinifyIfPossible:bool) : bool
+    + GetConcreteExample(stuff:ThingDef) : Thing
+    + CompDefFor() : CompProperties
+    + CompDefForAssignableFrom() : CompProperties
+    + HasComp(compType:Type) : bool
+    + HasAssignableCompFrom(compType:Type) : bool
+    + GetCompProperties() : T
+    + <<override>> PostLoad() : void
+    + <<override>> ResolveReferences() : void
+    + <<override>> ConfigErrors() : IEnumerable<string>
+    + {static} Named(defName:string) : ThingDef
+    + IsWithinCategory(category:ThingCategoryDef) : bool
+    + <<override>> SpecialDisplayStats(req:StatRequest) : IEnumerable<StatDrawEntry>
+}
+class "List`1"<T> {
+}
+BuildableDef <|-- ThingDef
+ThingDef --> "thingClass" Type
+ThingDef --> "category" ThingCategory
+ThingDef --> "tickerType" TickerType
+ThingDef o-> "size" IntVec2
+ThingDef o-> "comps<CompProperties>" "List`1"
+ThingDef --> "killedLeavings<ThingDefCountClass>" "List`1"
+ThingDef --> "butcherProducts<ThingDefCountClass>" "List`1"
+ThingDef --> "smeltProducts<ThingDefCountClass>" "List`1"
+ThingDef --> "damageMultipliers<DamageMultiplier>" "List`1"
+ThingDef --> "recipeMaker" RecipeMakerProperties
+ThingDef --> "minifiedDef" ThingDef
+ThingDef --> "slagDef" ThingDef
+ThingDef o-> "interactionCellOffset" IntVec3
+ThingDef --> "interactionCellIcon" ThingDef
+ThingDef --> "filthLeaving" ThingDef
+ThingDef o-> "deepLumpSizeRange" IntRange
+ThingDef o-> "startingHpRange" FloatRange
+ThingDef --> "thingSetMakerTags<string>" "List`1"
+ThingDef --> "recipes<RecipeDef>" "List`1"
+ThingDef o-> "displayNumbersBetweenSameDefDistRange" FloatRange
+ThingDef --> "graphicData" GraphicData
+ThingDef o-> "drawerType" DrawerType
+ThingDef --> "colorGenerator" ColorGenerator
+ThingDef --> "inspectorTabs<Type>" "List`1"
+ThingDef --> "inspectorTabsResolved<InspectTabBase>" "List`1"
+ThingDef --> "resourceReadoutPriority" ResourceCountPriority
+ThingDef --> "storedConceptLearnOpportunity" ConceptDef
+ThingDef --> "thingCategories<ThingCategoryDef>" "List`1"
+ThingDef --> "soundDrop" SoundDef
+ThingDef --> "soundPickup" SoundDef
+ThingDef --> "soundInteract" SoundDef
+ThingDef --> "soundImpactDefault" SoundDef
+ThingDef --> "soundPlayInstrument" SoundDef
+ThingDef --> "surfaceType" SurfaceType
+ThingDef o-> "tradeability" Tradeability
+ThingDef --> "tradeTags<string>" "List`1"
+ThingDef --> "colorGeneratorInTraderStock" ColorGenerator
+ThingDef --> "tools<Tool>" "List`1"
+ThingDef --> "equipmentType" EquipmentType
+ThingDef --> "techLevel" TechLevel
+ThingDef --> "weaponTags<string>" "List`1"
+ThingDef --> "techHediffsTags<string>" "List`1"
+ThingDef --> "equippedStatOffsets<StatModifier>" "List`1"
+ThingDef --> "meleeHitSound" SoundDef
+ThingDef --> "entityDefToBuild" BuildableDef
+ThingDef --> "projectileWhenLoaded" ThingDef
+ThingDef --> "ingestible" IngestibleProperties
+ThingDef --> "filth" FilthProperties
+ThingDef --> "gas" GasProperties
+ThingDef --> "building" BuildingProperties
+ThingDef --> "race" RaceProperties
+ThingDef --> "apparel" ApparelProperties
+ThingDef --> "mote" MoteProperties
+ThingDef --> "plant" PlantProperties
+ThingDef --> "projectile" ProjectileProperties
+ThingDef --> "stuffProps" StuffProperties
+ThingDef --> "skyfaller" SkyfallerProperties
+ThingDef --> "pawnFlyer" PawnFlyerProperties
+ThingDef --> "interactionCellGraphic" Graphic
+ThingDef --> "Size" IntVec2
+ThingDef --> "AllRecipes<RecipeDef>" "List`1"
+ThingDef --> "Fillage" FillCategory
+ThingDef --> "Verbs<VerbProperties>" "List`1"
+ThingDef --> "FirstThingCategory" ThingCategoryDef
+@enduml

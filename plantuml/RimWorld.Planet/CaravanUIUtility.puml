@@ -1,0 +1,33 @@
+@startuml
+class CaravanUIUtility <<static>> {
+    + {static} CreateCaravanTransferableWidgets(transferables:List<TransferableOneWay>, pawnsTransfer:TransferableOneWayWidget, itemsTransfer:TransferableOneWayWidget, thingCountTip:string, ignorePawnInventoryMass:IgnorePawnsInventoryMode, availableMassGetter:Func<float>, ignoreSpawnedCorpsesGearAndInventoryMass:bool, tile:int, playerPawnsReadOnly:bool) : void
+    + {static} CreateCaravanTransferableWidgets_NewTmp(transferables:List<TransferableOneWay>, pawnsTransfer:TransferableOneWayWidget, itemsTransfer:TransferableOneWayWidget, foodAndMedicineTransfer:TransferableOneWayWidget, thingCountTip:string, ignorePawnInventoryMass:IgnorePawnsInventoryMode, availableMassGetter:Func<float>, ignoreSpawnedCorpsesGearAndInventoryMass:bool, tile:int, playerPawnsReadOnly:bool) : void
+    + {static} AddPawnsSections(widget:TransferableOneWayWidget, transferables:List<TransferableOneWay>) : void
+    + {static} DrawCaravanInfo(info:CaravanInfo, info2:CaravanInfo?, currentTile:int, ticksToArrive:int?, lastMassFlashTime:float, rect:Rect, lerpMassColor:bool, extraDaysWorthOfFoodTipInfo:string, multiline:bool) : void
+}
+enum TransferableCategory {
+    Pawn,
+    Item,
+    FoodAndMedicine,
+}
+class CaravanInfo <<struct>> {
+    + massUsage : float
+    + massCapacity : float
+    + massCapacityExplanation : string
+    + tilesPerDay : float
+    + tilesPerDayExplanation : string
+    + foragedFoodPerDayExplanation : string
+    + visibility : float
+    + visibilityExplanation : string
+    + extraMassUsage : float
+    + extraMassCapacity : float
+    + extraMassCapacityExplanation : string
+    + CaravanInfo(massUsage:float, massCapacity:float, massCapacityExplanation:string, tilesPerDay:float, tilesPerDayExplanation:string, daysWorthOfFood:Pair<float, float>, foragedFoodPerDay:Pair<ThingDef, float>, foragedFoodPerDayExplanation:string, visibility:float, visibilityExplanation:string, extraMassUsage:float, extraMassCapacity:float, extraMassCapacityExplanation:string)
+}
+class "Pair`2"<T1,T2> {
+}
+CaravanUIUtility +-- TransferableCategory
+CaravanUIUtility +-- CaravanInfo
+CaravanInfo --> "daysWorthOfFood<float,float>" "Pair`2"
+CaravanInfo --> "foragedFoodPerDay<ThingDef,float>" "Pair`2"
+@enduml

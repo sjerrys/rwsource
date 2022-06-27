@@ -1,0 +1,11 @@
+@startuml
+class SoundParameterMapping {
+    + SoundParameterMapping()
+    + DoEditWidgets(widgetRow:WidgetRow) : void
+    + Apply(samp:Sample) : void
+}
+SoundParameterMapping --> "inParam" SoundParamSource
+SoundParameterMapping --> "outParam" SoundParamTarget
+SoundParameterMapping --> "paramUpdateMode" SoundParamUpdateMode
+SoundParameterMapping --> "curve" SimpleCurve
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class JoyGiver_InteractBuildingSitAdjacent {
+}
+JoyGiver_InteractBuilding <|-- JoyGiver_InteractBuildingSitAdjacent
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class QuestGen_Rewards <<static>> {
+    + {static} GiveRewards(quest:Quest, parms:RewardsGeneratorParams, inSignal:string, customLetterLabel:string, customLetterText:string, customLetterLabelRules:RulePack, customLetterTextRules:RulePack, useDifficultyFactor:bool?, runIfChosenPawnSignalUsed:Action, variants:int?, addCampLootReward:bool, asker:Pawn, addShuttleLootReward:bool, addPossibleFutureReward:bool) : QuestPart_Choice
+}
+@enduml

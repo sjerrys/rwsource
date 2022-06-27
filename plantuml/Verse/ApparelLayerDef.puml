@@ -1,0 +1,7 @@
+@startuml
+class ApparelLayerDef {
+    + drawOrder : int
+    + IsUtilityLayer : bool <<get>>
+}
+Def <|-- ApparelLayerDef
+@enduml

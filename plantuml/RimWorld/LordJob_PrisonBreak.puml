@@ -1,0 +1,15 @@
+@startuml
+class LordJob_PrisonBreak {
+    + <<override>> NeverInRestraints : bool <<get>>
+    + <<override>> AddFleeToil : bool <<get>>
+    + LordJob_PrisonBreak()
+    + LordJob_PrisonBreak(groupUpLoc:IntVec3, exitPoint:IntVec3, sapperThingID:int)
+    + <<override>> CreateGraph() : StateGraph
+    + <<override>> ExposeData() : void
+    + <<override>> Notify_PawnAdded(p:Pawn) : void
+    + <<override>> Notify_PawnLost(p:Pawn, condition:PawnLostCondition) : void
+    + <<override>> CanOpenAnyDoor(p:Pawn) : bool
+    + <<override>> ValidateAttackTarget(searcher:Pawn, target:Thing) : bool
+}
+LordJob <|-- LordJob_PrisonBreak
+@enduml

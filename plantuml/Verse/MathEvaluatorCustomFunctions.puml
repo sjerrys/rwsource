@@ -1,0 +1,14 @@
+@startuml
+class MathEvaluatorCustomFunctions <<static>> {
+    + {static} Lerp(args:object[]) : object
+}
+class FunctionType {
+    + name : string
+    + minArgs : int
+    + maxArgs : int
+}
+class "Func`2"<T1,T2> {
+}
+MathEvaluatorCustomFunctions +-- FunctionType
+FunctionType --> "func<object[],object>" "Func`2"
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class PlaceWorker_TurretTop {
+    + <<override>> DrawGhost(def:ThingDef, loc:IntVec3, rot:Rot4, ghostCol:Color, thing:Thing) : void
+}
+PlaceWorker <|-- PlaceWorker_TurretTop
+@enduml

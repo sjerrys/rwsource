@@ -1,0 +1,5 @@
+@startuml
+class BuildFacilityCommandUtility <<static>> {
+    + {static} BuildFacilityCommands(building:BuildableDef) : IEnumerable<Command>
+}
+@enduml

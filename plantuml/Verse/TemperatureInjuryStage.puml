@@ -1,0 +1,10 @@
+@startuml
+enum TemperatureInjuryStage {
+    Hidden,
+    Initial,
+    Minor,
+    Serious,
+    Extreme,
+    Deadly,
+}
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class PatchOperationConditional {
+}
+PatchOperationPathed <|-- PatchOperationConditional
+@enduml

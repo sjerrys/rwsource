@@ -1,0 +1,5 @@
+@startuml
+class RecipeDefGenerator <<static>> {
+    + {static} ImpliedRecipeDefs() : IEnumerable<RecipeDef>
+}
+@enduml

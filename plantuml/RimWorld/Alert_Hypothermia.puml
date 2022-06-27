@@ -1,0 +1,8 @@
+@startuml
+class Alert_Hypothermia {
+    + Alert_Hypothermia()
+    + <<override>> GetExplanation() : TaggedString
+    + <<override>> GetReport() : AlertReport
+}
+Alert_Critical <|-- Alert_Hypothermia
+@enduml

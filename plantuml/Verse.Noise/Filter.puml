@@ -1,0 +1,8 @@
+@startuml
+class Filter {
+    + Filter()
+    + Filter(module:ModuleBase, from:float, to:float)
+    + <<override>> GetValue(x:double, y:double, z:double) : double
+}
+ModuleBase <|-- Filter
+@enduml

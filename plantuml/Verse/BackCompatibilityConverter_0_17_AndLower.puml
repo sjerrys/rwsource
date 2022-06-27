@@ -1,0 +1,9 @@
+@startuml
+class BackCompatibilityConverter_0_17_AndLower {
+    + <<override>> AppliesToVersion(majorVer:int, minorVer:int) : bool
+    + <<override>> BackCompatibleDefName(defType:Type, defName:string, forDefInjections:bool, node:XmlNode) : string
+    + <<override>> GetBackCompatibleType(baseType:Type, providedClassName:string, node:XmlNode) : Type
+    + <<override>> PostExposeData(obj:object) : void
+}
+BackCompatibilityConverter <|-- BackCompatibilityConverter_0_17_AndLower
+@enduml

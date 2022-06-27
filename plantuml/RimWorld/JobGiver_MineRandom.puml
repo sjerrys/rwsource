@@ -1,0 +1,5 @@
+@startuml
+class JobGiver_MineRandom {
+}
+ThinkNode_JobGiver <|-- JobGiver_MineRandom
+@enduml

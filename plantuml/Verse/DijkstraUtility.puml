@@ -1,0 +1,5 @@
+@startuml
+class DijkstraUtility <<static>> {
+    + {static} AdjacentCellsNeighborsGetter(cell:IntVec3, map:Map) : IEnumerable<IntVec3>
+}
+@enduml

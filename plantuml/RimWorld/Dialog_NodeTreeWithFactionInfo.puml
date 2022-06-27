@@ -1,0 +1,7 @@
+@startuml
+class Dialog_NodeTreeWithFactionInfo {
+    + Dialog_NodeTreeWithFactionInfo(nodeRoot:DiaNode, faction:Faction, delayInteractivity:bool, radioMode:bool, title:string)
+    + <<override>> DoWindowContents(inRect:Rect) : void
+}
+Dialog_NodeTree <|-- Dialog_NodeTreeWithFactionInfo
+@enduml

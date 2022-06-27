@@ -1,0 +1,29 @@
+@startuml
+class LoadIDsWantedBank {
+    + ConfirmClear() : void
+    + Clear() : void
+    + RegisterLoadIDReadFromXml(targetLoadID:string, targetType:Type, pathRelToParent:string, parent:IExposable) : void
+    + RegisterLoadIDReadFromXml(targetLoadID:string, targetType:Type, toAppendToPathRelToParent:string) : void
+    + RegisterLoadIDListReadFromXml(targetLoadIDList:List<string>, pathRelToParent:string, parent:IExposable) : void
+    + RegisterLoadIDListReadFromXml(targetLoadIDList:List<string>, toAppendToPathRelToParent:string) : void
+    + Take(pathRelToParent:string, parent:IExposable) : string
+    + TakeList(pathRelToParent:string, parent:IExposable) : List<string>
+}
+class IdRecord <<struct>> {
+    + targetLoadID : string
+    + pathRelToParent : string
+    + IdRecord(targetLoadID:string, targetType:Type, pathRelToParent:string, parent:IExposable)
+}
+class IdListRecord <<struct>> {
+    + pathRelToParent : string
+    + IdListRecord(targetLoadIDs:List<string>, pathRelToParent:string, parent:IExposable)
+}
+class "List`1"<T> {
+}
+LoadIDsWantedBank +-- IdRecord
+IdRecord --> "targetType" Type
+IdRecord --> "parent" IExposable
+LoadIDsWantedBank +-- IdListRecord
+IdListRecord --> "targetLoadIDs<string>" "List`1"
+IdListRecord --> "parent" IExposable
+@enduml

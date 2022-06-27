@@ -1,0 +1,6 @@
+@startuml
+class TargetHighlighter <<static>> {
+    + {static} Highlight(target:GlobalTargetInfo, arrow:bool, colonistBar:bool, circleOverlay:bool) : void
+    + {static} TargetHighlighterUpdate() : void
+}
+@enduml

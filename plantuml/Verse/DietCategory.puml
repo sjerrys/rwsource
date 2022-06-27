@@ -1,0 +1,10 @@
+@startuml
+enum DietCategory {
+    NeverEats,
+    Herbivorous,
+    Dendrovorous,
+    Ovivorous,
+    Omnivorous,
+    Carnivorous,
+}
+@enduml

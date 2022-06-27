@@ -1,0 +1,12 @@
+@startuml
+class HediffComp_Discoverable {
+    + <<override>> CompExposeData() : void
+    + <<override>> CompDisallowVisible() : bool
+    + <<override>> CompPostTick(severityAdjustment:float) : void
+    + <<override>> CompPostPostAdd(dinfo:DamageInfo?) : void
+    + <<override>> Notify_PawnDied() : void
+    + <<override>> CompDebugString() : string
+}
+HediffComp <|-- HediffComp_Discoverable
+HediffComp_Discoverable --> "Props" HediffCompProperties_Discoverable
+@enduml

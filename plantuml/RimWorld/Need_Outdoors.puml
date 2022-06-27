@@ -1,0 +1,11 @@
+@startuml
+class Need_Outdoors {
+    + <<override>> GUIChangeArrow : int <<get>>
+    + <<override>> ShowOnNeedList : bool <<get>>
+    + Need_Outdoors(pawn:Pawn)
+    + <<override>> SetInitialLevel() : void
+    + <<override>> NeedInterval() : void
+}
+Need <|-- Need_Outdoors
+Need_Outdoors --> "CurCategory" OutdoorsCategory
+@enduml

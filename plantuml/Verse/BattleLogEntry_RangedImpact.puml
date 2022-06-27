@@ -1,0 +1,15 @@
+@startuml
+class BattleLogEntry_RangedImpact {
+    + BattleLogEntry_RangedImpact()
+    + BattleLogEntry_RangedImpact(initiator:Thing, recipient:Thing, originalTarget:Thing, weaponDef:ThingDef, projectileDef:ThingDef, coverDef:ThingDef)
+    + <<override>> Concerns(t:Thing) : bool
+    + <<override>> GetConcerns() : IEnumerable<Thing>
+    + <<override>> CanBeClickedFromPOV(pov:Thing) : bool
+    + <<override>> ClickedFromPOV(pov:Thing) : void
+    + <<override>> IconFromPOV(pov:Thing) : Texture2D
+    + <<override>> ShowInCompactView() : bool
+    + <<override>> ExposeData() : void
+    + <<override>> ToString() : string
+}
+LogEntry_DamageResult <|-- BattleLogEntry_RangedImpact
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class Mouse <<static>> {
+    + {static} IsInputBlockedNow : bool <<get>>
+    + {static} IsOver(rect:Rect) : bool
+}
+@enduml

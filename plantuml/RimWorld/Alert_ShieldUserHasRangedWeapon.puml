@@ -1,0 +1,7 @@
+@startuml
+class Alert_ShieldUserHasRangedWeapon {
+    + Alert_ShieldUserHasRangedWeapon()
+    + <<override>> GetReport() : AlertReport
+}
+Alert <|-- Alert_ShieldUserHasRangedWeapon
+@enduml

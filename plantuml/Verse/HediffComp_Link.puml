@@ -1,0 +1,12 @@
+@startuml
+class HediffComp_Link {
+    + drawConnection : bool
+    + <<override>> CompShouldRemove : bool <<get>>
+    + <<override>> CompLabelInBracketsExtra : string <<get>>
+    + <<override>> CompPostTick(severityAdjustment:float) : void
+    + <<override>> CompExposeData() : void
+}
+HediffComp <|-- HediffComp_Link
+HediffComp_Link --> "other" Pawn
+HediffComp_Link --> "Props" HediffCompProperties_Link
+@enduml

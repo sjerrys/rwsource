@@ -1,0 +1,22 @@
+@startuml
+class GameConditionDef {
+    + endMessage : string
+    + letterText : string
+    + canBePermanent : bool
+    + descriptionFuture : string
+    + jumpToSourceKey : string = "ClickToJumpToSource"
+    + preventRain : bool
+    + temperatureOffset : float
+    + CanCoexistWith(other:GameConditionDef) : bool
+    + {static} Named(defName:string) : GameConditionDef
+    + <<override>> ConfigErrors() : IEnumerable<string>
+}
+class "List`1"<T> {
+}
+Def <|-- GameConditionDef
+GameConditionDef o-> "conditionClass" Type
+GameConditionDef --> "letterHyperlinks<ThingDef>" "List`1"
+GameConditionDef --> "letterDef" LetterDef
+GameConditionDef o-> "defaultDroneLevel" PsychicDroneLevel
+GameConditionDef --> "weatherDef" WeatherDef
+@enduml

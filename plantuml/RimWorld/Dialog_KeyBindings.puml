@@ -1,0 +1,8 @@
+@startuml
+class Dialog_KeyBindings {
+    + Dialog_KeyBindings()
+    + <<override>> DoWindowContents(inRect:Rect) : void
+}
+Window <|-- Dialog_KeyBindings
+Dialog_KeyBindings --> "InitialSize" Vector2
+@enduml

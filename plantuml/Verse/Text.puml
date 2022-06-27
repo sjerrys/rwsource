@@ -1,0 +1,18 @@
+@startuml
+class Text <<static>> {
+    + <<const>> SmallFontHeight : float = 22f
+    + {static} WordWrap : bool <<get>> <<set>>
+    + {static} LineHeight : float <<get>>
+    + {static} SpaceBetweenLines : float <<get>>
+    {static} Text()
+    + {static} CalcHeight(text:string, width:float) : float
+    + {static} CalcSize(text:string) : Vector2
+    + {static} StartOfOnGUI() : void
+}
+Text --> "Font" GameFont
+Text --> "Anchor" TextAnchor
+Text --> "CurFontStyle" GUIStyle
+Text --> "CurTextFieldStyle" GUIStyle
+Text --> "CurTextAreaStyle" GUIStyle
+Text --> "CurTextAreaReadOnlyStyle" GUIStyle
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class WorkGiver_BuildRoof {
+    + <<override>> AllowUnreachable : bool <<get>>
+    + <<override>> PotentialWorkCellsGlobal(pawn:Pawn) : IEnumerable<IntVec3>
+    + <<override>> ShouldSkip(pawn:Pawn, forced:bool) : bool
+    + <<override>> HasJobOnCell(pawn:Pawn, c:IntVec3, forced:bool) : bool
+    + <<override>> JobOnCell(pawn:Pawn, c:IntVec3, forced:bool) : Job
+}
+WorkGiver_Scanner <|-- WorkGiver_BuildRoof
+WorkGiver_BuildRoof --> "PathEndMode" PathEndMode
+@enduml

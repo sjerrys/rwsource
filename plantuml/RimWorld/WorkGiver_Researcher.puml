@@ -1,0 +1,11 @@
+@startuml
+class WorkGiver_Researcher {
+    + <<override>> Prioritized : bool <<get>>
+    + <<override>> ShouldSkip(pawn:Pawn, forced:bool) : bool
+    + <<override>> HasJobOnThing(pawn:Pawn, t:Thing, forced:bool) : bool
+    + <<override>> JobOnThing(pawn:Pawn, t:Thing, forced:bool) : Job
+    + <<override>> GetPriority(pawn:Pawn, t:TargetInfo) : float
+}
+WorkGiver_Scanner <|-- WorkGiver_Researcher
+WorkGiver_Researcher --> "PotentialWorkThingRequest" ThingRequest
+@enduml

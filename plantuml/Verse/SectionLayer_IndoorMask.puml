@@ -1,0 +1,8 @@
+@startuml
+class SectionLayer_IndoorMask {
+    + <<override>> Visible : bool <<get>>
+    + SectionLayer_IndoorMask(section:Section)
+    + <<override>> Regenerate() : void
+}
+SectionLayer <|-- SectionLayer_IndoorMask
+@enduml

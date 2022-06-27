@@ -1,0 +1,52 @@
+@startuml
+class Lord {
+    + loadID : int
+    + inSignalLeave : string
+    + ticksInToil : int
+    + numPawnsLostViolently : int
+    + numPawnsEverGained : int
+    + initialColonyHealthTotal : int
+    + lastPawnHarmTick : int
+    + AnyActivePawn : bool <<get>>
+    + GetUniqueLoadID() : string
+    + ExposeData() : void
+    + SetJob(lordJob:LordJob) : void
+    + Cleanup() : void
+    + AddPawn(p:Pawn) : void
+    + AddBuilding(b:Building) : void
+    + GotoToil(newLordToil:LordToil) : void
+    + LordTick() : void
+    + ReceiveMemo(memo:string) : void
+    + Notify_FactionRelationsChanged(otherFaction:Faction, previousRelationKind:FactionRelationKind) : void
+    + Notify_PawnLost(pawn:Pawn, cond:PawnLostCondition, dinfo:DamageInfo?) : void
+    + Notify_BuildingLost(building:Building, dinfo:DamageInfo?) : void
+    + Notify_BuildingDamaged(building:Building, dinfo:DamageInfo) : void
+    + Notify_PawnDamaged(victim:Pawn, dinfo:DamageInfo) : void
+    + Notify_PawnAttemptArrested(victim:Pawn) : void
+    + Notify_Clamor(source:Thing, clamorType:ClamorDef) : void
+    + Notify_PawnAcquiredTarget(detector:Pawn, newTarg:Thing) : void
+    + Notify_ReachedDutyLocation(pawn:Pawn) : void
+    + Notify_ConstructionFailed(pawn:Pawn, frame:Frame, newBlueprint:Blueprint_Build) : void
+    + Notify_SignalReceived(signal:Signal) : void
+    + Notify_DormancyWakeup() : void
+    + Notify_MechClusterDefeated() : void
+    + DebugDraw() : void
+    + DebugOnGUI() : void
+    + DebugString() : string
+}
+class "List`1"<T> {
+}
+IExposable <|-- Lord
+ILoadReferenceable <|-- Lord
+ISignalReceiver <|-- Lord
+Lord --> "lordManager" LordManager
+Lord --> "faction" Faction
+Lord o-> "ownedPawns<Pawn>" "List`1"
+Lord o-> "ownedBuildings<Building>" "List`1"
+Lord o-> "extraForbiddenThings<Thing>" "List`1"
+Lord --> "questTags<string>" "List`1"
+Lord --> "Map" Map
+Lord --> "Graph" StateGraph
+Lord --> "CurLordToil" LordToil
+Lord --> "LordJob" LordJob
+@enduml

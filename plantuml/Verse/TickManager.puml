@@ -1,0 +1,25 @@
+@startuml
+class TickManager <<sealed>> {
+    + gameStartAbsTick : int
+    + TicksGame : int <<get>>
+    + TicksAbs : int <<get>>
+    + StartingYear : int <<get>>
+    + TickRateMultiplier : float <<get>>
+    + Paused : bool <<get>>
+    + NotPlaying : bool <<get>>
+    + TogglePaused() : void
+    + Pause() : void
+    + ExposeData() : void
+    + RegisterAllTickabilityFor(t:Thing) : void
+    + DeRegisterAllTickabilityFor(t:Thing) : void
+    + TickManagerUpdate() : void
+    + DoSingleTick() : void
+    + RemoveAllFromMap(map:Map) : void
+    + DebugSetTicksGame(newTicksGame:int) : void
+    + Notify_GeneratedPotentiallyHostileMap() : void
+}
+IExposable <|-- TickManager
+TickManager --> "prePauseTimeSpeed" TimeSpeed
+TickManager o-> "slower" TimeSlower
+TickManager --> "CurTimeSpeed" TimeSpeed
+@enduml

@@ -1,0 +1,25 @@
+@startuml
+class RegionCostCalculator {
+    + RegionCostCalculator(map:Map)
+    + Init(destination:CellRect, destRegions:HashSet<Region>, parms:TraverseParms, moveTicksCardinal:int, moveTicksDiagonal:int, avoidGrid:ByteGrid, allowedArea:Area, drafted:bool) : void
+    + GetRegionDistance(region:Region, minLink:RegionLink) : int
+    + GetRegionBestDistances(region:Region, bestLink:RegionLink, secondBestLink:RegionLink, secondBestCost:int) : int
+    + RegionMedianPathCost(region:Region) : int
+    + RegionLinkDistance(cell:IntVec3, link:RegionLink, minPathCost:int) : int
+}
+class RegionLinkQueueEntry <<struct>> {
+    + Cost : int <<get>>
+    + EstimatedPathCost : int <<get>>
+    + RegionLinkQueueEntry(from:Region, link:RegionLink, cost:int, estimatedPathCost:int)
+}
+class DistanceComparer {
+    + Compare(a:RegionLinkQueueEntry, b:RegionLinkQueueEntry) : int
+}
+class "IComparer`1"<T> {
+}
+RegionCostCalculator +-- RegionLinkQueueEntry
+RegionLinkQueueEntry --> "From" Region
+RegionLinkQueueEntry --> "Link" RegionLink
+RegionCostCalculator +-- DistanceComparer
+"IComparer`1" "<RegionLinkQueueEntry>" <|-- DistanceComparer
+@enduml

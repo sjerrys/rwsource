@@ -1,0 +1,9 @@
+@startuml
+class Verb_LaunchProjectile {
+    + <<override>> WarmupComplete() : void
+    + <<override>> HighlightFieldRadiusAroundTarget(needLOSToCenter:bool) : float
+    + <<override>> Available() : bool
+}
+Verb <|-- Verb_LaunchProjectile
+Verb_LaunchProjectile --> "Projectile" ThingDef
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class ThinkNode_ConditionalPawnKind {
+    + <<override>> DeepCopy(resolve:bool) : ThinkNode
+}
+ThinkNode_Conditional <|-- ThinkNode_ConditionalPawnKind
+ThinkNode_ConditionalPawnKind --> "pawnKind" PawnKindDef
+@enduml

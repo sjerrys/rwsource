@@ -1,0 +1,8 @@
+@startuml
+class Dialog_DebugSettingsMenu {
+    + <<override>> IsDebug : bool <<get>>
+    + Dialog_DebugSettingsMenu()
+    + <<override>> OnAcceptKeyPressed() : void
+}
+Dialog_DebugOptionLister <|-- Dialog_DebugSettingsMenu
+@enduml

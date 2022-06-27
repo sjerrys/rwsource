@@ -1,0 +1,9 @@
+@startuml
+class Thought_MemoryRoyalTitle {
+    + <<override>> LabelCap : string <<get>>
+    + <<override>> Description : string <<get>>
+    + <<override>> ExposeData() : void
+}
+Thought_Memory <|-- Thought_MemoryRoyalTitle
+Thought_MemoryRoyalTitle --> "titleDef" RoyalTitleDef
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class GrammarUtility <<static>> {
+    + {static} RulesForPawn(pawnSymbol:string, pawn:Pawn, constants:Dictionary<string, string>, addRelationInfoSymbol:bool, addTags:bool) : IEnumerable<Rule>
+    + {static} RulesForPawn(pawnSymbol:string, name:Name, title:string, kind:PawnKindDef, gender:Gender, faction:Faction, age:int, chronologicalAge:int, relationInfo:string, everBeenColonistOrTameAnimal:bool, everBeenQuestLodger:bool, isFactionLeader:bool, royalTitles:List<RoyalTitle>, constants:Dictionary<string, string>, addTags:bool) : IEnumerable<Rule>
+    + {static} RulesForDef(prefix:string, def:Def) : IEnumerable<Rule>
+    + {static} RulesForBodyPartRecord(prefix:string, part:BodyPartRecord) : IEnumerable<Rule>
+    + {static} RulesForHediffDef(prefix:string, def:HediffDef, part:BodyPartRecord) : IEnumerable<Rule>
+    + {static} RulesForFaction(prefix:string, faction:Faction, addTags:bool) : IEnumerable<Rule>
+    + {static} RulesForWorldObject(prefix:string, worldObject:WorldObject, addTags:bool) : IEnumerable<Rule>
+}
+@enduml

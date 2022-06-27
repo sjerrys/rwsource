@@ -1,0 +1,6 @@
+@startuml
+class PlantFallColors <<static>> {
+    + {static} GetFallColorFactor(latitude:float, dayOfYear:int) : float
+    + {static} SetFallShaderGlobals(map:Map) : void
+}
+@enduml

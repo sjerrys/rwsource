@@ -1,0 +1,10 @@
+@startuml
+class ThingSetMaker_Meteorite {
+    + {static} Reset() : void
+}
+class "List`1"<T> {
+}
+ThingSetMaker <|-- ThingSetMaker_Meteorite
+ThingSetMaker_Meteorite o-> "nonSmoothedMineables<ThingDef>" "List`1"
+ThingSetMaker_Meteorite o-> "MineablesCountRange" IntRange
+@enduml

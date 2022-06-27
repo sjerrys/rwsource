@@ -1,0 +1,5 @@
+@startuml
+class CompassWidget <<static>> {
+    + {static} CompassOnGUI(curBaseY:float) : void
+}
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class JobDriver_PlayHoopstone {
+}
+JobDriver_WatchBuilding <|-- JobDriver_PlayHoopstone
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class ModLoadFolders {
+    + <<const>> defaultVersionName : string = "default"
+    + FoldersForVersion(version:string) : List<LoadFolder>
+    + DefinedVersions() : List<string>
+    + LoadDataFromXmlCustom(xmlRoot:XmlNode) : void
+    + GetIssueList(mod:ModMetaData) : List<string>
+}
+@enduml

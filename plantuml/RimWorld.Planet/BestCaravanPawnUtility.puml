@@ -1,0 +1,8 @@
+@startuml
+class BestCaravanPawnUtility <<static>> {
+    + {static} FindBestDiplomat(caravan:Caravan) : Pawn
+    + {static} FindBestNegotiator(caravan:Caravan, negotiatingWith:Faction, trader:TraderKindDef) : Pawn
+    + {static} FindBestEntertainingPawnFor(caravan:Caravan, forPawn:Pawn) : Pawn
+    + {static} FindPawnWithBestStat(caravan:Caravan, stat:StatDef, pawnValidator:Predicate<Pawn>) : Pawn
+}
+@enduml

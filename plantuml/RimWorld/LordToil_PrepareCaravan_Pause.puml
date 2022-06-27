@@ -1,0 +1,6 @@
+@startuml
+class LordToil_PrepareCaravan_Pause {
+    + <<override>> UpdateAllDuties() : void
+}
+LordToil <|-- LordToil_PrepareCaravan_Pause
+@enduml

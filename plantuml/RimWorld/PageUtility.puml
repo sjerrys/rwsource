@@ -1,0 +1,6 @@
+@startuml
+class PageUtility <<static>> {
+    + {static} StitchedPages(pages:IEnumerable<Page>) : Page
+    + {static} InitGameStart() : void
+}
+@enduml

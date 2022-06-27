@@ -1,0 +1,8 @@
+@startuml
+class StorageSettingsClipboard <<static>> {
+    + {static} HasCopiedSettings : bool <<get>>
+    + {static} Copy(s:StorageSettings) : void
+    + {static} PasteInto(s:StorageSettings) : void
+    + {static} CopyPasteGizmosFor(s:StorageSettings) : IEnumerable<Gizmo>
+}
+@enduml

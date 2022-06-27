@@ -1,0 +1,22 @@
+@startuml
+class FocusStrengthOffset_BuildingDefs {
+    + radius : float = 10f
+    + maxBuildings : int
+    + offsetPerBuilding : float
+    + explanationKey : string
+    + explanationKeyAbstract : string
+    + MaxOffsetPerBuilding : float <<get>>
+    + MinOffsetPerBuilding : float <<get>>
+    + <<override>> GetOffset(parent:Thing, user:Pawn) : float
+    + <<override>> CanApply(parent:Thing, user:Pawn) : bool
+    + <<override>> PostDrawExtraSelectionOverlays(parent:Thing, user:Pawn) : void
+    + <<override>> GetExplanation(parent:Thing) : string
+    + <<override>> GetExplanationAbstract(def:ThingDef) : string
+    + <<override>> MaxOffset(parent:Thing) : float
+    + <<override>> ResolveReferences() : void
+}
+class "List`1"<T> {
+}
+FocusStrengthOffset <|-- FocusStrengthOffset_BuildingDefs
+FocusStrengthOffset_BuildingDefs o-> "defs<MeditationFocusOffsetPerBuilding>" "List`1"
+@enduml

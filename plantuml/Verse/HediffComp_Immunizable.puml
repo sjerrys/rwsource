@@ -1,0 +1,14 @@
+@startuml
+class HediffComp_Immunizable {
+    + <<override>> CompLabelInBracketsExtra : string <<get>>
+    + <<override>> CompTipStringExtra : string <<get>>
+    + Immunity : float <<get>>
+    + FullyImmune : bool <<get>>
+    + <<override>> CompPostPostAdd(dinfo:DamageInfo?) : void
+    + <<override>> CompExposeData() : void
+    + <<override>> CompDebugString() : string
+}
+HediffComp_SeverityPerDay <|-- HediffComp_Immunizable
+HediffComp_Immunizable --> "Props" HediffCompProperties_Immunizable
+HediffComp_Immunizable --> "CompStateIcon" TextureAndColor
+@enduml

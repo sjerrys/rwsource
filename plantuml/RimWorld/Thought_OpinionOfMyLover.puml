@@ -1,0 +1,6 @@
+@startuml
+class Thought_OpinionOfMyLover {
+    + <<override>> LabelCap : string <<get>>
+}
+Thought_Situational <|-- Thought_OpinionOfMyLover
+@enduml

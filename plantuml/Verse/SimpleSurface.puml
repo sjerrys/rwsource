@@ -1,0 +1,13 @@
+@startuml
+class SimpleSurface {
+    + Evaluate(x:float, y:float) : float
+    + Add(newColumn:SurfaceColumn) : void
+    GetEnumerator() : IEnumerator
+    + GetEnumerator() : IEnumerator<SurfaceColumn>
+    + ConfigErrors(prefix:string) : IEnumerable<string>
+}
+class "IEnumerable`1"<T> {
+}
+"IEnumerable`1" "<SurfaceColumn>" <|-- SimpleSurface
+IEnumerable <|-- SimpleSurface
+@enduml

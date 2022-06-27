@@ -1,0 +1,48 @@
+@startuml
+class IntVec3 <<struct>> {
+    + x : int
+    + y : int
+    + z : int
+    + IsValid : bool <<get>>
+    + LengthHorizontalSquared : int <<get>>
+    + LengthHorizontal : float <<get>>
+    + LengthManhattan : int <<get>>
+    + AngleFlat : float <<get>>
+    + IntVec3(newX:int, newY:int, newZ:int)
+    + IntVec3(v:Vector3)
+    + IntVec3(v:Vector2)
+    + {static} FromString(str:string) : IntVec3
+    + ToVector3() : Vector3
+    + ToVector3Shifted() : Vector3
+    + ToVector3ShiftedWithAltitude(AltLayer:AltitudeLayer) : Vector3
+    + ToVector3ShiftedWithAltitude(AddedAltitude:float) : Vector3
+    + InHorDistOf(otherLoc:IntVec3, maxDist:float) : bool
+    + {static} FromVector3(v:Vector3) : IntVec3
+    + {static} FromVector3(v:Vector3, newY:int) : IntVec3
+    + ToUIPosition() : Vector2
+    + AdjacentToCardinal(other:IntVec3) : bool
+    + AdjacentToDiagonal(other:IntVec3) : bool
+    + AdjacentToCardinal(room:Room) : bool
+    + ClampInsideMap(map:Map) : IntVec3
+    + ClampInsideRect(rect:CellRect) : IntVec3
+    + <<override>> Equals(obj:object) : bool
+    + Equals(other:IntVec3) : bool
+    + <<override>> GetHashCode() : int
+    + UniqueHashCode() : ulong
+    + <<override>> ToString() : string
+}
+class "IEquatable`1"<T> {
+}
+"IEquatable`1" "<IntVec3>" <|-- IntVec3
+IntVec3 --> "ToIntVec2" IntVec2
+IntVec3 --> "Zero" IntVec3
+IntVec3 --> "North" IntVec3
+IntVec3 --> "East" IntVec3
+IntVec3 --> "South" IntVec3
+IntVec3 --> "West" IntVec3
+IntVec3 --> "NorthWest" IntVec3
+IntVec3 --> "NorthEast" IntVec3
+IntVec3 --> "SouthWest" IntVec3
+IntVec3 --> "SouthEast" IntVec3
+IntVec3 --> "Invalid" IntVec3
+@enduml

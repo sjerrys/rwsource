@@ -1,0 +1,9 @@
+@startuml
+class EscapeShip {
+    + <<override>> PostMapGenerate() : void
+}
+MapParent <|-- EscapeShip
+EscapeShip --> "ExpandingIcon" Texture2D
+EscapeShip --> "ExpandingIconColor" Color
+EscapeShip --> "Material" Material
+@enduml

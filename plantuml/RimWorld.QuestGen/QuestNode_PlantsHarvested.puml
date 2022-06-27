@@ -1,0 +1,12 @@
+@startuml
+class QuestNode_PlantsHarvested {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_PlantsHarvested
+QuestNode_PlantsHarvested --> "inSignalEnable<string>" "SlateRef`1"
+QuestNode_PlantsHarvested --> "outSignalComplete<string>" "SlateRef`1"
+QuestNode_PlantsHarvested --> "plant<ThingDef>" "SlateRef`1"
+QuestNode_PlantsHarvested --> "count<int>" "SlateRef`1"
+QuestNode_PlantsHarvested --> "node" QuestNode
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+class ShipUtility <<static>> {
+    + {static} RequiredParts() : Dictionary<ThingDef, int>
+    + {static} LaunchFailReasons(rootBuilding:Building) : IEnumerable<string>
+    + {static} HasHibernatingParts(rootBuilding:Building) : bool
+    + {static} StartupHibernatingParts(rootBuilding:Building) : void
+    + {static} ShipBuildingsAttachedTo(root:Building) : List<Building>
+    + {static} ShipStartupGizmos(building:Building) : IEnumerable<Gizmo>
+}
+@enduml

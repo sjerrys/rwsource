@@ -1,0 +1,16 @@
+@startuml
+class Graphic_Single {
+    + {static} <<readonly>> MaskSuffix : string = "_m"
+    + <<override>> ShouldDrawRotated : bool <<get>>
+    + <<override>> Init(req:GraphicRequest) : void
+    + <<override>> GetColoredVersion(newShader:Shader, newColor:Color, newColorTwo:Color) : Graphic
+    + <<override>> MatAt(rot:Rot4, thing:Thing) : Material
+    + <<override>> ToString() : string
+}
+Graphic <|-- Graphic_Single
+Graphic_Single --> "MatSingle" Material
+Graphic_Single --> "MatWest" Material
+Graphic_Single --> "MatSouth" Material
+Graphic_Single --> "MatEast" Material
+Graphic_Single --> "MatNorth" Material
+@enduml

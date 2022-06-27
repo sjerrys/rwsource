@@ -1,0 +1,5 @@
+@startuml
+class OptionListingUtility <<static>> {
+    + {static} DrawOptionListing(rect:Rect, optList:List<ListableOption>) : float
+}
+@enduml

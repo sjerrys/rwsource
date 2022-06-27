@@ -1,0 +1,6 @@
+@startuml
+class Trigger_PawnCannotReachMapEdge {
+    + <<override>> ActivateOn(lord:Lord, signal:TriggerSignal) : bool
+}
+Trigger <|-- Trigger_PawnCannotReachMapEdge
+@enduml

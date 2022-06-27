@@ -1,0 +1,6 @@
+@startuml
+class CompBiocodableWeapon {
+    + <<override>> SpecialDisplayStats() : IEnumerable<StatDrawEntry>
+}
+CompBiocodable <|-- CompBiocodableWeapon
+@enduml

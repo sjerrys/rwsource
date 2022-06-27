@@ -1,0 +1,8 @@
+@startuml
+class GameCondition_Planetkiller {
+    + <<override>> TooltipString : string <<get>>
+    + <<override>> GameConditionTick() : void
+    + <<override>> End() : void
+}
+GameCondition <|-- GameCondition_Planetkiller
+@enduml

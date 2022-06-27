@@ -1,0 +1,8 @@
+@startuml
+class PawnGenerationContextUtility <<static>> {
+    + {static} ToStringHuman(context:PawnGenerationContext) : string
+    + {static} Includes(includer:PawnGenerationContext, other:PawnGenerationContext) : bool
+    + {static} GetRandom() : PawnGenerationContext
+    + {static} OverlapsWith(a:PawnGenerationContext, b:PawnGenerationContext) : bool
+}
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class ThinkNode_ConditionalHasFaction {
+}
+ThinkNode_Conditional <|-- ThinkNode_ConditionalHasFaction
+@enduml

@@ -1,0 +1,21 @@
+@startuml
+class PowerNet {
+    + hasPowerSource : bool
+    + HasActivePowerSource : bool <<get>>
+    + PowerNet(newTransmitters:IEnumerable<CompPower>)
+    + RegisterConnector(b:CompPower) : void
+    + DeregisterConnector(b:CompPower) : void
+    + CurrentEnergyGainRate() : float
+    + CurrentStoredEnergy() : float
+    + PowerNetTick() : void
+    + DebugString() : string
+}
+class "List`1"<T> {
+}
+PowerNet --> "powerNetManager" PowerNetManager
+PowerNet o-> "connectors<CompPower>" "List`1"
+PowerNet o-> "transmitters<CompPower>" "List`1"
+PowerNet o-> "powerComps<CompPowerTrader>" "List`1"
+PowerNet o-> "batteryComps<CompPowerBattery>" "List`1"
+PowerNet --> "Map" Map
+@enduml

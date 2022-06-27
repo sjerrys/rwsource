@@ -1,0 +1,35 @@
+@startuml
+class Tool {
+    + id : string
+    + label : string
+    + untranslatedLabel : string
+    + labelUsedInLogging : bool = true
+    + power : float
+    + armorPenetration : float
+    + cooldownTime : float
+    + chanceFactor : float = 1f
+    + alwaysTreatAsWeapon : bool
+    + ensureLinkedBodyPartsGroupAlwaysUsable : bool
+    + LabelCap : string <<get>>
+    + AdjustedBaseMeleeDamageAmount(ownerEquipment:Thing, damageDef:DamageDef) : float
+    + AdjustedBaseMeleeDamageAmount_NewTmp(ownerEquipment:ThingDef, ownerEquipmentStuff:ThingDef, damageDef:DamageDef) : float
+    + AdjustedCooldown(ownerEquipment:Thing) : float
+    + AdjustedCooldown_NewTmp(ownerEquipment:ThingDef, ownerEquipmentStuff:ThingDef) : float
+    + <<override>> ToString() : string
+    + PostLoad() : void
+    + ConfigErrors() : IEnumerable<string>
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+Tool o-> "capacities<ToolCapacityDef>" "List`1"
+Tool --> "surpriseAttack" SurpriseAttackProps
+Tool --> "hediff" HediffDef
+Tool --> "extraMeleeDamages<ExtraDamage>" "List`1"
+Tool --> "soundMeleeHit" SoundDef
+Tool --> "soundMeleeMiss" SoundDef
+Tool --> "linkedBodyPartsGroup" BodyPartGroupDef
+Tool --> "Maneuvers<ManeuverDef>" "IEnumerable`1"
+Tool --> "VerbsProperties<VerbProperties>" "IEnumerable`1"
+@enduml

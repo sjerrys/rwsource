@@ -1,0 +1,16 @@
+@startuml
+class QuestPart_GameCondition {
+    + inSignal : string
+    + targetWorld : bool
+    + sendStandardLetter : bool = true
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart <|-- QuestPart_GameCondition
+QuestPart_GameCondition --> "gameCondition" GameCondition
+QuestPart_GameCondition --> "mapParent" MapParent
+QuestPart_GameCondition --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+@enduml

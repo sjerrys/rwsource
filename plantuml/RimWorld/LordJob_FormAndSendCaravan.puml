@@ -1,0 +1,24 @@
+@startuml
+class LordJob_FormAndSendCaravan {
+    + <<const>> CustomWakeThreshold : float = 0.5f
+    + GatheringItemsNow : bool <<get>>
+    + <<override>> AllowStartNewGatherings : bool <<get>>
+    + <<override>> NeverInRestraints : bool <<get>>
+    + <<override>> AddFleeToil : bool <<get>>
+    + Status : string <<get>>
+    + LordJob_FormAndSendCaravan()
+    + LordJob_FormAndSendCaravan(transferables:List<TransferableOneWay>, downedPawns:List<Pawn>, meetingPoint:IntVec3, exitSpot:IntVec3, startingTile:int, destinationTile:int)
+    + <<override>> CreateGraph() : StateGraph
+    + <<override>> LordJobTick() : void
+    + <<override>> GetReport(pawn:Pawn) : string
+    + <<override>> ExposeData() : void
+    + <<override>> Notify_PawnAdded(p:Pawn) : void
+    + <<override>> Notify_PawnLost(p:Pawn, condition:PawnLostCondition) : void
+    + <<override>> CanOpenAnyDoor(p:Pawn) : bool
+}
+class "List`1"<T> {
+}
+LordJob <|-- LordJob_FormAndSendCaravan
+LordJob_FormAndSendCaravan --> "transferables<TransferableOneWay>" "List`1"
+LordJob_FormAndSendCaravan --> "downedPawns<Pawn>" "List`1"
+@enduml

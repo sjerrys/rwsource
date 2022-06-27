@@ -1,0 +1,15 @@
+@startuml
+class CompAttachBase {
+    + <<override>> CompTick() : void
+    + <<override>> PostDestroy(mode:DestroyMode, previousMap:Map) : void
+    + <<override>> CompInspectStringExtra() : string
+    + GetAttachment(def:ThingDef) : Thing
+    + HasAttachment(def:ThingDef) : bool
+    + AddAttachment(t:AttachableThing) : void
+    + RemoveAttachment(t:AttachableThing) : void
+}
+class "List`1"<T> {
+}
+ThingComp <|-- CompAttachBase
+CompAttachBase --> "attachments<AttachableThing>" "List`1"
+@enduml

@@ -1,0 +1,45 @@
+@startuml
+class DirectXmlCrossRefLoader <<static>> {
+    + {static} LoadingInProgress : bool <<get>>
+    + {static} RegisterObjectWantsCrossRef(wanter:object, fi:FieldInfo, targetDefName:string, mayRequireMod:string, assumeFieldType:Type) : void
+    + {static} RegisterObjectWantsCrossRef(wanter:object, fieldName:string, targetDefName:string, mayRequireMod:string, overrideFieldType:Type) : void
+    + {static} RegisterObjectWantsCrossRef(wanter:object, fieldName:string, parentNode:XmlNode, mayRequireMod:string, overrideFieldType:Type) : void
+    + {static} RegisterListWantsCrossRef(wanterList:List<T>, targetDefName:string, debugWanterInfo:object, mayRequireMod:string) : void
+    + {static} RegisterDictionaryWantsCrossRef(wanterDict:Dictionary<K, V>, entryNode:XmlNode, debugWanterInfo:object) : void
+    + {static} TryResolveDef(defName:string, failReportMode:FailMode, debugWanterInfo:object) : T
+    + {static} Clear() : void
+    + {static} ResolveAllWantedCrossReferences(failReportMode:FailMode) : void
+}
+abstract class WantedRef {
+    + wanter : object
+    + {abstract} TryResolve(failReportMode:FailMode) : bool
+    + <<virtual>> Apply() : void
+}
+class WantedRefForObject {
+    + defName : string
+    + mayRequireMod : string
+    + WantedRefForObject(wanter:object, fi:FieldInfo, targetDefName:string, mayRequireMod:string, overrideFieldType:Type)
+    + <<override>> TryResolve(failReportMode:FailMode) : bool
+}
+class "WantedRefForList`1"<T> {
+    + WantedRefForList(wanter:object, debugWanterInfo:object)
+    + AddWantedListEntry(newTargetDefName:string, mayRequireMod:string) : void
+    + <<override>> TryResolve(failReportMode:FailMode) : bool
+}
+class "WantedRefForDictionary`2"<K,V> {
+    + WantedRefForDictionary(wanter:object, debugWanterInfo:object)
+    + AddWantedDictEntry(entryNode:XmlNode) : void
+    + <<override>> TryResolve(failReportMode:FailMode) : bool
+    + <<override>> Apply() : void
+}
+DirectXmlCrossRefLoader +-- WantedRef
+DirectXmlCrossRefLoader +-- WantedRefForObject
+WantedRef <|-- WantedRefForObject
+WantedRefForObject --> "fi" FieldInfo
+WantedRefForObject --> "resolvedDef" Def
+WantedRefForObject --> "overrideFieldType" Type
+DirectXmlCrossRefLoader +-- "WantedRefForList`1"
+WantedRef <|-- "WantedRefForList`1"
+DirectXmlCrossRefLoader +-- "WantedRefForDictionary`2"
+WantedRef <|-- "WantedRefForDictionary`2"
+@enduml

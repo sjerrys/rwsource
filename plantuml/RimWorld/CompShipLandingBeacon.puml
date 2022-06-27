@@ -1,0 +1,17 @@
+@startuml
+class CompShipLandingBeacon {
+    + Active : bool <<get>>
+    + EstablishConnections() : void
+    + TryAddArea(newArea:ShipLandingArea) : bool
+    + <<override>> PostSpawnSetup(respawningAfterLoad:bool) : void
+    + <<override>> PostDeSpawn(map:Map) : void
+    + <<override>> CompTickRare() : void
+    + <<override>> PostDrawExtraSelectionOverlays() : void
+    + <<override>> CompInspectStringExtra() : string
+}
+class "List`1"<T> {
+}
+ThingComp <|-- CompShipLandingBeacon
+CompShipLandingBeacon --> "Props" CompProperties_ShipLandingBeacon
+CompShipLandingBeacon --> "LandingAreas<ShipLandingArea>" "List`1"
+@enduml

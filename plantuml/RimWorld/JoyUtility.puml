@@ -1,0 +1,14 @@
+@startuml
+class JoyUtility <<static>> {
+    + {static} EnjoyableOutsideNow(map:Map, outFailReason:StringBuilder) : bool
+    + {static} EnjoyableOutsideNow(pawn:Pawn, outFailReason:StringBuilder) : bool
+    + {static} JoyTickCheckEnd(pawn:Pawn, fullJoyAction:JoyTickFullJoyAction, extraJoyGainFactor:float, joySource:Building) : void
+    + {static} TryGainRecRoomThought(pawn:Pawn) : void
+    + {static} LordPreventsGettingJoy(pawn:Pawn) : bool
+    + {static} TimetablePreventsGettingJoy(pawn:Pawn) : bool
+    + {static} JoyKindsOnMapCount(map:Map) : int
+    + {static} JoyKindsOnMapTempList(map:Map) : List<JoyKindDef>
+    + {static} JoyKindsOnMapString(map:Map) : string
+    + {static} JoyKindsNotOnMapString(map:Map) : string
+}
+@enduml

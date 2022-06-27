@@ -1,0 +1,7 @@
+@startuml
+class CompAbilityEffect_GiveHediff {
+    + <<override>> Apply(target:LocalTargetInfo, dest:LocalTargetInfo) : void
+}
+CompAbilityEffect_WithDuration <|-- CompAbilityEffect_GiveHediff
+CompAbilityEffect_GiveHediff --> "Props" CompProperties_AbilityGiveHediff
+@enduml

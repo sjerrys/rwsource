@@ -1,0 +1,6 @@
+@startuml
+class MentalState_FireStartingSpree {
+    + <<override>> SocialModeMax() : RandomSocialMode
+}
+MentalState <|-- MentalState_FireStartingSpree
+@enduml

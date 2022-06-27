@@ -1,0 +1,6 @@
+@startuml
+class CompUsableImplant {
+    + <<override>> TryStartUseJob(pawn:Pawn, extraTarget:LocalTargetInfo) : void
+}
+CompUsable <|-- CompUsableImplant
+@enduml

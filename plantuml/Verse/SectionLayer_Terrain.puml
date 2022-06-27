@@ -1,0 +1,10 @@
+@startuml
+class SectionLayer_Terrain {
+    + <<override>> Visible : bool <<get>>
+    + SectionLayer_Terrain(section:Section)
+    + <<virtual>> GetMaterialFor(terrain:TerrainDef) : Material
+    + AllowRenderingFor(terrain:TerrainDef) : bool
+    + <<override>> Regenerate() : void
+}
+SectionLayer <|-- SectionLayer_Terrain
+@enduml

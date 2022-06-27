@@ -1,0 +1,10 @@
+@startuml
+class ScenPart_CreateIncident {
+    + <<override>> ExposeData() : void
+    + <<override>> DoEditInterface(listing:Listing_ScenEdit) : void
+    + <<override>> Randomize() : void
+    + <<override>> PostGameStart() : void
+    + <<override>> Tick() : void
+}
+ScenPart_IncidentBase <|-- ScenPart_CreateIncident
+@enduml

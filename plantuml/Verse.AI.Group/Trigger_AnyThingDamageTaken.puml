@@ -1,0 +1,7 @@
+@startuml
+class Trigger_AnyThingDamageTaken {
+    + Trigger_AnyThingDamageTaken(things:List<Thing>, damageFraction:float)
+    + <<override>> ActivateOn(lord:Lord, signal:TriggerSignal) : bool
+}
+Trigger <|-- Trigger_AnyThingDamageTaken
+@enduml

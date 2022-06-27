@@ -1,0 +1,6 @@
+@startuml
+class Verb_Shoot {
+    + <<override>> WarmupComplete() : void
+}
+Verb_LaunchProjectile <|-- Verb_Shoot
+@enduml

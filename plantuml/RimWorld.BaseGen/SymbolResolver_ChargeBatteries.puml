@@ -1,0 +1,6 @@
+@startuml
+class SymbolResolver_ChargeBatteries {
+    + <<override>> Resolve(rp:ResolveParams) : void
+}
+SymbolResolver <|-- SymbolResolver_ChargeBatteries
+@enduml

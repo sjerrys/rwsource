@@ -1,0 +1,11 @@
+@startuml
+class Building_OrbitalTradeBeacon {
+    + <<override>> GetGizmos() : IEnumerable<Gizmo>
+    + {static} TradeableCellsAround(pos:IntVec3, map:Map) : List<IntVec3>
+    + {static} AllPowered(map:Map) : IEnumerable<Building_OrbitalTradeBeacon>
+}
+class "IEnumerable`1"<T> {
+}
+Building <|-- Building_OrbitalTradeBeacon
+Building_OrbitalTradeBeacon --> "TradeableCells<IntVec3>" "IEnumerable`1"
+@enduml

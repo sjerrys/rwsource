@@ -1,0 +1,5 @@
+@startuml
+class MentalState_BedroomTantrum {
+}
+MentalState_TantrumRandom <|-- MentalState_BedroomTantrum
+@enduml

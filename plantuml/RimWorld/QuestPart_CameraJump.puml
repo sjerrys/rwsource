@@ -1,0 +1,15 @@
+@startuml
+class QuestPart_CameraJump {
+    + inSignal : string
+    + getLookTargetsFromSignal : bool = true
+    + select : bool = true
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart <|-- QuestPart_CameraJump
+QuestPart_CameraJump --> "lookTargets" LookTargets
+QuestPart_CameraJump --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+@enduml

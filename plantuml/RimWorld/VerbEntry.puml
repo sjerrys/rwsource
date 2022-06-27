@@ -1,0 +1,10 @@
+@startuml
+class VerbEntry <<struct>> {
+    + IsMeleeAttack : bool <<get>>
+    + VerbEntry(verb:Verb, pawn:Pawn)
+    + VerbEntry(verb:Verb, pawn:Pawn, allVerbs:List<Verb>, highestSelWeight:float)
+    + GetSelectionWeight(target:Thing) : float
+    + <<override>> ToString() : string
+}
+VerbEntry --> "verb" Verb
+@enduml

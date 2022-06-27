@@ -1,0 +1,8 @@
+@startuml
+enum WorldCameraZoomRange {
+    VeryClose,
+    Close,
+    Far,
+    VeryFar,
+}
+@enduml

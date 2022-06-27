@@ -1,0 +1,29 @@
+@startuml
+class InspirationDef {
+    + baseCommonality : float = 1f
+    + baseDurationDays : float = 1f
+    + allowedOnAnimals : bool
+    + allowedOnNonColonists : bool
+    + allowedOnDownedPawns : bool = true
+    + beginLetter : string
+    + beginLetterLabel : string
+    + endMessage : string
+    + baseInspectLine : string
+}
+class "List`1"<T> {
+}
+Def <|-- InspirationDef
+InspirationDef o-> "inspirationClass" Type
+InspirationDef o-> "workerClass" Type
+InspirationDef --> "requiredNonDisabledStats<StatDef>" "List`1"
+InspirationDef --> "requiredSkills<SkillRequirement>" "List`1"
+InspirationDef --> "requiredAnySkill<SkillRequirement>" "List`1"
+InspirationDef --> "requiredNonDisabledWorkTypes<WorkTypeDef>" "List`1"
+InspirationDef --> "requiredAnyNonDisabledWorkType<WorkTypeDef>" "List`1"
+InspirationDef --> "requiredCapacities<PawnCapacityDef>" "List`1"
+InspirationDef --> "associatedSkills<SkillDef>" "List`1"
+InspirationDef --> "statOffsets<StatModifier>" "List`1"
+InspirationDef --> "statFactors<StatModifier>" "List`1"
+InspirationDef --> "beginLetterDef" LetterDef
+InspirationDef --> "Worker" InspirationWorker
+@enduml

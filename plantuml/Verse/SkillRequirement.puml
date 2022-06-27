@@ -1,0 +1,10 @@
+@startuml
+class SkillRequirement {
+    + minLevel : int
+    + Summary : string <<get>>
+    + PawnSatisfies(pawn:Pawn) : bool
+    + LoadDataFromXmlCustom(xmlRoot:XmlNode) : void
+    + <<override>> ToString() : string
+}
+SkillRequirement --> "skill" SkillDef
+@enduml

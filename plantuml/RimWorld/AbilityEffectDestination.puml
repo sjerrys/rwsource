@@ -1,0 +1,7 @@
+@startuml
+enum AbilityEffectDestination {
+    Caster,
+    RandomInRange,
+    Selected,
+}
+@enduml

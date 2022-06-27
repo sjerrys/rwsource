@@ -1,0 +1,11 @@
+@startuml
+class Alert_RoyalNoAcceptableFood {
+    + Alert_RoyalNoAcceptableFood()
+    + <<override>> GetReport() : AlertReport
+    + <<override>> GetExplanation() : TaggedString
+}
+class "List`1"<T> {
+}
+Alert <|-- Alert_RoyalNoAcceptableFood
+Alert_RoyalNoAcceptableFood --> "Targets<Pawn>" "List`1"
+@enduml

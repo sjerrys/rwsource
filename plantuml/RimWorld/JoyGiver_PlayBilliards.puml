@@ -1,0 +1,6 @@
+@startuml
+class JoyGiver_PlayBilliards {
+    + {static} ThingHasStandableSpaceOnAllSides(t:Thing) : bool
+}
+JoyGiver_InteractBuilding <|-- JoyGiver_PlayBilliards
+@enduml

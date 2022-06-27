@@ -1,0 +1,8 @@
+@startuml
+class BillStoreModeDefOf <<static>> {
+    {static} BillStoreModeDefOf()
+}
+BillStoreModeDefOf --> "DropOnFloor" BillStoreModeDef
+BillStoreModeDefOf --> "BestStockpile" BillStoreModeDef
+BillStoreModeDefOf --> "SpecificStockpile" BillStoreModeDef
+@enduml

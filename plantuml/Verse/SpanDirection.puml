@@ -1,0 +1,6 @@
+@startuml
+enum SpanDirection {
+    North,
+    East,
+}
+@enduml

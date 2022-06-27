@@ -1,0 +1,6 @@
+@startuml
+class Thought_WeaponTraitNotEquipped {
+    + <<override>> ShouldDiscard : bool <<get>>
+}
+Thought_WeaponTrait <|-- Thought_WeaponTraitNotEquipped
+@enduml

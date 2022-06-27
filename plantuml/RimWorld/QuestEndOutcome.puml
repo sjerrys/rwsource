@@ -1,0 +1,8 @@
+@startuml
+enum QuestEndOutcome {
+    Unknown,
+    Success,
+    Fail,
+    InvalidPreAcceptance,
+}
+@enduml

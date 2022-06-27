@@ -1,0 +1,5 @@
+@startuml
+class SketchResolver_FloorFill {
+}
+SketchResolver <|-- SketchResolver_FloorFill
+@enduml

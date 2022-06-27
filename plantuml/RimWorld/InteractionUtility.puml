@@ -1,0 +1,13 @@
+@startuml
+class InteractionUtility <<static>> {
+    + <<const>> MaxInteractRange : float = 6f
+    + {static} CanInitiateInteraction(pawn:Pawn, interactionDef:InteractionDef) : bool
+    + {static} CanReceiveInteraction(pawn:Pawn, interactionDef:InteractionDef) : bool
+    + {static} CanInitiateRandomInteraction(p:Pawn) : bool
+    + {static} CanReceiveRandomInteraction(p:Pawn) : bool
+    + {static} IsGoodPositionForInteraction(p:Pawn, recipient:Pawn) : bool
+    + {static} IsGoodPositionForInteraction(cell:IntVec3, recipientCell:IntVec3, map:Map) : bool
+    + {static} HasAnyVerbForSocialFight(p:Pawn) : bool
+    + {static} TryGetRandomVerbForSocialFight(p:Pawn, verb:Verb) : bool
+}
+@enduml

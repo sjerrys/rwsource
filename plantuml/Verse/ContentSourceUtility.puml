@@ -1,0 +1,8 @@
+@startuml
+class ContentSourceUtility <<static>> {
+    + <<const>> IconSize : float = 24f
+    + {static} GetIcon(s:ContentSource) : Texture2D
+    + {static} DrawContentSource(r:Rect, source:ContentSource, clickAction:Action) : void
+    + {static} HumanLabel(s:ContentSource) : string
+}
+@enduml

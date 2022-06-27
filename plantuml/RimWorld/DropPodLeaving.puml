@@ -1,0 +1,14 @@
+@startuml
+class DropPodLeaving {
+    + groupID : int
+    + destinationTile : int
+    + createWorldObject : bool = true
+    + <<override>> ExposeData() : void
+}
+Skyfaller <|-- DropPodLeaving
+IActiveDropPod <|-- DropPodLeaving
+IThingHolder <|-- DropPodLeaving
+DropPodLeaving --> "arrivalAction" TransportPodsArrivalAction
+DropPodLeaving --> "worldObjectDef" WorldObjectDef
+DropPodLeaving --> "Contents" ActiveDropPodInfo
+@enduml

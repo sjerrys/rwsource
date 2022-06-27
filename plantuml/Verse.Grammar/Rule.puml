@@ -1,0 +1,32 @@
+@startuml
+abstract class Rule {
+    + keyword : string
+    + tag : string
+    + requiredTag : string
+    + {abstract} BaseSelectionWeight : float <<get>>
+    + <<virtual>> Priority : float <<get>>
+    + <<virtual>> DeepCopy() : Rule
+    + {abstract} Generate() : string
+    + <<virtual>> Init() : void
+    + AddConstantConstraint(key:string, value:string, type:ConstantConstraint.Type) : void
+    + AddConstantConstraint(key:string, value:string, op:string) : void
+}
+class ConstantConstraint <<struct>> {
+    + key : string
+    + value : string
+}
+class "List`1"<T> {
+}
+enum Type {
+    Equal,
+    NotEqual,
+    Less,
+    Greater,
+    LessOrEqual,
+    GreaterOrEqual,
+}
+Rule --> "constantConstraints<ConstantConstraint>" "List`1"
+Rule +-- ConstantConstraint
+ConstantConstraint --> "type" Type
+ConstantConstraint +-- Type
+@enduml

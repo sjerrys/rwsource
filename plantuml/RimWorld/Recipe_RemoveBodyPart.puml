@@ -1,0 +1,9 @@
+@startuml
+class Recipe_RemoveBodyPart {
+    + <<override>> GetPartsToApplyOn(pawn:Pawn, recipe:RecipeDef) : IEnumerable<BodyPartRecord>
+    + <<override>> IsViolationOnPawn(pawn:Pawn, part:BodyPartRecord, billDoerFaction:Faction) : bool
+    + <<override>> ApplyOnPawn(pawn:Pawn, part:BodyPartRecord, billDoer:Pawn, ingredients:List<Thing>, bill:Bill) : void
+    + <<override>> GetLabelWhenUsedOn(pawn:Pawn, part:BodyPartRecord) : string
+}
+Recipe_Surgery <|-- Recipe_RemoveBodyPart
+@enduml

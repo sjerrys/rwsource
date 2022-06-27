@@ -1,0 +1,5 @@
+@startuml
+class ThinkNode_ConditionalHiveCanReproduce {
+}
+ThinkNode_Conditional <|-- ThinkNode_ConditionalHiveCanReproduce
+@enduml

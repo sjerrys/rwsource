@@ -1,0 +1,12 @@
+@startuml
+abstract class SketchBuildable {
+    + <<override>> Label : string <<get>>
+    + <<override>> LostImportantReferences : bool <<get>>
+    + {abstract} GetSpawnedBlueprintOrFrame(at:IntVec3, map:Map) : Thing
+    + <<override>> IsSameSpawnedOrBlueprintOrFrame(at:IntVec3, map:Map) : bool
+    + FirstPermanentBlockerAt(at:IntVec3, map:Map) : Thing
+}
+SketchEntity <|-- SketchBuildable
+SketchBuildable --> "Buildable" BuildableDef
+SketchBuildable --> "Stuff" ThingDef
+@enduml

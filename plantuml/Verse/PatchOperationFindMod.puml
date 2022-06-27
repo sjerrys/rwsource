@@ -1,0 +1,6 @@
+@startuml
+class PatchOperationFindMod {
+    + <<override>> ToString() : string
+}
+PatchOperation <|-- PatchOperationFindMod
+@enduml

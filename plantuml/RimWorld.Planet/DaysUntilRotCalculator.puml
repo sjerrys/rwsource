@@ -1,0 +1,12 @@
+@startuml
+class DaysUntilRotCalculator <<static>> {
+    + <<const>> InfiniteDaysUntilRot : float = 600f
+    + {static} ApproxDaysUntilRot(potentiallyFood:List<ThingCount>, tile:int, path:WorldPath, nextTileCostLeft:float, caravanTicksPerMove:int) : float
+    + {static} ApproxTicksUntilRot_AssumeTimePassesBy(rot:CompRottable, tile:int, ticksToArrive:List<Pair<int, int>>) : int
+    + {static} ApproxDaysUntilRot(caravan:Caravan) : float
+    + {static} ApproxDaysUntilRot(potentiallyFood:List<Thing>, tile:int, path:WorldPath, nextTileCostLeft:float, caravanTicksPerMove:int) : float
+    + {static} ApproxDaysUntilRot(transferables:List<TransferableOneWay>, tile:int, ignoreInventory:IgnorePawnsInventoryMode, path:WorldPath, nextTileCostLeft:float, caravanTicksPerMove:int) : float
+    + {static} ApproxDaysUntilRotLeftAfterTransfer(transferables:List<TransferableOneWay>, tile:int, ignoreInventory:IgnorePawnsInventoryMode, path:WorldPath, nextTileCostLeft:float, caravanTicksPerMove:int) : float
+    + {static} ApproxDaysUntilRotLeftAfterTradeableTransfer(allCurrentThings:List<Thing>, tradeables:List<Tradeable>, tile:int, ignoreInventory:IgnorePawnsInventoryMode) : float
+}
+@enduml

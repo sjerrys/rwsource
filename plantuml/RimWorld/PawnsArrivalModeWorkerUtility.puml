@@ -1,0 +1,7 @@
+@startuml
+class PawnsArrivalModeWorkerUtility <<static>> {
+    + {static} DropInDropPodsNearSpawnCenter(parms:IncidentParms, pawns:List<Pawn>) : void
+    + {static} SplitIntoRandomGroupsNearMapEdge(pawns:List<Pawn>, map:Map, arriveInPods:bool) : List<Pair<List<Pawn>, IntVec3>>
+    + {static} SetPawnGroupsInfo(parms:IncidentParms, groups:List<Pair<List<Pawn>, IntVec3>>) : void
+}
+@enduml

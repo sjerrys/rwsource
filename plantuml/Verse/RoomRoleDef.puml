@@ -1,0 +1,8 @@
+@startuml
+class RoomRoleDef {
+    + IsStatRelated(def:RoomStatDef) : bool
+}
+Def <|-- RoomRoleDef
+RoomRoleDef --> "workerClass" Type
+RoomRoleDef --> "Worker" RoomRoleWorker
+@enduml

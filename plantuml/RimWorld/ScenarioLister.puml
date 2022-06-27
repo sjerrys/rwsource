@@ -1,0 +1,9 @@
+@startuml
+class ScenarioLister <<static>> {
+    + {static} AllScenarios() : IEnumerable<Scenario>
+    + {static} ScenariosInCategory(cat:ScenarioCategory) : IEnumerable<Scenario>
+    + {static} ScenarioIsListedAnywhere(scen:Scenario) : bool
+    + {static} MarkDirty() : void
+    + {static} ScenarioListHash() : int
+}
+@enduml

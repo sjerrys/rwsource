@@ -1,0 +1,7 @@
+@startuml
+class PawnCapacityWorker_Hearing {
+    + <<override>> CalculateCapacityLevel(diffSet:HediffSet, impactors:List<PawnCapacityUtility.CapacityImpactor>) : float
+    + <<override>> CanHaveCapacity(body:BodyDef) : bool
+}
+PawnCapacityWorker <|-- PawnCapacityWorker_Hearing
+@enduml

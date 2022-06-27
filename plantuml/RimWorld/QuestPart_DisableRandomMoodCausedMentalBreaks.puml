@@ -1,0 +1,10 @@
+@startuml
+class QuestPart_DisableRandomMoodCausedMentalBreaks {
+    + <<override>> ExposeData() : void
+    + <<override>> ReplacePawnReferences(replace:Pawn, with:Pawn) : void
+}
+class "List`1"<T> {
+}
+QuestPartActivable <|-- QuestPart_DisableRandomMoodCausedMentalBreaks
+QuestPart_DisableRandomMoodCausedMentalBreaks o-> "pawns<Pawn>" "List`1"
+@enduml

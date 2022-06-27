@@ -1,0 +1,8 @@
+@startuml
+class StorytellerCompProperties_Triggered {
+    + delayTicks : int = 60
+    + StorytellerCompProperties_Triggered()
+}
+StorytellerCompProperties <|-- StorytellerCompProperties_Triggered
+StorytellerCompProperties_Triggered --> "incident" IncidentDef
+@enduml

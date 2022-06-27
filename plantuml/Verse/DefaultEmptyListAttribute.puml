@@ -1,0 +1,7 @@
+@startuml
+class DefaultEmptyListAttribute {
+    + DefaultEmptyListAttribute(type:Type)
+    + <<override>> ObjIsDefault(obj:object) : bool
+}
+DefaultValueAttribute <|-- DefaultEmptyListAttribute
+@enduml

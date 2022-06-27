@@ -1,0 +1,7 @@
+@startuml
+class SitePartWorker_ItemStash {
+    + <<override>> Notify_GeneratedByQuestGen(part:SitePart, slate:Slate, outExtraDescriptionRules:List<Rule>, outExtraDescriptionConstants:Dictionary<string, string>) : void
+    + <<override>> GetPostProcessedThreatLabel(site:Site, sitePart:SitePart) : string
+}
+SitePartWorker <|-- SitePartWorker_ItemStash
+@enduml

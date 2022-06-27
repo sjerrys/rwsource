@@ -1,0 +1,5 @@
+@startuml
+class ThoughtWorker_WantToSleepWithSpouseOrLover {
+}
+ThoughtWorker <|-- ThoughtWorker_WantToSleepWithSpouseOrLover
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class ScenPart_DisableIncident {
+}
+ScenPart_IncidentBase <|-- ScenPart_DisableIncident
+@enduml

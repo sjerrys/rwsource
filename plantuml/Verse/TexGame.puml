@@ -1,0 +1,9 @@
+@startuml
+class TexGame <<static>> {
+    {static} TexGame()
+}
+TexGame --> "AlphaAddTex" Texture2D
+TexGame --> "RippleTex" Texture2D
+TexGame --> "NoiseTex" Texture2D
+TexGame --> "InvisDistortion" Texture2D
+@enduml

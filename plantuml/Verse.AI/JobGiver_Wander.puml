@@ -1,0 +1,6 @@
+@startuml
+abstract class JobGiver_Wander {
+    + <<override>> DeepCopy(resolve:bool) : ThinkNode
+}
+ThinkNode_JobGiver <|-- JobGiver_Wander
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class StatWorker_MeleeAverageArmorPenetration {
+    + <<override>> ShouldShowFor(req:StatRequest) : bool
+    + <<override>> GetValueUnfinalized(req:StatRequest, applyPostProcess:bool) : float
+    + <<override>> GetExplanationUnfinalized(req:StatRequest, numberSense:ToStringNumberSense) : string
+}
+StatWorker <|-- StatWorker_MeleeAverageArmorPenetration
+@enduml

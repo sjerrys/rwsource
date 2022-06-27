@@ -1,0 +1,9 @@
+@startuml
+class GameEnder <<sealed>> {
+    + gameEnding : bool
+    + ExposeData() : void
+    + CheckOrUpdateGameOver() : void
+    + GameEndTick() : void
+}
+IExposable <|-- GameEnder
+@enduml

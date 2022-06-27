@@ -1,0 +1,6 @@
+@startuml
+class StatWorker_LeatherAmount {
+    + <<override>> GetInfoCardHyperlinks(statRequest:StatRequest) : IEnumerable<Dialog_InfoCard.Hyperlink>
+}
+StatWorker <|-- StatWorker_LeatherAmount
+@enduml

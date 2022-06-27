@@ -1,0 +1,8 @@
+@startuml
+class MentalState_SadisticRageTantrum {
+    + <<const>> MaxHits : int = 7
+    + <<override>> ExposeData() : void
+    + <<override>> Notify_AttackedTarget(hitTarget:LocalTargetInfo) : void
+}
+MentalState_TantrumRandom <|-- MentalState_SadisticRageTantrum
+@enduml

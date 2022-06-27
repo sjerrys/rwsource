@@ -1,0 +1,5 @@
+@startuml
+class ThoughtWorker_AlwaysActive {
+}
+ThoughtWorker <|-- ThoughtWorker_AlwaysActive
+@enduml

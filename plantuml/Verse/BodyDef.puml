@@ -1,0 +1,17 @@
+@startuml
+class BodyDef {
+    + GetPartsWithTag(tag:BodyPartTagDef) : IEnumerable<BodyPartRecord>
+    + GetPartsWithDef(def:BodyPartDef) : IEnumerable<BodyPartRecord>
+    + HasPartWithTag(tag:BodyPartTagDef) : bool
+    + GetPartAtIndex(index:int) : BodyPartRecord
+    + GetIndexOfPart(rec:BodyPartRecord) : int
+    + <<override>> ConfigErrors() : IEnumerable<string>
+    + <<override>> ResolveReferences() : void
+}
+class "List`1"<T> {
+}
+Def <|-- BodyDef
+BodyDef --> "corePart" BodyPartRecord
+BodyDef --> "AllParts<BodyPartRecord>" "List`1"
+BodyDef --> "AllPartsVulnerableToFrostbite<BodyPartRecord>" "List`1"
+@enduml

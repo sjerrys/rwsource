@@ -1,0 +1,19 @@
+@startuml
+class CompProperties_PawnSpawnOnWakeup {
+    + shouldJoinParentLord : bool
+    + activatedMessageKey : string
+    + aggressive : bool = true
+    + dropInPods : bool
+    + defendRadius : float = 21f
+    + CompProperties_PawnSpawnOnWakeup()
+}
+class "List`1"<T> {
+}
+CompProperties <|-- CompProperties_PawnSpawnOnWakeup
+CompProperties_PawnSpawnOnWakeup --> "spawnablePawnKinds<PawnKindDef>" "List`1"
+CompProperties_PawnSpawnOnWakeup --> "spawnSound" SoundDef
+CompProperties_PawnSpawnOnWakeup --> "spawnEffecter" EffecterDef
+CompProperties_PawnSpawnOnWakeup --> "lordJob" Type
+CompProperties_PawnSpawnOnWakeup --> "points" FloatRange
+CompProperties_PawnSpawnOnWakeup o-> "pawnSpawnRadius" IntRange
+@enduml

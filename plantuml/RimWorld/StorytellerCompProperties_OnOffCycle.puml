@@ -1,0 +1,17 @@
+@startuml
+class StorytellerCompProperties_OnOffCycle {
+    + onDays : float
+    + offDays : float
+    + minSpacingDays : float
+    + forceRaidEnemyBeforeDaysPassed : float
+    + StorytellerCompProperties_OnOffCycle()
+    + <<override>> ConfigErrors(parentDef:StorytellerDef) : IEnumerable<string>
+}
+StorytellerCompProperties <|-- StorytellerCompProperties_OnOffCycle
+StorytellerCompProperties_OnOffCycle o-> "numIncidentsRange" FloatRange
+StorytellerCompProperties_OnOffCycle --> "acceptFractionByDaysPassedCurve" SimpleCurve
+StorytellerCompProperties_OnOffCycle --> "acceptPercentFactorPerThreatPointsCurve" SimpleCurve
+StorytellerCompProperties_OnOffCycle --> "acceptPercentFactorPerProgressScoreCurve" SimpleCurve
+StorytellerCompProperties_OnOffCycle --> "incident" IncidentDef
+StorytellerCompProperties_OnOffCycle --> "IncidentCategory" IncidentCategoryDef
+@enduml

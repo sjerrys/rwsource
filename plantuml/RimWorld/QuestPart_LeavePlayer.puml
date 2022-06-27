@@ -1,0 +1,16 @@
+@startuml
+class QuestPart_LeavePlayer {
+    + inSignal : string
+    + inSignalRemovePawn : string
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> Notify_FactionRemoved(faction:Faction) : void
+    + <<override>> QuestPartReserves(p:Pawn) : bool
+    + <<override>> ReplacePawnReferences(replace:Pawn, with:Pawn) : void
+    + <<override>> ExposeData() : void
+}
+class "List`1"<T> {
+}
+QuestPart <|-- QuestPart_LeavePlayer
+QuestPart_LeavePlayer o-> "pawns<Pawn>" "List`1"
+QuestPart_LeavePlayer --> "replacementFaction" Faction
+@enduml

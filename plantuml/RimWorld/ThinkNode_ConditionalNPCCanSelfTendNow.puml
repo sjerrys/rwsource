@@ -1,0 +1,5 @@
+@startuml
+class ThinkNode_ConditionalNPCCanSelfTendNow {
+}
+ThinkNode_Conditional <|-- ThinkNode_ConditionalNPCCanSelfTendNow
+@enduml

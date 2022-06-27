@@ -1,0 +1,8 @@
+@startuml
+class DeepDrillUtility <<static>> {
+    + <<const>> NumCellsToScan : int = 21
+    + {static} GetNextResource(p:IntVec3, map:Map) : ThingDef
+    + {static} GetNextResource(p:IntVec3, map:Map, resDef:ThingDef, countPresent:int, cell:IntVec3) : bool
+    + {static} GetBaseResource(map:Map, cell:IntVec3) : ThingDef
+}
+@enduml

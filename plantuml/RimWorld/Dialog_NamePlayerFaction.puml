@@ -1,0 +1,6 @@
+@startuml
+class Dialog_NamePlayerFaction {
+    + Dialog_NamePlayerFaction()
+}
+Dialog_GiveName <|-- Dialog_NamePlayerFaction
+@enduml

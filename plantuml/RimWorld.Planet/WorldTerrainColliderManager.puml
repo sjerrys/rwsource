@@ -1,0 +1,6 @@
+@startuml
+class WorldTerrainColliderManager <<static>> {
+    {static} WorldTerrainColliderManager()
+}
+WorldTerrainColliderManager --> "GameObject" GameObject
+@enduml

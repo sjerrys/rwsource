@@ -1,0 +1,41 @@
+@startuml
+class ThoughtDef {
+    + stackLimit : int = 1
+    + stackedEffectMultiplier : float = 0.75f
+    + durationDays : float
+    + invert : bool
+    + validWhileDespawned : bool
+    + requiredTraitsDegree : int
+    + nullifiedIfNotColonist : bool
+    + showBubble : bool
+    + stackLimitForSameOtherPawn : int
+    + lerpOpinionToZeroAfterDurationPct : float = 0.7f
+    + maxCumulatedOpinionOffset : float
+    + Label : string <<get>>
+    + DurationTicks : int <<get>>
+    + IsMemory : bool <<get>>
+    + IsSituational : bool <<get>>
+    + IsSocial : bool <<get>>
+    + RequiresSpecificTraitsDegree : bool <<get>>
+    + <<override>> ConfigErrors() : IEnumerable<string>
+    + {static} Named(defName:string) : ThoughtDef
+}
+class "List`1"<T> {
+}
+Def <|-- ThoughtDef
+ThoughtDef --> "thoughtClass" Type
+ThoughtDef --> "workerClass" Type
+ThoughtDef o-> "stages<ThoughtStage>" "List`1"
+ThoughtDef --> "nextThought" ThoughtDef
+ThoughtDef --> "nullifyingTraits<TraitDef>" "List`1"
+ThoughtDef --> "nullifyingOwnTales<TaleDef>" "List`1"
+ThoughtDef --> "requiredTraits<TraitDef>" "List`1"
+ThoughtDef --> "effectMultiplyingStat" StatDef
+ThoughtDef --> "hediff" HediffDef
+ThoughtDef --> "gameCondition" GameConditionDef
+ThoughtDef --> "thoughtToMake" ThoughtDef
+ThoughtDef --> "taleDef" TaleDef
+ThoughtDef --> "Worker" ThoughtWorker
+ThoughtDef --> "ThoughtClass" Type
+ThoughtDef --> "Icon" Texture2D
+@enduml

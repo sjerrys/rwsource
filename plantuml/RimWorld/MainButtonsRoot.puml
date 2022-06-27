@@ -1,0 +1,8 @@
+@startuml
+class MainButtonsRoot {
+    + MainButtonsRoot()
+    + MainButtonsOnGUI() : void
+    + HandleLowPriorityShortcuts() : void
+}
+MainButtonsRoot o-> "tabs" MainTabsRoot
+@enduml

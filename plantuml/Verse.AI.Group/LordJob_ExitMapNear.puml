@@ -1,0 +1,10 @@
+@startuml
+class LordJob_ExitMapNear {
+    + <<const>> DefaultRadius : float = 12f
+    + LordJob_ExitMapNear()
+    + LordJob_ExitMapNear(near:IntVec3, locomotion:LocomotionUrgency, radius:float, canDig:bool, useAvoidGridSmart:bool)
+    + <<override>> CreateGraph() : StateGraph
+    + <<override>> ExposeData() : void
+}
+LordJob <|-- LordJob_ExitMapNear
+@enduml

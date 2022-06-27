@@ -1,0 +1,9 @@
+@startuml
+class Building_ShipReactor {
+    + charlonsReactor : bool
+    + <<override>> Destroy(mode:DestroyMode) : void
+    + <<override>> GetGizmos() : IEnumerable<Gizmo>
+    + <<override>> ExposeData() : void
+}
+Building <|-- Building_ShipReactor
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+abstract class CaravanArrivalAction {
+    + {abstract} Label : string <<get>>
+    + {abstract} ReportString : string <<get>>
+    + <<virtual>> StillValid(caravan:Caravan, destinationTile:int) : FloatMenuAcceptanceReport
+    + {abstract} Arrived(caravan:Caravan) : void
+    + <<virtual>> ExposeData() : void
+}
+IExposable <|-- CaravanArrivalAction
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+enum CaravanEnterMode {
+    None,
+    Edge,
+    Center,
+}
+@enduml

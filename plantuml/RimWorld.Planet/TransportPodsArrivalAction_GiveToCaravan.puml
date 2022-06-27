@@ -1,0 +1,12 @@
+@startuml
+class TransportPodsArrivalAction_GiveToCaravan {
+    + TransportPodsArrivalAction_GiveToCaravan()
+    + TransportPodsArrivalAction_GiveToCaravan(caravan:Caravan)
+    + <<override>> ExposeData() : void
+    + <<override>> StillValid(pods:IEnumerable<IThingHolder>, destinationTile:int) : FloatMenuAcceptanceReport
+    + <<override>> Arrived(pods:List<ActiveDropPodInfo>, tile:int) : void
+    + {static} CanGiveTo(pods:IEnumerable<IThingHolder>, caravan:Caravan) : FloatMenuAcceptanceReport
+    + {static} GetFloatMenuOptions(representative:CompLaunchable, pods:IEnumerable<IThingHolder>, caravan:Caravan) : IEnumerable<FloatMenuOption>
+}
+TransportPodsArrivalAction <|-- TransportPodsArrivalAction_GiveToCaravan
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class MatBases <<static>> {
+}
+MatBases o-> "LightOverlay" Material
+MatBases o-> "SunShadow" Material
+MatBases o-> "SunShadowFade" Material
+MatBases o-> "EdgeShadow" Material
+MatBases o-> "IndoorMask" Material
+MatBases o-> "FogOfWar" Material
+MatBases o-> "Snow" Material
+@enduml

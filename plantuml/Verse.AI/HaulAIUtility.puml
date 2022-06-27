@@ -1,0 +1,12 @@
+@startuml
+class HaulAIUtility <<static>> {
+    + {static} Reset() : void
+    + {static} PawnCanAutomaticallyHaul(p:Pawn, t:Thing, forced:bool) : bool
+    + {static} PawnCanAutomaticallyHaulFast(p:Pawn, t:Thing, forced:bool) : bool
+    + {static} HaulToStorageJob(p:Pawn, t:Thing) : Job
+    + {static} HaulToCellStorageJob(p:Pawn, t:Thing, storeCell:IntVec3, fitInStoreCell:bool) : Job
+    + {static} HaulToContainerJob(p:Pawn, t:Thing, container:Thing) : Job
+    + {static} CanHaulAside(p:Pawn, t:Thing, storeCell:IntVec3) : bool
+    + {static} HaulAsideJobFor(p:Pawn, t:Thing) : Job
+}
+@enduml

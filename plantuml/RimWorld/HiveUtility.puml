@@ -1,0 +1,7 @@
+@startuml
+class HiveUtility <<static>> {
+    + {static} TotalSpawnedHivesCount(map:Map) : int
+    + {static} AnyHivePreventsClaiming(thing:Thing) : bool
+    + {static} Notify_HiveDespawned(hive:Hive, map:Map) : void
+}
+@enduml

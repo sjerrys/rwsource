@@ -1,0 +1,9 @@
+@startuml
+class DebugLine <<struct>> {
+    + Done : bool <<get>>
+    + DebugLine(a:Vector3, b:Vector3, ticksLeft:int, color:SimpleColor)
+    + Draw() : void
+}
+DebugLine --> "a" Vector3
+DebugLine --> "b" Vector3
+@enduml

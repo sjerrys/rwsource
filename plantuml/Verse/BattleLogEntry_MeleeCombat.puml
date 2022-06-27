@@ -1,0 +1,17 @@
+@startuml
+class BattleLogEntry_MeleeCombat {
+    + alwaysShowInCompact : bool
+    + BattleLogEntry_MeleeCombat()
+    + BattleLogEntry_MeleeCombat(ruleDef:RulePackDef, alwaysShowInCompact:bool, initiator:Pawn, recipient:Thing, implementType:ImplementOwnerTypeDef, toolLabel:string, ownerEquipmentDef:ThingDef, ownerHediffDef:HediffDef, def:LogEntryDef)
+    + <<override>> Concerns(t:Thing) : bool
+    + <<override>> GetConcerns() : IEnumerable<Thing>
+    + <<override>> CanBeClickedFromPOV(pov:Thing) : bool
+    + <<override>> ClickedFromPOV(pov:Thing) : void
+    + <<override>> IconFromPOV(pov:Thing) : Texture2D
+    + <<override>> ShowInCompactView() : bool
+    + <<override>> ExposeData() : void
+    + <<override>> ToString() : string
+}
+LogEntry_DamageResult <|-- BattleLogEntry_MeleeCombat
+BattleLogEntry_MeleeCombat --> "RuleDef" RulePackDef
+@enduml

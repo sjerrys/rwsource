@@ -1,0 +1,6 @@
+@startuml
+class GenClamor <<static>> {
+    + {static} DoClamor(source:Thing, radius:float, type:ClamorDef) : void
+    + {static} DoClamor(source:Thing, position:IntVec3, radius:float, type:ClamorDef) : void
+}
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class Instruction_EquipWeapons {
+    + {static} IsWeapon(t:Thing) : bool
+    + <<override>> LessonOnGUI() : void
+    + <<override>> LessonUpdate() : void
+}
+Lesson_Instruction <|-- Instruction_EquipWeapons
+@enduml

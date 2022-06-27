@@ -1,0 +1,7 @@
+@startuml
+class WorldPathPool {
+    {static} WorldPathPool()
+    + GetEmptyWorldPath() : WorldPath
+}
+WorldPathPool --> "NotFoundPath" WorldPath
+@enduml

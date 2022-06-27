@@ -1,0 +1,6 @@
+@startuml
+class SymbolResolver_Interior_AncientTemple {
+    + <<override>> Resolve(rp:ResolveParams) : void
+}
+SymbolResolver <|-- SymbolResolver_Interior_AncientTemple
+@enduml

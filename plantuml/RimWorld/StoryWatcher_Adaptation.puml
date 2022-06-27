@@ -1,0 +1,11 @@
+@startuml
+class StoryWatcher_Adaptation {
+    + TotalThreatPointsFactor : float <<get>>
+    + AdaptDays : float <<get>>
+    + Notify_PawnEvent(p:Pawn, ev:AdaptationEvent, dinfo:DamageInfo?) : void
+    + AdaptationWatcherTick() : void
+    + ExposeData() : void
+    + Debug_OffsetAdaptDays(days:float) : void
+}
+IExposable <|-- StoryWatcher_Adaptation
+@enduml

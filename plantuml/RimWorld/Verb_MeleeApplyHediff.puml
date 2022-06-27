@@ -1,0 +1,6 @@
+@startuml
+class Verb_MeleeApplyHediff {
+    + <<override>> IsUsableOn(target:Thing) : bool
+}
+Verb_MeleeAttack <|-- Verb_MeleeApplyHediff
+@enduml

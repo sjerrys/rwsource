@@ -1,0 +1,6 @@
+@startuml
+class TraitMentalStateGiver {
+    + <<virtual>> CheckGive(pawn:Pawn, checkInterval:int) : bool
+}
+TraitMentalStateGiver --> "traitDegreeData" TraitDegreeData
+@enduml

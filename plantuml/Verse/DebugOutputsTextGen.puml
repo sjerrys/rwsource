@@ -1,0 +1,14 @@
+@startuml
+class DebugOutputsTextGen <<static>> {
+    + {static} FlavorfulCombatTest() : void
+    + {static} RandomPawnForCombat() : Pawn
+    + {static} ArtDescsSpecificTale() : void
+    + {static} NamesFromRulepack() : void
+    + {static} DatabaseTalesList() : void
+    + {static} DatabaseTalesInterest() : void
+    + {static} ArtDescsDatabaseTales() : void
+    + {static} ArtDescsRandomTales() : void
+    + {static} ArtDescsTaleless() : void
+    + {static} InteractionLogs() : void
+}
+@enduml

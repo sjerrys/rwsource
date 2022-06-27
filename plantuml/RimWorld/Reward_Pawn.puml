@@ -1,0 +1,21 @@
+@startuml
+class Reward_Pawn {
+    + detailsHidden : bool
+    + <<override>> InitFromValue(rewardValue:float, parms:RewardsGeneratorParams, valueActuallyUsed:float) : void
+    + <<override>> GenerateQuestParts(index:int, parms:RewardsGeneratorParams, customLetterLabel:string, customLetterText:string, customLetterLabelRules:RulePack, customLetterTextRules:RulePack) : IEnumerable<QuestPart>
+    + <<override>> GetDescription(parms:RewardsGeneratorParams) : string
+    + <<override>> ToString() : string
+    + <<override>> ExposeData() : void
+}
+enum ArrivalMode {
+    WalkIn,
+    DropPod,
+}
+class "IEnumerable`1"<T> {
+}
+Reward <|-- Reward_Pawn
+Reward_Pawn --> "pawn" Pawn
+Reward_Pawn --> "arrivalMode" ArrivalMode
+Reward_Pawn --> "StackElements<GenUI.AnonymousStackElement>" "IEnumerable`1"
+Reward_Pawn +-- ArrivalMode
+@enduml

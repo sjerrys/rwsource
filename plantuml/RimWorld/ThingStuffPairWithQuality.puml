@@ -1,0 +1,19 @@
+@startuml
+class ThingStuffPairWithQuality <<struct>> {
+    + quality : QualityCategory?
+    + ThingStuffPairWithQuality(thing:ThingDef, stuff:ThingDef, quality:QualityCategory)
+    + GetStatValue(stat:StatDef) : float
+    + <<override>> Equals(obj:object) : bool
+    + Equals(other:ThingStuffPairWithQuality) : bool
+    + <<override>> GetHashCode() : int
+    + MakeThing() : Thing
+    + ExposeData() : void
+}
+class "IEquatable`1"<T> {
+}
+"IEquatable`1" "<ThingStuffPairWithQuality>" <|-- ThingStuffPairWithQuality
+IExposable <|-- ThingStuffPairWithQuality
+ThingStuffPairWithQuality --> "thing" ThingDef
+ThingStuffPairWithQuality --> "stuff" ThingDef
+ThingStuffPairWithQuality --> "Quality" QualityCategory
+@enduml

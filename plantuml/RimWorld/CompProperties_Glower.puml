@@ -1,0 +1,9 @@
+@startuml
+class CompProperties_Glower {
+    + overlightRadius : float
+    + glowRadius : float = 14f
+    + CompProperties_Glower()
+}
+CompProperties <|-- CompProperties_Glower
+CompProperties_Glower o-> "glowColor" ColorInt
+@enduml

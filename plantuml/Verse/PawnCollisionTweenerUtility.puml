@@ -1,0 +1,5 @@
+@startuml
+class PawnCollisionTweenerUtility <<static>> {
+    + {static} PawnCollisionPosOffsetFor(pawn:Pawn) : Vector3
+}
+@enduml

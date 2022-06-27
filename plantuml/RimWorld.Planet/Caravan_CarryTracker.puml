@@ -1,0 +1,17 @@
+@startuml
+class Caravan_CarryTracker {
+    + Caravan_CarryTracker()
+    + Caravan_CarryTracker(caravan:Caravan)
+    + CarryTrackerTick() : void
+    + ExposeData() : void
+    + IsCarried(p:Pawn) : bool
+    + Notify_CaravanSpawned() : void
+    + Notify_PawnRemoved() : void
+    + GetInspectStringLine() : string
+}
+class "List`1"<T> {
+}
+IExposable <|-- Caravan_CarryTracker
+Caravan_CarryTracker --> "caravan" Caravan
+Caravan_CarryTracker --> "CarriedPawnsListForReading<Pawn>" "List`1"
+@enduml

@@ -1,0 +1,18 @@
+@startuml
+class SymbolStack {
+    + Empty : bool <<get>>
+    + Count : int <<get>>
+    + Push(symbol:string, resolveParams:ResolveParams, customNameForPath:string) : void
+    + Push(symbol:string, rect:CellRect, customNameForPath:string) : void
+    + PushMany(resolveParams:ResolveParams, symbols:string[]) : void
+    + PushMany(rect:CellRect, symbols:string[]) : void
+    + Pop() : Element
+    + Clear() : void
+}
+class Element <<struct>> {
+    + symbol : string
+    + symbolPath : string
+}
+SymbolStack +-- Element
+Element --> "resolveParams" ResolveParams
+@enduml

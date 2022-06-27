@@ -1,0 +1,10 @@
+@startuml
+class ShaderTypeDefOf <<static>> {
+    {static} ShaderTypeDefOf()
+}
+ShaderTypeDefOf --> "Cutout" ShaderTypeDef
+ShaderTypeDefOf --> "CutoutComplex" ShaderTypeDef
+ShaderTypeDefOf --> "Transparent" ShaderTypeDef
+ShaderTypeDefOf --> "MetaOverlay" ShaderTypeDef
+ShaderTypeDefOf --> "EdgeDetect" ShaderTypeDef
+@enduml

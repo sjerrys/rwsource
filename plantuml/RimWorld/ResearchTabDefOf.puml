@@ -1,0 +1,6 @@
+@startuml
+class ResearchTabDefOf <<static>> {
+    {static} ResearchTabDefOf()
+}
+ResearchTabDefOf --> "Main" ResearchTabDef
+@enduml

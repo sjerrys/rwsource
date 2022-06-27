@@ -1,0 +1,20 @@
+@startuml
+class Building_PlantGrower {
+    + <<override>> GetGizmos() : IEnumerable<Gizmo>
+    + <<override>> PostMake() : void
+    + <<override>> SpawnSetup(map:Map, respawningAfterLoad:bool) : void
+    + <<override>> ExposeData() : void
+    + <<override>> TickRare() : void
+    + <<override>> DeSpawn(mode:DestroyMode) : void
+    + <<override>> GetInspectString() : string
+    + GetPlantDefToGrow() : ThingDef
+    + SetPlantDefToGrow(plantDef:ThingDef) : void
+    + CanAcceptSowNow() : bool
+}
+class "IEnumerable`1"<T> {
+}
+Building <|-- Building_PlantGrower
+IPlantToGrowSettable <|-- Building_PlantGrower
+Building_PlantGrower --> "PlantsOnMe<Plant>" "IEnumerable`1"
+Building_PlantGrower --> "Cells<IntVec3>" "IEnumerable`1"
+@enduml

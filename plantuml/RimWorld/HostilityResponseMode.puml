@@ -1,0 +1,7 @@
+@startuml
+enum HostilityResponseMode {
+    Ignore,
+    Attack,
+    Flee,
+}
+@enduml

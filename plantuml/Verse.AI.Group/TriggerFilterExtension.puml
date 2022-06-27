@@ -1,0 +1,5 @@
+@startuml
+class TriggerFilterExtension <<static>> {
+    + {static} WithFilter(t:Trigger, f:TriggerFilter) : Trigger
+}
+@enduml

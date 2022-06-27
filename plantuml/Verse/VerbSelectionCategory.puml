@@ -1,0 +1,7 @@
+@startuml
+enum VerbSelectionCategory {
+    Best,
+    Mid,
+    Worst,
+}
+@enduml

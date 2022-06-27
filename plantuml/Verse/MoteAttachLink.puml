@@ -1,0 +1,10 @@
+@startuml
+class MoteAttachLink <<struct>> {
+    + Linked : bool <<get>>
+    + MoteAttachLink(target:TargetInfo)
+    + UpdateDrawPos() : void
+}
+MoteAttachLink --> "Target" TargetInfo
+MoteAttachLink --> "LastDrawPos" Vector3
+MoteAttachLink --> "Invalid" MoteAttachLink
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class JobGiver_PrepareCaravan_GatherDownedPawns {
+    + {static} IsDownedPawnNearExitPoint(downedPawn:Pawn, exitPoint:IntVec3) : bool
+}
+ThinkNode_JobGiver <|-- JobGiver_PrepareCaravan_GatherDownedPawns
+@enduml

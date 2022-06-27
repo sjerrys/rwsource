@@ -1,0 +1,11 @@
+@startuml
+class QuestNode_Clamp {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_Clamp
+QuestNode_Clamp --> "value<double>" "SlateRef`1"
+QuestNode_Clamp --> "storeAs<string>" "SlateRef`1"
+QuestNode_Clamp --> "min<double?>" "SlateRef`1"
+QuestNode_Clamp --> "max<double?>" "SlateRef`1"
+@enduml

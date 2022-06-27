@@ -1,0 +1,48 @@
+@startuml
+class ThingWithComps {
+    + <<override>> LabelNoCount : string <<get>>
+    + <<override>> DescriptionFlavor : string <<get>>
+    + <<override>> PostMake() : void
+    + GetComp() : T
+    + GetComps() : IEnumerable<T>
+    + GetCompByDef(def:CompProperties) : ThingComp
+    + InitializeComps() : void
+    + <<override>> GetCustomLabelNoCount(includeHp:bool) : string
+    + <<override>> ExposeData() : void
+    + BroadcastCompSignal(signal:string) : void
+    + <<override>> SpawnSetup(map:Map, respawningAfterLoad:bool) : void
+    + <<override>> DeSpawn(mode:DestroyMode) : void
+    + <<override>> Destroy(mode:DestroyMode) : void
+    + <<override>> Tick() : void
+    + <<override>> TickRare() : void
+    + <<override>> TickLong() : void
+    + <<override>> PreApplyDamage(dinfo:DamageInfo, absorbed:bool) : void
+    + <<override>> PostApplyDamage(dinfo:DamageInfo, totalDamageDealt:float) : void
+    + <<override>> Draw() : void
+    + <<override>> DrawExtraSelectionOverlays() : void
+    + <<override>> Print(layer:SectionLayer) : void
+    + <<virtual>> PrintForPowerGrid(layer:SectionLayer) : void
+    + <<override>> GetGizmos() : IEnumerable<Gizmo>
+    + <<override>> TryAbsorbStack(other:Thing, respectStackLimit:bool) : bool
+    + <<override>> SplitOff(count:int) : Thing
+    + <<override>> CanStackWith(other:Thing) : bool
+    + <<override>> GetInspectString() : string
+    + <<override>> DrawGUIOverlay() : void
+    + <<override>> GetFloatMenuOptions(selPawn:Pawn) : IEnumerable<FloatMenuOption>
+    + <<override>> GetMultiSelectFloatMenuOptions(selPawns:List<Pawn>) : IEnumerable<FloatMenuOption>
+    + <<override>> PreTraded(action:TradeAction, playerNegotiator:Pawn, trader:ITrader) : void
+    + <<override>> PostGeneratedForTrader(trader:TraderKindDef, forTile:int, forFaction:Faction) : void
+    + <<override>> Notify_SignalReceived(signal:Signal) : void
+    + <<override>> Notify_LordDestroyed() : void
+    + <<override>> Notify_Equipped(pawn:Pawn) : void
+    + <<override>> Notify_UsedWeapon(pawn:Pawn) : void
+    + Notify_KilledPawn(pawn:Pawn) : void
+    + <<override>> SpecialDisplayStats() : IEnumerable<StatDrawEntry>
+    + <<override>> Notify_Explosion(explosion:Explosion) : void
+}
+class "List`1"<T> {
+}
+Thing <|-- ThingWithComps
+ThingWithComps --> "AllComps<ThingComp>" "List`1"
+ThingWithComps --> "DrawColor" Color
+@enduml

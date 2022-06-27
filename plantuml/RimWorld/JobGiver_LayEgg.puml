@@ -1,0 +1,5 @@
+@startuml
+class JobGiver_LayEgg {
+}
+ThinkNode_JobGiver <|-- JobGiver_LayEgg
+@enduml

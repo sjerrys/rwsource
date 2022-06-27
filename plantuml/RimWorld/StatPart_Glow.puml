@@ -1,0 +1,8 @@
+@startuml
+class StatPart_Glow {
+    + <<override>> ConfigErrors() : IEnumerable<string>
+    + <<override>> TransformValue(req:StatRequest, val:float) : void
+    + <<override>> ExplanationPart(req:StatRequest) : string
+}
+StatPart <|-- StatPart_Glow
+@enduml

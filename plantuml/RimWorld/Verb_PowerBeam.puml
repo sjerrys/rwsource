@@ -1,0 +1,6 @@
+@startuml
+class Verb_PowerBeam {
+    + <<override>> HighlightFieldRadiusAroundTarget(needLOSToCenter:bool) : float
+}
+Verb_CastBase <|-- Verb_PowerBeam
+@enduml

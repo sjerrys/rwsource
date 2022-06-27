@@ -1,0 +1,8 @@
+@startuml
+class QuestPart_EscortPawn {
+    + <<override>> ExposeData() : void
+}
+QuestPart_MakeLord <|-- QuestPart_EscortPawn
+QuestPart_EscortPawn --> "escortee" Pawn
+QuestPart_EscortPawn --> "shuttle" Thing
+@enduml

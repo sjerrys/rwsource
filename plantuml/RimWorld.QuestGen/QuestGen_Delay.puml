@@ -1,0 +1,6 @@
+@startuml
+class QuestGen_Delay <<static>> {
+    + {static} WorldObjectTimeout(quest:Quest, worldObject:WorldObject, delayTicks:int, inSignalEnable:string, inSignalDisable:string, reactivatable:bool, outSignalsCompleted:List<string>, isQuestTimeout:bool) : QuestPart_WorldObjectTimeout
+    + {static} Delay(quest:Quest, delayTicks:int, inner:Action, inSignalEnable:string, inSignalDisable:string, outSignalComplete:string, reactivatable:bool, inspectStringTargets:IEnumerable<ISelectable>, inspectString:string, isQuestTimeout:bool, expiryInfoPart:string, expiryInfoPartTip:string, debugLabel:string, tickHistorically:bool, signalListenMode:QuestPart.SignalListenMode) : QuestPart_Delay
+}
+@enduml

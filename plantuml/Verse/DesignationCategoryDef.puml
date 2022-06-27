@@ -1,0 +1,17 @@
+@startuml
+class DesignationCategoryDef {
+    + order : int
+    + showPowerGrid : bool
+    + cachedHighlightClosedTag : string
+    + <<override>> ResolveReferences() : void
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+Def <|-- DesignationCategoryDef
+DesignationCategoryDef o-> "specialDesignatorClasses<Type>" "List`1"
+DesignationCategoryDef --> "bindingCatDef" KeyBindingCategoryDef
+DesignationCategoryDef --> "ResolvedAllowedDesignators<Designator>" "IEnumerable`1"
+DesignationCategoryDef --> "AllResolvedDesignators<Designator>" "List`1"
+@enduml

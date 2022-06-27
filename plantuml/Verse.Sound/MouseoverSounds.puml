@@ -1,0 +1,18 @@
+@startuml
+class MouseoverSounds <<static>> {
+    + {static} SilenceForNextFrame() : void
+    + {static} DoRegion(rect:Rect) : void
+    + {static} DoRegion(rect:Rect, sound:SoundDef) : void
+    + {static} ResolveFrame() : void
+}
+class MouseoverRegionCall <<struct>> {
+    + mouseIsOver : bool
+    + IsValid : bool <<get>>
+    + Matches(other:MouseoverRegionCall) : bool
+    + <<override>> ToString() : string
+}
+MouseoverSounds +-- MouseoverRegionCall
+MouseoverRegionCall --> "rect" Rect
+MouseoverRegionCall --> "sound" SoundDef
+MouseoverRegionCall --> "Invalid" MouseoverRegionCall
+@enduml

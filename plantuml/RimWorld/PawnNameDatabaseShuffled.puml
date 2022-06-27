@@ -1,0 +1,6 @@
+@startuml
+class PawnNameDatabaseShuffled <<static>> {
+    {static} PawnNameDatabaseShuffled()
+    + {static} BankOf(category:PawnNameCategory) : NameBank
+}
+@enduml

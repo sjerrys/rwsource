@@ -1,0 +1,8 @@
+@startuml
+class Designator_ZoneDelete {
+    + Designator_ZoneDelete()
+    + <<override>> CanDesignateCell(sq:IntVec3) : AcceptanceReport
+    + <<override>> DesignateSingleCell(c:IntVec3) : void
+}
+Designator_Zone <|-- Designator_ZoneDelete
+@enduml

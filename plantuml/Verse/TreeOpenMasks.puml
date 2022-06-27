@@ -1,0 +1,12 @@
+@startuml
+class TreeOpenMasks <<static>> {
+    + <<const>> All : int
+    + <<const>> Default : int = 1
+    + <<const>> ThingFilter : int = 2
+    + <<const>> BillConfig : int = 4
+    + <<const>> Storage : int = 8
+    + <<const>> Outfits : int = 16
+    + <<const>> ResourceReadout : int = 32
+    + <<const>> TreeDefs : int = 64
+}
+@enduml

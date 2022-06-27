@@ -1,0 +1,7 @@
+@startuml
+abstract class JobDriver_GatherAnimalBodyResources {
+    + <<override>> ExposeData() : void
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+}
+JobDriver <|-- JobDriver_GatherAnimalBodyResources
+@enduml

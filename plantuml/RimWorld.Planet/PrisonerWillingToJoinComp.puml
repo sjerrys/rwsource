@@ -1,0 +1,7 @@
+@startuml
+class PrisonerWillingToJoinComp {
+    + <<override>> CompInspectStringExtra() : string
+}
+ImportantPawnComp <|-- PrisonerWillingToJoinComp
+IThingHolder <|-- PrisonerWillingToJoinComp
+@enduml

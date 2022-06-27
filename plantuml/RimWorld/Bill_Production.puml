@@ -1,0 +1,30 @@
+@startuml
+class Bill_Production {
+    + repeatCount : int = 1
+    + targetCount : int = 10
+    + pauseWhenSatisfied : bool
+    + unpauseWhenYouHave : int = 5
+    + includeEquipped : bool
+    + includeTainted : bool
+    + limitToAllowedStuff : bool
+    + paused : bool
+    + RepeatInfoText : string <<get>>
+    + Bill_Production()
+    + Bill_Production(recipe:RecipeDef)
+    + <<override>> ExposeData() : void
+    + <<override>> GetStoreMode() : BillStoreModeDef
+    + <<override>> GetStoreZone() : Zone_Stockpile
+    + <<override>> SetStoreMode(mode:BillStoreModeDef, zone:Zone_Stockpile) : void
+    + <<override>> ShouldDoNow() : bool
+    + <<override>> Notify_IterationCompleted(billDoer:Pawn, ingredients:List<Thing>) : void
+    + <<override>> DoStatusLineInterface(rect:Rect) : void
+    + <<override>> ValidateSettings() : void
+    + <<override>> Clone() : Bill
+}
+Bill <|-- Bill_Production
+IExposable <|-- Bill_Production
+Bill_Production o-> "repeatMode" BillRepeatModeDef
+Bill_Production --> "includeFromZone" Zone_Stockpile
+Bill_Production o-> "hpRange" FloatRange
+Bill_Production o-> "qualityRange" QualityRange
+@enduml

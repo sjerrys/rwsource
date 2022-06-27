@@ -1,0 +1,10 @@
+@startuml
+class WorkGiver_ClearSnow {
+    + <<override>> PotentialWorkCellsGlobal(pawn:Pawn) : IEnumerable<IntVec3>
+    + <<override>> ShouldSkip(pawn:Pawn, forced:bool) : bool
+    + <<override>> HasJobOnCell(pawn:Pawn, c:IntVec3, forced:bool) : bool
+    + <<override>> JobOnCell(pawn:Pawn, c:IntVec3, forced:bool) : Job
+}
+WorkGiver_Scanner <|-- WorkGiver_ClearSnow
+WorkGiver_ClearSnow --> "PathEndMode" PathEndMode
+@enduml

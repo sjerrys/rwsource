@@ -1,0 +1,6 @@
+@startuml
+class IncidentWorker_ColdSnap {
+    + {static} IsTemperatureAppropriate(map:Map) : bool
+}
+IncidentWorker_MakeGameCondition <|-- IncidentWorker_ColdSnap
+@enduml

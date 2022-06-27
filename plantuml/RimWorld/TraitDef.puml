@@ -1,0 +1,25 @@
+@startuml
+class TraitDef {
+    + allowOnHostileSpawn : bool = true
+    + {static} Named(defName:string) : TraitDef
+    + DataAtDegree(degree:int) : TraitDegreeData
+    + <<override>> ConfigErrors() : IEnumerable<string>
+    + ConflictsWith(other:Trait) : bool
+    + ConflictsWith(other:TraitDef) : bool
+    + ConflictsWithPassion(passion:SkillDef) : bool
+    + RequiresPassion(passion:SkillDef) : bool
+    + GetGenderSpecificCommonality(gender:Gender) : float
+}
+class "List`1"<T> {
+}
+Def <|-- TraitDef
+TraitDef o-> "degreeDatas<TraitDegreeData>" "List`1"
+TraitDef o-> "conflictingTraits<TraitDef>" "List`1"
+TraitDef o-> "exclusionTags<string>" "List`1"
+TraitDef o-> "conflictingPassions<SkillDef>" "List`1"
+TraitDef o-> "forcedPassions<SkillDef>" "List`1"
+TraitDef o-> "requiredWorkTypes<WorkTypeDef>" "List`1"
+TraitDef --> "requiredWorkTags" WorkTags
+TraitDef o-> "disabledWorkTypes<WorkTypeDef>" "List`1"
+TraitDef --> "disabledWorkTags" WorkTags
+@enduml

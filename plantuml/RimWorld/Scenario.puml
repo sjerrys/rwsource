@@ -1,0 +1,55 @@
+@startuml
+class Scenario {
+    + name : string
+    + summary : string
+    + description : string
+    + fileName : string
+    + enabled : bool = true
+    + showInUI : bool = true
+    + <<const>> NameMaxLength : int = 55
+    + <<const>> SummaryMaxLength : int = 300
+    + <<const>> DescriptionMaxLength : int = 1000
+    + ExposeData() : void
+    + ConfigErrors() : IEnumerable<string>
+    + GetFullInformationText() : string
+    + GetSummary() : string
+    + CopyForEditing() : Scenario
+    + PreConfigure() : void
+    + GetFirstConfigPage() : Page
+    + AllowPlayerStartingPawn(pawn:Pawn, tryingToRedress:bool, req:PawnGenerationRequest) : bool
+    + Notify_NewPawnGenerating(pawn:Pawn, context:PawnGenerationContext) : void
+    + Notify_PawnGenerated(pawn:Pawn, context:PawnGenerationContext, redressed:bool) : void
+    + Notify_PawnDied(corpse:Corpse) : void
+    + PostWorldGenerate() : void
+    + PreMapGenerate() : void
+    + GenerateIntoMap(map:Map) : void
+    + PostMapGenerate(map:Map) : void
+    + PostGameStart() : void
+    + GetStatFactor(stat:StatDef) : float
+    + TickScenario() : void
+    + RemovePart(part:ScenPart) : void
+    + CanReorder(part:ScenPart, dir:ReorderDirection) : bool
+    + Reorder(part:ScenPart, dir:ReorderDirection) : void
+    + CanToUploadToWorkshop() : bool
+    + PrepareForWorkshopUpload() : void
+    + TryUploadReport() : AcceptanceReport
+    + GetPublishedFileId() : PublishedFileId_t
+    + SetPublishedFileId(newPfid:PublishedFileId_t) : void
+    + GetWorkshopName() : string
+    + GetWorkshopDescription() : string
+    + GetWorkshopPreviewImagePath() : string
+    + GetWorkshopTags() : IList<string>
+    + GetWorkshopUploadDirectory() : DirectoryInfo
+    + GetWorkshopItemHook() : WorkshopItemHook
+    + <<override>> ToString() : string
+    + <<override>> GetHashCode() : int
+}
+class "IEnumerable`1"<T> {
+}
+IExposable <|-- Scenario
+WorkshopUploadable <|-- Scenario
+Scenario --> "SupportedVersions<System.Version>" "IEnumerable`1"
+Scenario --> "File" FileInfo
+Scenario --> "AllParts<ScenPart>" "IEnumerable`1"
+Scenario --> "Category" ScenarioCategory
+@enduml

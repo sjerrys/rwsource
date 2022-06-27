@@ -1,0 +1,20 @@
+@startuml
+class DebugLoadIDsSavingErrorsChecker {
+    + Clear() : void
+    + CheckForErrorsAndClear() : void
+    + RegisterDeepSaved(obj:object, label:string) : void
+    + RegisterReferenced(obj:ILoadReferenceable, label:string) : void
+}
+class ReferencedObject <<struct>> {
+    + loadID : string
+    + label : string
+    + ReferencedObject(loadID:string, label:string)
+    + <<override>> Equals(obj:object) : bool
+    + Equals(other:ReferencedObject) : bool
+    + <<override>> GetHashCode() : int
+}
+class "IEquatable`1"<T> {
+}
+DebugLoadIDsSavingErrorsChecker +-- ReferencedObject
+"IEquatable`1" "<ReferencedObject>" <|-- ReferencedObject
+@enduml

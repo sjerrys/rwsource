@@ -1,0 +1,8 @@
+@startuml
+class HediffGiver_Heat {
+    + {static} <<readonly>> MemoPawnBurnedByAir : string = "PawnBurnedByAir"
+    + <<override>> OnIntervalPassed(pawn:Pawn, cause:Hediff) : void
+}
+HediffGiver <|-- HediffGiver_Heat
+HediffGiver_Heat o-> "TemperatureOverageAdjustmentCurve" SimpleCurve
+@enduml

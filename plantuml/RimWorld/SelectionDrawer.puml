@@ -1,0 +1,10 @@
+@startuml
+class SelectionDrawer <<static>> {
+    + {static} Notify_Selected(t:object) : void
+    + {static} Clear() : void
+    + {static} DrawSelectionOverlays() : void
+}
+class "Dictionary`2"<T1,T2> {
+}
+SelectionDrawer --> "SelectTimes<object,float>" "Dictionary`2"
+@enduml

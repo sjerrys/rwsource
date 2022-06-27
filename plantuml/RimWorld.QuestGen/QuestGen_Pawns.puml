@@ -1,0 +1,36 @@
+@startuml
+class QuestGen_Pawns <<static>> {
+    + <<const>> MaxUsablePawnsToGenerate : int = 10
+    + {static} GeneratePawn(quest:Quest, kindDef:PawnKindDef, faction:Faction, allowAddictions:bool, forcedTraits:IEnumerable<TraitDef>, biocodeWeaponChance:float, mustBeCapableOfViolence:bool, extraPawnForExtraRelationChance:Pawn, relationWithExtraPawnChanceFactor:float, biocodeApparelChance:float, ensureNonNumericName:bool, forceGenerateNewPawn:bool) : Pawn
+    + {static} GetPawnTest(parms:GetPawnParms, pawn:Pawn) : bool
+    + {static} GetPawn(quest:Quest, parms:GetPawnParms) : Pawn
+    + {static} ExistingUsablePawns(parms:GetPawnParms) : IEnumerable<Pawn>
+    + {static} ReservePawns(quest:Quest, pawns:IEnumerable<Pawn>) : QuestPart_ReservePawns
+    + {static} FeedPawns(quest:Quest, pawns:IEnumerable<Pawn>, pawnsInTransporter:Thing, inSignal:string) : QuestPart_FeedPawns
+}
+class GetPawnParms <<struct>> {
+    + mustBeFactionLeader : bool
+    + mustBeWorldPawn : bool
+    + ifWorldPawnThenMustBeFree : bool
+    + ifWorldPawnThenMustBeFreeOrLeader : bool
+    + mustHaveNoFaction : bool
+    + mustBeFreeColonist : bool
+    + mustBePlayerPrisoner : bool
+    + mustBeNotSuspended : bool
+    + mustHaveRoyalTitleInCurrentFaction : bool
+    + mustBeNonHostileToPlayer : bool
+    + allowPermanentEnemyFaction : bool?
+    + canGeneratePawn : bool
+    + requireResearchedBedroomFurnitureIfRoyal : bool
+    + allowTemporaryFactions : bool
+    + allowHidden : bool
+}
+class "List`1"<T> {
+}
+QuestGen_Pawns +-- GetPawnParms
+GetPawnParms --> "mustBeOfKind" PawnKindDef
+GetPawnParms --> "mustBeOfFaction" Faction
+GetPawnParms --> "seniorityRange" FloatRange
+GetPawnParms --> "minTechLevel" TechLevel
+GetPawnParms --> "excludeFactionDefs<FactionDef>" "List`1"
+@enduml

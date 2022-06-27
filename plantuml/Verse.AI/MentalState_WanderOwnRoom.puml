@@ -1,0 +1,9 @@
+@startuml
+class MentalState_WanderOwnRoom {
+    + <<override>> PostStart(reason:string) : void
+    + <<override>> ExposeData() : void
+    + <<override>> SocialModeMax() : RandomSocialMode
+}
+MentalState <|-- MentalState_WanderOwnRoom
+MentalState_WanderOwnRoom --> "target" IntVec3
+@enduml

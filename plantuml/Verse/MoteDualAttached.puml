@@ -1,0 +1,7 @@
+@startuml
+class MoteDualAttached {
+    + Attach(a:TargetInfo, b:TargetInfo) : void
+    + <<override>> Draw() : void
+}
+Mote <|-- MoteDualAttached
+@enduml

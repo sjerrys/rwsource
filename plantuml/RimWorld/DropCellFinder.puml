@@ -1,0 +1,21 @@
+@startuml
+class DropCellFinder <<static>> {
+    + {static} RandomDropSpot(map:Map) : IntVec3
+    + {static} TradeDropSpot(map:Map) : IntVec3
+    + {static} TryFindSafeLandingSpotCloseToColony(map:Map, size:IntVec2, faction:Faction, borderWidth:int) : IntVec3
+    + {static} SkyfallerCanLandAt(c:IntVec3, map:Map, size:IntVec2, faction:Faction) : bool
+    + {static} GetBestShuttleLandingSpot(map:Map, factionForFindingSpot:Faction, firstBlockingThing:Thing) : IntVec3
+    + {static} TryFindShipLandingArea(map:Map, result:IntVec3, firstBlockingThing:Thing) : bool
+    + {static} TryFindDropSpotNear(center:IntVec3, map:Map, result:IntVec3, allowFogged:bool, canRoofPunch:bool, allowIndoors:bool, size:IntVec2?) : bool
+    + {static} IsGoodDropSpot(c:IntVec3, map:Map, allowFogged:bool, canRoofPunch:bool, allowIndoors:bool) : bool
+    + {static} FindRaidDropCenterDistant(map:Map) : IntVec3
+    + {static} FindRaidDropCenterDistant_NewTemp(map:Map, allowRoofed:bool) : IntVec3
+    + {static} TryFindRaidDropCenterClose(spot:IntVec3, map:Map, canRoofPunch:bool, allowIndoors:bool, closeWalk:bool, maxRadius:int) : bool
+    + {static} FindSafeLandingSpot(spot:IntVec3, faction:Faction, map:Map, distToHostiles:int, distToFires:int, distToEdge:int, size:IntVec2?) : bool
+    + {static} FindSafeLandingSpotNearAvoidingHostiles(thing:Thing, map:Map, spot:IntVec3, distToHostiles:int, distToFires:int, distToEdge:int, size:IntVec2?) : bool
+    + {static} CanPhysicallyDropInto(c:IntVec3, map:Map, canRoofPunch:bool, allowedIndoors:bool) : bool
+}
+class "List`1"<T> {
+}
+DropCellFinder o-> "tmpShipLandingAreas<ShipLandingArea>" "List`1"
+@enduml

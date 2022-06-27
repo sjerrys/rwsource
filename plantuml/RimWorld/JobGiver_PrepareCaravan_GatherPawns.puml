@@ -1,0 +1,5 @@
+@startuml
+class JobGiver_PrepareCaravan_GatherPawns {
+}
+ThinkNode_JobGiver <|-- JobGiver_PrepareCaravan_GatherPawns
+@enduml

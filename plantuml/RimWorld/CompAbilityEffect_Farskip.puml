@@ -1,0 +1,12 @@
+@startuml
+class CompAbilityEffect_Farskip {
+    + <<override>> Apply(target:GlobalTargetInfo) : void
+    + <<override>> GetPreCastActions() : IEnumerable<PreCastAction>
+    + <<override>> Valid(target:GlobalTargetInfo, throwMessages:bool) : bool
+    + <<override>> CanApplyOn(target:GlobalTargetInfo) : bool
+    + <<override>> ConfirmationDialogText(target:GlobalTargetInfo) : string
+    + <<override>> WorldMapExtraLabel(target:GlobalTargetInfo) : string
+}
+CompAbilityEffect <|-- CompAbilityEffect_Farskip
+CompAbilityEffect_Farskip --> "Props" CompProperties_AbilityFarskip
+@enduml

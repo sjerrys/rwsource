@@ -1,0 +1,6 @@
+@startuml
+class PlaceWorker_ShipLandingBeacon {
+    + <<override>> DrawGhost(def:ThingDef, center:IntVec3, rot:Rot4, ghostCol:Color, thing:Thing) : void
+}
+PlaceWorker <|-- PlaceWorker_ShipLandingBeacon
+@enduml

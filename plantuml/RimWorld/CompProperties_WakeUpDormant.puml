@@ -1,0 +1,13 @@
+@startuml
+class CompProperties_WakeUpDormant {
+    + wakeUpSignalTag : string = "CompCanBeDormant.WakeUp"
+    + anyColonistCloseCheckRadius : float
+    + wakeUpOnThingConstructedRadius : float = 3f
+    + wakeUpOnDamage : bool = true
+    + onlyWakeUpSameFaction : bool = true
+    + wakeUpIfAnyColonistClose : bool
+    + CompProperties_WakeUpDormant()
+}
+CompProperties <|-- CompProperties_WakeUpDormant
+CompProperties_WakeUpDormant --> "wakeUpSound" SoundDef
+@enduml

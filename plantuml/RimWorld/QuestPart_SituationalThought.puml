@@ -1,0 +1,15 @@
+@startuml
+class QuestPart_SituationalThought {
+    + stage : int
+    + delayTicks : int
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+    + <<override>> ReplacePawnReferences(replace:Pawn, with:Pawn) : void
+}
+class "IEnumerable`1"<T> {
+}
+QuestPartActivable <|-- QuestPart_SituationalThought
+QuestPart_SituationalThought --> "def" ThoughtDef
+QuestPart_SituationalThought --> "pawn" Pawn
+QuestPart_SituationalThought --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+@enduml

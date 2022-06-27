@@ -1,0 +1,9 @@
+@startuml
+class DamageDefAdditionalHediff {
+    + severityPerDamageDealt : float = 0.1f
+    + severityFixed : float
+    + victimSeverityScalingByInvBodySize : bool
+}
+DamageDefAdditionalHediff --> "hediff" HediffDef
+DamageDefAdditionalHediff --> "victimSeverityScaling" StatDef
+@enduml

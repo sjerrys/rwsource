@@ -1,0 +1,15 @@
+@startuml
+class CompSendSignalOnCountdown {
+    + signalTag : string
+    + ticksLeft : int
+    + <<override>> Initialize(props:CompProperties) : void
+    + <<override>> CompGetGizmosExtra() : IEnumerable<Gizmo>
+    + <<override>> CompTick() : void
+    + <<override>> CompTickRare() : void
+    + TickRareWorker() : void
+    + <<override>> CompInspectStringExtra() : string
+    + <<override>> Notify_SignalReceived(signal:Signal) : void
+    + <<override>> PostExposeData() : void
+}
+ThingComp <|-- CompSendSignalOnCountdown
+@enduml

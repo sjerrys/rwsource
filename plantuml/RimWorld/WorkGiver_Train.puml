@@ -1,0 +1,7 @@
+@startuml
+class WorkGiver_Train {
+    + <<override>> PotentialWorkThingsGlobal(pawn:Pawn) : IEnumerable<Thing>
+    + <<override>> JobOnThing(pawn:Pawn, t:Thing, forced:bool) : Job
+}
+WorkGiver_InteractAnimal <|-- WorkGiver_Train
+@enduml

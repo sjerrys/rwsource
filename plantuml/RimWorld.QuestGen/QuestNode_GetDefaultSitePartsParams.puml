@@ -1,0 +1,11 @@
+@startuml
+class QuestNode_GetDefaultSitePartsParams {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GetDefaultSitePartsParams
+QuestNode_GetDefaultSitePartsParams --> "tile<int>" "SlateRef`1"
+QuestNode_GetDefaultSitePartsParams --> "faction<Faction>" "SlateRef`1"
+QuestNode_GetDefaultSitePartsParams --> "sitePartDefs<IEnumerable<SitePartDef>>" "SlateRef`1"
+QuestNode_GetDefaultSitePartsParams --> "storeSitePartsParamsAs<string>" "SlateRef`1"
+@enduml

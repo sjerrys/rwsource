@@ -1,0 +1,7 @@
+@startuml
+class PawnColumnWorker_Bond {
+    + <<override>> Compare(a:Pawn, b:Pawn) : int
+    + GetCompareValueFor(a:Pawn) : int
+}
+PawnColumnWorker_Icon <|-- PawnColumnWorker_Bond
+@enduml

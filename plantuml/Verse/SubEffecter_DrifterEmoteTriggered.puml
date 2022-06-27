@@ -1,0 +1,7 @@
+@startuml
+class SubEffecter_DrifterEmoteTriggered {
+    + SubEffecter_DrifterEmoteTriggered(def:SubEffecterDef, parent:Effecter)
+    + <<override>> SubTrigger(A:TargetInfo, B:TargetInfo) : void
+}
+SubEffecter_DrifterEmote <|-- SubEffecter_DrifterEmoteTriggered
+@enduml

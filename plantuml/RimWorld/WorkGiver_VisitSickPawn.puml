@@ -1,0 +1,11 @@
+@startuml
+class WorkGiver_VisitSickPawn {
+    + <<override>> PotentialWorkThingsGlobal(pawn:Pawn) : IEnumerable<Thing>
+    + <<override>> ShouldSkip(pawn:Pawn, forced:bool) : bool
+    + <<override>> HasJobOnThing(pawn:Pawn, t:Thing, forced:bool) : bool
+    + <<override>> JobOnThing(pawn:Pawn, t:Thing, forced:bool) : Job
+}
+WorkGiver_Scanner <|-- WorkGiver_VisitSickPawn
+WorkGiver_VisitSickPawn --> "PathEndMode" PathEndMode
+WorkGiver_VisitSickPawn --> "PotentialWorkThingRequest" ThingRequest
+@enduml

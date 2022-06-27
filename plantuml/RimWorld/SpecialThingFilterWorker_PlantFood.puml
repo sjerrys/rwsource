@@ -1,0 +1,8 @@
+@startuml
+class SpecialThingFilterWorker_PlantFood {
+    + <<override>> Matches(t:Thing) : bool
+    + <<override>> AlwaysMatches(def:ThingDef) : bool
+    + <<override>> CanEverMatch(def:ThingDef) : bool
+}
+SpecialThingFilterWorker <|-- SpecialThingFilterWorker_PlantFood
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class FoodTypeFlagsExtension <<static>> {
+    + {static} ToHumanString(ft:FoodTypeFlags) : string
+}
+@enduml

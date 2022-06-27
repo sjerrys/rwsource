@@ -1,0 +1,7 @@
+@startuml
+class CompAbilityEffect_Neuroquake {
+    + <<override>> Apply(target:LocalTargetInfo, dest:LocalTargetInfo) : void
+}
+CompAbilityEffect <|-- CompAbilityEffect_Neuroquake
+CompAbilityEffect_Neuroquake --> "Props" CompProperties_AbilityNeuroquake
+@enduml

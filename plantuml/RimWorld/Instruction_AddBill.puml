@@ -1,0 +1,7 @@
+@startuml
+class Instruction_AddBill {
+    + <<override>> LessonOnGUI() : void
+    + <<override>> LessonUpdate() : void
+}
+Lesson_Instruction <|-- Instruction_AddBill
+@enduml

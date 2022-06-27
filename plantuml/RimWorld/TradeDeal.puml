@@ -1,0 +1,15 @@
+@startuml
+class TradeDeal {
+    + TradeableCount : int <<get>>
+    + TradeDeal()
+    + Reset() : void
+    + UpdateCurrencyCount() : void
+    + TryExecute(actuallyTraded:bool) : bool
+    + DoesTraderHaveEnoughSilver() : bool
+}
+class "List`1"<T> {
+}
+TradeDeal o-> "cannotSellReasons<string>" "List`1"
+TradeDeal --> "CurrencyTradeable" Tradeable
+TradeDeal --> "AllTradeables<Tradeable>" "List`1"
+@enduml

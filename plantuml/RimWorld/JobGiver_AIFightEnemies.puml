@@ -1,0 +1,5 @@
+@startuml
+class JobGiver_AIFightEnemies {
+}
+JobGiver_AIFightEnemy <|-- JobGiver_AIFightEnemies
+@enduml

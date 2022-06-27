@@ -1,0 +1,7 @@
+@startuml
+class WITab_Caravan_Gear {
+    + WITab_Caravan_Gear()
+    + <<override>> OnOpen() : void
+}
+WITab <|-- WITab_Caravan_Gear
+@enduml

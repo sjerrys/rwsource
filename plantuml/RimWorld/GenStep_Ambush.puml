@@ -1,0 +1,7 @@
+@startuml
+abstract class GenStep_Ambush {
+    + <<override>> Generate(map:Map, parms:GenStepParams) : void
+}
+GenStep <|-- GenStep_Ambush
+GenStep_Ambush o-> "defaultPointsRange" FloatRange
+@enduml

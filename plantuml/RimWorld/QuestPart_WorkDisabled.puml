@@ -1,0 +1,14 @@
+@startuml
+class QuestPart_WorkDisabled {
+    + <<override>> Cleanup() : void
+    + <<override>> ExposeData() : void
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+QuestPartActivable <|-- QuestPart_WorkDisabled
+QuestPart_WorkDisabled o-> "pawns<Pawn>" "List`1"
+QuestPart_WorkDisabled --> "disabledWorkTags" WorkTags
+QuestPart_WorkDisabled --> "DisabledWorkTypes<WorkTypeDef>" "IEnumerable`1"
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+class CompProperties_Power {
+    + transmitsPower : bool
+    + basePowerConsumption : float
+    + shortCircuitInRain : bool
+    + <<override>> SpecialDisplayStats(req:StatRequest) : IEnumerable<StatDrawEntry>
+}
+CompProperties <|-- CompProperties_Power
+CompProperties_Power --> "soundPowerOn" SoundDef
+CompProperties_Power --> "soundPowerOff" SoundDef
+CompProperties_Power --> "soundAmbientPowered" SoundDef
+CompProperties_Power --> "soundAmbientProducingPower" SoundDef
+@enduml

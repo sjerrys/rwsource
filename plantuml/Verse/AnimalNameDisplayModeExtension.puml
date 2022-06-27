@@ -1,0 +1,5 @@
+@startuml
+class AnimalNameDisplayModeExtension <<static>> {
+    + {static} ToStringHuman(mode:AnimalNameDisplayMode) : string
+}
+@enduml

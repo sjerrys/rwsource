@@ -1,0 +1,11 @@
+@startuml
+class StatWorker_MeleeDPS {
+    + <<override>> IsDisabledFor(thing:Thing) : bool
+    + <<override>> GetValueUnfinalized(req:StatRequest, applyPostProcess:bool) : float
+    + <<override>> GetExplanationUnfinalized(req:StatRequest, numberSense:ToStringNumberSense) : string
+    + <<override>> GetStatDrawEntryLabel(stat:StatDef, value:float, numberSense:ToStringNumberSense, optionalReq:StatRequest, finalized:bool) : string
+    + <<override>> ShouldShowFor(req:StatRequest) : bool
+    + <<override>> GetInfoCardHyperlinks(statRequest:StatRequest) : IEnumerable<Dialog_InfoCard.Hyperlink>
+}
+StatWorker <|-- StatWorker_MeleeDPS
+@enduml

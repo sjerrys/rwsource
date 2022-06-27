@@ -1,0 +1,6 @@
+@startuml
+class JobGiver_Kidnap {
+    + <<const>> VictimSearchRadiusInitial : float = 8f
+}
+ThinkNode_JobGiver <|-- JobGiver_Kidnap
+@enduml

@@ -1,0 +1,20 @@
+@startuml
+class WeaponTraitDef {
+    + commonality : float
+    + marketValueOffset : float
+    + neverBond : bool
+    + Overlaps(other:WeaponTraitDef) : bool
+    + <<override>> ConfigErrors() : IEnumerable<string>
+}
+class "List`1"<T> {
+}
+Def <|-- WeaponTraitDef
+WeaponTraitDef --> "equippedStatOffsets<StatModifier>" "List`1"
+WeaponTraitDef --> "equippedHediffs<HediffDef>" "List`1"
+WeaponTraitDef --> "bondedHediffs<HediffDef>" "List`1"
+WeaponTraitDef --> "bondedThought" ThoughtDef
+WeaponTraitDef --> "killThought" ThoughtDef
+WeaponTraitDef o-> "workerClass" Type
+WeaponTraitDef --> "exclusionTags<string>" "List`1"
+WeaponTraitDef --> "Worker" WeaponTraitWorker
+@enduml

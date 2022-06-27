@@ -1,0 +1,17 @@
+@startuml
+class CRC32 {
+    + TotalBytesRead : long <<get>>
+    + Crc32Result : int <<get>>
+    + GetCrc32(input:Stream) : int
+    + GetCrc32AndCopy(input:Stream, output:Stream) : int
+    + ComputeCrc32(W:int, B:byte) : int
+    + SlurpBlock(block:byte[], offset:int, count:int) : void
+    + UpdateCRC(b:byte) : void
+    + UpdateCRC(b:byte, n:int) : void
+    + Combine(crc:int, length:int) : void
+    + CRC32()
+    + CRC32(reverseBits:bool)
+    + CRC32(polynomial:int, reverseBits:bool)
+    + Reset() : void
+}
+@enduml

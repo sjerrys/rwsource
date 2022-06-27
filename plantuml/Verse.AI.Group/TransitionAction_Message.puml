@@ -1,0 +1,18 @@
+@startuml
+class TransitionAction_Message {
+    + message : string
+    + repeatAvoiderTag : string
+    + repeatAvoiderSeconds : float
+    + TransitionAction_Message(message:string, repeatAvoiderTag:string, repeatAvoiderSeconds:float)
+    + TransitionAction_Message(message:string, messageType:MessageTypeDef, repeatAvoiderTag:string, repeatAvoiderSeconds:float)
+    + TransitionAction_Message(message:string, messageType:MessageTypeDef, lookTarget:TargetInfo, repeatAvoiderTag:string, repeatAvoiderSeconds:float)
+    + TransitionAction_Message(message:string, messageType:MessageTypeDef, lookTargetGetter:Func<TargetInfo>, repeatAvoiderTag:string, repeatAvoiderSeconds:float)
+    + <<override>> DoAction(trans:Transition) : void
+}
+class "Func`1"<T> {
+}
+TransitionAction <|-- TransitionAction_Message
+TransitionAction_Message --> "type" MessageTypeDef
+TransitionAction_Message o-> "lookTarget" TargetInfo
+TransitionAction_Message --> "lookTargetGetter<TargetInfo>" "Func`1"
+@enduml

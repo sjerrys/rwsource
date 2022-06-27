@@ -1,0 +1,32 @@
+@startuml
+class GraphicData {
+    + texPath : string
+    + drawOffsetNorth : Vector3?
+    + drawOffsetEast : Vector3?
+    + drawOffsetSouth : Vector3?
+    + drawOffsetWest : Vector3?
+    + onGroundRandomRotateAngle : float
+    + drawRotated : bool = true
+    + allowFlip : bool = true
+    + flipExtraRotation : float
+    + Linked : bool <<get>>
+    + CopyFrom(other:GraphicData) : void
+    + ResolveReferencesSpecial() : void
+    + DrawOffsetForRot(rot:Rot4) : Vector3
+    + GraphicColoredFor(t:Thing) : Graphic
+}
+class "List`1"<T> {
+}
+GraphicData --> "graphicClass" Type
+GraphicData --> "shaderType" ShaderTypeDef
+GraphicData --> "shaderParameters<ShaderParameter>" "List`1"
+GraphicData o-> "color" Color
+GraphicData o-> "colorTwo" Color
+GraphicData o-> "drawSize" Vector2
+GraphicData o-> "drawOffset" Vector3
+GraphicData --> "shadowData" ShadowData
+GraphicData --> "damageData" DamageGraphicData
+GraphicData --> "linkType" LinkDrawerType
+GraphicData --> "linkFlags" LinkFlags
+GraphicData --> "Graphic" Graphic
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+class GenPlace <<static>> {
+    + {static} TryPlaceThing(thing:Thing, center:IntVec3, map:Map, mode:ThingPlaceMode, placedAction:Action<Thing, int>, nearPlaceValidator:Predicate<IntVec3>, rot:Rot4) : bool
+    + {static} TryPlaceThing(thing:Thing, center:IntVec3, map:Map, mode:ThingPlaceMode, lastResultingThing:Thing, placedAction:Action<Thing, int>, nearPlaceValidator:Predicate<IntVec3>, rot:Rot4) : bool
+    + {static} HaulPlaceBlockerIn(haulThing:Thing, c:IntVec3, map:Map, checkBlueprintsAndFrames:bool) : Thing
+}
+enum PlaceSpotQuality {
+    Unusable,
+    Awful,
+    Bad,
+    Okay,
+    Perfect,
+}
+GenPlace +-- PlaceSpotQuality
+@enduml

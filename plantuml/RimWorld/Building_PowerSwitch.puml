@@ -1,0 +1,10 @@
+@startuml
+class Building_PowerSwitch {
+    + <<override>> TransmitsPowerNow : bool <<get>>
+    + <<override>> SpawnSetup(map:Map, respawningAfterLoad:bool) : void
+    + <<override>> ExposeData() : void
+    + <<override>> GetInspectString() : string
+}
+Building <|-- Building_PowerSwitch
+Building_PowerSwitch --> "Graphic" Graphic
+@enduml

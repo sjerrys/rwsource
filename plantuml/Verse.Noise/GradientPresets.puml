@@ -1,0 +1,10 @@
+@startuml
+class GradientPresets <<static>> {
+    {static} GradientPresets()
+}
+GradientPresets --> "Empty" Gradient
+GradientPresets --> "Grayscale" Gradient
+GradientPresets --> "RGB" Gradient
+GradientPresets --> "RGBA" Gradient
+GradientPresets --> "Terrain" Gradient
+@enduml

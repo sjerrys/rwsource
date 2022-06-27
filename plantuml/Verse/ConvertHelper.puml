@@ -1,0 +1,10 @@
+@startuml
+class ConvertHelper <<static>> {
+    + {static} CanConvert(obj:object) : bool
+    + {static} CanConvert(obj:object, to:Type) : bool
+    + {static} Convert(obj:object) : T
+    + {static} Convert(obj:object, to:Type) : object
+    + {static} Convert(obj:object, to:Type, defaultValue:object) : object
+    + {static} IsXml(obj:object) : bool
+}
+@enduml

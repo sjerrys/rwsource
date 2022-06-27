@@ -1,0 +1,5 @@
+@startuml
+class PawnPostureUtility <<static>> {
+    + {static} Laying(posture:PawnPosture) : bool
+}
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+enum HairGender {
+    Male,
+    MaleUsually,
+    Any,
+    FemaleUsually,
+    Female,
+}
+@enduml

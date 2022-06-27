@@ -1,0 +1,17 @@
+@startuml
+class Pawn_TrainingTracker {
+    + Pawn_TrainingTracker(pawn:Pawn)
+    + ExposeData() : void
+    + GetWanted(td:TrainableDef) : bool
+    + CanBeTrained(td:TrainableDef) : bool
+    + HasLearned(td:TrainableDef) : bool
+    + CanAssignToTrain(td:TrainableDef) : AcceptanceReport
+    + CanAssignToTrain(td:TrainableDef, visible:bool) : AcceptanceReport
+    + NextTrainableToTrain() : TrainableDef
+    + Train(td:TrainableDef, trainer:Pawn, complete:bool) : void
+    + SetWantedRecursive(td:TrainableDef, checkOn:bool) : void
+    + TrainingTrackerTickRare() : void
+    + Debug_MakeDegradeHappenSoon() : void
+}
+IExposable <|-- Pawn_TrainingTracker
+@enduml

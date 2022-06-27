@@ -1,0 +1,17 @@
+@startuml
+class SoundInfo <<struct>> {
+    + volumeFactor : float
+    + pitchFactor : float
+    + testPlay : bool
+    + IsOnCamera : bool <<get>>
+    + {static} OnCamera(maint:MaintenanceType) : SoundInfo
+    + {static} InMap(maker:TargetInfo, maint:MaintenanceType) : SoundInfo
+    + SetParameter(key:string, value:float) : void
+    + <<override>> ToString() : string
+}
+class "IEnumerable`1"<T> {
+}
+SoundInfo --> "Maker" TargetInfo
+SoundInfo --> "Maintenance" MaintenanceType
+SoundInfo --> "DefinedParameters<KeyValuePair<string, float>>" "IEnumerable`1"
+@enduml

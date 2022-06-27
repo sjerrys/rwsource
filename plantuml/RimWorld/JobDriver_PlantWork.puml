@@ -1,0 +1,7 @@
+@startuml
+abstract class JobDriver_PlantWork {
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+    + <<override>> ExposeData() : void
+}
+JobDriver <|-- JobDriver_PlantWork
+@enduml

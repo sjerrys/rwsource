@@ -1,0 +1,7 @@
+@startuml
+enum TextRulesTarget {
+    Description,
+    Name,
+    DecriptionAndName,
+}
+@enduml

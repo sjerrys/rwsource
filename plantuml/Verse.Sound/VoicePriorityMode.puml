@@ -1,0 +1,6 @@
+@startuml
+enum VoicePriorityMode {
+    PrioritizeNewest,
+    PrioritizeNearest,
+}
+@enduml

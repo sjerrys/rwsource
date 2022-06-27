@@ -1,0 +1,13 @@
+@startuml
+abstract class ScenPart_IncidentBase {
+    + <<override>> ExposeData() : void
+    + <<override>> DoEditInterface(listing:Listing_ScenEdit) : void
+    + <<override>> Summary(scen:Scenario) : string
+    + <<override>> GetSummaryListEntries(tag:string) : IEnumerable<string>
+    + <<override>> Randomize() : void
+    + <<override>> TryMerge(other:ScenPart) : bool
+    + <<override>> CanCoexistWith(other:ScenPart) : bool
+}
+ScenPart <|-- ScenPart_IncidentBase
+ScenPart_IncidentBase --> "Incident" IncidentDef
+@enduml

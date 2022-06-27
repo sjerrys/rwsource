@@ -1,0 +1,7 @@
+@startuml
+class Trigger_FractionPawnsLost {
+    + Trigger_FractionPawnsLost(fraction:float)
+    + <<override>> ActivateOn(lord:Lord, signal:TriggerSignal) : bool
+}
+Trigger <|-- Trigger_FractionPawnsLost
+@enduml

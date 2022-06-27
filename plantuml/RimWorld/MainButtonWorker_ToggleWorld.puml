@@ -1,0 +1,7 @@
+@startuml
+class MainButtonWorker_ToggleWorld {
+    + resetViewNextTime : bool = true
+    + <<override>> Activate() : void
+}
+MainButtonWorker <|-- MainButtonWorker_ToggleWorld
+@enduml

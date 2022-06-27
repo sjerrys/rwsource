@@ -1,0 +1,6 @@
+@startuml
+class CompProperties_CreatesInfestations {
+    + CompProperties_CreatesInfestations()
+}
+CompProperties <|-- CompProperties_CreatesInfestations
+@enduml

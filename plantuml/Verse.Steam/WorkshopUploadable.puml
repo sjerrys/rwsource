@@ -1,0 +1,17 @@
+@startuml
+interface WorkshopUploadable {
+    CanToUploadToWorkshop() : bool
+    PrepareForWorkshopUpload() : void
+    GetPublishedFileId() : PublishedFileId_t
+    SetPublishedFileId(pfid:PublishedFileId_t) : void
+    GetWorkshopName() : string
+    GetWorkshopDescription() : string
+    GetWorkshopPreviewImagePath() : string
+    GetWorkshopTags() : IList<string>
+    GetWorkshopUploadDirectory() : DirectoryInfo
+    GetWorkshopItemHook() : WorkshopItemHook
+}
+class "IEnumerable`1"<T> {
+}
+WorkshopUploadable --> "SupportedVersions<System.Version>" "IEnumerable`1"
+@enduml

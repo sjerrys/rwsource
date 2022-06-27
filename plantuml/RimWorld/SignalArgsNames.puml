@@ -1,0 +1,17 @@
+@startuml
+class SignalArgsNames <<static>> {
+    + <<const>> Subject : string = "SUBJECT"
+    + <<const>> Outcome : string = "OUTCOME"
+    + <<const>> ChosenThing : string = "CHOSEN"
+    + <<const>> Faction : string = "FACTION"
+    + <<const>> LentPawns : string = "PAWNS"
+    + <<const>> PlayerCaravan : string = "CARAVAN"
+    + <<const>> SentThings : string = "SENT"
+    + <<const>> SentExtraColonists : string = "SENTCOLONISTS"
+    + <<const>> NewFactionLeader : string = "NEWFACTIONLEADER"
+    + <<const>> Kidnapper : string = "KIDNAPPER"
+    + <<const>> Goodwill : string = "GOODWILL"
+    + <<const>> AverageMood : string = "AVERAGEMOOD"
+    + <<const>> PawnsAliveCount : string = "PAWNSALIVECOUNT"
+}
+@enduml

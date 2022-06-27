@@ -1,0 +1,19 @@
+@startuml
+class TarDirectory {
+    + <<override>> Name : string <<get>>
+    + <<override>> FullPath : string <<get>>
+    + <<override>> Exists : bool <<get>>
+    + {static} ClearCache() : void
+    + {static} ReadFromFileOrCache(file:string) : TarDirectory
+    + <<override>> GetDirectory(directoryName:string) : VirtualDirectory
+    + <<override>> GetFile(filename:string) : VirtualFile
+    + <<override>> GetFiles(searchPattern:string, searchOption:SearchOption) : IEnumerable<VirtualFile>
+    + <<override>> GetDirectories(searchPattern:string, searchOption:SearchOption) : IEnumerable<VirtualDirectory>
+    + <<override>> ToString() : string
+}
+class "List`1"<T> {
+}
+VirtualDirectory <|-- TarDirectory
+TarDirectory o-> "subDirectories<TarDirectory>" "List`1"
+TarDirectory o-> "files<TarFile>" "List`1"
+@enduml

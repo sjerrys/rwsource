@@ -1,0 +1,9 @@
+@startuml
+class CompAnimalInsanityPulser {
+    + <<override>> PostSpawnSetup(respawningAfterLoad:bool) : void
+    + <<override>> PostExposeData() : void
+    + <<override>> CompTick() : void
+}
+ThingComp <|-- CompAnimalInsanityPulser
+CompAnimalInsanityPulser --> "Props" CompProperties_AnimalInsanityPulser
+@enduml

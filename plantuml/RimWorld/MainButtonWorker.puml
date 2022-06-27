@@ -1,0 +1,10 @@
+@startuml
+abstract class MainButtonWorker {
+    + <<virtual>> ButtonBarPercent : float <<get>>
+    + <<virtual>> Disabled : bool <<get>>
+    + {abstract} Activate() : void
+    + <<virtual>> InterfaceTryActivate() : void
+    + <<virtual>> DoButton(rect:Rect) : void
+}
+MainButtonWorker --> "def" MainButtonDef
+@enduml

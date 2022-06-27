@@ -1,0 +1,8 @@
+@startuml
+class GameComponent_DebugTools {
+    + GameComponent_DebugTools(game:Game)
+    + <<override>> GameComponentUpdate() : void
+    + AddPerFrameCallback(callback:Func<bool>) : void
+}
+GameComponent <|-- GameComponent_DebugTools
+@enduml

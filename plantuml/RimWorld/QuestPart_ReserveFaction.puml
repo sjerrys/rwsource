@@ -1,0 +1,9 @@
+@startuml
+class QuestPart_ReserveFaction {
+    + <<override>> QuestPartReserves(f:Faction) : bool
+    + <<override>> Notify_FactionRemoved(f:Faction) : void
+    + <<override>> ExposeData() : void
+}
+QuestPart <|-- QuestPart_ReserveFaction
+QuestPart_ReserveFaction --> "faction" Faction
+@enduml

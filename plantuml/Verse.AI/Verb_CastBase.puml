@@ -1,0 +1,10 @@
+@startuml
+abstract class Verb_CastBase {
+    + <<override>> MultiSelect : bool <<get>>
+    + <<override>> ValidateTarget(target:LocalTargetInfo) : bool
+    + <<override>> OrderForceTarget(target:LocalTargetInfo) : void
+    + <<override>> OnGUI(target:LocalTargetInfo) : void
+    + <<override>> DrawHighlight(target:LocalTargetInfo) : void
+}
+Verb <|-- Verb_CastBase
+@enduml

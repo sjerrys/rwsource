@@ -1,0 +1,6 @@
+@startuml
+enum ResourceReadoutMode {
+    Simple,
+    Categorized,
+}
+@enduml

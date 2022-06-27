@@ -1,0 +1,8 @@
+@startuml
+class NeedsCardUtility <<static>> {
+    + {static} GetSize(pawn:Pawn) : Vector2
+    + {static} DoNeedsMoodAndThoughts(rect:Rect, pawn:Pawn, thoughtScrollPosition:Vector2) : void
+    + {static} DoNeeds(rect:Rect, pawn:Pawn) : void
+}
+NeedsCardUtility o-> "FullSize" Vector2
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+class CompEggLayer {
+    + CanLayNow : bool <<get>>
+    + FullyFertilized : bool <<get>>
+    + <<override>> PostExposeData() : void
+    + <<override>> CompTick() : void
+    + Fertilize(male:Pawn) : void
+    + <<virtual>> ProduceEgg() : Thing
+    + <<override>> CompInspectStringExtra() : string
+}
+ThingComp <|-- CompEggLayer
+CompEggLayer --> "Props" CompProperties_EggLayer
+@enduml

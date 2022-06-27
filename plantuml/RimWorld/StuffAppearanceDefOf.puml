@@ -1,0 +1,6 @@
+@startuml
+class StuffAppearanceDefOf <<static>> {
+    {static} StuffAppearanceDefOf()
+}
+StuffAppearanceDefOf --> "Smooth" StuffAppearanceDef
+@enduml

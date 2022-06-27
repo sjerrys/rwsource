@@ -1,0 +1,9 @@
+@startuml
+class PawnBanishUtility <<static>> {
+    + {static} Banish(pawn:Pawn, tile:int) : void
+    + {static} WouldBeLeftToDie(p:Pawn, tile:int) : bool
+    + {static} GetBanishPawnDialogText(banishedPawn:Pawn) : string
+    + {static} ShowBanishPawnConfirmationDialog(pawn:Pawn) : void
+    + {static} GetBanishButtonTip(pawn:Pawn) : string
+}
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class CountChance <<struct>> {
+    + count : int
+    + chance : float
+}
+@enduml

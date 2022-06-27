@@ -1,0 +1,7 @@
+@startuml
+class CompEmptyStateGraphic {
+    + ParentIsEmpty : bool <<get>>
+    + <<override>> PostDraw() : void
+}
+ThingComp <|-- CompEmptyStateGraphic
+@enduml

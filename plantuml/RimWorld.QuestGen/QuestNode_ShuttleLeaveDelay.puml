@@ -1,0 +1,13 @@
+@startuml
+class QuestNode_ShuttleLeaveDelay {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_ShuttleLeaveDelay
+QuestNode_ShuttleLeaveDelay --> "inSignalEnable<string>" "SlateRef`1"
+QuestNode_ShuttleLeaveDelay --> "outSignalComplete<string>" "SlateRef`1"
+QuestNode_ShuttleLeaveDelay --> "inSignalsDisable<IEnumerable<string>>" "SlateRef`1"
+QuestNode_ShuttleLeaveDelay --> "delayTicks<int>" "SlateRef`1"
+QuestNode_ShuttleLeaveDelay --> "shuttle<Thing>" "SlateRef`1"
+QuestNode_ShuttleLeaveDelay --> "node" QuestNode
+@enduml

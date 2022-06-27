@@ -1,0 +1,91 @@
+@startuml
+class GenUI <<static>> {
+    + <<const>> Pad : float = 10f
+    + <<const>> GapTiny : float = 4f
+    + <<const>> GapSmall : float = 10f
+    + <<const>> Gap : float = 17f
+    + <<const>> GapWide : float = 26f
+    + <<const>> ListSpacing : float = 28f
+    + <<const>> MouseAttachIconSize : float = 32f
+    + <<const>> MouseAttachIconOffset : float = 8f
+    + <<const>> ScrollBarWidth : float = 16f
+    + <<const>> HorizontalSliderHeight : float = 16f
+    + <<const>> SmallIconSize : float = 24f
+    + <<const>> RootGUIDepth : int = 50
+    + <<const>> PawnDirectClickRadius : float = 0.4f
+    + <<const>> ElementStackDefaultElementMargin : float = 5f
+    + {static} SetLabelAlign(a:TextAnchor) : void
+    + {static} ResetLabelAlign() : void
+    + {static} BackgroundDarkAlphaForText() : float
+    + {static} DrawTextWinterShadow(rect:Rect) : void
+    + {static} DrawTextureWithMaterial(rect:Rect, texture:Texture, material:Material, texCoords:Rect) : void
+    + {static} IconDrawScale(tDef:ThingDef) : float
+    + {static} ErrorDialog(message:string) : void
+    + {static} DrawFlash(centerX:float, centerY:float, size:float, alpha:float, color:Color) : void
+    + {static} GetWidthCached(s:string) : float
+    + {static} ClearLabelWidthCache() : void
+    + {static} Rounded(r:Rect) : Rect
+    + {static} Rounded(v:Vector2) : Vector2
+    + {static} DistFromRect(r:Rect, p:Vector2) : float
+    + {static} DrawMouseAttachment(iconTex:Texture, text:string, angle:float, offset:Vector2, customRect:Rect?, drawTextBackground:bool, textBgColor:Color) : void
+    + {static} DrawMouseAttachment(icon:Texture2D) : void
+    + {static} RenderMouseoverBracket() : void
+    + {static} DrawStatusLevel(status:Need, rect:Rect) : void
+    + {static} TargetsAtMouse(clickParams:TargetingParameters, thingsOnly:bool) : IEnumerable<LocalTargetInfo>
+    + {static} TargetsAtMouse_NewTemp(clickParams:TargetingParameters, thingsOnly:bool, source:ITargetingSource) : IEnumerable<LocalTargetInfo>
+    + {static} TargetsAt(clickPos:Vector3, clickParams:TargetingParameters, thingsOnly:bool) : IEnumerable<LocalTargetInfo>
+    + {static} TargetsAt_NewTemp(clickPos:Vector3, clickParams:TargetingParameters, thingsOnly:bool, source:ITargetingSource) : IEnumerable<LocalTargetInfo>
+    + {static} ThingsUnderMouse(clickPos:Vector3, pawnWideClickRadius:float, clickParams:TargetingParameters) : List<Thing>
+    + {static} CurrentAdjustmentMultiplier() : int
+    + {static} GetInnerRect(rect:Rect) : Rect
+    + {static} ExpandedBy(rect:Rect, margin:float) : Rect
+    + {static} ContractedBy(rect:Rect, margin:float) : Rect
+    + {static} ScaledBy(rect:Rect, scale:float) : Rect
+    + {static} CenteredOnXIn(rect:Rect, otherRect:Rect) : Rect
+    + {static} CenteredOnYIn(rect:Rect, otherRect:Rect) : Rect
+    + {static} AtZero(rect:Rect) : Rect
+    + {static} AbsorbClicksInRect(r:Rect) : void
+    + {static} LeftHalf(rect:Rect) : Rect
+    + {static} LeftPart(rect:Rect, pct:float) : Rect
+    + {static} LeftPartPixels(rect:Rect, width:float) : Rect
+    + {static} RightHalf(rect:Rect) : Rect
+    + {static} RightPart(rect:Rect, pct:float) : Rect
+    + {static} RightPartPixels(rect:Rect, width:float) : Rect
+    + {static} TopHalf(rect:Rect) : Rect
+    + {static} TopPart(rect:Rect, pct:float) : Rect
+    + {static} TopPartPixels(rect:Rect, height:float) : Rect
+    + {static} BottomHalf(rect:Rect) : Rect
+    + {static} BottomPart(rect:Rect, pct:float) : Rect
+    + {static} BottomPartPixels(rect:Rect, height:float) : Rect
+    + {static} LerpColor(colors:List<Pair<float, Color>>, value:float) : Color
+    + {static} GetMouseAttachedWindowPos(width:float, height:float) : Vector2
+    + {static} GetCenteredButtonPos(buttonIndex:int, buttonsCount:int, totalWidth:float, buttonWidth:float, pad:float) : float
+    + {static} DrawArrowPointingAt(rect:Rect) : void
+    + {static} DrawArrowPointingAtWorldspace(worldspace:Vector3, camera:Camera) : void
+    + {static} DrawElementStack(rect:Rect, rowHeight:float, elements:List<T>, drawer:StackElementDrawer<T>, widthGetter:StackElementWidthGetter<T>, rowMargin:float, elementMargin:float, allowOrderOptimization:bool) : Rect
+    + {static} DrawElementStackVertical(rect:Rect, rowHeight:float, elements:List<T>, drawer:StackElementDrawer<T>, widthGetter:StackElementWidthGetter<T>, elementMargin:float) : Rect
+}
+class StackedElementRect <<struct>> {
+    + elementIndex : int
+    + StackedElementRect(rect:Rect, elementIndex:int)
+}
+class AnonymousStackElement {
+    + width : float
+}
+class SpacingCache <<struct>> {
+    + Reset(elem:int) : void
+    + GetSpaceFor(elem:int) : float
+    + AddSpace(elem:int, space:float) : void
+}
+class "Action`1"<T> {
+}
+GenUI o-> "TradeableDrawSize" Vector2
+GenUI o-> "MouseoverColor" Color
+GenUI o-> "SubtleMouseoverColor" Color
+GenUI o-> "MaxWinSize" Vector2
+GenUI +-- StackedElementRect
+StackedElementRect --> "rect" Rect
+GenUI +-- AnonymousStackElement
+AnonymousStackElement --> "drawer<Rect>" "Action`1"
+GenUI +-- SpacingCache
+@enduml

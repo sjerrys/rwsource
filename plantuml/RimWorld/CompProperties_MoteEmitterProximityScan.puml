@@ -1,0 +1,10 @@
+@startuml
+class CompProperties_MoteEmitterProximityScan {
+    + warmupPulseFadeInTime : float
+    + warmupPulseSolidTime : float
+    + warmupPulseFadeOutTime : float
+    + CompProperties_MoteEmitterProximityScan()
+}
+CompProperties_MoteEmitter <|-- CompProperties_MoteEmitterProximityScan
+CompProperties_MoteEmitterProximityScan --> "soundEmitting" SoundDef
+@enduml

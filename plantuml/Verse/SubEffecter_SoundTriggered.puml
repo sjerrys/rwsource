@@ -1,0 +1,7 @@
+@startuml
+class SubEffecter_SoundTriggered {
+    + SubEffecter_SoundTriggered(def:SubEffecterDef, parent:Effecter)
+    + <<override>> SubTrigger(A:TargetInfo, B:TargetInfo) : void
+}
+SubEffecter <|-- SubEffecter_SoundTriggered
+@enduml

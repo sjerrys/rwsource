@@ -1,0 +1,8 @@
+@startuml
+abstract class JoyGiver_InteractBuilding {
+    + <<override>> TryGiveJob(pawn:Pawn) : Job
+    + <<override>> TryGiveJobWhileInBed(pawn:Pawn) : Job
+    + <<override>> TryGiveJobInGatheringArea(pawn:Pawn, gatheringSpot:IntVec3) : Job
+}
+JoyGiver <|-- JoyGiver_InteractBuilding
+@enduml

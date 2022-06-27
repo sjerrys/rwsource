@@ -1,0 +1,6 @@
+@startuml
+class AbilityDefOf <<static>> {
+    {static} AbilityDefOf()
+}
+AbilityDefOf --> "Speech" AbilityDef
+@enduml

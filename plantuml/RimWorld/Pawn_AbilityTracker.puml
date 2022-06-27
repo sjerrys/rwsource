@@ -1,0 +1,16 @@
+@startuml
+class Pawn_AbilityTracker {
+    + Pawn_AbilityTracker(pawn:Pawn)
+    + AbilitiesTick() : void
+    + GainAbility(def:AbilityDef) : void
+    + RemoveAbility(def:AbilityDef) : void
+    + GetAbility(def:AbilityDef) : Ability
+    + GetGizmos() : IEnumerable<Gizmo>
+    + ExposeData() : void
+}
+class "List`1"<T> {
+}
+IExposable <|-- Pawn_AbilityTracker
+Pawn_AbilityTracker --> "pawn" Pawn
+Pawn_AbilityTracker o-> "abilities<Ability>" "List`1"
+@enduml

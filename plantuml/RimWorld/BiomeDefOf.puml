@@ -1,0 +1,15 @@
+@startuml
+class BiomeDefOf <<static>> {
+    {static} BiomeDefOf()
+}
+BiomeDefOf --> "IceSheet" BiomeDef
+BiomeDefOf --> "Tundra" BiomeDef
+BiomeDefOf --> "BorealForest" BiomeDef
+BiomeDefOf --> "TemperateForest" BiomeDef
+BiomeDefOf --> "TropicalRainforest" BiomeDef
+BiomeDefOf --> "Desert" BiomeDef
+BiomeDefOf --> "AridShrubland" BiomeDef
+BiomeDefOf --> "SeaIce" BiomeDef
+BiomeDefOf --> "Ocean" BiomeDef
+BiomeDefOf --> "Lake" BiomeDef
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class MapParentTuning <<static>> {
+    + <<const>> DefaultForceExitAndRemoveMapCountdownDays : float = 1f
+    + <<const>> DefaultSiteForceExitAndRemoveMapCountdownDays : float = 3f
+    + <<const>> ShortDetectionCountdownDays : float = 4f
+    + <<const>> DefaultDetectionCountdownDays : float = 4f
+}
+MapParentTuning o-> "SiteDetectionCountdownMultiplier" FloatRange
+@enduml

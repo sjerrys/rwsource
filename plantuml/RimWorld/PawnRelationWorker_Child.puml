@@ -1,0 +1,8 @@
+@startuml
+class PawnRelationWorker_Child {
+    + <<override>> InRelation(me:Pawn, other:Pawn) : bool
+    + <<override>> GenerationChance(generated:Pawn, other:Pawn, request:PawnGenerationRequest) : float
+    + <<override>> CreateRelation(generated:Pawn, other:Pawn, request:PawnGenerationRequest) : void
+}
+PawnRelationWorker <|-- PawnRelationWorker_Child
+@enduml

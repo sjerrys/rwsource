@@ -1,0 +1,19 @@
+@startuml
+class DeepResourceGrid <<sealed>> {
+    + DeepResourceGrid(map:Map)
+    + ExposeData() : void
+    + ThingDefAt(c:IntVec3) : ThingDef
+    + CountAt(c:IntVec3) : int
+    + SetAt(c:IntVec3, def:ThingDef, count:int) : void
+    + DeepResourceGridUpdate() : void
+    + MarkForDraw() : void
+    + DrawPlacingMouseAttachments(placingDef:BuildableDef) : void
+    + DeepResourcesOnGUI() : void
+    + AnyActiveDeepScannersOnMap() : bool
+    + GetCellBool(index:int) : bool
+    + GetCellExtraColor(index:int) : Color
+}
+ICellBoolGiver <|-- DeepResourceGrid
+IExposable <|-- DeepResourceGrid
+DeepResourceGrid --> "Color" Color
+@enduml

@@ -1,0 +1,18 @@
+@startuml
+class TraverseParms <<struct>> {
+    + canBash : bool
+    + {static} For(pawn:Pawn, maxDanger:Danger, mode:TraverseMode, canBash:bool) : TraverseParms
+    + {static} For(mode:TraverseMode, maxDanger:Danger, canBash:bool) : TraverseParms
+    + Validate() : void
+    + <<override>> Equals(obj:object) : bool
+    + Equals(other:TraverseParms) : bool
+    + <<override>> GetHashCode() : int
+    + <<override>> ToString() : string
+}
+class "IEquatable`1"<T> {
+}
+"IEquatable`1" "<TraverseParms>" <|-- TraverseParms
+TraverseParms --> "pawn" Pawn
+TraverseParms --> "mode" TraverseMode
+TraverseParms --> "maxDanger" Danger
+@enduml

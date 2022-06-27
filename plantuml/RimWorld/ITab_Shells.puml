@@ -1,0 +1,6 @@
+@startuml
+class ITab_Shells {
+    + ITab_Shells()
+}
+ITab_Storage <|-- ITab_Shells
+@enduml

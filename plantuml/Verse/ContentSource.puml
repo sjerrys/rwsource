@@ -1,0 +1,8 @@
+@startuml
+enum ContentSource {
+    Undefined,
+    OfficialModsFolder,
+    ModsFolder,
+    SteamWorkshop,
+}
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class CompProperties_AbilityGiveMentalState {
+}
+CompProperties_AbilityEffect <|-- CompProperties_AbilityGiveMentalState
+CompProperties_AbilityGiveMentalState --> "stateDef" MentalStateDef
+CompProperties_AbilityGiveMentalState --> "stateDefForMechs" MentalStateDef
+CompProperties_AbilityGiveMentalState --> "durationMultiplier" StatDef
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class GenStep_Settlement {
+    + <<override>> SeedPart : int <<get>>
+    + {static} GenerateLandingPadNearby(rect:CellRect, map:Map, faction:Faction, usedRect:CellRect) : void
+}
+GenStep_Scatterer <|-- GenStep_Settlement
+@enduml

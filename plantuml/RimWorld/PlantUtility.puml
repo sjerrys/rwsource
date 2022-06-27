@@ -1,0 +1,15 @@
+@startuml
+class PlantUtility <<static>> {
+    + {static} GrowthSeasonNow(c:IntVec3, map:Map, forSowing:bool) : bool
+    + {static} SnowAllowsPlanting(c:IntVec3, map:Map) : bool
+    + {static} CanEverPlantAt(plantDef:ThingDef, c:IntVec3, map:Map) : bool
+    + {static} CanEverPlantAt_NewTemp(plantDef:ThingDef, c:IntVec3, map:Map, canWipePlantsExceptTree:bool) : bool
+    + {static} LogPlantProportions() : void
+    + {static} ValidPlantTypesForGrowers(sel:List<IPlantToGrowSettable>) : IEnumerable<ThingDef>
+    + {static} CanSowOnGrower(plantDef:ThingDef, obj:object) : bool
+    + {static} AdjacentSowBlocker(plantDef:ThingDef, c:IntVec3, map:Map) : Thing
+    + {static} GetWindExposure(plant:Plant) : byte
+    + {static} SetWindExposureColors(colors:Color32[], plant:Plant) : void
+    + {static} LogFallColorForYear() : void
+}
+@enduml

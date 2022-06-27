@@ -1,0 +1,6 @@
+@startuml
+class SkyfallerUtility <<static>> {
+    + {static} CanPossiblyFallOnColonist(skyfaller:ThingDef, c:IntVec3, map:Map) : bool
+    + {static} MakeDropoffShuttle(map:Map, contents:List<Thing>, faction:Faction) : void
+}
+@enduml

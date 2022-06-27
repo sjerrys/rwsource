@@ -1,0 +1,10 @@
+@startuml
+class QuestNode_HasRoyalTitleInCurrentFaction {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_HasRoyalTitleInCurrentFaction
+QuestNode_HasRoyalTitleInCurrentFaction --> "pawn<Pawn>" "SlateRef`1"
+QuestNode_HasRoyalTitleInCurrentFaction --> "node" QuestNode
+QuestNode_HasRoyalTitleInCurrentFaction --> "elseNode" QuestNode
+@enduml

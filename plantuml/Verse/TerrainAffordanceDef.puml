@@ -1,0 +1,9 @@
+@startuml
+class TerrainAffordanceDef {
+    + order : int
+    + visualizeOnAffordanceOverlay : bool
+    + blockAffordanceOverlay : bool
+}
+Def <|-- TerrainAffordanceDef
+TerrainAffordanceDef o-> "affordanceOverlayColor" Color
+@enduml

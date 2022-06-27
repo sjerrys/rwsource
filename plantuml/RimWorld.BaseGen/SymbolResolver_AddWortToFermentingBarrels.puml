@@ -1,0 +1,6 @@
+@startuml
+class SymbolResolver_AddWortToFermentingBarrels {
+    + <<override>> Resolve(rp:ResolveParams) : void
+}
+SymbolResolver <|-- SymbolResolver_AddWortToFermentingBarrels
+@enduml

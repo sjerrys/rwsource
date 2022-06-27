@@ -1,0 +1,7 @@
+@startuml
+class LanguageWorker_Danish {
+    + <<override>> WithIndefiniteArticle(str:string, gender:Gender, plural:bool, name:bool) : string
+    + <<override>> WithDefiniteArticle(str:string, gender:Gender, plural:bool, name:bool) : string
+}
+LanguageWorker <|-- LanguageWorker_Danish
+@enduml

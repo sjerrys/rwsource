@@ -1,0 +1,21 @@
+@startuml
+class CaravanThingsTabUtility <<static>> {
+    + <<const>> MassColumnWidth : float = 60f
+    + <<const>> SpaceAroundIcon : float = 4f
+    + <<const>> SpecificTabButtonSize : float = 24f
+    + <<const>> AbandonButtonSize : float = 24f
+    + <<const>> AbandonSpecificCountButtonSize : float = 24f
+    + {static} DoAbandonButton(rowRect:Rect, t:Thing, caravan:Caravan) : void
+    + {static} DoAbandonButton(rowRect:Rect, t:TransferableImmutable, caravan:Caravan) : void
+    + {static} DoAbandonSpecificCountButton(rowRect:Rect, t:Thing, caravan:Caravan) : void
+    + {static} DoAbandonSpecificCountButton(rowRect:Rect, t:TransferableImmutable, caravan:Caravan) : void
+    + {static} DoOpenSpecificTabButton(rowRect:Rect, p:Pawn, specificTabForPawn:Pawn) : void
+    + {static} DrawMass(transferable:TransferableImmutable, rect:Rect) : void
+    + {static} DrawMass(thing:Thing, rect:Rect) : void
+}
+CaravanThingsTabUtility o-> "AbandonButtonTex" Texture2D
+CaravanThingsTabUtility o-> "AbandonSpecificCountButtonTex" Texture2D
+CaravanThingsTabUtility o-> "SpecificTabButtonTex" Texture2D
+CaravanThingsTabUtility o-> "OpenedSpecificTabButtonColor" Color
+CaravanThingsTabUtility o-> "OpenedSpecificTabButtonMouseoverColor" Color
+@enduml

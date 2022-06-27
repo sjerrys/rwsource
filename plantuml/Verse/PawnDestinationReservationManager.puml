@@ -1,0 +1,39 @@
+@startuml
+class PawnDestinationReservationManager <<sealed>> {
+    + GetPawnDestinationSetFor(faction:Faction) : PawnDestinationSet
+    + Reserve(p:Pawn, job:Job, loc:IntVec3) : void
+    + MostRecentReservationFor(p:Pawn) : PawnDestinationReservation
+    + FirstObsoleteReservationFor(p:Pawn) : IntVec3
+    + FirstObsoleteReservationJobFor(p:Pawn) : Job
+    + IsReserved(loc:IntVec3) : bool
+    + IsReserved(loc:IntVec3, claimant:Pawn) : bool
+    + CanReserve(c:IntVec3, searcher:Pawn, draftedOnly:bool) : bool
+    + FirstReserverOf(c:IntVec3, faction:Faction) : Pawn
+    + ReleaseAllObsoleteClaimedBy(p:Pawn) : void
+    + ReleaseAllClaimedBy(p:Pawn) : void
+    + ReleaseClaimedBy(p:Pawn, job:Job) : void
+    + Notify_FactionRemoved(faction:Faction) : void
+    + ObsoleteAllClaimedBy(p:Pawn) : void
+    + DebugDrawDestinations() : void
+    + DebugDrawReservations() : void
+    + ExposeData() : void
+}
+class PawnDestinationReservation {
+    + obsolete : bool
+    + ExposeData() : void
+}
+class PawnDestinationSet {
+    + ExposeData() : void
+}
+class "List`1"<T> {
+}
+IExposable <|-- PawnDestinationReservationManager
+PawnDestinationReservationManager +-- PawnDestinationReservation
+IExposable <|-- PawnDestinationReservation
+PawnDestinationReservation --> "target" IntVec3
+PawnDestinationReservation --> "claimant" Pawn
+PawnDestinationReservation --> "job" Job
+PawnDestinationReservationManager +-- PawnDestinationSet
+IExposable <|-- PawnDestinationSet
+PawnDestinationSet o-> "list<PawnDestinationReservation>" "List`1"
+@enduml

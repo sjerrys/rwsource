@@ -1,0 +1,5 @@
+@startuml
+class PawnTechHediffsGenerator <<static>> {
+    + {static} GenerateTechHediffsFor(pawn:Pawn) : void
+}
+@enduml

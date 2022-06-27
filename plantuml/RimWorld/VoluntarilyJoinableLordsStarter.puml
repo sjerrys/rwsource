@@ -1,0 +1,12 @@
+@startuml
+class VoluntarilyJoinableLordsStarter {
+    + VoluntarilyJoinableLordsStarter(map:Map)
+    + TryStartMarriageCeremony(firstFiance:Pawn, secondFiance:Pawn) : bool
+    + TryStartReigningSpeech(pawn:Pawn) : bool
+    + TryStartRandomGathering(forceStart:bool) : bool
+    + TryStartGathering(gatheringDef:GatheringDef) : bool
+    + VoluntarilyJoinableLordsStarterTick() : void
+    + ExposeData() : void
+}
+IExposable <|-- VoluntarilyJoinableLordsStarter
+@enduml

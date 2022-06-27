@@ -1,0 +1,5 @@
+@startuml
+class CastPositionFinder <<static>> {
+    + {static} TryFindCastPosition(newReq:CastPositionRequest, dest:IntVec3) : bool
+}
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+enum RepeatSelectMode {
+    Any,
+    NeverTwice,
+    NeverLastHalf,
+}
+@enduml

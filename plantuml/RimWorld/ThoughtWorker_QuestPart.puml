@@ -1,0 +1,6 @@
+@startuml
+class ThoughtWorker_QuestPart {
+    + FindQuestPart(p:Pawn) : QuestPart_SituationalThought
+}
+ThoughtWorker <|-- ThoughtWorker_QuestPart
+@enduml

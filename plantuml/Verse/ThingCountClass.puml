@@ -1,0 +1,11 @@
+@startuml
+class ThingCountClass <<sealed>> {
+    + Count : int <<get>> <<set>>
+    + ThingCountClass()
+    + ThingCountClass(thing:Thing, count:int)
+    + ExposeData() : void
+    + <<override>> ToString() : string
+}
+IExposable <|-- ThingCountClass
+ThingCountClass --> "thing" Thing
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class RaidStrategyDefOf <<static>> {
+    {static} RaidStrategyDefOf()
+}
+RaidStrategyDefOf --> "ImmediateAttack" RaidStrategyDef
+RaidStrategyDefOf --> "ImmediateAttackFriendly" RaidStrategyDef
+@enduml

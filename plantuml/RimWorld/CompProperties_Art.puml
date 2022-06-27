@@ -1,0 +1,11 @@
+@startuml
+class CompProperties_Art {
+    + mustBeFullGrave : bool
+    + canBeEnjoyedAsArt : bool
+    + CompProperties_Art()
+}
+CompProperties <|-- CompProperties_Art
+CompProperties_Art --> "nameMaker" RulePackDef
+CompProperties_Art --> "descriptionMaker" RulePackDef
+CompProperties_Art --> "minQualityForArtistic" QualityCategory
+@enduml

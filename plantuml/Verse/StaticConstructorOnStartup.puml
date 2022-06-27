@@ -1,0 +1,5 @@
+@startuml
+class StaticConstructorOnStartup {
+}
+Attribute <|-- StaticConstructorOnStartup
+@enduml

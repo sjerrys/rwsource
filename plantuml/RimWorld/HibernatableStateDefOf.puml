@@ -1,0 +1,8 @@
+@startuml
+class HibernatableStateDefOf <<static>> {
+    {static} HibernatableStateDefOf()
+}
+HibernatableStateDefOf --> "Running" HibernatableStateDef
+HibernatableStateDefOf --> "Starting" HibernatableStateDef
+HibernatableStateDefOf --> "Hibernating" HibernatableStateDef
+@enduml

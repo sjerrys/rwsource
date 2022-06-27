@@ -1,0 +1,5 @@
+@startuml
+class SketchResolver_DamageBuildings {
+}
+SketchResolver <|-- SketchResolver_DamageBuildings
+@enduml

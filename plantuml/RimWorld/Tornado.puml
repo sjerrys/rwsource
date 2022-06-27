@@ -1,0 +1,9 @@
+@startuml
+class Tornado {
+    + <<override>> ExposeData() : void
+    + <<override>> SpawnSetup(map:Map, respawningAfterLoad:bool) : void
+    + <<override>> Tick() : void
+    + <<override>> Draw() : void
+}
+ThingWithComps <|-- Tornado
+@enduml

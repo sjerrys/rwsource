@@ -1,0 +1,13 @@
+@startuml
+class GenStuff <<static>> {
+    + {static} DefaultStuffFor(bd:BuildableDef) : ThingDef
+    + {static} RandomStuffFor(td:ThingDef) : ThingDef
+    + {static} RandomStuffByCommonalityFor(td:ThingDef, maxTechLevel:TechLevel) : ThingDef
+    + {static} AllowedStuffsFor(td:BuildableDef, maxTechLevel:TechLevel) : IEnumerable<ThingDef>
+    + {static} AllowedStuffs(categories:List<StuffCategoryDef>, maxTechLevel:TechLevel) : IEnumerable<ThingDef>
+    + {static} TryRandomStuffByCommonalityFor(td:ThingDef, stuff:ThingDef, maxTechLevel:TechLevel) : bool
+    + {static} TryRandomStuffFor(td:ThingDef, stuff:ThingDef, maxTechLevel:TechLevel, validator:Predicate<ThingDef>) : bool
+    + {static} RandomStuffInexpensiveFor(thingDef:ThingDef, faction:Faction, validator:Predicate<ThingDef>) : ThingDef
+    + {static} RandomStuffInexpensiveFor(thingDef:ThingDef, maxTechLevel:TechLevel, validator:Predicate<ThingDef>) : ThingDef
+}
+@enduml

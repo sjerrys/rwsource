@@ -1,0 +1,16 @@
+@startuml
+class Pawn_DrugPolicyTracker {
+    + Pawn_DrugPolicyTracker()
+    + Pawn_DrugPolicyTracker(pawn:Pawn)
+    + ExposeData() : void
+    + HasEverTaken(drug:ThingDef) : bool
+    + AllowedToTakeToInventory(thingDef:ThingDef) : bool
+    + AllowedToTakeScheduledEver(thingDef:ThingDef) : bool
+    + AllowedToTakeScheduledNow(thingDef:ThingDef) : bool
+    + ShouldTryToTakeScheduledNow(ingestible:ThingDef) : bool
+    + Notify_DrugIngested(drug:Thing) : void
+}
+IExposable <|-- Pawn_DrugPolicyTracker
+Pawn_DrugPolicyTracker --> "pawn" Pawn
+Pawn_DrugPolicyTracker --> "CurrentPolicy" DrugPolicy
+@enduml

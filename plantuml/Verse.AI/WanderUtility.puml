@@ -1,0 +1,7 @@
+@startuml
+class WanderUtility <<static>> {
+    + {static} BestCloseWanderRoot(trueWanderRoot:IntVec3, pawn:Pawn) : IntVec3
+    + {static} InSameRoom(locA:IntVec3, locB:IntVec3, map:Map) : bool
+    + {static} GetColonyWanderRoot(pawn:Pawn) : IntVec3
+}
+@enduml

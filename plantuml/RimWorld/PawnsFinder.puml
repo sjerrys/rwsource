@@ -1,0 +1,36 @@
+@startuml
+class PawnsFinder <<static>> {
+    + {static} AllMaps_SpawnedPawnsInFaction(faction:Faction) : List<Pawn>
+    + {static} Clear() : void
+}
+class "List`1"<T> {
+}
+PawnsFinder --> "AllMapsWorldAndTemporary_AliveOrDead<Pawn>" "List`1"
+PawnsFinder --> "AllMapsWorldAndTemporary_Alive<Pawn>" "List`1"
+PawnsFinder --> "AllMapsAndWorld_Alive<Pawn>" "List`1"
+PawnsFinder --> "AllMaps<Pawn>" "List`1"
+PawnsFinder --> "AllMaps_Spawned<Pawn>" "List`1"
+PawnsFinder --> "All_AliveOrDead<Pawn>" "List`1"
+PawnsFinder --> "Temporary<Pawn>" "List`1"
+PawnsFinder --> "Temporary_Alive<Pawn>" "List`1"
+PawnsFinder --> "Temporary_Dead<Pawn>" "List`1"
+PawnsFinder --> "AllMapsCaravansAndTravelingTransportPods_Alive<Pawn>" "List`1"
+PawnsFinder --> "AllCaravansAndTravelingTransportPods_Alive<Pawn>" "List`1"
+PawnsFinder --> "AllCaravansAndTravelingTransportPods_AliveOrDead<Pawn>" "List`1"
+PawnsFinder --> "AllMapsCaravansAndTravelingTransportPods_Alive_Colonists<Pawn>" "List`1"
+PawnsFinder --> "AllMapsCaravansAndTravelingTransportPods_Alive_FreeColonists<Pawn>" "List`1"
+PawnsFinder --> "AllMapsCaravansAndTravelingTransportPods_Alive_FreeColonists_NoLodgers<Pawn>" "List`1"
+PawnsFinder --> "AllMapsCaravansAndTravelingTransportPods_Alive_FreeColonists_NoCryptosleep<Pawn>" "List`1"
+PawnsFinder --> "AllMapsCaravansAndTravelingTransportPods_Alive_OfPlayerFaction<Pawn>" "List`1"
+PawnsFinder --> "AllMapsCaravansAndTravelingTransportPods_Alive_OfPlayerFaction_NoCryptosleep<Pawn>" "List`1"
+PawnsFinder --> "AllMapsCaravansAndTravelingTransportPods_Alive_PrisonersOfColony<Pawn>" "List`1"
+PawnsFinder --> "AllMapsCaravansAndTravelingTransportPods_Alive_FreeColonistsAndPrisoners<Pawn>" "List`1"
+PawnsFinder --> "AllMapsCaravansAndTravelingTransportPods_Alive_FreeColonistsAndPrisoners_NoCryptosleep<Pawn>" "List`1"
+PawnsFinder --> "AllMaps_PrisonersOfColonySpawned<Pawn>" "List`1"
+PawnsFinder --> "AllMaps_PrisonersOfColony<Pawn>" "List`1"
+PawnsFinder --> "AllMaps_FreeColonists<Pawn>" "List`1"
+PawnsFinder --> "AllMaps_FreeColonistsSpawned<Pawn>" "List`1"
+PawnsFinder --> "AllMaps_FreeColonistsAndPrisonersSpawned<Pawn>" "List`1"
+PawnsFinder --> "AllMaps_FreeColonistsAndPrisoners<Pawn>" "List`1"
+PawnsFinder --> "HomeMaps_FreeColonistsSpawned<Pawn>" "List`1"
+@enduml

@@ -1,0 +1,29 @@
+@startuml
+class Caravan_PathFollower {
+    + nextTile : int
+    + previousTileForDrawingIfInDoubt : int
+    + nextTileCostLeft : float
+    + nextTileCostTotal : float = 1f
+    + lastPathedTargetTile : int
+    + <<const>> MaxMoveTicks : int = 30000
+    + <<const>> DefaultPathCostToPayPerTick : float = 1f
+    + <<const>> FinalNoRestPushMaxDurationTicks : int = 10000
+    + Destination : int <<get>>
+    + Moving : bool <<get>>
+    + MovingNow : bool <<get>>
+    + Paused : bool <<get>> <<set>>
+    + Caravan_PathFollower(caravan:Caravan)
+    + ExposeData() : void
+    + StartPath(destTile:int, arrivalAction:CaravanArrivalAction, repathImmediately:bool, resetPauseStatus:bool) : bool
+    + StopDead() : void
+    + PatherTick() : void
+    + Notify_Teleported_Int() : void
+    + IsNextTilePassable() : bool
+    + {static} CostToMove(caravan:Caravan, start:int, end:int, ticksAbs:int?) : int
+    + {static} CostToMove(caravanTicksPerMove:int, start:int, end:int, ticksAbs:int?, perceivedStatic:bool, explanation:StringBuilder, caravanTicksPerMoveExplanation:string) : int
+    + {static} IsValidFinalPushDestination(tile:int) : bool
+}
+IExposable <|-- Caravan_PathFollower
+Caravan_PathFollower --> "curPath" WorldPath
+Caravan_PathFollower --> "ArrivalAction" CaravanArrivalAction
+@enduml

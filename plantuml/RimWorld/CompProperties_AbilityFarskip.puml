@@ -1,0 +1,7 @@
+@startuml
+class CompProperties_AbilityFarskip {
+    + CompProperties_AbilityFarskip()
+}
+CompProperties_AbilityEffect <|-- CompProperties_AbilityFarskip
+CompProperties_AbilityFarskip --> "stunTicks" IntRange
+@enduml

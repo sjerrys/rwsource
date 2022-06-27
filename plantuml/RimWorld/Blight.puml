@@ -1,0 +1,13 @@
+@startuml
+class Blight {
+    + Severity : float <<get>> <<set>>
+    + <<override>> ExposeData() : void
+    + <<override>> SpawnSetup(map:Map, respawningAfterLoad:bool) : void
+    + <<override>> TickLong() : void
+    + Notify_PlantDeSpawned() : void
+    + TryReproduceNow() : void
+    + <<override>> Print(layer:SectionLayer) : void
+}
+Thing <|-- Blight
+Blight --> "Plant" Plant
+@enduml

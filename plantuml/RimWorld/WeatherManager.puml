@@ -1,0 +1,29 @@
+@startuml
+class WeatherManager <<sealed>> {
+    + curWeatherAge : int
+    + <<const>> TransitionTicks : float = 4000f
+    + TransitionLerpFactor : float <<get>>
+    + RainRate : float <<get>>
+    + SnowRate : float <<get>>
+    + CurWindSpeedFactor : float <<get>>
+    + CurWindSpeedOffset : float <<get>>
+    + CurMoveSpeedMultiplier : float <<get>>
+    + CurWeatherAccuracyMultiplier : float <<get>>
+    + WeatherManager(map:Map)
+    + ExposeData() : void
+    + TransitionTo(newWeather:WeatherDef) : void
+    + DoWeatherGUI(rect:Rect) : void
+    + WeatherManagerTick() : void
+    + WeatherManagerUpdate() : void
+    + EndAllSustainers() : void
+    + DrawAllWeather() : void
+}
+IExposable <|-- WeatherManager
+WeatherManager --> "map" Map
+WeatherManager o-> "eventHandler" WeatherEventHandler
+WeatherManager o-> "curWeather" WeatherDef
+WeatherManager o-> "lastWeather" WeatherDef
+WeatherManager --> "growthSeasonMemory" TemperatureMemory
+WeatherManager --> "CurWeatherPerceived" WeatherDef
+WeatherManager --> "CurWeatherLerped" WeatherDef
+@enduml

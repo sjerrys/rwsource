@@ -1,0 +1,16 @@
+@startuml
+enum PawnLostCondition {
+    Undefined,
+    Vanished,
+    IncappedOrKilled,
+    MadePrisoner,
+    ChangedFaction,
+    ExitedMap,
+    LeftVoluntarily,
+    Drafted,
+    ForcedToJoinOtherLord,
+    ForcedByPlayerAction,
+    ForcedByQuest,
+    NoLongerEnteringTransportPods,
+}
+@enduml

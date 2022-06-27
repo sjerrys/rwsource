@@ -1,0 +1,13 @@
+@startuml
+class JobDriver_Ingest {
+    + <<const>> EatCorpseBodyPartsUntilFoodLevelPct : float = 0.9f
+    + <<override>> ExposeData() : void
+    + <<override>> GetReport() : string
+    + <<override>> Notify_Starting() : void
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+    + <<override>> ModifyCarriedThingDrawPos(drawPos:Vector3, behind:bool, flip:bool) : bool
+    + {static} ModifyCarriedThingDrawPosWorker(drawPos:Vector3, behind:bool, flip:bool, placeCell:IntVec3, pawn:Pawn) : bool
+}
+JobDriver <|-- JobDriver_Ingest
+JobDriver_Ingest o-> "IngestibleSourceInd" TargetIndex
+@enduml

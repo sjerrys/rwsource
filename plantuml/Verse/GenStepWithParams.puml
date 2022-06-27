@@ -1,0 +1,7 @@
+@startuml
+class GenStepWithParams <<struct>> {
+    + GenStepWithParams(def:GenStepDef, parms:GenStepParams)
+}
+GenStepWithParams --> "def" GenStepDef
+GenStepWithParams --> "parms" GenStepParams
+@enduml

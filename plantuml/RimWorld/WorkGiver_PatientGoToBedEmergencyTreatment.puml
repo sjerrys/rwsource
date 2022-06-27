@@ -1,0 +1,6 @@
+@startuml
+class WorkGiver_PatientGoToBedEmergencyTreatment {
+    + <<override>> NonScanJob(pawn:Pawn) : Job
+}
+WorkGiver_PatientGoToBedRecuperate <|-- WorkGiver_PatientGoToBedEmergencyTreatment
+@enduml

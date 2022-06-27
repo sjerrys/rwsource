@@ -1,0 +1,6 @@
+@startuml
+class InteractionWorker_KindWords {
+    + <<override>> RandomSelectionWeight(initiator:Pawn, recipient:Pawn) : float
+}
+InteractionWorker <|-- InteractionWorker_KindWords
+@enduml

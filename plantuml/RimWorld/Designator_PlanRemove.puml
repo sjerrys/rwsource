@@ -1,0 +1,6 @@
+@startuml
+class Designator_PlanRemove {
+    + Designator_PlanRemove()
+}
+Designator_Plan <|-- Designator_PlanRemove
+@enduml

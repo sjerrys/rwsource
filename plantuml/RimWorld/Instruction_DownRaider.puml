@@ -1,0 +1,9 @@
+@startuml
+class Instruction_DownRaider {
+    + <<override>> ExposeData() : void
+    + <<override>> OnActivated() : void
+    + <<override>> LessonOnGUI() : void
+    + <<override>> LessonUpdate() : void
+}
+Lesson_Instruction <|-- Instruction_DownRaider
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class ThinkNode_JoinVoluntarilyJoinableLord {
+    + <<override>> DeepCopy(resolve:bool) : ThinkNode
+    + <<override>> TryIssueJobPackage(pawn:Pawn, jobParams:JobIssueParams) : ThinkResult
+}
+ThinkNode_Priority <|-- ThinkNode_JoinVoluntarilyJoinableLord
+ThinkNode_JoinVoluntarilyJoinableLord --> "dutyHook" ThinkTreeDutyHook
+@enduml

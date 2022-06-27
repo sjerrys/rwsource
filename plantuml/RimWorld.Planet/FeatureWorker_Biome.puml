@@ -1,0 +1,5 @@
+@startuml
+class FeatureWorker_Biome {
+}
+FeatureWorker_FloodFill <|-- FeatureWorker_Biome
+@enduml

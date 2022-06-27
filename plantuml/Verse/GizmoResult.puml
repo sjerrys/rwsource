@@ -1,0 +1,8 @@
+@startuml
+class GizmoResult <<struct>> {
+    + GizmoResult(state:GizmoState)
+    + GizmoResult(state:GizmoState, interactEvent:Event)
+}
+GizmoResult --> "State" GizmoState
+GizmoResult --> "InteractEvent" Event
+@enduml

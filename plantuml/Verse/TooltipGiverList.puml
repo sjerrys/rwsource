@@ -1,0 +1,7 @@
+@startuml
+class TooltipGiverList <<sealed>> {
+    + Notify_ThingSpawned(t:Thing) : void
+    + Notify_ThingDespawned(t:Thing) : void
+    + DispenseAllThingTooltips() : void
+}
+@enduml

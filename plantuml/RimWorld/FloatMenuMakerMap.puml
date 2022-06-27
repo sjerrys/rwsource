@@ -1,0 +1,9 @@
+@startuml
+class FloatMenuMakerMap <<static>> {
+    + {static} TryMakeFloatMenu(pawn:Pawn) : void
+    + {static} TryMakeMultiSelectFloatMenu(pawns:List<Pawn>) : bool
+    + {static} ChoicesAtFor(clickPos:Vector3, pawn:Pawn) : List<FloatMenuOption>
+    + {static} ChoicesAtForMultiSelect(clickPos:Vector3, pawns:List<Pawn>) : List<FloatMenuOption>
+}
+FloatMenuMakerMap --> "makingFor" Pawn
+@enduml

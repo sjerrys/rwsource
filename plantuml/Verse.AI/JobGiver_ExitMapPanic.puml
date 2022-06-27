@@ -1,0 +1,6 @@
+@startuml
+class JobGiver_ExitMapPanic {
+    + JobGiver_ExitMapPanic()
+}
+JobGiver_ExitMapBest <|-- JobGiver_ExitMapPanic
+@enduml

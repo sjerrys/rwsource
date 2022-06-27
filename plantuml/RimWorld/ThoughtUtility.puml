@@ -1,0 +1,19 @@
+@startuml
+class ThoughtUtility <<static>> {
+    + {static} Reset() : void
+    + {static} GiveThoughtsForPawnExecuted(victim:Pawn, kind:PawnExecutionKind) : void
+    + {static} GiveThoughtsForPawnOrganHarvested(victim:Pawn) : void
+    + {static} NullifyingHediff(def:ThoughtDef, pawn:Pawn) : Hediff
+    + {static} NullifyingTrait(def:ThoughtDef, pawn:Pawn) : Trait
+    + {static} NullifyingTale(def:ThoughtDef, pawn:Pawn) : TaleDef
+    + {static} RemovePositiveBedroomThoughts(pawn:Pawn) : void
+    + {static} CanGetThought(pawn:Pawn, def:ThoughtDef) : bool
+    + {static} CanGetThought_NewTemp(pawn:Pawn, def:ThoughtDef, checkIfNullified:bool) : bool
+    + {static} ThoughtNullified(pawn:Pawn, def:ThoughtDef) : bool
+    + {static} ThoughtNullifiedMessage(pawn:Pawn, def:ThoughtDef) : string
+}
+class "List`1"<T> {
+}
+ThoughtUtility --> "situationalSocialThoughtDefs<ThoughtDef>" "List`1"
+ThoughtUtility --> "situationalNonSocialThoughtDefs<ThoughtDef>" "List`1"
+@enduml

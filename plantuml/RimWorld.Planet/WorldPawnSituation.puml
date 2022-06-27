@@ -1,0 +1,15 @@
+@startuml
+enum WorldPawnSituation {
+    None,
+    Free,
+    Dead,
+    FactionLeader,
+    Kidnapped,
+    Borrowed,
+    CaravanMember,
+    InTravelingTransportPod,
+    ForSaleBySettlement,
+    ReservedByQuest,
+    Teleporting,
+}
+@enduml

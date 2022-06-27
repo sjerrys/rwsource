@@ -1,0 +1,8 @@
+@startuml
+class HediffCompProperties_PsychicHarmonizer {
+    + range : float
+    + HediffCompProperties_PsychicHarmonizer()
+}
+HediffCompProperties <|-- HediffCompProperties_PsychicHarmonizer
+HediffCompProperties_PsychicHarmonizer --> "thought" ThoughtDef
+@enduml

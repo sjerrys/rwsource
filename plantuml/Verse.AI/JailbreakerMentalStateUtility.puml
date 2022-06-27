@@ -1,0 +1,5 @@
+@startuml
+class JailbreakerMentalStateUtility <<static>> {
+    + {static} FindPrisoner(pawn:Pawn) : Pawn
+}
+@enduml

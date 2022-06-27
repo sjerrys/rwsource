@@ -1,0 +1,11 @@
+@startuml
+abstract class RoomRequirement {
+    + labelKey : string
+    + {abstract} Met(r:Room, p:Pawn) : bool
+    + <<virtual>> Label(r:Room) : string
+    + LabelCap(r:Room) : string
+    + <<virtual>> ConfigErrors() : IEnumerable<string>
+    + <<virtual>> SameOrSubsetOf(other:RoomRequirement) : bool
+    + <<virtual>> PlayerHasResearched() : bool
+}
+@enduml

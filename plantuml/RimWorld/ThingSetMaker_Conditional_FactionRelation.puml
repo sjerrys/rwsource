@@ -1,0 +1,9 @@
+@startuml
+class ThingSetMaker_Conditional_FactionRelation {
+    + allowHostile : bool
+    + allowNeutral : bool
+    + allowAlly : bool
+}
+ThingSetMaker_Conditional <|-- ThingSetMaker_Conditional_FactionRelation
+ThingSetMaker_Conditional_FactionRelation --> "factionDef" FactionDef
+@enduml

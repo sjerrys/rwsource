@@ -1,0 +1,6 @@
+@startuml
+class MarriageSpotUtility <<static>> {
+    + {static} IsValidMarriageSpot(cell:IntVec3, map:Map, outFailReason:StringBuilder) : bool
+    + {static} IsValidMarriageSpotFor(cell:IntVec3, firstFiance:Pawn, secondFiance:Pawn, outFailReason:StringBuilder) : bool
+}
+@enduml

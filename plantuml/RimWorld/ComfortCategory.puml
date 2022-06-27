@@ -1,0 +1,10 @@
+@startuml
+enum ComfortCategory {
+    Uncomfortable,
+    Normal,
+    Comfortable,
+    VeryComfortable,
+    ExtremelyComfortable,
+    LuxuriantlyComfortable,
+}
+@enduml

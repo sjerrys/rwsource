@@ -1,0 +1,10 @@
+@startuml
+class DiaNodeList {
+    + Name : string = "NeedsName"
+    + RandomNodeFromList() : DiaNodeMold
+}
+class "List`1"<T> {
+}
+DiaNodeList o-> "Nodes<DiaNodeMold>" "List`1"
+DiaNodeList o-> "NodeNames<string>" "List`1"
+@enduml

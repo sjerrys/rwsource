@@ -1,0 +1,10 @@
+@startuml
+class ClamorDefOf <<static>> {
+    {static} ClamorDefOf()
+}
+ClamorDefOf --> "Movement" ClamorDef
+ClamorDefOf --> "Harm" ClamorDef
+ClamorDefOf --> "Construction" ClamorDef
+ClamorDefOf --> "Impact" ClamorDef
+ClamorDefOf --> "Ability" ClamorDef
+@enduml

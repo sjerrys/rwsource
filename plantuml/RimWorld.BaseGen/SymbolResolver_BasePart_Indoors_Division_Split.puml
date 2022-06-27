@@ -1,0 +1,7 @@
+@startuml
+class SymbolResolver_BasePart_Indoors_Division_Split {
+    + <<override>> CanResolve(rp:ResolveParams) : bool
+    + <<override>> Resolve(rp:ResolveParams) : void
+}
+SymbolResolver <|-- SymbolResolver_BasePart_Indoors_Division_Split
+@enduml

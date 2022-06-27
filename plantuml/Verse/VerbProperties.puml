@@ -1,0 +1,96 @@
+@startuml
+class VerbProperties {
+    + label : string
+    + untranslatedLabel : string
+    + isPrimary : bool = true
+    + violent : bool = true
+    + minRange : float
+    + range : float = 1.42f
+    + burstShotCount : int = 1
+    + ticksBetweenBurstShots : int = 15
+    + noiseRadius : float = 3f
+    + hasStandardCommand : bool
+    + targetable : bool = true
+    + nonInterruptingSelfCast : bool
+    + requireLineOfSight : bool = true
+    + mustCastOnOpenGround : bool
+    + forceNormalTimeSpeed : bool = true
+    + onlyManualCast : bool
+    + stopBurstWithoutLos : bool = true
+    + commonality : float = 1f
+    + consumeFuelPerShot : float
+    + warmupTime : float
+    + defaultCooldownTime : float
+    + commandIcon : string
+    + muzzleFlashScale : float
+    + drawAimPie : bool = true
+    + drawHighlightWithLineOfSight : bool
+    + ensureLinkedBodyPartsGroupAlwaysUsable : bool
+    + meleeDamageBaseAmount : int = 1
+    + meleeArmorPenetrationBase : float
+    + ai_IsWeapon : bool = true
+    + ai_IsBuildingDestroyer : bool
+    + ai_AvoidFriendlyFireRadius : float
+    + forcedMissRadius : float
+    + accuracyTouch : float = 1f
+    + accuracyShort : float = 1f
+    + accuracyMedium : float = 1f
+    + accuracyLong : float = 1f
+    + <<const>> DefaultArmorPenetrationPerDamage : float = 0.015f
+    + CausesTimeSlowdown : bool <<get>>
+    + LaunchesProjectile : bool <<get>>
+    + AccuracySummaryString : string <<get>>
+    + IsMeleeAttack : bool <<get>>
+    + CausesExplosion : bool <<get>>
+    + AdjustedMeleeDamageAmount(ownerVerb:Verb, attacker:Pawn) : float
+    + AdjustedMeleeDamageAmount(tool:Tool, attacker:Pawn, equipment:Thing, hediffCompSource:HediffComp_VerbGiver) : float
+    + AdjustedMeleeDamageAmount_NewTmp(tool:Tool, attacker:Pawn, equipment:ThingDef, equipmentStuff:ThingDef, hediffCompSource:HediffComp_VerbGiver) : float
+    + AdjustedArmorPenetration(ownerVerb:Verb, attacker:Pawn) : float
+    + AdjustedArmorPenetration(tool:Tool, attacker:Pawn, equipment:Thing, hediffCompSource:HediffComp_VerbGiver) : float
+    + AdjustedArmorPenetration_NewTmp(tool:Tool, attacker:Pawn, equipment:ThingDef, equipmentStuff:ThingDef, hediffCompSource:HediffComp_VerbGiver) : float
+    + AdjustedMeleeSelectionWeight(ownerVerb:Verb, attacker:Pawn) : float
+    + AdjustedMeleeSelectionWeight(tool:Tool, attacker:Pawn, equipment:Thing, hediffCompSource:HediffComp_VerbGiver, comesFromPawnNativeVerbs:bool) : float
+    + AdjustedMeleeSelectionWeight_NewTmp(tool:Tool, attacker:Pawn, equipment:ThingDef, equipmentStuff:ThingDef, hediffCompSource:HediffComp_VerbGiver, comesFromPawnNativeVerbs:bool) : float
+    + AdjustedCooldown(ownerVerb:Verb, attacker:Pawn) : float
+    + AdjustedCooldown(tool:Tool, attacker:Pawn, equipment:Thing) : float
+    + AdjustedCooldown_NewTmp(tool:Tool, attacker:Pawn, equipment:ThingDef, equipmentStuff:ThingDef) : float
+    + AdjustedCooldownTicks(ownerVerb:Verb, attacker:Pawn) : int
+    + AdjustedFullCycleTime(ownerVerb:Verb, attacker:Pawn) : float
+    + GetDamageFactorFor(ownerVerb:Verb, attacker:Pawn) : float
+    + GetDamageFactorFor(tool:Tool, attacker:Pawn, hediffCompSource:HediffComp_VerbGiver) : float
+    + AdjustedLinkedBodyPartsGroup(tool:Tool) : BodyPartGroupDef
+    + AdjustedEnsureLinkedBodyPartsGroupAlwaysUsable(tool:Tool) : bool
+    + EffectiveMinRange(target:LocalTargetInfo, caster:Thing) : float
+    + EffectiveMinRange(allowAdjacentShot:bool) : float
+    + GetHitChanceFactor(equipment:Thing, dist:float) : float
+    + DrawRadiusRing(center:IntVec3) : void
+    + <<override>> ToString() : string
+    + <<new>> MemberwiseClone() : VerbProperties
+    + ConfigErrors(parent:ThingDef) : IEnumerable<string>
+    + PostLoad() : void
+}
+enum RangeCategory {
+    Touch,
+    Short,
+    Medium,
+    Long,
+}
+VerbProperties o-> "category" VerbCategory
+VerbProperties o-> "verbClass" Type
+VerbProperties o-> "targetParams" TargetingParameters
+VerbProperties --> "surpriseAttack" SurpriseAttackProps
+VerbProperties --> "minIntelligence" Intelligence
+VerbProperties --> "soundCast" SoundDef
+VerbProperties --> "soundCastTail" SoundDef
+VerbProperties --> "soundAiming" SoundDef
+VerbProperties --> "impactMote" ThingDef
+VerbProperties --> "warmupEffecter" EffecterDef
+VerbProperties --> "linkedBodyPartsGroup" BodyPartGroupDef
+VerbProperties --> "meleeDamageDef" DamageDef
+VerbProperties --> "defaultProjectile" ThingDef
+VerbProperties --> "spawnDef" ThingDef
+VerbProperties --> "colonyWideTaleDef" TaleDef
+VerbProperties --> "bodypartTagTarget" BodyPartTagDef
+VerbProperties --> "rangedFireRulepack" RulePackDef
+VerbProperties +-- RangeCategory
+@enduml

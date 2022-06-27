@@ -1,0 +1,7 @@
+@startuml
+class DestroyedSettlement {
+    + <<override>> ShouldRemoveMapNow(alsoRemoveWorldObject:bool) : bool
+    + <<override>> GetGizmos() : IEnumerable<Gizmo>
+}
+MapParent <|-- DestroyedSettlement
+@enduml

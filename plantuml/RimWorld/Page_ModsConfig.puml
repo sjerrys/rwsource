@@ -1,0 +1,12 @@
+@startuml
+class Page_ModsConfig {
+    + Page_ModsConfig()
+    + <<override>> PreOpen() : void
+    + <<override>> DoWindowContents(rect:Rect) : void
+    + Notify_ModsListChanged() : void
+    + SelectMod(mod:ModMetaData) : void
+    + <<override>> PostClose() : void
+}
+Page <|-- Page_ModsConfig
+Page_ModsConfig --> "selectedMod" ModMetaData
+@enduml

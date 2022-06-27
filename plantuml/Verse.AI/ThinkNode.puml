@@ -1,0 +1,21 @@
+@startuml
+abstract class ThinkNode {
+    + leaveJoinableLordIfIssuesJob : bool
+    + <<const>> InvalidSaveKey : int
+    + UniqueSaveKey : int <<get>>
+    + <<virtual>> GetPriority(pawn:Pawn) : float
+    + {abstract} TryIssueJobPackage(pawn:Pawn, jobParams:JobIssueParams) : ThinkResult
+    + ResolveSubnodesAndRecur() : void
+    + <<virtual>> ResolveReferences() : void
+    + <<virtual>> DeepCopy(resolve:bool) : ThinkNode
+    + <<override>> GetHashCode() : int
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+ThinkNode o-> "subNodes<ThinkNode>" "List`1"
+ThinkNode --> "parent" ThinkNode
+ThinkNode --> "ThisAndChildrenRecursive<ThinkNode>" "IEnumerable`1"
+ThinkNode --> "ChildrenRecursive<ThinkNode>" "IEnumerable`1"
+@enduml

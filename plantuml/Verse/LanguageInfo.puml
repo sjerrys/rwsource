@@ -1,0 +1,11 @@
+@startuml
+class LanguageInfo {
+    + friendlyNameNative : string
+    + friendlyNameEnglish : string
+    + canBeTiny : bool = true
+}
+class "List`1"<T> {
+}
+LanguageInfo o-> "credits<CreditsEntry>" "List`1"
+LanguageInfo o-> "languageWorkerClass" Type
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class DefInjectionUtility <<static>> {
+    + {static} ForEachPossibleDefInjection(defType:Type, action:PossibleDefInjectionTraverser, onlyFromMod:ModMetaData) : void
+    + {static} ShouldCheckMissingInjection(str:string, fi:FieldInfo, def:Def) : bool
+}
+class "IEnumerable`1"<T> {
+}
+@enduml

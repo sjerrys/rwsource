@@ -1,0 +1,5 @@
+@startuml
+class JobGiver_ReachOutside {
+}
+ThinkNode_JobGiver <|-- JobGiver_ReachOutside
+@enduml

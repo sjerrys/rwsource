@@ -1,0 +1,6 @@
+@startuml
+class JobGiver_PackAnimalFollowColonists {
+    + {static} GetPawnToFollow(forPawn:Pawn) : Pawn
+}
+ThinkNode_JobGiver <|-- JobGiver_PackAnimalFollowColonists
+@enduml

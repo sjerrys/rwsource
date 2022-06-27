@@ -1,0 +1,10 @@
+@startuml
+class Gizmo_RoomStats {
+    + Gizmo_RoomStats(building:Building)
+    + <<override>> GetWidth(maxWidth:float) : float
+    + <<override>> GizmoOnGUI(topLeft:Vector2, maxWidth:float) : GizmoResult
+    + <<override>> GizmoUpdateOnMouseover() : void
+    + {static} GetRoomToShowStatsFor(building:Building) : Room
+}
+Gizmo <|-- Gizmo_RoomStats
+@enduml

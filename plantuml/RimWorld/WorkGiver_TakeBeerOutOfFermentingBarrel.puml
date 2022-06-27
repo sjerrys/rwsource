@@ -1,0 +1,10 @@
+@startuml
+class WorkGiver_TakeBeerOutOfFermentingBarrel {
+    + <<override>> ShouldSkip(pawn:Pawn, forced:bool) : bool
+    + <<override>> HasJobOnThing(pawn:Pawn, t:Thing, forced:bool) : bool
+    + <<override>> JobOnThing(pawn:Pawn, t:Thing, forced:bool) : Job
+}
+WorkGiver_Scanner <|-- WorkGiver_TakeBeerOutOfFermentingBarrel
+WorkGiver_TakeBeerOutOfFermentingBarrel --> "PotentialWorkThingRequest" ThingRequest
+WorkGiver_TakeBeerOutOfFermentingBarrel --> "PathEndMode" PathEndMode
+@enduml

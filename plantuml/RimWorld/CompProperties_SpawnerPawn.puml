@@ -1,0 +1,26 @@
+@startuml
+class CompProperties_SpawnerPawn {
+    + spawnMessageKey : string
+    + noPawnsLeftToSpawnKey : string
+    + pawnsLeftToSpawnKey : string
+    + showNextSpawnInInspect : bool
+    + shouldJoinParentLord : bool
+    + defendRadius : float = 21f
+    + initialPawnsCount : int
+    + initialPawnsPoints : float
+    + maxSpawnedPawnsPoints : float
+    + pawnSpawnRadius : int = 2
+    + chooseSingleTypeToSpawn : bool
+    + nextSpawnInspectStringKey : string
+    + nextSpawnInspectStringKeyDormant : string
+    + CompProperties_SpawnerPawn()
+}
+class "List`1"<T> {
+}
+CompProperties <|-- CompProperties_SpawnerPawn
+CompProperties_SpawnerPawn --> "spawnablePawnKinds<PawnKindDef>" "List`1"
+CompProperties_SpawnerPawn --> "spawnSound" SoundDef
+CompProperties_SpawnerPawn --> "lordJob" Type
+CompProperties_SpawnerPawn o-> "pawnSpawnIntervalDays" FloatRange
+CompProperties_SpawnerPawn o-> "maxPawnsToSpawn" IntRange
+@enduml

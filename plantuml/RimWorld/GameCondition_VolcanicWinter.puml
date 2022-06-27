@@ -1,0 +1,11 @@
+@startuml
+class GameCondition_VolcanicWinter {
+    + <<override>> TransitionTicks : int <<get>>
+    + <<override>> SkyTargetLerpFactor(map:Map) : float
+    + <<override>> SkyTarget(map:Map) : SkyTarget?
+    + <<override>> TemperatureOffset() : float
+    + <<override>> AnimalDensityFactor(map:Map) : float
+    + <<override>> AllowEnjoyableOutsideNow(map:Map) : bool
+}
+GameCondition <|-- GameCondition_VolcanicWinter
+@enduml

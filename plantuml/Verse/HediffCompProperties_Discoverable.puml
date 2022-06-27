@@ -1,0 +1,11 @@
+@startuml
+class HediffCompProperties_Discoverable {
+    + sendLetterWhenDiscovered : bool
+    + discoverLetterLabel : string
+    + discoverLetterText : string
+    + HediffCompProperties_Discoverable()
+}
+HediffCompProperties <|-- HediffCompProperties_Discoverable
+HediffCompProperties_Discoverable --> "messageType" MessageTypeDef
+HediffCompProperties_Discoverable --> "letterType" LetterDef
+@enduml

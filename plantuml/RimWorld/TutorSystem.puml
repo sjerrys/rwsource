@@ -1,0 +1,9 @@
+@startuml
+class TutorSystem <<static>> {
+    + {static} TutorialMode : bool <<get>>
+    + {static} AdaptiveTrainingEnabled : bool <<get>>
+    + {static} Notify_Event(eventTag:string, cell:IntVec3) : void
+    + {static} Notify_Event(ep:EventPack) : void
+    + {static} AllowAction(ep:EventPack) : bool
+}
+@enduml

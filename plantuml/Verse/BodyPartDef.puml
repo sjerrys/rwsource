@@ -1,0 +1,34 @@
+@startuml
+class BodyPartDef {
+    + labelShort : string
+    + hitPoints : int = 10
+    + permanentInjuryChanceFactor : float = 1f
+    + bleedRate : float = 1f
+    + frostbiteVulnerability : float
+    + alive : bool = true
+    + delicate : bool
+    + beautyRelated : bool
+    + conceptual : bool
+    + socketed : bool
+    + pawnGeneratorCanAmputate : bool
+    + canSuggestAmputation : bool = true
+    + destroyableByDamage : bool = true
+    + IsSolidInDefinition_Debug : bool <<get>>
+    + IsSkinCoveredInDefinition_Debug : bool <<get>>
+    + LabelShort : string <<get>>
+    + LabelShortCap : string <<get>>
+    + <<override>> ConfigErrors() : IEnumerable<string>
+    + IsSolid(part:BodyPartRecord, hediffs:List<Hediff>) : bool
+    + IsSkinCovered(part:BodyPartRecord, body:HediffSet) : bool
+    + GetMaxHealth(pawn:Pawn) : float
+    + GetHitChanceFactorFor(damage:DamageDef) : float
+}
+class "List`1"<T> {
+}
+class "Dictionary`2"<T1,T2> {
+}
+Def <|-- BodyPartDef
+BodyPartDef o-> "tags<BodyPartTagDef>" "List`1"
+BodyPartDef --> "spawnThingOnRemoved" ThingDef
+BodyPartDef --> "hitChanceFactors<DamageDef,float>" "Dictionary`2"
+@enduml

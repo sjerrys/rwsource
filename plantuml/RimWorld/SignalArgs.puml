@@ -1,0 +1,28 @@
+@startuml
+class SignalArgs <<struct>> {
+    + Count : int <<get>>
+    + SignalArgs(args:SignalArgs)
+    + SignalArgs(arg1:NamedArgument)
+    + SignalArgs(arg1:NamedArgument, arg2:NamedArgument)
+    + SignalArgs(arg1:NamedArgument, arg2:NamedArgument, arg3:NamedArgument)
+    + SignalArgs(arg1:NamedArgument, arg2:NamedArgument, arg3:NamedArgument, arg4:NamedArgument)
+    + SignalArgs(args:NamedArgument[])
+    + TryGetArg(index:int, arg:NamedArgument) : bool
+    + TryGetArg(name:string, arg:NamedArgument) : bool
+    + TryGetArg(name:string, arg:T) : bool
+    + GetArg(index:int) : NamedArgument
+    + GetArg(name:string) : NamedArgument
+    + GetArg(name:string) : T
+    + GetFormattedText(text:TaggedString) : TaggedString
+    + GetTranslatedText(textKey:string) : TaggedString
+    + Add(arg:NamedArgument) : void
+    + Add(arg1:NamedArgument, arg2:NamedArgument) : void
+    + Add(arg1:NamedArgument, arg2:NamedArgument, arg3:NamedArgument) : void
+    + Add(arg1:NamedArgument, arg2:NamedArgument, arg3:NamedArgument, arg4:NamedArgument) : void
+    + Add(args:NamedArgument[]) : void
+    + Add(args:SignalArgs) : void
+}
+class "IEnumerable`1"<T> {
+}
+SignalArgs --> "Args<NamedArgument>" "IEnumerable`1"
+@enduml

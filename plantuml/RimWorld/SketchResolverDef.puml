@@ -1,0 +1,9 @@
+@startuml
+class SketchResolverDef {
+    + isRoot : bool
+    + Resolve(parms:ResolveParams) : void
+    + CanResolve(parms:ResolveParams) : bool
+}
+Def <|-- SketchResolverDef
+SketchResolverDef --> "resolver" SketchResolver
+@enduml

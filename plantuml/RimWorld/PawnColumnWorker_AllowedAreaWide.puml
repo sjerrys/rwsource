@@ -1,0 +1,6 @@
+@startuml
+class PawnColumnWorker_AllowedAreaWide {
+    + <<override>> GetOptimalWidth(table:PawnTable) : int
+}
+PawnColumnWorker_AllowedArea <|-- PawnColumnWorker_AllowedAreaWide
+@enduml

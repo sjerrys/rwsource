@@ -1,0 +1,9 @@
+@startuml
+class CompLongRangeMineralScanner {
+    + <<override>> PostExposeData() : void
+    + <<override>> Initialize(props:CompProperties) : void
+    + <<override>> CompGetGizmosExtra() : IEnumerable<Gizmo>
+}
+CompScanner <|-- CompLongRangeMineralScanner
+CompLongRangeMineralScanner --> "Props" CompProperties_LongRangeMineralScanner
+@enduml

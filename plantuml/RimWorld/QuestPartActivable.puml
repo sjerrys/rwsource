@@ -1,0 +1,30 @@
+@startuml
+abstract class QuestPartActivable {
+    + inSignalEnable : string
+    + inSignalDisable : string
+    + reactivatable : bool
+    + EnableTick : int <<get>>
+    + OutSignalEnabled : string <<get>>
+    + OutSignalCompleted : string <<get>>
+    + <<virtual>> ExpiryInfoPart : string <<get>>
+    + <<virtual>> ExpiryInfoPartTip : string <<get>>
+    + <<virtual>> AlertLabel : string <<get>>
+    + <<virtual>> AlertExplanation : string <<get>>
+    + <<virtual>> AlertCritical : bool <<get>>
+    + AlertDirty : bool <<get>>
+    + <<virtual>> QuestPartTick() : void
+    + <<virtual>> ExtraInspectString(target:ISelectable) : string
+    + ClearCachedAlert() : void
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> AssignDebugData() : void
+    + <<override>> ExposeData() : void
+}
+class "List`1"<T> {
+}
+QuestPart <|-- QuestPartActivable
+QuestPartActivable o-> "outSignalsCompleted<string>" "List`1"
+QuestPartActivable --> "outcomeCompletedSignalArg" QuestEndOutcome
+QuestPartActivable --> "State" QuestPartState
+QuestPartActivable --> "AlertReport" AlertReport
+QuestPartActivable --> "CachedAlert" Alert
+@enduml

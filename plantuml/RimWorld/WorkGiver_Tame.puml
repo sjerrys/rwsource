@@ -1,0 +1,8 @@
+@startuml
+class WorkGiver_Tame {
+    + <<override>> PotentialWorkThingsGlobal(pawn:Pawn) : IEnumerable<Thing>
+    + <<override>> ShouldSkip(pawn:Pawn, forced:bool) : bool
+    + <<override>> JobOnThing(pawn:Pawn, t:Thing, forced:bool) : Job
+}
+WorkGiver_InteractAnimal <|-- WorkGiver_Tame
+@enduml

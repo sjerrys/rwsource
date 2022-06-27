@@ -1,0 +1,15 @@
+@startuml
+class CompSpawnerHives {
+    + canSpawnHives : bool = true
+    + <<const>> MaxHivesPerMap : int = 30
+    + <<override>> PostSpawnSetup(respawningAfterLoad:bool) : void
+    + <<override>> CompTick() : void
+    + <<override>> CompInspectStringExtra() : string
+    + CalculateNextHiveSpawnTick() : void
+    + TrySpawnChildHive(ignoreRoofedRequirement:bool, newHive:Hive) : bool
+    + {static} FindChildHiveLocation(pos:IntVec3, map:Map, parentDef:ThingDef, props:CompProperties_SpawnerHives, ignoreRoofedRequirement:bool, allowUnreachable:bool) : IntVec3
+    + <<override>> CompGetGizmosExtra() : IEnumerable<Gizmo>
+    + <<override>> PostExposeData() : void
+}
+ThingComp <|-- CompSpawnerHives
+@enduml

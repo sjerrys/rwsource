@@ -1,0 +1,6 @@
+@startuml
+class WorldCameraConfig_ContinuousPanAndZoom {
+    + WorldCameraConfig_ContinuousPanAndZoom()
+}
+WorldCameraConfig_ContinuousPan <|-- WorldCameraConfig_ContinuousPanAndZoom
+@enduml

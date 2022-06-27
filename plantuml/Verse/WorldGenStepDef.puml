@@ -1,0 +1,8 @@
+@startuml
+class WorldGenStepDef {
+    + order : float
+    + <<override>> PostLoad() : void
+}
+Def <|-- WorldGenStepDef
+WorldGenStepDef --> "worldGenStep" WorldGenStep
+@enduml

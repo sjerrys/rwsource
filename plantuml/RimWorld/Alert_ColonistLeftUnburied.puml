@@ -1,0 +1,8 @@
+@startuml
+class Alert_ColonistLeftUnburied {
+    + {static} IsCorpseOfColonist(corpse:Corpse) : bool
+    + Alert_ColonistLeftUnburied()
+    + <<override>> GetReport() : AlertReport
+}
+Alert <|-- Alert_ColonistLeftUnburied
+@enduml

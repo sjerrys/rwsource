@@ -1,0 +1,7 @@
+@startuml
+class JobDriver_CarryToCryptosleepCasket {
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+    + <<override>> TaleParameters() : object[]
+}
+JobDriver <|-- JobDriver_CarryToCryptosleepCasket
+@enduml

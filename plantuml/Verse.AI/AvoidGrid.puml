@@ -1,0 +1,11 @@
+@startuml
+class AvoidGrid {
+    + AvoidGrid(map:Map)
+    + Regenerate() : void
+    + Notify_BuildingSpawned(building:Building) : void
+    + Notify_BuildingDespawned(building:Building) : void
+    + DebugDrawOnMap() : void
+}
+AvoidGrid --> "map" Map
+AvoidGrid --> "Grid" ByteGrid
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class MentalBreakWorker {
+    + <<virtual>> CommonalityFor(pawn:Pawn, moodCaused:bool) : float
+    + <<virtual>> BreakCanOccur(pawn:Pawn) : bool
+    + <<virtual>> TryStart(pawn:Pawn, reason:string, causedByMood:bool) : bool
+}
+MentalBreakWorker --> "def" MentalBreakDef
+@enduml

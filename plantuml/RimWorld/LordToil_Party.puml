@@ -1,0 +1,8 @@
+@startuml
+class LordToil_Party {
+    + <<const>> DefaultJoyPerTick : float = 3.5E-05f
+    + LordToil_Party(spot:IntVec3, gatheringDef:GatheringDef, joyPerTick:float)
+    + <<override>> LordToilTick() : void
+}
+LordToil_Gathering <|-- LordToil_Party
+@enduml

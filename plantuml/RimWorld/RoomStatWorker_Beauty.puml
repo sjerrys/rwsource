@@ -1,0 +1,6 @@
+@startuml
+class RoomStatWorker_Beauty {
+    + <<override>> GetScore(room:Room) : float
+}
+RoomStatWorker <|-- RoomStatWorker_Beauty
+@enduml

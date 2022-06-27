@@ -1,0 +1,8 @@
+@startuml
+class ThingDefGenerator_Buildings <<static>> {
+    + {static} <<readonly>> BlueprintDefNamePrefix : string = "Blueprint_"
+    + {static} <<readonly>> InstallBlueprintDefNamePrefix : string = "Install_"
+    + {static} <<readonly>> BuildingFrameDefNamePrefix : string = "Frame_"
+    + {static} ImpliedBlueprintAndFrameDefs() : IEnumerable<ThingDef>
+}
+@enduml

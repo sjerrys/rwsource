@@ -1,0 +1,10 @@
+@startuml
+class RoofCollapseCellsFinder <<static>> {
+    + {static} Notify_RoofHolderDespawned(t:Thing, map:Map) : void
+    + {static} ProcessRoofHolderDespawned(rect:CellRect, position:IntVec3, map:Map, removalMode:bool, canRemoveThickRoof:bool) : void
+    + {static} RemoveBulkCollapsingRoofs(nearCells:List<IntVec3>, map:Map) : void
+    + {static} CheckCollapseFlyingRoofs(nearCells:List<IntVec3>, map:Map, removalMode:bool, canRemoveThickRoof:bool) : void
+    + {static} CheckCollapseFlyingRoofs(nearRect:CellRect, map:Map, removalMode:bool, canRemoveThickRoof:bool) : void
+    + {static} ConnectsToRoofHolder(c:IntVec3, map:Map, visitedCells:HashSet<IntVec3>) : bool
+}
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class LoadableXmlAsset {
+    + name : string
+    + fullFolderPath : string
+    + FullFilePath : string <<get>>
+    + LoadableXmlAsset(name:string, fullFolderPath:string, contents:string)
+    + <<override>> ToString() : string
+}
+LoadableXmlAsset --> "xmlDoc" XmlDocument
+LoadableXmlAsset --> "mod" ModContentPack
+@enduml

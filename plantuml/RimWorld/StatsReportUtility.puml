@@ -1,0 +1,14 @@
+@startuml
+class StatsReportUtility <<static>> {
+    + {static} SelectedStatIndex : int <<get>>
+    + {static} Reset() : void
+    + {static} DrawStatsReport(rect:Rect, def:Def, stuff:ThingDef) : void
+    + {static} DrawStatsReport(rect:Rect, def:AbilityDef) : void
+    + {static} DrawStatsReport(rect:Rect, thing:Thing) : void
+    + {static} DrawStatsReport(rect:Rect, worldObject:WorldObject) : void
+    + {static} DrawStatsReport(rect:Rect, title:RoyalTitleDef, faction:Faction) : void
+    + {static} DrawStatsReport(rect:Rect, faction:Faction) : void
+    + {static} SelectEntry(index:int) : void
+    + {static} SelectEntry(stat:StatDef, playSound:bool) : void
+}
+@enduml

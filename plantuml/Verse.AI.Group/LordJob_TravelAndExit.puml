@@ -1,0 +1,9 @@
+@startuml
+class LordJob_TravelAndExit {
+    + LordJob_TravelAndExit()
+    + LordJob_TravelAndExit(travelDest:IntVec3)
+    + <<override>> CreateGraph() : StateGraph
+    + <<override>> ExposeData() : void
+}
+LordJob <|-- LordJob_TravelAndExit
+@enduml

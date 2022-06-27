@@ -1,0 +1,28 @@
+@startuml
+class WorldInspectPane {
+    + RecentHeight : float <<get>> <<set>>
+    + PaneTopY : float <<get>>
+    + AnythingSelected : bool <<get>>
+    + ShouldShowSelectNextInCellButton : bool <<get>>
+    + ShouldShowPaneContents : bool <<get>>
+    + WorldInspectPane()
+    + DrawInspectGizmos() : void
+    + GetLabel(rect:Rect) : string
+    + SelectNextInCell() : void
+    + DoPaneContents(rect:Rect) : void
+    + DoInspectPaneButtons(rect:Rect, lineEndWidth:float) : void
+    + <<override>> DoWindowContents(rect:Rect) : void
+    + <<override>> WindowUpdate() : void
+    + <<override>> ExtraOnGUI() : void
+    + CloseOpenTab() : void
+    + Reset() : void
+}
+class "IEnumerable`1"<T> {
+}
+Window <|-- WorldInspectPane
+IInspectPane <|-- WorldInspectPane
+WorldInspectPane --> "mouseoverGizmo" Gizmo
+WorldInspectPane --> "OpenTabType" Type
+WorldInspectPane --> "InitialSize" Vector2
+WorldInspectPane --> "CurTabs<InspectTabBase>" "IEnumerable`1"
+@enduml

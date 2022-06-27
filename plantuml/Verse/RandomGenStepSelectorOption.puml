@@ -1,0 +1,7 @@
+@startuml
+class RandomGenStepSelectorOption {
+    + weight : float = 10f
+}
+RandomGenStepSelectorOption --> "def" GenStepDef
+RandomGenStepSelectorOption --> "genStep" GenStep
+@enduml

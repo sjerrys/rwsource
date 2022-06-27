@@ -1,0 +1,7 @@
+@startuml
+class SubEffecter_SoundIntermittent {
+    + SubEffecter_SoundIntermittent(def:SubEffecterDef, parent:Effecter)
+    + <<override>> SubEffectTick(A:TargetInfo, B:TargetInfo) : void
+}
+SubEffecter <|-- SubEffecter_SoundIntermittent
+@enduml

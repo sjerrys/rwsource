@@ -1,0 +1,7 @@
+@startuml
+class IngredientValueGetter_Nutrition {
+    + <<override>> ValuePerUnitOf(t:ThingDef) : float
+    + <<override>> BillRequirementsDescription(r:RecipeDef, ing:IngredientCount) : string
+}
+IngredientValueGetter <|-- IngredientValueGetter_Nutrition
+@enduml

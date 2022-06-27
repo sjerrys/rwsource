@@ -1,0 +1,9 @@
+@startuml
+class QuestNode_GetPawnKindCombatPower {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GetPawnKindCombatPower
+QuestNode_GetPawnKindCombatPower --> "kindDef<PawnKindDef>" "SlateRef`1"
+QuestNode_GetPawnKindCombatPower --> "storeAs<string>" "SlateRef`1"
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class RoomRoleWorker_Room {
+    + <<override>> GetScore(room:Room) : float
+}
+RoomRoleWorker <|-- RoomRoleWorker_Room
+@enduml

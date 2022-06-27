@@ -1,0 +1,5 @@
+@startuml
+class EdificeUtility <<static>> {
+    + {static} IsEdifice(def:BuildableDef) : bool
+}
+@enduml

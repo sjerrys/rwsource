@@ -1,0 +1,16 @@
+@startuml
+abstract class Reward {
+    + <<virtual>> MakesUseOfChosenPawnSignal : bool <<get>>
+    + <<virtual>> TotalMarketValue : float <<get>>
+    + {abstract} InitFromValue(rewardValue:float, parms:RewardsGeneratorParams, valueActuallyUsed:float) : void
+    + {abstract} GenerateQuestParts(index:int, parms:RewardsGeneratorParams, customLetterLabel:string, customLetterText:string, customLetterLabelRules:RulePack, customLetterTextRules:RulePack) : IEnumerable<QuestPart>
+    + {abstract} GetDescription(parms:RewardsGeneratorParams) : string
+    + <<virtual>> Notify_Used() : void
+    + <<virtual>> Notify_PreCleanup() : void
+    + <<virtual>> ExposeData() : void
+}
+class "IEnumerable`1"<T> {
+}
+IExposable <|-- Reward
+Reward --> "StackElements<GenUI.AnonymousStackElement>" "IEnumerable`1"
+@enduml

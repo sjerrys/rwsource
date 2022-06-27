@@ -1,0 +1,33 @@
+@startuml
+class CellFinder <<static>> {
+    + {static} EdgeRoadChance_Ignore : float = 0f
+    + {static} EdgeRoadChance_Animal : float = 0f
+    + {static} EdgeRoadChance_Hostile : float = 0.2f
+    + {static} EdgeRoadChance_Neutral : float = 0.75f
+    + {static} EdgeRoadChance_Friendly : float = 0.75f
+    + {static} EdgeRoadChance_Always : float = 1f
+    + {static} RandomCell(map:Map) : IntVec3
+    + {static} RandomEdgeCell(map:Map) : IntVec3
+    + {static} RandomEdgeCell(dir:Rot4, map:Map) : IntVec3
+    + {static} RandomNotEdgeCell(minEdgeDistance:int, map:Map) : IntVec3
+    + {static} TryFindClosestRegionWith(rootReg:Region, traverseParms:TraverseParms, validator:Predicate<Region>, maxRegions:int, result:Region, traversableRegionTypes:RegionType) : bool
+    + {static} RandomRegionNear(root:Region, maxRegions:int, traverseParms:TraverseParms, validator:Predicate<Region>, pawnToAllow:Pawn, traversableRegionTypes:RegionType) : Region
+    + {static} AllRegionsNear(results:List<Region>, root:Region, maxRegions:int, traverseParms:TraverseParms, validator:Predicate<Region>, pawnToAllow:Pawn, traversableRegionTypes:RegionType) : void
+    + {static} TryFindRandomReachableCellNear(root:IntVec3, map:Map, radius:float, traverseParms:TraverseParms, cellValidator:Predicate<IntVec3>, regionValidator:Predicate<Region>, result:IntVec3, maxRegions:int) : bool
+    + {static} RandomClosewalkCellNear(root:IntVec3, map:Map, radius:int, extraValidator:Predicate<IntVec3>) : IntVec3
+    + {static} TryRandomClosewalkCellNear(root:IntVec3, map:Map, radius:int, result:IntVec3, extraValidator:Predicate<IntVec3>) : bool
+    + {static} RandomClosewalkCellNearNotForbidden(root:IntVec3, map:Map, radius:int, pawn:Pawn) : IntVec3
+    + {static} TryFindRandomCellInRegion(reg:Region, validator:Predicate<IntVec3>, result:IntVec3) : bool
+    + {static} TryFindRandomCellNear(root:IntVec3, map:Map, squareRadius:int, validator:Predicate<IntVec3>, result:IntVec3, maxTries:int) : bool
+    + {static} TryFindRandomPawnExitCell(searcher:Pawn, result:IntVec3) : bool
+    + {static} TryFindRandomEdgeCellWith(validator:Predicate<IntVec3>, map:Map, roadChance:float, result:IntVec3) : bool
+    + {static} TryFindRandomEdgeCellWith(validator:Predicate<IntVec3>, map:Map, dir:Rot4, roadChance:float, result:IntVec3) : bool
+    + {static} TryFindRandomEdgeCellNearWith(near:IntVec3, radius:float, map:Map, validator:Predicate<IntVec3>, spot:IntVec3) : bool
+    + {static} TryFindBestPawnStandCell(forPawn:Pawn, cell:IntVec3, cellByCell:bool) : bool
+    + {static} TryFindRandomCellInsideWith(cellRect:CellRect, predicate:Predicate<IntVec3>, result:IntVec3) : bool
+    + {static} RandomSpawnCellForPawnNear(root:IntVec3, map:Map, firstTryWithRadius:int) : IntVec3
+    + {static} TryFindRandomSpawnCellForPawnNear(root:IntVec3, map:Map, result:IntVec3, firstTryWithRadius:int) : bool
+    + {static} TryFindRandomSpawnCellForPawnNear_NewTmp(root:IntVec3, map:Map, result:IntVec3, firstTryWithRadius:int, extraValidator:Predicate<IntVec3>) : bool
+    + {static} FindNoWipeSpawnLocNear(near:IntVec3, map:Map, thingToSpawn:ThingDef, rot:Rot4, maxDist:int, extraValidator:Predicate<IntVec3>) : IntVec3
+}
+@enduml

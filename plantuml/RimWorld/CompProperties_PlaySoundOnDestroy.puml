@@ -1,0 +1,7 @@
+@startuml
+class CompProperties_PlaySoundOnDestroy {
+    + CompProperties_PlaySoundOnDestroy()
+}
+CompProperties <|-- CompProperties_PlaySoundOnDestroy
+CompProperties_PlaySoundOnDestroy --> "sound" SoundDef
+@enduml

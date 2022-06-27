@@ -1,0 +1,24 @@
+@startuml
+class ArenaUtility <<static>> {
+    + {static} ValidateArenaCapability() : bool
+    + {static} BeginArenaFight(lhs:List<PawnKindDef>, rhs:List<PawnKindDef>, callback:Action<ArenaResult>) : void
+    + {static} SpawnPawnSet(map:Map, kinds:List<PawnKindDef>, spot:IntVec3, faction:Faction) : List<Pawn>
+    + {static} BeginArenaFightSet(count:int, lhs:List<PawnKindDef>, rhs:List<PawnKindDef>, callback:Action<ArenaResult>, report:Action) : void
+    + {static} PerformBattleRoyale(kindsEnumerable:IEnumerable<PawnKindDef>) : void
+}
+class ArenaResult <<struct>> {
+    + tickDuration : int
+}
+class ArenaSetState {
+    + live : int
+}
+enum Winner {
+    Other,
+    Lhs,
+    Rhs,
+}
+ArenaUtility +-- ArenaResult
+ArenaResult --> "winner" Winner
+ArenaUtility +-- ArenaSetState
+ArenaResult +-- Winner
+@enduml

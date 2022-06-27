@@ -1,0 +1,91 @@
+@startuml
+class Job {
+    + count : int
+    + loadID : int
+    + startTick : int
+    + expiryInterval : int
+    + checkOverrideOnExpire : bool
+    + playerForced : bool
+    + maxNumMeleeAttacks : int
+    + maxNumStaticAttacks : int
+    + haulOpportunisticDuplicates : bool
+    + exitMapOnArrival : bool
+    + failIfCantJoinOrCreateCaravan : bool
+    + killIncappedTarget : bool
+    + ignoreForbidden : bool
+    + ignoreDesignations : bool
+    + canBash : bool
+    + canUseRangedWeapon : bool = true
+    + haulDroppedApparel : bool
+    + restUntilHealed : bool
+    + ignoreJoyTimeAssignment : bool
+    + doUntilGatheringEnded : bool
+    + overeat : bool
+    + attackDoorIfTargetLost : bool
+    + takeExtraIngestibles : int
+    + expireRequiresEnemiesNearby : bool
+    + collideWithPawns : bool
+    + forceSleep : bool
+    + endIfCantShootTargetFromCurPos : bool
+    + endIfCantShootInMelee : bool
+    + checkEncumbrance : bool
+    + followRadius : float
+    + endAfterTendedOnce : bool
+    + psyfocusTargetLast : float
+    + wasOnMeditationTimeAssignment : bool
+    + reactingToMeleeThreat : bool
+    + Clear() : void
+    + Job()
+    + Job(def:JobDef)
+    + Job(def:JobDef, targetA:LocalTargetInfo)
+    + Job(def:JobDef, targetA:LocalTargetInfo, targetB:LocalTargetInfo)
+    + Job(def:JobDef, targetA:LocalTargetInfo, targetB:LocalTargetInfo, targetC:LocalTargetInfo)
+    + Job(def:JobDef, targetA:LocalTargetInfo, expiryInterval:int, checkOverrideOnExpiry:bool)
+    + Job(def:JobDef, expiryInterval:int, checkOverrideOnExpiry:bool)
+    + GetTarget(ind:TargetIndex) : LocalTargetInfo
+    + GetTargetQueue(ind:TargetIndex) : List<LocalTargetInfo>
+    + SetTarget(ind:TargetIndex, pack:LocalTargetInfo) : void
+    + AddQueuedTarget(ind:TargetIndex, target:LocalTargetInfo) : void
+    + ExposeData() : void
+    + MakeDriver(driverPawn:Pawn) : JobDriver
+    + GetCachedDriver(driverPawn:Pawn) : JobDriver
+    + TryMakePreToilReservations(driverPawn:Pawn, errorOnFailed:bool) : bool
+    + GetReport(driverPawn:Pawn) : string
+    + GetDestination(driverPawn:Pawn) : LocalTargetInfo
+    + CanBeginNow(pawn:Pawn, whileLyingDown:bool) : bool
+    + JobIsSameAs(other:Job) : bool
+    + AnyTargetIs(target:LocalTargetInfo) : bool
+    + AnyTargetOutsideArea(zone:Area) : bool
+    + <<override>> ToString() : string
+    + GetUniqueLoadID() : string
+}
+class "List`1"<T> {
+}
+IExposable <|-- Job
+ILoadReferenceable <|-- Job
+Job --> "def" JobDef
+Job o-> "targetA" LocalTargetInfo
+Job o-> "targetB" LocalTargetInfo
+Job o-> "targetC" LocalTargetInfo
+Job --> "targetQueueA<LocalTargetInfo>" "List`1"
+Job --> "targetQueueB<LocalTargetInfo>" "List`1"
+Job o-> "globalTarget" GlobalTargetInfo
+Job --> "countQueue<int>" "List`1"
+Job --> "placedThings<ThingCountClass>" "List`1"
+Job o-> "locomotionUrgency" LocomotionUrgency
+Job --> "haulMode" HaulMode
+Job --> "bill" Bill
+Job --> "commTarget" ICommunicable
+Job --> "plantDefToSow" ThingDef
+Job --> "verbToUse" Verb
+Job --> "lord" Lord
+Job --> "interaction" InteractionDef
+Job --> "quest" Quest
+Job --> "mote" Mote
+Job --> "jobGiverThinkTree" ThinkTreeDef
+Job --> "jobGiver" ThinkNode
+Job --> "workGiverDef" WorkGiverDef
+Job --> "ability" Ability
+Job --> "RecipeDef" RecipeDef
+Job --> "GetCachedDriverDirect" JobDriver
+@enduml

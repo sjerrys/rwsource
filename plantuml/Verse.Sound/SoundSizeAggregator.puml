@@ -1,0 +1,8 @@
+@startuml
+class SoundSizeAggregator {
+    + AggregateSize : float <<get>>
+    + SoundSizeAggregator()
+    + RegisterReporter(newRep:ISizeReporter) : void
+    + RemoveReporter(oldRep:ISizeReporter) : void
+}
+@enduml

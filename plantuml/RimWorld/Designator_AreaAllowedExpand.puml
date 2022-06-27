@@ -1,0 +1,8 @@
+@startuml
+class Designator_AreaAllowedExpand {
+    + Designator_AreaAllowedExpand()
+    + <<override>> CanDesignateCell(c:IntVec3) : AcceptanceReport
+    + <<override>> DesignateSingleCell(c:IntVec3) : void
+}
+Designator_AreaAllowed <|-- Designator_AreaAllowedExpand
+@enduml

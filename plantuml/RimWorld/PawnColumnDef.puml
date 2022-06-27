@@ -1,0 +1,23 @@
+@startuml
+class PawnColumnDef {
+    + sortable : bool
+    + ignoreWhenCalculatingOptimalTableSize : bool
+    + headerIcon : string
+    + headerTip : string
+    + headerAlwaysInteractable : bool
+    + paintable : bool
+    + gap : int
+    + moveWorkTypeLabelDown : bool
+    + widthPriority : int
+    + width : int
+    + HeaderInteractable : bool <<get>>
+}
+Def <|-- PawnColumnDef
+PawnColumnDef o-> "workerClass" Type
+PawnColumnDef --> "headerIconSize" Vector2
+PawnColumnDef --> "trainable" TrainableDef
+PawnColumnDef --> "workType" WorkTypeDef
+PawnColumnDef --> "Worker" PawnColumnWorker
+PawnColumnDef --> "HeaderIcon" Texture2D
+PawnColumnDef --> "HeaderIconSize" Vector2
+@enduml

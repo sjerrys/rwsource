@@ -1,0 +1,10 @@
+@startuml
+class Page_ScenarioEditor {
+    + <<override>> PageTitle : string <<get>>
+    + Page_ScenarioEditor(scen:Scenario)
+    + <<override>> PreOpen() : void
+    + <<override>> DoWindowContents(rect:Rect) : void
+}
+Page <|-- Page_ScenarioEditor
+Page_ScenarioEditor --> "EditingScenario" Scenario
+@enduml

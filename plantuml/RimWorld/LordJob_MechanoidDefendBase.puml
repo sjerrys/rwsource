@@ -1,0 +1,13 @@
+@startuml
+abstract class LordJob_MechanoidDefendBase {
+    + <<override>> KeepExistingWhileHasAnyBuilding : bool <<get>>
+    + <<override>> LordJobTick() : void
+    + <<override>> Notify_LordDestroyed() : void
+    + AddThingToNotifyOnDefeat(t:Thing) : void
+    + <<override>> ExposeData() : void
+}
+class "List`1"<T> {
+}
+LordJob <|-- LordJob_MechanoidDefendBase
+LordJob_MechanoidDefendBase o-> "things<Thing>" "List`1"
+@enduml

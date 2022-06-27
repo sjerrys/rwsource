@@ -1,0 +1,10 @@
+@startuml
+class WornGraphicDirectionData <<struct>> {
+}
+WornGraphicDirectionData --> "offset" Vector2
+WornGraphicDirectionData --> "male" WornGraphicBodyTypeData
+WornGraphicDirectionData --> "female" WornGraphicBodyTypeData
+WornGraphicDirectionData --> "thin" WornGraphicBodyTypeData
+WornGraphicDirectionData --> "hulk" WornGraphicBodyTypeData
+WornGraphicDirectionData --> "fat" WornGraphicBodyTypeData
+@enduml

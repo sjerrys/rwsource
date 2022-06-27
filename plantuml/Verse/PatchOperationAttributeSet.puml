@@ -1,0 +1,5 @@
+@startuml
+class PatchOperationAttributeSet {
+}
+PatchOperationAttribute <|-- PatchOperationAttributeSet
+@enduml

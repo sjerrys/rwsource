@@ -1,0 +1,19 @@
+@startuml
+class QuestNode_GetRandomNegativeGameCondition {
+    + {static} ResetStaticData() : void
+}
+class Option <<struct>> {
+    + difficulty : float
+    + challengeRating : int
+    + Option(gameCondition:GameConditionDef, durationDaysRange:FloatRange, difficulty:float, challengeRating:int)
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GetRandomNegativeGameCondition
+QuestNode_GetRandomNegativeGameCondition --> "storeGameConditionAs<string>" "SlateRef`1"
+QuestNode_GetRandomNegativeGameCondition --> "storeGameConditionDurationAs<string>" "SlateRef`1"
+QuestNode_GetRandomNegativeGameCondition --> "storeGameConditionDifficultyAs<string>" "SlateRef`1"
+QuestNode_GetRandomNegativeGameCondition +-- Option
+Option --> "gameCondition" GameConditionDef
+Option --> "durationDaysRange" FloatRange
+@enduml

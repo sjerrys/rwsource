@@ -1,0 +1,77 @@
+@startuml
+class ResolveParams <<struct>> {
+    + noRoof : bool?
+    + addRoomCenterToRootsToUnfog : bool?
+    + singleThingStackCount : int?
+    + skipSingleThingIfHasToWipeBuildingOrDoesntFit : bool?
+    + spawnBridgeIfTerrainCantSupportThing : bool?
+    + disableSinglePawn : bool?
+    + singlePawnGenerationRequest : PawnGenerationRequest?
+    + mechanoidsCount : int?
+    + hivesCount : int?
+    + disableHives : bool?
+    + thingRot : Rot4?
+    + chanceToSkipWallBlock : float?
+    + chanceToSkipFloor : float?
+    + filthDensity : FloatRange?
+    + floorOnlyIfTerrainSupports : bool?
+    + allowBridgeOnAnyImpassableTerrain : bool?
+    + clearEdificeOnly : bool?
+    + clearFillageOnly : bool?
+    + clearRoof : bool?
+    + ancientCryptosleepCasketGroupID : int?
+    + podContentsType : PodContentsType?
+    + thingSetMakerParams : ThingSetMakerParams?
+    + stockpileMarketValue : float?
+    + innerStockpileSize : int?
+    + edgeDefenseWidth : int?
+    + edgeDefenseTurretsCount : int?
+    + edgeDefenseMortarsCount : int?
+    + edgeDefenseGuardsCount : int?
+    + fillWithThingsPadding : int?
+    + settlementPawnGroupPoints : float?
+    + settlementPawnGroupSeed : int?
+    + streetHorizontal : bool?
+    + edgeThingAvoidOtherEdgeThings : bool?
+    + edgeThingMustReachMapEdge : bool?
+    + allowPlacementOffEdge : bool?
+    + thrustAxis : Rot4?
+    + hpPercentRange : FloatRange?
+    + makeWarningLetter : bool?
+    + SetCustom(name:string, obj:T, inherit:bool) : void
+    + RemoveCustom(name:string) : void
+    + TryGetCustom(name:string, obj:T) : bool
+    + GetCustom(name:string) : T
+    + <<override>> ToString() : string
+}
+class "Predicate`1"<T> {
+}
+class "Action`1"<T> {
+}
+class "IList`1"<T> {
+}
+ResolveParams --> "rect" CellRect
+ResolveParams --> "faction" Faction
+ResolveParams --> "pawnGroupMakerParams" PawnGroupMakerParms
+ResolveParams --> "pawnGroupKindDef" PawnGroupKindDef
+ResolveParams --> "roofDef" RoofDef
+ResolveParams --> "singleThingToSpawn" Thing
+ResolveParams --> "singleThingDef" ThingDef
+ResolveParams --> "singleThingStuff" ThingDef
+ResolveParams --> "singlePawnToSpawn" Pawn
+ResolveParams --> "singlePawnKindDef" PawnKindDef
+ResolveParams --> "singlePawnLord" Lord
+ResolveParams --> "singlePawnSpawnCellExtraPredicate<IntVec3>" "Predicate`1"
+ResolveParams --> "postThingSpawn<Thing>" "Action`1"
+ResolveParams --> "postThingGenerate<Thing>" "Action`1"
+ResolveParams --> "wallStuff" ThingDef
+ResolveParams --> "floorDef" TerrainDef
+ResolveParams --> "filthDef" ThingDef
+ResolveParams --> "thingSetMakerDef" ThingSetMakerDef
+ResolveParams --> "stockpileConcreteContents<Thing>" "IList`1"
+ResolveParams --> "mortarDef" ThingDef
+ResolveParams --> "pathwayFloorDef" TerrainDef
+ResolveParams --> "cultivatedPlantDef" ThingDef
+ResolveParams --> "conditionCauser" Thing
+ResolveParams --> "allowedMonumentThings" ThingFilter
+@enduml

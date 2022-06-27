@@ -1,0 +1,27 @@
+@startuml
+class MemoryThoughtHandler <<sealed>> {
+    + MemoryThoughtHandler(pawn:Pawn)
+    + ExposeData() : void
+    + MemoryThoughtInterval() : void
+    + TryGainMemoryFast(mem:ThoughtDef) : void
+    + TryGainMemory(def:ThoughtDef, otherPawn:Pawn) : void
+    + TryGainMemory(newThought:Thought_Memory, otherPawn:Pawn) : void
+    + OldestMemoryInGroup(group:Thought_Memory) : Thought_Memory
+    + OldestMemoryOfDef(def:ThoughtDef) : Thought_Memory
+    + RemoveMemory(th:Thought_Memory) : void
+    + NumMemoriesInGroup(group:Thought_Memory) : int
+    + NumMemoriesOfDef(def:ThoughtDef) : int
+    + GetFirstMemoryOfDef(def:ThoughtDef) : Thought_Memory
+    + RemoveMemoriesOfDefWhereOtherPawnIs(def:ThoughtDef, otherPawn:Pawn) : void
+    + RemoveMemoriesWhereOtherPawnIs(otherPawn:Pawn) : void
+    + RemoveMemoriesOfDef(def:ThoughtDef) : void
+    + RemoveMemoriesOfDefIf(def:ThoughtDef, predicate:Func<Thought_Memory, bool>) : void
+    + AnyMemoryConcerns(otherPawn:Pawn) : bool
+    + Notify_PawnDiscarded(discarded:Pawn) : void
+}
+class "List`1"<T> {
+}
+IExposable <|-- MemoryThoughtHandler
+MemoryThoughtHandler --> "pawn" Pawn
+MemoryThoughtHandler --> "Memories<Thought_Memory>" "List`1"
+@enduml

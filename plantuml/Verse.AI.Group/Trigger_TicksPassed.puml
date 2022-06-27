@@ -1,0 +1,9 @@
+@startuml
+class Trigger_TicksPassed {
+    + TicksLeft : int <<get>>
+    + Trigger_TicksPassed(tickLimit:int)
+    + <<override>> ActivateOn(lord:Lord, signal:TriggerSignal) : bool
+    + <<override>> SourceToilBecameActive(transition:Transition, previousToil:LordToil) : void
+}
+Trigger <|-- Trigger_TicksPassed
+@enduml

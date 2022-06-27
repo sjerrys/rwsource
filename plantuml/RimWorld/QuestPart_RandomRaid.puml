@@ -1,0 +1,17 @@
+@startuml
+class QuestPart_RandomRaid {
+    + inSignal : string
+    + useCurrentThreatPoints : bool
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart <|-- QuestPart_RandomRaid
+QuestPart_RandomRaid --> "mapParent" MapParent
+QuestPart_RandomRaid --> "pointsRange" FloatRange
+QuestPart_RandomRaid --> "faction" Faction
+QuestPart_RandomRaid --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+QuestPart_RandomRaid --> "InvolvedFactions<Faction>" "IEnumerable`1"
+@enduml

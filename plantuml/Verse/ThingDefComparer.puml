@@ -1,0 +1,10 @@
+@startuml
+class ThingDefComparer {
+    + Equals(x:ThingDef, y:ThingDef) : bool
+    + GetHashCode(obj:ThingDef) : int
+}
+class "IEqualityComparer`1"<T> {
+}
+"IEqualityComparer`1" "<ThingDef>" <|-- ThingDefComparer
+ThingDefComparer o-> "Instance" ThingDefComparer
+@enduml

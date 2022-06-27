@@ -1,0 +1,13 @@
+@startuml
+class AbilityUtility <<static>> {
+    + {static} ValidateIsConscious(targetPawn:Pawn, showMessages:bool) : bool
+    + {static} ValidateIsAwake(targetPawn:Pawn, showMessages:bool) : bool
+    + {static} ValidateNoMentalState(targetPawn:Pawn, showMessages:bool) : bool
+    + {static} ValidateHasMentalState(targetPawn:Pawn, showMessages:bool) : bool
+    + {static} ValidateHasResistance(targetPawn:Pawn, showMessages:bool) : bool
+    + {static} ValidateNoInspiration(targetPawn:Pawn, showMessages:bool) : bool
+    + {static} ValidateCanGetInspiration(targetPawn:Pawn, showMessages:bool) : bool
+    + {static} DoClamor(cell:IntVec3, radius:float, source:Thing, clamor:ClamorDef) : void
+    + {static} DoTable_AbilityCosts() : void
+}
+@enduml

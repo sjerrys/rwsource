@@ -1,0 +1,18 @@
+@startuml
+class WorldAltitudeOffsets <<static>> {
+    + <<const>> UngeneratedPlanetParts : float
+    + <<const>> Hills : float = 0.005f
+    + <<const>> Rivers : float = 0.008f
+    + <<const>> Roads : float = 0.012f
+    + <<const>> DebugTile : float = 0.012f
+    + <<const>> MiscTileOverlay : float = 0.012f
+    + <<const>> WorldObject : float = 0.015f
+    + <<const>> GotoMote : float = 0.018f
+    + <<const>> TargeterMote : float = 0.018f
+    + <<const>> DebugLine : float = 0.05f
+    + <<const>> Path : float = 0.05f
+    + <<const>> LineStrip : float = 0.05f
+    + <<const>> WorldFeature : float = 0.06f
+    + {static} WorldText : float = 0.4f
+}
+@enduml

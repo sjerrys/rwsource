@@ -1,0 +1,17 @@
+@startuml
+class GatheringsUtility <<static>> {
+    + {static} ShouldGuestKeepAttendingGathering(p:Pawn) : bool
+    + {static} PawnCanStartOrContinueGathering(pawn:Pawn) : bool
+    + {static} AnyLordJobPreventsNewGatherings(map:Map) : bool
+    + {static} AcceptableGameConditionsToStartGathering(map:Map, gatheringDef:GatheringDef) : bool
+    + {static} AcceptableGameConditionsToContinueGathering(map:Map) : bool
+    + {static} ValidateGatheringSpot_NewTemp(cell:IntVec3, gatheringDef:GatheringDef, organizer:Pawn, enjoyableOutside:bool, ignoreRequiredColonistCount:bool) : bool
+    + {static} ValidateGatheringSpot(cell:IntVec3, gatheringDef:GatheringDef, organizer:Pawn, enjoyableOutside:bool) : bool
+    + {static} EnoughPotentialGuestsToStartGathering(map:Map, gatheringDef:GatheringDef, gatherSpot:IntVec3?) : bool
+    + {static} FindRandomGatheringOrganizer(faction:Faction, map:Map, gatheringDef:GatheringDef) : Pawn
+    + {static} InGatheringArea(cell:IntVec3, partySpot:IntVec3, map:Map) : bool
+    + {static} TryFindRandomCellInGatheringArea(pawn:Pawn, result:IntVec3) : bool
+    + {static} UseWholeRoomAsGatheringArea(partySpot:IntVec3, map:Map) : bool
+    + {static} ShouldPawnKeepGathering(p:Pawn, gatheringDef:GatheringDef) : bool
+}
+@enduml

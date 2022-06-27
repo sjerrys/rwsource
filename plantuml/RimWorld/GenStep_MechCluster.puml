@@ -1,0 +1,11 @@
+@startuml
+class GenStep_MechCluster {
+    + <<const>> ExtraRangeToRectOfInterest : int = 20
+    + forceNoConditionCauser : bool
+    + extraRangeToRectOfInterest : int = 20
+    + <<override>> SeedPart : int <<get>>
+    + <<override>> Generate(map:Map, parms:GenStepParams) : void
+}
+GenStep <|-- GenStep_MechCluster
+GenStep_MechCluster o-> "DefaultPointsRange" FloatRange
+@enduml

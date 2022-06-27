@@ -1,0 +1,5 @@
+@startuml
+class ZonePresetNames <<static>> {
+    + {static} PresetName(preset:StorageSettingsPreset) : string
+}
+@enduml

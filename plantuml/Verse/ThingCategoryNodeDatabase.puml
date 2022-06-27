@@ -1,0 +1,11 @@
+@startuml
+class ThingCategoryNodeDatabase <<static>> {
+    + {static} initialized : bool
+    + {static} Clear() : void
+    + {static} FinalizeInit() : void
+}
+class "List`1"<T> {
+}
+ThingCategoryNodeDatabase --> "allThingCategoryNodes<TreeNode_ThingCategory>" "List`1"
+ThingCategoryNodeDatabase --> "RootNode" TreeNode_ThingCategory
+@enduml

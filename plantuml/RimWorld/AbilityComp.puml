@@ -1,0 +1,10 @@
+@startuml
+abstract class AbilityComp {
+    + <<virtual>> Initialize(props:AbilityCompProperties) : void
+    + <<override>> ToString() : string
+    + <<virtual>> GizmoDisabled(reason:string) : bool
+    + <<virtual>> PsyfocusCostForTarget(target:LocalTargetInfo) : float
+}
+AbilityComp --> "parent" Ability
+AbilityComp --> "props" AbilityCompProperties
+@enduml

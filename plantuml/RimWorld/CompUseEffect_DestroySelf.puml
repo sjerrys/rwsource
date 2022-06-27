@@ -1,0 +1,7 @@
+@startuml
+class CompUseEffect_DestroySelf {
+    + <<override>> OrderPriority : float <<get>>
+    + <<override>> DoEffect(usedBy:Pawn) : void
+}
+CompUseEffect <|-- CompUseEffect_DestroySelf
+@enduml

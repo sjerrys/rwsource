@@ -1,0 +1,7 @@
+@startuml
+class HediffComp_Effecter {
+    + CurrentStateEffecter() : EffecterDef
+}
+HediffComp <|-- HediffComp_Effecter
+HediffComp_Effecter --> "Props" HediffCompProperties_Effecter
+@enduml

@@ -1,0 +1,35 @@
+@startuml
+class IntVec2 <<struct>> {
+    + x : int
+    + z : int
+    + IsInvalid : bool <<get>>
+    + IsValid : bool <<get>>
+    + Magnitude : float <<get>>
+    + MagnitudeManhattan : int <<get>>
+    + Area : int <<get>>
+    + IntVec2(newX:int, newZ:int)
+    + IntVec2(v2:Vector2)
+    + ToVector2() : Vector2
+    + ToVector3() : Vector3
+    + Rotated() : IntVec2
+    + <<override>> ToString() : string
+    + ToStringCross() : string
+    + {static} FromString(str:string) : IntVec2
+    + ToVector2Shifted() : Vector2
+    + <<override>> Equals(obj:object) : bool
+    + Equals(other:IntVec2) : bool
+    + <<override>> GetHashCode() : int
+}
+class "IEquatable`1"<T> {
+}
+"IEquatable`1" "<IntVec2>" <|-- IntVec2
+IntVec2 --> "Zero" IntVec2
+IntVec2 --> "One" IntVec2
+IntVec2 --> "Two" IntVec2
+IntVec2 --> "North" IntVec2
+IntVec2 --> "East" IntVec2
+IntVec2 --> "South" IntVec2
+IntVec2 --> "West" IntVec2
+IntVec2 --> "Invalid" IntVec2
+IntVec2 --> "ToIntVec3" IntVec3
+@enduml

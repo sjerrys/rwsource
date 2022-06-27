@@ -1,0 +1,11 @@
+@startuml
+class QuestNode_EqualOrFail {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_EqualOrFail
+QuestNode_EqualOrFail --> "value1<object>" "SlateRef`1"
+QuestNode_EqualOrFail --> "value2<object>" "SlateRef`1"
+QuestNode_EqualOrFail --> "compareAs<Type>" "SlateRef`1"
+QuestNode_EqualOrFail --> "node" QuestNode
+@enduml

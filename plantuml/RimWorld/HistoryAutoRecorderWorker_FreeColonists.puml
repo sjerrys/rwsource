@@ -1,0 +1,6 @@
+@startuml
+class HistoryAutoRecorderWorker_FreeColonists {
+    + <<override>> PullRecord() : float
+}
+HistoryAutoRecorderWorker <|-- HistoryAutoRecorderWorker_FreeColonists
+@enduml

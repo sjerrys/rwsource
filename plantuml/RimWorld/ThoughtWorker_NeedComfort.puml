@@ -1,0 +1,5 @@
+@startuml
+class ThoughtWorker_NeedComfort {
+}
+ThoughtWorker <|-- ThoughtWorker_NeedComfort
+@enduml

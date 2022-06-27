@@ -1,0 +1,6 @@
+@startuml
+class ThoughtWorker_WeaponTraitKillNeed {
+    + <<const>> TicksToGiveMemory : int = 1200000
+}
+ThoughtWorker_WeaponTrait <|-- ThoughtWorker_WeaponTraitKillNeed
+@enduml

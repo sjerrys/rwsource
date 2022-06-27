@@ -1,0 +1,13 @@
+@startuml
+class AddictionUtility <<static>> {
+    + {static} IsAddicted(pawn:Pawn, drug:Thing) : bool
+    + {static} IsAddicted(pawn:Pawn, chemical:ChemicalDef) : bool
+    + {static} FindAddictionHediff(pawn:Pawn, drug:Thing) : Hediff_Addiction
+    + {static} FindAddictionHediff(pawn:Pawn, chemical:ChemicalDef) : Hediff_Addiction
+    + {static} FindToleranceHediff(pawn:Pawn, chemical:ChemicalDef) : Hediff
+    + {static} ModifyChemicalEffectForToleranceAndBodySize(pawn:Pawn, chemicalDef:ChemicalDef, effect:float) : void
+    + {static} CheckDrugAddictionTeachOpportunity(pawn:Pawn) : void
+    + {static} AddictedToAnything(pawn:Pawn) : bool
+    + {static} CanBingeOnNow(pawn:Pawn, chemical:ChemicalDef, drugCategory:DrugCategory) : bool
+}
+@enduml

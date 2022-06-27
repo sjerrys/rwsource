@@ -1,0 +1,25 @@
+@startuml
+class ThingOwnerUtility <<static>> {
+    + {static} ThisOrAnyCompIsThingHolder(thingDef:ThingDef) : bool
+    + {static} TryGetInnerInteractableThingOwner(thing:Thing) : ThingOwner
+    + {static} SpawnedOrAnyParentSpawned(holder:IThingHolder) : bool
+    + {static} SpawnedParentOrMe(holder:IThingHolder) : Thing
+    + {static} GetRootPosition(holder:IThingHolder) : IntVec3
+    + {static} GetRootMap(holder:IThingHolder) : Map
+    + {static} GetRootTile(holder:IThingHolder) : int
+    + {static} ContentsSuspended(holder:IThingHolder) : bool
+    + {static} IsEnclosingContainer(holder:IThingHolder) : bool
+    + {static} ShouldAutoRemoveDestroyedThings(holder:IThingHolder) : bool
+    + {static} ShouldAutoExtinguishInnerThings(holder:IThingHolder) : bool
+    + {static} ShouldRemoveDesignationsOnAddedThings(holder:IThingHolder) : bool
+    + {static} AppendThingHoldersFromThings(outThingsHolders:List<IThingHolder>, container:IList<Thing>) : void
+    + {static} AnyParentIs(thing:Thing) : bool
+    + {static} GetAnyParent(thing:Thing) : T
+    + {static} GetFirstSpawnedParentThing(thing:Thing) : Thing
+    + {static} GetAllThingsRecursively(holder:IThingHolder, outThings:List<Thing>, allowUnreal:bool, passCheck:Predicate<IThingHolder>) : void
+    + {static} GetAllThingsRecursively(map:Map, request:ThingRequest, outThings:List<T>, allowUnreal:bool, passCheck:Predicate<IThingHolder>, alsoGetSpawnedThings:bool) : void
+    + {static} GetAllThingsRecursively(holder:IThingHolder, allowUnreal:bool) : List<Thing>
+    + {static} AreImmediateContentsReal(holder:IThingHolder) : bool
+    + {static} TryGetFixedTemperature(holder:IThingHolder, forThing:Thing, temperature:float) : bool
+}
+@enduml

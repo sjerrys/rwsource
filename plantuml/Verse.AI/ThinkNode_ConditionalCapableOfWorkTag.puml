@@ -1,0 +1,7 @@
+@startuml
+class ThinkNode_ConditionalCapableOfWorkTag {
+    + <<override>> DeepCopy(resolve:bool) : ThinkNode
+}
+ThinkNode_Conditional <|-- ThinkNode_ConditionalCapableOfWorkTag
+ThinkNode_ConditionalCapableOfWorkTag --> "workTags" WorkTags
+@enduml

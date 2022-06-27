@@ -1,0 +1,15 @@
+@startuml
+class QueuedIncident {
+    + <<const>> RetryIntervalTicks : int = 833
+    + FireTick : int <<get>>
+    + RetryDurationTicks : int <<get>>
+    + TriedToFire : bool <<get>>
+    + QueuedIncident()
+    + QueuedIncident(firingInc:FiringIncident, fireTick:int, retryDurationTicks:int)
+    + ExposeData() : void
+    + Notify_TriedToFire() : void
+    + <<override>> ToString() : string
+}
+IExposable <|-- QueuedIncident
+QueuedIncident --> "FiringIncident" FiringIncident
+@enduml

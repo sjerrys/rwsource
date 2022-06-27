@@ -1,0 +1,5 @@
+@startuml
+class ThinkNode_ConditionalBleeding {
+}
+ThinkNode_Conditional <|-- ThinkNode_ConditionalBleeding
+@enduml

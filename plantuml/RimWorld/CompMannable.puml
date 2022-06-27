@@ -1,0 +1,10 @@
+@startuml
+class CompMannable {
+    + MannedNow : bool <<get>>
+    + ManForATick(pawn:Pawn) : void
+    + <<override>> CompFloatMenuOptions(pawn:Pawn) : IEnumerable<FloatMenuOption>
+}
+ThingComp <|-- CompMannable
+CompMannable --> "ManningPawn" Pawn
+CompMannable --> "Props" CompProperties_Mannable
+@enduml

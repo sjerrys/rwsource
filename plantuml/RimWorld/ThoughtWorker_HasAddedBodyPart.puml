@@ -1,0 +1,5 @@
+@startuml
+class ThoughtWorker_HasAddedBodyPart {
+}
+ThoughtWorker <|-- ThoughtWorker_HasAddedBodyPart
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class CompMilkable {
+    + <<override>> CompInspectStringExtra() : string
+}
+CompHasGatherableBodyResource <|-- CompMilkable
+CompMilkable --> "Props" CompProperties_Milkable
+@enduml

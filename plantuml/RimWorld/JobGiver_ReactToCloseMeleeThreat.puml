@@ -1,0 +1,5 @@
+@startuml
+class JobGiver_ReactToCloseMeleeThreat {
+}
+ThinkNode_JobGiver <|-- JobGiver_ReactToCloseMeleeThreat
+@enduml

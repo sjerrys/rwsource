@@ -1,0 +1,7 @@
+@startuml
+enum RotationDirection {
+    None,
+    Clockwise,
+    Counterclockwise,
+}
+@enduml

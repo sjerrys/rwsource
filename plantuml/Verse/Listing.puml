@@ -1,0 +1,20 @@
+@startuml
+abstract class Listing {
+    + verticalSpacing : float = 2f
+    + maxOneColumn : bool
+    + <<const>> ColumnSpacing : float = 17f
+    + <<const>> DefaultGap : float = 12f
+    + <<const>> DefaultIndent : float = 12f
+    + CurHeight : float <<get>>
+    + MaxColumnHeightSeen : float <<get>>
+    + ColumnWidth : float <<get>> <<set>>
+    + NewColumn() : void
+    + GetRect(height:float) : Rect
+    + Gap(gapHeight:float) : void
+    + GapLine(gapHeight:float) : void
+    + Indent(gapWidth:float) : void
+    + Outdent(gapWidth:float) : void
+    + <<virtual>> Begin(rect:Rect) : void
+    + <<virtual>> End() : void
+}
+@enduml

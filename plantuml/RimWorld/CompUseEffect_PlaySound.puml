@@ -1,0 +1,6 @@
+@startuml
+class CompUseEffect_PlaySound {
+    + <<override>> DoEffect(usedBy:Pawn) : void
+}
+CompUseEffect <|-- CompUseEffect_PlaySound
+@enduml

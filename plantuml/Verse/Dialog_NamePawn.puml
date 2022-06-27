@@ -1,0 +1,8 @@
+@startuml
+class Dialog_NamePawn {
+    + Dialog_NamePawn(pawn:Pawn)
+    + <<override>> DoWindowContents(inRect:Rect) : void
+}
+Window <|-- Dialog_NamePawn
+Dialog_NamePawn --> "InitialSize" Vector2
+@enduml

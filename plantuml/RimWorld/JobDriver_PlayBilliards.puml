@@ -1,0 +1,7 @@
+@startuml
+class JobDriver_PlayBilliards {
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+    + <<override>> TaleParameters() : object[]
+}
+JobDriver <|-- JobDriver_PlayBilliards
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class CompProperties_TempControl {
+    + energyPerSecond : float = 12f
+    + defaultTargetTemperature : float = 21f
+    + minTargetTemperature : float
+    + maxTargetTemperature : float = 50f
+    + lowPowerConsumptionFactor : float = 0.1f
+    + CompProperties_TempControl()
+}
+CompProperties <|-- CompProperties_TempControl
+@enduml

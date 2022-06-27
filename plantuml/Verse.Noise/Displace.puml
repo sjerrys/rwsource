@@ -1,0 +1,11 @@
+@startuml
+class Displace {
+    + Displace()
+    + Displace(input:ModuleBase, x:ModuleBase, y:ModuleBase, z:ModuleBase)
+    + <<override>> GetValue(x:double, y:double, z:double) : double
+}
+ModuleBase <|-- Displace
+Displace --> "X" ModuleBase
+Displace --> "Y" ModuleBase
+Displace --> "Z" ModuleBase
+@enduml

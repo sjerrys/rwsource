@@ -1,0 +1,13 @@
+@startuml
+class GenGeo <<static>> {
+    + {static} AngleDifferenceBetween(A:float, B:float) : float
+    + {static} MagnitudeHorizontal(v:Vector3) : float
+    + {static} MagnitudeHorizontalSquared(v:Vector3) : float
+    + {static} LinesIntersect(line1V1:Vector3, line1V2:Vector3, line2V1:Vector3, line2V2:Vector3) : bool
+    + {static} IntersectLineCircle(center:Vector2, radius:float, lineA:Vector2, lineB:Vector2) : bool
+    + {static} IntersectLineCircleOutline(center:Vector2, radius:float, lineA:Vector2, lineB:Vector2) : bool
+    + {static} RegularPolygonVertexPositionVec3(polygonVertices:int, vertexIndex:int) : Vector3
+    + {static} RegularPolygonVertexPosition(polygonVertices:int, vertexIndex:int) : Vector2
+    + {static} InverseQuadBilinear(p:Vector2, p0:Vector2, p1:Vector2, p2:Vector2, p3:Vector2) : Vector2
+}
+@enduml

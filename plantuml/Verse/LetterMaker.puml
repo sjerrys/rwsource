@@ -1,0 +1,7 @@
+@startuml
+class LetterMaker <<static>> {
+    + {static} MakeLetter(def:LetterDef) : Letter
+    + {static} MakeLetter(label:TaggedString, text:TaggedString, def:LetterDef, relatedFaction:Faction, quest:Quest) : ChoiceLetter
+    + {static} MakeLetter(label:TaggedString, text:TaggedString, def:LetterDef, lookTargets:LookTargets, relatedFaction:Faction, quest:Quest, hyperlinkThingDefs:List<ThingDef>) : ChoiceLetter
+}
+@enduml

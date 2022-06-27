@@ -1,0 +1,11 @@
+@startuml
+class HediffCompProperties_DamageBrain {
+    + HediffCompProperties_DamageBrain()
+    + <<override>> ConfigErrors(parentDef:HediffDef) : IEnumerable<string>
+}
+class "List`1"<T> {
+}
+HediffCompProperties <|-- HediffCompProperties_DamageBrain
+HediffCompProperties_DamageBrain o-> "damageAmount" IntRange
+HediffCompProperties_DamageBrain --> "mtbDaysPerStage<float>" "List`1"
+@enduml

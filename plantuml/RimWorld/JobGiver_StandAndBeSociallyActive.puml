@@ -1,0 +1,7 @@
+@startuml
+class JobGiver_StandAndBeSociallyActive {
+    + <<override>> DeepCopy(resolve:bool) : ThinkNode
+}
+ThinkNode_JobGiver <|-- JobGiver_StandAndBeSociallyActive
+JobGiver_StandAndBeSociallyActive o-> "ticksRange" IntRange
+@enduml

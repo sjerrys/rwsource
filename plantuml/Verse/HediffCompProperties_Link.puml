@@ -1,0 +1,8 @@
+@startuml
+class HediffCompProperties_Link {
+    + showName : bool = true
+    + maxDistance : float
+    + HediffCompProperties_Link()
+}
+HediffCompProperties <|-- HediffCompProperties_Link
+@enduml

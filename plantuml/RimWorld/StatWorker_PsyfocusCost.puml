@@ -1,0 +1,7 @@
+@startuml
+class StatWorker_PsyfocusCost {
+    + <<override>> GetStatDrawEntryLabel(stat:StatDef, value:float, numberSense:ToStringNumberSense, optionalReq:StatRequest, finalized:bool) : string
+    + <<override>> GetExplanationUnfinalized(req:StatRequest, numberSense:ToStringNumberSense) : string
+}
+StatWorker <|-- StatWorker_PsyfocusCost
+@enduml

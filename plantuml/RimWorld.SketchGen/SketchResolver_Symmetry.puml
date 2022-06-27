@@ -1,0 +1,5 @@
+@startuml
+class SketchResolver_Symmetry {
+}
+SketchResolver <|-- SketchResolver_Symmetry
+@enduml

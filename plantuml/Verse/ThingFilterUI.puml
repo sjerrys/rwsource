@@ -1,0 +1,5 @@
+@startuml
+class ThingFilterUI <<static>> {
+    + {static} DoThingFilterConfigWindow(rect:Rect, scrollPosition:Vector2, filter:ThingFilter, parentFilter:ThingFilter, openMask:int, forceHiddenDefs:IEnumerable<ThingDef>, forceHiddenFilters:IEnumerable<SpecialThingFilterDef>, forceHideHitPointsConfig:bool, suppressSmallVolumeTags:List<ThingDef>, map:Map) : void
+}
+@enduml

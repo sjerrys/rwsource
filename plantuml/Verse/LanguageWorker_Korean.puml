@@ -1,0 +1,14 @@
+@startuml
+class LanguageWorker_Korean {
+    + <<override>> PostProcessed(str:string) : string
+    + <<override>> PostProcessedKeyedTranslation(translation:string) : string
+    + ReplaceJosa(src:string) : string
+}
+class JosaPair <<struct>> {
+    + <<readonly>> josa1 : string
+    + <<readonly>> josa2 : string
+    + JosaPair(josa1:string, josa2:string)
+}
+LanguageWorker <|-- LanguageWorker_Korean
+LanguageWorker_Korean +-- JosaPair
+@enduml

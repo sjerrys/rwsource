@@ -1,0 +1,6 @@
+@startuml
+class CaravanTweenerUtility <<static>> {
+    + {static} PatherTweenedPosRoot(caravan:Caravan) : Vector3
+    + {static} CaravanCollisionPosOffsetFor(caravan:Caravan) : Vector3
+}
+@enduml

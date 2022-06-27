@@ -1,0 +1,33 @@
+@startuml
+abstract class ScenPart {
+    + visible : bool = true
+    + summarized : bool
+    + {static} RowHeight : float <<get>>
+    + <<virtual>> Label : string <<get>>
+    + <<virtual>> ExposeData() : void
+    + CopyForEditing() : ScenPart
+    + <<virtual>> DoEditInterface(listing:Listing_ScenEdit) : void
+    + <<virtual>> Summary(scen:Scenario) : string
+    + <<virtual>> GetSummaryListEntries(tag:string) : IEnumerable<string>
+    + <<virtual>> Randomize() : void
+    + <<virtual>> TryMerge(other:ScenPart) : bool
+    + <<virtual>> CanCoexistWith(other:ScenPart) : bool
+    + <<virtual>> GetConfigPages() : IEnumerable<Page>
+    + <<virtual>> AllowPlayerStartingPawn(pawn:Pawn, tryingToRedress:bool, req:PawnGenerationRequest) : bool
+    + <<virtual>> Notify_NewPawnGenerating(pawn:Pawn, context:PawnGenerationContext) : void
+    + <<virtual>> Notify_PawnGenerated(pawn:Pawn, context:PawnGenerationContext, redressed:bool) : void
+    + <<virtual>> Notify_PawnDied(corpse:Corpse) : void
+    + <<virtual>> PreConfigure() : void
+    + <<virtual>> PostWorldGenerate() : void
+    + <<virtual>> PreMapGenerate() : void
+    + <<virtual>> PlayerStartingThings() : IEnumerable<Thing>
+    + <<virtual>> GenerateIntoMap(map:Map) : void
+    + <<virtual>> PostMapGenerate(map:Map) : void
+    + <<virtual>> PostGameStart() : void
+    + <<virtual>> Tick() : void
+    + <<virtual>> ConfigErrors() : IEnumerable<string>
+    + <<virtual>> HasNullDefs() : bool
+}
+IExposable <|-- ScenPart
+ScenPart --> "def" ScenPartDef
+@enduml

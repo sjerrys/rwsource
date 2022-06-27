@@ -1,0 +1,10 @@
+@startuml
+class FactionUtility <<static>> {
+    + {static} HostileTo(fac:Faction, other:Faction) : bool
+    + {static} AllyOrNeutralTo(fac:Faction, other:Faction) : bool
+    + {static} CanTradeWith_NewTemp(p:Pawn, faction:Faction, traderKind:TraderKindDef) : AcceptanceReport
+    + {static} CanTradeWith(p:Pawn, faction:Faction, traderKind:TraderKindDef) : bool
+    + {static} DefaultFactionFrom(ft:FactionDef) : Faction
+    + {static} IsPoliticallyProper(thing:Thing, pawn:Pawn) : bool
+}
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class TransferableComparer_MarketValue {
+    + <<override>> Compare(lhs:Transferable, rhs:Transferable) : int
+}
+TransferableComparer <|-- TransferableComparer_MarketValue
+@enduml

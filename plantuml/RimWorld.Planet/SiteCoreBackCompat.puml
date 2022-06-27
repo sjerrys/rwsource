@@ -1,0 +1,8 @@
+@startuml
+class SiteCoreBackCompat {
+    + ExposeData() : void
+}
+IExposable <|-- SiteCoreBackCompat
+SiteCoreBackCompat --> "def" SitePartDef
+SiteCoreBackCompat --> "parms" SitePartParams
+@enduml

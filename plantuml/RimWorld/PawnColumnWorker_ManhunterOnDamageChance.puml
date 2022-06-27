@@ -1,0 +1,5 @@
+@startuml
+class PawnColumnWorker_ManhunterOnDamageChance {
+}
+PawnColumnWorker_Text <|-- PawnColumnWorker_ManhunterOnDamageChance
+@enduml

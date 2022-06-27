@@ -1,0 +1,7 @@
+@startuml
+class BeachMaker <<static>> {
+    + {static} Init(map:Map) : void
+    + {static} Cleanup() : void
+    + {static} BeachTerrainAt(loc:IntVec3, biome:BiomeDef) : TerrainDef
+}
+@enduml

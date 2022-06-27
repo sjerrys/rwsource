@@ -1,0 +1,8 @@
+@startuml
+class InspectPaneFiller {
+    + {static} DoPaneContentsFor(sel:ISelectable, rect:Rect) : void
+    + {static} DrawHealth(row:WidgetRow, t:Thing) : void
+    + {static} DrawInspectStringFor(sel:ISelectable, rect:Rect) : void
+    + {static} DrawInspectString(str:string, rect:Rect) : void
+}
+@enduml

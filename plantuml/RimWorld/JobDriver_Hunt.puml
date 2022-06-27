@@ -1,0 +1,9 @@
+@startuml
+class JobDriver_Hunt {
+    + <<override>> ExposeData() : void
+    + <<override>> GetReport() : string
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+}
+JobDriver <|-- JobDriver_Hunt
+JobDriver_Hunt --> "Victim" Pawn
+@enduml

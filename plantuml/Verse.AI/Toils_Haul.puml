@@ -1,0 +1,16 @@
+@startuml
+class Toils_Haul {
+    + {static} ErrorCheckForCarry(pawn:Pawn, haulThing:Thing) : bool
+    + {static} StartCarryThing(haulableInd:TargetIndex, putRemainderInQueue:bool, subtractNumTakenFromJobCount:bool, failIfStackCountLessThanJobCount:bool) : Toil
+    + {static} JumpIfAlsoCollectingNextTargetInQueue(gotoGetTargetToil:Toil, ind:TargetIndex) : Toil
+    + {static} CheckForGetOpportunityDuplicate(getHaulTargetToil:Toil, haulableInd:TargetIndex, storeCellInd:TargetIndex, takeFromValidStorage:bool, extraValidator:Predicate<Thing>) : Toil
+    + {static} CarryHauledThingToCell(squareIndex:TargetIndex) : Toil
+    + {static} PlaceCarriedThingInCellFacing(facingTargetInd:TargetIndex) : Toil
+    + {static} PlaceHauledThingInCell(cellInd:TargetIndex, nextToilOnPlaceFailOrIncomplete:Toil, storageMode:bool, tryStoreInSameStorageIfSpotCantHoldWholeStack:bool) : Toil
+    + {static} CarryHauledThingToContainer() : Toil
+    + {static} DepositHauledThingInContainer(containerInd:TargetIndex, reserveForContainerInd:TargetIndex) : Toil
+    + {static} JumpToCarryToNextContainerIfPossible(carryToContainerToil:Toil, primaryTargetInd:TargetIndex) : Toil
+    + {static} TakeToInventory(ind:TargetIndex, count:int) : Toil
+    + {static} TakeToInventory(ind:TargetIndex, countGetter:Func<int>) : Toil
+}
+@enduml

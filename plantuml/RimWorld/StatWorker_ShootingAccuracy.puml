@@ -1,0 +1,6 @@
+@startuml
+class StatWorker_ShootingAccuracy {
+    + <<override>> GetExplanationFinalizePart(req:StatRequest, numberSense:ToStringNumberSense, finalVal:float) : string
+}
+StatWorker <|-- StatWorker_ShootingAccuracy
+@enduml

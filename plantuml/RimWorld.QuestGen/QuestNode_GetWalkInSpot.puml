@@ -1,0 +1,8 @@
+@startuml
+class QuestNode_GetWalkInSpot {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GetWalkInSpot
+QuestNode_GetWalkInSpot o-> "storeAs<string>" "SlateRef`1"
+@enduml

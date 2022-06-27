@@ -1,0 +1,11 @@
+@startuml
+class UIRoot_Play {
+    + <<override>> Init() : void
+    + <<override>> UIRootOnGUI() : void
+    + <<override>> UIRootUpdate() : void
+}
+UIRoot <|-- UIRoot_Play
+UIRoot_Play o-> "mapUI" MapInterface
+UIRoot_Play o-> "mainButtonsRoot" MainButtonsRoot
+UIRoot_Play o-> "alerts" AlertsReadout
+@enduml

@@ -1,0 +1,39 @@
+@startuml
+class DefInjectionPackage {
+    + usedOldRepSyntax : bool
+    + <<const>> RepNodeName : string = "rep"
+    + DefInjectionPackage(defType:Type)
+    + AddDataFromFile(file:VirtualFile, xmlParseError:bool) : void
+    + InjectIntoDefs(errorOnDefNotFound:bool) : void
+    + MissingInjections(outUnnecessaryDefInjections:List<string>) : List<string>
+}
+class DefInjection {
+    + path : string
+    + normalizedPath : string
+    + nonBackCompatiblePath : string
+    + suggestedPath : string
+    + injection : string
+    + fileSource : string
+    + injected : bool
+    + replacedString : string
+    + isPlaceholder : bool
+    + IsFullListInjection : bool <<get>>
+    + DefName : string <<get>>
+    + ModifiesDefFromModOrNullCore(mod:ModMetaData, defType:Type) : bool
+}
+class "Dictionary`2"<T1,T2> {
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+DefInjectionPackage --> "defType" Type
+DefInjectionPackage o-> "injections<string,DefInjection>" "Dictionary`2"
+DefInjectionPackage o-> "loadErrors<string>" "List`1"
+DefInjectionPackage o-> "loadSyntaxSuggestions<string>" "List`1"
+DefInjectionPackage o-> "FieldBindingFlags" BindingFlags
+DefInjectionPackage +-- DefInjection
+DefInjection --> "fullListInjection<string>" "List`1"
+DefInjection --> "fullListInjectionComments<Pair<int, string>>" "List`1"
+DefInjection --> "replacedList<string>" "IEnumerable`1"
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class ThinkNode_SubtreesByTag {
+    + insertTag : string
+    + <<override>> DeepCopy(resolve:bool) : ThinkNode
+    + <<override>> TryIssueJobPackage(pawn:Pawn, jobParams:JobIssueParams) : ThinkResult
+}
+ThinkNode <|-- ThinkNode_SubtreesByTag
+@enduml

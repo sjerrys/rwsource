@@ -1,0 +1,8 @@
+@startuml
+class HediffComp_DrugEffectFactor {
+    + <<override>> CompTipStringExtra : string <<get>>
+    + <<override>> CompModifyChemicalEffect(chem:ChemicalDef, effect:float) : void
+}
+HediffComp <|-- HediffComp_DrugEffectFactor
+HediffComp_DrugEffectFactor --> "Props" HediffCompProperties_DrugEffectFactor
+@enduml

@@ -1,0 +1,54 @@
+@startuml
+class HediffDef {
+    + initialSeverity : float = 0.5f
+    + lethalSeverity : float
+    + tendable : bool
+    + isBad : bool = true
+    + chanceToCauseNoPain : float
+    + makesSickThought : bool
+    + makesAlert : bool = true
+    + minSeverity : float
+    + maxSeverity : float
+    + scenarioCanAdd : bool
+    + cureAllAtOnceIfCuredByItem : bool
+    + everCurableByItem : bool = true
+    + battleStateLabel : string
+    + labelNounPretty : string
+    + targetPrefix : string
+    + priceImpact : bool
+    + priceOffset : float
+    + chronic : bool
+    + keepOnBodyPartRestoration : bool
+    + countsAsAddedPartOrImplant : bool
+    + removeOnQuestLodgers : bool
+    + displayWound : bool
+    + labelNoun : string
+    + IsAddiction : bool <<get>>
+    + AlwaysAllowMothball : bool <<get>>
+    + HasComp(compClass:Type) : bool
+    + CompPropsFor(compClass:Type) : HediffCompProperties
+    + CompProps() : T
+    + PossibleToDevelopImmunityNaturally() : bool
+    + PrettyTextForPart(bodyPart:BodyPartRecord) : string
+    + <<override>> ConfigErrors() : IEnumerable<string>
+    + <<override>> SpecialDisplayStats(req:StatRequest) : IEnumerable<StatDrawEntry>
+    + {static} Named(defName:string) : HediffDef
+}
+class "List`1"<T> {
+}
+Def <|-- HediffDef
+HediffDef o-> "hediffClass" Type
+HediffDef --> "comps<HediffCompProperties>" "List`1"
+HediffDef --> "stages<HediffStage>" "List`1"
+HediffDef --> "spawnThingOnRemoved" ThingDef
+HediffDef --> "causesNeed" NeedDef
+HediffDef --> "disablesNeed" NeedDef
+HediffDef --> "hediffGivers<HediffGiver>" "List`1"
+HediffDef --> "taleOnVisible" TaleDef
+HediffDef --> "tags<string>" "List`1"
+HediffDef o-> "removeOnRedressChanceByDaysCurve" SimpleCurve
+HediffDef o-> "defaultLabelColor" Color
+HediffDef --> "injuryProps" InjuryProps
+HediffDef --> "addedPartProps" AddedBodyPartProps
+HediffDef --> "ConcreteExample" Hediff
+@enduml

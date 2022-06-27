@@ -1,0 +1,6 @@
+@startuml
+class LayerLoader <<static>> {
+    + {static} LoadFileIntoList(ass:TextAsset, NodeListToFill:List<DiaNodeMold>, ListListToFill:List<DiaNodeList>, NodesType:DiaNodeType) : void
+    + {static} MarkNonRootNodes(NodeList:List<DiaNodeMold>) : void
+}
+@enduml

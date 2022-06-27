@@ -1,0 +1,13 @@
+@startuml
+class SiteMakerHelper <<static>> {
+    + {static} TryFindSiteParams_SingleSitePart(singleSitePartCandidates:IEnumerable<SitePartDef>, sitePart:SitePartDef, faction:Faction, factionToUse:Faction, disallowNonHostileFactions:bool, extraFactionValidator:Predicate<Faction>) : bool
+    + {static} TryFindSiteParams_SingleSitePart(singleSitePartTag:string, sitePart:SitePartDef, faction:Faction, factionToUse:Faction, disallowNonHostileFactions:bool, extraFactionValidator:Predicate<Faction>) : bool
+    + {static} TryFindSiteParams_MultipleSiteParts(sitePartsCandidates:IEnumerable<IEnumerable<SitePartDef>>, siteParts:List<SitePartDef>, faction:Faction, factionToUse:Faction, disallowNonHostileFactions:bool, extraFactionValidator:Predicate<Faction>) : bool
+    + {static} TryFindSiteParams_MultipleSiteParts(sitePartsTags:IEnumerable<string>, siteParts:List<SitePartDef>, faction:Faction, factionToUse:Faction, disallowNonHostileFactions:bool, extraFactionValidator:Predicate<Faction>) : bool
+    + {static} TryFindNewRandomSitePartFor(existingSiteParts:IEnumerable<SitePartDef>, possibleSiteParts:IEnumerable<SitePartDef>, faction:Faction, sitePart:SitePartDef, disallowNonHostileFactions:bool, extraFactionValidator:Predicate<Faction>) : bool
+    + {static} TryFindRandomFactionFor(parts:IEnumerable<SitePartDef>, faction:Faction, disallowNonHostileFactions:bool, extraFactionValidator:Predicate<Faction>) : bool
+    + {static} GenerateDefaultParams(points:float, tile:int, faction:Faction, siteParts:IEnumerable<SitePartDef>, sitePartDefsWithParams:List<SitePartDefWithParams>) : void
+    + {static} FactionCanOwn(parts:IEnumerable<SitePartDef>, faction:Faction, disallowNonHostileFactions:bool, extraFactionValidator:Predicate<Faction>) : bool
+    + {static} SitePartDefsWithTag(tag:string) : IEnumerable<SitePartDef>
+}
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class WorkTypeDefsUtility <<static>> {
+    + {static} LabelTranslated(tags:WorkTags) : string
+    + {static} OverlapsWithOnAnyWorkType(a:WorkTags, b:WorkTags) : bool
+}
+class "IEnumerable`1"<T> {
+}
+WorkTypeDefsUtility --> "WorkTypeDefsInPriorityOrder<WorkTypeDef>" "IEnumerable`1"
+@enduml

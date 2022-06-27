@@ -1,0 +1,6 @@
+@startuml
+class DamageWorker_Stun {
+    + <<override>> Apply(dinfo:DamageInfo, victim:Thing) : DamageResult
+}
+DamageWorker <|-- DamageWorker_Stun
+@enduml

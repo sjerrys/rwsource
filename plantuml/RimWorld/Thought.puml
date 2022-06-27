@@ -1,0 +1,19 @@
+@startuml
+abstract class Thought {
+    + {abstract} CurStageIndex : int <<get>>
+    + <<virtual>> VisibleInNeedsTab : bool <<get>>
+    + <<virtual>> LabelCap : string <<get>>
+    + <<virtual>> LabelCapSocial : string <<get>>
+    + <<virtual>> Description : string <<get>>
+    + <<virtual>> ExposeData() : void
+    + <<virtual>> MoodOffset() : float
+    + <<virtual>> GroupsWith(other:Thought) : bool
+    + <<virtual>> Init() : void
+    + <<override>> ToString() : string
+}
+IExposable <|-- Thought
+Thought --> "pawn" Pawn
+Thought --> "def" ThoughtDef
+Thought --> "CurStage" ThoughtStage
+Thought --> "Icon" Texture2D
+@enduml

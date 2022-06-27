@@ -1,0 +1,9 @@
+@startuml
+enum QualityGenerator {
+    BaseGen,
+    Reward,
+    Gift,
+    Super,
+    Trader,
+}
+@enduml

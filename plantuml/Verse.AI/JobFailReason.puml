@@ -1,0 +1,9 @@
+@startuml
+class JobFailReason <<static>> {
+    + {static} Reason : string <<get>>
+    + {static} HaveReason : bool <<get>>
+    + {static} CustomJobString : string <<get>>
+    + {static} Is(reason:string, customJobString:string) : void
+    + {static} Clear() : void
+}
+@enduml

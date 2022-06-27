@@ -1,0 +1,7 @@
+@startuml
+enum LogMessageType {
+    Message,
+    Warning,
+    Error,
+}
+@enduml

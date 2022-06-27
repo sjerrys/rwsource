@@ -1,0 +1,10 @@
+@startuml
+class PawnCapacityFactor {
+    + weight : float = 1f
+    + max : float = 9999f
+    + useReciprocal : bool
+    + allowedDefect : float
+    + GetFactor(capacityEfficiency:float) : float
+}
+PawnCapacityFactor --> "capacity" PawnCapacityDef
+@enduml

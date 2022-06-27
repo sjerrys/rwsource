@@ -1,0 +1,5 @@
+@startuml
+class FocusStrengthOffset_RoomImpressiveness {
+}
+FocusStrengthOffset_Curve <|-- FocusStrengthOffset_RoomImpressiveness
+@enduml

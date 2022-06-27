@@ -1,0 +1,27 @@
+@startuml
+class DesignationManager <<sealed>> {
+    + DesignationManager(map:Map)
+    + ExposeData() : void
+    + DrawDesignations() : void
+    + AddDesignation(newDes:Designation) : void
+    + DesignationOn(t:Thing) : Designation
+    + DesignationOn(t:Thing, def:DesignationDef) : Designation
+    + DesignationAt(c:IntVec3, def:DesignationDef) : Designation
+    + AllDesignationsOn(t:Thing) : IEnumerable<Designation>
+    + AllDesignationsAt(c:IntVec3) : IEnumerable<Designation>
+    + HasMapDesignationAt(c:IntVec3) : bool
+    + SpawnedDesignationsOfDef(def:DesignationDef) : IEnumerable<Designation>
+    + AnySpawnedDesignationOfDef(def:DesignationDef) : bool
+    + RemoveDesignation(des:Designation) : void
+    + TryRemoveDesignation(c:IntVec3, def:DesignationDef) : void
+    + RemoveAllDesignationsOn(t:Thing, standardCanceling:bool) : void
+    + TryRemoveDesignationOn(t:Thing, def:DesignationDef) : void
+    + RemoveAllDesignationsOfDef(def:DesignationDef) : void
+    + Notify_BuildingDespawned(b:Thing) : void
+}
+class "List`1"<T> {
+}
+IExposable <|-- DesignationManager
+DesignationManager --> "map" Map
+DesignationManager o-> "allDesignations<Designation>" "List`1"
+@enduml

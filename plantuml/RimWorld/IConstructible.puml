@@ -1,0 +1,6 @@
+@startuml
+interface IConstructible {
+    MaterialsNeeded() : List<ThingDefCountClass>
+    EntityToBuildStuff() : ThingDef
+}
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class Dialog_PawnTableTest {
+    + Dialog_PawnTableTest(singleColumn:PawnColumnDef)
+    + <<override>> DoWindowContents(inRect:Rect) : void
+}
+Window <|-- Dialog_PawnTableTest
+Dialog_PawnTableTest --> "InitialSize" Vector2
+@enduml

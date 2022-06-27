@@ -1,0 +1,8 @@
+@startuml
+class PlaceWorker_WatermillGenerator {
+    + <<override>> AllowsPlacing(checkingDef:BuildableDef, loc:IntVec3, rot:Rot4, map:Map, thingToIgnore:Thing, thing:Thing) : AcceptanceReport
+    + <<override>> DrawGhost(def:ThingDef, loc:IntVec3, rot:Rot4, ghostCol:Color, thing:Thing) : void
+    + <<override>> DisplayAffordances() : IEnumerable<TerrainAffordanceDef>
+}
+PlaceWorker <|-- PlaceWorker_WatermillGenerator
+@enduml

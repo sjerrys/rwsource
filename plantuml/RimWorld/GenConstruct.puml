@@ -1,0 +1,20 @@
+@startuml
+class GenConstruct <<static>> {
+    + <<const>> ConstructionSpeedGlobalFactor : float = 1.7f
+    + {static} Reset() : void
+    + {static} PlaceBlueprintForBuild(sourceDef:BuildableDef, center:IntVec3, map:Map, rotation:Rot4, faction:Faction, stuff:ThingDef) : Blueprint_Build
+    + {static} PlaceBlueprintForInstall(itemToInstall:MinifiedThing, center:IntVec3, map:Map, rotation:Rot4, faction:Faction) : Blueprint_Install
+    + {static} PlaceBlueprintForReinstall(buildingToReinstall:Building, center:IntVec3, map:Map, rotation:Rot4, faction:Faction) : Blueprint_Install
+    + {static} CanBuildOnTerrain(entDef:BuildableDef, c:IntVec3, map:Map, rot:Rot4, thingToIgnore:Thing, stuffDef:ThingDef) : bool
+    + {static} MiniToInstallOrBuildingToReinstall(b:Blueprint) : Thing
+    + {static} CanConstruct(t:Thing, p:Pawn, checkSkills:bool, forced:bool) : bool
+    + {static} AmountNeededByOf(c:IConstructible, resDef:ThingDef) : int
+    + {static} CanPlaceBlueprintAt(entDef:BuildableDef, center:IntVec3, rot:Rot4, map:Map, godMode:bool, thingToIgnore:Thing, thing:Thing, stuffDef:ThingDef) : AcceptanceReport
+    + {static} BuiltDefOf(def:ThingDef) : BuildableDef
+    + {static} CanPlaceBlueprintOver(newDef:BuildableDef, oldDef:ThingDef) : bool
+    + {static} FirstBlockingThing(constructible:Thing, pawnToIgnore:Pawn) : Thing
+    + {static} HandleBlockingThingJob(constructible:Thing, worker:Pawn, forced:bool) : Job
+    + {static} BlocksConstruction(constructible:Thing, t:Thing) : bool
+    + {static} TerrainCanSupport(rect:CellRect, map:Map, thing:ThingDef) : bool
+}
+@enduml

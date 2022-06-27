@@ -1,0 +1,31 @@
+@startuml
+class DamageGraphicData {
+    + enabled : bool = true
+    + cornerTL : string
+    + cornerTR : string
+    + cornerBL : string
+    + cornerBR : string
+    + edgeLeft : string
+    + edgeRight : string
+    + edgeTop : string
+    + edgeBot : string
+    + ResolveReferencesSpecial() : void
+}
+class "List`1"<T> {
+}
+DamageGraphicData --> "rectN" Rect
+DamageGraphicData --> "rectE" Rect
+DamageGraphicData --> "rectS" Rect
+DamageGraphicData --> "rectW" Rect
+DamageGraphicData --> "rect" Rect
+DamageGraphicData --> "scratches<string>" "List`1"
+DamageGraphicData --> "scratchMats<Material>" "List`1"
+DamageGraphicData --> "cornerTLMat" Material
+DamageGraphicData --> "cornerTRMat" Material
+DamageGraphicData --> "cornerBLMat" Material
+DamageGraphicData --> "cornerBRMat" Material
+DamageGraphicData --> "edgeLeftMat" Material
+DamageGraphicData --> "edgeRightMat" Material
+DamageGraphicData --> "edgeTopMat" Material
+DamageGraphicData --> "edgeBotMat" Material
+@enduml

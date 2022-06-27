@@ -1,0 +1,6 @@
+@startuml
+class ComTargetEffect_MoteOnTarget {
+    + <<override>> DoEffectOn(user:Pawn, target:Thing) : void
+}
+CompTargetEffect <|-- ComTargetEffect_MoteOnTarget
+@enduml

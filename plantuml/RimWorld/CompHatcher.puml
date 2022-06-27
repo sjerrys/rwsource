@@ -1,0 +1,18 @@
+@startuml
+class CompHatcher {
+    + TemperatureDamaged : bool <<get>>
+    + <<override>> PostExposeData() : void
+    + <<override>> CompTick() : void
+    + Hatch() : void
+    + <<override>> PreAbsorbStack(otherStack:Thing, count:int) : void
+    + <<override>> PostSplitOff(piece:Thing) : void
+    + <<override>> PrePreTraded(action:TradeAction, playerNegotiator:Pawn, trader:ITrader) : void
+    + <<override>> PostPostGeneratedForTrader(trader:TraderKindDef, forTile:int, forFaction:Faction) : void
+    + <<override>> CompInspectStringExtra() : string
+}
+ThingComp <|-- CompHatcher
+CompHatcher --> "hatcheeParent" Pawn
+CompHatcher --> "otherParent" Pawn
+CompHatcher --> "hatcheeFaction" Faction
+CompHatcher --> "Props" CompProperties_Hatcher
+@enduml

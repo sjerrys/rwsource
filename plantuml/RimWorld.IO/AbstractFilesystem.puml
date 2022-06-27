@@ -1,0 +1,7 @@
+@startuml
+class AbstractFilesystem <<static>> {
+    + {static} ClearAllCache() : void
+    + {static} GetDirectories(filesystemPath:string, searchPattern:string, searchOption:SearchOption, allowArchiveAndRealFolderDuplicates:bool) : List<VirtualDirectory>
+    + {static} GetDirectory(filesystemPath:string) : VirtualDirectory
+}
+@enduml

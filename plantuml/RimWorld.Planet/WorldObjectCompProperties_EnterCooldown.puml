@@ -1,0 +1,8 @@
+@startuml
+class WorldObjectCompProperties_EnterCooldown {
+    + autoStartOnMapRemoved : bool = true
+    + durationDays : float = 1f
+    + WorldObjectCompProperties_EnterCooldown()
+}
+WorldObjectCompProperties <|-- WorldObjectCompProperties_EnterCooldown
+@enduml

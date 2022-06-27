@@ -1,0 +1,6 @@
+@startuml
+class TransferableComparer_Name {
+    + <<override>> Compare(lhs:Transferable, rhs:Transferable) : int
+}
+TransferableComparer <|-- TransferableComparer_Name
+@enduml

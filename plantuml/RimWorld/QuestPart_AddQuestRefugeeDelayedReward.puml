@@ -1,0 +1,15 @@
+@startuml
+class QuestPart_AddQuestRefugeeDelayedReward {
+    + inSignalRemovePawn : string
+    + <<override>> GetSlate() : Slate
+    + <<override>> Notify_FactionRemoved(f:Faction) : void
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> ExposeData() : void
+}
+class "List`1"<T> {
+}
+QuestPart_AddQuest <|-- QuestPart_AddQuestRefugeeDelayedReward
+QuestPart_AddQuestRefugeeDelayedReward o-> "lodgers<Pawn>" "List`1"
+QuestPart_AddQuestRefugeeDelayedReward --> "marketValueRange" FloatRange
+QuestPart_AddQuestRefugeeDelayedReward --> "faction" Faction
+@enduml

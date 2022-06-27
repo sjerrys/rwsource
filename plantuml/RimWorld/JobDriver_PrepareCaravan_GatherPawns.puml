@@ -1,0 +1,6 @@
+@startuml
+class JobDriver_PrepareCaravan_GatherPawns {
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+}
+JobDriver <|-- JobDriver_PrepareCaravan_GatherPawns
+@enduml

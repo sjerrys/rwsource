@@ -1,0 +1,12 @@
+@startuml
+class CompAssignableToPawn_Grave {
+    + <<override>> AssignedAnything(pawn:Pawn) : bool
+    + <<override>> TryAssignPawn(pawn:Pawn) : void
+    + <<override>> TryUnassignPawn(pawn:Pawn, sort:bool) : void
+    + <<override>> PostExposeData() : void
+}
+class "IEnumerable`1"<T> {
+}
+CompAssignableToPawn <|-- CompAssignableToPawn_Grave
+CompAssignableToPawn_Grave --> "AssigningCandidates<Pawn>" "IEnumerable`1"
+@enduml

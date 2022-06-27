@@ -1,0 +1,23 @@
+@startuml
+class WorldSelector {
+    + selectedTile : int
+    + NumSelectedObjects : int <<get>>
+    + AnyObjectOrTileSelected : bool <<get>>
+    + WorldSelectorOnGUI() : void
+    + IsSelected(obj:WorldObject) : bool
+    + ClearSelection() : void
+    + Deselect(obj:WorldObject) : void
+    + Select(obj:WorldObject, playSound:bool) : void
+    + Notify_DialogOpened() : void
+    + SelectableObjectsUnderMouse() : IEnumerable<WorldObject>
+    + SelectableObjectsUnderMouse(clickedDirectlyOnCaravan:bool, usedColonistBar:bool) : IEnumerable<WorldObject>
+    + {static} SelectableObjectsAt(tileID:int) : IEnumerable<WorldObject>
+    + SelectFirstOrNextAt(tileID:int) : void
+}
+class "List`1"<T> {
+}
+WorldSelector o-> "dragBox" WorldDragBox
+WorldSelector --> "SelectedObjects<WorldObject>" "List`1"
+WorldSelector --> "SingleSelectedObject" WorldObject
+WorldSelector --> "FirstSelectedObject" WorldObject
+@enduml

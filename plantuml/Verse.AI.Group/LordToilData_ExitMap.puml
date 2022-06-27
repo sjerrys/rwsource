@@ -1,0 +1,9 @@
+@startuml
+class LordToilData_ExitMap {
+    + canDig : bool
+    + interruptCurrentJob : bool
+    + <<override>> ExposeData() : void
+}
+LordToilData <|-- LordToilData_ExitMap
+LordToilData_ExitMap --> "locomotion" LocomotionUrgency
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class PriceTypeUtlity <<static>> {
+    + {static} PriceMultiplier(pType:PriceType) : float
+    + {static} ClosestPriceType(priceFactor:float) : PriceType
+}
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class MinifyUtility <<static>> {
+    + {static} MakeMinified(thing:Thing) : MinifiedThing
+    + {static} TryMakeMinified(thing:Thing) : Thing
+    + {static} GetInnerIfMinified(outerThing:Thing) : Thing
+    + {static} Uninstall(th:Thing) : MinifiedThing
+}
+@enduml

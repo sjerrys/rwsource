@@ -1,0 +1,5 @@
+@startuml
+class ThoughtWorker_ImprisonedByFaction {
+}
+ThoughtWorker <|-- ThoughtWorker_ImprisonedByFaction
+@enduml

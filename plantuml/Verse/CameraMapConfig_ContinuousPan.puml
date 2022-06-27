@@ -1,0 +1,6 @@
+@startuml
+class CameraMapConfig_ContinuousPan {
+    + CameraMapConfig_ContinuousPan()
+}
+CameraMapConfig <|-- CameraMapConfig_ContinuousPan
+@enduml

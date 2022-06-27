@@ -1,0 +1,8 @@
+@startuml
+class CompAbilityEffect_Spawn {
+    + <<override>> Apply(target:LocalTargetInfo, dest:LocalTargetInfo) : void
+    + <<override>> Valid(target:LocalTargetInfo, throwMessages:bool) : bool
+}
+CompAbilityEffect <|-- CompAbilityEffect_Spawn
+CompAbilityEffect_Spawn --> "Props" CompProperties_AbilitySpawn
+@enduml

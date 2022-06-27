@@ -1,0 +1,10 @@
+@startuml
+class RetainedCaravanData {
+    + HasDestinationTile : bool <<get>>
+    + RetainedCaravanData(map:Map)
+    + ExposeData() : void
+    + Notify_GeneratedTempIncidentMapFor(caravan:Caravan) : void
+    + Notify_CaravanFormed(caravan:Caravan) : void
+}
+IExposable <|-- RetainedCaravanData
+@enduml

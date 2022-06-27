@@ -1,0 +1,11 @@
+@startuml
+abstract class Designator_AreaSnowClear {
+    + <<override>> DraggableDimensions : int <<get>>
+    + <<override>> DragDrawMeasurements : bool <<get>>
+    + Designator_AreaSnowClear(mode:DesignateMode)
+    + <<override>> CanDesignateCell(c:IntVec3) : AcceptanceReport
+    + <<override>> DesignateSingleCell(c:IntVec3) : void
+    + <<override>> SelectedUpdate() : void
+}
+Designator_Area <|-- Designator_AreaSnowClear
+@enduml

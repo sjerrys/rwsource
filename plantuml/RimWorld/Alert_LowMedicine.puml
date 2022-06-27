@@ -1,0 +1,8 @@
+@startuml
+class Alert_LowMedicine {
+    + Alert_LowMedicine()
+    + <<override>> GetExplanation() : TaggedString
+    + <<override>> GetReport() : AlertReport
+}
+Alert <|-- Alert_LowMedicine
+@enduml

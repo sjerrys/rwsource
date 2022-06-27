@@ -1,0 +1,7 @@
+@startuml
+class HediffCompProperties_RoyalImplant {
+    + violationTriggerDescriptionKey : string
+    + HediffCompProperties_RoyalImplant()
+}
+HediffCompProperties <|-- HediffCompProperties_RoyalImplant
+@enduml

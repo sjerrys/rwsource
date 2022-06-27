@@ -1,0 +1,5 @@
+@startuml
+class WorkshopItem_NotInstalled {
+}
+WorkshopItem <|-- WorkshopItem_NotInstalled
+@enduml

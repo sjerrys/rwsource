@@ -1,0 +1,10 @@
+@startuml
+enum TraverseMode {
+    ByPawn,
+    PassDoors,
+    NoPassClosedDoors,
+    PassAllDestroyableThings,
+    NoPassClosedDoorsOrWater,
+    PassAllDestroyableThingsNotWater,
+}
+@enduml

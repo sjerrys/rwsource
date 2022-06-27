@@ -1,0 +1,5 @@
+@startuml
+class ThingDefGenerator_Meat <<static>> {
+    + {static} ImpliedMeatDefs() : IEnumerable<ThingDef>
+}
+@enduml

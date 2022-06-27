@@ -1,0 +1,5 @@
+@startuml
+class EditorNullableAttribute {
+}
+Attribute <|-- EditorNullableAttribute
+@enduml

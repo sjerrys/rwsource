@@ -1,0 +1,5 @@
+@startuml
+class PatchOperationAttributeRemove {
+}
+PatchOperationAttribute <|-- PatchOperationAttributeRemove
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+class QuestNode_Leave {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_Leave
+QuestNode_Leave --> "inSignal<string>" "SlateRef`1"
+QuestNode_Leave --> "inSignalRemovePawn<string>" "SlateRef`1"
+QuestNode_Leave --> "pawns<IEnumerable<Pawn>>" "SlateRef`1"
+QuestNode_Leave --> "sendStandardLetter<bool?>" "SlateRef`1"
+QuestNode_Leave --> "leaveOnCleanup<bool?>" "SlateRef`1"
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class CompAbilityEffect_Stun {
+    + <<override>> Apply(target:LocalTargetInfo, dest:LocalTargetInfo) : void
+}
+CompAbilityEffect_WithDuration <|-- CompAbilityEffect_Stun
+@enduml

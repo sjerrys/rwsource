@@ -1,0 +1,22 @@
+@startuml
+class Filth {
+    + thickness : int = 1
+    + CanFilthAttachNow : bool <<get>>
+    + CanBeThickened : bool <<get>>
+    + TicksSinceThickened : int <<get>>
+    + DisappearAfterTicks : int <<get>>
+    + <<override>> Label : string <<get>>
+    + <<override>> ExposeData() : void
+    + <<override>> SpawnSetup(map:Map, respawningAfterLoad:bool) : void
+    + <<override>> DeSpawn(mode:DestroyMode) : void
+    + AddSource(newSource:string) : void
+    + AddSources(sources:IEnumerable<string>) : void
+    + <<virtual>> ThickenFilth() : void
+    + ThinFilth() : void
+    + CanDropAt(c:IntVec3, map:Map, additionalFlags:FilthSourceFlags) : bool
+}
+class "List`1"<T> {
+}
+Thing <|-- Filth
+Filth --> "sources<string>" "List`1"
+@enduml

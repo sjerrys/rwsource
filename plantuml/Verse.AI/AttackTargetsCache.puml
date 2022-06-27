@@ -1,0 +1,17 @@
+@startuml
+class AttackTargetsCache {
+    + AttackTargetsCache(map:Map)
+    + {static} AttackTargetsCacheStaticUpdate() : void
+    + UpdateTarget(t:IAttackTarget) : void
+    + GetPotentialTargetsFor(th:IAttackTargetSearcher) : List<IAttackTarget>
+    + TargetsHostileToFaction(f:Faction) : HashSet<IAttackTarget>
+    + Notify_ThingSpawned(th:Thing) : void
+    + Notify_ThingDespawned(th:Thing) : void
+    + Notify_FactionHostilityChanged(f1:Faction, f2:Faction) : void
+    + Debug_CheckIfInAllTargets(t:IAttackTarget) : bool
+    + Debug_CheckIfHostileToFaction(f:Faction, t:IAttackTarget) : bool
+}
+class "HashSet`1"<T> {
+}
+AttackTargetsCache --> "TargetsHostileToColony<IAttackTarget>" "HashSet`1"
+@enduml

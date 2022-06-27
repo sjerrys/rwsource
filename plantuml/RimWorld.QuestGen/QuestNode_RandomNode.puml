@@ -1,0 +1,8 @@
+@startuml
+class QuestNode_RandomNode {
+}
+class "List`1"<T> {
+}
+QuestNode <|-- QuestNode_RandomNode
+QuestNode_RandomNode o-> "nodes<QuestNode>" "List`1"
+@enduml

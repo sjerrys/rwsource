@@ -1,0 +1,14 @@
+@startuml
+class CaravanArrivalAction_OfferGifts {
+    + <<override>> Label : string <<get>>
+    + <<override>> ReportString : string <<get>>
+    + CaravanArrivalAction_OfferGifts()
+    + CaravanArrivalAction_OfferGifts(settlement:Settlement)
+    + <<override>> StillValid(caravan:Caravan, destinationTile:int) : FloatMenuAcceptanceReport
+    + <<override>> Arrived(caravan:Caravan) : void
+    + <<override>> ExposeData() : void
+    + {static} CanOfferGiftsTo(caravan:Caravan, settlement:Settlement) : FloatMenuAcceptanceReport
+    + {static} GetFloatMenuOptions(caravan:Caravan, settlement:Settlement) : IEnumerable<FloatMenuOption>
+}
+CaravanArrivalAction <|-- CaravanArrivalAction_OfferGifts
+@enduml

@@ -1,0 +1,24 @@
+@startuml
+class RoadDef {
+    + priority : int
+    + ancientOnly : bool
+    + movementCostMultiplier : float = 1f
+    + tilesPerSegment : int = 15
+    + worldTransitionGroup : string = ""
+    + distortionFrequency : float = 1f
+    + distortionIntensity : float
+    + GetLayerWidth(def:RoadWorldLayerDef) : float
+    + <<override>> ClearCachedData() : void
+}
+class WorldRenderStep {
+    + width : float
+}
+class "List`1"<T> {
+}
+Def <|-- RoadDef
+RoadDef --> "pathingMode" RoadPathingDef
+RoadDef --> "roadGenSteps<RoadDefGenStep>" "List`1"
+RoadDef --> "worldRenderSteps<WorldRenderStep>" "List`1"
+RoadDef +-- WorldRenderStep
+WorldRenderStep --> "layer" RoadWorldLayerDef
+@enduml

@@ -1,0 +1,24 @@
+@startuml
+class MinifiedThing {
+    + <<override>> LabelNoCount : string <<get>>
+    + <<override>> DescriptionDetailed : string <<get>>
+    + <<override>> DescriptionFlavor : string <<get>>
+    + MinifiedThing()
+    + <<override>> Tick() : void
+    + GetDirectlyHeldThings() : ThingOwner
+    + GetChildHolders(outChildren:List<IThingHolder>) : void
+    + <<override>> SplitOff(count:int) : Thing
+    + <<override>> CanStackWith(other:Thing) : bool
+    + <<override>> ExposeData() : void
+    + <<override>> DrawExtraSelectionOverlays() : void
+    + <<override>> DrawAt(drawLoc:Vector3, flip:bool) : void
+    + <<override>> Destroy(mode:DestroyMode) : void
+    + <<override>> PreTraded(action:TradeAction, playerNegotiator:Pawn, trader:ITrader) : void
+    + <<override>> GetGizmos() : IEnumerable<Gizmo>
+    + <<override>> GetInspectString() : string
+}
+ThingWithComps <|-- MinifiedThing
+IThingHolder <|-- MinifiedThing
+MinifiedThing --> "InnerThing" Thing
+MinifiedThing --> "Graphic" Graphic
+@enduml

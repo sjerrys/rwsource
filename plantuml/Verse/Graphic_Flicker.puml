@@ -1,0 +1,8 @@
+@startuml
+class Graphic_Flicker {
+    + <<override>> DrawWorker(loc:Vector3, rot:Rot4, thingDef:ThingDef, thing:Thing, extraRotation:float) : void
+    + <<override>> ToString() : string
+}
+Graphic_Collection <|-- Graphic_Flicker
+Graphic_Flicker --> "MatSingle" Material
+@enduml

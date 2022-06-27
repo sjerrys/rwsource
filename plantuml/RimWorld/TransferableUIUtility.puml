@@ -1,0 +1,29 @@
+@startuml
+class TransferableUIUtility <<static>> {
+    + <<const>> ResourceIconSize : float = 27f
+    + <<const>> SortersHeight : float = 27f
+    + <<const>> ExtraInfoHeight : float = 40f
+    + <<const>> ExtraInfoMargin : float = 12f
+    + {static} DoCountAdjustInterface(rect:Rect, trad:Transferable, index:int, min:int, max:int, flash:bool, extraStoppingPoints:List<TransferableCountToTransferStoppingPoint>, readOnly:bool) : void
+    + {static} DrawTransferableInfo(trad:Transferable, idRect:Rect, labelColor:Color) : void
+    + {static} DefaultListOrderPriority(transferable:Transferable) : float
+    + {static} DefaultListOrderPriority(def:ThingDef) : float
+    + {static} DoTransferableSorters(sorter1:TransferableSorterDef, sorter2:TransferableSorterDef, sorter1Setter:Action<TransferableSorterDef>, sorter2Setter:Action<TransferableSorterDef>) : void
+    + {static} DoExtraAnimalIcons(trad:Transferable, rect:Rect, curX:float) : void
+    + {static} DrawExtraInfo(info:List<ExtraInfo>, rect:Rect) : void
+}
+class ExtraInfo <<struct>> {
+    + key : string
+    + value : string
+    + secondValue : string
+    + tip : string
+    + lastFlashTime : float
+    + ExtraInfo(key:string, value:string, color:Color, tip:string, lastFlashTime:float)
+    + ExtraInfo(key:string, value:string, color:Color, tip:string, secondValue:string, secondColor:Color, lastFlashTime:float)
+}
+TransferableUIUtility o-> "ZeroCountColor" Color
+TransferableUIUtility o-> "FlashTex" Texture2D
+TransferableUIUtility +-- ExtraInfo
+ExtraInfo --> "color" Color
+ExtraInfo --> "secondColor" Color
+@enduml

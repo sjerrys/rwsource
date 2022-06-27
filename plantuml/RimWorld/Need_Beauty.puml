@@ -1,0 +1,9 @@
+@startuml
+class Need_Beauty {
+    + <<override>> CurInstantLevel : float <<get>>
+    + Need_Beauty(pawn:Pawn)
+    + CurrentInstantBeauty() : float
+}
+Need_Seeker <|-- Need_Beauty
+Need_Beauty --> "CurCategory" BeautyCategory
+@enduml

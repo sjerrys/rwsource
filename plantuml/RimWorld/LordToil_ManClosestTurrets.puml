@@ -1,0 +1,6 @@
+@startuml
+class LordToil_ManClosestTurrets {
+    + <<override>> UpdateAllDuties() : void
+}
+LordToil <|-- LordToil_ManClosestTurrets
+@enduml

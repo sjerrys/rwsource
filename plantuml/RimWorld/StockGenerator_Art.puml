@@ -1,0 +1,6 @@
+@startuml
+class StockGenerator_Art {
+    + <<override>> HandlesThingDef(td:ThingDef) : bool
+}
+StockGenerator_MiscItems <|-- StockGenerator_Art
+@enduml

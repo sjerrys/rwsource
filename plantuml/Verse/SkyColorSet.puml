@@ -1,0 +1,11 @@
+@startuml
+class SkyColorSet <<struct>> {
+    + saturation : float
+    + SkyColorSet(sky:Color, shadow:Color, overlay:Color, saturation:float)
+    + {static} Lerp(A:SkyColorSet, B:SkyColorSet, t:float) : SkyColorSet
+    + <<override>> ToString() : string
+}
+SkyColorSet --> "sky" Color
+SkyColorSet --> "shadow" Color
+SkyColorSet --> "overlay" Color
+@enduml

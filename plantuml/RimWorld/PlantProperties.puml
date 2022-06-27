@@ -1,0 +1,58 @@
+@startuml
+class PlantProperties {
+    + wildClusterRadius : int
+    + wildClusterWeight : float = 15f
+    + wildOrder : float = 2f
+    + wildEqualLocalDistribution : bool = true
+    + cavePlant : bool
+    + cavePlantWeight : float = 1f
+    + sowWork : float = 10f
+    + sowMinSkill : int
+    + blockAdjacentSow : bool
+    + mustBeWildToSow : bool
+    + harvestWork : float = 10f
+    + harvestYield : float
+    + harvestTag : string
+    + harvestMinGrowth : float = 0.65f
+    + harvestAfterGrowth : float
+    + harvestFailable : bool = true
+    + growDays : float = 2f
+    + lifespanDaysPerGrowDays : float = 8f
+    + growMinGlow : float = 0.51f
+    + growOptimalGlow : float = 1f
+    + fertilityMin : float = 0.9f
+    + fertilitySensitivity : float = 0.5f
+    + dieIfLeafless : bool
+    + neverBlightable : bool
+    + interferesWithRoof : bool
+    + dieIfNoSunlight : bool = true
+    + dieFromToxicFallout : bool = true
+    + topWindExposure : float = 0.25f
+    + maxMeshCount : int = 1
+    + dropLeaves : bool
+    + <<const>> MaxMaxMeshCount : int = 25
+    + Sowable : bool <<get>>
+    + Harvestable : bool <<get>>
+    + HarvestDestroys : bool <<get>>
+    + IsTree : bool <<get>>
+    + LifespanDays : float <<get>>
+    + LifespanTicks : int <<get>>
+    + LimitedLifespan : bool <<get>>
+    + Blightable : bool <<get>>
+    + GrowsInClusters : bool <<get>>
+    + PostLoadSpecial(parentDef:ThingDef) : void
+    + ConfigErrors() : IEnumerable<string>
+}
+class "List`1"<T> {
+}
+PlantProperties --> "wildBiomes<PlantBiomeRecord>" "List`1"
+PlantProperties o-> "sowTags<string>" "List`1"
+PlantProperties --> "sowResearchPrerequisites<ResearchProjectDef>" "List`1"
+PlantProperties --> "harvestedThingDef" ThingDef
+PlantProperties --> "soundHarvesting" SoundDef
+PlantProperties --> "soundHarvestFinish" SoundDef
+PlantProperties o-> "purpose" PlantPurpose
+PlantProperties o-> "visualSizeRange" FloatRange
+PlantProperties --> "leaflessGraphic" Graphic
+PlantProperties --> "immatureGraphic" Graphic
+@enduml

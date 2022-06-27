@@ -1,0 +1,6 @@
+@startuml
+class PlaceWorker_PreventInteractionSpotOverlap {
+    + <<override>> AllowsPlacing(checkingDef:BuildableDef, loc:IntVec3, rot:Rot4, map:Map, thingToIgnore:Thing, thingToPlace:Thing) : AcceptanceReport
+}
+PlaceWorker <|-- PlaceWorker_PreventInteractionSpotOverlap
+@enduml

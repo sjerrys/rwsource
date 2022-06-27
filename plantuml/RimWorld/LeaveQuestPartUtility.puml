@@ -1,0 +1,6 @@
+@startuml
+class LeaveQuestPartUtility <<static>> {
+    + {static} MakePawnLeave(pawn:Pawn, quest:Quest) : void
+    + {static} MakePawnsLeave(pawns:IEnumerable<Pawn>, sendLetter:bool, quest:Quest) : void
+}
+@enduml

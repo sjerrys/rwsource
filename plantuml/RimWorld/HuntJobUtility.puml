@@ -1,0 +1,5 @@
+@startuml
+class HuntJobUtility <<static>> {
+    + {static} WasKilledByHunter(pawn:Pawn, dinfo:DamageInfo?) : bool
+}
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class Direction8WayUtility <<static>> {
+    + {static} LabelShort(dir:Direction8Way) : string
+}
+@enduml

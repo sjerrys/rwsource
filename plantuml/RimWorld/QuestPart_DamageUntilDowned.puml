@@ -1,0 +1,17 @@
+@startuml
+class QuestPart_DamageUntilDowned {
+    + inSignal : string
+    + allowBleedingWounds : bool = true
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+    + <<override>> ReplacePawnReferences(replace:Pawn, with:Pawn) : void
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart <|-- QuestPart_DamageUntilDowned
+QuestPart_DamageUntilDowned o-> "pawns<Pawn>" "List`1"
+QuestPart_DamageUntilDowned --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+@enduml

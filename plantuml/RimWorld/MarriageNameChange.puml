@@ -1,0 +1,7 @@
+@startuml
+enum MarriageNameChange {
+    NoChange,
+    WomansName,
+    MansName,
+}
+@enduml

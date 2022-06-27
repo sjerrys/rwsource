@@ -1,0 +1,7 @@
+@startuml
+abstract class JobGiver_AIFightEnemy {
+    + <<override>> DeepCopy(resolve:bool) : ThinkNode
+}
+ThinkNode_JobGiver <|-- JobGiver_AIFightEnemy
+JobGiver_AIFightEnemy o-> "ExpiryInterval_ShooterSucceeded" IntRange
+@enduml

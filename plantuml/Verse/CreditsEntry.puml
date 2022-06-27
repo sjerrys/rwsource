@@ -1,0 +1,6 @@
+@startuml
+abstract class CreditsEntry {
+    + {abstract} DrawHeight(width:float) : float
+    + {abstract} Draw(rect:Rect) : void
+}
+@enduml

@@ -1,0 +1,22 @@
+@startuml
+class StuffProperties {
+    + stuffAdjective : string
+    + commonality : float = 1f
+    + allowColorGenerators : bool
+    + CanMake(t:BuildableDef) : bool
+    + ResolveReferencesSpecial() : void
+}
+class "List`1"<T> {
+}
+StuffProperties --> "parent" ThingDef
+StuffProperties o-> "categories<StuffCategoryDef>" "List`1"
+StuffProperties --> "statOffsets<StatModifier>" "List`1"
+StuffProperties --> "statFactors<StatModifier>" "List`1"
+StuffProperties o-> "color" Color
+StuffProperties --> "constructEffect" EffecterDef
+StuffProperties --> "appearance" StuffAppearanceDef
+StuffProperties --> "soundImpactStuff" SoundDef
+StuffProperties --> "soundMeleeHitSharp" SoundDef
+StuffProperties --> "soundMeleeHitBlunt" SoundDef
+StuffProperties --> "SourceNaturalRock" ThingDef
+@enduml

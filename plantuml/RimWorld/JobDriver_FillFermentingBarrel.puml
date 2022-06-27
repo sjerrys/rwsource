@@ -1,0 +1,6 @@
+@startuml
+class JobDriver_FillFermentingBarrel {
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+}
+JobDriver <|-- JobDriver_FillFermentingBarrel
+@enduml

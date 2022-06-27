@@ -1,0 +1,7 @@
+@startuml
+class DateNotifier {
+    + ExposeData() : void
+    + DateNotifierTick() : void
+}
+IExposable <|-- DateNotifier
+@enduml

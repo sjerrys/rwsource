@@ -1,0 +1,7 @@
+@startuml
+enum StoryDanger {
+    None,
+    Low,
+    High,
+}
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+class WeatherEventHandler {
+    + AddEvent(newEvent:WeatherEvent) : void
+    + WeatherEventHandlerTick() : void
+    + WeatherEventsDraw() : void
+}
+class "List`1"<T> {
+}
+WeatherEventHandler --> "LiveEventsListForReading<WeatherEvent>" "List`1"
+@enduml

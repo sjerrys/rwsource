@@ -1,0 +1,20 @@
+@startuml
+class ListerBuildings <<sealed>> {
+    + Add(b:Building) : void
+    + Remove(b:Building) : void
+    + ColonistsHaveBuilding(def:ThingDef) : bool
+    + ColonistsHaveBuilding(predicate:Func<Thing, bool>) : bool
+    + ColonistsHaveResearchBench() : bool
+    + ColonistsHaveBuildingWithPowerOn(def:ThingDef) : bool
+    + AllBuildingsColonistOfDef(def:ThingDef) : IEnumerable<Building>
+    + AllBuildingsColonistOfClass() : IEnumerable<T>
+}
+class "List`1"<T> {
+}
+class "HashSet`1"<T> {
+}
+ListerBuildings o-> "allBuildingsColonist<Building>" "List`1"
+ListerBuildings o-> "allBuildingsNonColonist<Building>" "List`1"
+ListerBuildings o-> "allBuildingsColonistCombatTargets<Building>" "HashSet`1"
+ListerBuildings o-> "allBuildingsColonistElecFire<Building>" "HashSet`1"
+@enduml

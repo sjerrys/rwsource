@@ -1,0 +1,11 @@
+@startuml
+abstract class Root {
+    + <<virtual>> Start() : void
+    + <<virtual>> Update() : void
+    + OnGUI() : void
+    + {static} Shutdown() : void
+}
+MonoBehaviour <|-- Root
+Root --> "soundRoot" SoundRoot
+Root --> "uiRoot" UIRoot
+@enduml

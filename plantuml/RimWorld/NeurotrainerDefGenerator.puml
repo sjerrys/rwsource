@@ -1,0 +1,7 @@
+@startuml
+class NeurotrainerDefGenerator {
+    + {static} NeurotrainerDefPrefix : string = "Neurotrainer"
+    + {static} PsytrainerDefPrefix : string = "Psytrainer"
+    + {static} ImpliedThingDefs() : IEnumerable<ThingDef>
+}
+@enduml

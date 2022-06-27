@@ -1,0 +1,5 @@
+@startuml
+class Instruction_Basic {
+}
+Lesson_Instruction <|-- Instruction_Basic
+@enduml

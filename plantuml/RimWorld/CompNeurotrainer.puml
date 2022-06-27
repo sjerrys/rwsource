@@ -1,0 +1,11 @@
+@startuml
+class CompNeurotrainer {
+    + <<override>> PostExposeData() : void
+    + <<override>> Initialize(props:CompProperties) : void
+    + <<override>> AllowStackWith(other:Thing) : bool
+    + <<override>> PostSplitOff(piece:Thing) : void
+}
+CompUsable <|-- CompNeurotrainer
+CompNeurotrainer --> "skill" SkillDef
+CompNeurotrainer --> "ability" AbilityDef
+@enduml

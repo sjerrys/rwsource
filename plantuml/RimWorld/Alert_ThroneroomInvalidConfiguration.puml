@@ -1,0 +1,8 @@
+@startuml
+class Alert_ThroneroomInvalidConfiguration {
+    + Alert_ThroneroomInvalidConfiguration()
+    + <<override>> GetExplanation() : TaggedString
+    + <<override>> GetReport() : AlertReport
+}
+Alert <|-- Alert_ThroneroomInvalidConfiguration
+@enduml

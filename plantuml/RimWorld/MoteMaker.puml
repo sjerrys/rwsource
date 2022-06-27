@@ -1,0 +1,42 @@
+@startuml
+class MoteMaker <<static>> {
+    + {static} ThrowMetaIcon(cell:IntVec3, map:Map, moteDef:ThingDef) : Mote
+    + {static} MakeStaticMote(cell:IntVec3, map:Map, moteDef:ThingDef, scale:float) : void
+    + {static} MakeStaticMote(loc:Vector3, map:Map, moteDef:ThingDef, scale:float) : Mote
+    + {static} ThrowText(loc:Vector3, map:Map, text:string, timeBeforeStartFadeout:float) : void
+    + {static} ThrowText(loc:Vector3, map:Map, text:string, color:Color, timeBeforeStartFadeout:float) : void
+    + {static} ThrowMetaPuffs(rect:CellRect, map:Map) : void
+    + {static} ThrowMetaPuffs(targ:TargetInfo) : void
+    + {static} ThrowMetaPuff(loc:Vector3, map:Map) : void
+    + {static} ThrowAirPuffUp(loc:Vector3, map:Map) : void
+    + {static} ThrowBreathPuff(loc:Vector3, map:Map, throwAngle:float, inheritVelocity:Vector3) : void
+    + {static} ThrowDustPuff(cell:IntVec3, map:Map, scale:float) : void
+    + {static} ThrowDustPuff(loc:Vector3, map:Map, scale:float) : void
+    + {static} ThrowDustPuffThick(loc:Vector3, map:Map, scale:float, color:Color) : void
+    + {static} ThrowTornadoDustPuff(loc:Vector3, map:Map, scale:float, color:Color) : void
+    + {static} ThrowSmoke(loc:Vector3, map:Map, size:float) : void
+    + {static} ThrowFireGlow(c:IntVec3, map:Map, size:float) : void
+    + {static} ThrowHeatGlow(c:IntVec3, map:Map, size:float) : void
+    + {static} ThrowMicroSparks(loc:Vector3, map:Map) : void
+    + {static} ThrowLightningGlow(loc:Vector3, map:Map, size:float) : void
+    + {static} PlaceFootprint(loc:Vector3, map:Map, rot:float) : void
+    + {static} ThrowHorseshoe(thrower:Pawn, targetCell:IntVec3) : void
+    + {static} ThrowStone(thrower:Pawn, targetCell:IntVec3) : void
+    + {static} MakeStunOverlay(stunnedThing:Thing) : Mote
+    + {static} MakeInteractionOverlay(moteDef:ThingDef, A:TargetInfo, B:TargetInfo) : MoteDualAttached
+    + {static} MakeAttachedOverlay(thing:Thing, moteDef:ThingDef, offset:Vector3, scale:float, solidTimeOverride:float) : Mote
+    + {static} MakeColonistActionOverlay(pawn:Pawn, moteDef:ThingDef) : void
+    + {static} MakeMoodThoughtBubble(pawn:Pawn, thought:Thought) : MoteBubble
+    + {static} MakeThoughtBubble(pawn:Pawn, iconPath:string, maintain:bool) : MoteBubble
+    + {static} MakeInteractionBubble(initiator:Pawn, recipient:Pawn, interactionMote:ThingDef, symbol:Texture2D) : MoteBubble
+    + {static} MakeSpeechBubble(initiator:Pawn, symbol:Texture2D) : MoteBubble
+    + {static} ThrowExplosionCell(cell:IntVec3, map:Map, moteDef:ThingDef, color:Color) : void
+    + {static} ThrowExplosionInteriorMote(loc:Vector3, map:Map, moteDef:ThingDef) : void
+    + {static} MakeWaterSplash(loc:Vector3, map:Map, size:float, velocity:float) : void
+    + {static} MakeBombardmentMote(cell:IntVec3, map:Map) : void
+    + {static} MakeBombardmentMote_NewTmp(cell:IntVec3, map:Map, scale:float) : void
+    + {static} MakePowerBeamMote(cell:IntVec3, map:Map) : void
+    + {static} PlaceTempRoof(cell:IntVec3, map:Map) : void
+    + {static} MakeConnectingLine(start:Vector3, end:Vector3, moteType:ThingDef, map:Map, width:float) : Mote
+}
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+class UnityData <<static>> {
+    + {static} isEditor : bool
+    + {static} dataPath : string
+    + {static} persistentDataPath : string
+    + {static} IsInMainThread : bool <<get>>
+    + {static} Is32BitBuild : bool <<get>>
+    + {static} Is64BitBuild : bool <<get>>
+    {static} UnityData()
+    + {static} CopyUnityData() : void
+}
+UnityData --> "platform" RuntimePlatform
+@enduml

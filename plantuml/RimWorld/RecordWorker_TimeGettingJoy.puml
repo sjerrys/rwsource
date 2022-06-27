@@ -1,0 +1,6 @@
+@startuml
+class RecordWorker_TimeGettingJoy {
+    + <<override>> ShouldMeasureTimeNow(pawn:Pawn) : bool
+}
+RecordWorker <|-- RecordWorker_TimeGettingJoy
+@enduml

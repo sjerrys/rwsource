@@ -1,0 +1,16 @@
+@startuml
+class AITuning <<static>> {
+    + <<const>> ConstantThinkTreeJobCheckIntervalTicks : int = 30
+    + <<const>> MinMalnutritionSeverityForHumanoidsToEatCorpses : float = 0.4f
+    + <<const>> RescuedPawnJoinChance_OutsideDangerous : float = 1f
+    + <<const>> RescuedPawnJoinChance_OutsideSafe : float = 0.5f
+    + <<const>> OpportunisticJobMinDistPawnToDest : float = 3f
+    + <<const>> OpportunisticJobMaxDistPawnToItem : float = 30f
+    + <<const>> OpportunisticJobMaxPickupDistanceFactor : float = 0.5f
+    + <<const>> OpportunisticJobMaxRatioOppHaulDistanceToDestDistance : float = 1.7f
+    + <<const>> OpportunisticJobMaxDistDestToDropoff : float = 50f
+    + <<const>> OpportunisticJobMaxDistDestToDropoffFactor : float = 0.6f
+    + <<const>> OpportunisticJobMaxPickupRegions : int = 25
+    + <<const>> OpportunisticJobMaxDropoffRegions : int = 25
+}
+@enduml

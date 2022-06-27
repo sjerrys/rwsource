@@ -1,0 +1,8 @@
+@startuml
+class Dialog_AssignCaravanDrugPolicies {
+    + Dialog_AssignCaravanDrugPolicies(caravan:Caravan)
+    + <<override>> DoWindowContents(rect:Rect) : void
+}
+Window <|-- Dialog_AssignCaravanDrugPolicies
+Dialog_AssignCaravanDrugPolicies --> "InitialSize" Vector2
+@enduml

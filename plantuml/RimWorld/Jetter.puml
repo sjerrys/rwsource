@@ -1,0 +1,14 @@
+@startuml
+class Jetter {
+    + <<override>> Tick() : void
+    + <<override>> PostApplyDamage(dinfo:DamageInfo, totalDamageDealt:float) : void
+    + <<override>> Destroy(mode:DestroyMode) : void
+}
+enum JetterState {
+    Resting,
+    WickBurning,
+    Jetting,
+}
+Thing <|-- Jetter
+Jetter +-- JetterState
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+enum DeflateFlavor {
+    Store,
+    Fast,
+    Slow,
+}
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+class Reward_BestowingCeremony {
+    + targetPawnName : string
+    + titleName : string
+    + givePsylink : bool
+    + <<override>> InitFromValue(rewardValue:float, parms:RewardsGeneratorParams, valueActuallyUsed:float) : void
+    + <<override>> GenerateQuestParts(index:int, parms:RewardsGeneratorParams, customLetterLabel:string, customLetterText:string, customLetterLabelRules:RulePack, customLetterTextRules:RulePack) : IEnumerable<QuestPart>
+    + <<override>> GetDescription(parms:RewardsGeneratorParams) : string
+    + <<override>> ExposeData() : void
+}
+class "IEnumerable`1"<T> {
+}
+Reward <|-- Reward_BestowingCeremony
+Reward_BestowingCeremony --> "royalTitle" RoyalTitleDef
+Reward_BestowingCeremony --> "awardingFaction" Faction
+Reward_BestowingCeremony --> "StackElements<GenUI.AnonymousStackElement>" "IEnumerable`1"
+@enduml

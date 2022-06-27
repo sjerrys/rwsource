@@ -1,0 +1,6 @@
+@startuml
+class Verb_Ignite {
+    + Verb_Ignite()
+}
+Verb <|-- Verb_Ignite
+@enduml

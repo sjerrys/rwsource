@@ -1,0 +1,11 @@
+@startuml
+class Designator_Tame {
+    + <<override>> DraggableDimensions : int <<get>>
+    + Designator_Tame()
+    + <<override>> CanDesignateCell(c:IntVec3) : AcceptanceReport
+    + <<override>> DesignateSingleCell(loc:IntVec3) : void
+    + <<override>> CanDesignateThing(t:Thing) : AcceptanceReport
+    + <<override>> DesignateThing(t:Thing) : void
+}
+Designator <|-- Designator_Tame
+@enduml

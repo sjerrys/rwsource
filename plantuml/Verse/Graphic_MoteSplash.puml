@@ -1,0 +1,7 @@
+@startuml
+class Graphic_MoteSplash {
+    + <<override>> DrawWorker(loc:Vector3, rot:Rot4, thingDef:ThingDef, thing:Thing, extraRotation:float) : void
+    + <<override>> ToString() : string
+}
+Graphic_Mote <|-- Graphic_MoteSplash
+@enduml

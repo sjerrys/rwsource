@@ -1,0 +1,10 @@
+@startuml
+class QuestGen_Factions <<static>> {
+    + {static} AssaultColony(quest:Quest, faction:Faction, mapParent:MapParent, pawns:IEnumerable<Pawn>, inSignal:string, inSignalRemovePawn:string) : QuestPart_AssaultColony
+    + {static} ExtraFaction(quest:Quest, faction:Faction, pawns:IEnumerable<Pawn>, factionType:ExtraFactionType, areHelpers:bool, inSignalRemovePawn:string) : QuestPart_ExtraFaction
+    + {static} SetFactionRelations(quest:Quest, faction:Faction, relationKind:FactionRelationKind, inSignal:string, canSendLetter:bool?) : QuestPart_SetFactionRelations
+    + {static} ReserveFaction(quest:Quest, faction:Faction) : QuestPart_ReserveFaction
+    + {static} FactionGoodwillChange(quest:Quest, faction:Faction, change:int, inSignal:string, canSendMessage:bool, canSendHostilityLetter:bool, reason:string, getLookTargetFromSignal:bool, signalListenMode:QuestPart.SignalListenMode) : QuestPart_FactionGoodwillChange
+    + {static} SetFactionHidden(quest:Quest, faction:Faction, hidden:bool, inSignal:string) : QuestPart_SetFactionHidden
+}
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class PlayDataLoader <<static>> {
+    + {static} Loaded : bool <<get>>
+    + {static} LoadAllPlayData(recovering:bool) : void
+    + {static} ClearAllPlayData() : void
+}
+@enduml

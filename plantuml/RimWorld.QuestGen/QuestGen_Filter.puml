@@ -1,0 +1,13 @@
+@startuml
+class QuestGen_Filter <<static>> {
+    + {static} AnyPawnAlive(quest:Quest, pawns:IEnumerable<Pawn>, action:Action, elseAction:Action, inSignal:string, outSignal:string, outSignalElse:string, inSignalRemovePawn:string, signalListenMode:QuestPart.SignalListenMode) : QuestPart_Filter_AnyPawnAlive
+    + {static} AllPawnsDespawned(quest:Quest, pawns:IEnumerable<Pawn>, action:Action, elseAction:Action, inSignal:string, outSignal:string, outSignalElse:string, inSignalRemovePawn:string, signalListenMode:QuestPart.SignalListenMode) : QuestPart_Filter_AllPawnsDespawned
+    + {static} AnyPawnUnhealthy(quest:Quest, pawns:IEnumerable<Pawn>, action:Action, elseAction:Action, inSignal:string, outSignal:string, outSignalElse:string, inSignalRemovePawn:string, signalListenMode:QuestPart.SignalListenMode) : QuestPart_Filter_AnyPawnUnhealthy
+    + {static} FactionHostileToOtherFaction(quest:Quest, faction:Faction, other:Faction, action:Action, elseAction:Action, inSignal:string, outSignal:string, outSignalElse:string, signalListenMode:QuestPart.SignalListenMode) : QuestPart_Filter_FactionHostileToOtherFaction
+    + {static} AnyPawnPlayerControlled(quest:Quest, pawns:IEnumerable<Pawn>, action:Action, elseAction:Action, inSignal:string, outSignal:string, outSignalElse:string, inSignalRemovePawn:string, signalListenMode:QuestPart.SignalListenMode) : QuestPart_Filter_AnyPawnPlayerControlled
+    + {static} AllPawnsDestroyed(quest:Quest, pawns:IEnumerable<Pawn>, action:Action, elseAction:Action, inSignal:string, outSignal:string, outSignalElse:string, inSignalRemovePawn:string, signalListenMode:QuestPart.SignalListenMode) : QuestPart_Filter_AllPawnsDestroyed
+    + {static} FactionNonPlayer(quest:Quest, action:Action, elseAction:Action, inSignal:string, outSignal:string, outSignalElse:string, signalListenMode:QuestPart.SignalListenMode) : QuestPart_Filter_FactionNonPlayer
+    + {static} AllPawnsDowned(quest:Quest, pawns:IEnumerable<Pawn>, action:Action, elseAction:Action, inSignal:string, outSignal:string, outSignalElse:string, inSignalRemovePawn:string, signalListenMode:QuestPart.SignalListenMode) : QuestPart_Filter_AllPawnsDowned
+    + {static} AnyOnTransporter(quest:Quest, pawns:IEnumerable<Pawn>, shuttle:Thing, action:Action, elseAction:Action, inSignal:string, outSignal:string, outSignalElse:string, inSignalRemovePawn:string, signalListenMode:QuestPart.SignalListenMode) : QuestPart_Filter_AnyOnTransporter
+}
+@enduml

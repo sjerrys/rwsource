@@ -1,0 +1,5 @@
+@startuml
+class JoyGiver_WatchBuilding {
+}
+JoyGiver_InteractBuilding <|-- JoyGiver_WatchBuilding
+@enduml

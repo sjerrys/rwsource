@@ -1,0 +1,17 @@
+@startuml
+class InteractionDefOf <<static>> {
+    {static} InteractionDefOf()
+}
+InteractionDefOf --> "Chitchat" InteractionDef
+InteractionDefOf --> "DeepTalk" InteractionDef
+InteractionDefOf --> "Insult" InteractionDef
+InteractionDefOf --> "RomanceAttempt" InteractionDef
+InteractionDefOf --> "MarriageProposal" InteractionDef
+InteractionDefOf --> "BuildRapport" InteractionDef
+InteractionDefOf --> "RecruitAttempt" InteractionDef
+InteractionDefOf --> "SparkJailbreak" InteractionDef
+InteractionDefOf --> "AnimalChat" InteractionDef
+InteractionDefOf --> "TrainAttempt" InteractionDef
+InteractionDefOf --> "TameAttempt" InteractionDef
+InteractionDefOf --> "Nuzzle" InteractionDef
+@enduml

@@ -1,0 +1,27 @@
+@startuml
+class TransferableOneWayWidget {
+    + extraHeaderSpace : float
+    + readOnly : bool
+    + <<const>> TopAreaHeight : float = 37f
+    + <<const>> CountColumnWidth : float = 75f
+    + <<const>> AdjustColumnWidth : float = 240f
+    + <<const>> MassColumnWidth : float = 100f
+    + <<const>> TopAreaWidth : float = 515f
+    + TotalNumbersColumnsWidths : float <<get>>
+    + TransferableOneWayWidget(transferables:IEnumerable<TransferableOneWay>, sourceLabel:string, destinationLabel:string, sourceCountDesc:string, drawMass:bool, ignorePawnInventoryMass:IgnorePawnsInventoryMode, includePawnsMassInMassUsage:bool, availableMassGetter:Func<float>, extraHeaderSpace:float, ignoreSpawnedCorpseGearAndInventoryMass:bool, tile:int, drawMarketValue:bool, drawEquippedWeapon:bool, drawNutritionEatenPerDay:bool, drawItemNutrition:bool, drawForagedFoodPerDay:bool, drawDaysUntilRot:bool, playerPawnsReadOnly:bool)
+    + AddSection(title:string, transferables:IEnumerable<TransferableOneWay>) : void
+    + OnGUI(inRect:Rect) : void
+    + OnGUI(inRect:Rect, anythingChanged:bool) : void
+}
+class Section <<struct>> {
+    + title : string
+}
+class "IEnumerable`1"<T> {
+}
+class "List`1"<T> {
+}
+TransferableOneWayWidget o-> "ItemMassColor" Color
+TransferableOneWayWidget +-- Section
+Section --> "transferables<TransferableOneWay>" "IEnumerable`1"
+Section --> "cachedTransferables<TransferableOneWay>" "List`1"
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class PawnTweener {
+    + PawnTweener(pawn:Pawn)
+    + PreDrawPosCalculation() : void
+    + ResetTweenedPosToRoot() : void
+}
+PawnTweener --> "TweenedPos" Vector3
+PawnTweener --> "LastTickTweenedVelocity" Vector3
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class SettleUtility <<static>> {
+    + {static} PlayerSettlementsCountLimitReached : bool <<get>>
+    + {static} AddNewHome(tile:int, faction:Faction) : Settlement
+}
+SettleUtility o-> "SettleCommandTex" Texture2D
+@enduml

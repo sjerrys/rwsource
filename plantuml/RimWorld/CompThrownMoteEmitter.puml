@@ -1,0 +1,9 @@
+@startuml
+class CompThrownMoteEmitter {
+    + emittedBefore : bool
+    + ticksSinceLastEmitted : int
+    + <<override>> CompTick() : void
+    + <<override>> PostExposeData() : void
+}
+ThingComp <|-- CompThrownMoteEmitter
+@enduml

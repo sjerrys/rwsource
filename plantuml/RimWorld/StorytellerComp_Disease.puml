@@ -1,0 +1,7 @@
+@startuml
+class StorytellerComp_Disease {
+    + <<override>> MakeIntervalIncidents(target:IIncidentTarget) : IEnumerable<FiringIncident>
+    + <<override>> ToString() : string
+}
+StorytellerComp <|-- StorytellerComp_Disease
+@enduml

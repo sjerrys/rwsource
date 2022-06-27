@@ -1,0 +1,7 @@
+@startuml
+class StockGenerator_Armor {
+    + <<const>> MinArmor : float = 0.15f
+    + <<override>> HandlesThingDef(td:ThingDef) : bool
+}
+StockGenerator_MiscItems <|-- StockGenerator_Armor
+@enduml

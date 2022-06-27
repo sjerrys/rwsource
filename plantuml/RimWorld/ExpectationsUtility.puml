@@ -1,0 +1,7 @@
+@startuml
+class ExpectationsUtility <<static>> {
+    + {static} Reset() : void
+    + {static} CurrentExpectationFor(p:Pawn) : ExpectationDef
+    + {static} CurrentExpectationFor(m:Map) : ExpectationDef
+}
+@enduml

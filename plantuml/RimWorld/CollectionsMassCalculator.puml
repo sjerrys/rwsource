@@ -1,0 +1,14 @@
+@startuml
+class CollectionsMassCalculator <<static>> {
+    + {static} Capacity(thingCounts:List<ThingCount>, explanation:StringBuilder) : float
+    + {static} MassUsage(thingCounts:List<ThingCount>, ignoreInventory:IgnorePawnsInventoryMode, includePawnsMass:bool, ignoreSpawnedCorpsesGearAndInventory:bool) : float
+    + {static} CapacityTransferables(transferables:List<TransferableOneWay>, explanation:StringBuilder) : float
+    + {static} CapacityLeftAfterTransfer(transferables:List<TransferableOneWay>, explanation:StringBuilder) : float
+    + {static} CapacityLeftAfterTradeableTransfer(allCurrentThings:List<Thing>, tradeables:List<Tradeable>, explanation:StringBuilder) : float
+    + {static} Capacity(things:List<T>, explanation:StringBuilder) : float
+    + {static} MassUsageTransferables(transferables:List<TransferableOneWay>, ignoreInventory:IgnorePawnsInventoryMode, includePawnsMass:bool, ignoreSpawnedCorpsesGearAndInventory:bool) : float
+    + {static} MassUsageLeftAfterTransfer(transferables:List<TransferableOneWay>, ignoreInventory:IgnorePawnsInventoryMode, includePawnsMass:bool, ignoreSpawnedCorpsesGearAndInventory:bool) : float
+    + {static} MassUsage(things:List<T>, ignoreInventory:IgnorePawnsInventoryMode, includePawnsMass:bool, ignoreSpawnedCorpsesGearAndInventory:bool) : float
+    + {static} MassUsageLeftAfterTradeableTransfer(allCurrentThings:List<Thing>, tradeables:List<Tradeable>, ignoreInventory:IgnorePawnsInventoryMode, includePawnsMass:bool, ignoreSpawnedCorpsesGearAndInventory:bool) : float
+}
+@enduml

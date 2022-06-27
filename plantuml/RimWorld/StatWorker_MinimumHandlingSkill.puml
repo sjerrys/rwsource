@@ -1,0 +1,7 @@
+@startuml
+class StatWorker_MinimumHandlingSkill {
+    + <<override>> GetValueUnfinalized(req:StatRequest, applyPostProcess:bool) : float
+    + <<override>> GetExplanationUnfinalized(req:StatRequest, numberSense:ToStringNumberSense) : string
+}
+StatWorker <|-- StatWorker_MinimumHandlingSkill
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+enum RotStage {
+    Fresh,
+    Rotting,
+    Dessicated,
+}
+@enduml

@@ -1,0 +1,41 @@
+@startuml
+class CompTransporter {
+    + groupID : int
+    + AnythingLeftToLoad : bool <<get>>
+    + LoadingInProgressOrReadyToLaunch : bool <<get>>
+    + AnyInGroupHasAnythingLeftToLoad : bool <<get>>
+    + AnyInGroupNotifiedCantLoadMore : bool <<get>>
+    + AnyPawnCanLoadAnythingNow : bool <<get>>
+    + CompTransporter()
+    + <<override>> PostExposeData() : void
+    + GetDirectlyHeldThings() : ThingOwner
+    + GetChildHolders(outChildren:List<IThingHolder>) : void
+    + <<override>> CompTick() : void
+    + TransportersInGroup(map:Map) : List<CompTransporter>
+    + <<override>> CompGetGizmosExtra() : IEnumerable<Gizmo>
+    + <<override>> PostDeSpawn(map:Map) : void
+    + <<override>> CompInspectStringExtra() : string
+    + AddToTheToLoadList(t:TransferableOneWay, count:int) : void
+    + Notify_ThingAdded(t:Thing) : void
+    + Notify_ThingRemoved(t:Thing) : void
+    + Notify_ThingAddedAndMergedWith(t:Thing, mergedCount:int) : void
+    + CancelLoad() : bool
+    + CancelLoad(map:Map) : bool
+    + TryRemoveLord(map:Map) : void
+    + CleanUpLoadingVars(map:Map) : void
+    + SubtractFromToLoadList(t:Thing, count:int, sendMessageOnFinished:bool) : int
+}
+class "List`1"<T> {
+}
+ThingComp <|-- CompTransporter
+IThingHolder <|-- CompTransporter
+CompTransporter --> "innerContainer" ThingOwner
+CompTransporter --> "leftToLoad<TransferableOneWay>" "List`1"
+CompTransporter o-> "CancelLoadCommandTex" Texture2D
+CompTransporter --> "Props" CompProperties_Transporter
+CompTransporter --> "Map" Map
+CompTransporter --> "Launchable" CompLaunchable
+CompTransporter --> "Shuttle" CompShuttle
+CompTransporter --> "FirstThingLeftToLoad" Thing
+CompTransporter --> "FirstThingLeftToLoadInGroup" Thing
+@enduml

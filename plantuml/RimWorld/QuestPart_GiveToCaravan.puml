@@ -1,0 +1,19 @@
+@startuml
+class QuestPart_GiveToCaravan {
+    + inSignal : string
+    + <<override>> IncreasesPopulation : bool <<get>>
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> PostQuestAdded() : void
+    + <<override>> QuestPartReserves(p:Pawn) : bool
+    + <<override>> Cleanup() : void
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+    + <<override>> ReplacePawnReferences(replace:Pawn, with:Pawn) : void
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart <|-- QuestPart_GiveToCaravan
+QuestPart_GiveToCaravan --> "caravan" Caravan
+QuestPart_GiveToCaravan --> "Things<Thing>" "IEnumerable`1"
+QuestPart_GiveToCaravan --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+@enduml

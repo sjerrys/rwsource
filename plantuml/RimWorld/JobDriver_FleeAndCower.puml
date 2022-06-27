@@ -1,0 +1,6 @@
+@startuml
+class JobDriver_FleeAndCower {
+    + <<override>> GetReport() : string
+}
+JobDriver_Flee <|-- JobDriver_FleeAndCower
+@enduml

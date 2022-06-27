@@ -1,0 +1,29 @@
+@startuml
+class Dialog_FormCaravan {
+    + choosingRoute : bool
+    + CurrentTile : int <<get>>
+    + MassUsage : float <<get>>
+    + MassCapacity : float <<get>>
+    + Dialog_FormCaravan(map:Map, reform:bool, onClosed:Action, mapAboutToBeRemoved:bool)
+    + <<override>> PostOpen() : void
+    + <<override>> PostClose() : void
+    + Notify_NoLongerChoosingRoute() : void
+    + <<override>> DoWindowContents(inRect:Rect) : void
+    + DrawAutoSelectCheckbox(rect:Rect, anythingChanged:bool) : void
+    + <<override>> CausesMessageBackground() : bool
+    + Notify_ChoseRoute(destinationTile:int) : void
+    + {static} CanListInventorySeparately(p:Pawn) : bool
+    + {static} AllSendablePawns(map:Map, reform:bool) : List<Pawn>
+}
+enum Tab {
+    Pawns,
+    Items,
+    FoodAndMedicine,
+}
+class "List`1"<T> {
+}
+Window <|-- Dialog_FormCaravan
+Dialog_FormCaravan --> "transferables<TransferableOneWay>" "List`1"
+Dialog_FormCaravan --> "InitialSize" Vector2
+Dialog_FormCaravan +-- Tab
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+class PrisonerInteractionModeDefOf <<static>> {
+    {static} PrisonerInteractionModeDefOf()
+}
+PrisonerInteractionModeDefOf --> "NoInteraction" PrisonerInteractionModeDef
+PrisonerInteractionModeDefOf --> "AttemptRecruit" PrisonerInteractionModeDef
+PrisonerInteractionModeDefOf --> "ReduceResistance" PrisonerInteractionModeDef
+PrisonerInteractionModeDefOf --> "Release" PrisonerInteractionModeDef
+PrisonerInteractionModeDefOf --> "Execution" PrisonerInteractionModeDef
+@enduml

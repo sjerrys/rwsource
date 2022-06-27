@@ -1,0 +1,7 @@
+@startuml
+class WorldComponentUtility <<static>> {
+    + {static} WorldComponentUpdate(world:World) : void
+    + {static} WorldComponentTick(world:World) : void
+    + {static} FinalizeInit(world:World) : void
+}
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+class StatsRecord {
+    + numRaidsEnemy : int
+    + numThreatBigs : int
+    + colonistsKilled : int
+    + colonistsLaunched : int
+    + greatestPopulation : int
+    + ExposeData() : void
+    + Notify_ColonistKilled() : void
+    + UpdateGreatestPopulation() : void
+}
+IExposable <|-- StatsRecord
+@enduml

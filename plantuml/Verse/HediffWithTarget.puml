@@ -1,0 +1,9 @@
+@startuml
+class HediffWithTarget {
+    + <<override>> LabelBase : string <<get>>
+    + <<override>> ShouldRemove : bool <<get>>
+    + <<override>> ExposeData() : void
+}
+HediffWithComps <|-- HediffWithTarget
+HediffWithTarget --> "target" Thing
+@enduml

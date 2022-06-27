@@ -1,0 +1,25 @@
+@startuml
+class Need_Food {
+    + <<const>> BaseFoodFallPerTick : float = 2.66666666E-05f
+    + Starving : bool <<get>>
+    + PercentageThreshUrgentlyHungry : float <<get>>
+    + PercentageThreshHungry : float <<get>>
+    + NutritionBetweenHungryAndFed : float <<get>>
+    + FoodFallPerTick : float <<get>>
+    + TicksUntilHungryWhenFed : int <<get>>
+    + TicksUntilHungryWhenFedIgnoringMalnutrition : int <<get>>
+    + <<override>> GUIChangeArrow : int <<get>>
+    + <<override>> MaxLevel : float <<get>>
+    + NutritionWanted : float <<get>>
+    + TicksStarving : int <<get>>
+    + Need_Food(pawn:Pawn)
+    + <<override>> ExposeData() : void
+    + FoodFallPerTickAssumingCategory(cat:HungerCategory, ignoreMalnutrition:bool) : float
+    + <<override>> NeedInterval() : void
+    + <<override>> SetInitialLevel() : void
+    + <<override>> GetTipString() : string
+    + <<override>> DrawOnGUI(rect:Rect, maxThresholdMarkers:int, customMargin:float, drawArrows:bool, doTooltip:bool) : void
+}
+Need <|-- Need_Food
+Need_Food --> "CurCategory" HungerCategory
+@enduml

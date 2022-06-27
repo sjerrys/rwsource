@@ -1,0 +1,54 @@
+@startuml
+class HealthTuning {
+    + <<const>> StandardInterval : int = 60
+    + <<const>> SmallPawnFragmentedDamageHealthScaleThreshold : float = 0.5f
+    + <<const>> SmallPawnFragmentedDamageMinimumDamageAmount : int = 10
+    + {static} ChanceToAdditionallyDamageInnerSolidPart : float = 0.2f
+    + <<const>> MinBleedingRateToBleed : float = 0.1f
+    + <<const>> BleedSeverityRecoveryPerInterval : float = 0.00033333333f
+    + <<const>> BloodFilthDropChanceFactorStanding : float = 0.004f
+    + <<const>> BloodFilthDropChanceFactorLaying : float = 0.0004f
+    + <<const>> BaseTicksAfterInjuryToStopBleeding : int = 90000
+    + <<const>> TicksAfterMissingBodyPartToStopBeingFresh : int = 90000
+    + <<const>> DefaultPainShockThreshold : float = 0.8f
+    + <<const>> InjuryHealInterval : int = 600
+    + <<const>> InjuryHealPerDay_Base : float = 8f
+    + <<const>> InjuryHealPerDayOffset_Laying : float = 4f
+    + <<const>> InjuryHealPerDayOffset_Tended : float = 8f
+    + <<const>> InjurySeverityTendedPerMedicine : int = 20
+    + <<const>> BaseTotalDamageLethalThreshold : float = 150f
+    + <<const>> BecomePermanentBaseChance : float = 0.02f
+    + <<const>> MinDamagePartPctForInfection : float = 0.2f
+    + <<const>> AnimalsInfectionChanceFactor : float = 0.1f
+    + <<const>> HypothermiaGrowthPerDegreeUnder : float = 6.45E-05f
+    + <<const>> HeatstrokeGrowthPerDegreeOver : float = 6.45E-05f
+    + <<const>> MinHeatstrokeProgressPerInterval : float = 0.000375f
+    + <<const>> MinHypothermiaProgress : float = 0.00075f
+    + <<const>> HarmfulTemperatureOffset : float = 10f
+    + <<const>> MinTempOverComfyMaxForBurn : float = 150f
+    + <<const>> BurnDamagePerTempOverage : float = 0.06f
+    + <<const>> MinBurnDamage : int = 3
+    + <<const>> ImmunityGainRandomFactorMin : float = 0.8f
+    + <<const>> ImmunityGainRandomFactorMax : float = 1.2f
+    + <<const>> ImpossibleToFallSickIfAboveThisImmunityLevel : float = 0.6f
+    + <<const>> HediffGiverUpdateInterval : int = 60
+    + <<const>> VomitCheckInterval : int = 600
+    + <<const>> DeathCheckInterval : int = 200
+    + <<const>> ForgetRandomMemoryThoughtCheckInterval : int = 400
+    + <<const>> PawnBaseHealthForSummary : float = 75f
+    + <<const>> DeathOnDownedChance_NonColonyAnimal : float = 0.5f
+    + <<const>> DeathOnDownedChance_NonColonyMechanoid : float = 1f
+    + <<const>> TendPriority_LifeThreateningDisease : float = 1f
+    + <<const>> TendPriority_PerBleedRate : float = 1.5f
+    + <<const>> TendPriority_DiseaseSeverityDecreasesWhenTended : float = 0.025f
+}
+class PainCategoryWeighted <<struct>> {
+    + weight : float
+    + PainCategoryWeighted(category:PainCategory, weight:float)
+}
+HealthTuning o-> "BecomePermanentChanceFactorBySeverityCurve" SimpleCurve
+HealthTuning o-> "InfectionDelayRange" IntRange
+HealthTuning o-> "DeathOnDownedChance_NonColonyHumanlikeFromPopulationIntentCurve" SimpleCurve
+HealthTuning +-- PainCategoryWeighted
+PainCategoryWeighted --> "category" PainCategory
+@enduml

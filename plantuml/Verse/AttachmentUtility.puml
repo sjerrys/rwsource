@@ -1,0 +1,6 @@
+@startuml
+class AttachmentUtility <<static>> {
+    + {static} GetAttachment(t:Thing, def:ThingDef) : Thing
+    + {static} HasAttachment(t:Thing, def:ThingDef) : bool
+}
+@enduml

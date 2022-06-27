@@ -1,0 +1,7 @@
+@startuml
+class ColorGenerator_StandardApparel {
+    + <<override>> NewRandomizedColor() : Color
+}
+ColorGenerator <|-- ColorGenerator_StandardApparel
+ColorGenerator_StandardApparel --> "ExemplaryColor" Color
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+class QuestPart_FactionRelationKind {
+    + <<override>> QuestPartTick() : void
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+}
+class "IEnumerable`1"<T> {
+}
+QuestPartActivable <|-- QuestPart_FactionRelationKind
+QuestPart_FactionRelationKind --> "faction1" Faction
+QuestPart_FactionRelationKind --> "faction2" Faction
+QuestPart_FactionRelationKind --> "relationKind" FactionRelationKind
+QuestPart_FactionRelationKind --> "InvolvedFactions<Faction>" "IEnumerable`1"
+@enduml

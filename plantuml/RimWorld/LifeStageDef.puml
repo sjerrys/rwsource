@@ -1,0 +1,24 @@
+@startuml
+class LifeStageDef {
+    + visible : bool = true
+    + reproductive : bool
+    + milkable : bool
+    + shearable : bool
+    + voxPitch : float = 1f
+    + voxVolume : float = 1f
+    + icon : string
+    + bodySizeFactor : float = 1f
+    + healthScaleFactor : float = 1f
+    + hungerRateFactor : float = 1f
+    + marketValueFactor : float = 1f
+    + foodMaxFactor : float = 1f
+    + meleeDamageFactor : float = 1f
+    + Adjective : string <<get>>
+    + <<override>> ResolveReferences() : void
+}
+class "List`1"<T> {
+}
+Def <|-- LifeStageDef
+LifeStageDef --> "iconTex" Texture2D
+LifeStageDef o-> "statFactors<StatModifier>" "List`1"
+@enduml

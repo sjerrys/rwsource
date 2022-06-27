@@ -1,0 +1,5 @@
+@startuml
+class GenRecipe <<static>> {
+    + {static} MakeRecipeProducts(recipeDef:RecipeDef, worker:Pawn, ingredients:List<Thing>, dominantIngredient:Thing, billGiver:IBillGiver) : IEnumerable<Thing>
+}
+@enduml

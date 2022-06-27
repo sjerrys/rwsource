@@ -1,0 +1,16 @@
+@startuml
+class CompSendSignalOnPawnProximity {
+    + signalTag : string
+    + Sent : bool <<get>>
+    + Enabled : bool <<get>>
+    + <<override>> Initialize(props:CompProperties) : void
+    + <<override>> CompTick() : void
+    + <<override>> CompTickRare() : void
+    + Expire() : void
+    + <<override>> Notify_SignalReceived(signal:Signal) : void
+    + <<override>> CompInspectStringExtra() : string
+    + <<override>> PostExposeData() : void
+}
+ThingComp <|-- CompSendSignalOnPawnProximity
+CompSendSignalOnPawnProximity --> "Props" CompProperties_SendSignalOnPawnProximity
+@enduml

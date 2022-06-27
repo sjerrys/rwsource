@@ -1,0 +1,11 @@
+@startuml
+class Command_Reloadable {
+    + overrideColor : Color?
+    + <<override>> TopRightLabel : string <<get>>
+    + Command_Reloadable(comp:CompReloadable)
+    + <<override>> GizmoUpdateOnMouseover() : void
+    + <<override>> GroupsWith(other:Gizmo) : bool
+}
+Command_VerbTarget <|-- Command_Reloadable
+Command_Reloadable --> "IconDrawColor" Color
+@enduml

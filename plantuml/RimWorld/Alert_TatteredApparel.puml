@@ -1,0 +1,6 @@
+@startuml
+class Alert_TatteredApparel {
+    + Alert_TatteredApparel()
+}
+Alert_Thought <|-- Alert_TatteredApparel
+@enduml

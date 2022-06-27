@@ -1,0 +1,20 @@
+@startuml
+class UI <<static>> {
+    + {static} screenWidth : int
+    + {static} screenHeight : int
+    + {static} ApplyUIScale() : void
+    + {static} FocusControl(controlName:string, window:Window) : void
+    + {static} UnfocusCurrentControl() : void
+    + {static} GUIToScreenPoint(guiPoint:Vector2) : Vector2
+    + {static} RotateAroundPivot(angle:float, center:Vector2) : void
+    + {static} MapToUIPosition(v:Vector3) : Vector2
+    + {static} UIToMapPosition(x:float, y:float) : Vector3
+    + {static} UIToMapPosition(screenLoc:Vector2) : Vector3
+    + {static} CurUICellSize() : float
+    + {static} MouseMapPosition() : Vector3
+    + {static} MouseCell() : IntVec3
+}
+UI --> "MousePositionOnUI" Vector2
+UI --> "MousePositionOnUIInverted" Vector2
+UI --> "MousePosUIInvertedUseEventIfCan" Vector2
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class QuestNode_SendShuttleAwayOnCleanup {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_SendShuttleAwayOnCleanup
+QuestNode_SendShuttleAwayOnCleanup --> "shuttle<Thing>" "SlateRef`1"
+QuestNode_SendShuttleAwayOnCleanup --> "dropEverything<bool>" "SlateRef`1"
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+class CompCreatesInfestations {
+    + CanCreateInfestationNow : bool <<get>>
+    + CantFireBecauseCreatedInfestationRecently : bool <<get>>
+    + CantFireBecauseSomethingElseCreatedInfestationRecently : bool <<get>>
+    + <<override>> PostExposeData() : void
+    + Notify_CreatedInfestation() : void
+}
+ThingComp <|-- CompCreatesInfestations
+@enduml

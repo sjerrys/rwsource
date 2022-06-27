@@ -1,0 +1,8 @@
+@startuml
+enum BodyPartHeight {
+    Undefined,
+    Bottom,
+    Middle,
+    Top,
+}
+@enduml

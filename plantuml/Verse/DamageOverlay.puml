@@ -1,0 +1,13 @@
+@startuml
+enum DamageOverlay {
+    Scratch,
+    TopLeftCorner,
+    TopRightCorner,
+    BotLeftCorner,
+    BotRightCorner,
+    LeftEdge,
+    RightEdge,
+    TopEdge,
+    BotEdge,
+}
+@enduml

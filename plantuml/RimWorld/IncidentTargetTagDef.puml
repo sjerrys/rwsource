@@ -1,0 +1,5 @@
+@startuml
+class IncidentTargetTagDef {
+}
+Def <|-- IncidentTargetTagDef
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class SiegeBlueprintPlacer <<static>> {
+    + <<const>> ArtyCost : float = 60f
+    + {static} PlaceBlueprints(placeCenter:IntVec3, map:Map, placeFaction:Faction, points:float) : IEnumerable<Blueprint_Build>
+}
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class LordMaker <<static>> {
+    + {static} MakeNewLord(faction:Faction, lordJob:LordJob, map:Map, startingPawns:IEnumerable<Pawn>) : Lord
+}
+@enduml

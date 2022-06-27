@@ -1,0 +1,25 @@
+@startuml
+abstract class CompPower {
+    + {static} <<readonly>> WattsToWattDaysPerTick : float = 1.66666669E-05f
+    + TransmitsPowerNow : bool <<get>>
+    + <<virtual>> ResetPowerVars() : void
+    + <<virtual>> SetUpPowerVars() : void
+    + <<override>> PostExposeData() : void
+    + <<override>> PostSpawnSetup(respawningAfterLoad:bool) : void
+    + <<override>> PostDeSpawn(map:Map) : void
+    + <<virtual>> LostConnectParent() : void
+    + <<override>> PostPrintOnto(layer:SectionLayer) : void
+    + <<override>> CompPrintForPowerGrid(layer:SectionLayer) : void
+    + <<override>> CompGetGizmosExtra() : IEnumerable<Gizmo>
+    + ConnectToTransmitter(transmitter:CompPower, reconnectingAfterLoading:bool) : void
+    + <<override>> CompInspectStringExtra() : string
+}
+class "List`1"<T> {
+}
+ThingComp <|-- CompPower
+CompPower --> "transNet" PowerNet
+CompPower --> "connectParent" CompPower
+CompPower --> "connectChildren<CompPower>" "List`1"
+CompPower --> "PowerNet" PowerNet
+CompPower --> "Props" CompProperties_Power
+@enduml

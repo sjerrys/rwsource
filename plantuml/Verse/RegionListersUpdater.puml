@@ -1,0 +1,8 @@
+@startuml
+class RegionListersUpdater <<static>> {
+    + {static} DeregisterInRegions(thing:Thing, map:Map) : void
+    + {static} RegisterInRegions(thing:Thing, map:Map) : void
+    + {static} RegisterAllAt(c:IntVec3, map:Map, processedThings:HashSet<Thing>) : void
+    + {static} GetTouchableRegions(thing:Thing, map:Map, outRegions:List<Region>, allowAdjacentEvenIfCantTouch:bool) : void
+}
+@enduml

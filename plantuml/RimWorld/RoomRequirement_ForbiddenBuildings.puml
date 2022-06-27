@@ -1,0 +1,9 @@
+@startuml
+class RoomRequirement_ForbiddenBuildings {
+    + <<override>> Met(r:Room, p:Pawn) : bool
+}
+class "List`1"<T> {
+}
+RoomRequirement <|-- RoomRequirement_ForbiddenBuildings
+RoomRequirement_ForbiddenBuildings o-> "buildingTags<string>" "List`1"
+@enduml

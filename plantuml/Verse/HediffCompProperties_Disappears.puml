@@ -1,0 +1,8 @@
+@startuml
+class HediffCompProperties_Disappears {
+    + showRemainingTime : bool
+    + HediffCompProperties_Disappears()
+}
+HediffCompProperties <|-- HediffCompProperties_Disappears
+HediffCompProperties_Disappears --> "disappearsAfterTicks" IntRange
+@enduml

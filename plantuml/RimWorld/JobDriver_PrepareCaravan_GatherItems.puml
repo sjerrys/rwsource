@@ -1,0 +1,9 @@
+@startuml
+class JobDriver_PrepareCaravan_GatherItems {
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+    + {static} IsUsableCarrier(p:Pawn, forPawn:Pawn, allowColonists:bool) : bool
+}
+JobDriver <|-- JobDriver_PrepareCaravan_GatherItems
+JobDriver_PrepareCaravan_GatherItems --> "ToHaul" Thing
+JobDriver_PrepareCaravan_GatherItems --> "Carrier" Pawn
+@enduml

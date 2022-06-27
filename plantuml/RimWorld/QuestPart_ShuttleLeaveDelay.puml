@@ -1,0 +1,20 @@
+@startuml
+class QuestPart_ShuttleLeaveDelay {
+    + <<override>> AlertCritical : bool <<get>>
+    + <<override>> AlertLabel : string <<get>>
+    + <<override>> AlertExplanation : string <<get>>
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> ExtraInspectString(target:ISelectable) : string
+    + <<override>> ExposeData() : void
+    + <<override>> ReplacePawnReferences(replace:Pawn, with:Pawn) : void
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart_Delay <|-- QuestPart_ShuttleLeaveDelay
+QuestPart_ShuttleLeaveDelay --> "shuttle" Thing
+QuestPart_ShuttleLeaveDelay o-> "inSignalsDisable<string>" "List`1"
+QuestPart_ShuttleLeaveDelay --> "AlertReport" AlertReport
+QuestPart_ShuttleLeaveDelay --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+@enduml

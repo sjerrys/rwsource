@@ -1,0 +1,6 @@
+@startuml
+class SiteGenStepUtility <<static>> {
+    + {static} TryFindRootToSpawnAroundRectOfInterest(rectToDefend:CellRect, singleCellToSpawnNear:IntVec3, map:Map) : bool
+    + {static} TryFindSpawnCellAroundOrNear(around:CellRect, near:IntVec3, map:Map, spawnCell:IntVec3) : bool
+}
+@enduml

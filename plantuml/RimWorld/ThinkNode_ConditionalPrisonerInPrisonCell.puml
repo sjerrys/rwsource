@@ -1,0 +1,5 @@
+@startuml
+class ThinkNode_ConditionalPrisonerInPrisonCell {
+}
+ThinkNode_Conditional <|-- ThinkNode_ConditionalPrisonerInPrisonCell
+@enduml

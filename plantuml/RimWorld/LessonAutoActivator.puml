@@ -1,0 +1,12 @@
+@startuml
+class LessonAutoActivator <<static>> {
+    + {static} Reset() : void
+    + {static} TeachOpportunity(conc:ConceptDef, opp:OpportunityType) : void
+    + {static} TeachOpportunity(conc:ConceptDef, subject:Thing, opp:OpportunityType) : void
+    + {static} Notify_KnowledgeDemonstrated(conc:ConceptDef) : void
+    + {static} LessonAutoActivatorUpdate() : void
+    + {static} Notify_TutorialEnding() : void
+    + {static} DebugString() : string
+    + {static} DebugForceInitiateBestLessonNow() : void
+}
+@enduml

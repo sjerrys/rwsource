@@ -1,0 +1,9 @@
+@startuml
+class SteamManager <<static>> {
+    + {static} Initialized : bool <<get>>
+    + {static} Active : bool <<get>>
+    + {static} InitIfNeeded() : void
+    + {static} Update() : void
+    + {static} ShutdownSteam() : void
+}
+@enduml

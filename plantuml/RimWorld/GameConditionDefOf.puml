@@ -1,0 +1,19 @@
+@startuml
+class GameConditionDefOf <<static>> {
+    {static} GameConditionDefOf()
+}
+GameConditionDefOf --> "SolarFlare" GameConditionDef
+GameConditionDefOf --> "Eclipse" GameConditionDef
+GameConditionDefOf --> "PsychicDrone" GameConditionDef
+GameConditionDefOf --> "PsychicSoothe" GameConditionDef
+GameConditionDefOf --> "HeatWave" GameConditionDef
+GameConditionDefOf --> "ColdSnap" GameConditionDef
+GameConditionDefOf --> "Flashstorm" GameConditionDef
+GameConditionDefOf --> "VolcanicWinter" GameConditionDef
+GameConditionDefOf --> "ToxicFallout" GameConditionDef
+GameConditionDefOf --> "Aurora" GameConditionDef
+GameConditionDefOf --> "PsychicSuppression" GameConditionDef
+GameConditionDefOf --> "WeatherController" GameConditionDef
+GameConditionDefOf --> "EMIField" GameConditionDef
+GameConditionDefOf --> "ToxicSpewer" GameConditionDef
+@enduml

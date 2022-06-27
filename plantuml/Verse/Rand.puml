@@ -1,0 +1,46 @@
+@startuml
+class Rand <<static>> {
+    + {static} Seed : int <<set>>
+    + {static} Value : float <<get>>
+    + {static} Bool : bool <<get>>
+    + {static} Sign : int <<get>>
+    + {static} Int : int <<get>>
+    {static} Rand()
+    + {static} EnsureStateStackEmpty() : void
+    + {static} Gaussian(centerX:float, widthFactor:float) : float
+    + {static} GaussianAsymmetric(centerX:float, lowerWidthFactor:float, upperWidthFactor:float) : float
+    + {static} Range(min:int, max:int) : int
+    + {static} RangeInclusive(min:int, max:int) : int
+    + {static} Range(min:float, max:float) : float
+    + {static} Chance(chance:float) : bool
+    + {static} ChanceSeeded(chance:float, specialSeed:int) : bool
+    + {static} ValueSeeded(specialSeed:int) : float
+    + {static} RangeSeeded(min:float, max:float, specialSeed:int) : float
+    + {static} RangeSeeded(min:int, max:int, specialSeed:int) : int
+    + {static} RangeInclusiveSeeded(min:int, max:int, specialSeed:int) : int
+    + {static} Element(a:T, b:T) : T
+    + {static} Element(a:T, b:T, c:T) : T
+    + {static} Element(a:T, b:T, c:T, d:T) : T
+    + {static} Element(a:T, b:T, c:T, d:T, e:T) : T
+    + {static} Element(a:T, b:T, c:T, d:T, e:T, f:T) : T
+    + {static} ElementByWeight(a:T, weightA:float, b:T, weightB:float) : T
+    + {static} ElementByWeight(a:T, weightA:float, b:T, weightB:float, c:T, weightC:float) : T
+    + {static} ElementByWeight(a:T, weightA:float, b:T, weightB:float, c:T, weightC:float, d:T, weightD:float) : T
+    + {static} ElementByWeight(a:T, weightA:float, b:T, weightB:float, c:T, weightC:float, d:T, weightD:float, e:T, weightE:float) : T
+    + {static} ElementByWeight(a:T, weightA:float, b:T, weightB:float, c:T, weightC:float, d:T, weightD:float, e:T, weightE:float, f:T, weightF:float) : T
+    + {static} PushState() : void
+    + {static} PushState(replacementSeed:int) : void
+    + {static} PopState() : void
+    + {static} ByCurve(curve:SimpleCurve) : float
+    + {static} ByCurveAverage(curve:SimpleCurve) : float
+    + {static} MTBEventOccurs(mtb:float, mtbUnit:float, checkDuration:float) : bool
+    + {static} SplitRandomly(valueToSplit:float, splitIntoCount:int, outValues:List<float>, zeroIfFractionBelow:List<float>, minFractions:List<float>) : void
+    + {static} RandSeedForHour(t:Thing, salt:int) : int
+    + {static} TryRangeInclusiveWhere(from:int, to:int, predicate:Predicate<int>, value:int) : bool
+    + {static} PointOnSphereCap(center:Vector3, angle:float) : Vector3
+}
+Rand --> "UnitVector3" Vector3
+Rand --> "UnitVector2" Vector2
+Rand --> "InsideUnitCircle" Vector2
+Rand --> "InsideUnitCircleVec3" Vector3
+@enduml

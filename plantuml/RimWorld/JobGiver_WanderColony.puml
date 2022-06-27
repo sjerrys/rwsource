@@ -1,0 +1,6 @@
+@startuml
+class JobGiver_WanderColony {
+    + JobGiver_WanderColony()
+}
+JobGiver_Wander <|-- JobGiver_WanderColony
+@enduml

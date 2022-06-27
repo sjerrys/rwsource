@@ -1,0 +1,5 @@
+@startuml
+class EditorShowClassNameAttribute {
+}
+Attribute <|-- EditorShowClassNameAttribute
+@enduml

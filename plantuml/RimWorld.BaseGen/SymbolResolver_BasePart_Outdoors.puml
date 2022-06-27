@@ -1,0 +1,6 @@
+@startuml
+class SymbolResolver_BasePart_Outdoors {
+    + <<override>> Resolve(rp:ResolveParams) : void
+}
+SymbolResolver <|-- SymbolResolver_BasePart_Outdoors
+@enduml

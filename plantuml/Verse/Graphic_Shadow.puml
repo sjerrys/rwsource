@@ -1,0 +1,9 @@
+@startuml
+class Graphic_Shadow {
+    + Graphic_Shadow(shadowInfo:ShadowData)
+    + <<override>> DrawWorker(loc:Vector3, rot:Rot4, thingDef:ThingDef, thing:Thing, extraRotation:float) : void
+    + <<override>> Print(layer:SectionLayer, thing:Thing) : void
+    + <<override>> ToString() : string
+}
+Graphic <|-- Graphic_Shadow
+@enduml

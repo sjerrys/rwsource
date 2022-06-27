@@ -1,0 +1,15 @@
+@startuml
+class QuestPart_PawnJoinOffer {
+    + letterSent : bool
+    + outSignalPawnAccepted : string
+    + letterLabel : string
+    + letterText : string
+    + letterTitle : string
+    + <<override>> QuestPartTick() : void
+    + <<override>> Cleanup() : void
+    + <<override>> DoDebugWindowContents(innerRect:Rect, curY:float) : void
+    + <<override>> ExposeData() : void
+}
+QuestPartActivable <|-- QuestPart_PawnJoinOffer
+QuestPart_PawnJoinOffer --> "pawn" Pawn
+@enduml

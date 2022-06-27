@@ -1,0 +1,28 @@
+@startuml
+class DeflateStream {
+    + BufferSize : int <<get>> <<set>>
+    + <<virtual>> TotalIn : long <<get>>
+    + <<virtual>> TotalOut : long <<get>>
+    + <<override>> CanRead : bool <<get>>
+    + <<override>> CanSeek : bool <<get>>
+    + <<override>> CanWrite : bool <<get>>
+    + <<override>> Length : long <<get>>
+    + <<override>> Position : long <<get>> <<set>>
+    + DeflateStream(stream:Stream, mode:CompressionMode)
+    + DeflateStream(stream:Stream, mode:CompressionMode, level:CompressionLevel)
+    + DeflateStream(stream:Stream, mode:CompressionMode, leaveOpen:bool)
+    + DeflateStream(stream:Stream, mode:CompressionMode, level:CompressionLevel, leaveOpen:bool)
+    + <<override>> Flush() : void
+    + <<override>> Read(buffer:byte[], offset:int, count:int) : int
+    + <<override>> Seek(offset:long, origin:SeekOrigin) : long
+    + <<override>> SetLength(value:long) : void
+    + <<override>> Write(buffer:byte[], offset:int, count:int) : void
+    + {static} CompressString(s:string) : byte[]
+    + {static} CompressBuffer(b:byte[]) : byte[]
+    + {static} UncompressString(compressed:byte[]) : string
+    + {static} UncompressBuffer(compressed:byte[]) : byte[]
+}
+Stream <|-- DeflateStream
+DeflateStream --> "FlushMode" FlushType
+DeflateStream --> "Strategy" CompressionStrategy
+@enduml

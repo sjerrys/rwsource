@@ -1,0 +1,8 @@
+@startuml
+class LordToil_ExitMapTraderFighting {
+    + <<override>> AllowSatisfyLongNeeds : bool <<get>>
+    + <<override>> AllowSelfTend : bool <<get>>
+    + <<override>> UpdateAllDuties() : void
+}
+LordToil <|-- LordToil_ExitMapTraderFighting
+@enduml

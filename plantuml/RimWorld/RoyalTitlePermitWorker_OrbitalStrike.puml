@@ -1,0 +1,9 @@
+@startuml
+class RoyalTitlePermitWorker_OrbitalStrike {
+    + <<override>> ValidateTarget(target:LocalTargetInfo) : bool
+    + <<override>> DrawHighlight(target:LocalTargetInfo) : void
+    + <<override>> OrderForceTarget(target:LocalTargetInfo) : void
+    + <<override>> GetRoyalAidOptions(map:Map, pawn:Pawn, faction:Faction) : IEnumerable<FloatMenuOption>
+}
+RoyalTitlePermitWorker_Targeted <|-- RoyalTitlePermitWorker_OrbitalStrike
+@enduml

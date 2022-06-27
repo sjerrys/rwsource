@@ -1,0 +1,36 @@
+@startuml
+class ShaderDatabase <<static>> {
+    + {static} LoadShader(shaderPath:string) : Shader
+}
+ShaderDatabase o-> "Cutout" Shader
+ShaderDatabase o-> "CutoutPlant" Shader
+ShaderDatabase o-> "CutoutComplex" Shader
+ShaderDatabase o-> "CutoutSkin" Shader
+ShaderDatabase o-> "CutoutFlying" Shader
+ShaderDatabase o-> "Transparent" Shader
+ShaderDatabase o-> "TransparentPostLight" Shader
+ShaderDatabase o-> "TransparentPlant" Shader
+ShaderDatabase o-> "Mote" Shader
+ShaderDatabase o-> "MoteGlow" Shader
+ShaderDatabase o-> "MoteGlowPulse" Shader
+ShaderDatabase o-> "MoteWater" Shader
+ShaderDatabase o-> "MoteGlowDistorted" Shader
+ShaderDatabase o-> "MoteGlowDistortBG" Shader
+ShaderDatabase o-> "MoteProximityScannerRadius" Shader
+ShaderDatabase o-> "TerrainHard" Shader
+ShaderDatabase o-> "TerrainFade" Shader
+ShaderDatabase o-> "TerrainFadeRough" Shader
+ShaderDatabase o-> "TerrainWater" Shader
+ShaderDatabase o-> "WorldTerrain" Shader
+ShaderDatabase o-> "WorldOcean" Shader
+ShaderDatabase o-> "WorldOverlayCutout" Shader
+ShaderDatabase o-> "WorldOverlayTransparent" Shader
+ShaderDatabase o-> "WorldOverlayTransparentLit" Shader
+ShaderDatabase o-> "WorldOverlayAdditive" Shader
+ShaderDatabase o-> "MetaOverlay" Shader
+ShaderDatabase o-> "MetaOverlayDesaturated" Shader
+ShaderDatabase o-> "SolidColor" Shader
+ShaderDatabase o-> "VertexColor" Shader
+ShaderDatabase o-> "Invisible" Shader
+ShaderDatabase --> "DefaultShader" Shader
+@enduml

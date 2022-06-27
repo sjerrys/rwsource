@@ -1,0 +1,37 @@
+@startuml
+class TraitDefOf <<static>> {
+    {static} TraitDefOf()
+}
+TraitDefOf --> "Nudist" TraitDef
+TraitDefOf --> "Brawler" TraitDef
+TraitDefOf --> "Abrasive" TraitDef
+TraitDefOf --> "DrugDesire" TraitDef
+TraitDefOf --> "Cannibal" TraitDef
+TraitDefOf --> "Ascetic" TraitDef
+TraitDefOf --> "Psychopath" TraitDef
+TraitDefOf --> "Greedy" TraitDef
+TraitDefOf --> "Kind" TraitDef
+TraitDefOf --> "Gay" TraitDef
+TraitDefOf --> "Bisexual" TraitDef
+TraitDefOf --> "Asexual" TraitDef
+TraitDefOf --> "Industriousness" TraitDef
+TraitDefOf --> "Beauty" TraitDef
+TraitDefOf --> "DislikesMen" TraitDef
+TraitDefOf --> "DislikesWomen" TraitDef
+TraitDefOf --> "AnnoyingVoice" TraitDef
+TraitDefOf --> "CreepyBreathing" TraitDef
+TraitDefOf --> "Bloodlust" TraitDef
+TraitDefOf --> "Pyromaniac" TraitDef
+TraitDefOf --> "Nerves" TraitDef
+TraitDefOf --> "TooSmart" TraitDef
+TraitDefOf --> "Transhumanist" TraitDef
+TraitDefOf --> "BodyPurist" TraitDef
+TraitDefOf --> "NaturalMood" TraitDef
+TraitDefOf --> "PsychicSensitivity" TraitDef
+TraitDefOf --> "Undergrounder" TraitDef
+TraitDefOf --> "GreatMemory" TraitDef
+TraitDefOf --> "Tough" TraitDef
+TraitDefOf --> "SpeedOffset" TraitDef
+TraitDefOf --> "ShootingAccuracy" TraitDef
+TraitDefOf --> "Jealous" TraitDef
+@enduml

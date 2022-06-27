@@ -1,0 +1,6 @@
+@startuml
+class MentalStateWorker_Jailbreaker {
+    + <<override>> StateCanOccur(pawn:Pawn) : bool
+}
+MentalStateWorker <|-- MentalStateWorker_Jailbreaker
+@enduml

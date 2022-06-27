@@ -1,0 +1,11 @@
+@startuml
+class QuestNode_NoWorldObject {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_NoWorldObject
+QuestNode_NoWorldObject --> "inSignalEnable<string>" "SlateRef`1"
+QuestNode_NoWorldObject --> "outSignalComplete<string>" "SlateRef`1"
+QuestNode_NoWorldObject --> "worldObject<WorldObject>" "SlateRef`1"
+QuestNode_NoWorldObject --> "node" QuestNode
+@enduml

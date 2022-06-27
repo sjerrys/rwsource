@@ -1,0 +1,5 @@
+@startuml
+class ThoughtWorker_SharedBed {
+}
+ThoughtWorker <|-- ThoughtWorker_SharedBed
+@enduml

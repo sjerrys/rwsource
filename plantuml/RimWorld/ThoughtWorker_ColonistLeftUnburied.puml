@@ -1,0 +1,5 @@
+@startuml
+class ThoughtWorker_ColonistLeftUnburied {
+}
+ThoughtWorker <|-- ThoughtWorker_ColonistLeftUnburied
+@enduml

@@ -1,0 +1,16 @@
+@startuml
+class RulePackDef {
+    + FirstRuleKeyword : string <<get>>
+    + FirstUntranslatedRuleKeyword : string <<get>>
+    + <<override>> ConfigErrors() : IEnumerable<string>
+    + {static} Named(defName:string) : RulePackDef
+}
+class "List`1"<T> {
+}
+Def <|-- RulePackDef
+RulePackDef --> "include<RulePackDef>" "List`1"
+RulePackDef --> "RulesPlusIncludes<Rule>" "List`1"
+RulePackDef --> "UntranslatedRulesPlusIncludes<Rule>" "List`1"
+RulePackDef --> "RulesImmediate<Rule>" "List`1"
+RulePackDef --> "UntranslatedRulesImmediate<Rule>" "List`1"
+@enduml

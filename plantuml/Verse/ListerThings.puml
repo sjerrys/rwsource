@@ -1,0 +1,17 @@
+@startuml
+class ListerThings <<sealed>> {
+    + ListerThings(use:ListerThingsUse)
+    + ThingsInGroup(group:ThingRequestGroup) : List<Thing>
+    + ThingsOfDef(def:ThingDef) : List<Thing>
+    + ThingsMatching(req:ThingRequest) : List<Thing>
+    + Contains(t:Thing) : bool
+    + Add(t:Thing) : void
+    + Remove(t:Thing) : void
+    + {static} EverListable(def:ThingDef, use:ListerThingsUse) : bool
+    + Clear() : void
+}
+class "List`1"<T> {
+}
+ListerThings --> "use" ListerThingsUse
+ListerThings --> "AllThings<Thing>" "List`1"
+@enduml

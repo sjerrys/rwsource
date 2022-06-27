@@ -1,0 +1,6 @@
+@startuml
+class WeatherDefOf <<static>> {
+    {static} WeatherDefOf()
+}
+WeatherDefOf --> "Clear" WeatherDef
+@enduml

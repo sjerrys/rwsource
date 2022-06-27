@@ -1,0 +1,11 @@
+@startuml
+class Command_VerbTarget {
+    + drawRadius : bool = true
+    + <<override>> GizmoUpdateOnMouseover() : void
+    + <<override>> MergeWith(other:Gizmo) : void
+    + <<override>> ProcessInput(ev:Event) : void
+}
+Command <|-- Command_VerbTarget
+Command_VerbTarget --> "verb" Verb
+Command_VerbTarget --> "IconDrawColor" Color
+@enduml

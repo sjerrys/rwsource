@@ -1,0 +1,25 @@
+@startuml
+class DebugOutputsPawns <<static>> {
+    + {static} PawnKindsBasics() : void
+    + {static} PawnKindsWeaponUsage() : void
+    + {static} PawnKindsApparelUsage() : void
+    + {static} PawnKindsTechHediffUsage() : void
+    + {static} PawnKindGearSampled() : void
+    + {static} PawnWorkDisablesSampled() : void
+    + {static} RecruitDifficultiesSampled() : void
+    + {static} LivePawnsInspirationChances() : void
+    + {static} RacesFoodConsumption() : void
+    + {static} RacesButchery() : void
+    + {static} AnimalsBasics() : void
+    + {static} AnimalPointsToHuntOrSlaughter() : void
+    + {static} AnimalCombatBalance() : void
+    + {static} AnimalTradeTags() : void
+    + {static} AnimalBehavior() : void
+    + {static} AnimalsEcosystem() : void
+    + {static} MentalBreaks() : void
+    + {static} Thoughts() : void
+    + {static} TraitsSampled() : void
+    + {static} BackstoryCountsPerTag() : void
+    + {static} ListSolidBackstories() : void
+}
+@enduml

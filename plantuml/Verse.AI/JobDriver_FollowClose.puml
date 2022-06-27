@@ -1,0 +1,9 @@
+@startuml
+class JobDriver_FollowClose {
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+    + <<override>> Notify_Starting() : void
+    + <<override>> IsContinuation(j:Job) : bool
+    + {static} FarEnoughAndPossibleToStartJob(follower:Pawn, followee:Pawn, radius:float) : bool
+}
+JobDriver <|-- JobDriver_FollowClose
+@enduml

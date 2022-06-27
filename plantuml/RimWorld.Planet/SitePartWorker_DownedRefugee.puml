@@ -1,0 +1,8 @@
+@startuml
+class SitePartWorker_DownedRefugee {
+    + <<override>> Notify_GeneratedByQuestGen(part:SitePart, slate:Slate, outExtraDescriptionRules:List<Rule>, outExtraDescriptionConstants:Dictionary<string, string>) : void
+    + <<override>> GetPostProcessedThreatLabel(site:Site, sitePart:SitePart) : string
+    + <<override>> PostDestroy(sitePart:SitePart) : void
+}
+SitePartWorker <|-- SitePartWorker_DownedRefugee
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+abstract class JobGiver_AIDefendPawn {
+    + <<override>> DeepCopy(resolve:bool) : ThinkNode
+}
+JobGiver_AIFightEnemy <|-- JobGiver_AIDefendPawn
+@enduml

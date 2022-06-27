@@ -1,0 +1,28 @@
+@startuml
+class JobDef {
+    + reportString : string = "Doing something."
+    + playerInterruptible : bool = true
+    + alwaysShowWeapon : bool
+    + neverShowWeapon : bool
+    + suspendable : bool = true
+    + casualInterruptible : bool = true
+    + allowOpportunisticPrefix : bool
+    + collideWithPawns : bool
+    + isIdle : bool
+    + neverFleeFromEnemies : bool
+    + makeTargetPrisoner : bool
+    + waitAfterArriving : int
+    + joyDuration : int = 4000
+    + joyMaxParticipants : int = 1
+    + joyGainRate : float = 1f
+    + joyXpPerTick : float
+    + <<override>> ConfigErrors() : IEnumerable<string>
+}
+Def <|-- JobDef
+JobDef --> "driverClass" Type
+JobDef o-> "checkOverrideOnDamage" CheckJobOverrideOnDamageMode
+JobDef --> "taleOnCompletion" TaleDef
+JobDef --> "joySkill" SkillDef
+JobDef --> "joyKind" JoyKindDef
+JobDef o-> "faceDir" Rot4
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class Pawn_DraftController {
+    + Drafted : bool <<get>> <<set>>
+    + FireAtWill : bool <<get>> <<set>>
+    + Pawn_DraftController(pawn:Pawn)
+    + ExposeData() : void
+    + DraftControllerTick() : void
+}
+IExposable <|-- Pawn_DraftController
+Pawn_DraftController --> "pawn" Pawn
+@enduml

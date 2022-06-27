@@ -1,0 +1,31 @@
+@startuml
+class BodyPartRecord {
+    + customLabel : string
+    + untranslatedCustomLabel : string
+    + coverage : float = 1f
+    + coverageAbsWithChildren : float
+    + coverageAbs : float
+    + IsCorePart : bool <<get>>
+    + Label : string <<get>>
+    + LabelCap : string <<get>>
+    + LabelShort : string <<get>>
+    + LabelShortCap : string <<get>>
+    + Index : int <<get>>
+    + <<override>> ToString() : string
+    + PostLoad() : void
+    + IsInGroup(group:BodyPartGroupDef) : bool
+    + GetChildParts(tag:BodyPartTagDef) : IEnumerable<BodyPartRecord>
+    + GetDirectChildParts() : IEnumerable<BodyPartRecord>
+    + HasChildParts(tag:BodyPartTagDef) : bool
+    + GetConnectedParts(tag:BodyPartTagDef) : IEnumerable<BodyPartRecord>
+}
+class "List`1"<T> {
+}
+BodyPartRecord --> "body" BodyDef
+BodyPartRecord --> "def" BodyPartDef
+BodyPartRecord o-> "parts<BodyPartRecord>" "List`1"
+BodyPartRecord --> "height" BodyPartHeight
+BodyPartRecord --> "depth" BodyPartDepth
+BodyPartRecord o-> "groups<BodyPartGroupDef>" "List`1"
+BodyPartRecord --> "parent" BodyPartRecord
+@enduml

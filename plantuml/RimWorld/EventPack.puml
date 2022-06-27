@@ -1,0 +1,13 @@
+@startuml
+class EventPack <<struct>> {
+    + Tag : string <<get>>
+    + EventPack(tag:string)
+    + EventPack(tag:string, cell:IntVec3)
+    + EventPack(tag:string, cells:IEnumerable<IntVec3>)
+    + <<override>> ToString() : string
+}
+class "IEnumerable`1"<T> {
+}
+EventPack --> "Cell" IntVec3
+EventPack --> "Cells<IntVec3>" "IEnumerable`1"
+@enduml

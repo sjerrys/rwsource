@@ -1,0 +1,6 @@
+@startuml
+abstract class SubEffecter_Sprayer {
+    + SubEffecter_Sprayer(def:SubEffecterDef, parent:Effecter)
+}
+SubEffecter <|-- SubEffecter_Sprayer
+@enduml

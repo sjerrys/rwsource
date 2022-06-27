@@ -1,0 +1,6 @@
+@startuml
+class StockGeneratorUtility {
+    + {static} TryMakeForStock(thingDef:ThingDef, count:int) : IEnumerable<Thing>
+    + {static} TryMakeForStockSingle(thingDef:ThingDef, stackCount:int) : Thing
+}
+@enduml

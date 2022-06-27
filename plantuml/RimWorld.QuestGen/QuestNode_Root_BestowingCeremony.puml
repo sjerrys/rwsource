@@ -1,0 +1,6 @@
+@startuml
+class QuestNode_Root_BestowingCeremony {
+    + <<const>> QuestTag : string = "Bestowing"
+}
+QuestNode <|-- QuestNode_Root_BestowingCeremony
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class IncidentCategoryDef {
+    + needsParmsPoints : bool
+}
+Def <|-- IncidentCategoryDef
+IncidentCategoryDef --> "tale" TaleDef
+@enduml

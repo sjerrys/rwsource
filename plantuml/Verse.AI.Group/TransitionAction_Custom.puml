@@ -1,0 +1,12 @@
+@startuml
+class TransitionAction_Custom {
+    + TransitionAction_Custom(action:Action)
+    + TransitionAction_Custom(actionWithArg:Action<Transition>)
+    + <<override>> DoAction(trans:Transition) : void
+}
+class "Action`1"<T> {
+}
+TransitionAction <|-- TransitionAction_Custom
+TransitionAction_Custom --> "action" Action
+TransitionAction_Custom --> "actionWithArg<Transition>" "Action`1"
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class SectionLayer_ThingsPowerGrid {
+    + SectionLayer_ThingsPowerGrid(section:Section)
+    + <<override>> DrawLayer() : void
+}
+SectionLayer_Things <|-- SectionLayer_ThingsPowerGrid
+@enduml

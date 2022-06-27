@@ -1,0 +1,5 @@
+@startuml
+class MapDeiniter <<static>> {
+    + {static} Deinit(map:Map) : void
+}
+@enduml

@@ -1,0 +1,16 @@
+@startuml
+class WorldPawnGC {
+    + WorldPawnGCTick() : void
+    + CancelGCPass() : void
+    + PawnGCDebugResults() : string
+    + PawnGCPass() : IEnumerable
+    + AddAllRelationships(pawn:Pawn, keptPawns:Dictionary<Pawn, string>) : void
+    + AddAllMemories(pawn:Pawn, keptPawns:Dictionary<Pawn, string>) : void
+    + ExposeData() : void
+    + LogGC() : void
+    + RunGC() : void
+    + LogDotgraph() : void
+    + {static} DotgraphIdentifier(pawn:Pawn) : string
+}
+IExposable <|-- WorldPawnGC
+@enduml

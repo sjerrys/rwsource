@@ -1,0 +1,5 @@
+@startuml
+class ThoughtWorker_AnnoyingVoice {
+}
+ThoughtWorker <|-- ThoughtWorker_AnnoyingVoice
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+class GizmoGridDrawer <<static>> {
+    + {static} HeightDrawnRecently : float <<get>>
+    + {static} DrawGizmoGrid(gizmos:IEnumerable<Gizmo>, startX:float, mouseoverGizmo:Gizmo) : void
+}
+class "HashSet`1"<T> {
+}
+GizmoGridDrawer o-> "drawnHotKeys<KeyCode>" "HashSet`1"
+GizmoGridDrawer o-> "GizmoSpacing" Vector2
+@enduml

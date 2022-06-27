@@ -1,0 +1,6 @@
+@startuml
+class TradeabilityUtility <<static>> {
+    + {static} PlayerCanSell(tradeability:Tradeability) : bool
+    + {static} TraderCanSell(tradeability:Tradeability) : bool
+}
+@enduml

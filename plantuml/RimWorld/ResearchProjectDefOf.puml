@@ -1,0 +1,6 @@
+@startuml
+class ResearchProjectDefOf <<static>> {
+    {static} ResearchProjectDefOf()
+}
+ResearchProjectDefOf --> "CarpetMaking" ResearchProjectDef
+@enduml

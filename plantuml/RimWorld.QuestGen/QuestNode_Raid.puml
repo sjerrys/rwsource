@@ -1,0 +1,15 @@
+@startuml
+class QuestNode_Raid {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_Raid
+QuestNode_Raid --> "inSignal<string>" "SlateRef`1"
+QuestNode_Raid --> "walkInSpot<IntVec3?>" "SlateRef`1"
+QuestNode_Raid --> "customLetterLabel<string>" "SlateRef`1"
+QuestNode_Raid --> "customLetterText<string>" "SlateRef`1"
+QuestNode_Raid --> "customLetterLabelRules<RulePack>" "SlateRef`1"
+QuestNode_Raid --> "customLetterTextRules<RulePack>" "SlateRef`1"
+QuestNode_Raid --> "inSignalLeave<string>" "SlateRef`1"
+QuestNode_Raid --> "tag<string>" "SlateRef`1"
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class PawnsArrivalModeWorker_EdgeDrop {
+    + <<override>> Arrive(pawns:List<Pawn>, parms:IncidentParms) : void
+    + <<override>> TravelingTransportPodsArrived(dropPods:List<ActiveDropPodInfo>, map:Map) : void
+    + <<override>> TryResolveRaidSpawnCenter(parms:IncidentParms) : bool
+}
+PawnsArrivalModeWorker <|-- PawnsArrivalModeWorker_EdgeDrop
+@enduml

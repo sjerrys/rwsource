@@ -1,0 +1,8 @@
+@startuml
+class JobDriver_EnterTransporter {
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+}
+JobDriver <|-- JobDriver_EnterTransporter
+JobDriver_EnterTransporter --> "Transporter" CompTransporter
+JobDriver_EnterTransporter --> "Shuttle" CompShuttle
+@enduml

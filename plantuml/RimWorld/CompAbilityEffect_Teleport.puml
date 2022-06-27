@@ -1,0 +1,9 @@
+@startuml
+class CompAbilityEffect_Teleport {
+    + <<override>> GetPreCastActions() : IEnumerable<PreCastAction>
+    + <<override>> Apply(target:LocalTargetInfo, dest:LocalTargetInfo) : void
+    + <<override>> CanHitTarget(target:LocalTargetInfo) : bool
+}
+CompAbilityEffect_WithDest <|-- CompAbilityEffect_Teleport
+CompAbilityEffect_Teleport --> "Props" CompProperties_AbilityTeleport
+@enduml

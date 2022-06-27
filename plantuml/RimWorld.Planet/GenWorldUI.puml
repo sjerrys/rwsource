@@ -1,0 +1,8 @@
+@startuml
+class GenWorldUI <<static>> {
+    + {static} CaravanDirectClickRadius : float <<get>>
+    + {static} WorldObjectsUnderMouse(mousePos:Vector2) : List<WorldObject>
+    + {static} WorldToUIPosition(worldLoc:Vector3) : Vector2
+    + {static} CurUITileSize() : float
+}
+@enduml

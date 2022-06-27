@@ -1,0 +1,6 @@
+@startuml
+class JobGiver_FleePotentialExplosion {
+    + <<const>> FleeDist : float = 9f
+}
+ThinkNode_JobGiver <|-- JobGiver_FleePotentialExplosion
+@enduml

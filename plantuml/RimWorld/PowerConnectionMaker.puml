@@ -1,0 +1,9 @@
+@startuml
+class PowerConnectionMaker <<static>> {
+    + {static} ConnectAllConnectorsToTransmitter(newTransmitter:CompPower) : void
+    + {static} DisconnectAllFromTransmitterAndSetWantConnect(deadPc:CompPower, map:Map) : void
+    + {static} TryConnectToAnyPowerNet(pc:CompPower, disallowedNets:List<PowerNet>) : void
+    + {static} DisconnectFromPowerNet(pc:CompPower) : void
+    + {static} BestTransmitterForConnector(connectorPos:IntVec3, map:Map, disallowedNets:List<PowerNet>) : CompPower
+}
+@enduml

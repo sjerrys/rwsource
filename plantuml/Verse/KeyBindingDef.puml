@@ -1,0 +1,20 @@
+@startuml
+class KeyBindingDef {
+    + devModeOnly : bool
+    + MainKeyLabel : string <<get>>
+    + KeyDownEvent : bool <<get>>
+    + IsDownEvent : bool <<get>>
+    + JustPressed : bool <<get>>
+    + IsDown : bool <<get>>
+    + GetDefaultKeyCode(slot:KeyPrefs.BindingSlot) : KeyCode
+    + {static} Named(name:string) : KeyBindingDef
+}
+class "List`1"<T> {
+}
+Def <|-- KeyBindingDef
+KeyBindingDef --> "category" KeyBindingCategoryDef
+KeyBindingDef --> "defaultKeyCodeA" KeyCode
+KeyBindingDef --> "defaultKeyCodeB" KeyCode
+KeyBindingDef --> "extraConflictTags<string>" "List`1"
+KeyBindingDef --> "MainKey" KeyCode
+@enduml

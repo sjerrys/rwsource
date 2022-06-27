@@ -1,0 +1,6 @@
+@startuml
+class StorytellerComp_RandomQuest {
+    + <<override>> GenerateParms(incCat:IncidentCategoryDef, target:IIncidentTarget) : IncidentParms
+}
+StorytellerComp_OnOffCycle <|-- StorytellerComp_RandomQuest
+@enduml

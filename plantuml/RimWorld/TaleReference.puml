@@ -1,0 +1,12 @@
+@startuml
+class TaleReference {
+    + TaleReference()
+    + TaleReference(tale:Tale)
+    + ExposeData() : void
+    + ReferenceDestroyed() : void
+    + GenerateText(purpose:TextGenerationPurpose, extraInclude:RulePackDef) : TaggedString
+    + <<override>> ToString() : string
+}
+IExposable <|-- TaleReference
+TaleReference --> "Taleless" TaleReference
+@enduml

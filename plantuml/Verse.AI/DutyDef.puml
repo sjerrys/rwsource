@@ -1,0 +1,11 @@
+@startuml
+class DutyDef {
+    + alwaysShowWeapon : bool
+    + threatDisabled : bool
+}
+Def <|-- DutyDef
+DutyDef --> "thinkNode" ThinkNode
+DutyDef --> "constantThinkNode" ThinkNode
+DutyDef o-> "hook" ThinkTreeDutyHook
+DutyDef o-> "socialModeMax" RandomSocialMode
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class SettlementNameGenerator <<static>> {
+    + {static} GenerateSettlementName(factionBase:Settlement, rulePack:RulePackDef) : string
+}
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+class QuestNode_GetNearbySettlement {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GetNearbySettlement
+QuestNode_GetNearbySettlement o-> "allowActiveTradeRequest<bool>" "SlateRef`1"
+QuestNode_GetNearbySettlement --> "maxTileDistance<float>" "SlateRef`1"
+QuestNode_GetNearbySettlement --> "storeAs<string>" "SlateRef`1"
+QuestNode_GetNearbySettlement --> "storeFactionAs<string>" "SlateRef`1"
+QuestNode_GetNearbySettlement --> "storeFactionLeaderAs<string>" "SlateRef`1"
+@enduml

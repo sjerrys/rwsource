@@ -1,0 +1,6 @@
+@startuml
+class BedUtility <<static>> {
+    + {static} GetSleepingSlotsCount(bedSize:IntVec2) : int
+    + {static} GetSleepingSlotPos(index:int, bedCenter:IntVec3, bedRot:Rot4, bedSize:IntVec2) : IntVec3
+}
+@enduml

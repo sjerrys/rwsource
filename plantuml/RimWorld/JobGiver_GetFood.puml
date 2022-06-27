@@ -1,0 +1,8 @@
+@startuml
+class JobGiver_GetFood {
+    + forceScanWholeMap : bool
+    + <<override>> DeepCopy(resolve:bool) : ThinkNode
+    + <<override>> GetPriority(pawn:Pawn) : float
+}
+ThinkNode_JobGiver <|-- JobGiver_GetFood
+@enduml

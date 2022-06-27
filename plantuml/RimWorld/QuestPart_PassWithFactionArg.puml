@@ -1,0 +1,9 @@
+@startuml
+class QuestPart_PassWithFactionArg {
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> Notify_FactionRemoved(f:Faction) : void
+    + <<override>> ExposeData() : void
+}
+QuestPart_Pass <|-- QuestPart_PassWithFactionArg
+QuestPart_PassWithFactionArg --> "faction" Faction
+@enduml

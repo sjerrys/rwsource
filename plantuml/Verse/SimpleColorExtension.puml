@@ -1,0 +1,5 @@
+@startuml
+class SimpleColorExtension <<static>> {
+    + {static} ToUnityColor(color:SimpleColor) : Color
+}
+@enduml

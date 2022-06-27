@@ -1,0 +1,13 @@
+@startuml
+class FilthProperties {
+    + cleaningWorkToReduceThickness : float = 35f
+    + canFilthAttach : bool
+    + rainWashes : bool
+    + allowsFire : bool = true
+    + maxThickness : int = 100
+    + TerrainSourced : bool <<get>>
+}
+FilthProperties o-> "disappearsInDays" FloatRange
+FilthProperties o-> "placementMask" FilthSourceFlags
+FilthProperties --> "cleaningSound" SoundDef
+@enduml

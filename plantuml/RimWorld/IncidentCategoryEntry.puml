@@ -1,0 +1,7 @@
+@startuml
+class IncidentCategoryEntry {
+    + weight : float
+    + LoadDataFromXmlCustom(xmlRoot:XmlNode) : void
+}
+IncidentCategoryEntry --> "category" IncidentCategoryDef
+@enduml

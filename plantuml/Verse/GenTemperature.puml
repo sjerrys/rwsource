@@ -1,0 +1,36 @@
+@startuml
+class GenTemperature <<static>> {
+    + {static} AverageTemperatureAtTileForTwelfth(tile:int, twelfth:Twelfth) : float
+    + {static} MinTemperatureAtTile(tile:int) : float
+    + {static} MaxTemperatureAtTile(tile:int) : float
+    + {static} ComfortableTemperatureRange(p:Pawn) : FloatRange
+    + {static} ComfortableTemperatureRange(raceDef:ThingDef, apparel:List<ThingStuffPair>) : FloatRange
+    + {static} SafeTemperatureRange(p:Pawn) : FloatRange
+    + {static} SafeTemperatureRange(raceDef:ThingDef, apparel:List<ThingStuffPair>) : FloatRange
+    + {static} GetTemperatureForCell(c:IntVec3, map:Map) : float
+    + {static} TryGetTemperatureForCell(c:IntVec3, map:Map, tempResult:float) : bool
+    + {static} TryGetDirectAirTemperatureForCell(c:IntVec3, map:Map, temperature:float) : bool
+    + {static} TryGetAirTemperatureAroundThing(t:Thing, temperature:float) : bool
+    + {static} OffsetFromSunCycle(absTick:int, tile:int) : float
+    + {static} OffsetFromSeasonCycle(absTick:int, tile:int) : float
+    + {static} GetTemperatureFromSeasonAtTile(absTick:int, tile:int) : float
+    + {static} GetTemperatureAtTile(tile:int) : float
+    + {static} SeasonalShiftAmplitudeAt(tile:int) : float
+    + {static} TwelfthsInAverageTemperatureRange(tile:int, minTemp:float, maxTemp:float) : List<Twelfth>
+    + {static} EarliestTwelfthInAverageTemperatureRange(tile:int, minTemp:float, maxTemp:float) : Twelfth
+    + {static} PushHeat(c:IntVec3, map:Map, energy:float) : bool
+    + {static} PushHeat(t:Thing, energy:float) : void
+    + {static} ControlTemperatureTempChange(cell:IntVec3, map:Map, energyLimit:float, targetTemperature:float) : float
+    + {static} EqualizeTemperaturesThroughBuilding(b:Building, rate:float, twoWay:bool) : void
+    + {static} RotRateAtTemperature(temperature:float) : float
+    + {static} FactionOwnsPassableRoomInTemperatureRange(faction:Faction, tempRange:FloatRange, map:Map) : bool
+    + {static} GetAverageTemperatureLabel(tile:int) : string
+    + {static} CelsiusTo(temp:float, oldMode:TemperatureDisplayMode) : float
+    + {static} CelsiusToOffset(temp:float, oldMode:TemperatureDisplayMode) : float
+    + {static} ConvertTemperatureOffset(temp:float, oldMode:TemperatureDisplayMode, newMode:TemperatureDisplayMode) : float
+}
+GenTemperature o-> "ColorSpotHot" Color
+GenTemperature o-> "ColorSpotCold" Color
+GenTemperature o-> "ColorRoomHot" Color
+GenTemperature o-> "ColorRoomCold" Color
+@enduml

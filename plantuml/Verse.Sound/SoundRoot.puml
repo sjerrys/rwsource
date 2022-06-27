@@ -1,0 +1,9 @@
+@startuml
+class SoundRoot {
+    + SoundRoot()
+    + Update() : void
+}
+SoundRoot --> "sourcePool" AudioSourcePool
+SoundRoot --> "oneShotManager" SampleOneShotManager
+SoundRoot --> "sustainerManager" SustainerManager
+@enduml

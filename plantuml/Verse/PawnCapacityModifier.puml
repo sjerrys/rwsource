@@ -1,0 +1,12 @@
+@startuml
+class PawnCapacityModifier {
+    + offset : float
+    + setMax : float = 999f
+    + postFactor : float = 1f
+    + SetMaxDefined : bool <<get>>
+    + EvaluateSetMax(pawn:Pawn) : float
+}
+PawnCapacityModifier --> "capacity" PawnCapacityDef
+PawnCapacityModifier --> "setMaxCurveOverride" SimpleCurve
+PawnCapacityModifier --> "setMaxCurveEvaluateStat" StatDef
+@enduml

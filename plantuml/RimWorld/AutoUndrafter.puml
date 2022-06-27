@@ -1,0 +1,9 @@
+@startuml
+class AutoUndrafter {
+    + AutoUndrafter(pawn:Pawn)
+    + ExposeData() : void
+    + AutoUndraftTick() : void
+    + Notify_Drafted() : void
+}
+IExposable <|-- AutoUndrafter
+@enduml

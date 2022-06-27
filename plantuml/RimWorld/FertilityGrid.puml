@@ -1,0 +1,8 @@
+@startuml
+class FertilityGrid <<sealed>> {
+    + FertilityGrid(map:Map)
+    + FertilityAt(loc:IntVec3) : float
+    + FertilityGridUpdate() : void
+}
+FertilityGrid --> "Drawer" CellBoolDrawer
+@enduml

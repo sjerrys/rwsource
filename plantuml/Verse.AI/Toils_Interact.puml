@@ -1,0 +1,5 @@
+@startuml
+class Toils_Interact {
+    + {static} DestroyThing(ind:TargetIndex) : Toil
+}
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class Recipe_AdministerUsableItem {
+    + <<override>> ApplyOnPawn(pawn:Pawn, part:BodyPartRecord, billDoer:Pawn, ingredients:List<Thing>, bill:Bill) : void
+    + <<override>> ConsumeIngredient(ingredient:Thing, recipe:RecipeDef, map:Map) : void
+}
+Recipe_Surgery <|-- Recipe_AdministerUsableItem
+@enduml

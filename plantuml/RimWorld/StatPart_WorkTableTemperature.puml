@@ -1,0 +1,12 @@
+@startuml
+class StatPart_WorkTableTemperature {
+    + <<const>> WorkRateFactor : float = 0.7f
+    + <<const>> MinTemp : float = 9f
+    + <<const>> MaxTemp : float = 35f
+    + <<override>> TransformValue(req:StatRequest, val:float) : void
+    + <<override>> ExplanationPart(req:StatRequest) : string
+    + {static} Applies(t:Thing) : bool
+    + {static} Applies(tDef:ThingDef, map:Map, c:IntVec3) : bool
+}
+StatPart <|-- StatPart_WorkTableTemperature
+@enduml

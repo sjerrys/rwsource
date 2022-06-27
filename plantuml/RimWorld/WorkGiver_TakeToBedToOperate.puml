@@ -1,0 +1,12 @@
+@startuml
+class WorkGiver_TakeToBedToOperate {
+    + <<override>> MaxPathDanger(pawn:Pawn) : Danger
+    + <<override>> ShouldSkip(pawn:Pawn, forced:bool) : bool
+    + <<override>> PotentialWorkThingsGlobal(pawn:Pawn) : IEnumerable<Thing>
+    + <<override>> HasJobOnThing(pawn:Pawn, t:Thing, forced:bool) : bool
+    + <<override>> JobOnThing(pawn:Pawn, t:Thing, forced:bool) : Job
+}
+WorkGiver_TakeToBed <|-- WorkGiver_TakeToBedToOperate
+WorkGiver_TakeToBedToOperate --> "PotentialWorkThingRequest" ThingRequest
+WorkGiver_TakeToBedToOperate --> "PathEndMode" PathEndMode
+@enduml

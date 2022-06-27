@@ -1,0 +1,18 @@
+@startuml
+class WorldPathGrid {
+    + <<const>> WinterMovementDifficultyOffset : float = 2f
+    + <<const>> MaxTempForWinterOffset : float = 5f
+    + WorldPathGrid()
+    + ResetPathGrid() : void
+    + WorldPathGridTick() : void
+    + Passable(tile:int) : bool
+    + PassableFast(tile:int) : bool
+    + PerceivedMovementDifficultyAt(tile:int) : float
+    + RecalculatePerceivedMovementDifficultyAt(tile:int, ticksAbs:int?) : void
+    + RecalculateAllPerceivedPathCosts() : void
+    + RecalculateAllPerceivedPathCosts(ticksAbs:int?) : void
+    + {static} CalculatedMovementDifficultyAt(tile:int, perceivedStatic:bool, ticksAbs:int?, explanation:StringBuilder) : float
+    + {static} GetCurrentWinterMovementDifficultyOffset(tile:int, ticksAbs:int?, explanation:StringBuilder) : float
+    + {static} WillWinterEverAffectMovementDifficulty(tile:int) : bool
+}
+@enduml

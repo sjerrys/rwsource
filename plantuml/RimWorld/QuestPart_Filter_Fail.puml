@@ -1,0 +1,5 @@
+@startuml
+class QuestPart_Filter_Fail {
+}
+QuestPart_Filter <|-- QuestPart_Filter_Fail
+@enduml

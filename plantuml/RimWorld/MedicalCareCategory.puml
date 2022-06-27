@@ -1,0 +1,9 @@
+@startuml
+enum MedicalCareCategory {
+    NoCare,
+    NoMeds,
+    HerbalOrWorse,
+    NormalOrWorse,
+    Best,
+}
+@enduml

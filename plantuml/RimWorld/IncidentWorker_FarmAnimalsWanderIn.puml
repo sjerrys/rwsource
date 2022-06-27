@@ -1,0 +1,5 @@
+@startuml
+class IncidentWorker_FarmAnimalsWanderIn {
+}
+IncidentWorker <|-- IncidentWorker_FarmAnimalsWanderIn
+@enduml

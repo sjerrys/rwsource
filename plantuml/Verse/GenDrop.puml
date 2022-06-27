@@ -1,0 +1,6 @@
+@startuml
+class GenDrop <<static>> {
+    + {static} TryDropSpawn(thing:Thing, dropCell:IntVec3, map:Map, mode:ThingPlaceMode, resultingThing:Thing, placedAction:Action<Thing, int>, nearPlaceValidator:Predicate<IntVec3>) : bool
+    + {static} TryDropSpawn_NewTmp(thing:Thing, dropCell:IntVec3, map:Map, mode:ThingPlaceMode, resultingThing:Thing, placedAction:Action<Thing, int>, nearPlaceValidator:Predicate<IntVec3>, playDropSound:bool) : bool
+}
+@enduml

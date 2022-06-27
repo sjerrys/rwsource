@@ -1,0 +1,7 @@
+@startuml
+enum MultiCheckboxState {
+    On,
+    Off,
+    Partial,
+}
+@enduml

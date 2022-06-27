@@ -1,0 +1,8 @@
+@startuml
+class OneMinus {
+    + OneMinus()
+    + OneMinus(module:ModuleBase)
+    + <<override>> GetValue(x:double, y:double, z:double) : double
+}
+ModuleBase <|-- OneMinus
+@enduml

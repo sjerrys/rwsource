@@ -1,0 +1,6 @@
+@startuml
+class GameCondition_DisableElectricity {
+    + <<override>> ElectricityDisabled : bool <<get>>
+}
+GameCondition <|-- GameCondition_DisableElectricity
+@enduml

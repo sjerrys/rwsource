@@ -1,0 +1,6 @@
+@startuml
+class MentalBreakWorker_BingingDrug {
+    + <<override>> CommonalityFor(pawn:Pawn, moodCaused:bool) : float
+}
+MentalBreakWorker <|-- MentalBreakWorker_BingingDrug
+@enduml

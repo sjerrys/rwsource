@@ -1,0 +1,12 @@
+@startuml
+class CompAbilityEffect_StopMentalState {
+    + <<override>> Apply(target:LocalTargetInfo, dest:LocalTargetInfo) : void
+    + <<override>> CanApplyOn(target:LocalTargetInfo, dest:LocalTargetInfo) : bool
+    + <<override>> Valid(target:LocalTargetInfo, throwMessages:bool) : bool
+    + TargetMentalBreakIntensity(target:LocalTargetInfo) : MentalBreakIntensity
+    + <<override>> PsyfocusCostForTarget(target:LocalTargetInfo) : float
+    + <<override>> ExtraLabel(target:LocalTargetInfo) : string
+}
+CompAbilityEffect <|-- CompAbilityEffect_StopMentalState
+CompAbilityEffect_StopMentalState --> "Props" CompProperties_AbilityStopMentalState
+@enduml

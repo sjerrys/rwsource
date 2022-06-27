@@ -1,0 +1,7 @@
+@startuml
+class JobDriver_ManTurret {
+    + {static} FindAmmoForTurret(pawn:Pawn, gun:Building_TurretGun) : Thing
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+}
+JobDriver <|-- JobDriver_ManTurret
+@enduml

@@ -1,0 +1,41 @@
+@startuml
+class PawnCapacityUtility <<static>> {
+    + {static} BodyCanEverDoCapacity(bodyDef:BodyDef, capacity:PawnCapacityDef) : bool
+    + {static} CalculateCapacityLevel(diffSet:HediffSet, capacity:PawnCapacityDef, impactors:List<CapacityImpactor>, forTradePrice:bool) : float
+    + {static} CalculatePartEfficiency(diffSet:HediffSet, part:BodyPartRecord, ignoreAddedParts:bool, impactors:List<CapacityImpactor>) : float
+    + {static} CalculateImmediatePartEfficiencyAndRecord(diffSet:HediffSet, part:BodyPartRecord, impactors:List<CapacityImpactor>) : float
+    + {static} CalculateNaturalPartsAverageEfficiency(diffSet:HediffSet, bodyPartGroup:BodyPartGroupDef) : float
+    + {static} CalculateTagEfficiency(diffSet:HediffSet, tag:BodyPartTagDef, maximum:float, lerp:FloatRange, impactors:List<CapacityImpactor>, bestPartEfficiencySpecialWeight:float) : float
+    + {static} CalculateLimbEfficiency(diffSet:HediffSet, limbCoreTag:BodyPartTagDef, limbSegmentTag:BodyPartTagDef, limbDigitTag:BodyPartTagDef, appendageWeight:float, functionalPercentage:float, impactors:List<CapacityImpactor>) : float
+}
+abstract class CapacityImpactor {
+    + <<virtual>> IsDirect : bool <<get>>
+    + {abstract} Readable(pawn:Pawn) : string
+}
+class CapacityImpactorBodyPartHealth {
+    + <<override>> Readable(pawn:Pawn) : string
+}
+class CapacityImpactorCapacity {
+    + <<override>> IsDirect : bool <<get>>
+    + <<override>> Readable(pawn:Pawn) : string
+}
+class CapacityImpactorHediff {
+    + <<override>> Readable(pawn:Pawn) : string
+}
+class CapacityImpactorPain {
+    + <<override>> IsDirect : bool <<get>>
+    + <<override>> Readable(pawn:Pawn) : string
+}
+PawnCapacityUtility +-- CapacityImpactor
+PawnCapacityUtility +-- CapacityImpactorBodyPartHealth
+CapacityImpactor <|-- CapacityImpactorBodyPartHealth
+CapacityImpactorBodyPartHealth --> "bodyPart" BodyPartRecord
+PawnCapacityUtility +-- CapacityImpactorCapacity
+CapacityImpactor <|-- CapacityImpactorCapacity
+CapacityImpactorCapacity --> "capacity" PawnCapacityDef
+PawnCapacityUtility +-- CapacityImpactorHediff
+CapacityImpactor <|-- CapacityImpactorHediff
+CapacityImpactorHediff --> "hediff" Hediff
+PawnCapacityUtility +-- CapacityImpactorPain
+CapacityImpactor <|-- CapacityImpactorPain
+@enduml

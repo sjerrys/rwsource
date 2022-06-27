@@ -1,0 +1,17 @@
+@startuml
+enum Twelfth {
+    First,
+    Second,
+    Third,
+    Fourth,
+    Fifth,
+    Sixth,
+    Seventh,
+    Eighth,
+    Ninth,
+    Tenth,
+    Eleventh,
+    Twelfth,
+    Undefined,
+}
+@enduml

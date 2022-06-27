@@ -1,0 +1,12 @@
+@startuml
+class ListerFilthInHomeArea {
+    + ListerFilthInHomeArea(map:Map)
+    + RebuildAll() : void
+    + Notify_FilthSpawned(f:Filth) : void
+    + Notify_FilthDespawned(f:Filth) : void
+    + Notify_HomeAreaChanged(c:IntVec3) : void
+}
+class "List`1"<T> {
+}
+ListerFilthInHomeArea --> "FilthInHomeArea<Thing>" "List`1"
+@enduml

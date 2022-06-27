@@ -1,0 +1,18 @@
+@startuml
+class PawnGroupMaker {
+    + commonality : float = 100f
+    + maxTotalPoints : float = 9999999f
+    + MinPointsToGenerateAnything : float <<get>>
+    + GeneratePawns(parms:PawnGroupMakerParms, errorOnZeroResults:bool) : IEnumerable<Pawn>
+    + GeneratePawnKindsExample(parms:PawnGroupMakerParms) : IEnumerable<PawnKindDef>
+    + CanGenerateFrom(parms:PawnGroupMakerParms) : bool
+}
+class "List`1"<T> {
+}
+PawnGroupMaker --> "kindDef" PawnGroupKindDef
+PawnGroupMaker --> "disallowedStrategies<RaidStrategyDef>" "List`1"
+PawnGroupMaker o-> "options<PawnGenOption>" "List`1"
+PawnGroupMaker o-> "traders<PawnGenOption>" "List`1"
+PawnGroupMaker o-> "carriers<PawnGenOption>" "List`1"
+PawnGroupMaker o-> "guards<PawnGenOption>" "List`1"
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class CompCauseGameCondition_ForceWeather {
+    + <<override>> Initialize(props:CompProperties) : void
+    + <<override>> PostExposeData() : void
+    + <<override>> CompGetGizmosExtra() : IEnumerable<Gizmo>
+    + <<override>> CompInspectStringExtra() : string
+    + <<override>> RandomizeSettings_NewTemp_NewTemp(site:Site) : void
+}
+CompCauseGameCondition <|-- CompCauseGameCondition_ForceWeather
+CompCauseGameCondition_ForceWeather --> "weather" WeatherDef
+@enduml

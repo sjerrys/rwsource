@@ -1,0 +1,14 @@
+@startuml
+class QuestNode_SpawnSkyfaller {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_SpawnSkyfaller
+QuestNode_SpawnSkyfaller --> "inSignal<string>" "SlateRef`1"
+QuestNode_SpawnSkyfaller --> "skyfallerDef<ThingDef>" "SlateRef`1"
+QuestNode_SpawnSkyfaller --> "innerThings<IEnumerable<Thing>>" "SlateRef`1"
+QuestNode_SpawnSkyfaller --> "cell<IntVec3?>" "SlateRef`1"
+QuestNode_SpawnSkyfaller --> "factionOfForSafeSpot<Pawn>" "SlateRef`1"
+QuestNode_SpawnSkyfaller --> "lookForSafeSpot<bool>" "SlateRef`1"
+QuestNode_SpawnSkyfaller --> "tryLandInShipLandingZone<bool>" "SlateRef`1"
+@enduml

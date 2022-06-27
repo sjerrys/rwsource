@@ -1,0 +1,16 @@
+@startuml
+class LordJob_Joinable_Speech {
+    + <<const>> DurationHours : float = 4f
+    + <<override>> AllowStartNewGatherings : bool <<get>>
+    + <<override>> OrganizerIsStartingPawn : bool <<get>>
+    + LordJob_Joinable_Speech()
+    + LordJob_Joinable_Speech(spot:IntVec3, organizer:Pawn, gatheringDef:GatheringDef)
+    + <<override>> CreateGraph() : StateGraph
+    + <<override>> GetReport(pawn:Pawn) : string
+    + {static} OutcomeChancesForPawn(p:Pawn) : IEnumerable<Tuple<ThoughtDef, float>>
+}
+class "Dictionary`2"<T1,T2> {
+}
+LordJob_Joinable_Gathering <|-- LordJob_Joinable_Speech
+LordJob_Joinable_Speech o-> "OutcomeThoughtChances<ThoughtDef,float>" "Dictionary`2"
+@enduml

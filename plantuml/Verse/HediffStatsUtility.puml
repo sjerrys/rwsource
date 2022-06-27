@@ -1,0 +1,5 @@
+@startuml
+class HediffStatsUtility <<static>> {
+    + {static} SpecialDisplayStats(stage:HediffStage, instance:Hediff) : IEnumerable<StatDrawEntry>
+}
+@enduml

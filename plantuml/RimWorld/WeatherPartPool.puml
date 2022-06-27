@@ -1,0 +1,5 @@
+@startuml
+class WeatherPartPool <<static>> {
+    + {static} GetInstanceOf() : SkyOverlay
+}
+@enduml

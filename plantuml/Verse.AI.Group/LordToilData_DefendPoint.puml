@@ -1,0 +1,9 @@
+@startuml
+class LordToilData_DefendPoint {
+    + defendRadius : float = 28f
+    + wanderRadius : float?
+    + <<override>> ExposeData() : void
+}
+LordToilData <|-- LordToilData_DefendPoint
+LordToilData_DefendPoint o-> "defendPoint" IntVec3
+@enduml

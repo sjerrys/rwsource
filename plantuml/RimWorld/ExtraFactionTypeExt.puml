@@ -1,0 +1,5 @@
+@startuml
+class ExtraFactionTypeExt <<static>> {
+    + {static} GetLabel(factionType:ExtraFactionType) : string
+}
+@enduml

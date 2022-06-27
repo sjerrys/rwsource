@@ -1,0 +1,10 @@
+@startuml
+class LordJob_StageThenAttack {
+    + <<override>> GuiltyOnDowned : bool <<get>>
+    + LordJob_StageThenAttack()
+    + LordJob_StageThenAttack(faction:Faction, stageLoc:IntVec3, raidSeed:int)
+    + <<override>> CreateGraph() : StateGraph
+    + <<override>> ExposeData() : void
+}
+LordJob <|-- LordJob_StageThenAttack
+@enduml

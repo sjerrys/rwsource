@@ -1,0 +1,11 @@
+@startuml
+abstract class Designator_AreaHome {
+    + <<override>> DraggableDimensions : int <<get>>
+    + <<override>> DragDrawMeasurements : bool <<get>>
+    + Designator_AreaHome(mode:DesignateMode)
+    + <<override>> CanDesignateCell(c:IntVec3) : AcceptanceReport
+    + <<override>> DesignateSingleCell(c:IntVec3) : void
+    + <<override>> SelectedUpdate() : void
+}
+Designator_Area <|-- Designator_AreaHome
+@enduml

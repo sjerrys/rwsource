@@ -1,0 +1,6 @@
+@startuml
+class Trigger_PawnExperiencingDangerousTemperatures {
+    + <<override>> ActivateOn(lord:Lord, signal:TriggerSignal) : bool
+}
+Trigger <|-- Trigger_PawnExperiencingDangerousTemperatures
+@enduml

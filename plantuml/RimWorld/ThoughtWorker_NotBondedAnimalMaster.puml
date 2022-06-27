@@ -1,0 +1,5 @@
+@startuml
+class ThoughtWorker_NotBondedAnimalMaster {
+}
+ThoughtWorker_BondedAnimalMaster <|-- ThoughtWorker_NotBondedAnimalMaster
+@enduml

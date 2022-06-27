@@ -1,0 +1,17 @@
+@startuml
+class Archive {
+    + <<const>> MaxNonPinnedArchivables : int = 200
+    + ExposeData() : void
+    + Add(archivable:IArchivable) : bool
+    + Remove(archivable:IArchivable) : bool
+    + Contains(archivable:IArchivable) : bool
+    + Pin(archivable:IArchivable) : void
+    + Unpin(archivable:IArchivable) : void
+    + IsPinned(archivable:IArchivable) : bool
+    + Notify_MapRemoved(map:Map) : void
+}
+class "List`1"<T> {
+}
+IExposable <|-- Archive
+Archive --> "ArchivablesListForReading<IArchivable>" "List`1"
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+class CompProperties_AbilityGiveHediff {
+    + onlyBrain : bool
+    + applyToSelf : bool
+    + onlyApplyToSelf : bool
+    + replaceExisting : bool
+}
+CompProperties_AbilityEffectWithDuration <|-- CompProperties_AbilityGiveHediff
+CompProperties_AbilityGiveHediff --> "hediffDef" HediffDef
+@enduml

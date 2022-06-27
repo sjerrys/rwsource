@@ -1,0 +1,5 @@
+@startuml
+class IncidentWorker_DiseaseHuman {
+}
+IncidentWorker_Disease <|-- IncidentWorker_DiseaseHuman
+@enduml

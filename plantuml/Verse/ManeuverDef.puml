@@ -1,0 +1,12 @@
+@startuml
+class ManeuverDef {
+}
+Def <|-- ManeuverDef
+ManeuverDef --> "requiredCapacity" ToolCapacityDef
+ManeuverDef --> "verb" VerbProperties
+ManeuverDef --> "combatLogRulesHit" RulePackDef
+ManeuverDef --> "combatLogRulesDeflect" RulePackDef
+ManeuverDef --> "combatLogRulesMiss" RulePackDef
+ManeuverDef --> "combatLogRulesDodge" RulePackDef
+ManeuverDef --> "logEntryDef" LogEntryDef
+@enduml

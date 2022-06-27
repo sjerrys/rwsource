@@ -1,0 +1,6 @@
+@startuml
+class Building_WorkTable_HeatPush {
+    + <<override>> UsedThisTick() : void
+}
+Building_WorkTable <|-- Building_WorkTable_HeatPush
+@enduml

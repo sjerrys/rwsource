@@ -1,0 +1,6 @@
+@startuml
+class Hediff_Hangover {
+    + <<override>> Visible : bool <<get>>
+}
+HediffWithComps <|-- Hediff_Hangover
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class ThoughtWorker_CreepyBreathing {
+}
+ThoughtWorker <|-- ThoughtWorker_CreepyBreathing
+@enduml

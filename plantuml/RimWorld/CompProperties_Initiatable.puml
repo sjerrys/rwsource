@@ -1,0 +1,7 @@
+@startuml
+class CompProperties_Initiatable {
+    + initiationDelayTicks : int
+    + CompProperties_Initiatable()
+}
+CompProperties <|-- CompProperties_Initiatable
+@enduml

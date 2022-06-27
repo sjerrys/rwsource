@@ -1,0 +1,9 @@
+@startuml
+abstract class LordToil_DoOpportunisticTaskOrCover {
+    + cover : bool = true
+    + <<override>> AllowSatisfyLongNeeds : bool <<get>>
+    + <<override>> UpdateAllDuties() : void
+    + <<override>> LordToilTick() : void
+}
+LordToil <|-- LordToil_DoOpportunisticTaskOrCover
+@enduml

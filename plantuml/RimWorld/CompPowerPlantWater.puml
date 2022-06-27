@@ -1,0 +1,19 @@
+@startuml
+class CompPowerPlantWater {
+    + <<override>> PostSpawnSetup(respawningAfterLoad:bool) : void
+    + <<override>> PostDeSpawn(map:Map) : void
+    + <<override>> CompTick() : void
+    + WaterCells() : IEnumerable<IntVec3>
+    + {static} WaterCells(loc:IntVec3, rot:Rot4) : IEnumerable<IntVec3>
+    + WaterUseRect() : CellRect
+    + {static} WaterUseRect(loc:IntVec3, rot:Rot4) : CellRect
+    + WaterUseCells() : IEnumerable<IntVec3>
+    + {static} WaterUseCells(loc:IntVec3, rot:Rot4) : IEnumerable<IntVec3>
+    + GroundCells() : IEnumerable<IntVec3>
+    + {static} GroundCells(loc:IntVec3, rot:Rot4) : IEnumerable<IntVec3>
+    + <<override>> PostDraw() : void
+    + <<override>> CompInspectStringExtra() : string
+}
+CompPowerPlant <|-- CompPowerPlantWater
+CompPowerPlantWater o-> "BladesMat" Material
+@enduml

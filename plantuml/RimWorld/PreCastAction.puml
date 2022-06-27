@@ -1,0 +1,8 @@
+@startuml
+class PreCastAction <<struct>> {
+    + ticksAwayFromCast : int
+}
+class "Action`2"<T1,T2> {
+}
+PreCastAction --> "action<LocalTargetInfo,LocalTargetInfo>" "Action`2"
+@enduml

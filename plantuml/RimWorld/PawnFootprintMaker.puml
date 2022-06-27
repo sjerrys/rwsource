@@ -1,0 +1,6 @@
+@startuml
+class PawnFootprintMaker {
+    + PawnFootprintMaker(pawn:Pawn)
+    + FootprintMakerTick() : void
+}
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+class SpectatorCellFinder <<static>> {
+    + {static} TryFindSpectatorCellFor(p:Pawn, spectateRect:CellRect, map:Map, cell:IntVec3, allowedSides:SpectateRectSide, margin:int, extraDisallowedCells:List<IntVec3>) : bool
+    + {static} DebugFlashPotentialSpectatorCells(spectateRect:CellRect, map:Map, allowedSides:SpectateRectSide, margin:int) : void
+    + {static} FindSingleBestSide(spectateRect:CellRect, map:Map, allowedSides:SpectateRectSide, margin:int) : SpectateRectSide
+    + {static} FindSingleBestSide_NewTemp(spectateRect:CellRect, map:Map, allowedSides:SpectateRectSide, margin:int, scoreOffset:Func<IntVec3, SpectateRectSide, int, float>) : SpectateRectSide
+    + {static} ValidSingleSide(side:SpectateRectSide) : bool
+    + {static} AsRot4(side:SpectateRectSide) : Rot4
+    + {static} AsInt(side:SpectateRectSide) : int
+    + {static} ToSpectatorSide(side:int) : SpectateRectSide
+}
+@enduml

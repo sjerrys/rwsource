@@ -1,0 +1,7 @@
+@startuml
+class CurveSimple {
+    + CurveSimple(input:ModuleBase, curve:SimpleCurve)
+    + <<override>> GetValue(x:double, y:double, z:double) : double
+}
+ModuleBase <|-- CurveSimple
+@enduml

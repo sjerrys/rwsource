@@ -1,0 +1,5 @@
+@startuml
+class ThinkNode_ConditionalOfPlayerFactionOrPlayerGuest {
+}
+ThinkNode_Conditional <|-- ThinkNode_ConditionalOfPlayerFactionOrPlayerGuest
+@enduml

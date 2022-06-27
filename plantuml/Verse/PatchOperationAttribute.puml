@@ -1,0 +1,6 @@
+@startuml
+abstract class PatchOperationAttribute {
+    + <<override>> ToString() : string
+}
+PatchOperationPathed <|-- PatchOperationAttribute
+@enduml

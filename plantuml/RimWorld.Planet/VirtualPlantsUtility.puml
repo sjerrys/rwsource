@@ -1,0 +1,12 @@
+@startuml
+class VirtualPlantsUtility <<static>> {
+    + {static} CanEverEatVirtualPlants(p:Pawn) : bool
+    + {static} CanEatVirtualPlantsNow(p:Pawn) : bool
+    + {static} CanEatVirtualPlants(p:Pawn, ticksAbs:int) : bool
+    + {static} EnvironmentAllowsEatingVirtualPlantsNowAt(tile:int) : bool
+    + {static} EnvironmentAllowsEatingVirtualPlantsAt(tile:int, ticksAbs:int) : bool
+    + {static} EatVirtualPlants(p:Pawn) : void
+    + {static} GetVirtualPlantsStatusExplanationAt(tile:int, ticksAbs:int) : string
+    + {static} GetApproxDaysUntilPossibleToGraze(tile:int, ticksAbs:int, untilNoLongerPossibleToGraze:bool) : float?
+}
+@enduml

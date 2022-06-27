@@ -1,0 +1,8 @@
+@startuml
+interface IAttackTargetSearcher {
+    LastAttackTargetTick : int <<get>>
+}
+IAttackTargetSearcher --> "Thing" Thing
+IAttackTargetSearcher --> "CurrentEffectiveVerb" Verb
+IAttackTargetSearcher --> "LastAttackedTarget" LocalTargetInfo
+@enduml

@@ -1,0 +1,41 @@
+@startuml
+class Corpse {
+    + timeOfDeath : int
+    + everBuriedInSarcophagus : bool
+    + Age : int <<get>> <<set>>
+    + <<override>> LabelNoCount : string <<get>>
+    + <<override>> IngestibleNow : bool <<get>>
+    + Bugged : bool <<get>>
+    + Corpse()
+    + CurrentlyUsableForBills() : bool
+    + UsableForBillsAfterFueling() : bool
+    + AnythingToStrip() : bool
+    + GetDirectlyHeldThings() : ThingOwner
+    + GetChildHolders(outChildren:List<IThingHolder>) : void
+    + <<override>> PostMake() : void
+    + <<override>> SpawnSetup(map:Map, respawningAfterLoad:bool) : void
+    + <<override>> DeSpawn(mode:DestroyMode) : void
+    + <<override>> Destroy(mode:DestroyMode) : void
+    + {static} PostCorpseDestroy(pawn:Pawn) : void
+    + <<override>> TickRare() : void
+    + <<override>> ButcherProducts(butcher:Pawn, efficiency:float) : IEnumerable<Thing>
+    + <<override>> ExposeData() : void
+    + Strip() : void
+    + <<override>> DrawAt(drawLoc:Vector3, flip:bool) : void
+    + GiveObservedThought() : Thought_Memory
+    + <<override>> GetInspectString() : string
+    + <<override>> SpecialDisplayStats() : IEnumerable<StatDrawEntry>
+    + RotStageChanged() : void
+}
+class "IEnumerable`1"<T> {
+}
+ThingWithComps <|-- Corpse
+IThingHolder <|-- Corpse
+IThoughtGiver <|-- Corpse
+IStrippable <|-- Corpse
+IBillGiver <|-- Corpse
+Corpse --> "InnerPawn" Pawn
+Corpse --> "CurRotDrawMode" RotDrawMode
+Corpse --> "BillStack" BillStack
+Corpse --> "IngredientStackCells<IntVec3>" "IEnumerable`1"
+@enduml

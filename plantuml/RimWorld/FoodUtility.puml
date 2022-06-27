@@ -1,0 +1,36 @@
+@startuml
+class FoodUtility <<static>> {
+    + <<const>> FoodPoisoningStageInitial : int = 2
+    + <<const>> FoodPoisoningStageMajor : int = 1
+    + <<const>> FoodPoisoningStageRecovering : int = 0
+    + {static} bestFoodSourceOnMap_minNutrition_NewTemp : float? = null
+    + {static} WillEat(p:Pawn, food:Thing, getter:Pawn, careIfNotAcceptableForTitle:bool) : bool
+    + {static} WillEat(p:Pawn, food:ThingDef, getter:Pawn, careIfNotAcceptableForTitle:bool) : bool
+    + {static} InappropriateForTitle(food:ThingDef, p:Pawn, allowIfStarving:bool) : bool
+    + {static} TryFindBestFoodSourceFor(getter:Pawn, eater:Pawn, desperate:bool, foodSource:Thing, foodDef:ThingDef, canRefillDispenser:bool, canUseInventory:bool, allowForbidden:bool, allowCorpse:bool, allowSociallyImproper:bool, allowHarvest:bool, forceScanWholeMap:bool, ignoreReservations:bool, minPrefOverride:FoodPreferability) : bool
+    + {static} GetFinalIngestibleDef(foodSource:Thing, harvest:bool) : ThingDef
+    + {static} BestFoodInInventory(holder:Pawn, eater:Pawn, minFoodPref:FoodPreferability, maxFoodPref:FoodPreferability, minStackNutrition:float, allowDrug:bool) : Thing
+    + {static} GetMaxAmountToPickup(food:Thing, pawn:Pawn, wantedCount:int) : int
+    + {static} BestFoodSourceOnMap(getter:Pawn, eater:Pawn, desperate:bool, foodDef:ThingDef, maxPref:FoodPreferability, allowPlant:bool, allowDrug:bool, allowCorpse:bool, allowDispenserFull:bool, allowDispenserEmpty:bool, allowForbidden:bool, allowSociallyImproper:bool, allowHarvest:bool, forceScanWholeMap:bool, ignoreReservations:bool, minPrefOverride:FoodPreferability) : Thing
+    + {static} FoodOptimality(eater:Pawn, foodSource:Thing, foodDef:ThingDef, dist:float, takingToInventory:bool) : float
+    + {static} DebugFoodSearchFromMouse_Update() : void
+    + {static} DebugFoodSearchFromMouse_OnGUI() : void
+    + {static} IsAcceptablePreyFor(predator:Pawn, prey:Pawn) : bool
+    + {static} GetPreyScoreFor(predator:Pawn, prey:Pawn) : float
+    + {static} DebugDrawPredatorFoodSource() : void
+    + {static} ThoughtsFromIngesting(ingester:Pawn, foodSource:Thing, foodDef:ThingDef) : List<ThoughtDef>
+    + {static} IsHumanlikeMeat(def:ThingDef) : bool
+    + {static} IsHumanlikeMeatOrHumanlikeCorpse(thing:Thing) : bool
+    + {static} WillIngestStackCountOf(ingester:Pawn, def:ThingDef, singleFoodNutrition:float) : int
+    + {static} GetBodyPartNutrition(corpse:Corpse, part:BodyPartRecord) : float
+    + {static} GetBodyPartNutrition(currentCorpseNutrition:float, pawn:Pawn, part:BodyPartRecord) : float
+    + {static} StackCountForNutrition(wantedNutrition:float, singleFoodNutrition:float) : int
+    + {static} ShouldBeFedBySomeone(pawn:Pawn) : bool
+    + {static} AddFoodPoisoningHediff(pawn:Pawn, ingestible:Thing, cause:FoodPoisonCause) : void
+    + {static} GetFoodPoisonChanceFactor(ingester:Pawn) : float
+    + {static} Starving(p:Pawn) : bool
+    + {static} GetNutrition(foodSource:Thing, foodDef:ThingDef) : float
+    + {static} WillIngestFromInventoryNow(pawn:Pawn, inv:Thing) : bool
+    + {static} IngestFromInventoryNow(pawn:Pawn, inv:Thing) : void
+}
+@enduml

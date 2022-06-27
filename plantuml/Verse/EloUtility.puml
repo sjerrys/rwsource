@@ -1,0 +1,8 @@
+@startuml
+class EloUtility <<static>> {
+    + {static} Update(teamA:float, teamB:float, expectedA:float, scoreA:float, kfactor:float) : void
+    + {static} CalculateExpectation(teamA:float, teamB:float) : float
+    + {static} CalculateLinearScore(teamRating:float, referenceRating:float, referenceScore:float) : float
+    + {static} CalculateRating(teamScore:float, referenceRating:float, referenceScore:float) : float
+}
+@enduml

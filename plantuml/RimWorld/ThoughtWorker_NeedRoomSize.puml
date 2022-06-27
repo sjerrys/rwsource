@@ -1,0 +1,5 @@
+@startuml
+class ThoughtWorker_NeedRoomSize {
+}
+ThoughtWorker <|-- ThoughtWorker_NeedRoomSize
+@enduml

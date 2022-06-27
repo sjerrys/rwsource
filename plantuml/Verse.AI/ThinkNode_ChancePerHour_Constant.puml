@@ -1,0 +1,6 @@
+@startuml
+class ThinkNode_ChancePerHour_Constant {
+    + <<override>> DeepCopy(resolve:bool) : ThinkNode
+}
+ThinkNode_ChancePerHour <|-- ThinkNode_ChancePerHour_Constant
+@enduml

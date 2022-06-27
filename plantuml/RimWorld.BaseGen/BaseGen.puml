@@ -1,0 +1,9 @@
+@startuml
+class BaseGen <<static>> {
+    + {static} CurrentSymbolPath : string <<get>>
+    + {static} Reset() : void
+    + {static} Generate() : void
+}
+BaseGen o-> "globalSettings" GlobalSettings
+BaseGen o-> "symbolStack" SymbolStack
+@enduml

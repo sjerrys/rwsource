@@ -1,0 +1,5 @@
+@startuml
+class FeatureWorker_Peninsula {
+}
+FeatureWorker_Protrusion <|-- FeatureWorker_Peninsula
+@enduml

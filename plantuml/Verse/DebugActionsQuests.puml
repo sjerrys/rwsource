@@ -1,0 +1,10 @@
+@startuml
+class DebugActionsQuests <<static>> {
+    + {static} lastQuestGeneratedRewardValue : float
+    + {static} QuestExample() : void
+    + {static} QuestRewardsSampled() : void
+    + {static} QuestDefs() : void
+    + {static} QuestSelectionWeightsNow() : void
+    + {static} DecreeSelectionWeightsNow() : void
+}
+@enduml

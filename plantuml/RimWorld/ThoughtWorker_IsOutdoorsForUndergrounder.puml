@@ -1,0 +1,5 @@
+@startuml
+class ThoughtWorker_IsOutdoorsForUndergrounder {
+}
+ThoughtWorker <|-- ThoughtWorker_IsOutdoorsForUndergrounder
+@enduml

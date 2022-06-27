@@ -1,0 +1,10 @@
+@startuml
+class QuestNode_ResolveTextNow {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_ResolveTextNow
+QuestNode_ResolveTextNow --> "root<string>" "SlateRef`1"
+QuestNode_ResolveTextNow --> "storeAs<string>" "SlateRef`1"
+QuestNode_ResolveTextNow --> "rules<RulePack>" "SlateRef`1"
+@enduml

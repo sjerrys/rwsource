@@ -1,0 +1,36 @@
+@startuml
+abstract class Letter {
+    + ID : int
+    + arrivalTick : int
+    + arrivalTime : float
+    + debugInfo : string
+    + <<const>> DrawWidth : float = 38f
+    + <<const>> DrawHeight : float = 30f
+    + <<virtual>> CanShowInLetterStack : bool <<get>>
+    + <<virtual>> CanDismissWithRightClick : bool <<get>>
+    + ArchivedOnly : bool <<get>>
+    ArchivedLabel : string <<get>>
+    ArchivedTooltip : string <<get>>
+    CreatedTicksGame : int <<get>>
+    CanCullArchivedNow : bool <<get>>
+    + <<virtual>> ExposeData() : void
+    + <<virtual>> DrawButtonAt(topY:float) : void
+    + <<virtual>> CheckForMouseOverTextAt(topY:float) : void
+    + {abstract} OpenLetter() : void
+    + <<virtual>> Received() : void
+    + <<virtual>> Removed() : void
+    OpenArchived() : void
+    + GetUniqueLoadID() : string
+}
+IArchivable <|-- Letter
+IExposable <|-- Letter
+ILoadReferenceable <|-- Letter
+Letter --> "def" LetterDef
+Letter --> "label" TaggedString
+Letter --> "lookTargets" LookTargets
+Letter --> "relatedFaction" Faction
+Letter --> "ParentHolder" IThingHolder
+Letter --> "ArchivedIcon" Texture
+Letter --> "ArchivedIconColor" Color
+Letter --> "LookTargets" LookTargets
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+class QuestPart_InvolvedFactions {
+    + <<override>> ExposeData() : void
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart <|-- QuestPart_InvolvedFactions
+QuestPart_InvolvedFactions o-> "factions<Faction>" "List`1"
+QuestPart_InvolvedFactions --> "InvolvedFactions<Faction>" "IEnumerable`1"
+@enduml

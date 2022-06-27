@@ -1,0 +1,9 @@
+@startuml
+class SymbolResolver_GenericRoom {
+    + interior : string
+    + useRandomCarpet : bool
+    + allowRoof : bool = true
+    + <<override>> Resolve(rp:ResolveParams) : void
+}
+SymbolResolver <|-- SymbolResolver_GenericRoom
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class JobGiver_FightFiresNearPoint {
+    + maxDistFromPoint : float
+    + <<override>> DeepCopy(resolve:bool) : ThinkNode
+}
+ThinkNode_JobGiver <|-- JobGiver_FightFiresNearPoint
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class MarriageCeremonyUtility <<static>> {
+    + {static} AcceptableGameConditionsToStartCeremony(map:Map) : bool
+    + {static} FianceReadyToStartCeremony(pawn:Pawn, otherPawn:Pawn) : bool
+    + {static} FianceCanContinueCeremony(pawn:Pawn, otherPawn:Pawn) : bool
+    + {static} ShouldGuestKeepAttendingCeremony(p:Pawn) : bool
+    + {static} Married(firstPawn:Pawn, secondPawn:Pawn) : void
+}
+@enduml

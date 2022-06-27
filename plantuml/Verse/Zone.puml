@@ -1,0 +1,43 @@
+@startuml
+abstract class Zone {
+    + ID : int
+    + label : string
+    + hidden : bool
+    + BaseLabel : string <<get>>
+    + ContainsStaticFire : bool <<get>>
+    + <<virtual>> IsMultiselectable : bool <<get>>
+    + GetEnumerator() : IEnumerator<IntVec3>
+    + Zone()
+    + Zone(baseName:string, zoneManager:ZoneManager)
+    + <<virtual>> ExposeData() : void
+    + <<virtual>> AddCell(c:IntVec3) : void
+    + <<virtual>> RemoveCell(c:IntVec3) : void
+    + <<virtual>> Delete() : void
+    + Deregister() : void
+    + <<virtual>> PostRegister() : void
+    + <<virtual>> PostDeregister() : void
+    + ContainsCell(c:IntVec3) : bool
+    + <<virtual>> GetInspectString() : string
+    + <<virtual>> GetInspectTabs() : IEnumerable<InspectTabBase>
+    + <<virtual>> GetGizmos() : IEnumerable<Gizmo>
+    + <<virtual>> GetZoneAddGizmos() : IEnumerable<Gizmo>
+    + CheckContiguous() : void
+    + <<override>> ToString() : string
+    + GetUniqueLoadID() : string
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+IExposable <|-- Zone
+ISelectable <|-- Zone
+ILoadReferenceable <|-- Zone
+Zone --> "zoneManager" ZoneManager
+Zone o-> "cells<IntVec3>" "List`1"
+Zone o-> "color" Color
+Zone --> "Map" Map
+Zone --> "Position" IntVec3
+Zone --> "Material" Material
+Zone --> "Cells<IntVec3>" "List`1"
+Zone --> "AllContainedThings<Thing>" "IEnumerable`1"
+@enduml

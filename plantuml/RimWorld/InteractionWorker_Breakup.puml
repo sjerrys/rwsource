@@ -1,0 +1,8 @@
+@startuml
+class InteractionWorker_Breakup {
+    + <<override>> RandomSelectionWeight(initiator:Pawn, recipient:Pawn) : float
+    + RandomBreakupReason(initiator:Pawn, recipient:Pawn) : Thought
+    + <<override>> Interacted(initiator:Pawn, recipient:Pawn, extraSentencePacks:List<RulePackDef>, letterText:string, letterLabel:string, letterDef:LetterDef, lookTargets:LookTargets) : void
+}
+InteractionWorker <|-- InteractionWorker_Breakup
+@enduml

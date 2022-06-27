@@ -1,0 +1,6 @@
+@startuml
+class JobGiver_TakeCombatEnhancingDrug {
+    + <<override>> DeepCopy(resolve:bool) : ThinkNode
+}
+ThinkNode_JobGiver <|-- JobGiver_TakeCombatEnhancingDrug
+@enduml

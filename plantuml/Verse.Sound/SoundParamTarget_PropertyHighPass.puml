@@ -1,0 +1,8 @@
+@startuml
+class SoundParamTarget_PropertyHighPass {
+    + <<override>> Label : string <<get>>
+    + <<override>> SetOn(sample:Sample, value:float) : void
+}
+SoundParamTarget <|-- SoundParamTarget_PropertyHighPass
+SoundParamTarget_PropertyHighPass --> "NeededFilterType" Type
+@enduml

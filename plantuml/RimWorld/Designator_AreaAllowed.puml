@@ -1,0 +1,12 @@
+@startuml
+abstract class Designator_AreaAllowed {
+    + <<override>> DraggableDimensions : int <<get>>
+    + <<override>> DragDrawMeasurements : bool <<get>>
+    + Designator_AreaAllowed(mode:DesignateMode)
+    + {static} ClearSelectedArea() : void
+    + <<override>> SelectedUpdate() : void
+    + <<override>> ProcessInput(ev:Event) : void
+}
+Designator_Area <|-- Designator_AreaAllowed
+Designator_AreaAllowed --> "SelectedArea" Area
+@enduml

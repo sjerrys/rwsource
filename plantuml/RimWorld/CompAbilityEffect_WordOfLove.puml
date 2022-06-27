@@ -1,0 +1,11 @@
+@startuml
+class CompAbilityEffect_WordOfLove {
+    + <<override>> Apply(target:LocalTargetInfo, dest:LocalTargetInfo) : void
+    + <<override>> CanApplyOn(target:LocalTargetInfo, dest:LocalTargetInfo) : bool
+    + <<override>> ValidateTarget(target:LocalTargetInfo) : bool
+    + <<override>> Valid(target:LocalTargetInfo, throwMessages:bool) : bool
+    + <<override>> ExtraLabel(target:LocalTargetInfo) : string
+}
+CompAbilityEffect_WithDest <|-- CompAbilityEffect_WordOfLove
+CompAbilityEffect_WordOfLove --> "targetParams" TargetingParameters
+@enduml

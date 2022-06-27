@@ -1,0 +1,16 @@
+@startuml
+class QuestNode_GetSitePartDefsByTagsAndFaction {
+}
+class SitePartOption {
+    + tag : string
+    + chance : float = 1f
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GetSitePartDefsByTagsAndFaction
+QuestNode_GetSitePartDefsByTagsAndFaction --> "sitePartsTags<IEnumerable<SitePartOption>>" "SlateRef`1"
+QuestNode_GetSitePartDefsByTagsAndFaction --> "storeAs<string>" "SlateRef`1"
+QuestNode_GetSitePartDefsByTagsAndFaction --> "storeFactionAs<string>" "SlateRef`1"
+QuestNode_GetSitePartDefsByTagsAndFaction --> "mustBeHostileToFactionOf<Thing>" "SlateRef`1"
+QuestNode_GetSitePartDefsByTagsAndFaction +-- SitePartOption
+@enduml

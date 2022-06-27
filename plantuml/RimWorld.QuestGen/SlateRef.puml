@@ -1,0 +1,19 @@
+@startuml
+class "SlateRef`1"<T> <<struct>> {
+    + <<const>> SlateRefFieldName : string = "slateRef"
+    SlateRef : string <<get>> <<set>>
+    + SlateRef(slateRef:string)
+    + GetValue(slate:Slate) : T
+    + TryGetValue(slate:Slate, value:T) : bool
+    + TryGetConvertedValue(slate:Slate, value:TAnything) : bool
+    + <<override>> Equals(obj:object) : bool
+    + Equals(other:SlateRef<T>) : bool
+    + <<override>> GetHashCode() : int
+    + ToString(slate:Slate) : string
+    + <<override>> ToString() : string
+}
+class "IEquatable`1"<T> {
+}
+ISlateRef <|-- "SlateRef`1"
+"IEquatable`1" "<SlateRef<T>>" <|-- "SlateRef`1"
+@enduml

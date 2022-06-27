@@ -1,0 +1,11 @@
+@startuml
+abstract class AttachableThing {
+    + {abstract} InspectStringAddon : string <<get>>
+    + <<override>> ExposeData() : void
+    + <<virtual>> AttachTo(parent:Thing) : void
+    + <<override>> Destroy(mode:DestroyMode) : void
+}
+Thing <|-- AttachableThing
+AttachableThing --> "parent" Thing
+AttachableThing --> "DrawPos" Vector3
+@enduml

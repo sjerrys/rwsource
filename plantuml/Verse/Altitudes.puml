@@ -1,0 +1,8 @@
+@startuml
+class Altitudes <<static>> {
+    + <<const>> AltInc : float
+    {static} Altitudes()
+    + {static} AltitudeFor(alt:AltitudeLayer) : float
+}
+Altitudes --> "AltIncVect" Vector3
+@enduml

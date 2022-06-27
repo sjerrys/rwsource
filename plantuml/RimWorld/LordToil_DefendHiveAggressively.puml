@@ -1,0 +1,7 @@
+@startuml
+class LordToil_DefendHiveAggressively {
+    + distToHiveToAttack : float = 40f
+    + <<override>> UpdateAllDuties() : void
+}
+LordToil_HiveRelated <|-- LordToil_DefendHiveAggressively
+@enduml

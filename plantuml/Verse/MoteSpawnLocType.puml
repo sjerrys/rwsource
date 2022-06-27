@@ -1,0 +1,8 @@
+@startuml
+enum MoteSpawnLocType {
+    OnSource,
+    BetweenPositions,
+    BetweenTouchingCells,
+    RandomCellOnTarget,
+}
+@enduml

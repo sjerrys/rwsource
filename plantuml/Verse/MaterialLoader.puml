@@ -1,0 +1,6 @@
+@startuml
+class MaterialLoader <<static>> {
+    + {static} MatsFromTexturesInFolder(dirPath:string) : List<Material>
+    + {static} MatWithEnding(dirPath:string, ending:string) : Material
+}
+@enduml

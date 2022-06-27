@@ -1,0 +1,5 @@
+@startuml
+class Scribe_BodyParts <<static>> {
+    + {static} Look(part:BodyPartRecord, label:string, defaultValue:BodyPartRecord) : void
+}
+@enduml

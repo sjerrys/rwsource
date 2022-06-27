@@ -1,0 +1,7 @@
+@startuml
+class Trigger_PawnLost {
+    + Trigger_PawnLost(condition:PawnLostCondition, pawn:Pawn)
+    + <<override>> ActivateOn(lord:Lord, signal:TriggerSignal) : bool
+}
+Trigger <|-- Trigger_PawnLost
+@enduml

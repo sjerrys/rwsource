@@ -1,0 +1,8 @@
+@startuml
+class QuestNode_RequirementsToAcceptBedroom {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_RequirementsToAcceptBedroom
+QuestNode_RequirementsToAcceptBedroom --> "pawns<IEnumerable<Pawn>>" "SlateRef`1"
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class MoteThrownAttached {
+    + <<override>> SpawnSetup(map:Map, respawningAfterLoad:bool) : void
+}
+MoteThrown <|-- MoteThrownAttached
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class Thought_WantToSleepWithSpouseOrLover {
+    + <<override>> LabelCap : string <<get>>
+}
+Thought_Situational <|-- Thought_WantToSleepWithSpouseOrLover
+@enduml

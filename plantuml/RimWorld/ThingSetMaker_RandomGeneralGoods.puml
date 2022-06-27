@@ -1,0 +1,14 @@
+@startuml
+class ThingSetMaker_RandomGeneralGoods {
+}
+enum GoodsType {
+    None,
+    Meals,
+    RawFood,
+    Medicine,
+    Drugs,
+    Resources,
+}
+ThingSetMaker <|-- ThingSetMaker_RandomGeneralGoods
+ThingSetMaker_RandomGeneralGoods +-- GoodsType
+@enduml

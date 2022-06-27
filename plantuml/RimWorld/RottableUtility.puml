@@ -1,0 +1,7 @@
+@startuml
+class RottableUtility <<static>> {
+    + {static} IsNotFresh(t:Thing) : bool
+    + {static} IsDessicated(t:Thing) : bool
+    + {static} GetRotStage(t:Thing) : RotStage
+}
+@enduml

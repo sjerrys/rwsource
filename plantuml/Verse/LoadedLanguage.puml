@@ -1,0 +1,58 @@
+@startuml
+class LoadedLanguage {
+    + folderName : string
+    + anyKeyedReplacementsXmlParseError : bool
+    + lastKeyedReplacementsXmlParseErrorInFile : string
+    + anyDefInjectionsXmlParseError : bool
+    + lastDefInjectionsXmlParseErrorInFile : string
+    + anyError : bool
+    + <<const>> OldKeyedTranslationsFolderName : string = "CodeLinked"
+    + <<const>> KeyedTranslationsFolderName : string = "Keyed"
+    + <<const>> OldDefInjectionsFolderName : string = "DefLinked"
+    + <<const>> DefInjectionsFolderName : string = "DefInjected"
+    + <<const>> LanguagesFolderName : string = "Languages"
+    + <<const>> PlaceholderText : string = "TODO"
+    + DisplayName : string <<get>>
+    + FriendlyNameNative : string <<get>>
+    + FriendlyNameEnglish : string <<get>>
+    + LegacyFolderName : string <<get>>
+    + LoadedLanguage(folderName:string)
+    + LoadMetadata() : void
+    + InitMetadata(directory:VirtualDirectory) : void
+    + LoadData() : void
+    + TryRegisterFileIfNew(dir:Tuple<VirtualDirectory, ModContentPack, string>, filePath:string) : bool
+    + LoadFromFile_DefInject(file:VirtualFile, defType:Type) : void
+    + HaveTextForKey(key:string, allowPlaceholders:bool) : bool
+    + TryGetTextFromKey(key:string, translated:TaggedString) : bool
+    + TryGetStringsFromFile(fileName:string, stringsList:List<string>) : bool
+    + GetKeySourceFileAndLine(key:string) : string
+    + ResolveGender(str:string, fallback:string) : Gender
+    + InjectIntoData_BeforeImpliedDefs() : void
+    + InjectIntoData_AfterImpliedDefs() : void
+    + <<override>> ToString() : string
+}
+class KeyedReplacement {
+    + key : string
+    + value : string
+    + fileSource : string
+    + fileSourceLine : int
+    + fileSourceFullPath : string
+    + isPlaceholder : bool
+}
+class "List`1"<T> {
+}
+class "Dictionary`2"<T1,T2> {
+}
+class "IEnumerable`1"<T> {
+}
+LoadedLanguage --> "info" LanguageInfo
+LoadedLanguage o-> "loadErrors<string>" "List`1"
+LoadedLanguage o-> "backstoriesLoadErrors<string>" "List`1"
+LoadedLanguage o-> "icon" Texture2D
+LoadedLanguage o-> "keyedReplacements<string,KeyedReplacement>" "Dictionary`2"
+LoadedLanguage o-> "defInjections<DefInjectionPackage>" "List`1"
+LoadedLanguage o-> "stringFiles<string,List<string>>" "Dictionary`2"
+LoadedLanguage --> "AllDirectories<Tuple<VirtualDirectory, ModContentPack, string>>" "IEnumerable`1"
+LoadedLanguage --> "Worker" LanguageWorker
+LoadedLanguage +-- KeyedReplacement
+@enduml

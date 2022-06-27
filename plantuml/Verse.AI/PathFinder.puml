@@ -1,0 +1,35 @@
+@startuml
+class PathFinder {
+    + <<const>> DefaultMoveTicksCardinal : int = 13
+    + <<const>> Cost_OutsideAllowedArea : int = 600
+    + PathFinder(map:Map)
+    + FindPath(start:IntVec3, dest:LocalTargetInfo, pawn:Pawn, peMode:PathEndMode) : PawnPath
+    + FindPath(start:IntVec3, dest:LocalTargetInfo, traverseParms:TraverseParms, peMode:PathEndMode) : PawnPath
+    + {static} GetBuildingCost(b:Building, traverseParms:TraverseParms, pawn:Pawn) : int
+    + {static} GetBlueprintCost(b:Blueprint, pawn:Pawn) : int
+    + {static} IsDestroyable(th:Thing) : bool
+    + {static} BlocksDiagonalMovement(x:int, z:int, map:Map) : bool
+    + {static} BlocksDiagonalMovement(index:int, map:Map) : bool
+}
+class CostNode <<struct>> {
+    + index : int
+    + cost : int
+    + CostNode(index:int, cost:int)
+}
+class PathFinderNodeFast <<struct>> {
+    + knownCost : int
+    + heuristicCost : int
+    + parentIndex : int
+    + costNodeCost : int
+    + status : ushort
+}
+class CostNodeComparer {
+    + Compare(a:CostNode, b:CostNode) : int
+}
+class "IComparer`1"<T> {
+}
+PathFinder +-- CostNode
+PathFinder +-- PathFinderNodeFast
+PathFinder +-- CostNodeComparer
+"IComparer`1" "<CostNode>" <|-- CostNodeComparer
+@enduml

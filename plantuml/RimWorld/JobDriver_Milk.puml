@@ -1,0 +1,5 @@
+@startuml
+class JobDriver_Milk {
+}
+JobDriver_GatherAnimalBodyResources <|-- JobDriver_Milk
+@enduml

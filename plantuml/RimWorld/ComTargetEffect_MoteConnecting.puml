@@ -1,0 +1,6 @@
+@startuml
+class ComTargetEffect_MoteConnecting {
+    + <<override>> DoEffectOn(user:Pawn, target:Thing) : void
+}
+CompTargetEffect <|-- ComTargetEffect_MoteConnecting
+@enduml

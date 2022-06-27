@@ -1,0 +1,10 @@
+@startuml
+class StatModifier {
+    + value : float
+    + ValueToStringAsOffset : string <<get>>
+    + ToStringAsFactor : string <<get>>
+    + LoadDataFromXmlCustom(xmlRoot:XmlNode) : void
+    + <<override>> ToString() : string
+}
+StatModifier --> "stat" StatDef
+@enduml

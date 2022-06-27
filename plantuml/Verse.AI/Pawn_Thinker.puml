@@ -1,0 +1,12 @@
+@startuml
+class Pawn_Thinker {
+    + Pawn_Thinker(pawn:Pawn)
+    + TryGetMainTreeThinkNode() : T
+    + GetMainTreeThinkNode() : T
+}
+Pawn_Thinker --> "pawn" Pawn
+Pawn_Thinker --> "MainThinkTree" ThinkTreeDef
+Pawn_Thinker --> "MainThinkNodeRoot" ThinkNode
+Pawn_Thinker --> "ConstantThinkTree" ThinkTreeDef
+Pawn_Thinker --> "ConstantThinkNodeRoot" ThinkNode
+@enduml

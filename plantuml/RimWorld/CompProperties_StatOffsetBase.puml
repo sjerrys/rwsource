@@ -1,0 +1,11 @@
+@startuml
+class CompProperties_StatOffsetBase {
+    + <<virtual>> GetExplanationAbstract(def:ThingDef) : IEnumerable<string>
+    + <<virtual>> GetMaxOffset(parent:Thing) : float
+}
+class "List`1"<T> {
+}
+CompProperties <|-- CompProperties_StatOffsetBase
+CompProperties_StatOffsetBase --> "statDef" StatDef
+CompProperties_StatOffsetBase o-> "offsets<FocusStrengthOffset>" "List`1"
+@enduml

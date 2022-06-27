@@ -1,0 +1,31 @@
+@startuml
+class QuestGenUtility <<static>> {
+    + <<const>> OuterNodeCompletedSignal : string = "OuterNodeCompleted"
+    + {static} HardcodedSignalWithQuestID(signal:string) : string
+    + {static} HardcodedTargetQuestTagWithQuestID(questTag:string) : string
+    + {static} QuestTagSignal(questTag:string, signal:string) : string
+    + {static} RunInner(inner:Action, outerQuestPart:QuestPartActivable) : void
+    + {static} RunInner(inner:Action, innerNodeInSignal:string) : void
+    + {static} RunInnerNode(node:QuestNode, outerQuestPart:QuestPartActivable) : void
+    + {static} RunInnerNode(node:QuestNode, innerNodeInSignal:string) : void
+    + {static} AddSlateVars(req:GrammarRequest) : void
+    + {static} ResolveLocalTextWithDescriptionRules(localRules:RulePack, localRootKeyword:string) : string
+    + {static} ResolveLocalText(localRules:RulePack, localRootKeyword:string) : string
+    + {static} ResolveLocalText(localRules:List<Rule>, localConstants:Dictionary<string, string>, localRootKeyword:string, capitalizeFirstSentence:bool) : string
+    + {static} ResolveAbsoluteText(absoluteRules:List<Rule>, absoluteConstants:Dictionary<string, string>, absoluteRootKeyword:string, capitalizeFirstSentence:bool) : string
+    + {static} AppendCurrentPrefix(rules:List<Rule>) : List<Rule>
+    + {static} AppendCurrentPrefix(constants:Dictionary<string, string>) : Dictionary<string, string>
+    + {static} ToLookTargets(objects:SlateRef<IEnumerable<object>>, slate:Slate) : LookTargets
+    + {static} ToLookTargets(objects:IEnumerable<object>) : LookTargets
+    + {static} MergeRules(rules:RulePack, singleRule:string, root:string) : List<Rule>
+    + {static} MakeLetter(labelKeyword:string, textKeyword:string, def:LetterDef, relatedFaction:Faction, quest:Quest) : ChoiceLetter
+    + {static} MakeLetter(labelKeyword:string, textKeyword:string, def:LetterDef, lookTargets:LookTargets, relatedFaction:Faction, quest:Quest) : ChoiceLetter
+    + {static} AddToOrMakeList(slate:Slate, name:string, obj:object) : void
+    + {static} AddRangeToOrMakeList(slate:Slate, name:string, objs:List<object>) : void
+    + {static} IsInList(slate:Slate, name:string, obj:object) : bool
+    + {static} SetVarsForPrefix(capturedVars:List<PrefixCapturedVar>, prefix:string, slate:Slate) : List<Slate.VarRestoreInfo>
+    + {static} RestoreVarsForPrefix(varsRestoreInfo:List<Slate.VarRestoreInfo>, slate:Slate) : void
+    + {static} GetReturnedVars(varNames:List<SlateRef<string>>, prefix:string, slate:Slate) : void
+    + {static} NormalizeVarPath(path:string) : string
+}
+@enduml

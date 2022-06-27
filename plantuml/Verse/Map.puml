@@ -1,0 +1,138 @@
+@startuml
+class Map <<sealed>> {
+    + uniqueID : int
+    + generationTick : int
+    + <<const>> ThingSaveKey : string = "thing"
+    + Index : int <<get>>
+    + Area : int <<get>>
+    + IsPlayerHome : bool <<get>>
+    + IsTempIncidentMap : bool <<get>>
+    + Tile : int <<get>>
+    + PlayerWealthForStoryteller : float <<get>>
+    + AgeInDays : float <<get>>
+    + ConstantRandSeed : int <<get>>
+    + GetEnumerator() : IEnumerator<IntVec3>
+    + IncidentTargetTags() : IEnumerable<IncidentTargetTagDef>
+    + ConstructComponents() : void
+    + ExposeData() : void
+    + FinalizeLoading() : void
+    + FinalizeInit() : void
+    + MapPreTick() : void
+    + MapPostTick() : void
+    + MapUpdate() : void
+    + GetComponent() : T
+    + GetComponent(type:Type) : MapComponent
+    + GetUniqueLoadID() : string
+    + <<override>> ToString() : string
+    + GetDirectlyHeldThings() : ThingOwner
+    + GetChildHolders(outChildren:List<IThingHolder>) : void
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+IIncidentTarget <|-- Map
+ILoadReferenceable <|-- Map
+IThingHolder <|-- Map
+IExposable <|-- Map
+Map --> "compressor" MapFileCompressor
+Map o-> "info" MapInfo
+Map o-> "components<MapComponent>" "List`1"
+Map --> "spawnedThings" ThingOwner
+Map --> "cellIndices" CellIndices
+Map --> "listerThings" ListerThings
+Map --> "listerBuildings" ListerBuildings
+Map --> "mapPawns" MapPawns
+Map --> "dynamicDrawManager" DynamicDrawManager
+Map --> "mapDrawer" MapDrawer
+Map --> "pawnDestinationReservationManager" PawnDestinationReservationManager
+Map --> "tooltipGiverList" TooltipGiverList
+Map --> "reservationManager" ReservationManager
+Map --> "physicalInteractionReservationManager" PhysicalInteractionReservationManager
+Map --> "designationManager" DesignationManager
+Map --> "lordManager" LordManager
+Map --> "passingShipManager" PassingShipManager
+Map --> "haulDestinationManager" HaulDestinationManager
+Map --> "debugDrawer" DebugCellDrawer
+Map --> "gameConditionManager" GameConditionManager
+Map --> "weatherManager" WeatherManager
+Map --> "zoneManager" ZoneManager
+Map --> "resourceCounter" ResourceCounter
+Map --> "mapTemperature" MapTemperature
+Map --> "temperatureCache" TemperatureCache
+Map --> "areaManager" AreaManager
+Map --> "attackTargetsCache" AttackTargetsCache
+Map --> "attackTargetReservationManager" AttackTargetReservationManager
+Map --> "lordsStarter" VoluntarilyJoinableLordsStarter
+Map --> "thingGrid" ThingGrid
+Map --> "coverGrid" CoverGrid
+Map --> "edificeGrid" EdificeGrid
+Map --> "blueprintGrid" BlueprintGrid
+Map --> "fogGrid" FogGrid
+Map --> "regionGrid" RegionGrid
+Map --> "glowGrid" GlowGrid
+Map --> "terrainGrid" TerrainGrid
+Map --> "pathGrid" PathGrid
+Map --> "roofGrid" RoofGrid
+Map --> "fertilityGrid" FertilityGrid
+Map --> "snowGrid" SnowGrid
+Map --> "deepResourceGrid" DeepResourceGrid
+Map --> "exitMapGrid" ExitMapGrid
+Map --> "avoidGrid" AvoidGrid
+Map --> "linkGrid" LinkGrid
+Map --> "glowFlooder" GlowFlooder
+Map --> "powerNetManager" PowerNetManager
+Map --> "powerNetGrid" PowerNetGrid
+Map --> "regionMaker" RegionMaker
+Map --> "pathFinder" PathFinder
+Map --> "pawnPathPool" PawnPathPool
+Map --> "regionAndRoomUpdater" RegionAndRoomUpdater
+Map --> "regionLinkDatabase" RegionLinkDatabase
+Map --> "moteCounter" MoteCounter
+Map --> "gatherSpotLister" GatherSpotLister
+Map --> "windManager" WindManager
+Map --> "listerBuildingsRepairable" ListerBuildingsRepairable
+Map --> "listerHaulables" ListerHaulables
+Map --> "listerMergeables" ListerMergeables
+Map --> "listerArtificialBuildingsForMeditation" ListerArtificialBuildingsForMeditation
+Map --> "listerBuldingOfDefInProximity" ListerBuldingOfDefInProximity
+Map --> "listerFilthInHomeArea" ListerFilthInHomeArea
+Map --> "reachability" Reachability
+Map --> "itemAvailability" ItemAvailability
+Map --> "autoBuildRoofAreaSetter" AutoBuildRoofAreaSetter
+Map --> "roofCollapseBufferResolver" RoofCollapseBufferResolver
+Map --> "roofCollapseBuffer" RoofCollapseBuffer
+Map --> "wildAnimalSpawner" WildAnimalSpawner
+Map --> "wildPlantSpawner" WildPlantSpawner
+Map --> "steadyEnvironmentEffects" SteadyEnvironmentEffects
+Map --> "skyManager" SkyManager
+Map --> "overlayDrawer" OverlayDrawer
+Map --> "floodFiller" FloodFiller
+Map --> "weatherDecider" WeatherDecider
+Map --> "fireWatcher" FireWatcher
+Map --> "dangerWatcher" DangerWatcher
+Map --> "damageWatcher" DamageWatcher
+Map --> "strengthWatcher" StrengthWatcher
+Map --> "wealthWatcher" WealthWatcher
+Map --> "regionDirtyer" RegionDirtyer
+Map --> "cellsInRandomOrder" MapCellsInRandomOrder
+Map --> "rememberedCameraPos" RememberedCameraPos
+Map --> "mineStrikeManager" MineStrikeManager
+Map --> "storyState" StoryState
+Map --> "roadInfo" RoadInfo
+Map --> "waterInfo" WaterInfo
+Map --> "retainedCaravanData" RetainedCaravanData
+Map --> "temporaryThingDrawer" TemporaryThingDrawer
+Map --> "Size" IntVec3
+Map --> "Center" IntVec3
+Map --> "ParentFaction" Faction
+Map --> "ParentHolder" IThingHolder
+Map --> "AllCells<IntVec3>" "IEnumerable`1"
+Map --> "TileInfo" Tile
+Map --> "Biome" BiomeDef
+Map --> "StoryState" StoryState
+Map --> "GameConditionManager" GameConditionManager
+Map --> "PlayerPawnsForStoryteller<Pawn>" "IEnumerable`1"
+Map --> "IncidentPointsRandomFactorRange" FloatRange
+Map --> "Parent" MapParent
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+class Command_Ability {
+    + <<virtual>> Tooltip : string <<get>>
+    + Command_Ability(ability:Ability)
+    + <<override>> GizmoOnGUI(topLeft:Vector2, maxWidth:float) : GizmoResult
+    + <<override>> ProcessInput(ev:Event) : void
+    + <<override>> GizmoUpdateOnMouseover() : void
+}
+Command <|-- Command_Ability
+Command_Ability o-> "BGTex" Texture2D
+Command_Ability o-> "BGTexShrunk" Texture2D
+Command_Ability --> "Ability" Ability
+Command_Ability --> "BGTexture" Texture2D
+Command_Ability --> "BGTextureShrunk" Texture2D
+@enduml

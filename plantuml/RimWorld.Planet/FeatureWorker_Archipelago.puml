@@ -1,0 +1,5 @@
+@startuml
+class FeatureWorker_Archipelago {
+}
+FeatureWorker_Cluster <|-- FeatureWorker_Archipelago
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class HediffGiver_Random {
+    + mtbDays : float
+    + <<override>> OnIntervalPassed(pawn:Pawn, cause:Hediff) : void
+}
+HediffGiver <|-- HediffGiver_Random
+@enduml

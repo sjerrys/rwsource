@@ -1,0 +1,12 @@
+@startuml
+class TransportPodsArrivalAction_GiveGift {
+    + TransportPodsArrivalAction_GiveGift()
+    + TransportPodsArrivalAction_GiveGift(settlement:Settlement)
+    + <<override>> ExposeData() : void
+    + <<override>> StillValid(pods:IEnumerable<IThingHolder>, destinationTile:int) : FloatMenuAcceptanceReport
+    + <<override>> Arrived(pods:List<ActiveDropPodInfo>, tile:int) : void
+    + {static} CanGiveGiftTo(pods:IEnumerable<IThingHolder>, settlement:Settlement) : FloatMenuAcceptanceReport
+    + {static} GetFloatMenuOptions(representative:CompLaunchable, pods:IEnumerable<IThingHolder>, settlement:Settlement) : IEnumerable<FloatMenuOption>
+}
+TransportPodsArrivalAction <|-- TransportPodsArrivalAction_GiveGift
+@enduml

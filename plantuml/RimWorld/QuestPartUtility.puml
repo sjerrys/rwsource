@@ -1,0 +1,15 @@
+@startuml
+class QuestPartUtility <<static>> {
+    + <<const>> RewardStackElementIconSize : int = 22
+    + <<const>> RewardStackElementMarginHorizontal : int = 6
+    + <<const>> RewardStackElementMarginVertical : int = 1
+    + <<const>> RewardStackElementIconGap : int = 2
+    + {static} MakeAndAddEndCondition(quest:Quest, inSignalActivate:string, outcome:QuestEndOutcome, letter:Letter) : T
+    + {static} MakeAndAddEndNodeWithLetter(quest:Quest, inSignalActivate:string, outcome:QuestEndOutcome, letter:Letter) : QuestPart_QuestEnd
+    + {static} MakeAndAddQuestTimeoutDelay(quest:Quest, delayTicks:int, worldObject:WorldObject) : QuestPart_Delay
+    + {static} GetRewardStackElementsForThings(things:IEnumerable<Thing>, detailsHidden:bool) : IEnumerable<GenUI.AnonymousStackElement>
+    + {static} GetRewardStackElementsForThings(thingDefs:IEnumerable<Reward_Items.RememberedItem>) : IEnumerable<GenUI.AnonymousStackElement>
+    + {static} GetStandardRewardStackElement(label:string, icon:Texture2D, tipGetter:Func<string>, onClick:Action) : GenUI.AnonymousStackElement
+    + {static} GetStandardRewardStackElement(label:string, iconDrawer:Action<Rect>, tipGetter:Func<string>, onClick:Action) : GenUI.AnonymousStackElement
+}
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class ClamorDef {
+}
+Def <|-- ClamorDef
+@enduml

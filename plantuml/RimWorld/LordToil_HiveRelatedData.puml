@@ -1,0 +1,9 @@
+@startuml
+class LordToil_HiveRelatedData {
+    + <<override>> ExposeData() : void
+}
+class "Dictionary`2"<T1,T2> {
+}
+LordToilData <|-- LordToil_HiveRelatedData
+LordToil_HiveRelatedData o-> "assignedHives<Pawn,Hive>" "Dictionary`2"
+@enduml

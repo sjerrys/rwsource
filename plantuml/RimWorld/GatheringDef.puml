@@ -1,0 +1,20 @@
+@startuml
+class GatheringDef {
+    + randomSelectionWeight : float
+    + respectTimetable : bool = true
+    + letterTitle : string
+    + letterText : string
+    + calledOffMessage : string
+    + finishedMessage : string
+    + IsRandomSelectable : bool <<get>>
+    + CanExecute(map:Map, organizer:Pawn, ignoreGameConditions:bool) : bool
+}
+class "List`1"<T> {
+}
+Def <|-- GatheringDef
+GatheringDef o-> "workerClass" Type
+GatheringDef --> "duty" DutyDef
+GatheringDef --> "gatherSpotDefs<ThingDef>" "List`1"
+GatheringDef o-> "requiredTitleAny<RoyalTitleDef>" "List`1"
+GatheringDef --> "Worker" GatheringWorker
+@enduml

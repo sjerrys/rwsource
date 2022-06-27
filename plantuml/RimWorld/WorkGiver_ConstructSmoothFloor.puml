@@ -1,0 +1,6 @@
+@startuml
+class WorkGiver_ConstructSmoothFloor {
+    + <<override>> JobOnCell(pawn:Pawn, c:IntVec3, forced:bool) : Job
+}
+WorkGiver_ConstructAffectFloor <|-- WorkGiver_ConstructSmoothFloor
+@enduml

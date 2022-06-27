@@ -1,0 +1,11 @@
+@startuml
+class TransportPodsArrivalAction_FormCaravan {
+    + TransportPodsArrivalAction_FormCaravan()
+    + TransportPodsArrivalAction_FormCaravan(arrivalMessageKey:string)
+    + <<override>> StillValid(pods:IEnumerable<IThingHolder>, destinationTile:int) : FloatMenuAcceptanceReport
+    + <<override>> Arrived(pods:List<ActiveDropPodInfo>, tile:int) : void
+    + {static} CanFormCaravanAt(pods:IEnumerable<IThingHolder>, tile:int) : bool
+    + <<override>> ExposeData() : void
+}
+TransportPodsArrivalAction <|-- TransportPodsArrivalAction_FormCaravan
+@enduml

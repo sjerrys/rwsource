@@ -1,0 +1,11 @@
+@startuml
+enum QualityCategory {
+    Awful,
+    Poor,
+    Normal,
+    Good,
+    Excellent,
+    Masterwork,
+    Legendary,
+}
+@enduml

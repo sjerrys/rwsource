@@ -1,0 +1,7 @@
+@startuml
+class CompTechprint {
+    + <<override>> CompFloatMenuOptions(selPawn:Pawn) : IEnumerable<FloatMenuOption>
+}
+ThingComp <|-- CompTechprint
+CompTechprint --> "Props" CompProperties_Techprint
+@enduml

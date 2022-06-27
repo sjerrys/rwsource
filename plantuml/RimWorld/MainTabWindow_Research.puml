@@ -1,0 +1,12 @@
+@startuml
+class MainTabWindow_Research {
+    + <<override>> PreOpen() : void
+    + <<override>> DoWindowContents(inRect:Rect) : void
+    + <<override>> PostOpen() : void
+}
+class "List`1"<T> {
+}
+MainTabWindow <|-- MainTabWindow_Research
+MainTabWindow_Research --> "VisibleResearchProjects<ResearchProjectDef>" "List`1"
+MainTabWindow_Research --> "InitialSize" Vector2
+@enduml

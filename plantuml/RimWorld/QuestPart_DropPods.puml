@@ -1,0 +1,32 @@
+@startuml
+class QuestPart_DropPods {
+    + inSignal : string
+    + outSignalResult : string
+    + useTradeDropSpot : bool
+    + joinPlayer : bool
+    + makePrisoners : bool
+    + destroyItemsOnCleanup : bool = true
+    + customLetterText : string
+    + customLetterLabel : string
+    + sendStandardLetter : bool = true
+    + <<override>> IncreasesPopulation : bool <<get>>
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> QuestPartReserves(p:Pawn) : bool
+    + <<override>> ReplacePawnReferences(replace:Pawn, with:Pawn) : void
+    + <<override>> PostQuestAdded() : void
+    + <<override>> Cleanup() : void
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart <|-- QuestPart_DropPods
+QuestPart_DropPods o-> "dropSpot" IntVec3
+QuestPart_DropPods --> "mapParent" MapParent
+QuestPart_DropPods o-> "thingsToExcludeFromHyperlinks<ThingDef>" "List`1"
+QuestPart_DropPods --> "customLetterDef" LetterDef
+QuestPart_DropPods --> "Things<Thing>" "IEnumerable`1"
+QuestPart_DropPods --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class WorkGiver_FeedPatient {
+    + <<override>> MaxPathDanger(pawn:Pawn) : Danger
+    + <<override>> PotentialWorkThingsGlobal(pawn:Pawn) : IEnumerable<Thing>
+    + <<override>> HasJobOnThing(pawn:Pawn, t:Thing, forced:bool) : bool
+    + <<override>> JobOnThing(pawn:Pawn, t:Thing, forced:bool) : Job
+}
+WorkGiver_Scanner <|-- WorkGiver_FeedPatient
+WorkGiver_FeedPatient --> "PotentialWorkThingRequest" ThingRequest
+WorkGiver_FeedPatient --> "PathEndMode" PathEndMode
+@enduml

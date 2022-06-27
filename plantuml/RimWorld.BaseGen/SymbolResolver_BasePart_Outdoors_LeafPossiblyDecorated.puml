@@ -1,0 +1,6 @@
+@startuml
+class SymbolResolver_BasePart_Outdoors_LeafPossiblyDecorated {
+    + <<override>> Resolve(rp:ResolveParams) : void
+}
+SymbolResolver <|-- SymbolResolver_BasePart_Outdoors_LeafPossiblyDecorated
+@enduml

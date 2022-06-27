@@ -1,0 +1,20 @@
+@startuml
+class ThingStuffPair <<struct>> {
+    + commonalityMultiplier : float
+    + Price : float <<get>>
+    + InsulationCold : float <<get>>
+    + InsulationHeat : float <<get>>
+    + Commonality : float <<get>>
+    + ThingStuffPair(thing:ThingDef, stuff:ThingDef, commonalityMultiplier:float)
+    + {static} AllWith(thingValidator:Predicate<ThingDef>) : List<ThingStuffPair>
+    + <<override>> ToString() : string
+    + <<override>> Equals(obj:object) : bool
+    + Equals(other:ThingStuffPair) : bool
+    + <<override>> GetHashCode() : int
+}
+class "IEquatable`1"<T> {
+}
+"IEquatable`1" "<ThingStuffPair>" <|-- ThingStuffPair
+ThingStuffPair --> "thing" ThingDef
+ThingStuffPair --> "stuff" ThingDef
+@enduml

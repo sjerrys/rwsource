@@ -1,0 +1,9 @@
+@startuml
+class NaturalRandomQuestChooser <<static>> {
+    + {static} PopulationIncreasingQuestChance() : float
+    + {static} ChooseNaturalRandomQuest(points:float, target:IIncidentTarget) : QuestScriptDef
+    + {static} GetNaturalRandomSelectionWeight(quest:QuestScriptDef, points:float, storyState:StoryState) : float
+    + {static} GetNaturalDecreeSelectionWeight(quest:QuestScriptDef, storyState:StoryState) : float
+    + {static} DebugTotalNaturalRandomSelectionWeight(quest:QuestScriptDef, points:float, target:IIncidentTarget) : float
+}
+@enduml

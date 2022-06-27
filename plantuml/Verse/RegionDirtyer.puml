@@ -1,0 +1,9 @@
+@startuml
+class RegionDirtyer {
+    + AnyDirty : bool <<get>>
+    + RegionDirtyer(map:Map)
+}
+class "List`1"<T> {
+}
+RegionDirtyer --> "DirtyCells<IntVec3>" "List`1"
+@enduml

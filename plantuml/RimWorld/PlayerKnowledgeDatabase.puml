@@ -1,0 +1,19 @@
+@startuml
+class PlayerKnowledgeDatabase <<static>> {
+    {static} PlayerKnowledgeDatabase()
+    + {static} ReloadAndRebind() : void
+    + {static} ResetPersistent() : void
+    + {static} Save() : void
+    + {static} GetKnowledge(def:ConceptDef) : float
+    + {static} SetKnowledge(def:ConceptDef, value:float) : void
+    + {static} IsComplete(conc:ConceptDef) : bool
+    + {static} KnowledgeDemonstrated(conc:ConceptDef, know:KnowledgeAmount) : void
+}
+class ConceptKnowledge {
+    + ConceptKnowledge()
+}
+class "Dictionary`2"<T1,T2> {
+}
+PlayerKnowledgeDatabase +-- ConceptKnowledge
+ConceptKnowledge o-> "knowledge<string,float>" "Dictionary`2"
+@enduml

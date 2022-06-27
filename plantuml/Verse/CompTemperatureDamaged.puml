@@ -1,0 +1,8 @@
+@startuml
+class CompTemperatureDamaged {
+    + <<override>> CompTick() : void
+    + <<override>> CompTickRare() : void
+}
+ThingComp <|-- CompTemperatureDamaged
+CompTemperatureDamaged --> "Props" CompProperties_TemperatureDamaged
+@enduml

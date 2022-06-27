@@ -1,0 +1,13 @@
+@startuml
+class EffecterDef {
+    + positionRadius : float
+    + Spawn() : Effecter
+    + Spawn(target:IntVec3, map:Map, scale:float) : Effecter
+    + Spawn(target:Thing, map:Map, scale:float) : Effecter
+}
+class "List`1"<T> {
+}
+Def <|-- EffecterDef
+EffecterDef --> "children<SubEffecterDef>" "List`1"
+EffecterDef --> "offsetTowardsTarget" FloatRange
+@enduml

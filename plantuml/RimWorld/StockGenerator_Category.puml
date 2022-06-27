@@ -1,0 +1,7 @@
+@startuml
+class StockGenerator_Category {
+    + <<override>> GenerateThings(forTile:int, faction:Faction) : IEnumerable<Thing>
+    + <<override>> HandlesThingDef(t:ThingDef) : bool
+}
+StockGenerator <|-- StockGenerator_Category
+@enduml

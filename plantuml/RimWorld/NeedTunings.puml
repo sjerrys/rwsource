@@ -1,0 +1,5 @@
+@startuml
+class NeedTunings <<static>> {
+    + <<const>> NeedUpdateInterval : int = 150
+}
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class SkillNeed_Direct {
+    + <<override>> ValueFor(pawn:Pawn) : float
+}
+class "List`1"<T> {
+}
+SkillNeed <|-- SkillNeed_Direct
+SkillNeed_Direct o-> "valuesPerLevel<float>" "List`1"
+@enduml

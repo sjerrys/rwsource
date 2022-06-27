@@ -1,0 +1,20 @@
+@startuml
+class PawnKindLifeStage {
+    + label : string
+    + labelPlural : string
+    + labelMale : string
+    + labelMalePlural : string
+    + labelFemale : string
+    + labelFemalePlural : string
+    + untranslatedLabel : string
+    + untranslatedLabelMale : string
+    + untranslatedLabelFemale : string
+    + PostLoad() : void
+    + ResolveReferences() : void
+}
+PawnKindLifeStage --> "bodyGraphicData" GraphicData
+PawnKindLifeStage --> "femaleGraphicData" GraphicData
+PawnKindLifeStage --> "dessicatedBodyGraphicData" GraphicData
+PawnKindLifeStage --> "femaleDessicatedBodyGraphicData" GraphicData
+PawnKindLifeStage --> "butcherBodyPart" BodyPartToDrop
+@enduml

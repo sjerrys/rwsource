@@ -1,0 +1,8 @@
+@startuml
+class CompHeatPusher {
+    + <<override>> CompTick() : void
+    + <<override>> CompTickRare() : void
+}
+ThingComp <|-- CompHeatPusher
+CompHeatPusher --> "Props" CompProperties_HeatPusher
+@enduml

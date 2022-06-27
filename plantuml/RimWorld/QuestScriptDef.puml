@@ -1,0 +1,37 @@
+@startuml
+class QuestScriptDef {
+    + rootSelectionWeight : float
+    + rootMinPoints : float
+    + rootMinProgressScore : float
+    + rootIncreasesPopulation : bool
+    + decreeSelectionWeight : float
+    + autoAccept : bool
+    + nameMustBeUnique : bool
+    + defaultChallengeRating : int
+    + defaultHidden : bool
+    + isRootSpecial : bool
+    + canGiveRoyalFavor : bool
+    + hideFactionInfoInWindow : bool
+    + affectedByPopulation : bool
+    + affectedByPoints : bool = true
+    + IsRootRandomSelected : bool <<get>>
+    + IsRootDecree : bool <<get>>
+    + IsRootAny : bool <<get>>
+    + Run() : void
+    + CanRun(slate:Slate) : bool
+    + CanRun(points:float) : bool
+    + <<override>> ConfigErrors() : IEnumerable<string>
+}
+class "List`1"<T> {
+}
+Def <|-- QuestScriptDef
+QuestScriptDef --> "root" QuestNode
+QuestScriptDef --> "rootSelectionWeightFactorFromPointsCurve" SimpleCurve
+QuestScriptDef --> "decreeTags<string>" "List`1"
+QuestScriptDef --> "questDescriptionRules" RulePack
+QuestScriptDef --> "questNameRules" RulePack
+QuestScriptDef --> "questDescriptionAndNameRules" RulePack
+QuestScriptDef --> "questContentRules" RulePack
+QuestScriptDef o-> "expireDaysRange" FloatRange
+QuestScriptDef --> "questAvailableLetterDef" LetterDef
+@enduml

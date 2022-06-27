@@ -1,0 +1,11 @@
+@startuml
+class Translator <<static>> {
+    + {static} CanTranslate(key:string) : bool
+    + {static} TranslateWithBackup(key:string, backupKey:TaggedString) : TaggedString
+    + {static} TryTranslate(key:string, result:TaggedString) : bool
+    + {static} TranslateSimple(key:string) : string
+    + {static} Translate(key:string) : TaggedString
+    + {static} Translate(key:string, args:object[]) : string
+    + {static} TryGetTranslatedStringsForFile(fileName:string, stringList:List<string>) : bool
+}
+@enduml

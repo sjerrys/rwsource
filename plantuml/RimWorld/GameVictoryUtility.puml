@@ -1,0 +1,8 @@
+@startuml
+class GameVictoryUtility <<static>> {
+    + {static} MakeEndCredits(intro:string, ending:string, escapees:string) : string
+    + {static} ShowCredits(victoryText:string) : void
+    + {static} PawnsLeftBehind() : string
+    + {static} InMemoryOfSection() : string
+}
+@enduml

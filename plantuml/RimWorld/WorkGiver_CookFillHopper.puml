@@ -1,0 +1,10 @@
+@startuml
+class WorkGiver_CookFillHopper {
+    + WorkGiver_CookFillHopper()
+    + <<override>> JobOnThing(pawn:Pawn, thing:Thing, forced:bool) : Job
+    + {static} HopperFillFoodJob(pawn:Pawn, hopperSgp:ISlotGroupParent) : Job
+}
+WorkGiver_Scanner <|-- WorkGiver_CookFillHopper
+WorkGiver_CookFillHopper --> "PotentialWorkThingRequest" ThingRequest
+WorkGiver_CookFillHopper --> "PathEndMode" PathEndMode
+@enduml

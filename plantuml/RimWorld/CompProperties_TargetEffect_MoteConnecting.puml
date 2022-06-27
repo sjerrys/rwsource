@@ -1,0 +1,7 @@
+@startuml
+class CompProperties_TargetEffect_MoteConnecting {
+    + CompProperties_TargetEffect_MoteConnecting()
+}
+CompProperties <|-- CompProperties_TargetEffect_MoteConnecting
+CompProperties_TargetEffect_MoteConnecting --> "moteDef" ThingDef
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class RiverMaker {
+    + RiverMaker(center:Vector3, angle:float, riverDef:RiverDef)
+    + TerrainAt(loc:IntVec3, recordForValidation:bool) : TerrainDef
+    + WaterCoordinateAt(loc:IntVec3) : Vector3
+    + ValidatePassage(map:Map) : void
+}
+@enduml

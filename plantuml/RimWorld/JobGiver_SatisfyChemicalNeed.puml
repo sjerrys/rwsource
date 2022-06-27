@@ -1,0 +1,6 @@
+@startuml
+class JobGiver_SatisfyChemicalNeed {
+    + <<override>> GetPriority(pawn:Pawn) : float
+}
+ThinkNode_JobGiver <|-- JobGiver_SatisfyChemicalNeed
+@enduml

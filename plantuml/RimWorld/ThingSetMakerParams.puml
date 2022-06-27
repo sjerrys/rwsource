@@ -1,0 +1,24 @@
+@startuml
+class ThingSetMakerParams <<struct>> {
+    + techLevel : TechLevel?
+    + countRange : IntRange?
+    + qualityGenerator : QualityGenerator?
+    + maxTotalMass : float?
+    + maxThingMarketValue : float?
+    + allowNonStackableDuplicates : bool?
+    + minSingleItemMarketValuePct : float?
+    + totalMarketValueRange : FloatRange?
+    + totalNutritionRange : FloatRange?
+    + podContentsType : PodContentsType?
+    + tile : int?
+}
+class "Predicate`1"<T> {
+}
+class "Dictionary`2"<T1,T2> {
+}
+ThingSetMakerParams --> "filter" ThingFilter
+ThingSetMakerParams --> "validator<ThingDef>" "Predicate`1"
+ThingSetMakerParams --> "makingFaction" Faction
+ThingSetMakerParams --> "traderDef" TraderKindDef
+ThingSetMakerParams --> "custom<string,object>" "Dictionary`2"
+@enduml

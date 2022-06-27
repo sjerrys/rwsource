@@ -1,0 +1,47 @@
+@startuml
+class GameCondition {
+    + uniqueID : int
+    + startTick : int
+    + suppressEndMessage : bool
+    + <<virtual>> Label : string <<get>>
+    + <<virtual>> LabelCap : string <<get>>
+    + <<virtual>> LetterText : string <<get>>
+    + <<virtual>> Expired : bool <<get>>
+    + <<virtual>> ElectricityDisabled : bool <<get>>
+    + TicksPassed : int <<get>>
+    + <<virtual>> Description : string <<get>>
+    + <<virtual>> TransitionTicks : int <<get>>
+    + TicksLeft : int <<get>> <<set>>
+    + Permanent : bool <<get>> <<set>>
+    + Duration : int <<get>> <<set>>
+    + <<virtual>> TooltipString : string <<get>>
+    + <<virtual>> ExposeData() : void
+    + <<virtual>> GameConditionTick() : void
+    + <<virtual>> GameConditionDraw(map:Map) : void
+    + <<virtual>> Init() : void
+    + <<virtual>> End() : void
+    + <<virtual>> SkyGazeChanceFactor(map:Map) : float
+    + <<virtual>> SkyGazeJoyGainFactor(map:Map) : float
+    + <<virtual>> TemperatureOffset() : float
+    + <<virtual>> SkyTargetLerpFactor(map:Map) : float
+    + <<virtual>> SkyTarget(map:Map) : SkyTarget?
+    + <<virtual>> AnimalDensityFactor(map:Map) : float
+    + <<virtual>> PlantDensityFactor(map:Map) : float
+    + <<virtual>> AllowEnjoyableOutsideNow(map:Map) : bool
+    + <<virtual>> SkyOverlays(map:Map) : List<SkyOverlay>
+    + <<virtual>> DoCellSteadyEffects(c:IntVec3, map:Map) : void
+    + <<virtual>> ForcedWeather() : WeatherDef
+    + <<virtual>> PostMake() : void
+    + <<virtual>> RandomizeSettings(points:float, map:Map, outExtraDescriptionRules:List<Rule>, outExtraDescriptionConstants:Dictionary<string, string>) : void
+    + GetUniqueLoadID() : string
+}
+class "List`1"<T> {
+}
+IExposable <|-- GameCondition
+ILoadReferenceable <|-- GameCondition
+GameCondition --> "gameConditionManager" GameConditionManager
+GameCondition --> "conditionCauser" Thing
+GameCondition --> "def" GameConditionDef
+GameCondition --> "quest" Quest
+GameCondition --> "AffectedMaps<Map>" "List`1"
+@enduml

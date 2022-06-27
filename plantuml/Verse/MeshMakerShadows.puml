@@ -1,0 +1,5 @@
+@startuml
+class MeshMakerShadows <<static>> {
+    + {static} NewShadowMesh(baseWidth:float, baseHeight:float, tallness:float) : Mesh
+}
+@enduml

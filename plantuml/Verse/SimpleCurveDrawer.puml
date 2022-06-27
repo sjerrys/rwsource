@@ -1,0 +1,15 @@
+@startuml
+class SimpleCurveDrawer <<static>> {
+    + {static} DrawCurve(rect:Rect, curve:SimpleCurve, style:SimpleCurveDrawerStyle, marks:List<CurveMark>, legendScreenRect:Rect) : void
+    + {static} DrawCurve(rect:Rect, curve:SimpleCurveDrawInfo, style:SimpleCurveDrawerStyle, marks:List<CurveMark>, legendScreenRect:Rect) : void
+    + {static} DrawCurves(rect:Rect, curves:List<SimpleCurveDrawInfo>, style:SimpleCurveDrawerStyle, marks:List<CurveMark>, legendRect:Rect) : void
+    + {static} DrawCurveLines(rect:Rect, curve:SimpleCurveDrawInfo, drawPoints:bool, viewRect:Rect, useAALines:bool, pointsRemoveOptimization:bool) : void
+    + {static} DrawCurveMeasures(rect:Rect, viewRect:Rect, graphRect:Rect, xLabelsCount:int, yLabelsCount:int, xIntegersOnly:bool, yIntegersOnly:bool) : void
+    + {static} DrawCurvesLegend(rect:Rect, curves:List<SimpleCurveDrawInfo>) : void
+    + {static} DrawCurveMousePoint(curves:List<SimpleCurveDrawInfo>, screenRect:Rect, viewRect:Rect, labelX:string) : void
+    + {static} DrawCurveMarks(rect:Rect, viewRect:Rect, marks:List<CurveMark>) : void
+    + {static} CurveToScreenCoordsInsideScreenRect(rect:Rect, viewRect:Rect, curvePoint:Vector2) : Vector2
+    + {static} ScreenToCurveCoords(rect:Rect, viewRect:Rect, screenPoint:Vector2) : Vector2
+    + {static} DrawGraphBackgroundLines(rect:Rect, viewRect:Rect) : void
+}
+@enduml

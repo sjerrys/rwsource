@@ -1,0 +1,13 @@
+@startuml
+class CompProperties_CanBeDormant {
+    + startsDormant : bool
+    + wakeUpSignalTag : string = "CompCanBeDormant.WakeUp"
+    + maxDistAwakenByOther : float = 40f
+    + canWakeUpFogged : bool = true
+    + awakeStateLabelKey : string = "AwokeDaysAgo"
+    + dormantStateLabelKey : string = "DormantCompInactive"
+    + CompProperties_CanBeDormant()
+    + <<override>> ConfigErrors(parentDef:ThingDef) : IEnumerable<string>
+}
+CompProperties <|-- CompProperties_CanBeDormant
+@enduml

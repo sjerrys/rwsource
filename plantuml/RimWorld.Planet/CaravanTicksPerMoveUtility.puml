@@ -1,0 +1,19 @@
+@startuml
+class CaravanTicksPerMoveUtility <<static>> {
+    + <<const>> CellToTilesConversionRatio : float = 340f
+    + <<const>> DefaultTicksPerMove : int = 3300
+    + {static} GetTicksPerMove(caravan:Caravan, explanation:StringBuilder) : int
+    + {static} GetTicksPerMove(caravanInfo:CaravanInfo, explanation:StringBuilder) : int
+    + {static} GetTicksPerMove(pawns:List<Pawn>, massUsage:float, massCapacity:float, explanation:StringBuilder) : int
+}
+class CaravanInfo <<struct>> {
+    + massUsage : float
+    + massCapacity : float
+    + CaravanInfo(caravan:Caravan)
+    + CaravanInfo(formCaravanDialog:Dialog_FormCaravan)
+}
+class "List`1"<T> {
+}
+CaravanTicksPerMoveUtility +-- CaravanInfo
+CaravanInfo --> "pawns<Pawn>" "List`1"
+@enduml

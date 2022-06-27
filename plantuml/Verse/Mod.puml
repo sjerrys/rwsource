@@ -1,0 +1,10 @@
+@startuml
+abstract class Mod {
+    + Mod(content:ModContentPack)
+    + GetSettings() : T
+    + <<virtual>> WriteSettings() : void
+    + <<virtual>> DoSettingsWindowContents(inRect:Rect) : void
+    + <<virtual>> SettingsCategory() : string
+}
+Mod --> "Content" ModContentPack
+@enduml

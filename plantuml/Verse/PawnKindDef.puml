@@ -1,0 +1,82 @@
+@startuml
+class PawnKindDef {
+    + labelPlural : string
+    + alternateGraphicChance : float
+    + backstoryCryptosleepCommonality : float
+    + minGenerationAge : int
+    + maxGenerationAge : int = 999999
+    + factionLeader : bool
+    + destroyGearOnDrop : bool
+    + defendPointRadius : float
+    + factionHostileOnKill : bool
+    + factionHostileOnDeath : bool
+    + royalTitleChance : float
+    + allowRoyalRoomRequirements : bool = true
+    + allowRoyalApparelRequirements : bool = true
+    + isFighter : bool = true
+    + combatPower : float
+    + canArriveManhunter : bool = true
+    + canBeSapper : bool
+    + baseRecruitDifficulty : float = 0.5f
+    + aiAvoidCover : bool
+    + forceNormalGearQuality : bool
+    + apparelAllowHeadgearChance : float = 1f
+    + apparelIgnoreSeasons : bool
+    + techHediffsChance : float
+    + techHediffsMaxAmount : int = 1
+    + biocodeWeaponChance : float
+    + invNutrition : float
+    + chemicalAddictionChance : float
+    + combatEnhancingDrugsChance : float
+    + trader : bool
+    + labelMale : string
+    + labelMalePlural : string
+    + labelFemale : string
+    + labelFemalePlural : string
+    + ecoSystemWeight : float = 1f
+    + <<override>> ResolveReferences() : void
+    + GetLabelPlural(count:int) : string
+    + <<override>> PostLoad() : void
+    + GetAnimalPointsToHuntOrSlaughter() : float
+    + <<override>> ConfigErrors() : IEnumerable<string>
+    + {static} Named(defName:string) : PawnKindDef
+}
+class "List`1"<T> {
+}
+Def <|-- PawnKindDef
+PawnKindDef --> "race" ThingDef
+PawnKindDef --> "defaultFactionType" FactionDef
+PawnKindDef --> "backstoryFilters<BackstoryCategoryFilter>" "List`1"
+PawnKindDef --> "backstoryFiltersOverride<BackstoryCategoryFilter>" "List`1"
+PawnKindDef --> "backstoryCategories<string>" "List`1"
+PawnKindDef o-> "lifeStages<PawnKindLifeStage>" "List`1"
+PawnKindDef --> "alternateGraphics<AlternateGraphic>" "List`1"
+PawnKindDef --> "disallowedTraits<TraitDef>" "List`1"
+PawnKindDef --> "titleRequired" RoyalTitleDef
+PawnKindDef --> "minTitleRequired" RoyalTitleDef
+PawnKindDef --> "titleSelectOne<RoyalTitleDef>" "List`1"
+PawnKindDef o-> "fleeHealthThresholdRange" FloatRange
+PawnKindDef o-> "itemQuality" QualityCategory
+PawnKindDef o-> "gearHealthRange" FloatRange
+PawnKindDef o-> "weaponMoney" FloatRange
+PawnKindDef --> "weaponTags<string>" "List`1"
+PawnKindDef o-> "apparelMoney" FloatRange
+PawnKindDef --> "apparelRequired<ThingDef>" "List`1"
+PawnKindDef --> "apparelTags<string>" "List`1"
+PawnKindDef --> "apparelDisallowTags<string>" "List`1"
+PawnKindDef --> "hairTags<string>" "List`1"
+PawnKindDef o-> "apparelColor" Color
+PawnKindDef --> "specificApparelRequirements<SpecificApparelRequirement>" "List`1"
+PawnKindDef --> "techHediffsRequired<ThingDef>" "List`1"
+PawnKindDef o-> "techHediffsMoney" FloatRange
+PawnKindDef --> "techHediffsTags<string>" "List`1"
+PawnKindDef --> "techHediffsDisallowTags<string>" "List`1"
+PawnKindDef o-> "fixedInventory<ThingDefCountClass>" "List`1"
+PawnKindDef --> "inventoryOptions" PawnInventoryOption
+PawnKindDef --> "invFoodDef" ThingDef
+PawnKindDef o-> "combatEnhancingDrugsCount" IntRange
+PawnKindDef --> "skills<SkillRange>" "List`1"
+PawnKindDef --> "requiredWorkTags" WorkTags
+PawnKindDef o-> "wildGroupSize" IntRange
+PawnKindDef --> "RaceProps" RaceProperties
+@enduml

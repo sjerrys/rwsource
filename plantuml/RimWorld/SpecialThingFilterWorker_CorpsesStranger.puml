@@ -1,0 +1,6 @@
+@startuml
+class SpecialThingFilterWorker_CorpsesStranger {
+    + <<override>> Matches(t:Thing) : bool
+}
+SpecialThingFilterWorker <|-- SpecialThingFilterWorker_CorpsesStranger
+@enduml

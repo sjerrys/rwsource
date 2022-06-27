@@ -1,0 +1,9 @@
+@startuml
+class ArchitectCategoryTab {
+    + <<const>> InfoRectHeight : float = 270f
+    + ArchitectCategoryTab(def:DesignationCategoryDef)
+    + DesignationTabOnGUI() : void
+}
+ArchitectCategoryTab --> "def" DesignationCategoryDef
+ArchitectCategoryTab --> "InfoRect" Rect
+@enduml

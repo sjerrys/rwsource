@@ -1,0 +1,12 @@
+@startuml
+class LordJob_ExitOnShuttle {
+    + <<override>> AddFleeToil : bool <<get>>
+    + <<override>> RemoveDownedPawns : bool <<get>>
+    + LordJob_ExitOnShuttle()
+    + LordJob_ExitOnShuttle(shuttle:Thing, addFleeToil:bool)
+    + <<override>> CreateGraph() : StateGraph
+    + <<override>> ExposeData() : void
+}
+LordJob <|-- LordJob_ExitOnShuttle
+LordJob_ExitOnShuttle --> "shuttle" Thing
+@enduml

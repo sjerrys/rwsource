@@ -1,0 +1,7 @@
+@startuml
+enum WorkshopInteractStage {
+    None,
+    CreatingItem,
+    SubmittingItem,
+}
+@enduml

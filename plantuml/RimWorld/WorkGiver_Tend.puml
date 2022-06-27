@@ -1,0 +1,12 @@
+@startuml
+class WorkGiver_Tend {
+    + <<override>> MaxPathDanger(pawn:Pawn) : Danger
+    + <<override>> PotentialWorkThingsGlobal(pawn:Pawn) : IEnumerable<Thing>
+    + <<override>> HasJobOnThing(pawn:Pawn, t:Thing, forced:bool) : bool
+    + {static} GoodLayingStatusForTend(patient:Pawn, doctor:Pawn) : bool
+    + <<override>> JobOnThing(pawn:Pawn, t:Thing, forced:bool) : Job
+}
+WorkGiver_Scanner <|-- WorkGiver_Tend
+WorkGiver_Tend --> "PathEndMode" PathEndMode
+WorkGiver_Tend --> "PotentialWorkThingRequest" ThingRequest
+@enduml

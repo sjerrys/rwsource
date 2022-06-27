@@ -1,0 +1,5 @@
+@startuml
+class IncidentWorker_Flashstorm {
+}
+IncidentWorker <|-- IncidentWorker_Flashstorm
+@enduml

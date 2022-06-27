@@ -1,0 +1,6 @@
+@startuml
+class CompProperties_ChangeableProjectile {
+    + CompProperties_ChangeableProjectile()
+}
+CompProperties <|-- CompProperties_ChangeableProjectile
+@enduml

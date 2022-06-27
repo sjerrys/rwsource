@@ -1,0 +1,6 @@
+@startuml
+class JobDriver_WaitDowned {
+    + <<override>> DecorateWaitToil(wait:Toil) : void
+}
+JobDriver_Wait <|-- JobDriver_WaitDowned
+@enduml

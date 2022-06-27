@@ -1,0 +1,15 @@
+@startuml
+class GameCondition_Aurora {
+    + <<const>> MaxSunGlow : float = 0.5f
+    + <<override>> TransitionTicks : int <<get>>
+    + <<override>> ExposeData() : void
+    + <<override>> Init() : void
+    + <<override>> SkyGazeChanceFactor(map:Map) : float
+    + <<override>> SkyGazeJoyGainFactor(map:Map) : float
+    + <<override>> SkyTargetLerpFactor(map:Map) : float
+    + <<override>> SkyTarget(map:Map) : SkyTarget?
+    + <<override>> GameConditionTick() : void
+}
+GameCondition <|-- GameCondition_Aurora
+GameCondition_Aurora --> "CurrentColor" Color
+@enduml

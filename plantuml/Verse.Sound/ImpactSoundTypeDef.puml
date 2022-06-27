@@ -1,0 +1,7 @@
+@startuml
+class ImpactSoundTypeDef {
+    + playOnlyIfHitPawn : bool
+}
+Def <|-- ImpactSoundTypeDef
+ImpactSoundTypeDef --> "soundDef" SoundDef
+@enduml

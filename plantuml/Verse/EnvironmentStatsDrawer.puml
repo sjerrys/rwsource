@@ -1,0 +1,9 @@
+@startuml
+class EnvironmentStatsDrawer <<static>> {
+    + <<const>> WindowPadding : float = 12f
+    + {static} EnvironmentStatsOnGUI() : void
+    + {static} GetWindowRect(shouldShowBeauty:bool, shouldShowRoomStats:bool) : Rect
+    + {static} DrawRoomOverlays() : void
+    + {static} DoRoomInfo(room:Room, curY:float, windowRect:Rect) : void
+}
+@enduml

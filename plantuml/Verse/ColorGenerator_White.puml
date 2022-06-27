@@ -1,0 +1,6 @@
+@startuml
+class ColorGenerator_White {
+    + <<override>> NewRandomizedColor() : Color
+}
+ColorGenerator <|-- ColorGenerator_White
+@enduml

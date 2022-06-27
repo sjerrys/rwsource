@@ -1,0 +1,7 @@
+@startuml
+class BiomeWorker_IceSheet {
+    + <<override>> GetScore(tile:Tile, tileID:int) : float
+    + {static} PermaIceScore(tile:Tile) : float
+}
+BiomeWorker <|-- BiomeWorker_IceSheet
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class CompProperties_UseEffect {
+    + doCameraShake : bool
+    + moteOnUsedScale : float = 1f
+    + CompProperties_UseEffect()
+}
+CompProperties <|-- CompProperties_UseEffect
+CompProperties_UseEffect --> "moteOnUsed" ThingDef
+@enduml

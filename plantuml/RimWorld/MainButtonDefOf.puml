@@ -1,0 +1,12 @@
+@startuml
+class MainButtonDefOf <<static>> {
+    {static} MainButtonDefOf()
+}
+MainButtonDefOf --> "Inspect" MainButtonDef
+MainButtonDefOf --> "Architect" MainButtonDef
+MainButtonDefOf --> "Research" MainButtonDef
+MainButtonDefOf --> "Menu" MainButtonDef
+MainButtonDefOf --> "World" MainButtonDef
+MainButtonDefOf --> "Quests" MainButtonDef
+MainButtonDefOf --> "Factions" MainButtonDef
+@enduml

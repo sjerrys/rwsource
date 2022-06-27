@@ -1,0 +1,6 @@
+@startuml
+class PawnsArriveQuestPartUtility <<static>> {
+    + {static} GetQuestLookTargets(pawns:IEnumerable<Pawn>) : IEnumerable<Pawn>
+    + {static} IncreasesPopulation(pawns:IEnumerable<Pawn>, joinPlayer:bool, makePrisoners:bool) : bool
+}
+@enduml

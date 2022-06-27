@@ -1,0 +1,16 @@
+@startuml
+class ExitMapGrid <<sealed>> {
+    + MapUsesExitGrid : bool <<get>>
+    + ExitMapGrid(map:Map)
+    + GetCellBool(index:int) : bool
+    + GetCellExtraColor(index:int) : Color
+    + IsExitCell(c:IntVec3) : bool
+    + ExitMapGridUpdate() : void
+    + Notify_LOSBlockerSpawned() : void
+    + Notify_LOSBlockerDespawned() : void
+}
+ICellBoolGiver <|-- ExitMapGrid
+ExitMapGrid --> "Drawer" CellBoolDrawer
+ExitMapGrid --> "Grid" BoolGrid
+ExitMapGrid --> "Color" Color
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+class CompCauseGameCondition_PsychicEmanation {
+    + <<override>> Initialize(props:CompProperties) : void
+    + <<override>> PostSpawnSetup(respawningAfterLoad:bool) : void
+    + <<override>> CompTick() : void
+    + <<override>> PostExposeData() : void
+    + <<override>> CompGetGizmosExtra() : IEnumerable<Gizmo>
+    + <<override>> CompInspectStringExtra() : string
+    + <<override>> RandomizeSettings_NewTemp_NewTemp(site:Site) : void
+}
+CompCauseGameCondition <|-- CompCauseGameCondition_PsychicEmanation
+CompCauseGameCondition_PsychicEmanation --> "gender" Gender
+CompCauseGameCondition_PsychicEmanation --> "Props" CompProperties_CausesGameCondition_PsychicEmanation
+CompCauseGameCondition_PsychicEmanation --> "Level" PsychicDroneLevel
+@enduml

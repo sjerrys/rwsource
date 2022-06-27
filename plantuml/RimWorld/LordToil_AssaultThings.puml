@@ -1,0 +1,12 @@
+@startuml
+class LordToil_AssaultThings {
+    + <<const>> UpdateIntervalTicks : int = 300
+    + <<override>> ForceHighStoryDanger : bool <<get>>
+    + <<override>> AllowSatisfyLongNeeds : bool <<get>>
+    + LordToil_AssaultThings(things:IEnumerable<Thing>)
+    + <<override>> Notify_ReachedDutyLocation(pawn:Pawn) : void
+    + <<override>> UpdateAllDuties() : void
+    + <<override>> LordToilTick() : void
+}
+LordToil <|-- LordToil_AssaultThings
+@enduml

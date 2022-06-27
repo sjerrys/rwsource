@@ -1,0 +1,13 @@
+@startuml
+class MathEvaluatorCustomContext {
+    + <<override>> Whitespace : bool <<get>>
+    + MathEvaluatorCustomContext()
+    + MathEvaluatorCustomContext(nt:NameTable, args:XsltArgumentList)
+    + <<override>> ResolveFunction(prefix:string, name:string, argTypes:XPathResultType[]) : IXsltContextFunction
+    + <<override>> ResolveVariable(prefix:string, name:string) : IXsltContextVariable
+    + <<override>> PreserveWhitespace(node:XPathNavigator) : bool
+    + <<override>> CompareDocument(baseUri:string, nextbaseUri:string) : int
+}
+XsltContext <|-- MathEvaluatorCustomContext
+MathEvaluatorCustomContext --> "ArgList" XsltArgumentList
+@enduml

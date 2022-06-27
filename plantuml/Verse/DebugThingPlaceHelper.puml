@@ -1,0 +1,8 @@
+@startuml
+class DebugThingPlaceHelper <<static>> {
+    + {static} IsDebugSpawnable(def:ThingDef, allowPlayerBuildable:bool) : bool
+    + {static} DebugSpawn(def:ThingDef, c:IntVec3, stackCount:int, direct:bool) : void
+    + {static} TryPlaceOptionsForStackCount(stackCount:int, direct:bool) : List<DebugMenuOption>
+    + {static} SpawnOptions(wipeMode:WipeMode) : List<DebugMenuOption>
+}
+@enduml

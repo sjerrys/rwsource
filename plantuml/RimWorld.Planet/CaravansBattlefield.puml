@@ -1,0 +1,10 @@
+@startuml
+class CaravansBattlefield {
+    + WonBattle : bool <<get>>
+    + <<override>> ExposeData() : void
+    + <<override>> ShouldRemoveMapNow(alsoRemoveWorldObject:bool) : bool
+    + <<override>> Tick() : void
+    + <<override>> PostMapGenerate() : void
+}
+MapParent <|-- CaravansBattlefield
+@enduml

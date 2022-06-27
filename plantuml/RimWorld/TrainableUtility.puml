@@ -1,0 +1,19 @@
+@startuml
+class TrainableUtility <<static>> {
+    + <<const>> MinTrainInterval : int = 15000
+    + {static} Reset() : void
+    + {static} MasterString(pawn:Pawn) : string
+    + {static} MinimumHandlingSkill(p:Pawn) : int
+    + {static} MasterSelectButton(rect:Rect, pawn:Pawn, paintable:bool) : void
+    + {static} CanBeMaster(master:Pawn, animal:Pawn, checkSpawned:bool) : bool
+    + {static} GetIconTooltipText(pawn:Pawn) : string
+    + {static} GetAllColonistBondsFor(pet:Pawn) : IEnumerable<Pawn>
+    + {static} DegradationPeriodTicks(def:ThingDef) : int
+    + {static} TamenessCanDecay(def:ThingDef) : bool
+    + {static} TrainedTooRecently(animal:Pawn) : bool
+    + {static} GetWildnessExplanation(def:ThingDef) : string
+}
+class "List`1"<T> {
+}
+TrainableUtility --> "TrainableDefsInListOrder<TrainableDef>" "List`1"
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+class GenSpawn <<static>> {
+    + {static} Spawn(def:ThingDef, loc:IntVec3, map:Map, wipeMode:WipeMode) : Thing
+    + {static} Spawn(newThing:Thing, loc:IntVec3, map:Map, wipeMode:WipeMode) : Thing
+    + {static} Spawn(newThing:Thing, loc:IntVec3, map:Map, rot:Rot4, wipeMode:WipeMode, respawningAfterLoad:bool) : Thing
+    + {static} SpawnBuildingAsPossible(building:Building, map:Map, respawningAfterLoad:bool) : void
+    + {static} Refund(thing:Thing, map:Map, avoidThisRect:CellRect) : void
+    + {static} WipeExistingThings(thingPos:IntVec3, thingRot:Rot4, thingDef:BuildableDef, map:Map, mode:DestroyMode) : void
+    + {static} WipeAndRefundExistingThings(thingPos:IntVec3, thingRot:Rot4, thingDef:BuildableDef, map:Map) : void
+    + {static} CheckMoveItemsAside(thingPos:IntVec3, thingRot:Rot4, thingDef:ThingDef, map:Map) : void
+    + {static} WouldWipeAnythingWith(thingPos:IntVec3, thingRot:Rot4, thingDef:BuildableDef, map:Map, predicate:Predicate<Thing>) : bool
+    + {static} WouldWipeAnythingWith(cellRect:CellRect, thingDef:BuildableDef, map:Map, predicate:Predicate<Thing>) : bool
+    + {static} SpawningWipes(newEntDef:BuildableDef, oldEntDef:BuildableDef) : bool
+}
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class TrainableDefOf <<static>> {
+    {static} TrainableDefOf()
+}
+TrainableDefOf --> "Tameness" TrainableDef
+TrainableDefOf --> "Obedience" TrainableDef
+TrainableDefOf --> "Release" TrainableDef
+@enduml

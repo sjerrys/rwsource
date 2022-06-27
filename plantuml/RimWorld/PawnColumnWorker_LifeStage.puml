@@ -1,0 +1,5 @@
+@startuml
+class PawnColumnWorker_LifeStage {
+}
+PawnColumnWorker_Icon <|-- PawnColumnWorker_LifeStage
+@enduml

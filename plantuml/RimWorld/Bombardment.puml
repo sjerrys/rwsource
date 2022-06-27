@@ -1,0 +1,28 @@
+@startuml
+class Bombardment {
+    + impactAreaRadius : float = 15f
+    + randomFireRadius : int = 25
+    + bombIntervalTicks : int = 18
+    + warmupTicks : int = 60
+    + explosionCount : int = 30
+    + <<const>> EffectiveAreaRadius : int = 23
+    + <<override>> StartStrike() : void
+    + <<override>> Tick() : void
+    + <<override>> Draw() : void
+    + <<override>> ExposeData() : void
+}
+class BombardmentProjectile {
+    + LifeTime : int <<get>>
+    + BombardmentProjectile()
+    + BombardmentProjectile(lifeTime:int, targetCell:IntVec3)
+    + Tick() : void
+    + Draw(material:Material) : void
+    + ExposeData() : void
+}
+OrbitalStrike <|-- Bombardment
+Bombardment o-> "explosionRadiusRange" FloatRange
+Bombardment o-> "DistanceChanceFactor" SimpleCurve
+Bombardment +-- BombardmentProjectile
+IExposable <|-- BombardmentProjectile
+BombardmentProjectile --> "targetCell" IntVec3
+@enduml

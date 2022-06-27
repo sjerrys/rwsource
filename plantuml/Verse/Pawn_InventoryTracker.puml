@@ -1,0 +1,30 @@
+@startuml
+class Pawn_InventoryTracker {
+    + UnloadEverything : bool <<get>> <<set>>
+    + Pawn_InventoryTracker(pawn:Pawn)
+    + ExposeData() : void
+    + InventoryTrackerTick() : void
+    + InventoryTrackerTickRare() : void
+    + DropAllNearPawn(pos:IntVec3, forbid:bool, unforbid:bool) : void
+    + DestroyAll(mode:DestroyMode) : void
+    + Contains(item:Thing) : bool
+    + NotForSale(item:Thing) : bool
+    + TryAddItemNotForSale(item:Thing) : void
+    + Notify_ItemRemoved(item:Thing) : void
+    + GetDirectlyHeldThings() : ThingOwner
+    + GetChildHolders(outChildren:List<IThingHolder>) : void
+    + GetDrugs() : IEnumerable<Thing>
+    + GetCombatEnhancingDrugs() : IEnumerable<Thing>
+    + FindCombatEnhancingDrug() : Thing
+    + GetGizmos() : IEnumerable<Gizmo>
+}
+class "ThingOwner`1"<T> {
+}
+IThingHolder <|-- Pawn_InventoryTracker
+IExposable <|-- Pawn_InventoryTracker
+Pawn_InventoryTracker --> "pawn" Pawn
+Pawn_InventoryTracker --> "innerContainer<Thing>" "ThingOwner`1"
+Pawn_InventoryTracker o-> "DrugTex" Texture2D
+Pawn_InventoryTracker --> "FirstUnloadableThing" ThingCount
+Pawn_InventoryTracker --> "ParentHolder" IThingHolder
+@enduml

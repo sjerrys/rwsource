@@ -1,0 +1,9 @@
+@startuml
+class ReachabilityUtility <<static>> {
+    + {static} CanReach(pawn:Pawn, dest:LocalTargetInfo, peMode:PathEndMode, maxDanger:Danger, canBash:bool, mode:TraverseMode) : bool
+    + {static} CanReachNonLocal(pawn:Pawn, dest:TargetInfo, peMode:PathEndMode, maxDanger:Danger, canBash:bool, mode:TraverseMode) : bool
+    + {static} CanReachMapEdge(p:Pawn) : bool
+    + {static} ClearCache() : void
+    + {static} ClearCacheFor(p:Pawn) : void
+}
+@enduml

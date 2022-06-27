@@ -1,0 +1,9 @@
+@startuml
+class CompUsable {
+    + <<override>> CompFloatMenuOptions(myPawn:Pawn) : IEnumerable<FloatMenuOption>
+    + <<virtual>> TryStartUseJob(pawn:Pawn, extraTarget:LocalTargetInfo) : void
+    + UsedBy(p:Pawn) : void
+}
+ThingComp <|-- CompUsable
+CompUsable --> "Props" CompProperties_Usable
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class MoteLeaf {
+    + <<override>> Alpha : float <<get>>
+    + Initialize(position:Vector3, spawnDelay:float, front:bool, treeHeight:float) : void
+    + <<override>> Draw() : void
+}
+Mote <|-- MoteLeaf
+@enduml

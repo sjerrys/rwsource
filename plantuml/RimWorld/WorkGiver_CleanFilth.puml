@@ -1,0 +1,12 @@
+@startuml
+class WorkGiver_CleanFilth {
+    + <<override>> MaxRegionsToScanBeforeGlobalSearch : int <<get>>
+    + <<override>> PotentialWorkThingsGlobal(pawn:Pawn) : IEnumerable<Thing>
+    + <<override>> ShouldSkip(pawn:Pawn, forced:bool) : bool
+    + <<override>> HasJobOnThing(pawn:Pawn, t:Thing, forced:bool) : bool
+    + <<override>> JobOnThing(pawn:Pawn, t:Thing, forced:bool) : Job
+}
+WorkGiver_Scanner <|-- WorkGiver_CleanFilth
+WorkGiver_CleanFilth --> "PathEndMode" PathEndMode
+WorkGiver_CleanFilth --> "PotentialWorkThingRequest" ThingRequest
+@enduml

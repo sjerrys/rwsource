@@ -1,0 +1,16 @@
+@startuml
+class WornGraphicData {
+    + renderUtilityAsPack : bool
+    + BeltOffsetAt(facing:Rot4, bodyType:BodyTypeDef) : Vector2
+    + BeltScaleAt(bodyType:BodyTypeDef) : Vector2
+}
+WornGraphicData --> "north" WornGraphicDirectionData
+WornGraphicData --> "south" WornGraphicDirectionData
+WornGraphicData --> "east" WornGraphicDirectionData
+WornGraphicData --> "west" WornGraphicDirectionData
+WornGraphicData --> "male" WornGraphicBodyTypeData
+WornGraphicData --> "female" WornGraphicBodyTypeData
+WornGraphicData --> "thin" WornGraphicBodyTypeData
+WornGraphicData --> "hulk" WornGraphicBodyTypeData
+WornGraphicData --> "fat" WornGraphicBodyTypeData
+@enduml

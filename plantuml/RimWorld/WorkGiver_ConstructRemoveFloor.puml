@@ -1,0 +1,8 @@
+@startuml
+class WorkGiver_ConstructRemoveFloor {
+    + <<override>> JobOnCell(pawn:Pawn, c:IntVec3, forced:bool) : Job
+    + <<override>> HasJobOnCell(pawn:Pawn, c:IntVec3, forced:bool) : bool
+    + {static} AnyBuildingBlockingFloorRemoval(c:IntVec3, map:Map) : bool
+}
+WorkGiver_ConstructAffectFloor <|-- WorkGiver_ConstructRemoveFloor
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class ArmorUtility <<static>> {
+    + <<const>> MaxArmorRating : float = 2f
+    + <<const>> DeflectThresholdFactor : float = 0.5f
+    + {static} GetPostArmorDamage(pawn:Pawn, amount:float, armorPenetration:float, part:BodyPartRecord, damageDef:DamageDef, deflectedByMetalArmor:bool, diminishedByMetalArmor:bool) : float
+}
+@enduml

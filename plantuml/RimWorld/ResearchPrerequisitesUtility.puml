@@ -1,0 +1,18 @@
+@startuml
+class ResearchPrerequisitesUtility <<static>> {
+    + {static} UnlockedDefsGroupedByPrerequisites(rd:ResearchProjectDef) : List<Pair<UnlockedHeader, List<Def>>>
+}
+class UnlockedHeader {
+    + UnlockedHeader(unlockedBy:List<ResearchProjectDef>)
+    + Equals(other:UnlockedHeader) : bool
+    + <<override>> Equals(obj:object) : bool
+    + <<override>> GetHashCode() : int
+}
+class "IEquatable`1"<T> {
+}
+class "List`1"<T> {
+}
+ResearchPrerequisitesUtility +-- UnlockedHeader
+"IEquatable`1" "<UnlockedHeader>" <|-- UnlockedHeader
+UnlockedHeader --> "unlockedBy<ResearchProjectDef>" "List`1"
+@enduml

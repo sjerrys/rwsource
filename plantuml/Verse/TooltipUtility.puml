@@ -1,0 +1,5 @@
+@startuml
+class TooltipUtility <<static>> {
+    + {static} ShotCalculationTipString(target:Thing) : string
+}
+@enduml

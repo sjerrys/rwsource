@@ -1,0 +1,13 @@
+@startuml
+class CastPositionRequest <<struct>> {
+    + maxRangeFromCaster : float
+    + maxRangeFromTarget : float
+    + maxRangeFromLocus : float
+    + wantCoverFromTarget : bool
+    + maxRegions : int
+}
+CastPositionRequest --> "caster" Pawn
+CastPositionRequest --> "target" Thing
+CastPositionRequest --> "verb" Verb
+CastPositionRequest --> "locus" IntVec3
+@enduml

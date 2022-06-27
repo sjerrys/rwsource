@@ -1,0 +1,23 @@
+@startuml
+class DebugOutputsEconomy <<static>> {
+    + {static} ApparelByStuff() : void
+    + {static} ApparelArmor() : void
+    + {static} ApparelInsulation() : void
+    + {static} RecipeSkills() : void
+    + {static} Drugs() : void
+    + {static} Wool() : void
+    + {static} AnimalGrowth() : void
+    + {static} AnimalBreeding() : void
+    + {static} BuildingSkills() : void
+    + {static} Crops() : void
+    + {static} ItemAndBuildingAcquisition() : void
+    + {static} ItemAccessibility() : void
+    + {static} ThingSetMakerTags() : void
+    + {static} ThingSmeltProducts() : void
+    + {static} Recipes() : void
+    + {static} Floors() : void
+    + {static} CostListString(d:BuildableDef, divideByVolume:bool, starIfOnlyBuyable:bool) : string
+    + {static} WorkToProduceBest(d:BuildableDef) : float
+    + {static} HediffsPriceImpact() : void
+}
+@enduml

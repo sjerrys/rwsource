@@ -1,0 +1,14 @@
+@startuml
+class QuestPart_MechCluster {
+    + inSignal : string
+    + tag : string
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> ExposeData() : void
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart <|-- QuestPart_MechCluster
+QuestPart_MechCluster --> "sketch" MechClusterSketch
+QuestPart_MechCluster --> "mapParent" MapParent
+QuestPart_MechCluster --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+@enduml

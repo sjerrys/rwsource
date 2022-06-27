@@ -1,0 +1,10 @@
+@startuml
+class QuestNode_GiveTechprints {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GiveTechprints
+QuestNode_GiveTechprints --> "inSignal<string>" "SlateRef`1"
+QuestNode_GiveTechprints --> "fixedProject<ResearchProjectDef>" "SlateRef`1"
+QuestNode_GiveTechprints --> "storeProjectAs<string>" "SlateRef`1"
+@enduml

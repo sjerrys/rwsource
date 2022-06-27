@@ -1,0 +1,11 @@
+@startuml
+class HediffUtility <<static>> {
+    + {static} TryGetComp(hd:Hediff) : T
+    + {static} IsTended(hd:Hediff) : bool
+    + {static} IsPermanent(hd:Hediff) : bool
+    + {static} FullyImmune(hd:Hediff) : bool
+    + {static} CanHealFromTending(hd:Hediff_Injury) : bool
+    + {static} CanHealNaturally(hd:Hediff_Injury) : bool
+    + {static} CountAddedAndImplantedParts(hs:HediffSet) : int
+}
+@enduml

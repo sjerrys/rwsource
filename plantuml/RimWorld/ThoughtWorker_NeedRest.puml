@@ -1,0 +1,5 @@
+@startuml
+class ThoughtWorker_NeedRest {
+}
+ThoughtWorker <|-- ThoughtWorker_NeedRest
+@enduml

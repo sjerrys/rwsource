@@ -1,0 +1,14 @@
+@startuml
+class WorkGiver_FixBrokenDownBuilding {
+    + {static} NotInHomeAreaTrans : string
+    + {static} ResetStaticData() : void
+    + <<override>> PotentialWorkThingsGlobal(pawn:Pawn) : IEnumerable<Thing>
+    + <<override>> ShouldSkip(pawn:Pawn, forced:bool) : bool
+    + <<override>> MaxPathDanger(pawn:Pawn) : Danger
+    + <<override>> HasJobOnThing(pawn:Pawn, t:Thing, forced:bool) : bool
+    + <<override>> JobOnThing(pawn:Pawn, t:Thing, forced:bool) : Job
+}
+WorkGiver_Scanner <|-- WorkGiver_FixBrokenDownBuilding
+WorkGiver_FixBrokenDownBuilding --> "PotentialWorkThingRequest" ThingRequest
+WorkGiver_FixBrokenDownBuilding --> "PathEndMode" PathEndMode
+@enduml

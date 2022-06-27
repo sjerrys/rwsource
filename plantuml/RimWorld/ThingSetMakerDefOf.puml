@@ -1,0 +1,17 @@
+@startuml
+class ThingSetMakerDefOf <<static>> {
+    {static} ThingSetMakerDefOf()
+}
+ThingSetMakerDefOf --> "MapGen_AncientTempleContents" ThingSetMakerDef
+ThingSetMakerDefOf --> "MapGen_AncientPodContents" ThingSetMakerDef
+ThingSetMakerDefOf --> "MapGen_DefaultStockpile" ThingSetMakerDef
+ThingSetMakerDefOf --> "MapGen_PrisonCellStockpile" ThingSetMakerDef
+ThingSetMakerDefOf --> "Reward_ItemsStandard" ThingSetMakerDef
+ThingSetMakerDefOf --> "DebugCaravanInventory" ThingSetMakerDef
+ThingSetMakerDefOf --> "DebugQuestDropPodsContents" ThingSetMakerDef
+ThingSetMakerDefOf --> "TraderStock" ThingSetMakerDef
+ThingSetMakerDefOf --> "ResourcePod" ThingSetMakerDef
+ThingSetMakerDefOf --> "RefugeePod" ThingSetMakerDef
+ThingSetMakerDefOf --> "Meteorite" ThingSetMakerDef
+ThingSetMakerDefOf --> "VisitorGift" ThingSetMakerDef
+@enduml

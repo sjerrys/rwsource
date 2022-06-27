@@ -1,0 +1,13 @@
+@startuml
+class Page_SelectStartingSite {
+    + <<override>> PageTitle : string <<get>>
+    + Page_SelectStartingSite()
+    + <<override>> PreOpen() : void
+    + <<override>> PostOpen() : void
+    + <<override>> PostClose() : void
+    + <<override>> DoWindowContents(rect:Rect) : void
+    + <<override>> ExtraOnGUI() : void
+}
+Page <|-- Page_SelectStartingSite
+Page_SelectStartingSite --> "InitialSize" Vector2
+@enduml

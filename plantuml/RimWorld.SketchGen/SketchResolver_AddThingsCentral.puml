@@ -1,0 +1,5 @@
+@startuml
+class SketchResolver_AddThingsCentral {
+}
+SketchResolver <|-- SketchResolver_AddThingsCentral
+@enduml

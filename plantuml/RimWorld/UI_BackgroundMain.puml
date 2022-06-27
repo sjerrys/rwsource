@@ -1,0 +1,9 @@
+@startuml
+class UI_BackgroundMain {
+    + <<override>> BackgroundOnGUI() : void
+    + FadeOut() : void
+    + SetOverlayImage(texture:Texture2D) : void
+}
+UIMenuBackground <|-- UI_BackgroundMain
+UI_BackgroundMain --> "overrideBGImage" Texture2D
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+class Alert_RoyalNoThroneAssigned {
+    + Alert_RoyalNoThroneAssigned()
+    + <<override>> GetReport() : AlertReport
+}
+class "List`1"<T> {
+}
+Alert <|-- Alert_RoyalNoThroneAssigned
+Alert_RoyalNoThroneAssigned --> "Targets<Pawn>" "List`1"
+@enduml

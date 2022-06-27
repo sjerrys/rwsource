@@ -1,0 +1,7 @@
+@startuml
+class Trigger_OnHumanlikeHarmAnyThing {
+    + Trigger_OnHumanlikeHarmAnyThing(things:List<Thing>)
+    + <<override>> ActivateOn(lord:Lord, signal:TriggerSignal) : bool
+}
+Trigger <|-- Trigger_OnHumanlikeHarmAnyThing
+@enduml

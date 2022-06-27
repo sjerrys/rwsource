@@ -1,0 +1,7 @@
+@startuml
+class WITab_Terrain {
+    + <<override>> IsVisible : bool <<get>>
+    + WITab_Terrain()
+}
+WITab <|-- WITab_Terrain
+@enduml

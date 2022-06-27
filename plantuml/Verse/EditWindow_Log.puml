@@ -1,0 +1,16 @@
+@startuml
+class EditWindow_Log {
+    + {static} wantsToOpen : bool = false
+    + <<override>> IsDebug : bool <<get>>
+    + EditWindow_Log()
+    + {static} TryAutoOpen() : void
+    + {static} ClearSelectedMessage() : void
+    + {static} SelectLastMessage(expandDetailsPane:bool) : void
+    + {static} ClearAll() : void
+    + <<override>> PostClose() : void
+    + <<override>> DoWindowContents(inRect:Rect) : void
+    + {static} Notify_MessageDequeued(oldMessage:LogMessage) : void
+}
+EditWindow <|-- EditWindow_Log
+EditWindow_Log --> "InitialSize" Vector2
+@enduml

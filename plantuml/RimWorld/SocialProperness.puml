@@ -1,0 +1,6 @@
+@startuml
+class SocialProperness <<static>> {
+    + {static} IsSociallyProper(t:Thing, p:Pawn) : bool
+    + {static} IsSociallyProper(t:Thing, p:Pawn, forPrisoner:bool, animalsCare:bool) : bool
+}
+@enduml

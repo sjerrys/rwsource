@@ -1,0 +1,17 @@
+@startuml
+class PawnRenderer {
+    + PawnRenderer(pawn:Pawn)
+    + RenderPawnAt(drawLoc:Vector3) : void
+    + RenderPawnAt(drawLoc:Vector3, bodyDrawType:RotDrawMode, headStump:bool, invisible:bool) : void
+    + RenderPortrait() : void
+    + DrawEquipmentAiming(eq:Thing, drawLoc:Vector3, aimAngle:float) : void
+    + LayingFacing() : Rot4
+    + BodyAngle() : float
+    + BaseHeadOffsetAt(rotation:Rot4) : Vector3
+    + Notify_DamageApplied(dam:DamageInfo) : void
+    + RendererTick() : void
+    + {static} RenderAsPack(apparel:Apparel) : bool
+}
+PawnRenderer --> "graphics" PawnGraphicSet
+PawnRenderer --> "wiggler" PawnDownedWiggler
+@enduml

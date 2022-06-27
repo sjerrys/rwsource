@@ -1,0 +1,5 @@
+@startuml
+class FeatureWorker_Island {
+}
+FeatureWorker_FloodFill <|-- FeatureWorker_Island
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+class QuestNode_GiveRewards {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GiveRewards
+QuestNode_GiveRewards --> "inSignal<string>" "SlateRef`1"
+QuestNode_GiveRewards --> "parms<RewardsGeneratorParams>" "SlateRef`1"
+QuestNode_GiveRewards --> "customLetterLabel<string>" "SlateRef`1"
+QuestNode_GiveRewards --> "customLetterText<string>" "SlateRef`1"
+QuestNode_GiveRewards --> "customLetterLabelRules<RulePack>" "SlateRef`1"
+QuestNode_GiveRewards --> "customLetterTextRules<RulePack>" "SlateRef`1"
+QuestNode_GiveRewards --> "useDifficultyFactor<bool?>" "SlateRef`1"
+QuestNode_GiveRewards --> "nodeIfChosenPawnSignalUsed" QuestNode
+QuestNode_GiveRewards --> "variants<int?>" "SlateRef`1"
+QuestNode_GiveRewards --> "addCampLootReward<bool>" "SlateRef`1"
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class JobGiver_SlaughterRandomAnimal {
+}
+ThinkNode_JobGiver <|-- JobGiver_SlaughterRandomAnimal
+@enduml

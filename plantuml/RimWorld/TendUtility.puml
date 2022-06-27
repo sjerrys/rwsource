@@ -1,0 +1,13 @@
+@startuml
+class TendUtility <<static>> {
+    + <<const>> NoMedicinePotency : float = 0.3f
+    + <<const>> NoMedicineQualityMax : float = 0.7f
+    + <<const>> NoDoctorTendQuality : float = 0.75f
+    + <<const>> SelfTendQualityFactor : float = 0.7f
+    + {static} DoTend(doctor:Pawn, patient:Pawn, medicine:Medicine) : void
+    + {static} CalculateBaseTendQuality(doctor:Pawn, patient:Pawn, medicine:ThingDef) : float
+    + {static} CalculateBaseTendQuality(doctor:Pawn, patient:Pawn, medicinePotency:float, medicineQualityMax:float) : float
+    + {static} GetOptimalHediffsToTendWithSingleTreatment(patient:Pawn, usingMedicine:bool, outHediffsToTend:List<Hediff>, tendableHediffsInTendPriorityOrder:List<Hediff>) : void
+    + {static} SortByTendPriority(hediffs:List<Hediff>) : void
+}
+@enduml

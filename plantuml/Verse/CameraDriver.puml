@@ -1,0 +1,31 @@
+@startuml
+class CameraDriver {
+    + <<const>> MaxDeltaTime : float = 0.1f
+    + <<const>> StartingSize : float = 24f
+    + <<const>> MinAltitude : float = 15f
+    + {static} HitchReduceFactor : float <<get>>
+    + CellSizePixels : float <<get>>
+    + Awake() : void
+    + OnPreRender() : void
+    + OnPreCull() : void
+    + CameraDriverOnGUI() : void
+    + Update() : void
+    + Expose() : void
+    + ResetSize() : void
+    + JumpToCurrentMapLoc(cell:IntVec3) : void
+    + JumpToCurrentMapLoc(loc:Vector3) : void
+    + SetRootPosAndSize(rootPos:Vector3, rootSize:float) : void
+    + {static} GetExtraVelocityFromReleasingDragButton(dragTimeStamps:List<DragTimeStamp>, velocityFromMouseDragInitialFactor:float) : Vector2
+}
+class DragTimeStamp <<struct>> {
+    + time : float
+}
+MonoBehaviour <|-- CameraDriver
+CameraDriver o-> "shaker" CameraShaker
+CameraDriver o-> "config" CameraMapConfig
+CameraDriver --> "CurrentZoom" CameraZoomRange
+CameraDriver --> "MapPosition" IntVec3
+CameraDriver --> "CurrentViewRect" CellRect
+CameraDriver +-- DragTimeStamp
+DragTimeStamp --> "posDelta" Vector2
+@enduml

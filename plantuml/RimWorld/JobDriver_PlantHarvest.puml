@@ -1,0 +1,5 @@
+@startuml
+class JobDriver_PlantHarvest {
+}
+JobDriver_PlantWork <|-- JobDriver_PlantHarvest
+@enduml

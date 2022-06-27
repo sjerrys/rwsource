@@ -1,0 +1,9 @@
+@startuml
+class CompProperties_FireOverlay {
+    + fireSize : float = 1f
+    + CompProperties_FireOverlay()
+    + <<override>> DrawGhost(center:IntVec3, rot:Rot4, thingDef:ThingDef, ghostCol:Color, drawAltitude:AltitudeLayer, thing:Thing) : void
+}
+CompProperties <|-- CompProperties_FireOverlay
+CompProperties_FireOverlay --> "offset" Vector3
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class LordToil_Stage {
+    + <<override>> ForceHighStoryDanger : bool <<get>>
+    + LordToil_Stage(stagingLoc:IntVec3)
+    + <<override>> UpdateAllDuties() : void
+}
+LordToil <|-- LordToil_Stage
+LordToil_Stage --> "FlagLoc" IntVec3
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class PsychicDroneLevelUtility <<static>> {
+    + {static} GetLabel(level:PsychicDroneLevel) : string
+    + {static} GetLabelCap(level:PsychicDroneLevel) : string
+}
+@enduml

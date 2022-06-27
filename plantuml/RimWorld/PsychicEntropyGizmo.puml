@@ -1,0 +1,8 @@
+@startuml
+class PsychicEntropyGizmo {
+    + PsychicEntropyGizmo(tracker:Pawn_PsychicEntropyTracker)
+    + <<override>> GizmoOnGUI(topLeft:Vector2, maxWidth:float) : GizmoResult
+    + <<override>> GetWidth(maxWidth:float) : float
+}
+Gizmo <|-- PsychicEntropyGizmo
+@enduml

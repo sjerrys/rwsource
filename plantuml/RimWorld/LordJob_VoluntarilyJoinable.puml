@@ -1,0 +1,7 @@
+@startuml
+abstract class LordJob_VoluntarilyJoinable {
+    + <<override>> AddFleeToil : bool <<get>>
+    + <<virtual>> VoluntaryJoinPriorityFor(p:Pawn) : float
+}
+LordJob <|-- LordJob_VoluntarilyJoinable
+@enduml

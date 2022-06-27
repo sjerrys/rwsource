@@ -1,0 +1,13 @@
+@startuml
+class WorldTargeter {
+    + closeWorldTabWhenFinished : bool
+    + IsTargeting : bool <<get>>
+    + BeginTargeting_NewTemp(action:Func<GlobalTargetInfo, bool>, canTargetTiles:bool, mouseAttachment:Texture2D, closeWorldTabWhenFinished:bool, onUpdate:Action, extraLabelGetter:Func<GlobalTargetInfo, string>, canSelectTarget:Func<GlobalTargetInfo, bool>) : void
+    + BeginTargeting(action:Func<GlobalTargetInfo, bool>, canTargetTiles:bool, mouseAttachment:Texture2D, closeWorldTabWhenFinished:bool, onUpdate:Action, extraLabelGetter:Func<GlobalTargetInfo, string>) : void
+    + StopTargeting() : void
+    + ProcessInputEvents() : void
+    + TargeterOnGUI() : void
+    + TargeterUpdate() : void
+    + IsTargetedNow(o:WorldObject, worldObjectsUnderMouse:List<WorldObject>) : bool
+}
+@enduml

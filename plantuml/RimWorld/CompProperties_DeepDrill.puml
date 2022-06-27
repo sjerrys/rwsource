@@ -1,0 +1,6 @@
+@startuml
+class CompProperties_DeepDrill {
+    + CompProperties_DeepDrill()
+}
+CompProperties <|-- CompProperties_DeepDrill
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class Printer_Shadow <<static>> {
+    + {static} PrintShadow(layer:SectionLayer, center:Vector3, shadow:ShadowData, rotation:Rot4) : void
+    + {static} PrintShadow(layer:SectionLayer, center:Vector3, volume:Vector3, rotation:Rot4) : void
+}
+@enduml

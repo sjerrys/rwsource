@@ -1,0 +1,5 @@
+@startuml
+class MurmurHash <<static>> {
+    + {static} GetInt(seed:uint, input:uint) : int
+}
+@enduml

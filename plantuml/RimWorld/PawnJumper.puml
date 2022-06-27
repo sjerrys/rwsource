@@ -1,0 +1,10 @@
+@startuml
+class PawnJumper {
+    {static} PawnJumper()
+    + <<override>> DrawAt(drawLoc:Vector3, flip:bool) : void
+    + <<override>> Tick() : void
+    + <<override>> Destroy(mode:DestroyMode) : void
+}
+PawnFlyer <|-- PawnJumper
+PawnJumper --> "DrawPos" Vector3
+@enduml

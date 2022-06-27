@@ -1,0 +1,17 @@
+@startuml
+class InflateBlocks <<sealed>> {
+}
+enum InflateBlockMode {
+    TYPE,
+    LENS,
+    STORED,
+    TABLE,
+    BTREE,
+    DTREE,
+    CODES,
+    DRY,
+    DONE,
+    BAD,
+}
+InflateBlocks +-- InflateBlockMode
+@enduml

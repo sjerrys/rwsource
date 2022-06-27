@@ -1,0 +1,8 @@
+@startuml
+abstract class RoadDefGenStep {
+    + antialiasingMultiplier : float = 1f
+    + periodicSpacing : int
+    + {abstract} Place(map:Map, position:IntVec3, rockDef:TerrainDef, origin:IntVec3, distance:GenStep_Roads.DistanceElement[,]) : void
+}
+RoadDefGenStep --> "chancePerPositionCurve" SimpleCurve
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+abstract class IncidentWorker_Disease {
+    + ApplyToPawns(pawns:IEnumerable<Pawn>, blockedInfo:string) : List<Pawn>
+}
+IncidentWorker <|-- IncidentWorker_Disease
+@enduml

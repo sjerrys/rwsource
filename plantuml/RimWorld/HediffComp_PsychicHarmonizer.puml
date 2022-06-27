@@ -1,0 +1,7 @@
+@startuml
+class HediffComp_PsychicHarmonizer {
+    + <<override>> CompPostTick(severityAdjustment:float) : void
+}
+HediffComp <|-- HediffComp_PsychicHarmonizer
+HediffComp_PsychicHarmonizer --> "Props" HediffCompProperties_PsychicHarmonizer
+@enduml

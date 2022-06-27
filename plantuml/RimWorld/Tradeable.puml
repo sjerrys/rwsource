@@ -1,0 +1,45 @@
+@startuml
+class Tradeable {
+    + <<override>> CountToTransfer : int <<get>> <<protected set>>
+    + <<override>> Label : string <<get>>
+    + <<virtual>> BaseMarketValue : float <<get>>
+    + <<override>> Interactive : bool <<get>>
+    + <<virtual>> TraderWillTrade : bool <<get>>
+    + <<override>> HasAnyThing : bool <<get>>
+    + <<override>> TipDescription : string <<get>>
+    + <<virtual>> IsCurrency : bool <<get>>
+    + <<virtual>> IsFavor : bool <<get>>
+    + CurTotalCurrencyCostForSource : float <<get>>
+    + CurTotalCurrencyCostForDestination : float <<get>>
+    + <<virtual>> CostToInt(cost:float) : int
+    + Tradeable()
+    + Tradeable(thingColony:Thing, thingTrader:Thing)
+    + AddThing(t:Thing, trans:Transactor) : void
+    + PriceTypeFor(action:TradeAction) : PriceType
+    + GetPriceTooltip(action:TradeAction) : string
+    + <<virtual>> GetPriceFor(action:TradeAction) : float
+    + <<override>> GetMinimumToTransfer() : int
+    + <<override>> GetMaximumToTransfer() : int
+    + <<override>> UnderflowReport() : AcceptanceReport
+    + <<override>> OverflowReport() : AcceptanceReport
+    + <<virtual>> CountHeldBy(trans:Transactor) : int
+    + CountPostDealFor(trans:Transactor) : int
+    + <<virtual>> ResolveTrade() : void
+    + <<override>> ToString() : string
+    + <<override>> GetHashCode() : int
+    + <<override>> ExposeData() : void
+}
+class "List`1"<T> {
+}
+Transferable <|-- Tradeable
+Tradeable o-> "thingsColony<Thing>" "List`1"
+Tradeable o-> "thingsTrader<Thing>" "List`1"
+Tradeable --> "FirstThingColony" Thing
+Tradeable --> "FirstThingTrader" Thing
+Tradeable --> "AnyThing" Thing
+Tradeable --> "ThingDef" ThingDef
+Tradeable --> "StuffDef" ThingDef
+Tradeable --> "ActionToDo" TradeAction
+Tradeable --> "PositiveCountDirection" TransferablePositiveCountDirection
+Tradeable --> "NewInfoDialog" Window
+@enduml

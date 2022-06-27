@@ -1,0 +1,26 @@
+@startuml
+class CompCanBeDormant {
+    + makeTick : int
+    + wokeUpTick : int
+    + wakeUpOnTick : int
+    + wakeUpSignalTag : string
+    + <<const>> DefaultWakeUpSignal : string = "CompCanBeDormant.WakeUp"
+    + Awake : bool <<get>>
+    + <<override>> PostPostMake() : void
+    + <<override>> Initialize(props:CompProperties) : void
+    + <<override>> CompGetGizmosExtra() : IEnumerable<Gizmo>
+    + <<override>> CompInspectStringExtra() : string
+    + WakeUpWithDelay() : void
+    + WakeUp() : void
+    + ToSleep() : void
+    + <<override>> CompTickRare() : void
+    + <<override>> CompTick() : void
+    + TickRareWorker() : void
+    + <<override>> Notify_SignalReceived(signal:Signal) : void
+    + <<override>> PostExposeData() : void
+}
+class "List`1"<T> {
+}
+ThingComp <|-- CompCanBeDormant
+CompCanBeDormant --> "wakeUpSignalTags<string>" "List`1"
+@enduml

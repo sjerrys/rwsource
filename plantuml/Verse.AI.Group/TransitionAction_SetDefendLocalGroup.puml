@@ -1,0 +1,6 @@
+@startuml
+class TransitionAction_SetDefendLocalGroup {
+    + <<override>> DoAction(trans:Transition) : void
+}
+TransitionAction <|-- TransitionAction_SetDefendLocalGroup
+@enduml

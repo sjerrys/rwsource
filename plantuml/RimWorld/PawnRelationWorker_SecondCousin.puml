@@ -1,0 +1,6 @@
+@startuml
+class PawnRelationWorker_SecondCousin {
+    + <<override>> InRelation(me:Pawn, other:Pawn) : bool
+}
+PawnRelationWorker <|-- PawnRelationWorker_SecondCousin
+@enduml

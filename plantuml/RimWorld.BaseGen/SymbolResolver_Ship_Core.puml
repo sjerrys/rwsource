@@ -1,0 +1,6 @@
+@startuml
+class SymbolResolver_Ship_Core {
+    + <<override>> Resolve(rp:ResolveParams) : void
+}
+SymbolResolver <|-- SymbolResolver_Ship_Core
+@enduml

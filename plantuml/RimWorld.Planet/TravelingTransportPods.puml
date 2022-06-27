@@ -1,0 +1,22 @@
+@startuml
+class TravelingTransportPods {
+    + destinationTile : int
+    + <<override>> ExpandingIconFlipHorizontal : bool <<get>>
+    + <<override>> ExpandingIconRotation : float <<get>>
+    + PodsHaveAnyFreeColonist : bool <<get>>
+    + <<override>> ExposeData() : void
+    + <<override>> PostAdd() : void
+    + <<override>> Tick() : void
+    + AddPod(contents:ActiveDropPodInfo, justLeftTheMap:bool) : void
+    + ContainsPawn(p:Pawn) : bool
+    + GetDirectlyHeldThings() : ThingOwner
+    + GetChildHolders(outChildren:List<IThingHolder>) : void
+}
+class "IEnumerable`1"<T> {
+}
+WorldObject <|-- TravelingTransportPods
+IThingHolder <|-- TravelingTransportPods
+TravelingTransportPods --> "arrivalAction" TransportPodsArrivalAction
+TravelingTransportPods --> "DrawPos" Vector3
+TravelingTransportPods --> "Pawns<Pawn>" "IEnumerable`1"
+@enduml

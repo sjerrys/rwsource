@@ -1,0 +1,6 @@
+@startuml
+class WeatherOverlay_Fallout {
+    + WeatherOverlay_Fallout()
+}
+SkyOverlay <|-- WeatherOverlay_Fallout
+@enduml

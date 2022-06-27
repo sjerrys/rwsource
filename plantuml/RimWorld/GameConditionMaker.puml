@@ -1,0 +1,6 @@
+@startuml
+class GameConditionMaker <<static>> {
+    + {static} MakeConditionPermanent(def:GameConditionDef) : GameCondition
+    + {static} MakeCondition(def:GameConditionDef, duration:int) : GameCondition
+}
+@enduml

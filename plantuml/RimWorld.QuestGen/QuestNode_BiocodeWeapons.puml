@@ -1,0 +1,9 @@
+@startuml
+class QuestNode_BiocodeWeapons {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_BiocodeWeapons
+QuestNode_BiocodeWeapons --> "inSignal<string>" "SlateRef`1"
+QuestNode_BiocodeWeapons --> "pawns<IEnumerable<Pawn>>" "SlateRef`1"
+@enduml

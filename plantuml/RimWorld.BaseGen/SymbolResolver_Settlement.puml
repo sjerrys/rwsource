@@ -1,0 +1,7 @@
+@startuml
+class SymbolResolver_Settlement {
+    + <<override>> Resolve(rp:ResolveParams) : void
+}
+SymbolResolver <|-- SymbolResolver_Settlement
+SymbolResolver_Settlement o-> "DefaultPawnsPoints" FloatRange
+@enduml

@@ -1,0 +1,19 @@
+@startuml
+class GlowFlooder {
+    + GlowFlooder(map:Map)
+    + AddFloodGlowFor(theGlower:CompGlower, glowGrid:Color32[]) : void
+}
+class GlowFloodCell <<struct>> {
+    + intDist : int
+    + status : uint
+}
+class CompareGlowFlooderLightSquares {
+    + CompareGlowFlooderLightSquares(grid:GlowFloodCell[])
+    + Compare(a:int, b:int) : int
+}
+class "IComparer`1"<T> {
+}
+GlowFlooder +-- GlowFloodCell
+GlowFlooder +-- CompareGlowFlooderLightSquares
+"IComparer`1" "<int>" <|-- CompareGlowFlooderLightSquares
+@enduml

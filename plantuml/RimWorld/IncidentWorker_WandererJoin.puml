@@ -1,0 +1,8 @@
+@startuml
+class IncidentWorker_WandererJoin {
+    + <<virtual>> GeneratePawn() : Pawn
+    + <<virtual>> CanSpawnJoiner(map:Map) : bool
+    + <<virtual>> SpawnJoiner(map:Map, pawn:Pawn) : void
+}
+IncidentWorker <|-- IncidentWorker_WandererJoin
+@enduml

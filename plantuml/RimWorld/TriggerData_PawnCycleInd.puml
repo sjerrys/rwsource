@@ -1,0 +1,7 @@
+@startuml
+class TriggerData_PawnCycleInd {
+    + pawnCycleInd : int
+    + <<override>> ExposeData() : void
+}
+TriggerData <|-- TriggerData_PawnCycleInd
+@enduml

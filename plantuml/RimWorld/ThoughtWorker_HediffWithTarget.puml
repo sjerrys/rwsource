@@ -1,0 +1,5 @@
+@startuml
+class ThoughtWorker_HediffWithTarget {
+}
+ThoughtWorker_Hediff <|-- ThoughtWorker_HediffWithTarget
+@enduml

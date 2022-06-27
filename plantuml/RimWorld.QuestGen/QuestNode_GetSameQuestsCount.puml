@@ -1,0 +1,8 @@
+@startuml
+class QuestNode_GetSameQuestsCount {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GetSameQuestsCount
+QuestNode_GetSameQuestsCount --> "storeAs<string>" "SlateRef`1"
+@enduml

@@ -1,0 +1,16 @@
+@startuml
+class WidgetsWork <<static>> {
+    + <<const>> WorkBoxSize : float = 25f
+    + {static} ColorOfPriority(prio:int) : Color
+    + {static} DrawWorkBoxFor(x:float, y:float, p:Pawn, wType:WorkTypeDef, incapableBecauseOfCapacities:bool) : void
+    + {static} TipForPawnWorker(p:Pawn, wDef:WorkTypeDef, incapableBecauseOfCapacities:bool) : string
+}
+WidgetsWork o-> "WorkBoxBGTex_Awful" Texture2D
+WidgetsWork o-> "WorkBoxBGTex_Bad" Texture2D
+WidgetsWork o-> "WorkBoxBGTex_Mid" Texture2D
+WidgetsWork o-> "WorkBoxBGTex_Excellent" Texture2D
+WidgetsWork o-> "WorkBoxCheckTex" Texture2D
+WidgetsWork o-> "PassionWorkboxMinorIcon" Texture2D
+WidgetsWork o-> "PassionWorkboxMajorIcon" Texture2D
+WidgetsWork o-> "WorkBoxOverlay_Warning" Texture2D
+@enduml

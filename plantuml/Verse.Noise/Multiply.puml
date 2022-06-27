@@ -1,0 +1,8 @@
+@startuml
+class Multiply {
+    + Multiply()
+    + Multiply(lhs:ModuleBase, rhs:ModuleBase)
+    + <<override>> GetValue(x:double, y:double, z:double) : double
+}
+ModuleBase <|-- Multiply
+@enduml

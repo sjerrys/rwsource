@@ -1,0 +1,20 @@
+@startuml
+class QuestNode_GenerateShuttle {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GenerateShuttle
+QuestNode_GenerateShuttle --> "storeAs<string>" "SlateRef`1"
+QuestNode_GenerateShuttle --> "requiredPawns<IEnumerable<Pawn>>" "SlateRef`1"
+QuestNode_GenerateShuttle --> "requiredItems<IEnumerable<ThingDefCount>>" "SlateRef`1"
+QuestNode_GenerateShuttle --> "requireColonistCount<int>" "SlateRef`1"
+QuestNode_GenerateShuttle --> "acceptColonists<bool>" "SlateRef`1"
+QuestNode_GenerateShuttle --> "onlyAcceptColonists<bool>" "SlateRef`1"
+QuestNode_GenerateShuttle --> "onlyAcceptHealthy<bool>" "SlateRef`1"
+QuestNode_GenerateShuttle --> "leaveImmediatelyWhenSatisfied<bool>" "SlateRef`1"
+QuestNode_GenerateShuttle --> "dropEverythingIfUnsatisfied<bool>" "SlateRef`1"
+QuestNode_GenerateShuttle --> "dropEverythingOnArrival<bool>" "SlateRef`1"
+QuestNode_GenerateShuttle --> "owningFaction<Faction>" "SlateRef`1"
+QuestNode_GenerateShuttle --> "permitShuttle<bool>" "SlateRef`1"
+QuestNode_GenerateShuttle --> "hideControls<bool>" "SlateRef`1"
+@enduml

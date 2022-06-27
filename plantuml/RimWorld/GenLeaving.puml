@@ -1,0 +1,10 @@
+@startuml
+class GenLeaving <<static>> {
+    + <<const>> LeaveFraction_DeconstructDefault : float = 0.75f
+    + {static} DoLeavingsFor(diedThing:Thing, map:Map, mode:DestroyMode, listOfLeavingsOut:List<Thing>) : void
+    + {static} DoLeavingsFor(diedThing:Thing, map:Map, mode:DestroyMode, leavingsRect:CellRect, nearPlaceValidator:Predicate<IntVec3>, listOfLeavingsOut:List<Thing>) : void
+    + {static} DoLeavingsFor(terrain:TerrainDef, cell:IntVec3, map:Map) : void
+    + {static} CanBuildingLeaveResources(destroyedThing:Thing, mode:DestroyMode) : bool
+    + {static} DropFilthDueToDamage(t:Thing, damageDealt:float) : void
+}
+@enduml

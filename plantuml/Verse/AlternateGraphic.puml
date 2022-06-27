@@ -1,0 +1,6 @@
+@startuml
+class AlternateGraphic {
+    + Weight : float <<get>>
+    + GetGraphic(other:Graphic) : Graphic
+}
+@enduml

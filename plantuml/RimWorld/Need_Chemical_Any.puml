@@ -1,0 +1,35 @@
+@startuml
+class Need_Chemical_Any {
+    + <<const>> InterestTraitDegree : int = 1
+    + <<const>> FascinationTraitDegree : int = 2
+    + <<const>> GainForHardDrugIngestion : float = 0.3f
+    + <<const>> GainForSocialDrugIngestion : float = 0.2f
+    + <<override>> GUIChangeArrow : int <<get>>
+    + <<override>> ShowOnNeedList : bool <<get>>
+    + Notify_IngestedDrug(drug:Thing) : void
+    + Need_Chemical_Any(pawn:Pawn)
+    + <<override>> SetInitialLevel() : void
+    + <<override>> DrawOnGUI(rect:Rect, maxThresholdMarkers:int, customMargin:float, drawArrows:bool, doTooltip:bool) : void
+    + <<override>> NeedInterval() : void
+    {static} Need_Chemical_Any()
+}
+enum MoodBuff {
+    ExtremelyNegative,
+    VeryNegative,
+    Negative,
+    Neutral,
+    Positive,
+    VeryPositive,
+}
+class LevelThresholds <<struct>> {
+    + extremelyNegative : float
+    + veryNegative : float
+    + negative : float
+    + positive : float
+    + veryPositive : float
+}
+Need <|-- Need_Chemical_Any
+Need_Chemical_Any --> "MoodBuffForCurrentLevel" MoodBuff
+Need_Chemical_Any +-- MoodBuff
+Need_Chemical_Any +-- LevelThresholds
+@enduml

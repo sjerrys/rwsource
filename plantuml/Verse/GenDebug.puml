@@ -1,0 +1,7 @@
+@startuml
+class GenDebug <<static>> {
+    + {static} DebugPlaceSphere(Loc:Vector3, Scale:float) : void
+    + {static} LogList(list:IEnumerable<T>) : void
+    + {static} ClearArea(r:CellRect, map:Map) : void
+}
+@enduml

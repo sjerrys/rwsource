@@ -1,0 +1,9 @@
+@startuml
+class CompProperties_CausesGameCondition {
+    + worldRange : int
+    + preventConditionStacking : bool = true
+    + CompProperties_CausesGameCondition()
+}
+CompProperties <|-- CompProperties_CausesGameCondition
+CompProperties_CausesGameCondition --> "conditionDef" GameConditionDef
+@enduml

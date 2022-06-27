@@ -1,0 +1,12 @@
+@startuml
+class PawnDiedOrDownedThoughtsUtility <<static>> {
+    + {static} TryGiveThoughts(victim:Pawn, dinfo:DamageInfo?, thoughtsKind:PawnDiedOrDownedThoughtsKind) : void
+    + {static} TryGiveThoughts(victims:IEnumerable<Pawn>, thoughtsKind:PawnDiedOrDownedThoughtsKind) : void
+    + {static} GetThoughts(victim:Pawn, dinfo:DamageInfo?, thoughtsKind:PawnDiedOrDownedThoughtsKind, outIndividualThoughts:List<IndividualThoughtToAdd>, outAllColonistsThoughts:List<ThoughtToAddToAll>) : void
+    + {static} BuildMoodThoughtsListString(victim:Pawn, dinfo:DamageInfo?, thoughtsKind:PawnDiedOrDownedThoughtsKind, sb:StringBuilder, individualThoughtsHeader:string, allColonistsThoughtsHeader:string) : void
+    + {static} BuildMoodThoughtsListString(victims:IEnumerable<Pawn>, thoughtsKind:PawnDiedOrDownedThoughtsKind, sb:StringBuilder, individualThoughtsHeader:string, allColonistsThoughtsHeader:string, victimLabelKey:string) : void
+    + {static} RemoveDiedThoughts(pawn:Pawn) : void
+    + {static} RemoveLostThoughts(pawn:Pawn) : void
+    + {static} RemoveResuedRelativeThought(pawn:Pawn) : void
+}
+@enduml

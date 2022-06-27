@@ -1,0 +1,7 @@
+@startuml
+class JobDriver_SitFacingBuilding {
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+    + <<override>> TaleParameters() : object[]
+}
+JobDriver <|-- JobDriver_SitFacingBuilding
+@enduml

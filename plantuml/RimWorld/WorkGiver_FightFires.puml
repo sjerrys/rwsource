@@ -1,0 +1,11 @@
+@startuml
+class WorkGiver_FightFires {
+    + <<override>> MaxPathDanger(pawn:Pawn) : Danger
+    + <<override>> HasJobOnThing(pawn:Pawn, t:Thing, forced:bool) : bool
+    + <<override>> JobOnThing(pawn:Pawn, t:Thing, forced:bool) : Job
+    + {static} FireIsBeingHandled(f:Fire, potentialHandler:Pawn) : bool
+}
+WorkGiver_Scanner <|-- WorkGiver_FightFires
+WorkGiver_FightFires --> "PotentialWorkThingRequest" ThingRequest
+WorkGiver_FightFires --> "PathEndMode" PathEndMode
+@enduml

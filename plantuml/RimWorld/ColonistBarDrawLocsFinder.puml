@@ -1,0 +1,5 @@
+@startuml
+class ColonistBarDrawLocsFinder {
+    + CalculateDrawLocs(outDrawLocs:List<Vector2>, scale:float) : void
+}
+@enduml

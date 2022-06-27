@@ -1,0 +1,12 @@
+@startuml
+class CompGlower {
+    + Glows : bool <<get>>
+    + UpdateLit(map:Map) : void
+    + <<override>> PostSpawnSetup(respawningAfterLoad:bool) : void
+    + <<override>> ReceiveCompSignal(signal:string) : void
+    + <<override>> PostExposeData() : void
+    + <<override>> PostDeSpawn(map:Map) : void
+}
+ThingComp <|-- CompGlower
+CompGlower --> "Props" CompProperties_Glower
+@enduml

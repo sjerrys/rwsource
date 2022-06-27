@@ -1,0 +1,10 @@
+@startuml
+class GenAI <<static>> {
+    + {static} MachinesLike(machineFaction:Faction, p:Pawn) : bool
+    + {static} CanUseItemForWork(p:Pawn, item:Thing) : bool
+    + {static} CanBeArrestedBy(pawn:Pawn, arrester:Pawn) : bool
+    + {static} InDangerousCombat(pawn:Pawn) : bool
+    + {static} RandomRaidDest(raidSpawnLoc:IntVec3, map:Map) : IntVec3
+    + {static} EnemyIsNear(p:Pawn, radius:float) : bool
+}
+@enduml

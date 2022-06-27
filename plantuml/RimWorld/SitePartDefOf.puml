@@ -1,0 +1,14 @@
+@startuml
+class SitePartDefOf <<static>> {
+    {static} SitePartDefOf()
+}
+SitePartDefOf --> "Outpost" SitePartDef
+SitePartDefOf --> "Turrets" SitePartDef
+SitePartDefOf --> "Manhunters" SitePartDef
+SitePartDefOf --> "SleepingMechanoids" SitePartDef
+SitePartDefOf --> "AmbushHidden" SitePartDef
+SitePartDefOf --> "AmbushEdge" SitePartDef
+SitePartDefOf --> "PreciousLump" SitePartDef
+SitePartDefOf --> "PossibleUnknownThreatMarker" SitePartDef
+SitePartDefOf --> "BanditCamp" SitePartDef
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class DataExposeUtility <<static>> {
+    + {static} ByteArray(arr:byte[], label:string) : void
+    + {static} BoolArray(arr:bool[], elements:int, label:string) : void
+    + {static} AddLineBreaksToLongString(str:string) : string
+    + {static} RemoveLineBreaks(str:string) : string
+}
+@enduml

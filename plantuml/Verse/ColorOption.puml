@@ -1,0 +1,12 @@
+@startuml
+class ColorOption {
+    + weight : float = 1f
+    + RandomizedColor() : Color
+    + SetSingle(color:Color) : void
+    + SetMin(color:Color) : void
+    + SetMax(color:Color) : void
+}
+ColorOption o-> "min" Color
+ColorOption o-> "max" Color
+ColorOption o-> "only" Color
+@enduml

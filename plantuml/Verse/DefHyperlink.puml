@@ -1,0 +1,10 @@
+@startuml
+class DefHyperlink {
+    + DefHyperlink()
+    + DefHyperlink(def:Def)
+    + DefHyperlink(def:RoyalTitleDef, faction:Faction)
+    + LoadDataFromXmlCustom(xmlRoot:XmlNode) : void
+}
+DefHyperlink --> "def" Def
+DefHyperlink --> "faction" Faction
+@enduml

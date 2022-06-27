@@ -1,0 +1,25 @@
+@startuml
+abstract class WorldObjectComp {
+    + ParentHasMap : bool <<get>>
+    + <<virtual>> Initialize(props:WorldObjectCompProperties) : void
+    + <<virtual>> CompTick() : void
+    + <<virtual>> GetGizmos() : IEnumerable<Gizmo>
+    + <<virtual>> GetFloatMenuOptions(caravan:Caravan) : IEnumerable<FloatMenuOption>
+    + <<virtual>> GetTransportPodsFloatMenuOptions(pods:IEnumerable<IThingHolder>, representative:CompLaunchable) : IEnumerable<FloatMenuOption>
+    + <<virtual>> GetCaravanGizmos(caravan:Caravan) : IEnumerable<Gizmo>
+    + <<virtual>> IncidentTargetTags() : IEnumerable<IncidentTargetTagDef>
+    + <<virtual>> PostDrawExtraSelectionOverlays() : void
+    + <<virtual>> CompInspectStringExtra() : string
+    + <<virtual>> GetDescriptionPart() : string
+    + <<virtual>> PostPostRemove() : void
+    + <<virtual>> PostDestroy() : void
+    + <<virtual>> PostMyMapRemoved() : void
+    + <<virtual>> PostMapGenerate() : void
+    + <<virtual>> PostCaravanFormed(caravan:Caravan) : void
+    + <<virtual>> PostExposeData() : void
+    + <<override>> ToString() : string
+}
+WorldObjectComp --> "parent" WorldObject
+WorldObjectComp --> "props" WorldObjectCompProperties
+WorldObjectComp --> "ParentHolder" IThingHolder
+@enduml

@@ -1,0 +1,23 @@
+@startuml
+class TexCommand <<static>> {
+}
+TexCommand o-> "DesirePower" Texture2D
+TexCommand o-> "Draft" Texture2D
+TexCommand o-> "ReleaseAnimals" Texture2D
+TexCommand o-> "HoldOpen" Texture2D
+TexCommand o-> "GatherSpotActive" Texture2D
+TexCommand o-> "Install" Texture2D
+TexCommand o-> "SquadAttack" Texture2D
+TexCommand o-> "AttackMelee" Texture2D
+TexCommand o-> "Attack" Texture2D
+TexCommand o-> "FireAtWill" Texture2D
+TexCommand o-> "ToggleVent" Texture2D
+TexCommand o-> "PauseCaravan" Texture2D
+TexCommand o-> "ForbidOff" Texture2D
+TexCommand o-> "ForbidOn" Texture2D
+TexCommand o-> "RearmTrap" Texture2D
+TexCommand o-> "CannotShoot" Texture2D
+TexCommand o-> "ClearPrioritizedWork" Texture2D
+TexCommand o-> "RemoveRoutePlannerWaypoint" Texture2D
+TexCommand o-> "OpenLinkedQuestTex" Texture2D
+@enduml

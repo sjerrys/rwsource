@@ -1,0 +1,5 @@
+@startuml
+class TaleUtility <<static>> {
+    + {static} Notify_PawnDied(victim:Pawn, dinfo:DamageInfo?) : void
+}
+@enduml

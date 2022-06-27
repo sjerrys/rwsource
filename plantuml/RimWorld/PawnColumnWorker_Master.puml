@@ -1,0 +1,10 @@
+@startuml
+class PawnColumnWorker_Master {
+    + <<override>> GetMinWidth(table:PawnTable) : int
+    + <<override>> GetOptimalWidth(table:PawnTable) : int
+    + <<override>> DoHeader(rect:Rect, table:PawnTable) : void
+    + <<override>> DoCell(rect:Rect, pawn:Pawn, table:PawnTable) : void
+    + <<override>> Compare(a:Pawn, b:Pawn) : int
+}
+PawnColumnWorker <|-- PawnColumnWorker_Master
+@enduml

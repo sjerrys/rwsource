@@ -1,0 +1,9 @@
+@startuml
+class FactionGenerator <<static>> {
+    + {static} GenerateFactionsIntoWorld() : void
+    + {static} EnsureRequiredEnemies(player:Faction) : void
+    + {static} NewGeneratedFaction(facDef:FactionDef) : Faction
+    + {static} NewGeneratedFactionWithRelations(facDef:FactionDef, relations:List<FactionRelation>) : Faction
+    + {static} NewRandomColorFromSpectrum(faction:Faction) : float
+}
+@enduml

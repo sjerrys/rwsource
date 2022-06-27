@@ -1,0 +1,11 @@
+@startuml
+class LordToil_DefendPoint {
+    + <<override>> AllowSatisfyLongNeeds : bool <<get>>
+    + LordToil_DefendPoint(canSatisfyLongNeeds:bool)
+    + LordToil_DefendPoint(defendPoint:IntVec3, defendRadius:float, wanderRadius:float?)
+    + <<override>> UpdateAllDuties() : void
+    + SetDefendPoint(defendPoint:IntVec3) : void
+}
+LordToil <|-- LordToil_DefendPoint
+LordToil_DefendPoint --> "FlagLoc" IntVec3
+@enduml

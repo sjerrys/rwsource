@@ -1,0 +1,8 @@
+@startuml
+class JobDriver_LinkPsylinkable {
+    + <<const>> LinkTimeTicks : int = 15000
+    + <<const>> EffectsTickInterval : int = 720
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+}
+JobDriver <|-- JobDriver_LinkPsylinkable
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class WorkGiver_HelpGatheringItemsForCaravan {
+    + <<override>> NonScanJob(pawn:Pawn) : Job
+}
+WorkGiver <|-- WorkGiver_HelpGatheringItemsForCaravan
+@enduml

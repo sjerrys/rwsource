@@ -1,0 +1,67 @@
+@startuml
+abstract class Verb {
+    + loadID : string
+    + <<virtual>> CasterIsPawn : bool <<get>>
+    + <<virtual>> Targetable : bool <<get>>
+    + <<virtual>> MultiSelect : bool <<get>>
+    + Bursting : bool <<get>>
+    + <<virtual>> IsMeleeAttack : bool <<get>>
+    + BuggedAfterLoading : bool <<get>>
+    + WarmingUp : bool <<get>>
+    + WarmupTicksLeft : int <<get>>
+    + WarmupProgress : float <<get>>
+    + <<virtual>> ReportLabel : string <<get>>
+    + IsStillUsableBy(pawn:Pawn) : bool
+    + <<virtual>> IsUsableOn(target:Thing) : bool
+    + <<virtual>> ExposeData() : void
+    + GetUniqueLoadID() : string
+    + {static} CalculateUniqueLoadID(owner:IVerbOwner, tool:Tool, maneuver:ManeuverDef) : string
+    + {static} CalculateUniqueLoadID(owner:IVerbOwner, index:int) : string
+    + TryStartCastOn(castTarg:LocalTargetInfo, surpriseAttack:bool, canHitNonTargetPawns:bool) : bool
+    + <<virtual>> TryStartCastOn(castTarg:LocalTargetInfo, destTarg:LocalTargetInfo, surpriseAttack:bool, canHitNonTargetPawns:bool) : bool
+    + <<virtual>> WarmupComplete() : void
+    + VerbTick() : void
+    + <<virtual>> Available() : bool
+    + <<virtual>> OrderForceTarget(target:LocalTargetInfo) : void
+    + Notify_PickedUp() : void
+    + <<virtual>> Reset() : void
+    + <<virtual>> Notify_EquipmentLost() : void
+    + <<virtual>> HighlightFieldRadiusAroundTarget(needLOSToCenter:bool) : float
+    + <<virtual>> CanHitTarget(targ:LocalTargetInfo) : bool
+    + <<virtual>> ValidateTarget(target:LocalTargetInfo) : bool
+    + <<virtual>> DrawHighlight(target:LocalTargetInfo) : void
+    + <<virtual>> OnGUI(target:LocalTargetInfo) : void
+    + <<virtual>> CanHitTargetFrom(root:IntVec3, targ:LocalTargetInfo) : bool
+    + ApparelPreventsShooting(root:IntVec3, targ:LocalTargetInfo) : bool
+    + TryFindShootLineFromTo(root:IntVec3, targ:LocalTargetInfo, resultingLine:ShootLine) : bool
+    + <<override>> ToString() : string
+}
+ITargetingSource <|-- Verb
+IExposable <|-- Verb
+ILoadReferenceable <|-- Verb
+Verb --> "verbProps" VerbProperties
+Verb --> "verbTracker" VerbTracker
+Verb --> "maneuver" ManeuverDef
+Verb --> "tool" Tool
+Verb --> "caster" Thing
+Verb --> "state" VerbState
+Verb --> "castCompleteCallback" Action
+Verb --> "DirectOwner" IVerbOwner
+Verb --> "ImplementOwnerType" ImplementOwnerTypeDef
+Verb --> "EquipmentCompSource" CompEquippable
+Verb --> "ReloadableCompSource" CompReloadable
+Verb --> "EquipmentSource" ThingWithComps
+Verb --> "HediffCompSource" HediffComp_VerbGiver
+Verb --> "HediffSource" Hediff
+Verb --> "TerrainSource" Pawn_MeleeVerbs_TerrainSource
+Verb --> "TerrainDefSource" TerrainDef
+Verb --> "Caster" Thing
+Verb --> "CasterPawn" Pawn
+Verb --> "GetVerb" Verb
+Verb --> "CurrentTarget" LocalTargetInfo
+Verb --> "CurrentDestination" LocalTargetInfo
+Verb --> "targetParams" TargetingParameters
+Verb --> "DestinationSelector" ITargetingSource
+Verb --> "UIIcon" Texture2D
+Verb --> "WarmupStance" Stance_Warmup
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class GenStep_EscapeShip {
+    + <<override>> SeedPart : int <<get>>
+}
+GenStep_Scatterer <|-- GenStep_EscapeShip
+@enduml

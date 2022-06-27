@@ -1,0 +1,22 @@
+@startuml
+class JobQueue {
+    + Count : int <<get>>
+    + AnyPlayerForced : bool <<get>>
+    + ExposeData() : void
+    + EnqueueFirst(j:Job, tag:JobTag?) : void
+    + EnqueueLast(j:Job, tag:JobTag?) : void
+    + Contains(j:Job) : bool
+    + Extract(j:Job) : QueuedJob
+    + Dequeue() : QueuedJob
+    + Peek() : QueuedJob
+    + AnyCanBeginNow(pawn:Pawn, whileLyingDown:bool) : bool
+    + GetEnumerator() : IEnumerator<QueuedJob>
+    GetEnumerator() : IEnumerator
+    + Capture() : JobQueue
+}
+class "IEnumerable`1"<T> {
+}
+IExposable <|-- JobQueue
+"IEnumerable`1" "<QueuedJob>" <|-- JobQueue
+IEnumerable <|-- JobQueue
+@enduml

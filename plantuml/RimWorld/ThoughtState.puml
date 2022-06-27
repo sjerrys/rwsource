@@ -1,0 +1,14 @@
+@startuml
+class ThoughtState <<struct>> {
+    + Active : bool <<get>>
+    + StageIndex : int <<get>>
+    + Reason : string <<get>>
+    + {static} ActiveAtStage(stageIndex:int) : ThoughtState
+    + {static} ActiveAtStage(stageIndex:int, reason:string) : ThoughtState
+    + {static} ActiveWithReason(reason:string) : ThoughtState
+    + ActiveFor(thoughtDef:ThoughtDef) : bool
+    + StageIndexFor(thoughtDef:ThoughtDef) : int
+}
+ThoughtState --> "ActiveDefault" ThoughtState
+ThoughtState --> "Inactive" ThoughtState
+@enduml

@@ -1,0 +1,23 @@
+@startuml
+abstract class SketchEntity {
+    + {abstract} Label : string <<get>>
+    + {abstract} LabelCap : string <<get>>
+    + {abstract} SpawnOrder : float <<get>>
+    + <<virtual>> LostImportantReferences : bool <<get>>
+    + {abstract} DrawGhost(at:IntVec3, color:Color) : void
+    + {abstract} IsSameSpawned(at:IntVec3, map:Map) : bool
+    + {abstract} IsSameSpawnedOrBlueprintOrFrame(at:IntVec3, map:Map) : bool
+    + {abstract} IsSpawningBlocked(at:IntVec3, map:Map, thingToIgnore:Thing, wipeIfCollides:bool) : bool
+    + {abstract} IsSpawningBlockedPermanently(at:IntVec3, map:Map, thingToIgnore:Thing, wipeIfCollides:bool) : bool
+    + {abstract} CanBuildOnTerrain(at:IntVec3, map:Map) : bool
+    + {abstract} Spawn(at:IntVec3, map:Map, faction:Faction, spawnMode:Sketch.SpawnMode, wipeIfCollides:bool, spawnedThings:List<Thing>, dormant:bool) : bool
+    + {abstract} SameForSubtracting(other:SketchEntity) : bool
+    + SpawnNear(near:IntVec3, map:Map, radius:float, faction:Faction, spawnMode:Sketch.SpawnMode, wipeIfCollides:bool, spawnedThings:List<Thing>, dormant:bool) : bool
+    + SpawnNear_NewTmp(near:IntVec3, map:Map, radius:float, faction:Faction, spawnMode:Sketch.SpawnMode, wipeIfCollides:bool, spawnedThings:List<Thing>, dormant:bool, validator:Func<SketchEntity, IntVec3, bool>) : bool
+    + <<virtual>> DeepCopy() : SketchEntity
+    + <<virtual>> ExposeData() : void
+}
+IExposable <|-- SketchEntity
+SketchEntity --> "pos" IntVec3
+SketchEntity --> "OccupiedRect" CellRect
+@enduml

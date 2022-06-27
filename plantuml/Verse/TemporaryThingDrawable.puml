@@ -1,0 +1,9 @@
+@startuml
+class TemporaryThingDrawable {
+    + ticksLeft : int
+    + ExposeData() : void
+}
+IExposable <|-- TemporaryThingDrawable
+TemporaryThingDrawable --> "thing" Thing
+TemporaryThingDrawable --> "position" Vector3
+@enduml

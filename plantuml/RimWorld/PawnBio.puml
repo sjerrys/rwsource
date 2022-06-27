@@ -1,0 +1,14 @@
+@startuml
+class PawnBio {
+    + pirateKing : bool
+    + PostLoad() : void
+    + ResolveReferences() : void
+    + ConfigErrors() : IEnumerable<string>
+    + <<override>> ToString() : string
+}
+PawnBio --> "gender" GenderPossibility
+PawnBio --> "name" NameTriple
+PawnBio --> "childhood" Backstory
+PawnBio --> "adulthood" Backstory
+PawnBio --> "BioType" PawnBioType
+@enduml

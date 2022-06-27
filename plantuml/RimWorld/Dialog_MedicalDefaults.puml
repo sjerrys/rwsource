@@ -1,0 +1,8 @@
+@startuml
+class Dialog_MedicalDefaults {
+    + Dialog_MedicalDefaults()
+    + <<override>> DoWindowContents(inRect:Rect) : void
+}
+Window <|-- Dialog_MedicalDefaults
+Dialog_MedicalDefaults --> "InitialSize" Vector2
+@enduml

@@ -1,0 +1,22 @@
+@startuml
+class GameInitData {
+    + startingTile : int
+    + mapSize : int = 250
+    + startingPawnCount : int
+    + permadeathChosen : bool
+    + permadeath : bool
+    + startedFromEntry : bool
+    + gameToLoad : string
+    + <<const>> DefaultMapSize : int = 250
+    + QuickStarted : bool <<get>>
+    + ChooseRandomStartingTile() : void
+    + ResetWorldRelatedMapInitData() : void
+    + <<override>> ToString() : string
+    + PrepForMapGen() : void
+}
+class "List`1"<T> {
+}
+GameInitData o-> "startingAndOptionalPawns<Pawn>" "List`1"
+GameInitData --> "playerFaction" Faction
+GameInitData --> "startingSeason" Season
+@enduml

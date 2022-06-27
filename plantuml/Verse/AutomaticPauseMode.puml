@@ -1,0 +1,8 @@
+@startuml
+enum AutomaticPauseMode {
+    Never,
+    MajorThreat,
+    AnyThreat,
+    AnyLetter,
+}
+@enduml

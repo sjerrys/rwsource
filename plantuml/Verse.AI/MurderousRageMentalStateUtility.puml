@@ -1,0 +1,5 @@
+@startuml
+class MurderousRageMentalStateUtility <<static>> {
+    + {static} FindPawnToKill(pawn:Pawn) : Pawn
+}
+@enduml

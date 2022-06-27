@@ -1,0 +1,15 @@
+@startuml
+class WorldInterface {
+    + everReset : bool
+    + SelectedTile : int <<get>> <<set>>
+    + Reset() : void
+    + WorldInterfaceUpdate() : void
+    + WorldInterfaceOnGUI() : void
+    + HandleLowPriorityInput() : void
+}
+WorldInterface o-> "selector" WorldSelector
+WorldInterface o-> "targeter" WorldTargeter
+WorldInterface o-> "inspectPane" WorldInspectPane
+WorldInterface o-> "globalControls" WorldGlobalControls
+WorldInterface o-> "routePlanner" WorldRoutePlanner
+@enduml

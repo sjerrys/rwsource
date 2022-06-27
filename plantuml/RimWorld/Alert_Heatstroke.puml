@@ -1,0 +1,8 @@
+@startuml
+class Alert_Heatstroke {
+    + Alert_Heatstroke()
+    + <<override>> GetExplanation() : TaggedString
+    + <<override>> GetReport() : AlertReport
+}
+Alert <|-- Alert_Heatstroke
+@enduml

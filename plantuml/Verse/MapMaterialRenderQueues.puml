@@ -1,0 +1,6 @@
+@startuml
+class MapMaterialRenderQueues <<static>> {
+    + {static} Tornado : int = 3176
+    + {static} OrbitalBeam : int = 3177
+}
+@enduml

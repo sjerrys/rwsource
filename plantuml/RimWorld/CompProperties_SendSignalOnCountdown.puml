@@ -1,0 +1,8 @@
+@startuml
+class CompProperties_SendSignalOnCountdown {
+    + signalTag : string
+    + CompProperties_SendSignalOnCountdown()
+}
+CompProperties <|-- CompProperties_SendSignalOnCountdown
+CompProperties_SendSignalOnCountdown --> "countdownCurveTicks" SimpleCurve
+@enduml

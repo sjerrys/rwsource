@@ -1,0 +1,7 @@
+@startuml
+class StockGenerator_Clothes {
+    + apparelTag : string
+    + <<override>> HandlesThingDef(td:ThingDef) : bool
+}
+StockGenerator_MiscItems <|-- StockGenerator_Clothes
+@enduml

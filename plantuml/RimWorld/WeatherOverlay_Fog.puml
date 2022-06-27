@@ -1,0 +1,6 @@
+@startuml
+class WeatherOverlay_Fog {
+    + WeatherOverlay_Fog()
+}
+SkyOverlay <|-- WeatherOverlay_Fog
+@enduml

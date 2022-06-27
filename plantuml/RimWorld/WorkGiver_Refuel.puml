@@ -1,0 +1,12 @@
+@startuml
+class WorkGiver_Refuel {
+    + <<virtual>> CanRefuelThing(t:Thing) : bool
+    + <<override>> HasJobOnThing(pawn:Pawn, t:Thing, forced:bool) : bool
+    + <<override>> JobOnThing(pawn:Pawn, t:Thing, forced:bool) : Job
+}
+WorkGiver_Scanner <|-- WorkGiver_Refuel
+WorkGiver_Refuel --> "PotentialWorkThingRequest" ThingRequest
+WorkGiver_Refuel --> "PathEndMode" PathEndMode
+WorkGiver_Refuel --> "JobStandard" JobDef
+WorkGiver_Refuel --> "JobAtomic" JobDef
+@enduml

@@ -1,0 +1,21 @@
+@startuml
+class QuestPart_BetrayalOffer {
+    + outSignalEnabled : string
+    + outSignalSuccess : string
+    + outSignalFailure : string
+    + <<override>> ExpiryInfoPart : string <<get>>
+    + <<override>> ExpiryInfoPartTip : string <<get>>
+    + <<override>> Notify_FactionRemoved(f:Faction) : void
+    + <<override>> ExposeData() : void
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+QuestPartActivable <|-- QuestPart_BetrayalOffer
+QuestPart_BetrayalOffer --> "extraFaction" ExtraFaction
+QuestPart_BetrayalOffer --> "asker" Pawn
+QuestPart_BetrayalOffer o-> "pawns<Pawn>" "List`1"
+QuestPart_BetrayalOffer o-> "inSignals<string>" "List`1"
+QuestPart_BetrayalOffer --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+@enduml

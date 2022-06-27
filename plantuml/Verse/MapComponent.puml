@@ -1,0 +1,14 @@
+@startuml
+abstract class MapComponent {
+    + MapComponent(map:Map)
+    + <<virtual>> MapComponentUpdate() : void
+    + <<virtual>> MapComponentTick() : void
+    + <<virtual>> MapComponentOnGUI() : void
+    + <<virtual>> ExposeData() : void
+    + <<virtual>> FinalizeInit() : void
+    + <<virtual>> MapGenerated() : void
+    + <<virtual>> MapRemoved() : void
+}
+IExposable <|-- MapComponent
+MapComponent --> "map" Map
+@enduml

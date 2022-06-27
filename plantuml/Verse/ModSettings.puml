@@ -1,0 +1,8 @@
+@startuml
+abstract class ModSettings {
+    + <<virtual>> ExposeData() : void
+    + Write() : void
+}
+IExposable <|-- ModSettings
+ModSettings --> "Mod" Mod
+@enduml

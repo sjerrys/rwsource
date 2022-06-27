@@ -1,0 +1,10 @@
+@startuml
+class QuestNode_LoopCount {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_LoopCount
+QuestNode_LoopCount --> "node" QuestNode
+QuestNode_LoopCount --> "loopCount<int>" "SlateRef`1"
+QuestNode_LoopCount --> "storeLoopCounterAs<string>" "SlateRef`1"
+@enduml

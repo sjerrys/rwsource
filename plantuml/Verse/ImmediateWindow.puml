@@ -1,0 +1,9 @@
+@startuml
+class ImmediateWindow {
+    + ImmediateWindow()
+    + <<override>> DoWindowContents(inRect:Rect) : void
+}
+Window <|-- ImmediateWindow
+ImmediateWindow --> "doWindowFunc" Action
+ImmediateWindow --> "InitialSize" Vector2
+@enduml

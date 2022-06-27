@@ -1,0 +1,7 @@
+@startuml
+class HoldOffset {
+    + flip : bool
+    + behind : bool
+}
+HoldOffset o-> "offset" Vector3
+@enduml

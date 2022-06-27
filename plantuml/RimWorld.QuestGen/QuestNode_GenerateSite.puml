@@ -1,0 +1,13 @@
+@startuml
+class QuestNode_GenerateSite {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GenerateSite
+QuestNode_GenerateSite --> "sitePartsParams<IEnumerable<SitePartDefWithParams>>" "SlateRef`1"
+QuestNode_GenerateSite --> "faction<Faction>" "SlateRef`1"
+QuestNode_GenerateSite --> "tile<int>" "SlateRef`1"
+QuestNode_GenerateSite --> "storeAs<string>" "SlateRef`1"
+QuestNode_GenerateSite --> "singleSitePartRules<RulePack>" "SlateRef`1"
+QuestNode_GenerateSite --> "hiddenSitePartsPossible<bool>" "SlateRef`1"
+@enduml

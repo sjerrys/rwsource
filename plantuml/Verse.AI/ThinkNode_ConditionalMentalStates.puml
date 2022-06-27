@@ -1,0 +1,9 @@
+@startuml
+class ThinkNode_ConditionalMentalStates {
+    + <<override>> DeepCopy(resolve:bool) : ThinkNode
+}
+class "List`1"<T> {
+}
+ThinkNode_Conditional <|-- ThinkNode_ConditionalMentalStates
+ThinkNode_ConditionalMentalStates --> "states<MentalStateDef>" "List`1"
+@enduml

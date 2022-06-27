@@ -1,0 +1,14 @@
+@startuml
+class TransporterUtility <<static>> {
+    + {static} GetTransportersInGroup(transportersGroup:int, map:Map, outTransporters:List<CompTransporter>) : void
+    + {static} FindLord(transportersGroup:int, map:Map) : Lord
+    + {static} WasLoadingCanceled(transporter:Thing) : bool
+    + {static} InitiateLoading(transporters:IEnumerable<CompTransporter>) : int
+    + {static} AllSendablePawns(transporters:List<CompTransporter>, map:Map) : IEnumerable<Pawn>
+    + {static} AllSendablePawns_NewTmp(transporters:List<CompTransporter>, map:Map, autoLoot:bool) : IEnumerable<Pawn>
+    + {static} AllSendableItems(transporters:List<CompTransporter>, map:Map) : IEnumerable<Thing>
+    + {static} AllSendableItems_NewTmp(transporters:List<CompTransporter>, map:Map, autoLoot:bool) : IEnumerable<Thing>
+    + {static} ThingsBeingHauledTo(transporters:List<CompTransporter>, map:Map) : IEnumerable<Thing>
+    + {static} MakeLordsAsAppropriate(pawns:List<Pawn>, transporters:List<CompTransporter>, map:Map) : void
+}
+@enduml

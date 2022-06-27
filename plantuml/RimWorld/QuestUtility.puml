@@ -1,0 +1,85 @@
+@startuml
+class QuestUtility <<static>> {
+    + <<const>> QuestTargetSignalPart_MapGenerated : string = "MapGenerated"
+    + <<const>> QuestTargetSignalPart_MapRemoved : string = "MapRemoved"
+    + <<const>> QuestTargetSignalPart_Spawned : string = "Spawned"
+    + <<const>> QuestTargetSignalPart_Despawned : string = "Despawned"
+    + <<const>> QuestTargetSignalPart_Destroyed : string = "Destroyed"
+    + <<const>> QuestTargetSignalPart_Killed : string = "Killed"
+    + <<const>> QuestTargetSignalPart_ChangedFaction : string = "ChangedFaction"
+    + <<const>> QuestTargetSignalPart_LeftMap : string = "LeftMap"
+    + <<const>> QuestTargetSignalPart_SurgeryViolation : string = "SurgeryViolation"
+    + <<const>> QuestTargetSignalPart_Arrested : string = "Arrested"
+    + <<const>> QuestTargetSignalPart_Recruited : string = "Recruited"
+    + <<const>> QuestTargetSignalPart_Kidnapped : string = "Kidnapped"
+    + <<const>> QuestTargetSignalPart_ChangedHostFaction : string = "ChangedHostFaction"
+    + <<const>> QuestTargetSignalPart_NoLongerFactionLeader : string = "NoLongerFactionLeader"
+    + <<const>> QuestTargetSignalPart_TitleChanged : string = "TitleChanged"
+    + <<const>> QuestTargetSignalPart_TitleAwardedWhenUpdatingChanged : string = "TitleAwardedWhenUpdatingChanged"
+    + <<const>> QuestTargetSignalPart_Banished : string = "Banished"
+    + <<const>> QuestTargetSignalPart_RanWild : string = "RanWild"
+    + <<const>> QuestTargetSignalPart_ShuttleSentSatisfied : string = "SentSatisfied"
+    + <<const>> QuestTargetSignalPart_ShuttleSentUnsatisfied : string = "SentUnsatisfied"
+    + <<const>> QuestTargetSignalPart_ShuttleSentWithExtraColonists : string = "SentWithExtraColonists"
+    + <<const>> QuestTargetSignalPart_ShuttleUnloaded : string = "Unloaded"
+    + <<const>> QuestTargetSignalPart_AllEnemiesDefeated : string = "AllEnemiesDefeated"
+    + <<const>> QuestTargetSignalPart_TradeRequestFulfilled : string = "TradeRequestFulfilled"
+    + <<const>> QuestTargetSignalPart_PeaceTalksResolved : string = "Resolved"
+    + <<const>> QuestTargetSignalPart_LaunchedShip : string = "LaunchedShip"
+    + <<const>> QuestTargetSignalPart_ReactorDestroyed : string = "ReactorDestroyed"
+    + <<const>> QuestTargetSignalPart_MonumentCompleted : string = "MonumentCompleted"
+    + <<const>> QuestTargetSignalPart_MonumentDestroyed : string = "MonumentDestroyed"
+    + <<const>> QuestTargetSignalPart_MonumentCancelled : string = "MonumentCancelled"
+    + <<const>> QuestTargetSignalPart_AllHivesDestroyed : string = "AllHivesDestroyed"
+    + <<const>> QuestTargetSignalPart_ExitMentalState : string = "ExitMentalState"
+    + <<const>> QuestTargetSignalPart_FactionBecameHostileToPlayer : string = "BecameHostileToPlayer"
+    + <<const>> QuestTargetSignalPart_CeremonyExpired : string = "CeremonyExpired"
+    + <<const>> QuestTargetSignalPart_CeremonyFailed : string = "CeremonyFailed"
+    + <<const>> QuestTargetSignalPart_CeremonyDone : string = "CeremonyDone"
+    + <<const>> QuestTargetSignalPart_QuestEnded : string = "QuestEnded"
+    + {static} GenerateQuestAndMakeAvailable(root:QuestScriptDef, points:float) : Quest
+    + {static} GenerateQuestAndMakeAvailable(root:QuestScriptDef, vars:Slate) : Quest
+    + {static} SendLetterQuestAvailable(quest:Quest) : void
+    + {static} GetQuestTicksRemaining(quest:Quest) : int
+    + {static} GenerateBackCompatibilityNameFor(quest:Quest) : void
+    + {static} CanPawnAcceptQuest(p:Pawn, quest:Quest) : bool
+    + {static} CanAcceptQuest(quest:Quest) : bool
+    + {static} GetLocForDates() : Vector2
+    + {static} SendQuestTargetSignals(questTags:List<string>, signalPart:string) : void
+    + {static} SendQuestTargetSignals(questTags:List<string>, signalPart:string, arg1:NamedArgument) : void
+    + {static} SendQuestTargetSignals(questTags:List<string>, signalPart:string, arg1:NamedArgument, arg2:NamedArgument) : void
+    + {static} SendQuestTargetSignals(questTags:List<string>, signalPart:string, arg1:NamedArgument, arg2:NamedArgument, arg3:NamedArgument) : void
+    + {static} SendQuestTargetSignals(questTags:List<string>, signalPart:string, arg1:NamedArgument, arg2:NamedArgument, arg3:NamedArgument, arg4:NamedArgument) : void
+    + {static} SendQuestTargetSignals(questTags:List<string>, signalPart:string, args:NamedArgument[]) : void
+    + {static} SendQuestTargetSignals(questTags:List<string>, signalPart:string, args:SignalArgs) : void
+    + {static} AddQuestTag(questTags:List<string>, questTagToAdd:string) : void
+    + {static} AddQuestTag(obj:object, questTagToAdd:string) : void
+    + {static} AnyMatchingTags(first:List<string>, second:List<string>) : bool
+    + {static} IsReservedByQuestOrQuestBeingGenerated(pawn:Pawn) : bool
+    + {static} GetWorkDisabledQuestPart(p:Pawn) : IEnumerable<QuestPart_WorkDisabled>
+    + {static} IsQuestLodger(p:Pawn) : bool
+    + {static} IsQuestHelper(p:Pawn) : bool
+    + {static} IsQuestReward(pawn:Pawn) : bool
+    + {static} LodgerAllowedDecrees(p:Pawn) : bool
+    + {static} HasExtraHomeFaction(p:Pawn, forQuest:Quest) : bool
+    + {static} HasExtraMiniFaction(p:Pawn, forQuest:Quest) : bool
+    + {static} HasExtraHomeFaction(p:Pawn, faction:Faction) : bool
+    + {static} HasExtraMiniFaction(p:Pawn, faction:Faction) : bool
+    + {static} GetExtraHomeFaction(p:Pawn, forQuest:Quest) : Faction
+    + {static} GetExtraHostFaction(p:Pawn, forQuest:Quest) : Faction
+    + {static} GetExtraMiniFaction(p:Pawn, forQuest:Quest) : Faction
+    + {static} InSameExtraFaction(p:Pawn, target:Pawn, type:ExtraFactionType, forQuest:Quest) : bool
+    + {static} GetSharedExtraFaction(p:Pawn, target:Pawn, type:ExtraFactionType, forQuest:Quest) : Faction
+    + {static} GetExtraFaction(p:Pawn, extraFactionType:ExtraFactionType, forQuest:Quest) : Faction
+    + {static} GetExtraFactionsFromQuestParts(pawn:Pawn, outExtraFactions:List<ExtraFaction>, forQuest:Quest) : void
+    + {static} IsBorrowedByAnyFaction(pawn:Pawn) : bool
+    + {static} TotalBorrowedColonistCount() : int
+    + {static} GetAllQuestPartsOfType(ongoingOnly:bool) : IEnumerable<T>
+    + {static} AppendInspectStringsFromQuestParts(sb:StringBuilder, target:ISelectable) : void
+    + {static} AppendInspectStringsFromQuestParts(sb:StringBuilder, target:ISelectable, count:int) : void
+    + {static} AppendInspectStringsFromQuestParts(func:Action<string, Quest>, target:ISelectable, count:int) : void
+    + {static} GetQuestRelatedGizmos(thing:Thing) : IEnumerable<Gizmo>
+    + {static} GetSelectMonumentMarkerGizmo(thing:Thing) : Gizmo
+    + {static} AnyQuestDisablesRandomMoodCausedMentalBreaksFor(p:Pawn) : bool
+}
+@enduml

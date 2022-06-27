@@ -1,0 +1,7 @@
+@startuml
+class BulletImpactData <<struct>> {
+}
+BulletImpactData --> "impactPosition" IntVec3
+BulletImpactData --> "bullet" Bullet
+BulletImpactData --> "hitThing" Thing
+@enduml

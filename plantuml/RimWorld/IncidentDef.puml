@@ -1,0 +1,52 @@
+@startuml
+class IncidentDef {
+    + baseChance : float
+    + baseChanceWithRoyalty : float
+    + earliestDay : int
+    + minPopulation : int
+    + requireColonistsPresent : bool
+    + minRefireDays : float
+    + minDifficulty : int
+    + pointsScaleable : bool
+    + minThreatPoints : float
+    + minGreatestPopulation : int
+    + letterText : string
+    + letterLabel : string
+    + pawnMustBeCapableOfViolence : bool
+    + diseaseMaxVictims : int = 99999
+    + NeedsParmsPoints : bool <<get>>
+    + {static} Named(defName:string) : IncidentDef
+    + <<override>> ConfigErrors() : IEnumerable<string>
+    + TargetTagAllowed(target:IncidentTargetTagDef) : bool
+    + TargetAllowed(target:IIncidentTarget) : bool
+}
+class "List`1"<T> {
+}
+Def <|-- IncidentDef
+IncidentDef --> "workerClass" Type
+IncidentDef --> "category" IncidentCategoryDef
+IncidentDef --> "targetTags<IncidentTargetTagDef>" "List`1"
+IncidentDef --> "populationEffect" IncidentPopulationEffect
+IncidentDef o-> "disabledWhen" DifficultyConditionConfig
+IncidentDef --> "allowedBiomes<BiomeDef>" "List`1"
+IncidentDef --> "tags<string>" "List`1"
+IncidentDef --> "refireCheckTags<string>" "List`1"
+IncidentDef --> "chanceFactorByPopulationCurve" SimpleCurve
+IncidentDef --> "tale" TaleDef
+IncidentDef --> "letterDef" LetterDef
+IncidentDef --> "letterHyperlinkHediffDefs<HediffDef>" "List`1"
+IncidentDef --> "pawnKind" PawnKindDef
+IncidentDef --> "pawnFixedGender" Gender
+IncidentDef --> "pawnHediff" HediffDef
+IncidentDef --> "gameCondition" GameConditionDef
+IncidentDef --> "durationDays" FloatRange
+IncidentDef --> "diseaseIncident" HediffDef
+IncidentDef o-> "diseaseVictimFractionRange" FloatRange
+IncidentDef --> "diseaseBiomeRecords<BiomeDiseaseRecord>" "List`1"
+IncidentDef --> "diseasePartsToAffect<BodyPartDef>" "List`1"
+IncidentDef --> "mechClusterBuilding" ThingDef
+IncidentDef --> "mtbDaysByBiome<MTBByBiome>" "List`1"
+IncidentDef --> "questScriptDef" QuestScriptDef
+IncidentDef --> "Worker" IncidentWorker
+IncidentDef --> "RefireCheckIncidents<IncidentDef>" "List`1"
+@enduml

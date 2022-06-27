@@ -1,0 +1,24 @@
+@startuml
+class ReorderableWidget <<static>> {
+    + {static} ReorderableWidgetOnGUI_BeforeWindowStack() : void
+    + {static} ReorderableWidgetOnGUI_AfterWindowStack() : void
+    + {static} NewGroup(reorderedAction:Action<int, int>, direction:ReorderableDirection, drawLineExactlyBetween_space:float, extraDraggedItemOnGUI:Action<int, Vector2>) : int
+    + {static} Reorderable(groupID:int, rect:Rect, useRightButton:bool) : bool
+}
+class ReorderableGroup <<struct>> {
+    + drawLineExactlyBetween_space : float
+    + DrawLineExactlyBetween : bool <<get>>
+}
+class ReorderableInstance <<struct>> {
+    + groupID : int
+}
+class "Action`2"<T1,T2> {
+}
+ReorderableWidget +-- ReorderableGroup
+ReorderableGroup --> "reorderedAction<int,int>" "Action`2"
+ReorderableGroup --> "direction" ReorderableDirection
+ReorderableGroup --> "extraDraggedItemOnGUI<int,Vector2>" "Action`2"
+ReorderableWidget +-- ReorderableInstance
+ReorderableInstance --> "rect" Rect
+ReorderableInstance --> "absRect" Rect
+@enduml

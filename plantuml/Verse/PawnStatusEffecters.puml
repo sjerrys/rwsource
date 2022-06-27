@@ -1,0 +1,19 @@
+@startuml
+class PawnStatusEffecters <<struct>> {
+    + PawnStatusEffecters(pawn:Pawn)
+    + EffectersTick() : void
+}
+class LiveEffecter {
+    + lastMaintainTick : int
+    + Expired : bool <<get>>
+    + Cleanup() : void
+    + Reset() : void
+    + Maintain() : void
+    + Tick(pawn:Pawn) : void
+}
+PawnStatusEffecters --> "pawn" Pawn
+PawnStatusEffecters +-- LiveEffecter
+IFullPoolable <|-- LiveEffecter
+LiveEffecter --> "def" EffecterDef
+LiveEffecter --> "effecter" Effecter
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+class GraphicDatabaseHeadRecords <<static>> {
+    + {static} Reset() : void
+    + {static} GetHeadNamed(graphicPath:string, skinColor:Color) : Graphic_Multi
+    + {static} GetSkull() : Graphic_Multi
+    + {static} GetStump(skinColor:Color) : Graphic_Multi
+    + {static} GetHeadRandom(gender:Gender, skinColor:Color, crownType:CrownType) : Graphic_Multi
+}
+class HeadGraphicRecord {
+    + graphicPath : string
+    + HeadGraphicRecord(graphicPath:string)
+    + GetGraphic(color:Color, dessicated:bool) : Graphic_Multi
+}
+GraphicDatabaseHeadRecords +-- HeadGraphicRecord
+HeadGraphicRecord --> "gender" Gender
+HeadGraphicRecord --> "crownType" CrownType
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class ThinkTreeDef {
+    + insertTag : string
+    + insertPriority : float
+    + <<override>> ResolveReferences() : void
+    + <<override>> ConfigErrors() : IEnumerable<string>
+    + TryGetThinkNodeWithSaveKey(key:int, outNode:ThinkNode) : bool
+}
+Def <|-- ThinkTreeDef
+ThinkTreeDef --> "thinkRoot" ThinkNode
+@enduml

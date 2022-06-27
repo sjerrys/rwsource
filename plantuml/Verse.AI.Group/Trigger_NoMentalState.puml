@@ -1,0 +1,6 @@
+@startuml
+class Trigger_NoMentalState {
+    + <<override>> ActivateOn(lord:Lord, signal:TriggerSignal) : bool
+}
+Trigger <|-- Trigger_NoMentalState
+@enduml

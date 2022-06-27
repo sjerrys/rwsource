@@ -1,0 +1,10 @@
+@startuml
+class TradeUI <<static>> {
+    + <<const>> CountColumnWidth : float = 75f
+    + <<const>> PriceColumnWidth : float = 100f
+    + <<const>> AdjustColumnWidth : float = 240f
+    + <<const>> TotalNumbersColumnsWidths : float = 590f
+    + {static} DrawTradeableRow(rect:Rect, trad:Tradeable, index:int) : void
+}
+TradeUI o-> "NoTradeColor" Color
+@enduml

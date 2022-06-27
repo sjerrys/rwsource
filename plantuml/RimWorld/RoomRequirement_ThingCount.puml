@@ -1,0 +1,10 @@
+@startuml
+class RoomRequirement_ThingCount {
+    + count : int
+    + <<override>> Met(r:Room, p:Pawn) : bool
+    + Count(r:Room) : int
+    + <<override>> Label(r:Room) : string
+    + <<override>> ConfigErrors() : IEnumerable<string>
+}
+RoomRequirement_Thing <|-- RoomRequirement_ThingCount
+@enduml

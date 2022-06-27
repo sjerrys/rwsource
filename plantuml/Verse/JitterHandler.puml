@@ -1,0 +1,9 @@
+@startuml
+class JitterHandler {
+    + JitterHandlerTick() : void
+    + Notify_DamageApplied(dinfo:DamageInfo) : void
+    + Notify_DamageDeflected(dinfo:DamageInfo) : void
+    + AddOffset(dist:float, dir:float) : void
+}
+JitterHandler --> "CurrentOffset" Vector3
+@enduml

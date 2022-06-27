@@ -1,0 +1,10 @@
+@startuml
+class LordToil_PrepareCaravan_GatherItems {
+    + <<override>> CustomWakeThreshold : float? <<get>>
+    + <<override>> AllowRestingInBed : bool <<get>>
+    + LordToil_PrepareCaravan_GatherItems(meetingPoint:IntVec3)
+    + <<override>> UpdateAllDuties() : void
+    + <<override>> LordToilTick() : void
+}
+LordToil <|-- LordToil_PrepareCaravan_GatherItems
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class Autotests_ColonyMaker <<static>> {
+    + {static} MakeColony_Full() : void
+    + {static} MakeColony_Animals() : void
+    + {static} MakeColony(flags:ColonyMakerFlag[]) : void
+}
+@enduml

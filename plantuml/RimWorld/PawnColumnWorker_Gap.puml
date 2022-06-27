@@ -1,0 +1,9 @@
+@startuml
+class PawnColumnWorker_Gap {
+    + <<override>> DoCell(rect:Rect, pawn:Pawn, table:PawnTable) : void
+    + <<override>> GetMinWidth(table:PawnTable) : int
+    + <<override>> GetMaxWidth(table:PawnTable) : int
+    + <<override>> GetMinCellHeight(pawn:Pawn) : int
+}
+PawnColumnWorker <|-- PawnColumnWorker_Gap
+@enduml

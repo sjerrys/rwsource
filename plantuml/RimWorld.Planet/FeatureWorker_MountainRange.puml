@@ -1,0 +1,5 @@
+@startuml
+class FeatureWorker_MountainRange {
+}
+FeatureWorker_Cluster <|-- FeatureWorker_MountainRange
+@enduml

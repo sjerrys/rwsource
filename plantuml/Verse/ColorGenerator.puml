@@ -1,0 +1,6 @@
+@startuml
+abstract class ColorGenerator {
+    + {abstract} NewRandomizedColor() : Color
+}
+ColorGenerator --> "ExemplaryColor" Color
+@enduml

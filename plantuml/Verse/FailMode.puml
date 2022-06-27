@@ -1,0 +1,6 @@
+@startuml
+enum FailMode {
+    Silent,
+    LogErrors,
+}
+@enduml

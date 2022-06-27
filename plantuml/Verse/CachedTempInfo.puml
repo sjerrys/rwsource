@@ -1,0 +1,10 @@
+@startuml
+class CachedTempInfo <<struct>> {
+    + roomGroupID : int
+    + numCells : int
+    + temperature : float
+    + {static} NewCachedTempInfo() : CachedTempInfo
+    + Reset() : void
+    + CachedTempInfo(roomGroupID:int, numCells:int, temperature:float)
+}
+@enduml

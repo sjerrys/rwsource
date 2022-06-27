@@ -1,0 +1,5 @@
+@startuml
+class ThoughtWorker_PsychicDrone {
+}
+ThoughtWorker <|-- ThoughtWorker_PsychicDrone
+@enduml

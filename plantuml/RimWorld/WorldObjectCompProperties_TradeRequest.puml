@@ -1,0 +1,6 @@
+@startuml
+class WorldObjectCompProperties_TradeRequest {
+    + WorldObjectCompProperties_TradeRequest()
+}
+WorldObjectCompProperties <|-- WorldObjectCompProperties_TradeRequest
+@enduml

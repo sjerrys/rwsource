@@ -1,0 +1,52 @@
+@startuml
+class Game {
+    + currentMapIndex : sbyte
+    + Game()
+    + AddMap(map:Map) : void
+    + FindMap(mapParent:MapParent) : Map
+    + FindMap(tile:int) : Map
+    + ExposeData() : void
+    + InitNewGame() : void
+    + LoadGame() : void
+    + UpdateEntry() : void
+    + UpdatePlay() : void
+    + GetComponent() : T
+    + GetComponent(type:Type) : GameComponent
+    + FinalizeInit() : void
+    + DeinitAndRemoveMap(map:Map) : void
+    + DebugString() : string
+}
+class "List`1"<T> {
+}
+IExposable <|-- Game
+Game o-> "components<GameComponent>" "List`1"
+Game o-> "playSettings" PlaySettings
+Game o-> "storyWatcher" StoryWatcher
+Game o-> "letterStack" LetterStack
+Game o-> "researchManager" ResearchManager
+Game o-> "gameEnder" GameEnder
+Game o-> "storyteller" Storyteller
+Game o-> "history" History
+Game o-> "taleManager" TaleManager
+Game o-> "playLog" PlayLog
+Game o-> "battleLog" BattleLog
+Game o-> "outfitDatabase" OutfitDatabase
+Game o-> "drugPolicyDatabase" DrugPolicyDatabase
+Game o-> "foodRestrictionDatabase" FoodRestrictionDatabase
+Game o-> "tickManager" TickManager
+Game o-> "tutor" Tutor
+Game o-> "autosaver" Autosaver
+Game o-> "dateNotifier" DateNotifier
+Game o-> "signalManager" SignalManager
+Game o-> "uniqueIDsManager" UniqueIDsManager
+Game o-> "questManager" QuestManager
+Game --> "Scenario" Scenario
+Game --> "World" World
+Game --> "CurrentMap" Map
+Game --> "AnyPlayerHomeMap" Map
+Game --> "RandomPlayerHomeMap" Map
+Game --> "Maps<Map>" "List`1"
+Game --> "InitData" GameInitData
+Game --> "Info" GameInfo
+Game --> "Rules" GameRules
+@enduml

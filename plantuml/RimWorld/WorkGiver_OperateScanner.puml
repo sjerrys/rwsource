@@ -1,0 +1,12 @@
+@startuml
+class WorkGiver_OperateScanner {
+    + <<override>> MaxPathDanger(pawn:Pawn) : Danger
+    + <<override>> ShouldSkip(pawn:Pawn, forced:bool) : bool
+    + <<override>> HasJobOnThing(pawn:Pawn, t:Thing, forced:bool) : bool
+    + <<override>> JobOnThing(pawn:Pawn, t:Thing, forced:bool) : Job
+}
+WorkGiver_Scanner <|-- WorkGiver_OperateScanner
+WorkGiver_OperateScanner --> "PotentialWorkThingRequest" ThingRequest
+WorkGiver_OperateScanner --> "ScannerDef" ThingDef
+WorkGiver_OperateScanner --> "PathEndMode" PathEndMode
+@enduml

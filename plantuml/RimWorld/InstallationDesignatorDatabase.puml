@@ -1,0 +1,5 @@
+@startuml
+class InstallationDesignatorDatabase <<static>> {
+    + {static} DesignatorFor(artDef:ThingDef) : Designator_Install
+}
+@enduml

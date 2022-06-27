@@ -1,0 +1,8 @@
+@startuml
+class CompProperties_Techprint {
+    + CompProperties_Techprint()
+    + <<override>> ResolveReferences(parentDef:ThingDef) : void
+}
+CompProperties <|-- CompProperties_Techprint
+CompProperties_Techprint --> "project" ResearchProjectDef
+@enduml

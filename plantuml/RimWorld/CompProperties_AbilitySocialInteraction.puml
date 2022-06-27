@@ -1,0 +1,8 @@
+@startuml
+class CompProperties_AbilitySocialInteraction {
+    + canApplyToMentallyBroken : bool
+    + CompProperties_AbilitySocialInteraction()
+}
+CompProperties_AbilityEffect <|-- CompProperties_AbilitySocialInteraction
+CompProperties_AbilitySocialInteraction --> "interactionDef" InteractionDef
+@enduml

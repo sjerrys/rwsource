@@ -1,0 +1,22 @@
+@startuml
+class Battle {
+    + <<const>> TicksForBattleExit : int = 5000
+    + Importance : int <<get>>
+    + CreationTimestamp : int <<get>>
+    + LastEntryTimestamp : int <<get>>
+    + {static} Create() : Battle
+    + GetName() : string
+    + Add(entry:LogEntry) : void
+    + Absorb(battle:Battle) : void
+    + Concerns(pawn:Pawn) : bool
+    + Notify_PawnDiscarded(p:Pawn, silentlyRemoveReferences:bool) : void
+    + ExposeData() : void
+    + GetUniqueLoadID() : string
+}
+class "List`1"<T> {
+}
+IExposable <|-- Battle
+ILoadReferenceable <|-- Battle
+Battle --> "AbsorbedBy" Battle
+Battle --> "Entries<LogEntry>" "List`1"
+@enduml

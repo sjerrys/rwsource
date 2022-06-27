@@ -1,0 +1,6 @@
+@startuml
+class ThingListGroupHelper <<static>> {
+    {static} ThingListGroupHelper()
+    + {static} Includes(group:ThingRequestGroup, def:ThingDef) : bool
+}
+@enduml

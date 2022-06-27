@@ -1,0 +1,7 @@
+@startuml
+class Scribe_Universal <<static>> {
+    + {static} Look(obj:TAny, label:string, lookMode:LookMode, type:Type) : void
+    + {static} Look(obj:TAny, label:string, lookMode:LookMode, type:Type, forceDeepSave:bool) : void
+    + {static} TryResolveLookMode(type:Type, lookMode:LookMode, desperate:bool, preferDeepIfDesperateAndAmbiguous:bool) : bool
+}
+@enduml

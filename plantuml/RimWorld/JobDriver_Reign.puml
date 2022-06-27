@@ -1,0 +1,8 @@
+@startuml
+class JobDriver_Reign {
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+    + <<override>> GetReport() : string
+    + <<override>> CanBeginNowWhileLyingDown() : bool
+}
+JobDriver_Meditate <|-- JobDriver_Reign
+@enduml

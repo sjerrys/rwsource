@@ -1,0 +1,6 @@
+@startuml
+class CompHeatPusherPowered {
+    + <<override>> PostSpawnSetup(respawningAfterLoad:bool) : void
+}
+CompHeatPusher <|-- CompHeatPusherPowered
+@enduml

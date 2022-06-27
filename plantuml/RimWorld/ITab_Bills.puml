@@ -1,0 +1,7 @@
+@startuml
+class ITab_Bills {
+    + ITab_Bills()
+    + <<override>> TabUpdate() : void
+}
+ITab <|-- ITab_Bills
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class CaravanVisitUtility <<static>> {
+    + {static} SettlementVisitedNow(caravan:Caravan) : Settlement
+    + {static} TradeCommand(caravan:Caravan, faction:Faction, trader:TraderKindDef) : Command
+}
+@enduml

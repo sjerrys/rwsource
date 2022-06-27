@@ -1,0 +1,23 @@
+@startuml
+class ShaderPropertyIDs <<static>> {
+    + {static} PlanetSunLightDirection : int
+    + {static} PlanetSunLightEnabled : int
+    + {static} PlanetRadius : int
+    + {static} MapSunLightDirection : int
+    + {static} GlowRadius : int
+    + {static} GameSeconds : int
+    + {static} AgeSecs : int
+    + {static} Color : int
+    + {static} ColorTwo : int
+    + {static} MaskTex : int
+    + {static} SwayHead : int
+    + {static} ShockwaveColor : int
+    + {static} ShockwaveSpan : int
+    + {static} WaterCastVectSun : int
+    + {static} WaterCastVectMoon : int
+    + {static} WaterOutputTex : int
+    + {static} WaterOffsetTex : int
+    + {static} ShadowCompositeTex : int
+    + {static} FallIntensity : int
+}
+@enduml

@@ -1,0 +1,28 @@
+@startuml
+class Pawn_PlayerSettings {
+    + joinTick : int
+    + followDrafted : bool
+    + followFieldwork : bool
+    + animalsReleased : bool
+    + selfTend : bool
+    + displayOrder : int
+    + RespectsAllowedArea : bool <<get>>
+    + RespectsMaster : bool <<get>>
+    + UsesConfigurableHostilityResponse : bool <<get>>
+    + Pawn_PlayerSettings(pawn:Pawn)
+    + ExposeData() : void
+    + GetGizmos() : IEnumerable<Gizmo>
+    + Notify_FactionChanged() : void
+    + Notify_MadePrisoner() : void
+    + ResetMedicalCare() : void
+    + Notify_AreaRemoved(area:Area) : void
+}
+IExposable <|-- Pawn_PlayerSettings
+Pawn_PlayerSettings o-> "medCare" MedicalCareCategory
+Pawn_PlayerSettings o-> "hostilityResponse" HostilityResponseMode
+Pawn_PlayerSettings --> "Master" Pawn
+Pawn_PlayerSettings --> "EffectiveAreaRestrictionInPawnCurrentMap" Area
+Pawn_PlayerSettings --> "EffectiveAreaRestriction" Area
+Pawn_PlayerSettings --> "AreaRestriction" Area
+Pawn_PlayerSettings --> "RespectedMaster" Pawn
+@enduml

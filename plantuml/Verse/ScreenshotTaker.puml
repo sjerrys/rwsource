@@ -1,0 +1,6 @@
+@startuml
+class ScreenshotTaker <<static>> {
+    + {static} Update() : void
+    + {static} QueueSilentScreenshot() : void
+}
+@enduml

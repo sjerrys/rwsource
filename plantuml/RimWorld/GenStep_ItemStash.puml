@@ -1,0 +1,7 @@
+@startuml
+class GenStep_ItemStash {
+    + <<override>> SeedPart : int <<get>>
+}
+GenStep_Scatterer <|-- GenStep_ItemStash
+GenStep_ItemStash --> "thingSetMakerDef" ThingSetMakerDef
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class StorytellerCompProperties_ClassicIntro {
+    + StorytellerCompProperties_ClassicIntro()
+}
+StorytellerCompProperties <|-- StorytellerCompProperties_ClassicIntro
+@enduml

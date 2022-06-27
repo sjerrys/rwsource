@@ -1,0 +1,8 @@
+@startuml
+class QuestPart_Filter_FactionHostileToOtherFaction {
+    + <<override>> ExposeData() : void
+}
+QuestPart_Filter <|-- QuestPart_Filter_FactionHostileToOtherFaction
+QuestPart_Filter_FactionHostileToOtherFaction --> "faction" Faction
+QuestPart_Filter_FactionHostileToOtherFaction --> "other" Faction
+@enduml

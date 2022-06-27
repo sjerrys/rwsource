@@ -1,0 +1,14 @@
+@startuml
+class Need_Joy {
+    + <<override>> GUIChangeArrow : int <<get>>
+    + Need_Joy(pawn:Pawn)
+    + <<override>> ExposeData() : void
+    + <<override>> SetInitialLevel() : void
+    + GainJoy(amount:float, joyKind:JoyKindDef) : void
+    + <<override>> NeedInterval() : void
+    + <<override>> GetTipString() : string
+}
+Need <|-- Need_Joy
+Need_Joy o-> "tolerances" JoyToleranceSet
+Need_Joy --> "CurCategory" JoyCategory
+@enduml

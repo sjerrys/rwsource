@@ -1,0 +1,9 @@
+@startuml
+class ToolCapacityDef {
+}
+class "IEnumerable`1"<T> {
+}
+Def <|-- ToolCapacityDef
+ToolCapacityDef --> "Maneuvers<ManeuverDef>" "IEnumerable`1"
+ToolCapacityDef --> "VerbsProperties<VerbProperties>" "IEnumerable`1"
+@enduml

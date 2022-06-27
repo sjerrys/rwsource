@@ -1,0 +1,6 @@
+@startuml
+class WorkGiver_TendOtherUrgent {
+    + <<override>> HasJobOnThing(pawn:Pawn, t:Thing, forced:bool) : bool
+}
+WorkGiver_TendOther <|-- WorkGiver_TendOtherUrgent
+@enduml

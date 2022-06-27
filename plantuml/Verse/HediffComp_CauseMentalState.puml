@@ -1,0 +1,8 @@
+@startuml
+class HediffComp_CauseMentalState {
+    + <<override>> CompPostTick(severityAdjustment:float) : void
+    + <<override>> CompPostPostRemoved() : void
+}
+HediffComp <|-- HediffComp_CauseMentalState
+HediffComp_CauseMentalState --> "Props" HediffCompProperties_CauseMentalState
+@enduml

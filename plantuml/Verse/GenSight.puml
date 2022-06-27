@@ -1,0 +1,9 @@
+@startuml
+class GenSight <<static>> {
+    + {static} LineOfSight(start:IntVec3, end:IntVec3, map:Map, skipFirstCell:bool, validator:Func<IntVec3, bool>, halfXOffset:int, halfZOffset:int) : bool
+    + {static} LineOfSight(start:IntVec3, end:IntVec3, map:Map, startRect:CellRect, endRect:CellRect, validator:Func<IntVec3, bool>) : bool
+    + {static} PointsOnLineOfSight(start:IntVec3, end:IntVec3) : IEnumerable<IntVec3>
+    + {static} LineOfSightToEdges(start:IntVec3, end:IntVec3, map:Map, skipFirstCell:bool, validator:Func<IntVec3, bool>) : bool
+    + {static} LineOfSightToThing(start:IntVec3, t:Thing, map:Map, skipFirstCell:bool, validator:Func<IntVec3, bool>) : bool
+}
+@enduml

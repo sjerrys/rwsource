@@ -1,0 +1,16 @@
+@startuml
+class WorldFeatureTextMesh_Legacy {
+    + <<override>> Active : bool <<get>>
+    + <<override>> Text : string <<get>> <<set>>
+    + <<override>> Size : float <<set>>
+    + <<override>> SetActive(active:bool) : void
+    + <<override>> Destroy() : void
+    + <<override>> Init() : void
+    + <<override>> WrapAroundPlanetSurface() : void
+}
+WorldFeatureTextMesh <|-- WorldFeatureTextMesh_Legacy
+WorldFeatureTextMesh_Legacy --> "Position" Vector3
+WorldFeatureTextMesh_Legacy --> "Color" Color
+WorldFeatureTextMesh_Legacy --> "Rotation" Quaternion
+WorldFeatureTextMesh_Legacy --> "LocalPosition" Vector3
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class RecordDef {
+}
+class "List`1"<T> {
+}
+Def <|-- RecordDef
+RecordDef --> "type" RecordType
+RecordDef o-> "workerClass" Type
+RecordDef --> "measuredTimeJobs<JobDef>" "List`1"
+RecordDef --> "Worker" RecordWorker
+@enduml

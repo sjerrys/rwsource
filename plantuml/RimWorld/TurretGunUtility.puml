@@ -1,0 +1,6 @@
+@startuml
+class TurretGunUtility <<static>> {
+    + {static} NeedsShells(turret:ThingDef) : bool
+    + {static} TryFindRandomShellDef(turret:ThingDef, allowEMP:bool, mustHarmHealth:bool, techLevel:TechLevel, allowAntigrainWarhead:bool, maxMarketValue:float) : ThingDef
+}
+@enduml

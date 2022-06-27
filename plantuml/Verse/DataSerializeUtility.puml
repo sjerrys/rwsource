@@ -1,0 +1,16 @@
+@startuml
+class DataSerializeUtility <<static>> {
+    + {static} SerializeByte(elements:int, reader:Func<int, byte>) : byte[]
+    + {static} SerializeByte(data:byte[]) : byte[]
+    + {static} DeserializeByte(data:byte[]) : byte[]
+    + {static} LoadByte(arr:byte[], elements:int, writer:Action<int, byte>) : void
+    + {static} SerializeUshort(elements:int, reader:Func<int, ushort>) : byte[]
+    + {static} SerializeUshort(data:ushort[]) : byte[]
+    + {static} DeserializeUshort(data:byte[]) : ushort[]
+    + {static} LoadUshort(arr:byte[], elements:int, writer:Action<int, ushort>) : void
+    + {static} SerializeInt(elements:int, reader:Func<int, int>) : byte[]
+    + {static} SerializeInt(data:int[]) : byte[]
+    + {static} DeserializeInt(data:byte[]) : int[]
+    + {static} LoadInt(arr:byte[], elements:int, writer:Action<int, int>) : void
+}
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class JobDriver_RemoveFloor {
+    + JobDriver_RemoveFloor()
+}
+JobDriver_AffectFloor <|-- JobDriver_RemoveFloor
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+class DiaNodeMold {
+    + name : string = "Unnamed"
+    + unique : bool
+    + isRoot : bool = true
+    + used : bool
+    + PostLoad() : void
+}
+class "List`1"<T> {
+}
+DiaNodeMold o-> "texts<string>" "List`1"
+DiaNodeMold o-> "optionList<DiaOptionMold>" "List`1"
+DiaNodeMold --> "nodeType" DiaNodeType
+@enduml

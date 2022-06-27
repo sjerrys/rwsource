@@ -1,0 +1,5 @@
+@startuml
+class JobGiver_AIDefendPoint {
+}
+JobGiver_AIFightEnemy <|-- JobGiver_AIDefendPoint
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class QuestNode_TradeRequest_Initiate {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_TradeRequest_Initiate
+QuestNode_TradeRequest_Initiate --> "settlement<Settlement>" "SlateRef`1"
+QuestNode_TradeRequest_Initiate --> "requestedThingDef<ThingDef>" "SlateRef`1"
+QuestNode_TradeRequest_Initiate --> "requestedThingCount<int>" "SlateRef`1"
+QuestNode_TradeRequest_Initiate --> "duration<int>" "SlateRef`1"
+@enduml

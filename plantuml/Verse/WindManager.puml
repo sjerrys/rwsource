@@ -1,0 +1,10 @@
+@startuml
+class WindManager {
+    + WindSpeed : float <<get>>
+    + WindManager(map:Map)
+    + WindManagerTick() : void
+    + {static} Notify_PlantMaterialCreated(newMat:Material) : void
+    + DebugString() : string
+    + LogWindSpeeds() : void
+}
+@enduml

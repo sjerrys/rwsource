@@ -1,0 +1,5 @@
+@startuml
+class GatheringWorker_Party {
+}
+GatheringWorker <|-- GatheringWorker_Party
+@enduml

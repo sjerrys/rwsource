@@ -1,0 +1,8 @@
+@startuml
+class ThingSetMakerDef {
+    + <<override>> ResolveReferences() : void
+}
+Def <|-- ThingSetMakerDef
+ThingSetMakerDef --> "root" ThingSetMaker
+ThingSetMakerDef --> "debugParams" ThingSetMakerParams
+@enduml

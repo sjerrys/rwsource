@@ -1,0 +1,5 @@
+@startuml
+class CompColorableUtility <<static>> {
+    + {static} SetColor(t:Thing, newColor:Color, reportFailure:bool) : void
+}
+@enduml

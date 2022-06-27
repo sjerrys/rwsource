@@ -1,0 +1,8 @@
+@startuml
+class ThinkNode_Tagger {
+    + <<override>> DeepCopy(resolve:bool) : ThinkNode
+    + <<override>> GetPriority(pawn:Pawn) : float
+    + <<override>> TryIssueJobPackage(pawn:Pawn, jobParams:JobIssueParams) : ThinkResult
+}
+ThinkNode_Priority <|-- ThinkNode_Tagger
+@enduml

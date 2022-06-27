@@ -1,0 +1,6 @@
+@startuml
+class WorldLayer_UngeneratedPlanetParts {
+    + <<override>> Regenerate() : IEnumerable
+}
+WorldLayer <|-- WorldLayer_UngeneratedPlanetParts
+@enduml

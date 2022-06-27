@@ -1,0 +1,11 @@
+@startuml
+class DebugOutputAttribute {
+    + name : string
+    + category : string = "General"
+    + onlyWhenPlaying : bool
+    + DebugOutputAttribute()
+    + DebugOutputAttribute(onlyWhenPlaying:bool)
+    + DebugOutputAttribute(category:string, onlyWhenPlaying:bool)
+}
+Attribute <|-- DebugOutputAttribute
+@enduml

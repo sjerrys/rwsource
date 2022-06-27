@@ -1,0 +1,11 @@
+@startuml
+class LanguageWorker_English {
+    + <<override>> WithIndefiniteArticle(str:string, gender:Gender, plural:bool, name:bool) : string
+    + <<override>> WithDefiniteArticle(str:string, gender:Gender, plural:bool, name:bool) : string
+    + <<override>> PostProcessed(str:string) : string
+    + <<override>> ToTitleCase(str:string) : string
+    + <<override>> OrdinalNumber(number:int, gender:Gender) : string
+    + <<override>> Pluralize(str:string, gender:Gender, count:int) : string
+}
+LanguageWorker <|-- LanguageWorker_English
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class WorkGiver_TendSelf {
+    + <<override>> PotentialWorkThingsGlobal(pawn:Pawn) : IEnumerable<Thing>
+    + <<override>> HasJobOnThing(pawn:Pawn, t:Thing, forced:bool) : bool
+}
+WorkGiver_Tend <|-- WorkGiver_TendSelf
+WorkGiver_TendSelf --> "PotentialWorkThingRequest" ThingRequest
+@enduml

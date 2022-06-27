@@ -1,0 +1,5 @@
+@startuml
+class TemperatureDisplayModeExtension <<static>> {
+    + {static} ToStringHuman(mode:TemperatureDisplayMode) : string
+}
+@enduml

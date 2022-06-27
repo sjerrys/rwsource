@@ -1,0 +1,14 @@
+@startuml
+class QuestPart_SetFactionHidden {
+    + inSignal : string
+    + hidden : bool
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> Notify_FactionRemoved(f:Faction) : void
+    + <<override>> ExposeData() : void
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart <|-- QuestPart_SetFactionHidden
+QuestPart_SetFactionHidden --> "faction" Faction
+QuestPart_SetFactionHidden --> "InvolvedFactions<Faction>" "IEnumerable`1"
+@enduml

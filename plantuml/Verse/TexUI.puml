@@ -1,0 +1,31 @@
+@startuml
+class TexUI <<static>> {
+}
+TexUI o-> "TitleBGTex" Texture2D
+TexUI o-> "HighlightTex" Texture2D
+TexUI o-> "HighlightSelectedTex" Texture2D
+TexUI o-> "ArrowTexRight" Texture2D
+TexUI o-> "ArrowTexLeft" Texture2D
+TexUI o-> "WinExpandWidget" Texture2D
+TexUI o-> "ArrowTex" Texture2D
+TexUI o-> "RotLeftTex" Texture2D
+TexUI o-> "RotRightTex" Texture2D
+TexUI o-> "GrayBg" Texture2D
+TexUI o-> "AvailResearchColor" Color
+TexUI o-> "ActiveResearchColor" Color
+TexUI o-> "FinishedResearchColor" Color
+TexUI o-> "LockedResearchColor" Color
+TexUI o-> "RelatedResearchColor" Color
+TexUI o-> "HighlightBgResearchColor" Color
+TexUI o-> "HighlightBorderResearchColor" Color
+TexUI o-> "DefaultBorderResearchColor" Color
+TexUI o-> "DefaultLineResearchColor" Color
+TexUI o-> "HighlightLineResearchColor" Color
+TexUI o-> "DependencyOutlineResearchColor" Color
+TexUI o-> "FastFillTex" Texture2D
+TexUI o-> "FastFillStyle" GUIStyle
+TexUI o-> "TextBGBlack" Texture2D
+TexUI o-> "GrayTextBG" Texture2D
+TexUI o-> "FloatMenuOptionBG" Texture2D
+TexUI o-> "GrayscaleGUI" Material
+@enduml

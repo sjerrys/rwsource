@@ -1,0 +1,26 @@
+@startuml
+class PortraitsCache <<static>> {
+    + {static} Get(pawn:Pawn, size:Vector2, cameraOffset:Vector3, cameraZoom:float, supersample:bool, compensateForUIScale:bool) : RenderTexture
+    + {static} SetDirty(pawn:Pawn) : void
+    + {static} PortraitsCacheUpdate() : void
+    + {static} Clear() : void
+}
+class CachedPortrait <<struct>> {
+    + Dirty : bool <<get>>
+    + LastUseTime : float <<get>>
+    + Expired : bool <<get>>
+    + CachedPortrait(renderTexture:RenderTexture, dirty:bool, lastUseTime:float)
+}
+class CachedPortraitsWithParams <<struct>> {
+    + CameraZoom : float <<get>>
+    + CachedPortraitsWithParams(size:Vector2, cameraOffset:Vector3, cameraZoom:float)
+}
+class "Dictionary`2"<T1,T2> {
+}
+PortraitsCache +-- CachedPortrait
+CachedPortrait --> "RenderTexture" RenderTexture
+PortraitsCache +-- CachedPortraitsWithParams
+CachedPortraitsWithParams --> "CachedPortraits<Pawn,CachedPortrait>" "Dictionary`2"
+CachedPortraitsWithParams --> "Size" Vector2
+CachedPortraitsWithParams --> "CameraOffset" Vector3
+@enduml

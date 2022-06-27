@@ -1,0 +1,17 @@
+@startuml
+class CompPowerBattery {
+    + AmountCanAccept : float <<get>>
+    + StoredEnergy : float <<get>>
+    + StoredEnergyPct : float <<get>>
+    + <<override>> PostExposeData() : void
+    + <<override>> CompTick() : void
+    + AddEnergy(amount:float) : void
+    + DrawPower(amount:float) : void
+    + SetStoredEnergyPct(pct:float) : void
+    + <<override>> ReceiveCompSignal(signal:string) : void
+    + <<override>> CompInspectStringExtra() : string
+    + <<override>> CompGetGizmosExtra() : IEnumerable<Gizmo>
+}
+CompPower <|-- CompPowerBattery
+CompPowerBattery --> "Props" CompProperties_Battery
+@enduml

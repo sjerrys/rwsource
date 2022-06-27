@@ -1,0 +1,7 @@
+@startuml
+class WorkGiver_ConstructDeliverResourcesToFrames {
+    + <<override>> JobOnThing(pawn:Pawn, t:Thing, forced:bool) : Job
+}
+WorkGiver_ConstructDeliverResources <|-- WorkGiver_ConstructDeliverResourcesToFrames
+WorkGiver_ConstructDeliverResourcesToFrames --> "PotentialWorkThingRequest" ThingRequest
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class Alert_ColonistNeedsTend {
+    + Alert_ColonistNeedsTend()
+    + <<override>> GetExplanation() : TaggedString
+    + <<override>> GetReport() : AlertReport
+}
+Alert <|-- Alert_ColonistNeedsTend
+@enduml

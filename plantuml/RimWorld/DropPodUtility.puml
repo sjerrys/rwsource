@@ -1,0 +1,8 @@
+@startuml
+class DropPodUtility <<static>> {
+    + {static} MakeDropPodAt(c:IntVec3, map:Map, info:ActiveDropPodInfo) : void
+    + {static} DropThingsNear(dropCenter:IntVec3, map:Map, things:IEnumerable<Thing>, openDelay:int, canInstaDropDuringInit:bool, leaveSlag:bool, canRoofPunch:bool, forbid:bool) : void
+    + {static} DropThingGroupsNear_NewTmp(dropCenter:IntVec3, map:Map, thingsGroups:List<List<Thing>>, openDelay:int, instaDrop:bool, leaveSlag:bool, canRoofPunch:bool, forbid:bool, allowFogged:bool) : void
+    + {static} DropThingGroupsNear(dropCenter:IntVec3, map:Map, thingsGroups:List<List<Thing>>, openDelay:int, instaDrop:bool, leaveSlag:bool, canRoofPunch:bool, forbid:bool) : void
+}
+@enduml

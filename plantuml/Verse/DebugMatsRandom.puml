@@ -1,0 +1,7 @@
+@startuml
+class DebugMatsRandom <<static>> {
+    + <<const>> MaterialCount : int = 100
+    {static} DebugMatsRandom()
+    + {static} Mat(ind:int) : Material
+}
+@enduml

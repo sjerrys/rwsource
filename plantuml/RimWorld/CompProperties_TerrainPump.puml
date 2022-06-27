@@ -1,0 +1,7 @@
+@startuml
+abstract class CompProperties_TerrainPump {
+    + radius : float = 5.9f
+    + daysToRadius : float = 5f
+}
+CompProperties <|-- CompProperties_TerrainPump
+@enduml

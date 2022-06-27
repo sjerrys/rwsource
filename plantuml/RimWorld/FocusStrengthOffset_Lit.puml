@@ -1,0 +1,9 @@
+@startuml
+class FocusStrengthOffset_Lit {
+    + <<override>> GetExplanation(parent:Thing) : string
+    + <<override>> GetExplanationAbstract(def:ThingDef) : string
+    + <<override>> GetOffset(parent:Thing, user:Pawn) : float
+    + <<override>> CanApply(parent:Thing, user:Pawn) : bool
+}
+FocusStrengthOffset <|-- FocusStrengthOffset_Lit
+@enduml

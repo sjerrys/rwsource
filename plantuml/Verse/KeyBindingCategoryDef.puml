@@ -1,0 +1,11 @@
+@startuml
+class KeyBindingCategoryDef {
+    + isGameUniversal : bool
+    + selfConflicting : bool = true
+    + {static} Named(defName:string) : KeyBindingCategoryDef
+}
+class "List`1"<T> {
+}
+Def <|-- KeyBindingCategoryDef
+KeyBindingCategoryDef o-> "checkForConflicts<KeyBindingCategoryDef>" "List`1"
+@enduml

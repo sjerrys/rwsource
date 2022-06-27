@@ -1,0 +1,16 @@
+@startuml
+class CompProperties_AbilityStopMentalState {
+    + psyfocusCostForMinor : float
+    + psyfocusCostForMajor : float
+    + psyfocusCostForExtreme : float
+    + <<override>> OverridesPsyfocusCost : bool <<get>>
+    + <<override>> PsyfocusCostExplanation : string <<get>>
+    + CompProperties_AbilityStopMentalState()
+    + <<override>> ConfigErrors(parentDef:AbilityDef) : IEnumerable<string>
+}
+class "List`1"<T> {
+}
+CompProperties_AbilityEffect <|-- CompProperties_AbilityStopMentalState
+CompProperties_AbilityStopMentalState --> "exceptions<MentalStateDef>" "List`1"
+CompProperties_AbilityStopMentalState --> "PsyfocusCostRange" FloatRange
+@enduml

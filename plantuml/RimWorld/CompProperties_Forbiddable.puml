@@ -1,0 +1,6 @@
+@startuml
+class CompProperties_Forbiddable {
+    + CompProperties_Forbiddable()
+}
+CompProperties <|-- CompProperties_Forbiddable
+@enduml

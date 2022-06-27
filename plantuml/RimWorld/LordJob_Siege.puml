@@ -1,0 +1,10 @@
+@startuml
+class LordJob_Siege {
+    + <<override>> GuiltyOnDowned : bool <<get>>
+    + LordJob_Siege()
+    + LordJob_Siege(faction:Faction, siegeSpot:IntVec3, blueprintPoints:float)
+    + <<override>> CreateGraph() : StateGraph
+    + <<override>> ExposeData() : void
+}
+LordJob <|-- LordJob_Siege
+@enduml

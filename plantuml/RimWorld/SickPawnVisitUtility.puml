@@ -1,0 +1,7 @@
+@startuml
+class SickPawnVisitUtility <<static>> {
+    + {static} FindRandomSickPawn(pawn:Pawn, maxPatientJoy:JoyCategory) : Pawn
+    + {static} CanVisit(pawn:Pawn, sick:Pawn, maxPatientJoy:JoyCategory) : bool
+    + {static} FindChair(forPawn:Pawn, nearPawn:Pawn) : Thing
+}
+@enduml

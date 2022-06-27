@@ -1,0 +1,18 @@
+@startuml
+class ThingSetMakerUtility <<static>> {
+    + {static} Reset() : void
+    + {static} CanGenerate(thingDef:ThingDef) : bool
+    + {static} GetAllowedThingDefs(parms:ThingSetMakerParams) : IEnumerable<ThingDef>
+    + {static} AssignQuality(thing:Thing, qualityGenerator:QualityGenerator?) : void
+    + {static} IsDerpAndDisallowed(thing:ThingDef, stuff:ThingDef, qualityGenerator:QualityGenerator?) : bool
+    + {static} AdjustedBigCategoriesSelectionWeight(d:ThingDef, numMeats:int, numLeathers:int) : float
+    + {static} PossibleToWeighNoMoreThan(t:ThingDef, maxMass:float, allowedStuff:IEnumerable<ThingDef>) : bool
+    + {static} TryGetRandomThingWhichCanWeighNoMoreThan(candidates:IEnumerable<ThingDef>, stuffTechLevel:TechLevel, maxMass:float, qualityGenerator:QualityGenerator?, thingStuffPair:ThingStuffPair) : bool
+    + {static} PossibleToWeighNoMoreThan(candidates:IEnumerable<ThingDef>, stuffTechLevel:TechLevel, maxMass:float, count:int) : bool
+    + {static} GetMinMass(thingDef:ThingDef, stuffTechLevel:TechLevel) : float
+    + {static} GetMinMarketValue(thingDef:ThingDef, stuffTechLevel:TechLevel) : float
+}
+class "List`1"<T> {
+}
+ThingSetMakerUtility o-> "allGeneratableItems<ThingDef>" "List`1"
+@enduml

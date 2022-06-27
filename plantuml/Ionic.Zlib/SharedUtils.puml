@@ -1,0 +1,6 @@
+@startuml
+class SharedUtils {
+    + {static} URShift(number:int, bits:int) : int
+    + {static} ReadInput(sourceTextReader:TextReader, target:byte[], start:int, count:int) : int
+}
+@enduml

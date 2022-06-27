@@ -1,0 +1,10 @@
+@startuml
+class CompInitiatable {
+    + initiationDelayTicksOverride : int
+    + Initiated : bool <<get>>
+    + <<override>> PostSpawnSetup(respawningAfterLoad:bool) : void
+    + <<override>> CompInspectStringExtra() : string
+    + <<override>> PostExposeData() : void
+}
+ThingComp <|-- CompInitiatable
+@enduml

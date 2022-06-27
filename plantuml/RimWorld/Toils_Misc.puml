@@ -1,0 +1,9 @@
+@startuml
+class Toils_Misc <<static>> {
+    + {static} Learn(skill:SkillDef, xp:float) : Toil
+    + {static} SetForbidden(ind:TargetIndex, forbidden:bool) : Toil
+    + {static} TakeItemFromInventoryToCarrier(pawn:Pawn, itemInd:TargetIndex) : Toil
+    + {static} ThrowColonistAttackingMote(target:TargetIndex) : Toil
+    + {static} FindRandomAdjacentReachableCell(adjacentToInd:TargetIndex, cellInd:TargetIndex) : Toil
+}
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class InteractionWorker_Slight {
+    + <<override>> RandomSelectionWeight(initiator:Pawn, recipient:Pawn) : float
+}
+InteractionWorker <|-- InteractionWorker_Slight
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class CompMoteEmitterProximityScan {
+    + <<override>> PostDeSpawn(map:Map) : void
+    + <<override>> CompTick() : void
+}
+CompMoteEmitter <|-- CompMoteEmitterProximityScan
+@enduml

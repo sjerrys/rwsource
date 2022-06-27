@@ -1,0 +1,8 @@
+@startuml
+class PowerKeepSign {
+    + PowerKeepSign()
+    + PowerKeepSign(lhs:ModuleBase, rhs:ModuleBase)
+    + <<override>> GetValue(x:double, y:double, z:double) : double
+}
+ModuleBase <|-- PowerKeepSign
+@enduml

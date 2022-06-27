@@ -1,0 +1,6 @@
+@startuml
+enum SoundParamUpdateMode {
+    Constant,
+    OncePerSample,
+}
+@enduml

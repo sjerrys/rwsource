@@ -1,0 +1,9 @@
+@startuml
+class ShipCountdown <<static>> {
+    + {static} CountingDown : bool <<get>>
+    + {static} InitiateCountdown(launchingShipRoot:Building) : void
+    + {static} InitiateCountdown(launchString:string) : void
+    + {static} ShipCountdownUpdate() : void
+    + {static} CancelCountdown() : void
+}
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class GenStep_ManhunterPack {
+    + <<override>> SeedPart : int <<get>>
+    + <<override>> Generate(map:Map, parms:GenStepParams) : void
+}
+GenStep <|-- GenStep_ManhunterPack
+GenStep_ManhunterPack o-> "defaultPointsRange" FloatRange
+@enduml

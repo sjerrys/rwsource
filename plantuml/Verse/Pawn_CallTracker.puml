@@ -1,0 +1,11 @@
+@startuml
+class Pawn_CallTracker {
+    + Pawn_CallTracker(pawn:Pawn)
+    + CallTrackerTick() : void
+    + DoCall() : void
+    + Notify_InAggroMentalState() : void
+    + Notify_DidMeleeAttack() : void
+    + Notify_Released() : void
+}
+Pawn_CallTracker --> "pawn" Pawn
+@enduml

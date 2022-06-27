@@ -1,0 +1,12 @@
+@startuml
+class SkyfallerMaker <<static>> {
+    + {static} MakeSkyfaller(skyfaller:ThingDef) : Skyfaller
+    + {static} MakeSkyfaller(skyfaller:ThingDef, innerThing:ThingDef) : Skyfaller
+    + {static} MakeSkyfaller(skyfaller:ThingDef, innerThing:Thing) : Skyfaller
+    + {static} MakeSkyfaller(skyfaller:ThingDef, things:IEnumerable<Thing>) : Skyfaller
+    + {static} SpawnSkyfaller(skyfaller:ThingDef, pos:IntVec3, map:Map) : Skyfaller
+    + {static} SpawnSkyfaller(skyfaller:ThingDef, innerThing:ThingDef, pos:IntVec3, map:Map) : Skyfaller
+    + {static} SpawnSkyfaller(skyfaller:ThingDef, innerThing:Thing, pos:IntVec3, map:Map) : Skyfaller
+    + {static} SpawnSkyfaller(skyfaller:ThingDef, things:IEnumerable<Thing>, pos:IntVec3, map:Map) : Skyfaller
+}
+@enduml

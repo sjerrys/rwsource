@@ -1,0 +1,5 @@
+@startuml
+class IncidentWorker_DeepDrillInfestation {
+}
+IncidentWorker <|-- IncidentWorker_DeepDrillInfestation
+@enduml

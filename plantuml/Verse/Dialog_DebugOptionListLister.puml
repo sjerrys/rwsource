@@ -1,0 +1,8 @@
+@startuml
+class Dialog_DebugOptionListLister {
+    + Dialog_DebugOptionListLister(options:IEnumerable<DebugMenuOption>)
+    + {static} ShowSimpleDebugMenu(elements:IEnumerable<T>, label:Func<T, string>, chosen:Action<T>) : void
+    + <<override>> OnAcceptKeyPressed() : void
+}
+Dialog_DebugOptionLister <|-- Dialog_DebugOptionListLister
+@enduml

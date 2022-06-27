@@ -1,0 +1,6 @@
+@startuml
+enum TargetType {
+    Thing,
+    Cell,
+}
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+class HediffCompProperties_Disorientation {
+    + wanderMtbHours : float
+    + wanderRadius : float
+    + singleWanderDurationTicks : int
+    + HediffCompProperties_Disorientation()
+    + <<override>> ConfigErrors(parentDef:HediffDef) : IEnumerable<string>
+}
+HediffCompProperties <|-- HediffCompProperties_Disorientation
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+class TaleData_Thing {
+    + thingID : int
+    + title : string
+    + <<override>> ExposeData() : void
+    + <<override>> GetRules(prefix:string) : IEnumerable<Rule>
+    + {static} GenerateFrom(t:Thing) : TaleData_Thing
+    + {static} GenerateRandom() : TaleData_Thing
+}
+TaleData <|-- TaleData_Thing
+TaleData_Thing --> "thingDef" ThingDef
+TaleData_Thing --> "stuff" ThingDef
+TaleData_Thing --> "quality" QualityCategory
+@enduml

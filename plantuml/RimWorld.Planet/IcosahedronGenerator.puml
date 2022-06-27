@@ -1,0 +1,5 @@
+@startuml
+class IcosahedronGenerator <<static>> {
+    + {static} GenerateIcosahedron(outVerts:List<Vector3>, outTris:List<TriangleIndices>, radius:float, viewCenter:Vector3, viewAngle:float) : void
+}
+@enduml

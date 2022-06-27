@@ -1,0 +1,28 @@
+@startuml
+class QuestNode_GetPawn {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GetPawn
+QuestNode_GetPawn --> "storeAs<string>" "SlateRef`1"
+QuestNode_GetPawn --> "mustBeFactionLeader<bool>" "SlateRef`1"
+QuestNode_GetPawn --> "mustBeWorldPawn<bool>" "SlateRef`1"
+QuestNode_GetPawn --> "ifWorldPawnThenMustBeFree<bool>" "SlateRef`1"
+QuestNode_GetPawn --> "ifWorldPawnThenMustBeFreeOrLeader<bool>" "SlateRef`1"
+QuestNode_GetPawn --> "mustHaveNoFaction<bool>" "SlateRef`1"
+QuestNode_GetPawn --> "mustBeFreeColonist<bool>" "SlateRef`1"
+QuestNode_GetPawn --> "mustBePlayerPrisoner<bool>" "SlateRef`1"
+QuestNode_GetPawn --> "mustBeNotSuspended<bool>" "SlateRef`1"
+QuestNode_GetPawn --> "mustHaveRoyalTitleInCurrentFaction<bool>" "SlateRef`1"
+QuestNode_GetPawn --> "mustBeNonHostileToPlayer<bool>" "SlateRef`1"
+QuestNode_GetPawn --> "allowPermanentEnemyFaction<bool?>" "SlateRef`1"
+QuestNode_GetPawn --> "canGeneratePawn<bool>" "SlateRef`1"
+QuestNode_GetPawn --> "requireResearchedBedroomFurnitureIfRoyal<bool>" "SlateRef`1"
+QuestNode_GetPawn --> "mustBeOfKind<PawnKindDef>" "SlateRef`1"
+QuestNode_GetPawn --> "seniorityRange<FloatRange>" "SlateRef`1"
+QuestNode_GetPawn --> "minTechLevel<TechLevel>" "SlateRef`1"
+QuestNode_GetPawn --> "excludeFactionDefs<List<FactionDef>>" "SlateRef`1"
+QuestNode_GetPawn --> "hostileWeight<float?>" "SlateRef`1"
+QuestNode_GetPawn --> "nonHostileWeight<float?>" "SlateRef`1"
+QuestNode_GetPawn o-> "maxUsablePawnsToGenerate<int>" "SlateRef`1"
+@enduml

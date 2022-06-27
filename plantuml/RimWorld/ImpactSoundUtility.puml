@@ -1,0 +1,5 @@
+@startuml
+class ImpactSoundUtility <<static>> {
+    + {static} PlayImpactSound(hitThing:Thing, ist:ImpactSoundTypeDef, map:Map) : void
+}
+@enduml

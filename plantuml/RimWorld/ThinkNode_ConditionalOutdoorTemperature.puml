@@ -1,0 +1,5 @@
+@startuml
+class ThinkNode_ConditionalOutdoorTemperature {
+}
+ThinkNode_Conditional <|-- ThinkNode_ConditionalOutdoorTemperature
+@enduml

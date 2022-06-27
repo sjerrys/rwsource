@@ -1,0 +1,5 @@
+@startuml
+class IncidentWorker_ResourcePodCrash {
+}
+IncidentWorker <|-- IncidentWorker_ResourcePodCrash
+@enduml

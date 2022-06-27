@@ -1,0 +1,12 @@
+@startuml
+class GenStep_Turrets {
+    + <<const>> DefaultGuardsCount : int = 1
+    + <<override>> SeedPart : int <<get>>
+    + <<override>> Generate(map:Map, parms:GenStepParams) : void
+}
+GenStep <|-- GenStep_Turrets
+GenStep_Turrets o-> "defaultTurretsCountRange" IntRange
+GenStep_Turrets o-> "defaultMortarsCountRange" IntRange
+GenStep_Turrets o-> "widthRange" IntRange
+GenStep_Turrets o-> "guardsCountRange" IntRange
+@enduml

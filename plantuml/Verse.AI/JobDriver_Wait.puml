@@ -1,0 +1,9 @@
+@startuml
+class JobDriver_Wait {
+    + <<override>> GetReport() : string
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+    + <<virtual>> DecorateWaitToil(wait:Toil) : void
+    + <<override>> Notify_StanceChanged() : void
+}
+JobDriver <|-- JobDriver_Wait
+@enduml

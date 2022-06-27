@@ -1,0 +1,8 @@
+@startuml
+class EditSliderRangeAttribute {
+    + min : float
+    + max : float = 1f
+    + EditSliderRangeAttribute(min:float, max:float)
+}
+Attribute <|-- EditSliderRangeAttribute
+@enduml

@@ -1,0 +1,48 @@
+@startuml
+abstract class Window {
+    + optionalTitle : string
+    + doCloseX : bool
+    + doCloseButton : bool
+    + closeOnAccept : bool = true
+    + closeOnCancel : bool = true
+    + forceCatchAcceptAndCancelEventEvenIfUnfocused : bool
+    + closeOnClickedOutside : bool
+    + forcePause : bool
+    + preventCameraMotion : bool = true
+    + preventDrawTutor : bool
+    + doWindowBackground : bool = true
+    + onlyOneOfTypeAllowed : bool = true
+    + absorbInputAroundWindow : bool
+    + resizeable : bool
+    + draggable : bool
+    + drawShadow : bool = true
+    + focusWhenOpened : bool = true
+    + shadowAlpha : float = 1f
+    + silenceAmbientSound : bool
+    + <<const>> StandardMargin : float = 18f
+    + ID : int
+    + extraOnGUIProfilerLabelCached : string
+    + <<virtual>> IsDebug : bool <<get>>
+    + IsOpen : bool <<get>>
+    + Window()
+    + <<virtual>> WindowUpdate() : void
+    + {abstract} DoWindowContents(inRect:Rect) : void
+    + <<virtual>> ExtraOnGUI() : void
+    + <<virtual>> PreOpen() : void
+    + <<virtual>> PostOpen() : void
+    + <<virtual>> PreClose() : void
+    + <<virtual>> PostClose() : void
+    + <<virtual>> WindowOnGUI() : void
+    + <<virtual>> Close(doCloseSound:bool) : void
+    + <<virtual>> CausesMessageBackground() : bool
+    + <<virtual>> OnCancelKeyPressed() : void
+    + <<virtual>> OnAcceptKeyPressed() : void
+    + <<virtual>> Notify_ResolutionChanged() : void
+}
+Window o-> "layer" WindowLayer
+Window --> "soundAppear" SoundDef
+Window --> "soundClose" SoundDef
+Window --> "soundAmbient" SoundDef
+Window --> "windowRect" Rect
+Window --> "InitialSize" Vector2
+@enduml

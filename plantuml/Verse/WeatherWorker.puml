@@ -1,0 +1,17 @@
+@startuml
+class WeatherWorker {
+    + WeatherWorker(def:WeatherDef)
+    + DrawWeather(map:Map) : void
+    + WeatherTick(map:Map, lerpFactor:float) : void
+    + CurSkyTarget(map:Map) : SkyTarget
+}
+class SkyThreshold <<struct>> {
+    + celGlowThreshold : float
+    + SkyThreshold(colors:SkyColorSet, celGlowThreshold:float)
+}
+class "List`1"<T> {
+}
+WeatherWorker o-> "overlays<SkyOverlay>" "List`1"
+WeatherWorker +-- SkyThreshold
+SkyThreshold --> "colors" SkyColorSet
+@enduml

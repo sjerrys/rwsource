@@ -1,0 +1,19 @@
+@startuml
+class QuestNode_GetRandomPawnKindForFaction {
+}
+class Choice {
+    + categoryTag : string
+}
+class "SlateRef`1"<T> {
+}
+class "List`1"<T> {
+}
+QuestNode <|-- QuestNode_GetRandomPawnKindForFaction
+QuestNode_GetRandomPawnKindForFaction --> "factionOf<Thing>" "SlateRef`1"
+QuestNode_GetRandomPawnKindForFaction --> "storeAs<string>" "SlateRef`1"
+QuestNode_GetRandomPawnKindForFaction --> "choices<List<Choice>>" "SlateRef`1"
+QuestNode_GetRandomPawnKindForFaction --> "fallback<PawnKindDef>" "SlateRef`1"
+QuestNode_GetRandomPawnKindForFaction +-- Choice
+Choice --> "factionDef" FactionDef
+Choice --> "pawnKinds<PawnKindDef>" "List`1"
+@enduml

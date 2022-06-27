@@ -1,0 +1,6 @@
+@startuml
+class WorldObjectCompProperties_Timeout {
+    + WorldObjectCompProperties_Timeout()
+}
+WorldObjectCompProperties <|-- WorldObjectCompProperties_Timeout
+@enduml

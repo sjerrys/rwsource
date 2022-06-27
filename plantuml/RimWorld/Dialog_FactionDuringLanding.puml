@@ -1,0 +1,8 @@
+@startuml
+class Dialog_FactionDuringLanding {
+    + Dialog_FactionDuringLanding()
+    + <<override>> DoWindowContents(inRect:Rect) : void
+}
+Window <|-- Dialog_FactionDuringLanding
+Dialog_FactionDuringLanding --> "InitialSize" Vector2
+@enduml

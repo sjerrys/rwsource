@@ -1,0 +1,43 @@
+@startuml
+class Site {
+    + customLabel : string
+    + sitePartsKnown : bool = true
+    + factionMustRemainHostile : bool
+    + desiredThreatPoints : float
+    + <<override>> Label : string <<get>>
+    + <<override>> HandlesConditionCausers : bool <<get>>
+    + <<override>> AppendFactionToInspectString : bool <<get>>
+    + ApproachOrderString : string <<get>>
+    + ApproachingReportString : string <<get>>
+    + ActualThreatPoints : float <<get>>
+    + IncreasesPopulation : bool <<get>>
+    + BadEvenIfNoMap : bool <<get>>
+    + HasWorldObjectTimeout : bool <<get>>
+    + WorldObjectTimeoutTicksLeft : int <<get>>
+    + <<override>> Destroy() : void
+    + <<override>> ExposeData() : void
+    + AddPart(part:SitePart) : void
+    + <<override>> Tick() : void
+    + <<override>> PostMapGenerate() : void
+    + <<override>> DrawExtraSelectionOverlays() : void
+    + <<override>> Notify_MyMapAboutToBeRemoved() : void
+    + <<override>> ShouldRemoveMapNow(alsoRemoveWorldObject:bool) : bool
+    + <<override>> GetChildHolders(outChildren:List<IThingHolder>) : void
+    + <<override>> GetFloatMenuOptions(caravan:Caravan) : IEnumerable<FloatMenuOption>
+    + <<override>> GetTransportPodsFloatMenuOptions(pods:IEnumerable<IThingHolder>, representative:CompLaunchable) : IEnumerable<FloatMenuOption>
+    + <<override>> GetGizmos() : IEnumerable<Gizmo>
+    + <<override>> AllMatchingObjectsOnScreenMatchesWith(other:WorldObject) : bool
+    + <<override>> GetInspectString() : string
+    + <<override>> GetDescription() : string
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+MapParent <|-- Site
+Site o-> "parts<SitePart>" "List`1"
+Site --> "ExpandingIcon" Texture2D
+Site --> "Material" Material
+Site --> "MainSitePartDef" SitePartDef
+Site --> "ExtraGenStepDefs<GenStepWithParams>" "IEnumerable`1"
+@enduml

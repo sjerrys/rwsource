@@ -1,0 +1,5 @@
+@startuml
+class ThinkNode_ConditionalAtDutyLocation {
+}
+ThinkNode_Conditional <|-- ThinkNode_ConditionalAtDutyLocation
+@enduml

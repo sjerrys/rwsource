@@ -1,0 +1,12 @@
+@startuml
+class QuestNode_GetMonumentSketch {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GetMonumentSketch
+QuestNode_GetMonumentSketch --> "storeAs<string>" "SlateRef`1"
+QuestNode_GetMonumentSketch --> "useOnlyResourcesAvailableOnMap<Map>" "SlateRef`1"
+QuestNode_GetMonumentSketch --> "maxSize<int?>" "SlateRef`1"
+QuestNode_GetMonumentSketch --> "pointsPerArea<float>" "SlateRef`1"
+QuestNode_GetMonumentSketch --> "clearStuff<bool?>" "SlateRef`1"
+@enduml

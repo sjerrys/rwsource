@@ -1,0 +1,10 @@
+@startuml
+class QuestGen_Shuttle <<static>> {
+    + {static} GenerateShuttle(owningFaction:Faction, requiredPawns:IEnumerable<Pawn>, requiredItems:IEnumerable<ThingDefCount>, acceptColonists:bool, onlyAcceptColonists:bool, onlyAcceptHealthy:bool, requireColonistCount:int, dropEverythingIfUnsatisfied:bool, leaveImmediatelyWhenSatisfied:bool, dropEverythingOnArrival:bool, stayAfterDroppedEverythingOnArrival:bool, missionShuttleTarget:WorldObject, missionShuttleHome:WorldObject, maxColonistCount:int, shuttleDef:ThingDef, permitShuttle:bool, hideControls:bool, sendAwayIfAllDespawned:List<Thing>) : Thing
+    + {static} SendShuttleAway(quest:Quest, shuttle:Thing, dropEverything:bool, inSignal:string) : QuestPart_SendShuttleAway
+    + {static} SendShuttleAwayOnCleanup(quest:Quest, shuttle:Thing, dropEverything:bool) : QuestPart_SendShuttleAwayOnCleanup
+    + {static} AddContentsToShuttle(quest:Quest, shuttle:Thing, contents:IEnumerable<Thing>, inSignal:string) : QuestPart_AddContentsToShuttle
+    + {static} ShuttleLeaveDelay(quest:Quest, shuttle:Thing, delayTicks:int, inSignalEnable:string, inSignalsDisable:IEnumerable<string>, outSignalComplete:string, complete:Action) : QuestPart_ShuttleLeaveDelay
+    + {static} ShuttleDelay(quest:Quest, delayTicks:int, lodgers:IEnumerable<Pawn>, complete:Action, inSignalEnable:string, inSignalsDisable:IEnumerable<string>, alert:bool) : QuestPart_ShuttleDelay
+}
+@enduml

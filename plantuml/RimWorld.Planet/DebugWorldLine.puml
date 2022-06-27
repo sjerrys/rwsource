@@ -1,0 +1,11 @@
+@startuml
+class DebugWorldLine {
+    + ticksLeft : int
+    + TicksLeft : int <<get>> <<set>>
+    + DebugWorldLine(a:Vector3, b:Vector3, onPlanetSurface:bool)
+    + DebugWorldLine(a:Vector3, b:Vector3, onPlanetSurface:bool, ticksLeft:int)
+    + Draw() : void
+}
+DebugWorldLine --> "a" Vector3
+DebugWorldLine --> "b" Vector3
+@enduml

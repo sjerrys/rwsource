@@ -1,0 +1,5 @@
+@startuml
+class ThinkNode_ConditionalDowned {
+}
+ThinkNode_Conditional <|-- ThinkNode_ConditionalDowned
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class NamePlayerSettlementDialogUtility <<static>> {
+    + {static} IsValidName(s:string) : bool
+    + {static} Named(factionBase:Settlement, s:string) : void
+}
+@enduml

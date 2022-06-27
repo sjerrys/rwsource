@@ -1,0 +1,10 @@
+@startuml
+class FactionDialogMaker <<static>> {
+    + {static} FactionDialogFor(negotiator:Pawn, faction:Faction) : DiaNode
+    + {static} RoyalHeirChangeCandidates(faction:Faction, factionRepresentative:Pawn, negotiator:Pawn) : DiaNode
+    + {static} RoyalHeirChangeConfirm(faction:Faction, negotiator:Pawn, currentHeir:Pawn, confirmedAct:Action) : DiaNode
+    + {static} CantMakeItInTime(faction:Faction, negotiator:Pawn) : DiaNode
+    + {static} FightersSent(faction:Faction, negotiator:Pawn) : DiaNode
+    + {static} ResetToRoot(faction:Faction, negotiator:Pawn) : Func<DiaNode>
+}
+@enduml

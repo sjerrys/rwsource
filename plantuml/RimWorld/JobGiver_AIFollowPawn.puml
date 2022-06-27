@@ -1,0 +1,5 @@
+@startuml
+abstract class JobGiver_AIFollowPawn {
+}
+ThinkNode_JobGiver <|-- JobGiver_AIFollowPawn
+@enduml

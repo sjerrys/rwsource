@@ -1,0 +1,6 @@
+@startuml
+class CompProperties_AbilityWaterskip {
+    + CompProperties_AbilityWaterskip()
+}
+CompProperties_AbilityEffect <|-- CompProperties_AbilityWaterskip
+@enduml

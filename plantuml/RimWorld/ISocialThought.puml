@@ -1,0 +1,6 @@
+@startuml
+interface ISocialThought {
+    OpinionOffset() : float
+    OtherPawn() : Pawn
+}
+@enduml

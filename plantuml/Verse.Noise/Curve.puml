@@ -1,0 +1,14 @@
+@startuml
+class Curve {
+    + ControlPointCount : int <<get>>
+    + Curve()
+    + Curve(input:ModuleBase)
+    + Add(input:double, output:double) : void
+    + Clear() : void
+    + <<override>> GetValue(x:double, y:double, z:double) : double
+}
+class "List`1"<T> {
+}
+ModuleBase <|-- Curve
+Curve --> "ControlPoints<KeyValuePair<double, double>>" "List`1"
+@enduml

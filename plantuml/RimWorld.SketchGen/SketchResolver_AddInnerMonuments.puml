@@ -1,0 +1,5 @@
+@startuml
+class SketchResolver_AddInnerMonuments {
+}
+SketchResolver <|-- SketchResolver_AddInnerMonuments
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class MannableUtility <<static>> {
+    + {static} MannedThing(pawn:Pawn) : Thing
+}
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class PrefixCapturedVar {
+    + name : string
+    + LoadDataFromXmlCustom(xmlRoot:XmlNode) : void
+}
+class "SlateRef`1"<T> {
+}
+PrefixCapturedVar --> "value<object>" "SlateRef`1"
+@enduml

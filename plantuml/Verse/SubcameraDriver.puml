@@ -1,0 +1,8 @@
+@startuml
+class SubcameraDriver {
+    + Init() : void
+    + UpdatePositions(camera:Camera) : void
+    + GetSubcamera(def:SubcameraDef) : Camera
+}
+MonoBehaviour <|-- SubcameraDriver
+@enduml

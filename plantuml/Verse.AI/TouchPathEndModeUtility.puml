@@ -1,0 +1,9 @@
+@startuml
+class TouchPathEndModeUtility <<static>> {
+    + {static} IsCornerTouchAllowed(cornerX:int, cornerZ:int, adjCardinal1X:int, adjCardinal1Z:int, adjCardinal2X:int, adjCardinal2Z:int, map:Map) : bool
+    + {static} MakesOccupiedCellsAlwaysReachableDiagonally(def:ThingDef) : bool
+    + {static} IsAdjacentCornerAndNotAllowed(cell:IntVec3, BL:IntVec3, TL:IntVec3, TR:IntVec3, BR:IntVec3, map:Map) : bool
+    + {static} AddAllowedAdjacentRegions(dest:LocalTargetInfo, traverseParams:TraverseParms, map:Map, regions:List<Region>) : void
+    + {static} IsAdjacentOrInsideAndAllowedToTouch(root:IntVec3, target:LocalTargetInfo, map:Map) : bool
+}
+@enduml

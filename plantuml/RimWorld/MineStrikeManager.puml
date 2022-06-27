@@ -1,0 +1,11 @@
+@startuml
+class MineStrikeManager {
+    + ExposeData() : void
+    + CheckStruckOre(justMinedPos:IntVec3, justMinedDef:ThingDef, miner:Thing) : void
+    + AlreadyVisibleNearby(center:IntVec3, map:Map, mineableDef:ThingDef) : bool
+    + {static} MineableIsValuable(mineableDef:ThingDef) : bool
+    + {static} MineableIsVeryValuable(mineableDef:ThingDef) : bool
+    + DebugStrikeRecords() : string
+}
+IExposable <|-- MineStrikeManager
+@enduml

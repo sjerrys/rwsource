@@ -1,0 +1,7 @@
+@startuml
+abstract class ThingSetMaker_Conditional {
+    + <<override>> ResolveReferences() : void
+}
+ThingSetMaker <|-- ThingSetMaker_Conditional
+ThingSetMaker_Conditional --> "thingSetMaker" ThingSetMaker
+@enduml

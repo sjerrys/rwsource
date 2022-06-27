@@ -1,0 +1,14 @@
+@startuml
+class Section {
+    + <<const>> Size : int = 17
+    + Section(sectCoords:IntVec3, map:Map)
+    + DrawSection(drawSunShadowsOnly:bool) : void
+    + RegenerateAllLayers() : void
+    + RegenerateLayers(changeType:MapMeshFlag) : void
+    + GetLayer(type:Type) : SectionLayer
+}
+Section --> "botLeft" IntVec3
+Section --> "map" Map
+Section --> "dirtyFlags" MapMeshFlag
+Section --> "CellRect" CellRect
+@enduml

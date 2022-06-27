@@ -1,0 +1,7 @@
+@startuml
+enum FloatMenuSizeMode {
+    Undefined,
+    Normal,
+    Tiny,
+}
+@enduml

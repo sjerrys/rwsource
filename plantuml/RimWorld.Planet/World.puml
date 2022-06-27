@@ -1,0 +1,60 @@
+@startuml
+class World <<sealed>> {
+    + PlanetCoverage : float <<get>>
+    + Tile : int <<get>>
+    + PlayerWealthForStoryteller : float <<get>>
+    + ConstantRandSeed : int <<get>>
+    + IncidentTargetTags() : IEnumerable<IncidentTargetTagDef>
+    + ExposeData() : void
+    + ExposeComponents() : void
+    + ConstructComponents() : void
+    + FinalizeInit() : void
+    + WorldTick() : void
+    + WorldPostTick() : void
+    + WorldUpdate() : void
+    + GetComponent() : T
+    + GetComponent(type:Type) : WorldComponent
+    + CoastDirectionAt(tileID:int) : Rot4
+    + HasCaves(tile:int) : bool
+    + NaturalRockTypesIn(tile:int) : IEnumerable<ThingDef>
+    + Impassable(tileID:int) : bool
+    + GetDirectlyHeldThings() : ThingOwner
+    + GetChildHolders(outChildren:List<IThingHolder>) : void
+    + GetUniqueLoadID() : string
+    + <<override>> ToString() : string
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+IThingHolder <|-- World
+IExposable <|-- World
+IIncidentTarget <|-- World
+ILoadReferenceable <|-- World
+World o-> "info" WorldInfo
+World o-> "components<WorldComponent>" "List`1"
+World --> "factionManager" FactionManager
+World --> "worldPawns" WorldPawns
+World --> "worldObjects" WorldObjectsHolder
+World --> "gameConditionManager" GameConditionManager
+World --> "storyState" StoryState
+World --> "features" WorldFeatures
+World --> "grid" WorldGrid
+World --> "pathGrid" WorldPathGrid
+World --> "renderer" WorldRenderer
+World --> "UI" WorldInterface
+World --> "debugDrawer" WorldDebugDrawer
+World --> "dynamicDrawManager" WorldDynamicDrawManager
+World --> "pathFinder" WorldPathFinder
+World --> "pathPool" WorldPathPool
+World --> "reachability" WorldReachability
+World --> "floodFiller" WorldFloodFiller
+World --> "ticksAbsCache" ConfiguredTicksAbsAtGameStartCache
+World --> "tileTemperatures" TileTemperaturesComp
+World --> "genData" WorldGenData
+World --> "ParentHolder" IThingHolder
+World --> "StoryState" StoryState
+World --> "GameConditionManager" GameConditionManager
+World --> "PlayerPawnsForStoryteller<Pawn>" "IEnumerable`1"
+World --> "IncidentPointsRandomFactorRange" FloatRange
+@enduml

@@ -1,0 +1,19 @@
+@startuml
+class ITab_Pawn_Log {
+    + <<const>> Width : float = 630f
+    + showAll : bool
+    + showCombat : bool = true
+    + showSocial : bool = true
+    + cachedLogDisplayLastTick : int
+    + cachedLogPlayLastTick : int
+    + ITab_Pawn_Log()
+    + SeekTo(entry:LogEntry) : void
+    + Highlight(entry:LogEntry) : void
+    + <<override>> Notify_ClearingAllMapsMemory() : void
+}
+class "List`1"<T> {
+}
+ITab <|-- ITab_Pawn_Log
+ITab_Pawn_Log --> "logSeek" LogEntry
+ITab_Pawn_Log --> "cachedLogDisplay<ITab_Pawn_Log_Utility.LogLineDisplayable>" "List`1"
+@enduml

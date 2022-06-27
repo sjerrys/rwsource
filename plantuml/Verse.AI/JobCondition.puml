@@ -1,0 +1,13 @@
+@startuml
+enum JobCondition {
+    None,
+    Ongoing,
+    Succeeded,
+    Incompletable,
+    InterruptOptional,
+    InterruptForced,
+    QueuedNoLongerValid,
+    Errored,
+    ErroredPather,
+}
+@enduml

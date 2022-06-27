@@ -1,0 +1,14 @@
+@startuml
+class KidnappedPawnsTracker {
+    + KidnappedPawnsTracker(faction:Faction)
+    + ExposeData() : void
+    + Kidnap(pawn:Pawn, kidnapper:Pawn) : void
+    + RemoveKidnappedPawn(pawn:Pawn) : void
+    + LogKidnappedPawns() : void
+    + KidnappedPawnsTrackerTick() : void
+}
+class "List`1"<T> {
+}
+IExposable <|-- KidnappedPawnsTracker
+KidnappedPawnsTracker --> "KidnappedPawnsListForReading<Pawn>" "List`1"
+@enduml

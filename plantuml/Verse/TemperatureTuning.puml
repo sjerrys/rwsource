@@ -1,0 +1,21 @@
+@startuml
+class TemperatureTuning <<static>> {
+    + <<const>> MinimumTemperature : float
+    + <<const>> MaximumTemperature : float = 1000f
+    + <<const>> DefaultTemperature : float = 21f
+    + <<const>> DeepUndergroundTemperature : float = 15f
+    + <<const>> DailyTempVariationAmplitude : float = 7f
+    + <<const>> DailySunEffect : float = 14f
+    + <<const>> FoodRefrigerationTemp : float = 10f
+    + <<const>> FoodFreezingTemp : float = 0f
+    + <<const>> RoomTempEqualizeInterval : int = 120
+    + <<const>> Door_TempEqualizeIntervalOpen : int = 34
+    + <<const>> Door_TempEqualizeIntervalClosed : int = 375
+    + <<const>> Door_TempEqualizeRate : float = 1f
+    + <<const>> Vent_TempEqualizeRate : float = 14f
+    + <<const>> InventoryTemperature : float = 14f
+    + <<const>> DropPodTemperature : float = 14f
+    + <<const>> TradeShipTemperature : float = 14f
+}
+TemperatureTuning o-> "SeasonalTempVariationCurve" SimpleCurve
+@enduml

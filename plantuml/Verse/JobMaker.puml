@@ -1,0 +1,12 @@
+@startuml
+class JobMaker <<static>> {
+    + {static} MakeJob() : Job
+    + {static} MakeJob(def:JobDef) : Job
+    + {static} MakeJob(def:JobDef, targetA:LocalTargetInfo) : Job
+    + {static} MakeJob(def:JobDef, targetA:LocalTargetInfo, targetB:LocalTargetInfo) : Job
+    + {static} MakeJob(def:JobDef, targetA:LocalTargetInfo, targetB:LocalTargetInfo, targetC:LocalTargetInfo) : Job
+    + {static} MakeJob(def:JobDef, targetA:LocalTargetInfo, expiryInterval:int, checkOverrideOnExpiry:bool) : Job
+    + {static} MakeJob(def:JobDef, expiryInterval:int, checkOverrideOnExpiry:bool) : Job
+    + {static} ReturnToPool(job:Job) : void
+}
+@enduml

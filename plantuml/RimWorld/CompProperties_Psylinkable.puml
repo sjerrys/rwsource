@@ -1,0 +1,13 @@
+@startuml
+class CompProperties_Psylinkable {
+    + enoughPlantsLetterLabel : string
+    + enoughPlantsLetterText : string
+    + CompProperties_Psylinkable()
+}
+class "List`1"<T> {
+}
+CompProperties <|-- CompProperties_Psylinkable
+CompProperties_Psylinkable --> "requiredSubplantCountPerPsylinkLevel<int>" "List`1"
+CompProperties_Psylinkable --> "requiredFocus" MeditationFocusDef
+CompProperties_Psylinkable --> "linkSound" SoundDef
+@enduml

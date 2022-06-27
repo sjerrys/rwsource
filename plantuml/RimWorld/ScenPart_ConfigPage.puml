@@ -1,0 +1,7 @@
+@startuml
+class ScenPart_ConfigPage {
+    + <<override>> GetConfigPages() : IEnumerable<Page>
+    + <<override>> DoEditInterface(listing:Listing_ScenEdit) : void
+}
+ScenPart <|-- ScenPart_ConfigPage
+@enduml

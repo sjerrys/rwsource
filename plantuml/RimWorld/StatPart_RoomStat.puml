@@ -1,0 +1,9 @@
+@startuml
+class StatPart_RoomStat {
+    + untranslatedCustomLabel : string
+    + PostLoad() : void
+    + <<override>> TransformValue(req:StatRequest, val:float) : void
+    + <<override>> ExplanationPart(req:StatRequest) : string
+}
+StatPart <|-- StatPart_RoomStat
+@enduml

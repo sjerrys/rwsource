@@ -1,0 +1,7 @@
+@startuml
+class JobDriver_Slaughter {
+    + <<const>> SlaughterDuration : int = 180
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+}
+JobDriver <|-- JobDriver_Slaughter
+@enduml

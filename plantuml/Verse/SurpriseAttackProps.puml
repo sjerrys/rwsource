@@ -1,0 +1,7 @@
+@startuml
+class SurpriseAttackProps {
+}
+class "List`1"<T> {
+}
+SurpriseAttackProps --> "extraMeleeDamages<ExtraDamage>" "List`1"
+@enduml

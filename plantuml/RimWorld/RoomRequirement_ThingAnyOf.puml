@@ -1,0 +1,13 @@
+@startuml
+class RoomRequirement_ThingAnyOf {
+    + <<override>> Label(r:Room) : string
+    + <<override>> Met(r:Room, p:Pawn) : bool
+    + <<override>> SameOrSubsetOf(other:RoomRequirement) : bool
+    + <<override>> ConfigErrors() : IEnumerable<string>
+    + <<override>> PlayerHasResearched() : bool
+}
+class "List`1"<T> {
+}
+RoomRequirement <|-- RoomRequirement_ThingAnyOf
+RoomRequirement_ThingAnyOf --> "things<ThingDef>" "List`1"
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class Thought_SharedBed {
+}
+Thought_Situational <|-- Thought_SharedBed
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class BodyPartGroupDef {
+    + labelShort : string
+    + listOrder : int
+    + LabelShort : string <<get>>
+    + LabelShortCap : string <<get>>
+}
+Def <|-- BodyPartGroupDef
+@enduml

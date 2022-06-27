@@ -1,0 +1,5 @@
+@startuml
+class ThingSetMaker_StackCount {
+}
+ThingSetMaker <|-- ThingSetMaker_StackCount
+@enduml

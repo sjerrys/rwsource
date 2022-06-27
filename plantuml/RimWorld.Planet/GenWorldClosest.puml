@@ -1,0 +1,6 @@
+@startuml
+class GenWorldClosest <<static>> {
+    + {static} TryFindClosestTile(rootTile:int, predicate:Predicate<int>, foundTile:int, maxTilesToScan:int, canSearchThroughImpassable:bool) : bool
+    + {static} TryFindClosestPassableTile(rootTile:int, foundTile:int) : bool
+}
+@enduml

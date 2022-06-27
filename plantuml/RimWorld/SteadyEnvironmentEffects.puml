@@ -1,0 +1,9 @@
+@startuml
+class SteadyEnvironmentEffects {
+    + SteadyEnvironmentEffects(map:Map)
+    + SteadyEnvironmentEffectsTick() : void
+    + AddFallenSnowAt(c:IntVec3, baseAmount:float) : void
+    + {static} FinalDeteriorationRate(t:Thing, reasons:List<string>) : float
+    + {static} FinalDeteriorationRate(t:Thing, roofed:bool, roomUsesOutdoorTemperature:bool, protectedByEdifice:bool, terrain:TerrainDef, reasons:List<string>) : float
+}
+@enduml

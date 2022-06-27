@@ -1,0 +1,5 @@
+@startuml
+class SketchResolver_AddColumns {
+}
+SketchResolver <|-- SketchResolver_AddColumns
+@enduml

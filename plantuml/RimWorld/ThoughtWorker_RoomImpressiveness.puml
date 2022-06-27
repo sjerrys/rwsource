@@ -1,0 +1,5 @@
+@startuml
+abstract class ThoughtWorker_RoomImpressiveness {
+}
+ThoughtWorker <|-- ThoughtWorker_RoomImpressiveness
+@enduml

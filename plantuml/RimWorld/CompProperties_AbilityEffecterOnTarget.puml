@@ -1,0 +1,9 @@
+@startuml
+class CompProperties_AbilityEffecterOnTarget {
+    + maintainForTicks : int
+    + scale : float = 1f
+    + CompProperties_AbilityEffecterOnTarget()
+}
+CompProperties_AbilityEffect <|-- CompProperties_AbilityEffecterOnTarget
+CompProperties_AbilityEffecterOnTarget --> "effecterDef" EffecterDef
+@enduml

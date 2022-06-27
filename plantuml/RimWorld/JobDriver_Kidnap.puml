@@ -1,0 +1,6 @@
+@startuml
+class JobDriver_Kidnap {
+    + <<override>> GetReport() : string
+}
+JobDriver_TakeAndExitMap <|-- JobDriver_Kidnap
+@enduml

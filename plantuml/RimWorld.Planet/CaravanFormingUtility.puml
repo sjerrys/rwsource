@@ -1,0 +1,17 @@
+@startuml
+class CaravanFormingUtility <<static>> {
+    + {static} FormAndCreateCaravan(pawns:IEnumerable<Pawn>, faction:Faction, exitFromTile:int, directionTile:int, destinationTile:int) : void
+    + {static} StartFormingCaravan(pawns:List<Pawn>, downedPawns:List<Pawn>, faction:Faction, transferables:List<TransferableOneWay>, meetingPoint:IntVec3, exitSpot:IntVec3, startingTile:int, destinationTile:int) : void
+    + {static} StopFormingCaravan(lord:Lord) : void
+    + {static} RemovePawnFromCaravan(pawn:Pawn, lord:Lord, removeFromDowned:bool) : void
+    + {static} Notify_FormAndSendCaravanLordFailed(lord:Lord) : void
+    + {static} AllReachableColonyItems(map:Map, allowEvenIfOutsideHomeArea:bool, allowEvenIfReserved:bool, canMinify:bool) : List<Thing>
+    + {static} AllSendablePawns(map:Map, allowEvenIfDowned:bool, allowEvenIfInMentalState:bool, allowEvenIfPrisonerNotSecure:bool, allowCapturableDownedPawns:bool, allowLodgers:bool, allowLoadAndEnterTransportersLordForGroupID:int) : List<Pawn>
+    + {static} GetGizmos(pawn:Pawn) : IEnumerable<Gizmo>
+    + {static} IsFormingCaravan(p:Pawn) : bool
+    + {static} IsFormingCaravanOrDownedPawnToBeTakenByCaravan(p:Pawn) : bool
+    + {static} GetFormAndSendCaravanLord(p:Pawn) : Lord
+    + {static} CapacityLeft(lordJob:LordJob_FormAndSendCaravan) : float
+    + {static} AppendOverweightInfo(text:string, capacityLeft:float) : string
+}
+@enduml

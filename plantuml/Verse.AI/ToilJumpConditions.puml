@@ -1,0 +1,8 @@
+@startuml
+class ToilJumpConditions <<static>> {
+    + {static} JumpIf(toil:Toil, jumpCondition:Func<bool>, jumpToil:Toil) : Toil
+    + {static} JumpIfDespawnedOrNull(toil:Toil, ind:TargetIndex, jumpToil:Toil) : Toil
+    + {static} JumpIfDespawnedOrNullOrForbidden(toil:Toil, ind:TargetIndex, jumpToil:Toil) : Toil
+    + {static} JumpIfOutsideHomeArea(toil:Toil, ind:TargetIndex, jumpToil:Toil) : Toil
+}
+@enduml

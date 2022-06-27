@@ -1,0 +1,10 @@
+@startuml
+class ExtraFaction {
+    + ExtraFaction()
+    + ExtraFaction(faction:Faction, factionType:ExtraFactionType)
+    + ExposeData() : void
+}
+IExposable <|-- ExtraFaction
+ExtraFaction --> "faction" Faction
+ExtraFaction --> "factionType" ExtraFactionType
+@enduml

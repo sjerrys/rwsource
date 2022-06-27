@@ -1,0 +1,6 @@
+@startuml
+class PawnColumnWorker_Pregnant {
+    + {static} GetTooltipText(pawn:Pawn) : string
+}
+PawnColumnWorker_Icon <|-- PawnColumnWorker_Pregnant
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+class TabRecord {
+    + label : string = "Tab"
+    + selected : bool
+    + Selected : bool <<get>>
+    + TabRecord(label:string, clickedAction:Action, selected:bool)
+    + TabRecord(label:string, clickedAction:Action, selected:Func<bool>)
+    + Draw(rect:Rect) : void
+}
+class "Func`1"<T> {
+}
+TabRecord --> "clickedAction" Action
+TabRecord --> "selectedGetter<bool>" "Func`1"
+@enduml

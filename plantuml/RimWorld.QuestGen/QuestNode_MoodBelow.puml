@@ -1,0 +1,12 @@
+@startuml
+class QuestNode_MoodBelow {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_MoodBelow
+QuestNode_MoodBelow --> "inSignalEnable<string>" "SlateRef`1"
+QuestNode_MoodBelow --> "outSignal<string>" "SlateRef`1"
+QuestNode_MoodBelow --> "pawns<IEnumerable<Pawn>>" "SlateRef`1"
+QuestNode_MoodBelow --> "threshold<float>" "SlateRef`1"
+QuestNode_MoodBelow --> "node" QuestNode
+@enduml

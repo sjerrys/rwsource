@@ -1,0 +1,6 @@
+@startuml
+abstract class IncidentWorker_PawnsArrive {
+    + DebugListingOfGroupSources() : string
+}
+IncidentWorker <|-- IncidentWorker_PawnsArrive
+@enduml

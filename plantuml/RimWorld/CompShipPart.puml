@@ -1,0 +1,7 @@
+@startuml
+class CompShipPart {
+    + <<override>> CompGetGizmosExtra() : IEnumerable<Gizmo>
+    + ShowReport() : void
+}
+ThingComp <|-- CompShipPart
+@enduml

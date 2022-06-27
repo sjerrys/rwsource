@@ -1,0 +1,7 @@
+@startuml
+abstract class DeathActionWorker {
+    + <<virtual>> DangerousInMelee : bool <<get>>
+    + {abstract} PawnDied(corpse:Corpse) : void
+}
+DeathActionWorker --> "DeathRules" RulePackDef
+@enduml

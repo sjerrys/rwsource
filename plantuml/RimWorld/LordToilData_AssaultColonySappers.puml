@@ -1,0 +1,7 @@
+@startuml
+class LordToilData_AssaultColonySappers {
+    + <<override>> ExposeData() : void
+}
+LordToilData <|-- LordToilData_AssaultColonySappers
+LordToilData_AssaultColonySappers o-> "sapperDest" IntVec3
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+class MeshMakerPlanes <<static>> {
+    + {static} NewPlaneMesh(size:float) : Mesh
+    + {static} NewPlaneMesh(size:float, flipped:bool) : Mesh
+    + {static} NewPlaneMesh(size:float, flipped:bool, backLift:bool) : Mesh
+    + {static} NewPlaneMesh(size:float, flipped:bool, backLift:bool, twist:bool) : Mesh
+    + {static} NewPlaneMesh(size:Vector2, flipped:bool, backLift:bool, twist:bool) : Mesh
+    + {static} NewWholeMapPlane() : Mesh
+}
+@enduml

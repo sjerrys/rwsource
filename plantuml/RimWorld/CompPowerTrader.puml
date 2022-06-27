@@ -1,0 +1,23 @@
+@startuml
+class CompPowerTrader {
+    + powerOutputInt : float
+    + <<const>> PowerTurnedOnSignal : string = "PowerTurnedOn"
+    + <<const>> PowerTurnedOffSignal : string = "PowerTurnedOff"
+    + PowerOutput : float <<get>> <<set>>
+    + EnergyOutputPerTick : float <<get>>
+    + PowerOn : bool <<get>> <<set>>
+    + DebugString : string <<get>>
+    + <<override>> ReceiveCompSignal(signal:string) : void
+    + <<override>> PostSpawnSetup(respawningAfterLoad:bool) : void
+    + <<override>> PostDeSpawn(map:Map) : void
+    + <<override>> PostExposeData() : void
+    + <<override>> PostDraw() : void
+    + <<override>> SetUpPowerVars() : void
+    + <<override>> ResetPowerVars() : void
+    + <<override>> LostConnectParent() : void
+    + <<override>> CompInspectStringExtra() : string
+}
+CompPower <|-- CompPowerTrader
+CompPowerTrader --> "powerStartedAction" Action
+CompPowerTrader --> "powerStoppedAction" Action
+@enduml

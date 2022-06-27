@@ -1,0 +1,7 @@
+@startuml
+class FeedbackFloaters {
+    + AddFeedback(newFeedback:FeedbackItem) : void
+    + FeedbackUpdate() : void
+    + FeedbackOnGUI() : void
+}
+@enduml

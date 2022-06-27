@@ -1,0 +1,8 @@
+@startuml
+enum RandomSocialMode {
+    Off,
+    Quiet,
+    Normal,
+    SuperActive,
+}
+@enduml

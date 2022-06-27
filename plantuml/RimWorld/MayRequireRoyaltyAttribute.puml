@@ -1,0 +1,6 @@
+@startuml
+class MayRequireRoyaltyAttribute {
+    + MayRequireRoyaltyAttribute()
+}
+MayRequireAttribute <|-- MayRequireRoyaltyAttribute
+@enduml

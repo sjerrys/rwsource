@@ -1,0 +1,6 @@
+@startuml
+class PawnAttackGizmoUtility <<static>> {
+    + {static} GetAttackGizmos(pawn:Pawn) : IEnumerable<Gizmo>
+    + {static} CanShowEquipmentGizmos() : bool
+}
+@enduml

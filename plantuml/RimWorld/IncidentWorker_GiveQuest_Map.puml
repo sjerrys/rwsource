@@ -1,0 +1,5 @@
+@startuml
+class IncidentWorker_GiveQuest_Map {
+}
+IncidentWorker_GiveQuest <|-- IncidentWorker_GiveQuest_Map
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class RememberedCameraPos {
+    + rootSize : float
+    + RememberedCameraPos(map:Map)
+    + ExposeData() : void
+}
+IExposable <|-- RememberedCameraPos
+RememberedCameraPos --> "rootPos" Vector3
+@enduml

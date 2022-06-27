@@ -1,0 +1,5 @@
+@startuml
+class CompressibilityDeciderUtility <<static>> {
+    + {static} IsSaveCompressible(t:Thing) : bool
+}
+@enduml

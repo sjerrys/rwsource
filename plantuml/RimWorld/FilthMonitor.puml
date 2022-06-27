@@ -1,0 +1,10 @@
+@startuml
+class FilthMonitor <<static>> {
+    + {static} FilthMonitorTick() : void
+    + {static} Notify_FilthAccumulated() : void
+    + {static} Notify_FilthDropped() : void
+    + {static} Notify_FilthAnimalGenerated() : void
+    + {static} Notify_FilthHumanGenerated() : void
+    + {static} Notify_FilthSpawned() : void
+}
+@enduml

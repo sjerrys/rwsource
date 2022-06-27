@@ -1,0 +1,8 @@
+@startuml
+class IngredientValueGetter_Volume {
+    + <<override>> ValuePerUnitOf(t:ThingDef) : float
+    + <<override>> BillRequirementsDescription(r:RecipeDef, ing:IngredientCount) : string
+    + <<override>> ExtraDescriptionLine(r:RecipeDef) : string
+}
+IngredientValueGetter <|-- IngredientValueGetter_Volume
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class HistoryAutoRecorder {
+    + Tick() : void
+    + ExposeData() : void
+}
+class "List`1"<T> {
+}
+IExposable <|-- HistoryAutoRecorder
+HistoryAutoRecorder --> "def" HistoryAutoRecorderDef
+HistoryAutoRecorder o-> "records<float>" "List`1"
+@enduml

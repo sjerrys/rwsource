@@ -1,0 +1,11 @@
+@startuml
+class Scribe_Collections <<static>> {
+    + {static} Look(list:List<T>, label:string, lookMode:LookMode, ctorArgs:object[]) : void
+    + {static} Look(list:List<T>, saveDestroyedThings:bool, label:string, lookMode:LookMode, ctorArgs:object[]) : void
+    + {static} Look(dict:Dictionary<K, V>, label:string, keyLookMode:LookMode, valueLookMode:LookMode) : void
+    + {static} Look(dict:Dictionary<K, V>, label:string, keyLookMode:LookMode, valueLookMode:LookMode, keysWorkingList:List<K>, valuesWorkingList:List<V>) : void
+    + {static} Look(valueHashSet:HashSet<T>, label:string, lookMode:LookMode) : void
+    + {static} Look(valueHashSet:HashSet<T>, saveDestroyedThings:bool, label:string, lookMode:LookMode) : void
+    + {static} Look(valueStack:Stack<T>, label:string, lookMode:LookMode) : void
+}
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+class QuestPart_SendShuttleAwayOnCleanup {
+    + dropEverything : bool
+    + <<override>> Cleanup() : void
+    + <<override>> ExposeData() : void
+    + <<override>> ReplacePawnReferences(replace:Pawn, with:Pawn) : void
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart <|-- QuestPart_SendShuttleAwayOnCleanup
+QuestPart_SendShuttleAwayOnCleanup --> "shuttle" Thing
+QuestPart_SendShuttleAwayOnCleanup --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+@enduml

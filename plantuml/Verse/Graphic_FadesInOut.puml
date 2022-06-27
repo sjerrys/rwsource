@@ -1,0 +1,6 @@
+@startuml
+class Graphic_FadesInOut {
+    + <<override>> DrawWorker(loc:Vector3, rot:Rot4, thingDef:ThingDef, thing:Thing, extraRotation:float) : void
+}
+Graphic_WithPropertyBlock <|-- Graphic_FadesInOut
+@enduml

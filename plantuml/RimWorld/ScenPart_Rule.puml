@@ -1,0 +1,6 @@
+@startuml
+abstract class ScenPart_Rule {
+    + <<override>> PostGameStart() : void
+}
+ScenPart <|-- ScenPart_Rule
+@enduml

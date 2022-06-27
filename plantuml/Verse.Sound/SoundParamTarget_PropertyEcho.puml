@@ -1,0 +1,8 @@
+@startuml
+class SoundParamTarget_PropertyEcho {
+    + <<override>> Label : string <<get>>
+    + <<override>> SetOn(sample:Sample, value:float) : void
+}
+SoundParamTarget <|-- SoundParamTarget_PropertyEcho
+SoundParamTarget_PropertyEcho --> "NeededFilterType" Type
+@enduml

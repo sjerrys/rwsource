@@ -1,0 +1,18 @@
+@startuml
+class QuestNode_PawnsArrive {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_PawnsArrive
+QuestNode_PawnsArrive --> "inSignal<string>" "SlateRef`1"
+QuestNode_PawnsArrive --> "pawns<IEnumerable<Pawn>>" "SlateRef`1"
+QuestNode_PawnsArrive --> "arrivalMode<PawnsArrivalModeDef>" "SlateRef`1"
+QuestNode_PawnsArrive --> "joinPlayer<bool>" "SlateRef`1"
+QuestNode_PawnsArrive --> "walkInSpot<IntVec3?>" "SlateRef`1"
+QuestNode_PawnsArrive --> "customLetterLabel<string>" "SlateRef`1"
+QuestNode_PawnsArrive --> "customLetterText<string>" "SlateRef`1"
+QuestNode_PawnsArrive --> "customLetterLabelRules<RulePack>" "SlateRef`1"
+QuestNode_PawnsArrive --> "customLetterTextRules<RulePack>" "SlateRef`1"
+QuestNode_PawnsArrive --> "isSingleReward<bool>" "SlateRef`1"
+QuestNode_PawnsArrive --> "rewardDetailsHidden<bool>" "SlateRef`1"
+@enduml

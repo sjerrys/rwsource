@@ -1,0 +1,6 @@
+@startuml
+class HillinessUtility <<static>> {
+    + {static} GetLabel(h:Hilliness) : string
+    + {static} GetLabelCap(h:Hilliness) : string
+}
+@enduml

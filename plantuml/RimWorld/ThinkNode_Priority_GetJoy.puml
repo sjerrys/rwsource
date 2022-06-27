@@ -1,0 +1,6 @@
+@startuml
+class ThinkNode_Priority_GetJoy {
+    + <<override>> GetPriority(pawn:Pawn) : float
+}
+ThinkNode_Priority <|-- ThinkNode_Priority_GetJoy
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class GatherItemsForCaravanUtility <<static>> {
+    + {static} FindThingToHaul(p:Pawn, lord:Lord) : Thing
+    + {static} CountLeftToTransfer(pawn:Pawn, transferable:TransferableOneWay, lord:Lord) : int
+}
+@enduml

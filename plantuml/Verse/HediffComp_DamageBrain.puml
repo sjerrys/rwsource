@@ -1,0 +1,7 @@
+@startuml
+class HediffComp_DamageBrain {
+    + <<override>> CompPostTick(severityAdjustment:float) : void
+}
+HediffComp <|-- HediffComp_DamageBrain
+HediffComp_DamageBrain --> "Props" HediffCompProperties_DamageBrain
+@enduml

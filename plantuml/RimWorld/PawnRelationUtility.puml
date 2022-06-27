@@ -1,0 +1,14 @@
+@startuml
+class PawnRelationUtility <<static>> {
+    + {static} GetRelations(me:Pawn, other:Pawn) : IEnumerable<PawnRelationDef>
+    + {static} GetMostImportantRelation(me:Pawn, other:Pawn) : PawnRelationDef
+    + {static} Notify_PawnsSeenByPlayer(seenPawns:IEnumerable<Pawn>, pawnRelationsInfo:string, informEvenIfSeenBefore:bool, writeSeenPawnsNames:bool) : void
+    + {static} Notify_PawnsSeenByPlayer_Letter(seenPawns:IEnumerable<Pawn>, letterLabel:TaggedString, letterText:TaggedString, relationsInfoHeader:string, informEvenIfSeenBefore:bool, writeSeenPawnsNames:bool) : void
+    + {static} Notify_PawnsSeenByPlayer_Letter_Send(seenPawns:IEnumerable<Pawn>, relationsInfoHeader:string, letterDef:LetterDef, informEvenIfSeenBefore:bool, writeSeenPawnsNames:bool) : void
+    + {static} TryAppendRelationsWithColonistsInfo(text:TaggedString, pawn:Pawn) : bool
+    + {static} TryAppendRelationsWithColonistsInfo(text:TaggedString, title:TaggedString, pawn:Pawn) : bool
+    + {static} GetMostImportantColonyRelative(pawn:Pawn) : Pawn
+    + {static} MaxPossibleBioAgeAt(myBiologicalAge:float, myChronologicalAge:float, atChronologicalAge:float) : float
+    + {static} MinPossibleBioAgeAt(myBiologicalAge:float, atChronologicalAge:float) : float
+}
+@enduml

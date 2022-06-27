@@ -1,0 +1,13 @@
+@startuml
+class FiringIncident {
+    + FiringIncident()
+    + FiringIncident(def:IncidentDef, source:StorytellerComp, parms:IncidentParms)
+    + ExposeData() : void
+    + <<override>> ToString() : string
+}
+IExposable <|-- FiringIncident
+FiringIncident --> "def" IncidentDef
+FiringIncident o-> "parms" IncidentParms
+FiringIncident --> "source" StorytellerComp
+FiringIncident --> "sourceQuestPart" QuestPart
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+class FactionPermit {
+    + LastUsedTick : int <<get>>
+    + OnCooldown : bool <<get>>
+    + FactionPermit()
+    + FactionPermit(faction:Faction, title:RoyalTitleDef, permit:RoyalTitlePermitDef)
+    + Notify_Used() : void
+    + ResetCooldown() : void
+    + ExposeData() : void
+}
+IExposable <|-- FactionPermit
+FactionPermit --> "Title" RoyalTitleDef
+FactionPermit --> "Permit" RoyalTitlePermitDef
+FactionPermit --> "Faction" Faction
+@enduml

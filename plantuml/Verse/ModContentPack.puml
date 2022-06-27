@@ -1,0 +1,40 @@
+@startuml
+class ModContentPack {
+    + loadOrder : int
+    + {static} <<readonly>> LudeonPackageIdAuthor : string = "ludeon"
+    + {static} <<readonly>> CoreModPackageId : string = "ludeon.rimworld"
+    + {static} <<readonly>> RoyaltyModPackageId : string = "ludeon.rimworld.royalty"
+    + {static} <<readonly>> CommonFolderName : string = "Common"
+    + RootDir : string <<get>>
+    + PackageId : string <<get>>
+    + PackageIdPlayerFacing : string <<get>>
+    + FolderName : string <<get>>
+    + Name : string <<get>>
+    + OverwritePriority : int <<get>>
+    + IsCoreMod : bool <<get>>
+    + AllAssetNamesInBundle(index:int) : IEnumerable<string>
+    + ModContentPack(directory:DirectoryInfo, packageId:string, loadOrder:int, name:string)
+    + ModContentPack(directory:DirectoryInfo, packageId:string, packageIdPlayerFacing:string, loadOrder:int, name:string)
+    + ClearDestroy() : void
+    + GetContentHolder() : ModContentHolder<T>
+    + ReloadContent() : void
+    + LoadDefs() : IEnumerable<LoadableXmlAsset>
+    + {static} GetAllFilesForMod(mod:ModContentPack, contentPath:string, validateExtension:Func<string, bool>, foldersToLoadDebug:List<string>) : Dictionary<string, FileInfo>
+    + {static} GetAllFilesForModPreserveOrder(mod:ModContentPack, contentPath:string, validateExtension:Func<string, bool>, foldersToLoadDebug:List<string>) : List<Tuple<string, FileInfo>>
+    + AnyContentLoaded() : bool
+    + AnyNonTranslationContentLoaded() : bool
+    + AnyTranslationsLoaded() : bool
+    + ClearPatchesCache() : void
+    + AddDef(def:Def, source:string) : void
+    + <<override>> ToString() : string
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+ModContentPack --> "assetBundles" ModAssetBundlesHandler
+ModContentPack --> "assemblies" ModAssemblyHandler
+ModContentPack --> "foldersToLoadDescendingOrder<string>" "List`1"
+ModContentPack --> "AllDefs<Def>" "IEnumerable`1"
+ModContentPack --> "Patches<PatchOperation>" "IEnumerable`1"
+@enduml

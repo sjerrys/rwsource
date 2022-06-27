@@ -1,0 +1,20 @@
+@startuml
+abstract class Projectile {
+    + DamageAmount : int <<get>>
+    + ArmorPenetration : float <<get>>
+    + <<override>> ExposeData() : void
+    + Launch(launcher:Thing, usedTarget:LocalTargetInfo, intendedTarget:LocalTargetInfo, hitFlags:ProjectileHitFlags, equipment:Thing) : void
+    + Launch(launcher:Thing, origin:Vector3, usedTarget:LocalTargetInfo, intendedTarget:LocalTargetInfo, hitFlags:ProjectileHitFlags, equipment:Thing, targetCoverDef:ThingDef) : void
+    + <<override>> Tick() : void
+    + <<override>> Draw() : void
+}
+ThingWithComps <|-- Projectile
+Projectile --> "usedTarget" LocalTargetInfo
+Projectile --> "intendedTarget" LocalTargetInfo
+Projectile --> "HitFlags" ProjectileHitFlags
+Projectile --> "ExactPosition" Vector3
+Projectile --> "ExactRotation" Quaternion
+Projectile --> "DrawPos" Vector3
+Projectile --> "EquipmentDef" ThingDef
+Projectile --> "Launcher" Thing
+@enduml

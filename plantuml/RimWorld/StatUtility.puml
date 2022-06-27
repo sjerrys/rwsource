@@ -1,0 +1,9 @@
+@startuml
+class StatUtility <<static>> {
+    + {static} SetStatValueInList(statList:List<StatModifier>, stat:StatDef, value:float) : void
+    + {static} GetStatFactorFromList(modList:List<StatModifier>, stat:StatDef) : float
+    + {static} GetStatOffsetFromList(modList:List<StatModifier>, stat:StatDef) : float
+    + {static} GetStatValueFromList(modList:List<StatModifier>, stat:StatDef, defaultValue:float) : float
+    + {static} StatListContains(modList:List<StatModifier>, stat:StatDef) : bool
+}
+@enduml

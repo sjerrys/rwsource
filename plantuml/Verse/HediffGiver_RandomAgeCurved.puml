@@ -1,0 +1,8 @@
+@startuml
+class HediffGiver_RandomAgeCurved {
+    + minPlayerPopulation : int
+    + <<override>> OnIntervalPassed(pawn:Pawn, cause:Hediff) : void
+}
+HediffGiver <|-- HediffGiver_RandomAgeCurved
+HediffGiver_RandomAgeCurved --> "ageFractionMtbDaysCurve" SimpleCurve
+@enduml

@@ -1,0 +1,23 @@
+@startuml
+class Pawn_NativeVerbs {
+    UniqueVerbOwnerID() : string
+    VerbsStillUsableBy(p:Pawn) : bool
+    + Pawn_NativeVerbs(pawn:Pawn)
+    + NativeVerbsTick() : void
+    + TryStartIgnite(target:Thing) : bool
+    + TryBeatFire(targetFire:Fire) : bool
+    + ExposeData() : void
+}
+class "List`1"<T> {
+}
+IVerbOwner <|-- Pawn_NativeVerbs
+IExposable <|-- Pawn_NativeVerbs
+Pawn_NativeVerbs --> "verbTracker" VerbTracker
+Pawn_NativeVerbs --> "BeatFireVerb" Verb_BeatFire
+Pawn_NativeVerbs --> "IgniteVerb" Verb_Ignite
+Pawn_NativeVerbs --> "VerbTracker" VerbTracker
+Pawn_NativeVerbs --> "VerbProperties<VerbProperties>" "List`1"
+Pawn_NativeVerbs --> "Tools<Tool>" "List`1"
+Pawn_NativeVerbs --> "ImplementOwnerTypeDef" ImplementOwnerTypeDef
+Pawn_NativeVerbs --> "ConstantCaster" Thing
+@enduml

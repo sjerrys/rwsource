@@ -1,0 +1,13 @@
+@startuml
+class CompProperties_Transporter {
+    + massCapacity : float = 150f
+    + restEffectiveness : float
+    + max1PerGroup : bool
+    + canChangeAssignedThingsAfterStarting : bool
+    + showOverallStats : bool = true
+    + CompProperties_Transporter()
+}
+CompProperties <|-- CompProperties_Transporter
+CompProperties_Transporter --> "pawnLoadedSound" SoundDef
+CompProperties_Transporter --> "pawnExitSound" SoundDef
+@enduml

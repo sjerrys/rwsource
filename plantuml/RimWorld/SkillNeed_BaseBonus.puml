@@ -1,0 +1,7 @@
+@startuml
+class SkillNeed_BaseBonus {
+    + <<override>> ValueFor(pawn:Pawn) : float
+    + <<override>> ConfigErrors() : IEnumerable<string>
+}
+SkillNeed <|-- SkillNeed_BaseBonus
+@enduml

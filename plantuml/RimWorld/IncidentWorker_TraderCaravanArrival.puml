@@ -1,0 +1,5 @@
+@startuml
+class IncidentWorker_TraderCaravanArrival {
+}
+IncidentWorker_NeutralGroup <|-- IncidentWorker_TraderCaravanArrival
+@enduml

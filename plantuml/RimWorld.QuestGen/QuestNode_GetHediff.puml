@@ -1,0 +1,18 @@
+@startuml
+class QuestNode_GetHediff {
+}
+class Option {
+    + weight : float = 1f
+}
+class "SlateRef`1"<T> {
+}
+class "List`1"<T> {
+}
+QuestNode <|-- QuestNode_GetHediff
+QuestNode_GetHediff --> "storeHediffAs<string>" "SlateRef`1"
+QuestNode_GetHediff --> "storePartsToAffectAs<string>" "SlateRef`1"
+QuestNode_GetHediff --> "options<List<Option>>" "SlateRef`1"
+QuestNode_GetHediff +-- Option
+Option --> "def" HediffDef
+Option --> "partsToAffect<BodyPartDef>" "List`1"
+@enduml

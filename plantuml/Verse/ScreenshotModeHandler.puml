@@ -1,0 +1,7 @@
+@startuml
+class ScreenshotModeHandler {
+    + Active : bool <<get>>
+    + FiltersCurrentEvent : bool <<get>>
+    + ScreenshotModesOnGUI() : void
+}
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+class ImplementOwnerTypeDefOf <<static>> {
+    {static} ImplementOwnerTypeDefOf()
+}
+ImplementOwnerTypeDefOf --> "Weapon" ImplementOwnerTypeDef
+ImplementOwnerTypeDefOf --> "Bodypart" ImplementOwnerTypeDef
+ImplementOwnerTypeDefOf --> "Hediff" ImplementOwnerTypeDef
+ImplementOwnerTypeDefOf --> "Terrain" ImplementOwnerTypeDef
+ImplementOwnerTypeDefOf --> "NativeVerb" ImplementOwnerTypeDef
+@enduml

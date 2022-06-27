@@ -1,0 +1,6 @@
+@startuml
+class SoundParams {
+    + TryGetValue(key:string, val:float) : bool
+}
+SoundParams --> "sizeAggregator" SoundSizeAggregator
+@enduml

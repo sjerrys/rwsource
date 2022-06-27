@@ -1,0 +1,20 @@
+@startuml
+class Pawn_MeleeVerbs_TerrainSource {
+    + {static} Create(parent:Pawn_MeleeVerbs, terrainDef:TerrainDef) : Pawn_MeleeVerbs_TerrainSource
+    + ExposeData() : void
+    UniqueVerbOwnerID() : string
+    VerbsStillUsableBy(p:Pawn) : bool
+}
+class "List`1"<T> {
+}
+IExposable <|-- Pawn_MeleeVerbs_TerrainSource
+IVerbOwner <|-- Pawn_MeleeVerbs_TerrainSource
+Pawn_MeleeVerbs_TerrainSource --> "parent" Pawn_MeleeVerbs
+Pawn_MeleeVerbs_TerrainSource --> "def" TerrainDef
+Pawn_MeleeVerbs_TerrainSource --> "tracker" VerbTracker
+Pawn_MeleeVerbs_TerrainSource --> "VerbTracker" VerbTracker
+Pawn_MeleeVerbs_TerrainSource --> "VerbProperties<VerbProperties>" "List`1"
+Pawn_MeleeVerbs_TerrainSource --> "Tools<Tool>" "List`1"
+Pawn_MeleeVerbs_TerrainSource --> "ConstantCaster" Thing
+Pawn_MeleeVerbs_TerrainSource --> "ImplementOwnerTypeDef" ImplementOwnerTypeDef
+@enduml

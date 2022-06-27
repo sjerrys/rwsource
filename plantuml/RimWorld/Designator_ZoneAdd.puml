@@ -1,0 +1,10 @@
+@startuml
+abstract class Designator_ZoneAdd {
+    + Designator_ZoneAdd()
+    + <<override>> SelectedUpdate() : void
+    + <<override>> DrawMouseAttachments() : void
+    + <<override>> CanDesignateCell(c:IntVec3) : AcceptanceReport
+    + <<override>> DesignateMultiCell(cells:IEnumerable<IntVec3>) : void
+}
+Designator_Zone <|-- Designator_ZoneAdd
+@enduml

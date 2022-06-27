@@ -1,0 +1,9 @@
+@startuml
+abstract class WorkGiver_Warden {
+    + <<override>> PotentialWorkThingsGlobal(pawn:Pawn) : IEnumerable<Thing>
+    + <<override>> ShouldSkip(pawn:Pawn, forced:bool) : bool
+}
+WorkGiver_Scanner <|-- WorkGiver_Warden
+WorkGiver_Warden --> "PotentialWorkThingRequest" ThingRequest
+WorkGiver_Warden --> "PathEndMode" PathEndMode
+@enduml

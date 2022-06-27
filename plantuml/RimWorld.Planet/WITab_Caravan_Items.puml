@@ -1,0 +1,6 @@
+@startuml
+class WITab_Caravan_Items {
+    + WITab_Caravan_Items()
+}
+WITab <|-- WITab_Caravan_Items
+@enduml

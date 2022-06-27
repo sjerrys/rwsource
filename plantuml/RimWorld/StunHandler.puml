@@ -1,0 +1,15 @@
+@startuml
+class StunHandler {
+    + <<const>> StunDurationTicksPerDamage : float = 30f
+    + Stunned : bool <<get>>
+    + StunTicksLeft : int <<get>>
+    + StunHandler(parent:Thing)
+    + ExposeData() : void
+    + StunHandlerTick() : void
+    + Notify_DamageApplied(dinfo:DamageInfo, affectedByEMP:bool) : void
+    + StunFor(ticks:int, instigator:Thing, addBattleLog:bool) : void
+    + StunFor_NewTmp(ticks:int, instigator:Thing, addBattleLog:bool, showMote:bool) : void
+}
+IExposable <|-- StunHandler
+StunHandler --> "parent" Thing
+@enduml

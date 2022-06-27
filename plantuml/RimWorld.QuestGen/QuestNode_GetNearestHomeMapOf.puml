@@ -1,0 +1,9 @@
+@startuml
+class QuestNode_GetNearestHomeMapOf {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GetNearestHomeMapOf
+QuestNode_GetNearestHomeMapOf o-> "storeAs<string>" "SlateRef`1"
+QuestNode_GetNearestHomeMapOf --> "mapOf<Thing>" "SlateRef`1"
+@enduml

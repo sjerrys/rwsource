@@ -1,0 +1,19 @@
+@startuml
+class DebugActionCategories <<static>> {
+    + <<const>> Incidents : string = "Incidents"
+    + <<const>> Quests : string = "Quests"
+    + <<const>> QuestsOld : string = "Quests (old)"
+    + <<const>> Translation : string = "Translation"
+    + <<const>> General : string = "General"
+    + <<const>> Pawns : string = "Pawns"
+    + <<const>> Spawning : string = "Spawning"
+    + <<const>> MapManagement : string = "Map management"
+    + <<const>> Autotests : string = "Autotests"
+    + <<const>> Mods : string = "Mods"
+    {static} DebugActionCategories()
+    + {static} GetOrderFor(category:string) : int
+}
+class "Dictionary`2"<T1,T2> {
+}
+DebugActionCategories --> "categoryOrders<string,int>" "Dictionary`2"
+@enduml

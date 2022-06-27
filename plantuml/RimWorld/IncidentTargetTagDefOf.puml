@@ -1,0 +1,10 @@
+@startuml
+class IncidentTargetTagDefOf <<static>> {
+    {static} IncidentTargetTagDefOf()
+}
+IncidentTargetTagDefOf --> "World" IncidentTargetTagDef
+IncidentTargetTagDefOf --> "Caravan" IncidentTargetTagDef
+IncidentTargetTagDefOf --> "Map_RaidBeacon" IncidentTargetTagDef
+IncidentTargetTagDefOf --> "Map_PlayerHome" IncidentTargetTagDef
+IncidentTargetTagDefOf --> "Map_Misc" IncidentTargetTagDef
+@enduml

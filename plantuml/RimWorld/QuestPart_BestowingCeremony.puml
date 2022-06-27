@@ -1,0 +1,13 @@
+@startuml
+class QuestPart_BestowingCeremony {
+    + <<const>> PreferredDistanceFromThrone : int = 3
+    + questTag : string
+    + {static} TryGetCeremonySpot(pawn:Pawn, bestowingFaction:Faction, spot:LocalTargetInfo, absoluteSpot:IntVec3) : bool
+    + <<override>> Cleanup() : void
+    + <<override>> ExposeData() : void
+}
+QuestPart_MakeLord <|-- QuestPart_BestowingCeremony
+QuestPart_BestowingCeremony --> "bestower" Pawn
+QuestPart_BestowingCeremony --> "target" Pawn
+QuestPart_BestowingCeremony --> "shuttle" Thing
+@enduml

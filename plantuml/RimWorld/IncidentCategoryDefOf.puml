@@ -1,0 +1,17 @@
+@startuml
+class IncidentCategoryDefOf <<static>> {
+    {static} IncidentCategoryDefOf()
+}
+IncidentCategoryDefOf --> "Misc" IncidentCategoryDef
+IncidentCategoryDefOf --> "ThreatSmall" IncidentCategoryDef
+IncidentCategoryDefOf --> "ThreatBig" IncidentCategoryDef
+IncidentCategoryDefOf --> "FactionArrival" IncidentCategoryDef
+IncidentCategoryDefOf --> "OrbitalVisitor" IncidentCategoryDef
+IncidentCategoryDefOf --> "ShipChunkDrop" IncidentCategoryDef
+IncidentCategoryDefOf --> "DiseaseHuman" IncidentCategoryDef
+IncidentCategoryDefOf --> "DiseaseAnimal" IncidentCategoryDef
+IncidentCategoryDefOf --> "AllyAssistance" IncidentCategoryDef
+IncidentCategoryDefOf --> "EndGame_ShipEscape" IncidentCategoryDef
+IncidentCategoryDefOf --> "GiveQuest" IncidentCategoryDef
+IncidentCategoryDefOf --> "DeepDrillInfestation" IncidentCategoryDef
+@enduml

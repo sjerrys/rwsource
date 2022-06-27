@@ -1,0 +1,8 @@
+@startuml
+class CompProperties_SelfhealHitpoints {
+    + ticksPerHeal : int
+    + CompProperties_SelfhealHitpoints()
+    + <<override>> ConfigErrors(parentDef:ThingDef) : IEnumerable<string>
+}
+CompProperties <|-- CompProperties_SelfhealHitpoints
+@enduml

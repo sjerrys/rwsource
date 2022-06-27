@@ -1,0 +1,7 @@
+@startuml
+class SitePartDefWithParams {
+    + SitePartDefWithParams(def:SitePartDef, parms:SitePartParams)
+}
+SitePartDefWithParams --> "def" SitePartDef
+SitePartDefWithParams --> "parms" SitePartParams
+@enduml

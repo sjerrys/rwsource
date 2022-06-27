@@ -1,0 +1,36 @@
+@startuml
+class Noise2D {
+    + {static} <<readonly>> South : double
+    + {static} <<readonly>> North : double = 90.0
+    + {static} <<readonly>> West : double
+    + {static} <<readonly>> East : double = 180.0
+    + {static} <<readonly>> AngleMin : double
+    + {static} <<readonly>> AngleMax : double = 180.0
+    + {static} <<readonly>> Left : double
+    + {static} <<readonly>> Right : double = 1.0
+    + {static} <<readonly>> Top : double
+    + {static} <<readonly>> Bottom : double = 1.0
+    + Border : float <<get>> <<set>>
+    + Height : int <<get>>
+    + Width : int <<get>>
+    + IsDisposed : bool <<get>>
+    + Noise2D(size:int)
+    + Noise2D(size:int, generator:ModuleBase)
+    + Noise2D(width:int, height:int)
+    + Noise2D(width:int, height:int, generator:ModuleBase)
+    + GetNormalizedData(isCropped:bool, xCrop:int, yCrop:int) : float[,]
+    + GetData(isCropped:bool, xCrop:int, yCrop:int, isNormalized:bool) : float[,]
+    + Clear() : void
+    + Clear(value:float) : void
+    + GeneratePlanar(left:double, right:double, top:double, bottom:double) : void
+    + GeneratePlanar(left:double, right:double, top:double, bottom:double, isSeamless:bool) : void
+    + GenerateCylindrical(angleMin:double, angleMax:double, heightMin:double, heightMax:double) : void
+    + GenerateSpherical(south:double, north:double, west:double, east:double) : void
+    + GetTexture() : Texture2D
+    + GetTexture(gradient:Gradient) : Texture2D
+    + GetNormalMap(intensity:float) : Texture2D
+    + Dispose() : void
+}
+IDisposable <|-- Noise2D
+Noise2D --> "Generator" ModuleBase
+@enduml

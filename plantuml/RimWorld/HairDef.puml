@@ -1,0 +1,10 @@
+@startuml
+class HairDef {
+    + texPath : string
+}
+class "List`1"<T> {
+}
+Def <|-- HairDef
+HairDef o-> "hairGender" HairGender
+HairDef o-> "hairTags<string>" "List`1"
+@enduml

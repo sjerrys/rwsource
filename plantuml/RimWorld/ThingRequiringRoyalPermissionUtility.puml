@@ -1,0 +1,9 @@
+@startuml
+class ThingRequiringRoyalPermissionUtility <<static>> {
+    + {static} IsViolatingRulesOf(implantOrWeapon:Def, pawn:Pawn, faction:Faction, implantLevel:int) : bool
+    + {static} IsViolatingRulesOfAnyFaction(implantOrWeapon:Def, pawn:Pawn, implantLevel:int) : bool
+    + {static} IsViolatingRulesOfAnyFaction_NewTemp(implantOrWeapon:Def, pawn:Pawn, implantLevel:int, ignoreSilencer:bool) : bool
+    + {static} GetMinTitleToUse(implantOrWeapon:Def, faction:Faction, implantLevel:int) : RoyalTitleDef
+    + {static} GetEquipWeaponConfirmationDialogText(weapon:Thing, pawn:Pawn) : TaggedString
+}
+@enduml

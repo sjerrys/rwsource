@@ -1,0 +1,6 @@
+@startuml
+class BillRepeatModeDef {
+    + listOrder : int
+}
+Def <|-- BillRepeatModeDef
+@enduml

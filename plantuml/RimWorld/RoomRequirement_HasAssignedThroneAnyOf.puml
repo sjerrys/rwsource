@@ -1,0 +1,6 @@
+@startuml
+class RoomRequirement_HasAssignedThroneAnyOf {
+    + <<override>> Met(r:Room, p:Pawn) : bool
+}
+RoomRequirement_ThingAnyOf <|-- RoomRequirement_HasAssignedThroneAnyOf
+@enduml

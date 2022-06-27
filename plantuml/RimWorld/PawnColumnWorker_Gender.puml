@@ -1,0 +1,5 @@
+@startuml
+class PawnColumnWorker_Gender {
+}
+PawnColumnWorker_Icon <|-- PawnColumnWorker_Gender
+@enduml

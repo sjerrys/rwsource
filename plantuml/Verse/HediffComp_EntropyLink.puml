@@ -1,0 +1,7 @@
+@startuml
+class HediffComp_EntropyLink {
+    + <<override>> Notify_EntropyGained(baseAmount:float, finalAmount:float, source:Thing) : void
+}
+HediffComp <|-- HediffComp_EntropyLink
+HediffComp_EntropyLink --> "Props" HediffCompProperties_EntropyLink
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class StorytellerComp_RandomMain {
+    + <<override>> MakeIntervalIncidents(target:IIncidentTarget) : IEnumerable<FiringIncident>
+    + <<override>> GenerateParms(incCat:IncidentCategoryDef, target:IIncidentTarget) : IncidentParms
+}
+StorytellerComp <|-- StorytellerComp_RandomMain
+@enduml

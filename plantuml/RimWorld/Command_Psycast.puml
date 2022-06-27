@@ -1,0 +1,8 @@
+@startuml
+class Command_Psycast {
+    + <<override>> Label : string <<get>>
+    + <<override>> TopRightLabel : string <<get>>
+    + Command_Psycast(ability:Psycast)
+}
+Command_Ability <|-- Command_Psycast
+@enduml

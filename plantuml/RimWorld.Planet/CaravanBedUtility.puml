@@ -1,0 +1,8 @@
+@startuml
+class CaravanBedUtility <<static>> {
+    + {static} InCaravanBed(p:Pawn) : bool
+    + {static} CurrentCaravanBed(p:Pawn) : Building_Bed
+    + {static} WouldBenefitFromRestingInBed(p:Pawn) : bool
+    + {static} AppendUsingBedsLabel(str:string, bedCount:int) : string
+}
+@enduml

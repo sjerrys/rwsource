@@ -1,0 +1,14 @@
+@startuml
+abstract class Lesson_Instruction {
+    + <<override>> DefaultRejectInputMessage : string <<get>>
+    + <<override>> ExposeData() : void
+    + <<override>> OnActivated() : void
+    + <<override>> LessonOnGUI() : void
+    + <<override>> Notify_Event(ep:EventPack) : void
+    + <<override>> AllowAction(ep:EventPack) : AcceptanceReport
+    + <<override>> PostDeactivated() : void
+}
+Lesson <|-- Lesson_Instruction
+Lesson_Instruction --> "def" InstructionDef
+Lesson_Instruction --> "Instruction" InstructionDef
+@enduml

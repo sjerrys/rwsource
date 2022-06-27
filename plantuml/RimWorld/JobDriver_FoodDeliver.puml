@@ -1,0 +1,9 @@
+@startuml
+class JobDriver_FoodDeliver {
+    + <<override>> ExposeData() : void
+    + <<override>> GetReport() : string
+    + <<override>> Notify_Starting() : void
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+}
+JobDriver <|-- JobDriver_FoodDeliver
+@enduml

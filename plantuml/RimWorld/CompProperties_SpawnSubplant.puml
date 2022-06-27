@@ -1,0 +1,8 @@
+@startuml
+class CompProperties_SpawnSubplant {
+    + CompProperties_SpawnSubplant()
+}
+CompProperties <|-- CompProperties_SpawnSubplant
+CompProperties_SpawnSubplant --> "subplant" ThingDef
+CompProperties_SpawnSubplant --> "spawnSound" SoundDef
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class CompProperties_FoodPoisonable {
+    + CompProperties_FoodPoisonable()
+}
+CompProperties <|-- CompProperties_FoodPoisonable
+@enduml

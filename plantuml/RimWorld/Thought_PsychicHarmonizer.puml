@@ -1,0 +1,12 @@
+@startuml
+class Thought_PsychicHarmonizer {
+    + <<override>> LabelCap : string <<get>>
+    + <<override>> ShouldDiscard : bool <<get>>
+    + <<override>> ExposeData() : void
+    + <<override>> MoodOffset() : float
+    + <<override>> TryMergeWithExistingMemory(showBubble:bool) : bool
+    + <<override>> GroupsWith(other:Thought) : bool
+}
+Thought_Memory <|-- Thought_PsychicHarmonizer
+Thought_PsychicHarmonizer --> "harmonizer" Hediff
+@enduml

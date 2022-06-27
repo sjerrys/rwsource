@@ -1,0 +1,14 @@
+@startuml
+class BattleLog {
+    + Add(entry:LogEntry) : void
+    + ExposeData() : void
+    + AnyEntryConcerns(p:Pawn) : bool
+    + IsEntryActive(log:LogEntry) : bool
+    + RemoveEntry(log:LogEntry) : void
+    + Notify_PawnDiscarded(p:Pawn, silentlyRemoveReferences:bool) : void
+}
+class "List`1"<T> {
+}
+IExposable <|-- BattleLog
+BattleLog --> "Battles<Battle>" "List`1"
+@enduml

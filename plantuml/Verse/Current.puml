@@ -1,0 +1,15 @@
+@startuml
+class Current <<static>> {
+    + {static} Notify_LoadedSceneChanged() : void
+}
+Current --> "Root" Root
+Current --> "Root_Entry" Root_Entry
+Current --> "Root_Play" Root_Play
+Current --> "Camera" Camera
+Current --> "CameraDriver" CameraDriver
+Current --> "ColorCorrectionCurves" ColorCorrectionCurves
+Current --> "SubcameraDriver" SubcameraDriver
+Current --> "Game" Game
+Current --> "CreatingWorld" World
+Current --> "ProgramState" ProgramState
+@enduml

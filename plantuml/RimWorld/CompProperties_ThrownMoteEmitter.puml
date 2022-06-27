@@ -1,0 +1,18 @@
+@startuml
+class CompProperties_ThrownMoteEmitter {
+    + emissionInterval : int
+    + burstCount : int = 1
+    + CompProperties_ThrownMoteEmitter()
+    + <<override>> ConfigErrors(parentDef:ThingDef) : IEnumerable<string>
+}
+CompProperties <|-- CompProperties_ThrownMoteEmitter
+CompProperties_ThrownMoteEmitter --> "mote" ThingDef
+CompProperties_ThrownMoteEmitter --> "offsetMin" Vector3
+CompProperties_ThrownMoteEmitter --> "offsetMax" Vector3
+CompProperties_ThrownMoteEmitter o-> "colorA" Color
+CompProperties_ThrownMoteEmitter o-> "colorB" Color
+CompProperties_ThrownMoteEmitter --> "scale" FloatRange
+CompProperties_ThrownMoteEmitter --> "rotationRate" FloatRange
+CompProperties_ThrownMoteEmitter --> "velocityX" FloatRange
+CompProperties_ThrownMoteEmitter --> "velocityY" FloatRange
+@enduml

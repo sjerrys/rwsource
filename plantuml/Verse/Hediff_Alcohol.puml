@@ -1,0 +1,6 @@
+@startuml
+class Hediff_Alcohol {
+    + <<override>> Tick() : void
+}
+Hediff_High <|-- Hediff_Alcohol
+@enduml

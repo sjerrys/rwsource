@@ -1,0 +1,6 @@
+@startuml
+class SymbolResolver_Doors {
+    + <<override>> Resolve(rp:ResolveParams) : void
+}
+SymbolResolver <|-- SymbolResolver_Doors
+@enduml

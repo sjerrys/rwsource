@@ -1,0 +1,10 @@
+@startuml
+class CaravanAbandonOrBanishUtility <<static>> {
+    + {static} TryAbandonOrBanishViaInterface(t:Thing, caravan:Caravan) : void
+    + {static} TryAbandonOrBanishViaInterface(t:TransferableImmutable, caravan:Caravan) : void
+    + {static} TryAbandonSpecificCountViaInterface(t:Thing, caravan:Caravan) : void
+    + {static} TryAbandonSpecificCountViaInterface(t:TransferableImmutable, caravan:Caravan) : void
+    + {static} GetAbandonOrBanishButtonTooltip(t:Thing, abandonSpecificCount:bool) : string
+    + {static} GetAbandonOrBanishButtonTooltip(t:TransferableImmutable, abandonSpecificCount:bool) : string
+}
+@enduml

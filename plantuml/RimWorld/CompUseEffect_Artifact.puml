@@ -1,0 +1,7 @@
+@startuml
+class CompUseEffect_Artifact {
+    + <<override>> DoEffect(usedBy:Pawn) : void
+}
+CompUseEffect <|-- CompUseEffect_Artifact
+CompUseEffect_Artifact --> "Props" CompProperties_UseEffectArtifact
+@enduml

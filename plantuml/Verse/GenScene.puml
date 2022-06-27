@@ -1,0 +1,9 @@
+@startuml
+class GenScene <<static>> {
+    + <<const>> EntrySceneName : string = "Entry"
+    + <<const>> PlaySceneName : string = "Play"
+    + {static} InEntryScene : bool <<get>>
+    + {static} InPlayScene : bool <<get>>
+    + {static} GoToMainMenu() : void
+}
+@enduml

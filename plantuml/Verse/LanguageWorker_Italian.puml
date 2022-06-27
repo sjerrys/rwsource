@@ -1,0 +1,10 @@
+@startuml
+class LanguageWorker_Italian {
+    + <<override>> WithIndefiniteArticle(str:string, gender:Gender, plural:bool, name:bool) : string
+    + <<override>> WithDefiniteArticle(str:string, gender:Gender, plural:bool, name:bool) : string
+    + IsVowel(ch:char) : bool
+    + <<override>> OrdinalNumber(number:int, gender:Gender) : string
+    + <<override>> Pluralize(str:string, gender:Gender, count:int) : string
+}
+LanguageWorker <|-- LanguageWorker_Italian
+@enduml

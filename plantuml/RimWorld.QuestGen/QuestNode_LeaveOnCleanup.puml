@@ -1,0 +1,10 @@
+@startuml
+class QuestNode_LeaveOnCleanup {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_LeaveOnCleanup
+QuestNode_LeaveOnCleanup --> "pawns<IEnumerable<Pawn>>" "SlateRef`1"
+QuestNode_LeaveOnCleanup --> "sendStandardLetter<bool?>" "SlateRef`1"
+QuestNode_LeaveOnCleanup --> "inSignalRemovePawn<string>" "SlateRef`1"
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class DamageWorker_Flame {
+    + <<override>> Apply(dinfo:DamageInfo, victim:Thing) : DamageResult
+    + <<override>> ExplosionAffectCell(explosion:Explosion, c:IntVec3, damagedThings:List<Thing>, ignoredThings:List<Thing>, canThrowMotes:bool) : void
+}
+DamageWorker_AddInjury <|-- DamageWorker_Flame
+@enduml

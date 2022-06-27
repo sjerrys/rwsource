@@ -1,0 +1,11 @@
+@startuml
+class ScenPart_StatFactor {
+    + <<override>> ExposeData() : void
+    + <<override>> DoEditInterface(listing:Listing_ScenEdit) : void
+    + <<override>> Summary(scen:Scenario) : string
+    + <<override>> Randomize() : void
+    + <<override>> TryMerge(other:ScenPart) : bool
+    + GetStatFactor(stat:StatDef) : float
+}
+ScenPart <|-- ScenPart_StatFactor
+@enduml

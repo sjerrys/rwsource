@@ -1,0 +1,30 @@
+@startuml
+class Frame {
+    + workDone : float
+    + {static} AvoidUnderConstructionPathFindCost : ushort = 800
+    + WorkToBuild : float <<get>>
+    + WorkLeft : float <<get>>
+    + PercentComplete : float <<get>>
+    + <<override>> Label : string <<get>>
+    + LabelEntityToBuild : string <<get>>
+    + Frame()
+    + GetDirectlyHeldThings() : ThingOwner
+    + GetChildHolders(outChildren:List<IThingHolder>) : void
+    + <<override>> ExposeData() : void
+    + <<override>> Destroy(mode:DestroyMode) : void
+    + EntityToBuildStuff() : ThingDef
+    + MaterialsNeeded() : List<ThingDefCountClass>
+    + CompleteConstruction(worker:Pawn) : void
+    + FailConstruction(worker:Pawn) : void
+    + <<override>> Draw() : void
+    + <<override>> GetGizmos() : IEnumerable<Gizmo>
+    + <<override>> GetInspectString() : string
+    + <<override>> PathFindCostFor(p:Pawn) : ushort
+}
+Building <|-- Frame
+IThingHolder <|-- Frame
+IConstructible <|-- Frame
+Frame --> "resourceContainer" ThingOwner
+Frame --> "DrawColor" Color
+Frame --> "ConstructionEffect" EffecterDef
+@enduml

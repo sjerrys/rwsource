@@ -1,0 +1,13 @@
+@startuml
+class RidgedMultifractal {
+    + Frequency : double <<get>> <<set>>
+    + Lacunarity : double <<get>> <<set>>
+    + OctaveCount : int <<get>> <<set>>
+    + Seed : int <<get>> <<set>>
+    + RidgedMultifractal()
+    + RidgedMultifractal(frequency:double, lacunarity:double, octaves:int, seed:int, quality:QualityMode)
+    + <<override>> GetValue(x:double, y:double, z:double) : double
+}
+ModuleBase <|-- RidgedMultifractal
+RidgedMultifractal --> "Quality" QualityMode
+@enduml

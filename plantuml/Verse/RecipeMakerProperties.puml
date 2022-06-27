@@ -1,0 +1,25 @@
+@startuml
+class RecipeMakerProperties {
+    + productCount : int = 1
+    + targetCountAdjustment : int = 1
+    + bulkRecipeCount : int
+    + useIngredientsForColor : bool = true
+    + workAmount : int
+    + workSkillLearnPerTick : float = 1f
+}
+class "List`1"<T> {
+}
+RecipeMakerProperties --> "workSpeedStat" StatDef
+RecipeMakerProperties --> "efficiencyStat" StatDef
+RecipeMakerProperties --> "unfinishedThingDef" ThingDef
+RecipeMakerProperties --> "defaultIngredientFilter" ThingFilter
+RecipeMakerProperties --> "skillRequirements<SkillRequirement>" "List`1"
+RecipeMakerProperties --> "workSkill" SkillDef
+RecipeMakerProperties --> "requiredGiverWorkType" WorkTypeDef
+RecipeMakerProperties --> "effectWorking" EffecterDef
+RecipeMakerProperties --> "soundWorking" SoundDef
+RecipeMakerProperties --> "recipeUsers<ThingDef>" "List`1"
+RecipeMakerProperties --> "researchPrerequisite" ResearchProjectDef
+RecipeMakerProperties --> "researchPrerequisites<ResearchProjectDef>" "List`1"
+RecipeMakerProperties --> "factionPrerequisiteTags<string>" "List`1"
+@enduml

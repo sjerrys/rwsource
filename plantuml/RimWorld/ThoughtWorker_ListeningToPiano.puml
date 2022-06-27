@@ -1,0 +1,5 @@
+@startuml
+class ThoughtWorker_ListeningToPiano {
+}
+ThoughtWorker_MusicalInstrumentListeningBase <|-- ThoughtWorker_ListeningToPiano
+@enduml

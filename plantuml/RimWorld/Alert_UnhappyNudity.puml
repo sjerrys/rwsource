@@ -1,0 +1,6 @@
+@startuml
+class Alert_UnhappyNudity {
+    + Alert_UnhappyNudity()
+}
+Alert_Thought <|-- Alert_UnhappyNudity
+@enduml

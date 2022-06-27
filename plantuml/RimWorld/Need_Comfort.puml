@@ -1,0 +1,12 @@
+@startuml
+class Need_Comfort {
+    + lastComfortUsed : float
+    + lastComfortUseTick : int
+    + <<const>> ComfortUseInterval : int = 10
+    + <<override>> CurInstantLevel : float <<get>>
+    + Need_Comfort(pawn:Pawn)
+    + ComfortUsed(comfort:float) : void
+}
+Need_Seeker <|-- Need_Comfort
+Need_Comfort --> "CurCategory" ComfortCategory
+@enduml

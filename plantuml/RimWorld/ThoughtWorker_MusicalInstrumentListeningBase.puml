@@ -1,0 +1,5 @@
+@startuml
+abstract class ThoughtWorker_MusicalInstrumentListeningBase {
+}
+ThoughtWorker <|-- ThoughtWorker_MusicalInstrumentListeningBase
+@enduml

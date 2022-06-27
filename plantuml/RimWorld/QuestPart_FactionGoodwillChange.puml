@@ -1,0 +1,20 @@
+@startuml
+class QuestPart_FactionGoodwillChange {
+    + inSignal : string
+    + change : int
+    + canSendMessage : bool = true
+    + canSendHostilityLetter : bool = true
+    + reason : string
+    + getLookTargetFromSignal : bool = true
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart <|-- QuestPart_FactionGoodwillChange
+QuestPart_FactionGoodwillChange --> "faction" Faction
+QuestPart_FactionGoodwillChange --> "lookTarget" GlobalTargetInfo
+QuestPart_FactionGoodwillChange --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+QuestPart_FactionGoodwillChange --> "InvolvedFactions<Faction>" "IEnumerable`1"
+@enduml

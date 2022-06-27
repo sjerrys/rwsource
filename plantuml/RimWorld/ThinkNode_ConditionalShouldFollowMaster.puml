@@ -1,0 +1,6 @@
+@startuml
+class ThinkNode_ConditionalShouldFollowMaster {
+    + {static} ShouldFollowMaster(pawn:Pawn) : bool
+}
+ThinkNode_Conditional <|-- ThinkNode_ConditionalShouldFollowMaster
+@enduml

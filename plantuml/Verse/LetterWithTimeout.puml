@@ -1,0 +1,11 @@
+@startuml
+abstract class LetterWithTimeout {
+    + disappearAtTick : int
+    + TimeoutActive : bool <<get>>
+    + TimeoutPassed : bool <<get>>
+    + <<override>> CanShowInLetterStack : bool <<get>>
+    + <<override>> ExposeData() : void
+    + StartTimeout(duration:int) : void
+}
+Letter <|-- LetterWithTimeout
+@enduml

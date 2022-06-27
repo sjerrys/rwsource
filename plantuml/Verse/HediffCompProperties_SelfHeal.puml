@@ -1,0 +1,8 @@
+@startuml
+class HediffCompProperties_SelfHeal {
+    + healIntervalTicksStanding : int = 50
+    + healAmount : float = 1f
+    + HediffCompProperties_SelfHeal()
+}
+HediffCompProperties <|-- HediffCompProperties_SelfHeal
+@enduml

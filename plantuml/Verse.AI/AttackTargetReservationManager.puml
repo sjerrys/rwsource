@@ -1,0 +1,23 @@
+@startuml
+class AttackTargetReservationManager {
+    + AttackTargetReservationManager(map:Map)
+    + Reserve(claimant:Pawn, job:Job, target:IAttackTarget) : void
+    + Release(claimant:Pawn, job:Job, target:IAttackTarget) : void
+    + CanReserve(claimant:Pawn, target:IAttackTarget) : bool
+    + IsReservedBy(claimant:Pawn, target:IAttackTarget) : bool
+    + ReleaseAllForTarget(target:IAttackTarget) : void
+    + ReleaseClaimedBy(claimant:Pawn, job:Job) : void
+    + ReleaseAllClaimedBy(claimant:Pawn) : void
+    + FirstReservationFor(claimant:Pawn) : IAttackTarget
+    + ExposeData() : void
+}
+class AttackTargetReservation {
+    + ExposeData() : void
+}
+IExposable <|-- AttackTargetReservationManager
+AttackTargetReservationManager +-- AttackTargetReservation
+IExposable <|-- AttackTargetReservation
+AttackTargetReservation --> "target" IAttackTarget
+AttackTargetReservation --> "claimant" Pawn
+AttackTargetReservation --> "job" Job
+@enduml

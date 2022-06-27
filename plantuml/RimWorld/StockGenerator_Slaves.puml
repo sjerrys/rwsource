@@ -1,0 +1,8 @@
+@startuml
+class StockGenerator_Slaves {
+    + <<override>> GenerateThings(forTile:int, faction:Faction) : IEnumerable<Thing>
+    + <<override>> HandlesThingDef(thingDef:ThingDef) : bool
+}
+StockGenerator <|-- StockGenerator_Slaves
+StockGenerator_Slaves --> "slaveKindDef" PawnKindDef
+@enduml

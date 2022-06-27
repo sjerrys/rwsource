@@ -1,0 +1,10 @@
+@startuml
+class HediffCompProperties_ReactOnDamage {
+    + vomit : bool
+    + HediffCompProperties_ReactOnDamage()
+}
+HediffCompProperties <|-- HediffCompProperties_ReactOnDamage
+HediffCompProperties_ReactOnDamage --> "damageDefIncoming" DamageDef
+HediffCompProperties_ReactOnDamage --> "createHediffOn" BodyPartDef
+HediffCompProperties_ReactOnDamage --> "createHediff" HediffDef
+@enduml

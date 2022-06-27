@@ -1,0 +1,13 @@
+@startuml
+class CompWakeUpDormant {
+    + wakeUpIfColonistClose : bool
+    + <<override>> Initialize(props:CompProperties) : void
+    + <<override>> CompTick() : void
+    + TickRareWorker() : void
+    + Activate(sendSignal:bool, silent:bool) : void
+    + <<override>> PostPostApplyDamage(dinfo:DamageInfo, totalDamageDealt:float) : void
+    + <<override>> Notify_SignalReceived(signal:Signal) : void
+    + <<override>> PostExposeData() : void
+}
+ThingComp <|-- CompWakeUpDormant
+@enduml

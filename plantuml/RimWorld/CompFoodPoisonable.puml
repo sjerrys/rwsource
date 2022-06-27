@@ -1,0 +1,12 @@
+@startuml
+class CompFoodPoisonable {
+    + PoisonPercent : float <<get>>
+    + SetPoisoned(newCause:FoodPoisonCause) : void
+    + <<override>> PostExposeData() : void
+    + <<override>> PostSplitOff(piece:Thing) : void
+    + <<override>> PreAbsorbStack(otherStack:Thing, count:int) : void
+    + <<override>> PostIngested(ingester:Pawn) : void
+}
+ThingComp <|-- CompFoodPoisonable
+CompFoodPoisonable --> "cause" FoodPoisonCause
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class ITab_Pawn_Needs {
+    + <<override>> IsVisible : bool <<get>>
+    + ITab_Pawn_Needs()
+    + <<override>> OnOpen() : void
+}
+ITab <|-- ITab_Pawn_Needs
+@enduml

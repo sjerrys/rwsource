@@ -1,0 +1,51 @@
+@startuml
+class Plant {
+    + sown : bool
+    + <<const>> BaseGrowthPercent : float = 0.05f
+    + <<const>> MinGrowthTemperature : float = 0f
+    + <<const>> MinOptimalGrowthTemperature : float = 10f
+    + <<const>> MaxOptimalGrowthTemperature : float = 42f
+    + <<const>> MaxGrowthTemperature : float = 58f
+    + <<const>> MaxLeaflessTemperature : float
+    + <<const>> TopVerticesAltitudeBias : float = 0.1f
+    + <<virtual>> Growth : float <<get>> <<set>>
+    + <<virtual>> Age : int <<get>> <<set>>
+    + <<virtual>> HarvestableNow : bool <<get>>
+    + HarvestableSoon : bool <<get>>
+    + <<virtual>> BlightableNow : bool <<get>>
+    + Blighted : bool <<get>>
+    + <<override>> IngestibleNow : bool <<get>>
+    + <<virtual>> CurrentDyingDamagePerTick : float <<get>>
+    + <<virtual>> DyingBecauseExposedToLight : bool <<get>>
+    + Dying : bool <<get>>
+    + <<virtual>> GrowthRate : float <<get>>
+    + GrowthRateFactor_Fertility : float <<get>>
+    + GrowthRateFactor_Light : float <<get>>
+    + GrowthRateFactor_Temperature : float <<get>>
+    + <<override>> LabelMouseover : string <<get>>
+    + LeaflessNow : bool <<get>>
+    + IsCrop : bool <<get>>
+    + <<override>> SpawnSetup(map:Map, respawningAfterLoad:bool) : void
+    + <<override>> DeSpawn(mode:DestroyMode) : void
+    + <<override>> ExposeData() : void
+    + <<override>> PostMapInit() : void
+    + <<virtual>> PlantCollected() : void
+    + <<virtual>> MakeLeafless(cause:LeaflessCause) : void
+    + <<override>> TickLong() : void
+    + <<virtual>> CanYieldNow() : bool
+    + <<virtual>> YieldNow() : int
+    + <<override>> Print(layer:SectionLayer) : void
+    + <<override>> GetInspectString() : string
+    + <<virtual>> CropBlighted() : void
+    + <<override>> GetGizmos() : IEnumerable<Gizmo>
+}
+enum LeaflessCause {
+    Cold,
+    Poison,
+}
+ThingWithComps <|-- Plant
+Plant --> "Blight" Blight
+Plant --> "LifeStage" PlantLifeStage
+Plant --> "Graphic" Graphic
+Plant +-- LeaflessCause
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class CompProperties_AbilityNeuroquake {
+    + goodwillImpactForNeuroquake : int
+    + goodwillImpactForBerserk : int
+    + worldRangeTiles : int
+    + CompProperties_AbilityNeuroquake()
+}
+CompProperties_AbilityEffect <|-- CompProperties_AbilityNeuroquake
+@enduml

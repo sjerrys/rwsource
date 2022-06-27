@@ -1,0 +1,8 @@
+@startuml
+enum PlantPurpose {
+    Food,
+    Health,
+    Beauty,
+    Misc,
+}
+@enduml

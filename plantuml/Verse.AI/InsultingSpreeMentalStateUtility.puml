@@ -1,0 +1,8 @@
+@startuml
+class InsultingSpreeMentalStateUtility <<static>> {
+    + <<const>> MaxDistance : int = 40
+    + <<const>> MinTicksBetweenInsults : int = 1200
+    + {static} CanChaseAndInsult(bully:Pawn, insulted:Pawn, skipReachabilityCheck:bool, allowPrisoners:bool) : bool
+    + {static} GetInsultCandidatesFor(bully:Pawn, outCandidates:List<Pawn>, allowPrisoners:bool) : void
+}
+@enduml

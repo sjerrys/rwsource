@@ -1,0 +1,8 @@
+@startuml
+class DefGenerator <<static>> {
+    + {static} StandardItemPathCost : int = 14
+    + {static} GenerateImpliedDefs_PreResolve() : void
+    + {static} GenerateImpliedDefs_PostResolve() : void
+    + {static} AddImpliedDef(def:T) : void
+}
+@enduml

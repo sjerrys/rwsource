@@ -1,0 +1,7 @@
+@startuml
+class HediffCompProperties_Infecter {
+    + infectionChance : float = 0.5f
+    + HediffCompProperties_Infecter()
+}
+HediffCompProperties <|-- HediffCompProperties_Infecter
+@enduml

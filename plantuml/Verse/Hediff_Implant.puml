@@ -1,0 +1,8 @@
+@startuml
+class Hediff_Implant {
+    + <<override>> ShouldRemove : bool <<get>>
+    + <<override>> PostAdd(dinfo:DamageInfo?) : void
+    + <<override>> ExposeData() : void
+}
+HediffWithComps <|-- Hediff_Implant
+@enduml

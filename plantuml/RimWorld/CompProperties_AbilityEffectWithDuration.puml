@@ -1,0 +1,6 @@
+@startuml
+class CompProperties_AbilityEffectWithDuration {
+}
+CompProperties_AbilityEffect <|-- CompProperties_AbilityEffectWithDuration
+CompProperties_AbilityEffectWithDuration --> "durationMultiplier" StatDef
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class CompProperties_SendSignalOnPawnProximity {
+    + triggerOnPawnInRoom : bool
+    + radius : float
+    + enableAfterTicks : int
+    + onlyHumanlike : bool
+    + signalTag : string
+    + CompProperties_SendSignalOnPawnProximity()
+}
+CompProperties <|-- CompProperties_SendSignalOnPawnProximity
+@enduml

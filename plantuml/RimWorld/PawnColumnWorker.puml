@@ -1,0 +1,13 @@
+@startuml
+abstract class PawnColumnWorker {
+    + <<virtual>> DoHeader(rect:Rect, table:PawnTable) : void
+    + {abstract} DoCell(rect:Rect, pawn:Pawn, table:PawnTable) : void
+    + <<virtual>> GetMinWidth(table:PawnTable) : int
+    + <<virtual>> GetMaxWidth(table:PawnTable) : int
+    + <<virtual>> GetOptimalWidth(table:PawnTable) : int
+    + <<virtual>> GetMinCellHeight(pawn:Pawn) : int
+    + <<virtual>> GetMinHeaderHeight(table:PawnTable) : int
+    + <<virtual>> Compare(a:Pawn, b:Pawn) : int
+}
+PawnColumnWorker --> "def" PawnColumnDef
+@enduml

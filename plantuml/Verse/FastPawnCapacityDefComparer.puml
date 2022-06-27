@@ -1,0 +1,10 @@
+@startuml
+class FastPawnCapacityDefComparer {
+    + Equals(x:PawnCapacityDef, y:PawnCapacityDef) : bool
+    + GetHashCode(obj:PawnCapacityDef) : int
+}
+class "IEqualityComparer`1"<T> {
+}
+"IEqualityComparer`1" "<PawnCapacityDef>" <|-- FastPawnCapacityDefComparer
+FastPawnCapacityDefComparer o-> "Instance" FastPawnCapacityDefComparer
+@enduml

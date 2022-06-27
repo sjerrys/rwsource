@@ -1,0 +1,8 @@
+@startuml
+abstract class TransferableComparer {
+    + {abstract} Compare(lhs:Transferable, rhs:Transferable) : int
+}
+class "IComparer`1"<T> {
+}
+"IComparer`1" "<Transferable>" <|-- TransferableComparer
+@enduml

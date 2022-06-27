@@ -1,0 +1,13 @@
+@startuml
+class QuestNode_GetPlantPlayerCanHarvest {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GetPlantPlayerCanHarvest
+QuestNode_GetPlantPlayerCanHarvest --> "storeHarvestItemDefAs<string>" "SlateRef`1"
+QuestNode_GetPlantPlayerCanHarvest --> "storeHarvestItemCountAs<string>" "SlateRef`1"
+QuestNode_GetPlantPlayerCanHarvest --> "storeGrowDaysAs<string>" "SlateRef`1"
+QuestNode_GetPlantPlayerCanHarvest --> "maxPlantGrowDays<int>" "SlateRef`1"
+QuestNode_GetPlantPlayerCanHarvest --> "pointsToRequiredWorkCurve<SimpleCurve>" "SlateRef`1"
+QuestNode_GetPlantPlayerCanHarvest --> "workRandomFactorRange<FloatRange?>" "SlateRef`1"
+@enduml

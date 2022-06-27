@@ -1,0 +1,5 @@
+@startuml
+class StoryDangerUtility <<static>> {
+    + {static} Scale(d:StoryDanger) : float
+}
+@enduml

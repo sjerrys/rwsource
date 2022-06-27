@@ -1,0 +1,11 @@
+@startuml
+class PawnWoundDrawer {
+    + PawnWoundDrawer(pawn:Pawn)
+    + RenderOverBody(drawLoc:Vector3, bodyMesh:Mesh, quat:Quaternion, forPortrait:bool) : void
+}
+class Wound {
+    + Wound(pawn:Pawn)
+    + DrawWound(drawLoc:Vector3, bodyQuat:Quaternion, bodyRot:Rot4, forPortrait:bool) : void
+}
+PawnWoundDrawer +-- Wound
+@enduml

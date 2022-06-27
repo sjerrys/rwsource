@@ -1,0 +1,7 @@
+@startuml
+abstract class WorldLayer_SingleTile {
+    + <<override>> ShouldRegenerate : bool <<get>>
+    + <<override>> Regenerate() : IEnumerable
+}
+WorldLayer <|-- WorldLayer_SingleTile
+@enduml

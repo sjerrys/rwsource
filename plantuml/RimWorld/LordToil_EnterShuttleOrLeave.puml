@@ -1,0 +1,13 @@
+@startuml
+class LordToil_EnterShuttleOrLeave {
+    + canDig : bool
+    + interruptCurrentJob : bool
+    + <<override>> AllowSatisfyLongNeeds : bool <<get>>
+    + LordToil_EnterShuttleOrLeave(shuttle:Thing, locomotion:LocomotionUrgency, canDig:bool, interruptCurrentJob:bool)
+    + <<override>> UpdateAllDuties() : void
+    + <<override>> LordToilTick() : void
+}
+LordToil <|-- LordToil_EnterShuttleOrLeave
+LordToil_EnterShuttleOrLeave --> "shuttle" Thing
+LordToil_EnterShuttleOrLeave --> "locomotion" LocomotionUrgency
+@enduml

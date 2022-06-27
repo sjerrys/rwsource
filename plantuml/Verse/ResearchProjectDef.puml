@@ -1,0 +1,56 @@
+@startuml
+class ResearchProjectDef {
+    + baseCost : float = 100f
+    + researchViewX : float = 1f
+    + researchViewY : float = 1f
+    + discoveredLetterTitle : string
+    + discoveredLetterText : string
+    + discoveredLetterMinDifficulty : int
+    + unlockExtremeDifficulty : bool
+    + techprintCount : int
+    + techprintCommonality : float = 1f
+    + techprintMarketValue : float = 1000f
+    + ResearchViewX : float <<get>>
+    + ResearchViewY : float <<get>>
+    + CostApparent : float <<get>>
+    + ProgressReal : float <<get>>
+    + ProgressApparent : float <<get>>
+    + ProgressPercent : float <<get>>
+    + IsFinished : bool <<get>>
+    + CanStartNow : bool <<get>>
+    + PrerequisitesCompleted : bool <<get>>
+    + TechprintCount : int <<get>>
+    + TechprintsApplied : int <<get>>
+    + TechprintRequirementMet : bool <<get>>
+    + <<override>> ResolveReferences() : void
+    + <<override>> ConfigErrors() : IEnumerable<string>
+    + <<override>> PostLoad() : void
+    + CostFactor(researcherTechLevel:TechLevel) : float
+    + HasTag(tag:ResearchProjectTagDef) : bool
+    + CanBeResearchedAt(bench:Building_ResearchBench, ignoreResearchBenchPowerStatus:bool) : bool
+    + ReapplyAllMods() : void
+    + {static} Named(defName:string) : ResearchProjectDef
+    + {static} GenerateNonOverlappingCoordinates() : void
+    + Debug_ApplyPositionDelta(delta:Vector2) : void
+    + Debug_SnapPositionData() : void
+    + Debug_IsPositionModified() : bool
+}
+class "List`1"<T> {
+}
+Def <|-- ResearchProjectDef
+ResearchProjectDef --> "prerequisites<ResearchProjectDef>" "List`1"
+ResearchProjectDef --> "hiddenPrerequisites<ResearchProjectDef>" "List`1"
+ResearchProjectDef --> "techLevel" TechLevel
+ResearchProjectDef --> "requiredByThis<ResearchProjectDef>" "List`1"
+ResearchProjectDef --> "requiredResearchBuilding" ThingDef
+ResearchProjectDef --> "requiredResearchFacilities<ThingDef>" "List`1"
+ResearchProjectDef --> "tags<ResearchProjectTagDef>" "List`1"
+ResearchProjectDef --> "tab" ResearchTabDef
+ResearchProjectDef o-> "discoveredLetterDisabledWhen" DifficultyConditionConfig
+ResearchProjectDef --> "heldByFactionCategoryTags<string>" "List`1"
+ResearchProjectDef o-> "hideWhen" DifficultyConditionConfig
+ResearchProjectDef o-> "MaxEffectiveTechLevel" TechLevel
+ResearchProjectDef --> "Techprint" ThingDef
+ResearchProjectDef --> "UnlockedDefs<Def>" "List`1"
+ResearchProjectDef --> "InfoCardHyperlinks<Dialog_InfoCard.Hyperlink>" "List`1"
+@enduml

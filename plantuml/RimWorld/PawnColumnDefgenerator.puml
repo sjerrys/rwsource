@@ -1,0 +1,5 @@
+@startuml
+class PawnColumnDefgenerator {
+    + {static} ImpliedPawnColumnDefs() : IEnumerable<PawnColumnDef>
+}
+@enduml

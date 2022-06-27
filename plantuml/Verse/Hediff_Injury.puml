@@ -1,0 +1,18 @@
+@startuml
+class Hediff_Injury {
+    + <<override>> UIGroupKey : int <<get>>
+    + <<override>> LabelBase : string <<get>>
+    + <<override>> LabelInBrackets : string <<get>>
+    + <<override>> SeverityLabel : string <<get>>
+    + <<override>> SummaryHealthPercentImpact : float <<get>>
+    + <<override>> PainOffset : float <<get>>
+    + <<override>> BleedRate : float <<get>>
+    + <<override>> Tick() : void
+    + <<override>> Heal(amount:float) : void
+    + <<override>> TryMergeWith(other:Hediff) : bool
+    + <<override>> PostAdd(dinfo:DamageInfo?) : void
+    + <<override>> ExposeData() : void
+}
+HediffWithComps <|-- Hediff_Injury
+Hediff_Injury --> "LabelColor" Color
+@enduml

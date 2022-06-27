@@ -1,0 +1,6 @@
+@startuml
+class DevModePermanentlyDisabledUtility <<static>> {
+    + {static} Disabled : bool <<get>>
+    + {static} Disable() : void
+}
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+class CompSchedule {
+    + <<const>> ScheduledOnSignal : string = "ScheduledOn"
+    + <<const>> ScheduledOffSignal : string = "ScheduledOff"
+    + Allowed : bool <<get>> <<set>>
+    + <<override>> PostSpawnSetup(respawningAfterLoad:bool) : void
+    + <<override>> CompTickRare() : void
+    + RecalculateAllowed() : void
+    + <<override>> CompInspectStringExtra() : string
+}
+ThingComp <|-- CompSchedule
+CompSchedule --> "Props" CompProperties_Schedule
+@enduml

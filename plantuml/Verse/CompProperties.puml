@@ -1,0 +1,12 @@
+@startuml
+class CompProperties {
+    + CompProperties()
+    + CompProperties(compClass:Type)
+    + <<virtual>> DrawGhost(center:IntVec3, rot:Rot4, thingDef:ThingDef, ghostCol:Color, drawAltitude:AltitudeLayer, thing:Thing) : void
+    + <<virtual>> ConfigErrors(parentDef:ThingDef) : IEnumerable<string>
+    + <<virtual>> ResolveReferences(parentDef:ThingDef) : void
+    + <<virtual>> SpecialDisplayStats(req:StatRequest) : IEnumerable<StatDrawEntry>
+    + <<virtual>> PostLoadSpecial(parent:ThingDef) : void
+}
+CompProperties o-> "compClass" Type
+@enduml

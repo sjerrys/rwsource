@@ -1,0 +1,12 @@
+@startuml
+class JoyToleranceSet {
+    + ExposeData() : void
+    + BoredOf(def:JoyKindDef) : bool
+    + Notify_JoyGained(amount:float, joyKind:JoyKindDef) : void
+    + JoyFactorFromTolerance(joyKind:JoyKindDef) : float
+    + NeedInterval(pawn:Pawn) : void
+    + TolerancesString() : string
+    + BoredOfAllAvailableJoyKinds(pawn:Pawn) : bool
+}
+IExposable <|-- JoyToleranceSet
+@enduml

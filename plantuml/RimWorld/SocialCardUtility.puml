@@ -1,0 +1,23 @@
+@startuml
+class SocialCardUtility <<static>> {
+    + {static} DrawSocialCard(rect:Rect, pawn:Pawn) : void
+    + {static} DrawRelationsAndOpinions(rect:Rect, selPawnForSocialInfo:Pawn) : void
+    + {static} GetPawnSituationLabel(pawn:Pawn, fromPOV:Pawn) : string
+}
+class CachedSocialTabEntry {
+    + opinionOfOtherPawn : int
+    + opinionOfMe : int
+}
+class CachedSocialTabEntryComparer {
+    + Compare(a:CachedSocialTabEntry, b:CachedSocialTabEntry) : int
+}
+class "List`1"<T> {
+}
+class "IComparer`1"<T> {
+}
+SocialCardUtility +-- CachedSocialTabEntry
+CachedSocialTabEntry --> "otherPawn" Pawn
+CachedSocialTabEntry o-> "relations<PawnRelationDef>" "List`1"
+SocialCardUtility +-- CachedSocialTabEntryComparer
+"IComparer`1" "<CachedSocialTabEntry>" <|-- CachedSocialTabEntryComparer
+@enduml

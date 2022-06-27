@@ -1,0 +1,6 @@
+@startuml
+class StrippableUtility <<static>> {
+    + {static} CanBeStrippedByColony(th:Thing) : bool
+    + {static} CheckSendStrippingImpactsGoodwillMessage(th:Thing) : void
+}
+@enduml

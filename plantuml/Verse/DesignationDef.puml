@@ -1,0 +1,11 @@
+@startuml
+class DesignationDef {
+    + texturePath : string
+    + removeIfBuildingDespawned : bool
+    + designateCancelable : bool = true
+    + <<override>> ResolveReferences() : void
+}
+Def <|-- DesignationDef
+DesignationDef --> "targetType" TargetType
+DesignationDef --> "iconMat" Material
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+interface ISlotGroupParent {
+    IgnoreStoredThingsBeauty : bool <<get>>
+    AllSlotCells() : IEnumerable<IntVec3>
+    AllSlotCellsList() : List<IntVec3>
+    Notify_ReceivedThing(newItem:Thing) : void
+    Notify_LostThing(newItem:Thing) : void
+    SlotYielderLabel() : string
+    GetSlotGroup() : SlotGroup
+}
+IStoreSettingsParent <|-- ISlotGroupParent
+IHaulDestination <|-- ISlotGroupParent
+@enduml

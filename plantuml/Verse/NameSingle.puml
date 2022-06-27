@@ -1,0 +1,19 @@
+@startuml
+class NameSingle {
+    + Name : string <<get>>
+    + <<override>> ToStringFull : string <<get>>
+    + <<override>> ToStringShort : string <<get>>
+    + <<override>> IsValid : bool <<get>>
+    + <<override>> Numerical : bool <<get>>
+    + NameWithoutNumber : string <<get>>
+    + Number : int <<get>>
+    + NameSingle()
+    + NameSingle(name:string, numerical:bool)
+    + <<override>> ExposeData() : void
+    + <<override>> ConfusinglySimilarTo(other:Name) : bool
+    + <<override>> ToString() : string
+    + <<override>> Equals(obj:object) : bool
+    + <<override>> GetHashCode() : int
+}
+Name <|-- NameSingle
+@enduml

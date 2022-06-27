@@ -1,0 +1,13 @@
+@startuml
+class BattleLogEntry_Event {
+    + BattleLogEntry_Event()
+    + BattleLogEntry_Event(subject:Thing, eventDef:RulePackDef, initiator:Thing)
+    + <<override>> Concerns(t:Thing) : bool
+    + <<override>> GetConcerns() : IEnumerable<Thing>
+    + <<override>> CanBeClickedFromPOV(pov:Thing) : bool
+    + <<override>> ClickedFromPOV(pov:Thing) : void
+    + <<override>> ExposeData() : void
+    + <<override>> ToString() : string
+}
+LogEntry <|-- BattleLogEntry_Event
+@enduml

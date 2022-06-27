@@ -1,0 +1,7 @@
+@startuml
+enum EditTreeNodeType {
+    ComplexObject,
+    ListRoot,
+    TerminalValue,
+}
+@enduml

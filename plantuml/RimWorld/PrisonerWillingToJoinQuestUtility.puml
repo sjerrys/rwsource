@@ -1,0 +1,5 @@
+@startuml
+class PrisonerWillingToJoinQuestUtility <<static>> {
+    + {static} GeneratePrisoner(tile:int, hostFaction:Faction) : Pawn
+}
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+abstract class LordJob_Joinable_Gathering {
+    + LordJob_Joinable_Gathering()
+    + LordJob_Joinable_Gathering(spot:IntVec3, organizer:Pawn, gatheringDef:GatheringDef)
+    + <<override>> VoluntaryJoinPriorityFor(p:Pawn) : float
+    + <<override>> ExposeData() : void
+}
+LordJob_VoluntarilyJoinable <|-- LordJob_Joinable_Gathering
+LordJob_Joinable_Gathering --> "Organizer" Pawn
+@enduml

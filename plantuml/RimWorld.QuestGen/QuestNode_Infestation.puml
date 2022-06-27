@@ -1,0 +1,14 @@
+@startuml
+class QuestNode_Infestation {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_Infestation
+QuestNode_Infestation --> "inSignal<string>" "SlateRef`1"
+QuestNode_Infestation --> "hivesCount<int>" "SlateRef`1"
+QuestNode_Infestation --> "tag<string>" "SlateRef`1"
+QuestNode_Infestation --> "customLetterLabel<string>" "SlateRef`1"
+QuestNode_Infestation --> "customLetterText<string>" "SlateRef`1"
+QuestNode_Infestation --> "customLetterLabelRules<RulePack>" "SlateRef`1"
+QuestNode_Infestation --> "customLetterTextRules<RulePack>" "SlateRef`1"
+@enduml

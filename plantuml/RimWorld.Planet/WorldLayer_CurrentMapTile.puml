@@ -1,0 +1,5 @@
+@startuml
+class WorldLayer_CurrentMapTile {
+}
+WorldLayer_SingleTile <|-- WorldLayer_CurrentMapTile
+@enduml

@@ -1,0 +1,31 @@
+@startuml
+class ColoredText <<static>> {
+    + {static} ResetStaticData() : void
+    + {static} ClearCache() : void
+    + {static} ApplyTag(s:string, tagType:TagType, arg:string) : TaggedString
+    + {static} ApplyTag(s:string, faction:Faction) : TaggedString
+    + {static} StripTags(s:string) : string
+    + {static} ResolveTags(str:string) : string
+    + {static} Resolve(taggedStr:TaggedString) : string
+    + {static} Colorize(s:string, color:Color) : string
+    + {static} AppendTagged(sb:StringBuilder, taggedString:TaggedString) : void
+    + {static} AppendLineTagged(sb:StringBuilder, taggedString:TaggedString) : void
+    + {static} ToTaggedString(sb:StringBuilder) : TaggedString
+}
+enum CaptureStage {
+    Tag,
+    Arg,
+    Result,
+}
+ColoredText o-> "RedReadable" Color
+ColoredText o-> "NameColor" Color
+ColoredText o-> "CurrencyColor" Color
+ColoredText o-> "DateTimeColor" Color
+ColoredText o-> "FactionColor_Ally" Color
+ColoredText o-> "FactionColor_Hostile" Color
+ColoredText o-> "ThreatColor" Color
+ColoredText o-> "FactionColor_Neutral" Color
+ColoredText o-> "WarningColor" Color
+ColoredText o-> "ColonistCountColor" Color
+ColoredText +-- CaptureStage
+@enduml

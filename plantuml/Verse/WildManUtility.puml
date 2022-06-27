@@ -1,0 +1,8 @@
+@startuml
+class WildManUtility <<static>> {
+    + {static} IsWildMan(p:Pawn) : bool
+    + {static} AnimalOrWildMan(p:Pawn) : bool
+    + {static} NonHumanlikeOrWildMan(p:Pawn) : bool
+    + {static} WildManShouldReachOutsideNow(p:Pawn) : bool
+}
+@enduml

@@ -1,0 +1,23 @@
+@startuml
+class Building_Grave {
+    + HasCorpse : bool <<get>>
+    + StorageTabVisible : bool <<get>>
+    + GetStoreSettings() : StorageSettings
+    + GetParentStoreSettings() : StorageSettings
+    + <<override>> PostMake() : void
+    + <<override>> ExposeData() : void
+    + <<override>> EjectContents() : void
+    + <<virtual>> Notify_CorpseBuried(worker:Pawn) : void
+    + <<override>> Accepts(thing:Thing) : bool
+    + <<override>> TryAcceptThing(thing:Thing, allowSpecialEffects:bool) : bool
+    + <<override>> GetGizmos() : IEnumerable<Gizmo>
+    + <<override>> GetInspectString() : string
+}
+Building_Casket <|-- Building_Grave
+IStoreSettingsParent <|-- Building_Grave
+IHaulDestination <|-- Building_Grave
+Building_Grave --> "AssignedPawn" Pawn
+Building_Grave --> "CompAssignableToPawn" CompAssignableToPawn_Grave
+Building_Grave --> "Graphic" Graphic
+Building_Grave --> "Corpse" Corpse
+@enduml

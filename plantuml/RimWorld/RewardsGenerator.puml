@@ -1,0 +1,10 @@
+@startuml
+class RewardsGenerator <<static>> {
+    + <<const>> ItemsValueFractionMaxVariance : float = 0.3f
+    + {static} ResetStaticData() : void
+    + {static} Generate(parms:RewardsGeneratorParams) : List<Reward>
+    + {static} Generate(parms:RewardsGeneratorParams, generatedRewardValue:float) : List<Reward>
+}
+RewardsGenerator o-> "RewardValueToRoyalFavorCurve" SimpleCurve
+RewardsGenerator o-> "RewardValueToGoodwillCurve" SimpleCurve
+@enduml

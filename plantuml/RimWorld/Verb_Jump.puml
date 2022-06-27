@@ -1,0 +1,12 @@
+@startuml
+class Verb_Jump {
+    + <<override>> MultiSelect : bool <<get>>
+    + <<override>> OrderForceTarget(target:LocalTargetInfo) : void
+    + <<override>> ValidateTarget(target:LocalTargetInfo) : bool
+    + <<override>> CanHitTargetFrom(root:IntVec3, targ:LocalTargetInfo) : bool
+    + <<override>> OnGUI(target:LocalTargetInfo) : void
+    + <<override>> DrawHighlight(target:LocalTargetInfo) : void
+    + {static} ValidJumpTarget(map:Map, cell:IntVec3) : bool
+}
+Verb <|-- Verb_Jump
+@enduml

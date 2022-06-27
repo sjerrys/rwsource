@@ -1,0 +1,7 @@
+@startuml
+class PowerNetGraphics <<static>> {
+    + {static} PrintWirePieceConnecting(layer:SectionLayer, A:Thing, B:Thing, forPowerOverlay:bool) : void
+    + {static} RenderAnticipatedWirePieceConnecting(userPos:IntVec3, rotation:Rot4, thingSize:IntVec2, transmitter:Thing) : void
+    + {static} PrintOverlayConnectorBaseFor(layer:SectionLayer, t:Thing) : void
+}
+@enduml

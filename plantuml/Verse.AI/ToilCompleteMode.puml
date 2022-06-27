@@ -1,0 +1,10 @@
+@startuml
+enum ToilCompleteMode {
+    Undefined,
+    Instant,
+    PatherArrival,
+    Delay,
+    FinishedBusy,
+    Never,
+}
+@enduml

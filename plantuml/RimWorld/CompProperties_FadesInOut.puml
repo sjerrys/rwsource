@@ -1,0 +1,9 @@
+@startuml
+class CompProperties_FadesInOut {
+    + fadeInSecs : float
+    + fadeOutSecs : float
+    + solidTimeSecs : float
+    + CompProperties_FadesInOut()
+}
+CompProperties <|-- CompProperties_FadesInOut
+@enduml

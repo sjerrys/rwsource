@@ -1,0 +1,21 @@
+@startuml
+class TradeUtility <<static>> {
+    + <<const>> MinimumBuyPrice : float = 0.5f
+    + <<const>> MinimumSellPrice : float = 0.01f
+    + <<const>> PriceFactorBuy_Global : float = 1.4f
+    + <<const>> PriceFactorSell_Global : float = 0.6f
+    + {static} EverPlayerSellable(def:ThingDef) : bool
+    + {static} PlayerSellableNow(t:Thing, trader:ITrader) : bool
+    + {static} SpawnDropPod(dropSpot:IntVec3, map:Map, t:Thing) : void
+    + {static} AllLaunchableThingsForTrade(map:Map, trader:ITrader) : IEnumerable<Thing>
+    + {static} AllSellableColonyPawns(map:Map) : IEnumerable<Pawn>
+    + {static} ThingFromStockToMergeWith(trader:ITrader, thing:Thing) : Thing
+    + {static} LaunchThingsOfType(resDef:ThingDef, debt:int, map:Map, trader:TradeShip) : void
+    + {static} LaunchSilver(map:Map, fee:int) : void
+    + {static} PlayerHomeMapWithMostLaunchableSilver() : Map
+    + {static} ColonyHasEnoughSilver(map:Map, fee:int) : bool
+    + {static} CheckInteractWithTradersTeachOpportunity(pawn:Pawn) : void
+    + {static} GetPricePlayerSell(thing:Thing, priceFactorSell_TraderPriceType:float, priceGain_PlayerNegotiator:float, priceGain_FactionBase:float, currency:TradeCurrency) : float
+    + {static} GetPricePlayerBuy(thing:Thing, priceFactorBuy_TraderPriceType:float, priceGain_PlayerNegotiator:float, priceGain_FactionBase:float) : float
+}
+@enduml

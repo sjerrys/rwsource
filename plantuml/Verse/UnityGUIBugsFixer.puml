@@ -1,0 +1,10 @@
+@startuml
+class UnityGUIBugsFixer <<static>> {
+    + {static} OnGUI() : void
+    + {static} ResolutionsEqual(a:IntVec2, b:IntVec2) : bool
+}
+class "List`1"<T> {
+}
+UnityGUIBugsFixer --> "ScreenResolutionsWithoutDuplicates<Resolution>" "List`1"
+UnityGUIBugsFixer --> "CurrentEventDelta" Vector2
+@enduml

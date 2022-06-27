@@ -1,0 +1,19 @@
+@startuml
+class QuestPart_FactionGoodwillForMoodChange {
+    + inSignal : string
+    + outSignalSuccess : string
+    + outSignalFailed : string
+    + <<const>> Interval : int = 2500
+    + <<const>> Range : int = 120000
+    + <<override>> ExpiryInfoPart : string <<get>>
+    + <<override>> ExpiryInfoPartTip : string <<get>>
+    + SampleSize : int <<get>>
+    + <<override>> QuestPartTick() : void
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> ExposeData() : void
+}
+class "List`1"<T> {
+}
+QuestPartActivable <|-- QuestPart_FactionGoodwillForMoodChange
+QuestPart_FactionGoodwillForMoodChange o-> "pawns<Pawn>" "List`1"
+@enduml

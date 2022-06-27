@@ -1,0 +1,12 @@
+@startuml
+class WeatherEvent_LightningFlash {
+    + <<override>> Expired : bool <<get>>
+    + <<override>> OverrideShadowVector : Vector2? <<get>>
+    + <<override>> SkyTargetLerpFactor : float <<get>>
+    + WeatherEvent_LightningFlash(map:Map)
+    + <<override>> FireEvent() : void
+    + <<override>> WeatherEventTick() : void
+}
+WeatherEvent <|-- WeatherEvent_LightningFlash
+WeatherEvent_LightningFlash --> "SkyTarget" SkyTarget
+@enduml

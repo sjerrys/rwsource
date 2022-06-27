@@ -1,0 +1,6 @@
+@startuml
+class RoomOutlinesGenerator <<static>> {
+    + {static} GenerateRoomOutlines(initialRect:CellRect, map:Map, divisionsCount:int, finalRoomsCount:int, maxRoomCells:int, minTotalRoomsNonWallCellsCount:int) : List<RoomOutline>
+    + {static} GenerateRoomOutlines(initialRect:CellRect, map:Map, divisionsCount:int, finalRoomsCount:int, maxRoomCells:int) : List<RoomOutline>
+}
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class LordToil_Wait {
+    + <<override>> UpdateAllDuties() : void
+}
+LordToil <|-- LordToil_Wait
+@enduml

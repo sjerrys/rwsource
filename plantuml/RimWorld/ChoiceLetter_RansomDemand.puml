@@ -1,0 +1,14 @@
+@startuml
+class ChoiceLetter_RansomDemand {
+    + fee : int
+    + <<override>> CanShowInLetterStack : bool <<get>>
+    + <<override>> ExposeData() : void
+}
+class "IEnumerable`1"<T> {
+}
+ChoiceLetter <|-- ChoiceLetter_RansomDemand
+ChoiceLetter_RansomDemand --> "map" Map
+ChoiceLetter_RansomDemand --> "faction" Faction
+ChoiceLetter_RansomDemand --> "kidnapped" Pawn
+ChoiceLetter_RansomDemand --> "Choices<DiaOption>" "IEnumerable`1"
+@enduml

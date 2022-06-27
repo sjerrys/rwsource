@@ -1,0 +1,13 @@
+@startuml
+class Graphic_Linked {
+    + Graphic_Linked()
+    + Graphic_Linked(subGraphic:Graphic)
+    + <<override>> GetColoredVersion(newShader:Shader, newColor:Color, newColorTwo:Color) : Graphic
+    + <<override>> Print(layer:SectionLayer, thing:Thing) : void
+    + <<override>> MatSingleFor(thing:Thing) : Material
+    + <<virtual>> ShouldLinkWith(c:IntVec3, parent:Thing) : bool
+}
+Graphic <|-- Graphic_Linked
+Graphic_Linked --> "LinkerType" LinkDrawerType
+Graphic_Linked --> "MatSingle" Material
+@enduml

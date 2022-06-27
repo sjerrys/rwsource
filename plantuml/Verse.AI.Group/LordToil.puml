@@ -1,0 +1,28 @@
+@startuml
+abstract class LordToil {
+    + useAvoidGrid : bool
+    + <<virtual>> AllowSatisfyLongNeeds : bool <<get>>
+    + <<virtual>> CustomWakeThreshold : float? <<get>>
+    + <<virtual>> AllowRestingInBed : bool <<get>>
+    + <<virtual>> AllowSelfTend : bool <<get>>
+    + <<virtual>> ShouldFail : bool <<get>>
+    + <<virtual>> ForceHighStoryDanger : bool <<get>>
+    + <<virtual>> Init() : void
+    + {abstract} UpdateAllDuties() : void
+    + <<virtual>> LordToilTick() : void
+    + <<virtual>> Cleanup() : void
+    + <<virtual>> VoluntaryJoinDutyHookFor(p:Pawn) : ThinkTreeDutyHook
+    + <<virtual>> DrawPawnGUIOverlay(pawn:Pawn) : void
+    + <<virtual>> ExtraFloatMenuOptions(target:Pawn, forPawn:Pawn) : IEnumerable<FloatMenuOption>
+    + <<virtual>> Notify_PawnLost(victim:Pawn, cond:PawnLostCondition) : void
+    + <<virtual>> Notify_BuildingLost(b:Building) : void
+    + <<virtual>> Notify_ReachedDutyLocation(pawn:Pawn) : void
+    + <<virtual>> Notify_ConstructionFailed(pawn:Pawn, frame:Frame, newBlueprint:Blueprint_Build) : void
+    + AddFailCondition(failCondition:Func<bool>) : void
+    + <<override>> ToString() : string
+}
+LordToil --> "lord" Lord
+LordToil --> "data" LordToilData
+LordToil --> "Map" Map
+LordToil --> "FlagLoc" IntVec3
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class Toils_Tend {
+    + <<const>> MaxMedicineReservations : int = 10
+    + {static} ReserveMedicine(ind:TargetIndex, injured:Pawn) : Toil
+    + {static} PickupMedicine(ind:TargetIndex, injured:Pawn) : Toil
+    + {static} FinalizeTend(patient:Pawn) : Toil
+}
+@enduml

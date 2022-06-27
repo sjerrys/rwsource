@@ -1,0 +1,5 @@
+@startuml
+class QuestNode_IsHumanlike {
+}
+QuestNode_RaceProperty <|-- QuestNode_IsHumanlike
+@enduml

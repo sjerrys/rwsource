@@ -1,0 +1,18 @@
+@startuml
+class SpouseRelationUtility <<static>> {
+    + <<const>> NoNameChangeOnMarriageChance : float = 0.25f
+    + <<const>> WomansNameChangeOnMarriageChance : float = 0.05f
+    + <<const>> MansNameOnMarriageChance : float = 0.7f
+    + <<const>> ChanceForSpousesToHaveTheSameName : float = 0.75f
+    + {static} GetSpouse(pawn:Pawn) : Pawn
+    + {static} GetSpouseOppositeGender(pawn:Pawn) : Pawn
+    + {static} Roll_NameChangeOnMarriage() : MarriageNameChange
+    + {static} Roll_BackToBirthNameAfterDivorce() : bool
+    + {static} DetermineManAndWomanSpouses(firstPawn:Pawn, secondPawn:Pawn, man:Pawn, woman:Pawn) : void
+    + {static} ChangeNameAfterMarriage(firstPawn:Pawn, secondPawn:Pawn, changeName:MarriageNameChange) : bool
+    + {static} ChangeNameAfterDivorce(pawn:Pawn, chance:float) : bool
+    + {static} Notify_PawnRegenerated(regenerated:Pawn) : void
+    + {static} GetRandomBirthName(forPawn:Pawn) : string
+    + {static} ResolveNameForSpouseOnGeneration(request:PawnGenerationRequest, generated:Pawn) : void
+}
+@enduml

@@ -1,0 +1,21 @@
+@startuml
+class QuestPart_JoinPlayer {
+    + inSignal : string
+    + outSignalResult : string
+    + joinPlayer : bool
+    + makePrisoners : bool
+    + <<override>> IncreasesPopulation : bool <<get>>
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> QuestPartReserves(p:Pawn) : bool
+    + <<override>> ReplacePawnReferences(replace:Pawn, with:Pawn) : void
+    + <<override>> ExposeData() : void
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart <|-- QuestPart_JoinPlayer
+QuestPart_JoinPlayer o-> "pawns<Pawn>" "List`1"
+QuestPart_JoinPlayer --> "mapParent" MapParent
+QuestPart_JoinPlayer --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+@enduml

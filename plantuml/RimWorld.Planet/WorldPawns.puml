@@ -1,0 +1,29 @@
+@startuml
+class WorldPawns {
+    + WorldPawnsTick() : void
+    + ExposeData() : void
+    + Contains(p:Pawn) : bool
+    + PassToWorld(pawn:Pawn, discardMode:PawnDiscardDecideMode) : void
+    + RemovePawn(p:Pawn) : void
+    + RemoveAndDiscardPawnViaGC(p:Pawn) : void
+    + GetSituation(p:Pawn) : WorldPawnSituation
+    + GetPawnsBySituation(situation:WorldPawnSituation) : IEnumerable<Pawn>
+    + GetPawnsBySituationCount(situation:WorldPawnSituation) : int
+    + IsBeingDiscarded(p:Pawn) : bool
+    + Notify_PawnDestroyed(p:Pawn) : void
+    + DebugRunMothballProcessing() : void
+    + UnpinAllForcefullyKeptPawns() : void
+    + LogWorldPawns() : void
+    + LogWorldPawnMothballPrevention() : void
+}
+class "List`1"<T> {
+}
+class "HashSet`1"<T> {
+}
+IExposable <|-- WorldPawns
+WorldPawns o-> "gc" WorldPawnGC
+WorldPawns --> "AllPawnsAliveOrDead<Pawn>" "List`1"
+WorldPawns --> "AllPawnsAlive<Pawn>" "List`1"
+WorldPawns --> "AllPawnsDead<Pawn>" "HashSet`1"
+WorldPawns --> "ForcefullyKeptPawns<Pawn>" "HashSet`1"
+@enduml

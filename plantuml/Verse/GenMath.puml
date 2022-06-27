@@ -1,0 +1,62 @@
+@startuml
+class GenMath <<static>> {
+    + <<const>> BigEpsilon : float = 1E-07f
+    + <<const>> Sqrt2 : float = 1.41421354f
+    + {static} RoundedHundredth(f:float) : float
+    + {static} RoundTo(value:int, roundToNearest:int) : int
+    + {static} RoundTo(value:float, roundToNearest:float) : float
+    + {static} ChanceEitherHappens(chanceA:float, chanceB:float) : float
+    + {static} SmootherStep(edge0:float, edge1:float, x:float) : float
+    + {static} RoundRandom(f:float) : int
+    + {static} WeightedAverage(A:float, weightA:float, B:float, weightB:float) : float
+    + {static} Median(list:IList<T>, orderBy:Func<T, float>, noneValue:float, center:float) : float
+    + {static} WeightedMedian(list:IList<Pair<float, float>>, noneValue:float, center:float) : float
+    + {static} Sqrt(f:float) : float
+    + {static} LerpDouble(inFrom:float, inTo:float, outFrom:float, outTo:float, x:float) : float
+    + {static} LerpDoubleClamped(inFrom:float, inTo:float, outFrom:float, outTo:float, x:float) : float
+    + {static} Reflection(value:float, mirror:float) : float
+    + {static} ToQuat(ang:float) : Quaternion
+    + {static} GetFactorInInterval(min:float, mid:float, max:float, power:float, x:float) : float
+    + {static} FlatHill(min:float, lower:float, upper:float, max:float, x:float) : float
+    + {static} FlatHill(minY:float, min:float, lower:float, upper:float, max:float, maxY:float, x:float) : float
+    + {static} OctileDistance(dx:int, dz:int, cardinal:int, diagonal:int) : int
+    + {static} UnboundedValueToFactor(val:float) : float
+    + {static} TestMathPerf() : void
+    + {static} Min(a:float, b:float, c:float) : float
+    + {static} Max(a:int, b:int, c:int) : int
+    + {static} SphericalDistance(normalizedA:Vector3, normalizedB:Vector3) : float
+    + {static} DHondtDistribution(candidates:List<int>, scoreGetter:Func<int, float>, numToDistribute:int) : void
+    + {static} PositiveMod(x:int, m:int) : int
+    + {static} PositiveMod(x:long, m:long) : long
+    + {static} PositiveMod(x:float, m:float) : float
+    + {static} PositiveModRemap(x:long, d:int, m:int) : int
+    + {static} BezierCubicEvaluate(t:float, bcc:BezierCubicControls) : Vector3
+    + {static} BezierCubicEvaluate(t:float, w0:Vector3, w1:Vector3, w2:Vector3, w3:Vector3) : Vector3
+    + {static} CirclesOverlapArea(x1:float, y1:float, r1:float, x2:float, y2:float, r2:float) : float
+    + {static} AnyIntegerInRange(min:float, max:float) : bool
+    + {static} NormalizeToSum1(a:float, b:float, c:float) : void
+    + {static} InverseLerp(a:float, b:float, value:float) : float
+    + {static} MaxBy(elem1:T, by1:float, elem2:T, by2:float, elem3:T, by3:float) : T
+    + {static} MaxBy(elem1:T, by1:float, elem2:T, by2:float, elem3:T, by3:float, elem4:T, by4:float) : T
+    + {static} MaxBy(elem1:T, by1:float, elem2:T, by2:float, elem3:T, by3:float, elem4:T, by4:float, elem5:T, by5:float) : T
+    + {static} MaxBy(elem1:T, by1:float, elem2:T, by2:float, elem3:T, by3:float, elem4:T, by4:float, elem5:T, by5:float, elem6:T, by6:float) : T
+    + {static} MaxBy(elem1:T, by1:float, elem2:T, by2:float, elem3:T, by3:float, elem4:T, by4:float, elem5:T, by5:float, elem6:T, by6:float, elem7:T, by7:float) : T
+    + {static} MaxBy(elem1:T, by1:float, elem2:T, by2:float, elem3:T, by3:float, elem4:T, by4:float, elem5:T, by5:float, elem6:T, by6:float, elem7:T, by7:float, elem8:T, by8:float) : T
+    + {static} MinBy(elem1:T, by1:float, elem2:T, by2:float, elem3:T, by3:float) : T
+    + {static} MinBy(elem1:T, by1:float, elem2:T, by2:float, elem3:T, by3:float, elem4:T, by4:float) : T
+    + {static} MinBy(elem1:T, by1:float, elem2:T, by2:float, elem3:T, by3:float, elem4:T, by4:float, elem5:T, by5:float) : T
+    + {static} MinBy(elem1:T, by1:float, elem2:T, by2:float, elem3:T, by3:float, elem4:T, by4:float, elem5:T, by5:float, elem6:T, by6:float) : T
+    + {static} MinBy(elem1:T, by1:float, elem2:T, by2:float, elem3:T, by3:float, elem4:T, by4:float, elem5:T, by5:float, elem6:T, by6:float, elem7:T, by7:float) : T
+    + {static} MinBy(elem1:T, by1:float, elem2:T, by2:float, elem3:T, by3:float, elem4:T, by4:float, elem5:T, by5:float, elem6:T, by6:float, elem7:T, by7:float, elem8:T, by8:float) : T
+    + {static} MaxByRandomIfEqual(elem1:T, by1:float, elem2:T, by2:float, elem3:T, by3:float, elem4:T, by4:float, elem5:T, by5:float, elem6:T, by6:float, elem7:T, by7:float, elem8:T, by8:float, eps:float) : T
+    + {static} Stddev(data:IEnumerable<float>) : float
+    + {static} InverseParabola(x:float) : float
+}
+class BezierCubicControls <<struct>> {
+}
+GenMath +-- BezierCubicControls
+BezierCubicControls --> "w0" Vector3
+BezierCubicControls --> "w1" Vector3
+BezierCubicControls --> "w2" Vector3
+BezierCubicControls --> "w3" Vector3
+@enduml

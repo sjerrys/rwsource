@@ -1,0 +1,5 @@
+@startuml
+class ThoughtWorker_NeedOutdoors {
+}
+ThoughtWorker <|-- ThoughtWorker_NeedOutdoors
+@enduml

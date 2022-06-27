@@ -1,0 +1,24 @@
+@startuml
+class ArchivedDialog {
+    + ID : int
+    + text : string
+    + title : string
+    + createdTick : int
+    ArchivedLabel : string <<get>>
+    ArchivedTooltip : string <<get>>
+    CreatedTicksGame : int <<get>>
+    CanCullArchivedNow : bool <<get>>
+    + ArchivedDialog()
+    + ArchivedDialog(text:string, title:string, relatedFaction:Faction)
+    OpenArchived() : void
+    + ExposeData() : void
+    + GetUniqueLoadID() : string
+}
+IArchivable <|-- ArchivedDialog
+IExposable <|-- ArchivedDialog
+ILoadReferenceable <|-- ArchivedDialog
+ArchivedDialog --> "relatedFaction" Faction
+ArchivedDialog --> "ArchivedIcon" Texture
+ArchivedDialog --> "ArchivedIconColor" Color
+ArchivedDialog --> "LookTargets" LookTargets
+@enduml

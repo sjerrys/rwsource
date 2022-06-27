@@ -1,0 +1,24 @@
+@startuml
+class MaterialRequest <<struct>> {
+    + renderQueue : int
+    + BaseTexPath : string <<set>>
+    + MaterialRequest(tex:Texture2D)
+    + MaterialRequest(tex:Texture2D, shader:Shader)
+    + MaterialRequest(tex:Texture2D, shader:Shader, color:Color)
+    + <<override>> GetHashCode() : int
+    + <<override>> Equals(obj:object) : bool
+    + Equals(other:MaterialRequest) : bool
+    + <<override>> ToString() : string
+}
+class "IEquatable`1"<T> {
+}
+class "List`1"<T> {
+}
+"IEquatable`1" "<MaterialRequest>" <|-- MaterialRequest
+MaterialRequest --> "shader" Shader
+MaterialRequest --> "mainTex" Texture2D
+MaterialRequest --> "color" Color
+MaterialRequest --> "colorTwo" Color
+MaterialRequest --> "maskTex" Texture2D
+MaterialRequest --> "shaderParameters<ShaderParameter>" "List`1"
+@enduml

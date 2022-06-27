@@ -1,0 +1,7 @@
+@startuml
+class CompProperties_Mannable {
+    + CompProperties_Mannable()
+}
+CompProperties <|-- CompProperties_Mannable
+CompProperties_Mannable --> "manWorkType" WorkTags
+@enduml

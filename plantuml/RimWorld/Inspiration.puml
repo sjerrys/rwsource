@@ -1,0 +1,15 @@
+@startuml
+class Inspiration {
+    + reason : string
+    + Age : int <<get>>
+    + AgeDays : float <<get>>
+    + <<virtual>> InspectLine : string <<get>>
+    + <<virtual>> ExposeData() : void
+    + <<virtual>> InspirationTick() : void
+    + <<virtual>> PostStart() : void
+    + <<virtual>> PostEnd() : void
+}
+IExposable <|-- Inspiration
+Inspiration --> "pawn" Pawn
+Inspiration --> "def" InspirationDef
+@enduml

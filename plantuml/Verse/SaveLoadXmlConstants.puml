@@ -1,0 +1,12 @@
+@startuml
+class SaveLoadXmlConstants <<static>> {
+    + <<const>> ListItemName : string = "li"
+    + <<const>> ClassAttributeName : string = "Class"
+    + <<const>> IsNullAttributeName : string = "IsNull"
+    + <<const>> AbstractAttributeName : string = "Abstract"
+    + <<const>> MayRequireAttributeName : string = "MayRequire"
+    + <<const>> IfModActiveAttributeName : string = "IfModActive"
+    + <<const>> IfModNotActiveAttributeName : string = "IfModNotActive"
+    + <<const>> IgnoreIfNoMatchingFieldAttributeName : string = "IgnoreIfNoMatchingField"
+}
+@enduml

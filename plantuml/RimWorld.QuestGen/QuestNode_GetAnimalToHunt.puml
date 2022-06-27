@@ -1,0 +1,12 @@
+@startuml
+class QuestNode_GetAnimalToHunt {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GetAnimalToHunt
+QuestNode_GetAnimalToHunt --> "storeAnimalToHuntAs<string>" "SlateRef`1"
+QuestNode_GetAnimalToHunt --> "storeCountToHuntAs<string>" "SlateRef`1"
+QuestNode_GetAnimalToHunt --> "pointsToAnimalsToHuntCountCurve<SimpleCurve>" "SlateRef`1"
+QuestNode_GetAnimalToHunt --> "pointsToAnimalDifficultyCurve<SimpleCurve>" "SlateRef`1"
+QuestNode_GetAnimalToHunt --> "animalsToHuntCountRandomFactorRange<FloatRange?>" "SlateRef`1"
+@enduml

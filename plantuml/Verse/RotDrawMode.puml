@@ -1,0 +1,7 @@
+@startuml
+enum RotDrawMode {
+    Fresh,
+    Rotting,
+    Dessicated,
+}
+@enduml

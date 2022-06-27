@@ -1,0 +1,9 @@
+@startuml
+class IngestionOutcomeDoer_OffsetNeed {
+    + offset : float
+    + <<override>> SpecialDisplayStats(parentDef:ThingDef) : IEnumerable<StatDrawEntry>
+}
+IngestionOutcomeDoer <|-- IngestionOutcomeDoer_OffsetNeed
+IngestionOutcomeDoer_OffsetNeed --> "need" NeedDef
+IngestionOutcomeDoer_OffsetNeed --> "toleranceChemical" ChemicalDef
+@enduml

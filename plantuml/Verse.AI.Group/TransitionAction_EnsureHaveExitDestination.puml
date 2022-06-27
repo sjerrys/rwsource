@@ -1,0 +1,6 @@
+@startuml
+class TransitionAction_EnsureHaveExitDestination {
+    + <<override>> DoAction(trans:Transition) : void
+}
+TransitionAction <|-- TransitionAction_EnsureHaveExitDestination
+@enduml

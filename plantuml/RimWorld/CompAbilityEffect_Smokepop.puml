@@ -1,0 +1,8 @@
+@startuml
+class CompAbilityEffect_Smokepop {
+    + <<override>> Apply(target:LocalTargetInfo, dest:LocalTargetInfo) : void
+    + <<override>> DrawEffectPreview(target:LocalTargetInfo) : void
+}
+CompAbilityEffect <|-- CompAbilityEffect_Smokepop
+CompAbilityEffect_Smokepop --> "Props" CompProperties_AbilitySmokepop
+@enduml

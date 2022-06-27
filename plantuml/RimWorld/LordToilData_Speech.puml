@@ -1,0 +1,9 @@
+@startuml
+class LordToilData_Speech {
+    + <<override>> ExposeData() : void
+}
+LordToilData <|-- LordToilData_Speech
+LordToilData_Speech --> "spectateRect" CellRect
+LordToilData_Speech o-> "spectateRectAllowedSides" SpectateRectSide
+LordToilData_Speech --> "spectateRectPreferredSide" SpectateRectSide
+@enduml

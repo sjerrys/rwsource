@@ -1,0 +1,8 @@
+@startuml
+class ThoughtToAddToAll <<struct>> {
+    + ThoughtToAddToAll(thoughtDef:ThoughtDef, otherPawn:Pawn)
+    + Add(to:Pawn) : void
+}
+ThoughtToAddToAll --> "thoughtDef" ThoughtDef
+ThoughtToAddToAll --> "otherPawn" Pawn
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class JobDriver_RemoveRoof {
+}
+JobDriver_AffectRoof <|-- JobDriver_RemoveRoof
+@enduml

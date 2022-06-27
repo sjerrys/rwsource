@@ -1,0 +1,8 @@
+@startuml
+class Alert_Boredom {
+    + Alert_Boredom()
+    + <<override>> GetReport() : AlertReport
+    + <<override>> GetExplanation() : TaggedString
+}
+Alert <|-- Alert_Boredom
+@enduml

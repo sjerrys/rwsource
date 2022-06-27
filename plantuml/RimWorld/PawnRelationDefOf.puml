@@ -1,0 +1,24 @@
+@startuml
+class PawnRelationDefOf <<static>> {
+    {static} PawnRelationDefOf()
+}
+PawnRelationDefOf --> "Kin" PawnRelationDef
+PawnRelationDefOf --> "UncleOrAunt" PawnRelationDef
+PawnRelationDefOf --> "Child" PawnRelationDef
+PawnRelationDefOf --> "Grandchild" PawnRelationDef
+PawnRelationDefOf --> "Grandparent" PawnRelationDef
+PawnRelationDefOf --> "Sibling" PawnRelationDef
+PawnRelationDefOf --> "HalfSibling" PawnRelationDef
+PawnRelationDefOf --> "Cousin" PawnRelationDef
+PawnRelationDefOf --> "NephewOrNiece" PawnRelationDef
+PawnRelationDefOf --> "Spouse" PawnRelationDef
+PawnRelationDefOf --> "Parent" PawnRelationDef
+PawnRelationDefOf --> "GreatGrandchild" PawnRelationDef
+PawnRelationDefOf --> "GreatGrandparent" PawnRelationDef
+PawnRelationDefOf --> "GranduncleOrGrandaunt" PawnRelationDef
+PawnRelationDefOf --> "Lover" PawnRelationDef
+PawnRelationDefOf --> "ExLover" PawnRelationDef
+PawnRelationDefOf --> "ExSpouse" PawnRelationDef
+PawnRelationDefOf --> "Fiance" PawnRelationDef
+PawnRelationDefOf --> "Bond" PawnRelationDef
+@enduml

@@ -1,0 +1,21 @@
+@startuml
+class QuestPart_Infestation {
+    + inSignal : string
+    + hivesCount : int
+    + tag : string
+    + customLetterText : string
+    + customLetterLabel : string
+    + sendStandardLetter : bool = true
+    + <<override>> QuestSelectTargetsLabel : string <<get>>
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart <|-- QuestPart_Infestation
+QuestPart_Infestation --> "mapParent" MapParent
+QuestPart_Infestation --> "customLetterDef" LetterDef
+QuestPart_Infestation --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+QuestPart_Infestation --> "QuestSelectTargets<GlobalTargetInfo>" "IEnumerable`1"
+@enduml

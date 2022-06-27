@@ -1,0 +1,8 @@
+@startuml
+abstract class WorkGiver_Grower {
+    + <<override>> AllowUnreachable : bool <<get>>
+    + <<override>> PotentialWorkCellsGlobal(pawn:Pawn) : IEnumerable<IntVec3>
+    + {static} CalculateWantedPlantDef(c:IntVec3, map:Map) : ThingDef
+}
+WorkGiver_Scanner <|-- WorkGiver_Grower
+@enduml

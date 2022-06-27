@@ -1,0 +1,8 @@
+@startuml
+class TranslationHandleUtility <<static>> {
+    + <<const>> HandleIndexCharacter : char = '-'
+    + {static} GetElementIndexByHandle(list:object, handle:string, handleIndex:int) : int
+    + {static} GetBestHandleWithIndexForListElement(list:object, element:object) : string
+    + {static} HandlesMatch(item:object, handle:string) : bool
+}
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+interface ISelectable {
+    GetGizmos() : IEnumerable<Gizmo>
+    GetInspectString() : string
+    GetInspectTabs() : IEnumerable<InspectTabBase>
+}
+@enduml

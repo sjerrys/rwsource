@@ -1,0 +1,29 @@
+@startuml
+class StorytellerDef {
+    + listOrder : int = 9999
+    + listVisible : bool = true
+    + tutorialMode : bool
+    + disableAdaptiveTraining : bool
+    + disableAlerts : bool
+    + disablePermadeath : bool
+    + adaptDaysMin : float
+    + adaptDaysMax : float = 100f
+    + adaptDaysGameStartGraceDays : float
+    + <<override>> ResolveReferences() : void
+    + <<override>> ConfigErrors() : IEnumerable<string>
+}
+class "List`1"<T> {
+}
+Def <|-- StorytellerDef
+StorytellerDef --> "forcedDifficulty" DifficultyDef
+StorytellerDef o-> "comps<StorytellerCompProperties>" "List`1"
+StorytellerDef --> "populationIntentFactorFromPopCurve" SimpleCurve
+StorytellerDef --> "populationIntentFactorFromPopAdaptDaysCurve" SimpleCurve
+StorytellerDef --> "pointsFactorFromDaysPassed" SimpleCurve
+StorytellerDef --> "pointsFactorFromAdaptDays" SimpleCurve
+StorytellerDef --> "adaptDaysLossFromColonistLostByPostPopulation" SimpleCurve
+StorytellerDef --> "adaptDaysLossFromColonistViolentlyDownedByPopulation" SimpleCurve
+StorytellerDef --> "adaptDaysGrowthRateCurve" SimpleCurve
+StorytellerDef --> "portraitLargeTex" Texture2D
+StorytellerDef --> "portraitTinyTex" Texture2D
+@enduml

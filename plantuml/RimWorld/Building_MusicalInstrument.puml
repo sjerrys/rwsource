@@ -1,0 +1,13 @@
+@startuml
+class Building_MusicalInstrument {
+    + IsBeingPlayed : bool <<get>>
+    + {static} IsAffectedByInstrument(instrumentDef:ThingDef, instrumentPos:IntVec3, pawnPos:IntVec3, map:Map) : bool
+    + StartPlaying(player:Pawn) : void
+    + <<override>> Tick() : void
+    + StopPlaying() : void
+    + <<override>> ExposeData() : void
+    + <<override>> GetGizmos() : IEnumerable<Gizmo>
+}
+Building <|-- Building_MusicalInstrument
+Building_MusicalInstrument --> "SoundRange" FloatRange
+@enduml

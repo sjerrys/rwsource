@@ -1,0 +1,7 @@
+@startuml
+class WorldCameraConfig_Car {
+    + WorldCameraConfig_Car()
+    + <<override>> ConfigFixedUpdate_60(rotationVelocity:Vector2) : void
+}
+WorldCameraConfig <|-- WorldCameraConfig_Car
+@enduml

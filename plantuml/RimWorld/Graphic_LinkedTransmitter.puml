@@ -1,0 +1,8 @@
+@startuml
+class Graphic_LinkedTransmitter {
+    + Graphic_LinkedTransmitter(subGraphic:Graphic)
+    + <<override>> ShouldLinkWith(c:IntVec3, parent:Thing) : bool
+    + <<override>> Print(layer:SectionLayer, thing:Thing) : void
+}
+Graphic_Linked <|-- Graphic_LinkedTransmitter
+@enduml

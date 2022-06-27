@@ -1,0 +1,12 @@
+@startuml
+class HediffCompProperties_CauseMentalState {
+    + mtbDaysToCauseMentalState : float
+    + endMentalStateOnCure : bool = true
+    + HediffCompProperties_CauseMentalState()
+}
+HediffCompProperties <|-- HediffCompProperties_CauseMentalState
+HediffCompProperties_CauseMentalState --> "animalMentalState" MentalStateDef
+HediffCompProperties_CauseMentalState --> "animalMentalStateAlias" MentalStateDef
+HediffCompProperties_CauseMentalState --> "humanMentalState" MentalStateDef
+HediffCompProperties_CauseMentalState --> "letterDef" LetterDef
+@enduml

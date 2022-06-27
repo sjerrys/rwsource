@@ -1,0 +1,30 @@
+@startuml
+class QuestPart_Dialog {
+    + inSignal : string
+    + text : string
+    + title : string
+    + addToArchive : bool = true
+    + radioMode : bool
+    + getLookTargetsFromSignal : bool
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+}
+class Option {
+    + text : string
+    + outSignal : string
+    + ExposeData() : void
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart <|-- QuestPart_Dialog
+QuestPart_Dialog o-> "options<Option>" "List`1"
+QuestPart_Dialog --> "relatedFaction" Faction
+QuestPart_Dialog --> "lookTargets" LookTargets
+QuestPart_Dialog --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+QuestPart_Dialog --> "InvolvedFactions<Faction>" "IEnumerable`1"
+QuestPart_Dialog +-- Option
+IExposable <|-- Option
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class ThoughtWorker_DrugDesireUnsatisfied {
+}
+ThoughtWorker <|-- ThoughtWorker_DrugDesireUnsatisfied
+@enduml

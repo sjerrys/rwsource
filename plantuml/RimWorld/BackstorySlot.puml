@@ -1,0 +1,6 @@
+@startuml
+enum BackstorySlot {
+    Childhood,
+    Adulthood,
+}
+@enduml

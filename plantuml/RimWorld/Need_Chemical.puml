@@ -1,0 +1,12 @@
+@startuml
+class Need_Chemical {
+    + <<override>> GUIChangeArrow : int <<get>>
+    + <<override>> CurLevel : float <<get>> <<set>>
+    + Need_Chemical(pawn:Pawn)
+    + <<override>> SetInitialLevel() : void
+    + <<override>> NeedInterval() : void
+}
+Need <|-- Need_Chemical
+Need_Chemical --> "CurCategory" DrugDesireCategory
+Need_Chemical --> "AddictionHediff" Hediff_Addiction
+@enduml

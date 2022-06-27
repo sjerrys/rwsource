@@ -1,0 +1,6 @@
+@startuml
+class IncidentWorker_Infestation {
+    + <<const>> HivePoints : float = 220f
+}
+IncidentWorker <|-- IncidentWorker_Infestation
+@enduml

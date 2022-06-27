@@ -1,0 +1,11 @@
+@startuml
+class Area_SnowClear {
+    + <<override>> Label : string <<get>>
+    + <<override>> ListPriority : int <<get>>
+    + Area_SnowClear()
+    + Area_SnowClear(areaManager:AreaManager)
+    + <<override>> GetUniqueLoadID() : string
+}
+Area <|-- Area_SnowClear
+Area_SnowClear --> "Color" Color
+@enduml

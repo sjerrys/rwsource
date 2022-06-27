@@ -1,0 +1,6 @@
+@startuml
+class CompProperties_LongRangeMineralScanner {
+    + CompProperties_LongRangeMineralScanner()
+}
+CompProperties_Scanner <|-- CompProperties_LongRangeMineralScanner
+@enduml

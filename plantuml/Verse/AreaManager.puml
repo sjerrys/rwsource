@@ -1,0 +1,23 @@
+@startuml
+class AreaManager {
+    + <<const>> MaxAllowedAreas : int = 10
+    + AreaManager(map:Map)
+    + AddStartingAreas() : void
+    + ExposeData() : void
+    + AreaManagerUpdate() : void
+    + GetLabeled(s:string) : Area
+    + Get() : T
+    + Notify_MapRemoved() : void
+    + CanMakeNewAllowed() : bool
+    + TryMakeNewAllowed(area:Area_Allowed) : bool
+}
+class "List`1"<T> {
+}
+IExposable <|-- AreaManager
+AreaManager --> "map" Map
+AreaManager --> "AllAreas<Area>" "List`1"
+AreaManager --> "Home" Area_Home
+AreaManager --> "BuildRoof" Area_BuildRoof
+AreaManager --> "NoRoof" Area_NoRoof
+AreaManager --> "SnowClear" Area_SnowClear
+@enduml

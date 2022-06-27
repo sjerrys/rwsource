@@ -1,0 +1,6 @@
+@startuml
+abstract class Verb_MeleeAttack {
+    + CreateCombatLog(rulePackGetter:Func<ManeuverDef, RulePackDef>, alwaysShow:bool) : BattleLogEntry_MeleeCombat
+}
+Verb <|-- Verb_MeleeAttack
+@enduml

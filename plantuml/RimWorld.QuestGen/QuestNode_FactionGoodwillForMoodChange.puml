@@ -1,0 +1,12 @@
+@startuml
+class QuestNode_FactionGoodwillForMoodChange {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_FactionGoodwillForMoodChange
+QuestNode_FactionGoodwillForMoodChange --> "inSignal<string>" "SlateRef`1"
+QuestNode_FactionGoodwillForMoodChange --> "inSignalEnable<string>" "SlateRef`1"
+QuestNode_FactionGoodwillForMoodChange --> "outSignalSuccess<string>" "SlateRef`1"
+QuestNode_FactionGoodwillForMoodChange --> "outSignalFailed<string>" "SlateRef`1"
+QuestNode_FactionGoodwillForMoodChange --> "pawns<IEnumerable<Pawn>>" "SlateRef`1"
+@enduml

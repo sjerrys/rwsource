@@ -1,0 +1,11 @@
+@startuml
+class WorldSelectionDrawer <<static>> {
+    + {static} Notify_Selected(t:WorldObject) : void
+    + {static} Clear() : void
+    + {static} SelectionOverlaysOnGUI() : void
+    + {static} DrawSelectionOverlays() : void
+}
+class "Dictionary`2"<T1,T2> {
+}
+WorldSelectionDrawer --> "SelectTimes<WorldObject,float>" "Dictionary`2"
+@enduml

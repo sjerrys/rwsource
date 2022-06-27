@@ -1,0 +1,6 @@
+@startuml
+class CompProperties_WindSource {
+    + CompProperties_WindSource()
+}
+CompProperties <|-- CompProperties_WindSource
+@enduml

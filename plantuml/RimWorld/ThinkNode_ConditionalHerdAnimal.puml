@@ -1,0 +1,5 @@
+@startuml
+class ThinkNode_ConditionalHerdAnimal {
+}
+ThinkNode_Conditional <|-- ThinkNode_ConditionalHerdAnimal
+@enduml

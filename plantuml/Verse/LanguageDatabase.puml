@@ -1,0 +1,14 @@
+@startuml
+class LanguageDatabase <<static>> {
+    + {static} <<readonly>> DefaultLangFolderName : string = "English"
+    + {static} SelectLanguage(lang:LoadedLanguage) : void
+    + {static} Clear() : void
+    + {static} InitAllMetadata() : void
+    + {static} SystemLanguageFolderName() : string
+}
+class "IEnumerable`1"<T> {
+}
+LanguageDatabase --> "activeLanguage" LoadedLanguage
+LanguageDatabase --> "defaultLanguage" LoadedLanguage
+LanguageDatabase --> "AllLoadedLanguages<LoadedLanguage>" "IEnumerable`1"
+@enduml

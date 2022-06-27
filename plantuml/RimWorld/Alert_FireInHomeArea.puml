@@ -1,0 +1,7 @@
+@startuml
+class Alert_FireInHomeArea {
+    + Alert_FireInHomeArea()
+    + <<override>> GetReport() : AlertReport
+}
+Alert_Critical <|-- Alert_FireInHomeArea
+@enduml

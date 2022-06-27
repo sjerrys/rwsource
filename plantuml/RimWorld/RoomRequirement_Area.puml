@@ -1,0 +1,9 @@
+@startuml
+class RoomRequirement_Area {
+    + area : int
+    + <<override>> Label(r:Room) : string
+    + <<override>> Met(r:Room, p:Pawn) : bool
+    + <<override>> ConfigErrors() : IEnumerable<string>
+}
+RoomRequirement <|-- RoomRequirement_Area
+@enduml

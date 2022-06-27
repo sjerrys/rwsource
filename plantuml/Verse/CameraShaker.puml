@@ -1,0 +1,9 @@
+@startuml
+class CameraShaker {
+    + CurShakeMag : float <<get>> <<set>>
+    + DoShake(mag:float) : void
+    + SetMinShake(mag:float) : void
+    + Update() : void
+}
+CameraShaker --> "ShakeOffset" Vector3
+@enduml

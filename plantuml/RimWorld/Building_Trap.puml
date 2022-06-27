@@ -1,0 +1,15 @@
+@startuml
+abstract class Building_Trap {
+    + <<override>> ExposeData() : void
+    + <<override>> SpawnSetup(map:Map, respawningAfterLoad:bool) : void
+    + <<override>> Tick() : void
+    + KnowsOfTrap(p:Pawn) : bool
+    + <<override>> PathFindCostFor(p:Pawn) : ushort
+    + <<override>> PathWalkCostFor(p:Pawn) : ushort
+    + <<override>> IsDangerousFor(p:Pawn) : bool
+    + Spring(p:Pawn) : void
+    + <<override>> Kill(dinfo:DamageInfo?, exactCulprit:Hediff) : void
+    + <<override>> GetGizmos() : IEnumerable<Gizmo>
+}
+Building <|-- Building_Trap
+@enduml

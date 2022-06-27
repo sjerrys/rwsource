@@ -1,0 +1,10 @@
+@startuml
+class LordJob_TradeWithColony {
+    + <<override>> AddFleeToil : bool <<get>>
+    + LordJob_TradeWithColony()
+    + LordJob_TradeWithColony(faction:Faction, chillSpot:IntVec3)
+    + <<override>> CreateGraph() : StateGraph
+    + <<override>> ExposeData() : void
+}
+LordJob <|-- LordJob_TradeWithColony
+@enduml

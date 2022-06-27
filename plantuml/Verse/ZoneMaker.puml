@@ -1,0 +1,5 @@
+@startuml
+class ZoneMaker <<static>> {
+    + {static} MakeZoneWithCells(z:Zone, cells:IEnumerable<IntVec3>) : Zone
+}
+@enduml

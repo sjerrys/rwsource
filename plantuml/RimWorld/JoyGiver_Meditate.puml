@@ -1,0 +1,7 @@
+@startuml
+class JoyGiver_Meditate {
+    + <<override>> TryGiveJob(pawn:Pawn) : Job
+    + <<override>> CanBeGivenTo(pawn:Pawn) : bool
+}
+JoyGiver_InPrivateRoom <|-- JoyGiver_Meditate
+@enduml

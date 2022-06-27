@@ -1,0 +1,7 @@
+@startuml
+class CompProperties_TerrainPumpDry {
+    + CompProperties_TerrainPumpDry()
+}
+CompProperties_TerrainPump <|-- CompProperties_TerrainPumpDry
+CompProperties_TerrainPumpDry --> "soundWorking" SoundDef
+@enduml

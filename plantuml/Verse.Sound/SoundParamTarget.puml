@@ -1,0 +1,7 @@
+@startuml
+abstract class SoundParamTarget {
+    + {abstract} Label : string <<get>>
+    + {abstract} SetOn(sample:Sample, value:float) : void
+}
+SoundParamTarget --> "NeededFilterType" Type
+@enduml

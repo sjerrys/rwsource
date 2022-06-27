@@ -1,0 +1,6 @@
+@startuml
+class OverallRainfallUtility <<static>> {
+    + {static} EnumValuesCount : int <<get>>
+    + {static} GetRainfallCurve(overallRainfall:OverallRainfall) : SimpleCurve
+}
+@enduml

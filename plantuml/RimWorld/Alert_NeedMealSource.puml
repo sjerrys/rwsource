@@ -1,0 +1,7 @@
+@startuml
+class Alert_NeedMealSource {
+    + Alert_NeedMealSource()
+    + <<override>> GetReport() : AlertReport
+}
+Alert <|-- Alert_NeedMealSource
+@enduml

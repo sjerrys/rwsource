@@ -1,0 +1,29 @@
+@startuml
+class GlobalTargetInfo <<struct>> {
+    + <<const>> WorldObjectLoadIDMarker : char = '@'
+    + IsValid : bool <<get>>
+    + IsMapTarget : bool <<get>>
+    + IsWorldTarget : bool <<get>>
+    + HasThing : bool <<get>>
+    + ThingDestroyed : bool <<get>>
+    + HasWorldObject : bool <<get>>
+    + Label : string <<get>>
+    + Tile : int <<get>>
+    + GlobalTargetInfo(thing:Thing)
+    + GlobalTargetInfo(cell:IntVec3, map:Map, allowNullMap:bool)
+    + GlobalTargetInfo(worldObject:WorldObject)
+    + GlobalTargetInfo(tile:int)
+    + <<override>> Equals(obj:object) : bool
+    + Equals(other:GlobalTargetInfo) : bool
+    + <<override>> GetHashCode() : int
+    + <<override>> ToString() : string
+}
+class "IEquatable`1"<T> {
+}
+"IEquatable`1" "<GlobalTargetInfo>" <|-- GlobalTargetInfo
+GlobalTargetInfo --> "Thing" Thing
+GlobalTargetInfo --> "WorldObject" WorldObject
+GlobalTargetInfo --> "Invalid" GlobalTargetInfo
+GlobalTargetInfo --> "Cell" IntVec3
+GlobalTargetInfo --> "Map" Map
+@enduml

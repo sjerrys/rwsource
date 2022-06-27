@@ -1,0 +1,8 @@
+@startuml
+class SpecialThingFilterDefOf <<static>> {
+    {static} SpecialThingFilterDefOf()
+}
+SpecialThingFilterDefOf --> "AllowFresh" SpecialThingFilterDef
+SpecialThingFilterDefOf --> "AllowDeadmansApparel" SpecialThingFilterDef
+SpecialThingFilterDefOf --> "AllowNonDeadmansApparel" SpecialThingFilterDef
+@enduml

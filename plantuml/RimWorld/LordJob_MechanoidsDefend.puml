@@ -1,0 +1,13 @@
+@startuml
+class LordJob_MechanoidsDefend {
+    + {static} <<readonly>> MemoDamaged : string = "ShipPartDamaged"
+    + <<override>> CanBlockHostileVisitors : bool <<get>>
+    + <<override>> AddFleeToil : bool <<get>>
+    + LordJob_MechanoidsDefend()
+    + LordJob_MechanoidsDefend(things:List<Thing>, faction:Faction, defendRadius:float, defSpot:IntVec3, canAssaultColony:bool, isMechCluster:bool)
+    + LordJob_MechanoidsDefend(parms:SpawnedPawnParams)
+    + <<override>> CreateGraph() : StateGraph
+    + <<override>> ExposeData() : void
+}
+LordJob_MechanoidDefendBase <|-- LordJob_MechanoidsDefend
+@enduml

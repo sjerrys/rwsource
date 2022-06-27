@@ -1,0 +1,28 @@
+@startuml
+abstract class Mote {
+    + exactRotation : float
+    + rotationRate : float
+    + solidTimeOverride : float
+    + spawnTick : int
+    + detachAfterTicks : int
+    + spawnRealTime : float
+    + Scale : float <<set>>
+    + AgeSecs : float <<get>>
+    + <<virtual>> Alpha : float <<get>>
+    + <<override>> SpawnSetup(map:Map, respawningAfterLoad:bool) : void
+    + <<override>> DeSpawn(mode:DestroyMode) : void
+    + <<override>> Tick() : void
+    + RealtimeUpdate() : void
+    + <<override>> Draw() : void
+    + Draw(altitude:float) : void
+    + Maintain() : void
+    + Attach(a:TargetInfo) : void
+    + <<override>> Notify_MyMapRemoved() : void
+}
+Thing <|-- Mote
+Mote --> "exactPosition" Vector3
+Mote o-> "exactScale" Vector3
+Mote o-> "instanceColor" Color
+Mote o-> "link1" MoteAttachLink
+Mote --> "DrawPos" Vector3
+@enduml

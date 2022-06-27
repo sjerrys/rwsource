@@ -1,0 +1,10 @@
+@startuml
+class PawnDownedWiggler {
+    + downedAngle : float
+    + ticksToIncapIcon : int
+    + PawnDownedWiggler(pawn:Pawn)
+    + WigglerTick() : void
+    + SetToCustomRotation(rot:float) : void
+    + Notify_DamageApplied(dam:DamageInfo) : void
+}
+@enduml

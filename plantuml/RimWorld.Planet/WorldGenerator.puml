@@ -1,0 +1,14 @@
+@startuml
+class WorldGenerator <<static>> {
+    + <<const>> DefaultPlanetCoverage : float = 0.3f
+    + {static} GenerateWorld(planetCoverage:float, seedString:string, overallRainfall:OverallRainfall, overallTemperature:OverallTemperature, population:OverallPopulation) : World
+    + {static} GenerateWithoutWorldData(seedString:string) : void
+    + {static} GenerateFromScribe(seedString:string) : void
+}
+class "IEnumerable`1"<T> {
+}
+WorldGenerator o-> "DefaultOverallRainfall" OverallRainfall
+WorldGenerator o-> "DefaultOverallPopulation" OverallPopulation
+WorldGenerator o-> "DefaultOverallTemperature" OverallTemperature
+WorldGenerator --> "GenStepsInOrder<WorldGenStepDef>" "IEnumerable`1"
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class TitleCaseHelper <<static>> {
+    + {static} IsUppercaseTitleWord(word:string) : bool
+}
+@enduml

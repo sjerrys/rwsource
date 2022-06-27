@@ -1,0 +1,6 @@
+@startuml
+class SymbolResolver_Interior_ThroneRoom {
+    + <<override>> Resolve(rp:ResolveParams) : void
+}
+SymbolResolver <|-- SymbolResolver_Interior_ThroneRoom
+@enduml

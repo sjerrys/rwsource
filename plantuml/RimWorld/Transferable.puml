@@ -1,0 +1,33 @@
+@startuml
+abstract class Transferable {
+    + {abstract} Interactive : bool <<get>>
+    + {abstract} HasAnyThing : bool <<get>>
+    + <<virtual>> IsThing : bool <<get>>
+    + {abstract} Label : string <<get>>
+    + LabelCap : string <<get>>
+    + {abstract} TipDescription : string <<get>>
+    + {abstract} CountToTransfer : int <<get>> <<protected set>>
+    + CountToTransferToSource : int <<get>>
+    + CountToTransferToDestination : int <<get>>
+    + EditBuffer : string <<get>> <<set>>
+    + {abstract} GetMinimumToTransfer() : int
+    + {abstract} GetMaximumToTransfer() : int
+    + GetRange() : int
+    + ClampAmount(amount:int) : int
+    + CanAdjustBy(adjustment:int) : AcceptanceReport
+    + CanAdjustTo(destination:int) : AcceptanceReport
+    + AdjustBy(adjustment:int) : void
+    + AdjustTo(destination:int) : void
+    + ForceTo(value:int) : void
+    + ForceToSource(value:int) : void
+    + ForceToDestination(value:int) : void
+    + <<virtual>> DrawIcon(iconRect:Rect) : void
+    + <<virtual>> UnderflowReport() : AcceptanceReport
+    + <<virtual>> OverflowReport() : AcceptanceReport
+    + <<virtual>> ExposeData() : void
+}
+IExposable <|-- Transferable
+Transferable --> "AnyThing" Thing
+Transferable --> "ThingDef" ThingDef
+Transferable --> "PositiveCountDirection" TransferablePositiveCountDirection
+@enduml

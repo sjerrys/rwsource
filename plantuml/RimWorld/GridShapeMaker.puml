@@ -1,0 +1,5 @@
+@startuml
+class GridShapeMaker <<static>> {
+    + {static} IrregularLump(center:IntVec3, map:Map, numCells:int) : IEnumerable<IntVec3>
+}
+@enduml

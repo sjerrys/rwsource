@@ -1,0 +1,8 @@
+@startuml
+class NeedDefOf <<static>> {
+    {static} NeedDefOf()
+}
+NeedDefOf --> "Food" NeedDef
+NeedDefOf --> "Rest" NeedDef
+NeedDefOf --> "Joy" NeedDef
+@enduml

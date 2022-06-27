@@ -1,0 +1,6 @@
+@startuml
+class CaravanTendUtility <<static>> {
+    + {static} CheckTend(caravan:Caravan) : void
+    + {static} TryTendToAnyPawn(caravan:Caravan) : void
+}
+@enduml

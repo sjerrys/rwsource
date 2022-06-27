@@ -1,0 +1,8 @@
+@startuml
+class FocusStrengthOffset_Quality {
+    + <<override>> NeedsToBeSpawned : bool <<get>>
+    + <<override>> MaxOffset(parent:Thing) : float
+    + <<override>> MinOffset(parent:Thing) : float
+}
+FocusStrengthOffset_Curve <|-- FocusStrengthOffset_Quality
+@enduml

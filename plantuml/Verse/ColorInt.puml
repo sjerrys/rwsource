@@ -1,0 +1,20 @@
+@startuml
+class ColorInt <<struct>> {
+    + r : int
+    + g : int
+    + b : int
+    + a : int
+    + ColorInt(r:int, g:int, b:int)
+    + ColorInt(r:int, g:int, b:int, a:int)
+    + ColorInt(col:Color32)
+    + <<override>> Equals(o:object) : bool
+    + Equals(other:ColorInt) : bool
+    + <<override>> GetHashCode() : int
+    + ClampToNonNegative() : void
+}
+class "IEquatable`1"<T> {
+}
+"IEquatable`1" "<ColorInt>" <|-- ColorInt
+ColorInt --> "ToColor" Color
+ColorInt --> "ToColor32" Color32
+@enduml

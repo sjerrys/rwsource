@@ -1,0 +1,7 @@
+@startuml
+class GenCommandLine <<static>> {
+    + {static} CommandLineArgPassed(key:string) : bool
+    + {static} TryGetCommandLineArg(key:string, value:string) : bool
+    + {static} Restart() : void
+}
+@enduml

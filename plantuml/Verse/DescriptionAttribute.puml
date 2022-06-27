@@ -1,0 +1,7 @@
+@startuml
+class DescriptionAttribute {
+    + description : string
+    + DescriptionAttribute(description:string)
+}
+Attribute <|-- DescriptionAttribute
+@enduml

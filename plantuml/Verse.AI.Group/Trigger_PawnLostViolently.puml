@@ -1,0 +1,8 @@
+@startuml
+class Trigger_PawnLostViolently {
+    + allowRoofCollapse : bool
+    + Trigger_PawnLostViolently(allowRoofCollapse:bool)
+    + <<override>> ActivateOn(lord:Lord, signal:TriggerSignal) : bool
+}
+Trigger <|-- Trigger_PawnLostViolently
+@enduml

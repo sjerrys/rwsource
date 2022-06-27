@@ -1,0 +1,14 @@
+@startuml
+class History <<sealed>> {
+    + lastPsylinkAvailable : int
+    + History()
+    + HistoryTick() : void
+    + Groups() : List<HistoryAutoRecorderGroup>
+    + ExposeData() : void
+    + Notify_PsylinkAvailable() : void
+    + FinalizeInit() : void
+}
+IExposable <|-- History
+History o-> "archive" Archive
+History --> "curveDrawerStyle" SimpleCurveDrawerStyle
+@enduml

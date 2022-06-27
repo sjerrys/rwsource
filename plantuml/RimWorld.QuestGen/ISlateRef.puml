@@ -1,0 +1,6 @@
+@startuml
+interface ISlateRef {
+    SlateRef : string <<get>> <<set>>
+    TryGetConvertedValue(slate:Slate, value:T) : bool
+}
+@enduml

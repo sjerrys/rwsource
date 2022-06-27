@@ -1,0 +1,10 @@
+@startuml
+class LiquidFuel {
+    + <<override>> ExposeData() : void
+    + <<override>> SpawnSetup(map:Map, respawningAfterLoad:bool) : void
+    + Refill() : void
+    + <<override>> Tick() : void
+    + <<override>> ThickenFilth() : void
+}
+Filth <|-- LiquidFuel
+@enduml

@@ -1,0 +1,30 @@
+@startuml
+class Pawn_StoryTracker {
+    + melanin : float
+    + title : string
+    + birthLastName : string
+    + Title : string <<get>> <<set>>
+    + TitleCap : string <<get>>
+    + TitleDefault : string <<get>>
+    + TitleDefaultCap : string <<get>>
+    + TitleShort : string <<get>>
+    + TitleShortCap : string <<get>>
+    + HeadGraphicPath : string <<get>>
+    + Pawn_StoryTracker(pawn:Pawn)
+    + ExposeData() : void
+    + GetBackstory(slot:BackstorySlot) : Backstory
+}
+class "IEnumerable`1"<T> {
+}
+IExposable <|-- Pawn_StoryTracker
+Pawn_StoryTracker --> "childhood" Backstory
+Pawn_StoryTracker --> "adulthood" Backstory
+Pawn_StoryTracker o-> "hairColor" Color
+Pawn_StoryTracker --> "crownType" CrownType
+Pawn_StoryTracker --> "bodyType" BodyTypeDef
+Pawn_StoryTracker --> "hairDef" HairDef
+Pawn_StoryTracker --> "traits" TraitSet
+Pawn_StoryTracker --> "SkinColor" Color
+Pawn_StoryTracker --> "AllBackstories<Backstory>" "IEnumerable`1"
+Pawn_StoryTracker --> "DisabledWorkTagsBackstoryAndTraits" WorkTags
+@enduml

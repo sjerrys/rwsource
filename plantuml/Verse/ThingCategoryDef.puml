@@ -1,0 +1,27 @@
+@startuml
+class ThingCategoryDef {
+    + iconPath : string
+    + resourceReadoutRoot : bool
+    + ContainedInThisOrDescendant(thingDef:ThingDef) : bool
+    + <<override>> ResolveReferences() : void
+    + <<override>> PostLoad() : void
+    + {static} Named(defName:string) : ThingCategoryDef
+    + <<override>> GetHashCode() : int
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+Def <|-- ThingCategoryDef
+ThingCategoryDef --> "parent" ThingCategoryDef
+ThingCategoryDef --> "treeNode" TreeNode_ThingCategory
+ThingCategoryDef o-> "childCategories<ThingCategoryDef>" "List`1"
+ThingCategoryDef o-> "childThingDefs<ThingDef>" "List`1"
+ThingCategoryDef o-> "childSpecialFilters<SpecialThingFilterDef>" "List`1"
+ThingCategoryDef o-> "icon" Texture2D
+ThingCategoryDef --> "Parents<ThingCategoryDef>" "IEnumerable`1"
+ThingCategoryDef --> "ThisAndChildCategoryDefs<ThingCategoryDef>" "IEnumerable`1"
+ThingCategoryDef --> "DescendantThingDefs<ThingDef>" "IEnumerable`1"
+ThingCategoryDef --> "DescendantSpecialThingFilterDefs<SpecialThingFilterDef>" "IEnumerable`1"
+ThingCategoryDef --> "ParentsSpecialThingFilterDefs<SpecialThingFilterDef>" "IEnumerable`1"
+@enduml

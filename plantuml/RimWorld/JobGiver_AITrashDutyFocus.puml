@@ -1,0 +1,6 @@
+@startuml
+class JobGiver_AITrashDutyFocus {
+    + <<override>> DeepCopy(resolve:bool) : ThinkNode
+}
+ThinkNode_JobGiver <|-- JobGiver_AITrashDutyFocus
+@enduml

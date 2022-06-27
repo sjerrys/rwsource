@@ -1,0 +1,13 @@
+@startuml
+class DrugPolicyDatabase {
+    + DrugPolicyDatabase()
+    + ExposeData() : void
+    + DefaultDrugPolicy() : DrugPolicy
+    + TryDelete(policy:DrugPolicy) : AcceptanceReport
+    + MakeNewDrugPolicy() : DrugPolicy
+}
+class "List`1"<T> {
+}
+IExposable <|-- DrugPolicyDatabase
+DrugPolicyDatabase --> "AllPolicies<DrugPolicy>" "List`1"
+@enduml

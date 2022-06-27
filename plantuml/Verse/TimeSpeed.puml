@@ -1,0 +1,9 @@
+@startuml
+enum TimeSpeed {
+    Paused,
+    Normal,
+    Fast,
+    Superfast,
+    Ultrafast,
+}
+@enduml

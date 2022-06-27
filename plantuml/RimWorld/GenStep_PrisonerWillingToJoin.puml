@@ -1,0 +1,6 @@
+@startuml
+class GenStep_PrisonerWillingToJoin {
+    + <<override>> SeedPart : int <<get>>
+}
+GenStep_Scatterer <|-- GenStep_PrisonerWillingToJoin
+@enduml

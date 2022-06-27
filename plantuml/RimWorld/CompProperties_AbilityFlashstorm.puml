@@ -1,0 +1,6 @@
+@startuml
+class CompProperties_AbilityFlashstorm {
+    + CompProperties_AbilityFlashstorm()
+}
+CompProperties_AbilityEffect <|-- CompProperties_AbilityFlashstorm
+@enduml

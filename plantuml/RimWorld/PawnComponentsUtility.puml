@@ -1,0 +1,10 @@
+@startuml
+class PawnComponentsUtility {
+    + {static} CreateInitialComponents(pawn:Pawn) : void
+    + {static} AddComponentsForSpawn(pawn:Pawn) : void
+    + {static} RemoveComponentsOnKilled(pawn:Pawn) : void
+    + {static} RemoveComponentsOnDespawned(pawn:Pawn) : void
+    + {static} AddAndRemoveDynamicComponents(pawn:Pawn, actAsIfSpawned:bool) : void
+    + {static} HasSpawnedComponents(p:Pawn) : bool
+}
+@enduml

@@ -1,0 +1,69 @@
+@startuml
+class Sketch {
+    + <<const>> SpawnOrder_Terrain : float = 1f
+    + <<const>> SpawnOrder_Thing : float = 2f
+    + Empty : bool <<get>>
+    + Add(entity:SketchEntity, wipeIfCollides:bool) : bool
+    + AddThing(def:ThingDef, pos:IntVec3, rot:Rot4, stuff:ThingDef, stackCount:int, quality:QualityCategory?, hitPoints:int?, wipeIfCollides:bool) : bool
+    + AddTerrain(def:TerrainDef, pos:IntVec3, wipeIfCollides:bool) : bool
+    + Remove(entity:SketchEntity) : bool
+    + RemoveTerrain(cell:IntVec3) : bool
+    + Clear() : void
+    + TerrainAt(pos:IntVec3) : TerrainDef
+    + SketchTerrainAt(pos:IntVec3) : SketchTerrain
+    + AnyTerrainAt(x:int, z:int) : bool
+    + AnyTerrainAt(pos:IntVec3) : bool
+    + ThingsAt(pos:IntVec3) : IEnumerable<SketchThing>
+    + ThingsAt(pos:IntVec3, singleResult:SketchThing, multipleResults:List<SketchThing>) : void
+    + EdificeAt(pos:IntVec3) : SketchThing
+    + WouldCollide(entity:SketchEntity) : bool
+    + WouldCollide(def:ThingDef, pos:IntVec3, rot:Rot4) : bool
+    + WouldCollide(def:TerrainDef, pos:IntVec3) : bool
+    + WipeColliding(entity:SketchEntity) : void
+    + WipeColliding(def:ThingDef, pos:IntVec3, rot:Rot4) : void
+    + WipeColliding(def:TerrainDef, pos:IntVec3) : void
+    + IsSpawningBlocked(map:Map, pos:IntVec3, faction:Faction, posType:SpawnPosType) : bool
+    + AnyThingOutOfBounds(map:Map, pos:IntVec3, posType:SpawnPosType) : bool
+    + Spawn(map:Map, pos:IntVec3, faction:Faction, posType:SpawnPosType, spawnMode:SpawnMode, wipeIfCollides:bool, clearEdificeWhereFloor:bool, spawnedThings:List<Thing>, dormant:bool, buildRoofsInstantly:bool, canSpawnThing:Func<SketchEntity, IntVec3, bool>, onFailedToSpawnThing:Action<IntVec3, SketchEntity>) : void
+    + Merge(other:Sketch, wipeIfCollides:bool) : void
+    + MergeAt(other:Sketch, pos:IntVec3, posType:SpawnPosType, wipeIfCollides:bool) : void
+    + Subtract(other:Sketch) : void
+    + MoveBy(by:IntVec2) : void
+    + MoveBy(by:IntVec3) : void
+    + MoveOccupiedCenterToZero() : void
+    + DeepCopy() : Sketch
+    + RecacheAll() : void
+    + LineOfSight(start:IntVec3, end:IntVec3, skipFirstCell:bool, validator:Func<IntVec3, bool>) : bool
+    + LineOfSight(start:IntVec3, end:IntVec3, startRect:CellRect, endRect:CellRect, validator:Func<IntVec3, bool>) : bool
+    + CanBeSeenOver(c:IntVec3) : bool
+    + Passable(x:int, z:int) : bool
+    + Passable(pos:IntVec3) : bool
+    + DrawGhost(pos:IntVec3, posType:SpawnPosType, placingMode:bool, thingToIgnore:Thing) : void
+    + DrawGhost_NewTmp(pos:IntVec3, posType:SpawnPosType, placingMode:bool, thingToIgnore:Thing, validator:Func<SketchEntity, IntVec3, List<Thing>, Map, bool>) : void
+    + FloodFill(root:IntVec3, passCheck:Predicate<IntVec3>, processor:Func<IntVec3, int, bool>, maxCellsToProcess:int, bounds:CellRect?, extraRoots:IEnumerable<IntVec3>) : void
+    + Rotate(rot:Rot4) : void
+    + ExposeData() : void
+}
+enum SpawnPosType {
+    Unchanged,
+    OccupiedCenter,
+    OccupiedBotLeft,
+}
+enum SpawnMode {
+    Blueprint,
+    Normal,
+    TransportPod,
+}
+class "List`1"<T> {
+}
+IExposable <|-- Sketch
+Sketch --> "Entities<SketchEntity>" "List`1"
+Sketch --> "Things<SketchThing>" "List`1"
+Sketch --> "Terrain<SketchTerrain>" "List`1"
+Sketch --> "Buildables<SketchBuildable>" "List`1"
+Sketch --> "OccupiedRect" CellRect
+Sketch --> "OccupiedSize" IntVec2
+Sketch --> "OccupiedCenter" IntVec3
+Sketch +-- SpawnPosType
+Sketch +-- SpawnMode
+@enduml

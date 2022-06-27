@@ -1,0 +1,9 @@
+@startuml
+class DeathLetter {
+    + <<override>> OpenLetter() : void
+}
+class "IEnumerable`1"<T> {
+}
+ChoiceLetter <|-- DeathLetter
+DeathLetter --> "Choices<DiaOption>" "IEnumerable`1"
+@enduml

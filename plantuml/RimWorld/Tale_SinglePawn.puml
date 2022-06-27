@@ -1,0 +1,14 @@
+@startuml
+class Tale_SinglePawn {
+    + <<override>> ShortSummary : string <<get>>
+    + Tale_SinglePawn()
+    + Tale_SinglePawn(pawn:Pawn)
+    + <<override>> Concerns(th:Thing) : bool
+    + <<override>> Notify_FactionRemoved(faction:Faction) : void
+    + <<override>> ExposeData() : void
+    + <<override>> GenerateTestData() : void
+}
+Tale <|-- Tale_SinglePawn
+Tale_SinglePawn --> "pawnData" TaleData_Pawn
+Tale_SinglePawn --> "DominantPawn" Pawn
+@enduml

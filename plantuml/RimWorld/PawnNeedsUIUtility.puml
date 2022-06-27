@@ -1,0 +1,7 @@
+@startuml
+class PawnNeedsUIUtility <<static>> {
+    + {static} SortInDisplayOrder(needs:List<Need>) : void
+    + {static} GetLeadingThoughtInGroup(thoughtsInGroup:List<Thought>) : Thought
+    + {static} GetThoughtGroupsInDisplayOrder(mood:Need_Mood, outThoughtGroupsPresent:List<Thought>) : void
+}
+@enduml

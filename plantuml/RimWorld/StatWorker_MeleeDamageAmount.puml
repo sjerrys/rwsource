@@ -1,0 +1,7 @@
+@startuml
+abstract class StatWorker_MeleeDamageAmount {
+    + <<override>> GetValueUnfinalized(req:StatRequest, applyPostProcess:bool) : float
+    + <<override>> GetExplanationUnfinalized(req:StatRequest, numberSense:ToStringNumberSense) : string
+}
+StatWorker <|-- StatWorker_MeleeDamageAmount
+@enduml

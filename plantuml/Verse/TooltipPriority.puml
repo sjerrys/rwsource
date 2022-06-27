@@ -1,0 +1,6 @@
+@startuml
+enum TooltipPriority {
+    Default,
+    Pawn,
+}
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class StockGenerator_WeaponsRanged {
+    + weaponTag : string
+    + <<override>> HandlesThingDef(td:ThingDef) : bool
+}
+StockGenerator_MiscItems <|-- StockGenerator_WeaponsRanged
+@enduml

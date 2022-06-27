@@ -1,0 +1,6 @@
+@startuml
+class FocusStrengthOffset_BuildingDefsLit {
+    + <<override>> CanApply(parent:Thing, user:Pawn) : bool
+}
+FocusStrengthOffset_BuildingDefs <|-- FocusStrengthOffset_BuildingDefsLit
+@enduml

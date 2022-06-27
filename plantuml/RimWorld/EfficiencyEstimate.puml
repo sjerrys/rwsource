@@ -1,0 +1,10 @@
+@startuml
+enum EfficiencyEstimate {
+    None,
+    VeryPoor,
+    Poor,
+    Weakened,
+    GoodCondition,
+    Enhanced,
+}
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class GridLayout {
+    + GridLayout(container:Rect, cols:int, rows:int, outerPadding:float, innerPadding:float)
+    + GridLayout(colWidth:float, rowHeight:float, cols:int, rows:int, outerPadding:float, innerPadding:float)
+    + GetCellRectByIndex(index:int, colspan:int, rowspan:int) : Rect
+    + GetCellRect(col:int, row:int, colspan:int, rowspan:int) : Rect
+}
+GridLayout --> "container" Rect
+@enduml

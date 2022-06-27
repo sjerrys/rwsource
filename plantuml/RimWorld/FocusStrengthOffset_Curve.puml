@@ -1,0 +1,10 @@
+@startuml
+abstract class FocusStrengthOffset_Curve {
+    + <<override>> GetOffset(parent:Thing, user:Pawn) : float
+    + <<override>> GetExplanation(parent:Thing) : string
+    + <<override>> GetExplanationAbstract(def:ThingDef) : string
+    + <<override>> MaxOffset(parent:Thing) : float
+}
+FocusStrengthOffset <|-- FocusStrengthOffset_Curve
+FocusStrengthOffset_Curve --> "curve" SimpleCurve
+@enduml

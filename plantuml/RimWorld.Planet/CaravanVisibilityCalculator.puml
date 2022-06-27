@@ -1,0 +1,13 @@
+@startuml
+class CaravanVisibilityCalculator <<static>> {
+    + <<const>> NotMovingFactor : float = 0.3f
+    + {static} Visibility(bodySizeSum:float, caravanMovingNow:bool, explanation:StringBuilder) : float
+    + {static} Visibility(caravan:Caravan, explanation:StringBuilder) : float
+    + {static} Visibility(pawns:List<Pawn>, caravanMovingNow:bool, explanation:StringBuilder) : float
+    + {static} Visibility(pawns:IEnumerable<Pawn>, caravanMovingNow:bool, explanation:StringBuilder) : float
+    + {static} Visibility(transferables:List<TransferableOneWay>, explanation:StringBuilder) : float
+    + {static} VisibilityLeftAfterTransfer(transferables:List<TransferableOneWay>, explanation:StringBuilder) : float
+    + {static} VisibilityLeftAfterTradeableTransfer(allCurrentThings:List<Thing>, tradeables:List<Tradeable>, explanation:StringBuilder) : float
+    + {static} Visibility(thingCounts:List<ThingCount>, explanation:StringBuilder) : float
+}
+@enduml

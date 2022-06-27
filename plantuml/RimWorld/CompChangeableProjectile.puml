@@ -1,0 +1,20 @@
+@startuml
+class CompChangeableProjectile {
+    + loadedCount : int
+    + Loaded : bool <<get>>
+    + StorageTabVisible : bool <<get>>
+    + <<override>> PostExposeData() : void
+    + <<override>> Initialize(props:CompProperties) : void
+    + <<virtual>> Notify_ProjectileLaunched() : void
+    + LoadShell(shell:ThingDef, count:int) : void
+    + RemoveShell() : Thing
+    + GetStoreSettings() : StorageSettings
+    + GetParentStoreSettings() : StorageSettings
+}
+ThingComp <|-- CompChangeableProjectile
+IStoreSettingsParent <|-- CompChangeableProjectile
+CompChangeableProjectile --> "allowedShellsSettings" StorageSettings
+CompChangeableProjectile --> "Props" CompProperties_ChangeableProjectile
+CompChangeableProjectile --> "LoadedShell" ThingDef
+CompChangeableProjectile --> "Projectile" ThingDef
+@enduml

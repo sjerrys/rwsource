@@ -1,0 +1,12 @@
+@startuml
+class LordJob_LoadAndEnterTransporters {
+    + transportersGroup : int
+    + <<override>> AllowStartNewGatherings : bool <<get>>
+    + <<override>> AddFleeToil : bool <<get>>
+    + LordJob_LoadAndEnterTransporters()
+    + LordJob_LoadAndEnterTransporters(transportersGroup:int)
+    + <<override>> ExposeData() : void
+    + <<override>> CreateGraph() : StateGraph
+}
+LordJob <|-- LordJob_LoadAndEnterTransporters
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class DefAliasAttribute {
+    + defName : string
+    + DefAliasAttribute(defName:string)
+}
+Attribute <|-- DefAliasAttribute
+@enduml

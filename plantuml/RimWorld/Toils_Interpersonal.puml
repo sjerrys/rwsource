@@ -1,0 +1,12 @@
+@startuml
+class Toils_Interpersonal <<static>> {
+    + {static} GotoInteractablePosition(target:TargetIndex) : Toil
+    + {static} GotoPrisoner(pawn:Pawn, talkee:Pawn, mode:PrisonerInteractionModeDef) : Toil
+    + {static} WaitToBeAbleToInteract(pawn:Pawn) : Toil
+    + {static} ConvinceRecruitee(pawn:Pawn, talkee:Pawn) : Toil
+    + {static} SetLastInteractTime(targetInd:TargetIndex) : Toil
+    + {static} TryRecruit(recruiteeInd:TargetIndex) : Toil
+    + {static} TryTrain(traineeInd:TargetIndex) : Toil
+    + {static} Interact(otherPawnInd:TargetIndex, interaction:InteractionDef) : Toil
+}
+@enduml

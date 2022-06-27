@@ -1,0 +1,5 @@
+@startuml
+class LargestAreaFinder <<static>> {
+    + {static} FindLargestRect(map:Map, predicate:Predicate<IntVec3>, breakEarlyOn:int) : CellRect
+}
+@enduml

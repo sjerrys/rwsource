@@ -1,0 +1,9 @@
+@startuml
+class CreditRecord_Space {
+    + CreditRecord_Space()
+    + CreditRecord_Space(height:float)
+    + <<override>> DrawHeight(width:float) : float
+    + <<override>> Draw(rect:Rect) : void
+}
+CreditsEntry <|-- CreditRecord_Space
+@enduml

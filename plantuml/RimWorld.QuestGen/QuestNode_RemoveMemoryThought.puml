@@ -1,0 +1,13 @@
+@startuml
+class QuestNode_RemoveMemoryThought {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_RemoveMemoryThought
+QuestNode_RemoveMemoryThought --> "inSignal<string>" "SlateRef`1"
+QuestNode_RemoveMemoryThought --> "def<ThoughtDef>" "SlateRef`1"
+QuestNode_RemoveMemoryThought --> "pawn<Pawn>" "SlateRef`1"
+QuestNode_RemoveMemoryThought --> "otherPawn<Pawn>" "SlateRef`1"
+QuestNode_RemoveMemoryThought --> "count<int?>" "SlateRef`1"
+QuestNode_RemoveMemoryThought --> "addToLookTargets<bool?>" "SlateRef`1"
+@enduml

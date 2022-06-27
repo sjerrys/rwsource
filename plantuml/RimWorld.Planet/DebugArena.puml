@@ -1,0 +1,14 @@
+@startuml
+class DebugArena {
+    + DebugArena()
+    + <<override>> CompTick() : void
+}
+class "List`1"<T> {
+}
+class "Action`1"<T> {
+}
+WorldObjectComp <|-- DebugArena
+DebugArena --> "lhs<Pawn>" "List`1"
+DebugArena --> "rhs<Pawn>" "List`1"
+DebugArena --> "callback<ArenaUtility.ArenaResult>" "Action`1"
+@enduml

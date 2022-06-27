@@ -1,0 +1,27 @@
+@startuml
+class SubEffecterDef {
+    + ticksBetweenMotes : int = 40
+    + maxMoteCount : int
+    + initialDelayTicks : int
+    + chancePerTick : float = 0.1f
+    + positionLerpFactor : float = 0.5f
+    + positionRadius : float
+    + absoluteAngle : bool
+    + ticksBeforeSustainerStart : int
+    + Spawn(parent:Effecter) : SubEffecter
+}
+SubEffecterDef --> "subEffecterClass" Type
+SubEffecterDef o-> "burstCount" IntRange
+SubEffecterDef o-> "spawnLocType" MoteSpawnLocType
+SubEffecterDef o-> "positionOffset" Vector3
+SubEffecterDef --> "moteDef" ThingDef
+SubEffecterDef o-> "color" Color
+SubEffecterDef o-> "angle" FloatRange
+SubEffecterDef o-> "speed" FloatRange
+SubEffecterDef o-> "rotation" FloatRange
+SubEffecterDef o-> "rotationRate" FloatRange
+SubEffecterDef o-> "scale" FloatRange
+SubEffecterDef o-> "airTime" FloatRange
+SubEffecterDef --> "soundDef" SoundDef
+SubEffecterDef o-> "intermittentSoundInterval" IntRange
+@enduml

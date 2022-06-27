@@ -1,0 +1,6 @@
+@startuml
+class WorkGiver_Warden_Feed {
+    + <<override>> JobOnThing(pawn:Pawn, t:Thing, forced:bool) : Job
+}
+WorkGiver_Warden <|-- WorkGiver_Warden_Feed
+@enduml

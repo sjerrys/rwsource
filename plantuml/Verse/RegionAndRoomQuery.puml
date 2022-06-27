@@ -1,0 +1,12 @@
+@startuml
+class RegionAndRoomQuery <<static>> {
+    + {static} RegionAt(c:IntVec3, map:Map, allowedRegionTypes:RegionType) : Region
+    + {static} GetRegion(thing:Thing, allowedRegionTypes:RegionType) : Region
+    + {static} RoomAt(c:IntVec3, map:Map, allowedRegionTypes:RegionType) : Room
+    + {static} RoomGroupAt(c:IntVec3, map:Map) : RoomGroup
+    + {static} GetRoom(thing:Thing, allowedRegionTypes:RegionType) : Room
+    + {static} GetRoomGroup(thing:Thing) : RoomGroup
+    + {static} RoomAtFast(c:IntVec3, map:Map, allowedRegionTypes:RegionType) : Room
+    + {static} RoomAtOrAdjacent(c:IntVec3, map:Map, allowedRegionTypes:RegionType) : Room
+}
+@enduml

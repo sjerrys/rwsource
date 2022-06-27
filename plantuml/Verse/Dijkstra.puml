@@ -1,0 +1,15 @@
+@startuml
+class "Dijkstra`1"<T> <<static>> {
+    + {static} Run(startingNode:T, neighborsGetter:Func<T, IEnumerable<T>>, distanceGetter:Func<T, T, float>, outDistances:List<KeyValuePair<T, float>>, outParents:Dictionary<T, T>) : void
+    + {static} Run(startingNodes:IEnumerable<T>, neighborsGetter:Func<T, IEnumerable<T>>, distanceGetter:Func<T, T, float>, outDistances:List<KeyValuePair<T, float>>, outParents:Dictionary<T, T>) : void
+    + {static} Run(startingNode:T, neighborsGetter:Func<T, IEnumerable<T>>, distanceGetter:Func<T, T, float>, outDistances:Dictionary<T, float>, outParents:Dictionary<T, T>) : void
+    + {static} Run(startingNodes:IEnumerable<T>, neighborsGetter:Func<T, IEnumerable<T>>, distanceGetter:Func<T, T, float>, outDistances:Dictionary<T, float>, outParents:Dictionary<T, T>) : void
+}
+class DistanceComparer {
+    + Compare(a:KeyValuePair<T, float>, b:KeyValuePair<T, float>) : int
+}
+class "IComparer`1"<T> {
+}
+"Dijkstra`1" +-- DistanceComparer
+"IComparer`1" "<KeyValuePair<T, float>>" <|-- DistanceComparer
+@enduml

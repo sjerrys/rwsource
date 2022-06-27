@@ -1,0 +1,8 @@
+@startuml
+class FactionUIUtility <<static>> {
+    + {static} DoWindowContents_NewTemp(fillRect:Rect, scrollPosition:Vector2, scrollViewHeight:float, scrollToFaction:Faction) : void
+    + {static} DoWindowContents(fillRect:Rect, scrollPosition:Vector2, scrollViewHeight:float) : void
+    + {static} DrawFactionIconWithTooltip(r:Rect, faction:Faction) : void
+    + {static} DrawRelatedFactionInfo(rect:Rect, faction:Faction, curY:float) : void
+}
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class PawnObserver {
+    + PawnObserver(pawn:Pawn)
+    + ObserverInterval() : void
+}
+@enduml

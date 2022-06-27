@@ -1,0 +1,9 @@
+@startuml
+class GenClosest <<static>> {
+    + {static} ClosestThingReachable(root:IntVec3, map:Map, thingReq:ThingRequest, peMode:PathEndMode, traverseParams:TraverseParms, maxDistance:float, validator:Predicate<Thing>, customGlobalSearchSet:IEnumerable<Thing>, searchRegionsMin:int, searchRegionsMax:int, forceAllowGlobalSearch:bool, traversableRegionTypes:RegionType, ignoreEntirelyForbiddenRegions:bool) : Thing
+    + {static} ClosestThing_Regionwise_ReachablePrioritized(root:IntVec3, map:Map, thingReq:ThingRequest, peMode:PathEndMode, traverseParams:TraverseParms, maxDistance:float, validator:Predicate<Thing>, priorityGetter:Func<Thing, float>, minRegions:int, maxRegions:int) : Thing
+    + {static} RegionwiseBFSWorker(root:IntVec3, map:Map, req:ThingRequest, peMode:PathEndMode, traverseParams:TraverseParms, validator:Predicate<Thing>, priorityGetter:Func<Thing, float>, minRegions:int, maxRegions:int, maxDistance:float, regionsSeen:int, traversableRegionTypes:RegionType, ignoreEntirelyForbiddenRegions:bool) : Thing
+    + {static} ClosestThing_Global(center:IntVec3, searchSet:IEnumerable, maxDistance:float, validator:Predicate<Thing>, priorityGetter:Func<Thing, float>) : Thing
+    + {static} ClosestThing_Global_Reachable(center:IntVec3, map:Map, searchSet:IEnumerable<Thing>, peMode:PathEndMode, traverseParams:TraverseParms, maxDistance:float, validator:Predicate<Thing>, priorityGetter:Func<Thing, float>) : Thing
+}
+@enduml

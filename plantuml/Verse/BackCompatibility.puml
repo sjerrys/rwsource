@@ -1,0 +1,27 @@
+@startuml
+class BackCompatibility <<static>> {
+    + {static} IsSaveCompatibleWith(version:string) : bool
+    + {static} PreLoadSavegame(loadingVersion:string) : void
+    + {static} PostLoadSavegame(loadingVersion:string) : void
+    + {static} BackCompatibleDefName(defType:Type, defName:string, forDefInjections:bool, node:XmlNode) : string
+    + {static} BackCompatibleEnum(enumType:Type, enumName:string) : object
+    + {static} GetBackCompatibleType(baseType:Type, providedClassName:string, node:XmlNode) : Type
+    + {static} GetBackCompatibleBodyPartIndex(body:BodyDef, index:int) : int
+    + {static} WasDefRemoved(defName:string, type:Type) : bool
+    + {static} PostExposeData(obj:object) : void
+    + {static} PostCouldntLoadDef(defName:string) : void
+    + {static} PawnTrainingTrackerPostLoadInit(tracker:Pawn_TrainingTracker, wantedTrainables:DefMap<TrainableDef, bool>, steps:DefMap<TrainableDef, int>, learned:DefMap<TrainableDef, bool>) : void
+    + {static} TriggerDataFractionColonyDamageTakenNull(trigger:Trigger_FractionColonyDamageTaken, map:Map) : void
+    + {static} TriggerDataPawnCycleIndNull(trigger:Trigger_KidnapVictimPresent) : void
+    + {static} TriggerDataTicksPassedNull(trigger:Trigger_TicksPassed) : void
+    + {static} BackCompatibleTerrainWithShortHash(hash:ushort) : TerrainDef
+    + {static} BackCompatibleThingDefWithShortHash(hash:ushort) : ThingDef
+    + {static} BackCompatibleThingDefWithShortHash_Force(hash:ushort, major:int, minor:int) : ThingDef
+    + {static} CheckSpawnBackCompatibleThingAfterLoading(thing:Thing, map:Map) : bool
+    + {static} PreCheckSpawnBackCompatibleThingAfterLoading(map:Map) : void
+    + {static} PostCheckSpawnBackCompatibleThingAfterLoading(map:Map) : void
+    + {static} FactionManagerPostLoadInit() : void
+    + {static} ResearchManagerPostLoadInit() : void
+    + {static} PrefsDataPostLoad(prefsData:PrefsData) : void
+}
+@enduml

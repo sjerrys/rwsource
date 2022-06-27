@@ -1,0 +1,11 @@
+@startuml
+class QuestNode_SpawnWorldObjects {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_SpawnWorldObjects
+QuestNode_SpawnWorldObjects --> "inSignal<string>" "SlateRef`1"
+QuestNode_SpawnWorldObjects --> "worldObjects<IEnumerable<WorldObject>>" "SlateRef`1"
+QuestNode_SpawnWorldObjects --> "tile<int?>" "SlateRef`1"
+QuestNode_SpawnWorldObjects --> "defsToExcludeFromHyperlinks<List<ThingDef>>" "SlateRef`1"
+@enduml

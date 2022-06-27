@@ -1,0 +1,9 @@
+@startuml
+class TurretTop {
+    + {static} <<readonly>> ArtworkRotation : int
+    + SetRotationFromOrientation() : void
+    + TurretTop(ParentTurret:Building_Turret)
+    + TurretTopTick() : void
+    + DrawTurret() : void
+}
+@enduml

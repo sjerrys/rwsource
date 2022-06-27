@@ -1,0 +1,10 @@
+@startuml
+class ThingSelectionUtility <<static>> {
+    + {static} SelectableByMapClick(t:Thing) : bool
+    + {static} SelectableByHotkey(t:Thing) : bool
+    + {static} MultiSelectableThingsInScreenRectDistinct(rect:Rect) : IEnumerable<Thing>
+    + {static} MultiSelectableZonesInScreenRectDistinct(rect:Rect) : IEnumerable<Zone>
+    + {static} SelectNextColonist() : void
+    + {static} SelectPreviousColonist() : void
+}
+@enduml

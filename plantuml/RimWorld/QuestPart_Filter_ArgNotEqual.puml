@@ -1,0 +1,9 @@
+@startuml
+class QuestPart_Filter_ArgNotEqual {
+    + name : string
+    + obj : object
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+}
+QuestPart_Filter <|-- QuestPart_Filter_ArgNotEqual
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class StoryEventDef {
+    + importance : float
+}
+Def <|-- StoryEventDef
+@enduml

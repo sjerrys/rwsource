@@ -1,0 +1,12 @@
+@startuml
+class StoryEventDefOf <<static>> {
+    {static} StoryEventDefOf()
+}
+StoryEventDefOf --> "DamageTaken" StoryEventDef
+StoryEventDefOf --> "DamageDealt" StoryEventDef
+StoryEventDefOf --> "AttackedPlayer" StoryEventDef
+StoryEventDefOf --> "KilledPlayer" StoryEventDef
+StoryEventDefOf --> "TendedByPlayer" StoryEventDef
+StoryEventDefOf --> "Seen" StoryEventDef
+StoryEventDefOf --> "TaleCreated" StoryEventDef
+@enduml

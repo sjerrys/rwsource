@@ -1,0 +1,10 @@
+@startuml
+class StatPart_WorkTableOutdoors {
+    + <<const>> WorkRateFactor : float = 0.9f
+    + <<override>> TransformValue(req:StatRequest, val:float) : void
+    + <<override>> ExplanationPart(req:StatRequest) : string
+    + {static} Applies(t:Thing) : bool
+    + {static} Applies(def:ThingDef, map:Map, c:IntVec3) : bool
+}
+StatPart <|-- StatPart_WorkTableOutdoors
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class WITab_Caravan_Social {
+    + WITab_Caravan_Social()
+    + <<override>> OnOpen() : void
+    + <<override>> Notify_ClearingAllMapsMemory() : void
+}
+WITab <|-- WITab_Caravan_Social
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class CompBiocodableApparel {
+    + <<override>> SpecialDisplayStats() : IEnumerable<StatDrawEntry>
+}
+CompBiocodable <|-- CompBiocodableApparel
+@enduml

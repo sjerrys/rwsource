@@ -1,0 +1,8 @@
+@startuml
+class PawnPathPool {
+    + PawnPathPool(map:Map)
+    {static} PawnPathPool()
+    + GetEmptyPawnPath() : PawnPath
+}
+PawnPathPool --> "NotFoundPath" PawnPath
+@enduml

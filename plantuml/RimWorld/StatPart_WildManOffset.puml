@@ -1,0 +1,8 @@
+@startuml
+class StatPart_WildManOffset {
+    + offset : float
+    + <<override>> TransformValue(req:StatRequest, val:float) : void
+    + <<override>> ExplanationPart(req:StatRequest) : string
+}
+StatPart <|-- StatPart_WildManOffset
+@enduml

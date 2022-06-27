@@ -1,0 +1,6 @@
+@startuml
+class StorytellerComp_ShipChunkDrop {
+    + <<override>> MakeIntervalIncidents(target:IIncidentTarget) : IEnumerable<FiringIncident>
+}
+StorytellerComp <|-- StorytellerComp_ShipChunkDrop
+@enduml

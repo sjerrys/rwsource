@@ -1,0 +1,7 @@
+@startuml
+class CompressibilityDecider {
+    + CompressibilityDecider(map:Map)
+    + DetermineReferences() : void
+    + IsReferenced(th:Thing) : bool
+}
+@enduml

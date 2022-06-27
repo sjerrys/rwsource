@@ -1,0 +1,6 @@
+@startuml
+abstract class SketchResolver {
+    + Resolve(parms:ResolveParams) : void
+    + CanResolve(parms:ResolveParams) : bool
+}
+@enduml

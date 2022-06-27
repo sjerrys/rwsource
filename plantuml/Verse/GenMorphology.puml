@@ -1,0 +1,8 @@
+@startuml
+class GenMorphology <<static>> {
+    + {static} Erode(cells:List<IntVec3>, count:int, map:Map, extraPredicate:Predicate<IntVec3>) : void
+    + {static} Dilate(cells:List<IntVec3>, count:int, map:Map, extraPredicate:Predicate<IntVec3>) : void
+    + {static} Open(cells:List<IntVec3>, count:int, map:Map) : void
+    + {static} Close(cells:List<IntVec3>, count:int, map:Map) : void
+}
+@enduml

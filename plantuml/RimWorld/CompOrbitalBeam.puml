@@ -1,0 +1,11 @@
+@startuml
+class CompOrbitalBeam {
+    + <<override>> PostExposeData() : void
+    + StartAnimation(totalDuration:int, fadeOutDuration:int, angle:float) : void
+    + <<override>> PostSpawnSetup(respawningAfterLoad:bool) : void
+    + <<override>> CompTick() : void
+    + <<override>> PostDraw() : void
+}
+ThingComp <|-- CompOrbitalBeam
+CompOrbitalBeam --> "Props" CompProperties_OrbitalBeam
+@enduml

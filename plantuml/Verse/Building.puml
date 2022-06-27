@@ -1,0 +1,23 @@
+@startuml
+class Building {
+    + canChangeTerrainOnDestroyed : bool = true
+    + <<virtual>> TransmitsPowerNow : bool <<get>>
+    + <<override>> HitPoints : int <<set>>
+    + <<override>> ExposeData() : void
+    + <<override>> SpawnSetup(map:Map, respawningAfterLoad:bool) : void
+    + <<override>> DeSpawn(mode:DestroyMode) : void
+    + <<override>> Destroy(mode:DestroyMode) : void
+    + <<override>> Draw() : void
+    + <<override>> SetFaction(newFaction:Faction, recruiter:Pawn) : void
+    + <<override>> PreApplyDamage(dinfo:DamageInfo, absorbed:bool) : void
+    + <<override>> PostApplyDamage(dinfo:DamageInfo, totalDamageDealt:float) : void
+    + <<override>> DrawExtraSelectionOverlays() : void
+    + <<override>> GetGizmos() : IEnumerable<Gizmo>
+    + <<virtual>> ClaimableBy(by:Faction) : bool
+    + <<virtual>> DeconstructibleBy(faction:Faction) : bool
+    + <<virtual>> PathWalkCostFor(p:Pawn) : ushort
+    + <<virtual>> IsDangerousFor(p:Pawn) : bool
+}
+ThingWithComps <|-- Building
+Building --> "PowerComp" CompPower
+@enduml

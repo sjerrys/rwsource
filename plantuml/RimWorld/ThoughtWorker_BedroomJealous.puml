@@ -1,0 +1,5 @@
+@startuml
+class ThoughtWorker_BedroomJealous {
+}
+ThoughtWorker <|-- ThoughtWorker_BedroomJealous
+@enduml

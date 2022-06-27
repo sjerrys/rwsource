@@ -1,0 +1,6 @@
+@startuml
+class JobGiver_WanderMapEdge {
+    + JobGiver_WanderMapEdge()
+}
+JobGiver_Wander <|-- JobGiver_WanderMapEdge
+@enduml

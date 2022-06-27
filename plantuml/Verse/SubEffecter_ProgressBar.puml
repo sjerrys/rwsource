@@ -1,0 +1,9 @@
+@startuml
+class SubEffecter_ProgressBar {
+    + SubEffecter_ProgressBar(def:SubEffecterDef, parent:Effecter)
+    + <<override>> SubEffectTick(A:TargetInfo, B:TargetInfo) : void
+    + <<override>> SubCleanup() : void
+}
+SubEffecter <|-- SubEffecter_ProgressBar
+SubEffecter_ProgressBar --> "mote" MoteProgressBar
+@enduml

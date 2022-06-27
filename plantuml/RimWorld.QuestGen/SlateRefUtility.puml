@@ -1,0 +1,6 @@
+@startuml
+class SlateRefUtility <<static>> {
+    + {static} CheckSingleVariableSyntax(str:string, slate:Slate, obj:object, exists:bool) : bool
+    + {static} MustTranslate(slateRef:string, fi:FieldInfo) : bool
+}
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class SymbolResolver_AncientRuins {
+    + <<override>> Resolve(rp:ResolveParams) : void
+}
+SymbolResolver <|-- SymbolResolver_AncientRuins
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class BiomePlantRecord {
+    + commonality : float
+    + LoadDataFromXmlCustom(xmlRoot:XmlNode) : void
+}
+BiomePlantRecord --> "plant" ThingDef
+@enduml

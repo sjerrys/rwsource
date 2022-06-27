@@ -1,0 +1,8 @@
+@startuml
+class ListerArtificialBuildingsForMeditation {
+    + ListerArtificialBuildingsForMeditation(map:Map)
+    + Notify_BuildingSpawned(b:Building) : void
+    + Notify_BuildingDeSpawned(b:Building) : void
+    + GetForCell(cell:IntVec3, radius:float) : List<Thing>
+}
+@enduml

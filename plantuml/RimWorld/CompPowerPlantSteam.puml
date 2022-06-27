@@ -1,0 +1,8 @@
+@startuml
+class CompPowerPlantSteam {
+    + <<override>> PostSpawnSetup(respawningAfterLoad:bool) : void
+    + <<override>> CompTick() : void
+    + <<override>> PostDeSpawn(map:Map) : void
+}
+CompPowerPlant <|-- CompPowerPlantSteam
+@enduml

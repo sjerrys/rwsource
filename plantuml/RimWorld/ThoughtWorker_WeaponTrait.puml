@@ -1,0 +1,7 @@
+@startuml
+class ThoughtWorker_WeaponTrait {
+    + <<override>> PostProcessDescription(p:Pawn, description:string) : string
+    + <<override>> PostProcessLabel(p:Pawn, label:string) : string
+}
+ThoughtWorker <|-- ThoughtWorker_WeaponTrait
+@enduml

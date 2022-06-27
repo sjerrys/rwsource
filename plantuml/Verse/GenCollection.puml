@@ -1,0 +1,68 @@
+@startuml
+class GenCollection <<static>> {
+    + {static} AddRange(hashSet:HashSet<T>, enumerable:IEnumerable<T>) : void
+    + {static} SetOrAdd(dict:Dictionary<K, V>, key:K, value:V) : void
+    + {static} Increment(dict:Dictionary<K, int>, key:K) : void
+    + {static} SharesElementWith(source:IEnumerable<T>, other:IEnumerable<T>) : bool
+    + {static} InRandomOrder(source:IEnumerable<T>, workingList:IList<T>) : IEnumerable<T>
+    + {static} RandomElement(source:IEnumerable<T>) : T
+    + {static} RandomElementWithFallback(source:IEnumerable<T>, fallback:T) : T
+    + {static} TryRandomElement(source:IEnumerable<T>, result:T) : bool
+    + {static} RandomElementByWeight(source:IEnumerable<T>, weightSelector:Func<T, float>) : T
+    + {static} RandomElementByWeightWithFallback(source:IEnumerable<T>, weightSelector:Func<T, float>, fallback:T) : T
+    + {static} TryRandomElementByWeight(source:IEnumerable<T>, weightSelector:Func<T, float>, result:T) : bool
+    + {static} RandomElementByWeightWithDefault(source:IEnumerable<T>, weightSelector:Func<T, float>, defaultValueWeight:float) : T
+    + {static} FirstOrFallback(source:IEnumerable<T>, fallback:T) : T
+    + {static} FirstOrFallback(source:IEnumerable<T>, predicate:Func<T, bool>, fallback:T) : T
+    + {static} MaxBy(source:IEnumerable<TSource>, selector:Func<TSource, TKey>) : TSource
+    + {static} MaxBy(source:IEnumerable<TSource>, selector:Func<TSource, TKey>, comparer:IComparer<TKey>) : TSource
+    + {static} MaxByWithFallback(source:IEnumerable<TSource>, selector:Func<TSource, TKey>, fallback:TSource) : TSource
+    + {static} MaxByWithFallback(source:IEnumerable<TSource>, selector:Func<TSource, TKey>, comparer:IComparer<TKey>, fallback:TSource) : TSource
+    + {static} TryMaxBy(source:IEnumerable<TSource>, selector:Func<TSource, TKey>, value:TSource) : bool
+    + {static} TryMaxBy(source:IEnumerable<TSource>, selector:Func<TSource, TKey>, comparer:IComparer<TKey>, value:TSource) : bool
+    + {static} MinBy(source:IEnumerable<TSource>, selector:Func<TSource, TKey>) : TSource
+    + {static} MinBy(source:IEnumerable<TSource>, selector:Func<TSource, TKey>, comparer:IComparer<TKey>) : TSource
+    + {static} TryMinBy(source:IEnumerable<TSource>, selector:Func<TSource, TKey>, value:TSource) : bool
+    + {static} TryMinBy(source:IEnumerable<TSource>, selector:Func<TSource, TKey>, comparer:IComparer<TKey>, value:TSource) : bool
+    + {static} SortBy(list:List<T>, selector:Func<T, TSortBy>) : void
+    + {static} SortBy(list:List<T>, selector:Func<T, TSortBy>, thenBySelector:Func<T, TThenBy>) : void
+    + {static} SortByDescending(list:List<T>, selector:Func<T, TSortByDescending>) : void
+    + {static} SortByDescending(list:List<T>, selector:Func<T, TSortByDescending>, thenByDescendingSelector:Func<T, TThenByDescending>) : void
+    + {static} SortStable(list:IList<T>, comparator:Func<T, T, int>) : void
+    + {static} RemoveAll(dictionary:Dictionary<TKey, TValue>, predicate:Predicate<KeyValuePair<TKey, TValue>>) : int
+    + {static} RemoveAll(list:List<T>, predicate:Func<T, int, bool>) : void
+    + {static} RemoveLast(list:List<T>) : void
+    + {static} Pop(list:List<T>) : T
+    + {static} Any(list:List<T>, predicate:Predicate<T>) : bool
+    + {static} Any(list:List<T>) : bool
+    + {static} Any(list:HashSet<T>) : bool
+    + {static} Any(list:Stack<T>) : bool
+    + {static} AddRange(set:HashSet<T>, list:List<T>) : void
+    + {static} AddRange(set:HashSet<T>, other:HashSet<T>) : void
+    + {static} Count_EnumerableBase(e:IEnumerable) : int
+    + {static} FirstOrDefault_EnumerableBase(e:IEnumerable) : object
+    + {static} AverageWeighted(list:IEnumerable<T>, weight:Func<T, float>, value:Func<T, float>) : float
+    + {static} ExecuteEnumerable(enumerable:IEnumerable) : void
+    + {static} EnumerableNullOrEmpty(enumerable:IEnumerable<T>) : bool
+    + {static} EnumerableCount(enumerable:IEnumerable) : int
+    + {static} FirstIndexOf(enumerable:IEnumerable<T>, predicate:Func<T, bool>) : int
+    + {static} TryGetValue(dict:IDictionary<T, V>, key:T, fallback:V) : V
+    + {static} Cross(lhs:IEnumerable<T>, rhs:IEnumerable<V>) : IEnumerable<Pair<T, V>>
+    + {static} Concat(lhs:IEnumerable<T>, rhs:T) : IEnumerable<T>
+    + {static} FirstValid(source:List<LocalTargetInfo>) : LocalTargetInfo
+    + {static} Except(lhs:IEnumerable<T>, rhs:T) : IEnumerable<T>
+    + {static} ListsEqual(a:List<T>, b:List<T>) : bool
+    + {static} ListsEqualIgnoreOrder(a:List<T>, b:List<T>) : bool
+    + {static} TakeRandom(list:List<T>, count:int) : IEnumerable<T>
+    + {static} AddDistinct(list:List<T>, element:T) : void
+    + {static} Replace(list:IList<T>, replace:T, with:T) : int
+    + {static} ConvertIGroupingToPair(g:IGrouping<K, E>) : Pair<K, List<E>>
+}
+class "SortStableTempList`1"<T> <<static>> {
+    + {static} working : bool
+}
+class "List`1"<T> {
+}
+GenCollection +-- "SortStableTempList`1"
+"SortStableTempList`1" o-> "list<Pair<T, int>>" "List`1"
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+class MentalState_TargetedInsultingSpree {
+    + <<override>> InspectLine : string <<get>>
+    + <<override>> MentalStateTick() : void
+    + <<override>> PreStart() : void
+    + <<override>> PostEnd() : void
+    + <<override>> GetBeginLetterText() : string
+}
+MentalState_InsultingSpree <|-- MentalState_TargetedInsultingSpree
+@enduml

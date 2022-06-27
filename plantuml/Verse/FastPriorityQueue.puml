@@ -1,0 +1,10 @@
+@startuml
+class "FastPriorityQueue`1"<T> {
+    + Count : int <<get>>
+    + FastPriorityQueue()
+    + FastPriorityQueue(comparer:IComparer<T>)
+    + Push(item:T) : void
+    + Pop() : T
+    + Clear() : void
+}
+@enduml

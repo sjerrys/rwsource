@@ -1,0 +1,7 @@
+@startuml
+class CompProperties_AbilityOffsetPrisonerResistance {
+    + offset : float
+    + CompProperties_AbilityOffsetPrisonerResistance()
+}
+CompProperties_AbilityEffect <|-- CompProperties_AbilityOffsetPrisonerResistance
+@enduml

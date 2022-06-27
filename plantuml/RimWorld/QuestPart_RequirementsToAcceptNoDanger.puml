@@ -1,0 +1,12 @@
+@startuml
+class QuestPart_RequirementsToAcceptNoDanger {
+    + <<override>> CanAccept() : AcceptanceReport
+    + <<override>> ExposeData() : void
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart_RequirementsToAccept <|-- QuestPart_RequirementsToAcceptNoDanger
+QuestPart_RequirementsToAcceptNoDanger --> "map" Map
+QuestPart_RequirementsToAcceptNoDanger --> "dangerTo" Faction
+QuestPart_RequirementsToAcceptNoDanger --> "Culprits<GlobalTargetInfo>" "IEnumerable`1"
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class HediffCompProperties_HealPermanentWounds {
+    + HediffCompProperties_HealPermanentWounds()
+}
+HediffCompProperties <|-- HediffCompProperties_HealPermanentWounds
+@enduml

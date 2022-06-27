@@ -1,0 +1,17 @@
+@startuml
+enum TriggerSignalType {
+    Undefined,
+    Tick,
+    Memo,
+    PawnDamaged,
+    PawnArrestAttempted,
+    PawnLost,
+    BuildingDamaged,
+    BuildingLost,
+    FactionRelationsChanged,
+    DormancyWakeup,
+    Clamor,
+    MechClusterDefeated,
+    Signal,
+}
+@enduml

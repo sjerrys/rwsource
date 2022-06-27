@@ -1,0 +1,5 @@
+@startuml
+class ThoughtWorker_HumanLeatherApparel {
+}
+ThoughtWorker <|-- ThoughtWorker_HumanLeatherApparel
+@enduml

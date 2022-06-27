@@ -1,0 +1,72 @@
+@startuml
+class Pawn_MindState {
+    + lastIngestTick : int
+    + nextApparelOptimizeTick : int
+    + canFleeIndividual : bool = true
+    + exitMapAfterTick : int
+    + lastDisturbanceTick : int
+    + wantsToTradeWithColony : bool
+    + canLovinTick : int
+    + canSleepTick : int
+    + lastMeleeThreatHarmTick : int
+    + lastEngageTargetTick : int
+    + lastAttackTargetTick : int
+    + lastAssignedInteractTime : int
+    + interactionsToday : int
+    + lastInventoryRawFoodUseTick : int
+    + nextMoveOrderIsWait : bool
+    + lastTakeCombatEnhancingDrugTick : int
+    + lastHarmTick : int
+    + noAidRelationsGainUntilTick : int
+    + anyCloseHostilesRecently : bool
+    + applyBedThoughtsTick : int
+    + applyThroneThoughtsTick : int
+    + applyBedThoughtsOnLeave : bool
+    + willJoinColonyIfRescuedInt : bool
+    + timesGuestTendedToByPlayer : int
+    + lastSelfTendTick : int
+    + spawnedByInfestationThingComp : bool
+    + lastPredatorHuntingPlayerNotificationTick : int
+    + maxDistToSquadFlag : float
+    + AvailableForGoodwillReward : bool <<get>>
+    + Active : bool <<get>> <<set>>
+    + IsIdle : bool <<get>>
+    + MeleeThreatStillThreat : bool <<get>>
+    + WildManEverReachedOutside : bool <<get>> <<set>>
+    + WillJoinColonyIfRescued : bool <<get>> <<set>>
+    + AnythingPreventsJoiningColonyIfRescued : bool <<get>>
+    + Pawn_MindState()
+    + Pawn_MindState(pawn:Pawn)
+    + Reset(clearInspiration:bool, clearMentalState:bool) : void
+    + ExposeData() : void
+    + MindStateTick() : void
+    + JoinColonyBecauseRescuedBy(by:Pawn) : void
+    + ResetLastDisturbanceTick() : void
+    + GetGizmos() : IEnumerable<Gizmo>
+    + SetNoAidRelationsGainUntilTick(tick:int) : void
+    + Notify_OutfitChanged() : void
+    + Notify_DamageTaken(dinfo:DamageInfo) : void
+    + Notify_Explosion(explosion:Explosion) : void
+    + Notify_TuckedIntoBed() : void
+    + Notify_SelfTended() : void
+    + Notify_PredatorHuntingPlayerNotification() : void
+    + StartFleeingBecauseOfPawnAction(instigator:Thing) : void
+}
+class "Dictionary`2"<T1,T2> {
+}
+IExposable <|-- Pawn_MindState
+Pawn_MindState --> "pawn" Pawn
+Pawn_MindState --> "mentalStateHandler" MentalStateHandler
+Pawn_MindState --> "mentalBreaker" MentalBreaker
+Pawn_MindState --> "inspirationHandler" InspirationHandler
+Pawn_MindState --> "priorityWork" PriorityWork
+Pawn_MindState --> "lastJobTag" JobTag
+Pawn_MindState o-> "forcedGotoPosition" IntVec3
+Pawn_MindState --> "knownExploder" Thing
+Pawn_MindState --> "lastMannedThing" Thing
+Pawn_MindState --> "meleeThreat" Pawn
+Pawn_MindState --> "lastAttackedTarget" LocalTargetInfo
+Pawn_MindState --> "enemyTarget" Thing
+Pawn_MindState --> "duty" PawnDuty
+Pawn_MindState o-> "thinkData<int,int>" "Dictionary`2"
+@enduml

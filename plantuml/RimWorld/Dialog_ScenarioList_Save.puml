@@ -1,0 +1,6 @@
+@startuml
+class Dialog_ScenarioList_Save {
+    + Dialog_ScenarioList_Save(scen:Scenario)
+}
+Dialog_ScenarioList <|-- Dialog_ScenarioList_Save
+@enduml

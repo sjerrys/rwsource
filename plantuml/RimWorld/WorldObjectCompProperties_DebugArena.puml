@@ -1,0 +1,6 @@
+@startuml
+class WorldObjectCompProperties_DebugArena {
+    + WorldObjectCompProperties_DebugArena()
+}
+WorldObjectCompProperties <|-- WorldObjectCompProperties_DebugArena
+@enduml

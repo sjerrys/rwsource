@@ -1,0 +1,14 @@
+@startuml
+class Bill_ProductionWithUft {
+    + SetBoundUft(value:UnfinishedThing, setOtherLink:bool) : void
+    + Bill_ProductionWithUft()
+    + Bill_ProductionWithUft(recipe:RecipeDef)
+    + <<override>> ExposeData() : void
+    + <<override>> Notify_IterationCompleted(billDoer:Pawn, ingredients:List<Thing>) : void
+    + ClearBoundUft() : void
+    + <<override>> Clone() : Bill
+}
+Bill_Production <|-- Bill_ProductionWithUft
+Bill_ProductionWithUft --> "BoundWorker" Pawn
+Bill_ProductionWithUft --> "BoundUft" UnfinishedThing
+@enduml

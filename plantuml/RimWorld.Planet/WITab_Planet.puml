@@ -1,0 +1,7 @@
+@startuml
+class WITab_Planet {
+    + <<override>> IsVisible : bool <<get>>
+    + WITab_Planet()
+}
+WITab <|-- WITab_Planet
+@enduml

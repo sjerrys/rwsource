@@ -1,0 +1,14 @@
+@startuml
+class Window_DebugTable {
+    + Window_DebugTable(tables:string[,])
+    + <<override>> DoWindowContents(inRect:Rect) : void
+}
+enum SortMode {
+    Off,
+    Ascending,
+    Descending,
+}
+Window <|-- Window_DebugTable
+Window_DebugTable --> "InitialSize" Vector2
+Window_DebugTable +-- SortMode
+@enduml

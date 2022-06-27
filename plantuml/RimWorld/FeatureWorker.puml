@@ -1,0 +1,6 @@
+@startuml
+abstract class FeatureWorker {
+    + {abstract} GenerateWhereAppropriate() : void
+}
+FeatureWorker --> "def" FeatureDef
+@enduml

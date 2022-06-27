@@ -1,0 +1,28 @@
+@startuml
+class BodyPartTagDefOf <<static>> {
+    {static} BodyPartTagDefOf()
+}
+BodyPartTagDefOf --> "BloodFiltrationSource" BodyPartTagDef
+BodyPartTagDefOf --> "BloodFiltrationLiver" BodyPartTagDef
+BodyPartTagDefOf --> "BloodFiltrationKidney" BodyPartTagDef
+BodyPartTagDefOf --> "BloodPumpingSource" BodyPartTagDef
+BodyPartTagDefOf --> "BreathingSource" BodyPartTagDef
+BodyPartTagDefOf --> "BreathingSourceCage" BodyPartTagDef
+BodyPartTagDefOf --> "BreathingPathway" BodyPartTagDef
+BodyPartTagDefOf --> "ConsciousnessSource" BodyPartTagDef
+BodyPartTagDefOf --> "EatingSource" BodyPartTagDef
+BodyPartTagDefOf --> "EatingPathway" BodyPartTagDef
+BodyPartTagDefOf --> "HearingSource" BodyPartTagDef
+BodyPartTagDefOf --> "MetabolismSource" BodyPartTagDef
+BodyPartTagDefOf --> "ManipulationLimbCore" BodyPartTagDef
+BodyPartTagDefOf --> "ManipulationLimbSegment" BodyPartTagDef
+BodyPartTagDefOf --> "ManipulationLimbDigit" BodyPartTagDef
+BodyPartTagDefOf --> "MovingLimbCore" BodyPartTagDef
+BodyPartTagDefOf --> "MovingLimbSegment" BodyPartTagDef
+BodyPartTagDefOf --> "MovingLimbDigit" BodyPartTagDef
+BodyPartTagDefOf --> "Pelvis" BodyPartTagDef
+BodyPartTagDefOf --> "SightSource" BodyPartTagDef
+BodyPartTagDefOf --> "Spine" BodyPartTagDef
+BodyPartTagDefOf --> "TalkingSource" BodyPartTagDef
+BodyPartTagDefOf --> "TalkingPathway" BodyPartTagDef
+@enduml

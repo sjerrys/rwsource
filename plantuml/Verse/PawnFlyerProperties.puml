@@ -1,0 +1,9 @@
+@startuml
+class PawnFlyerProperties {
+    + flightDurationMin : float = 0.5f
+    + flightSpeed : float = 12f
+    + shadow : string = "Things/Skyfaller/SkyfallerShadowCircle"
+}
+PawnFlyerProperties --> "flightEffecterDef" EffecterDef
+PawnFlyerProperties --> "soundLanding" SoundDef
+@enduml

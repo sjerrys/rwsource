@@ -1,0 +1,12 @@
+@startuml
+class QuestNode_GetSiteTile {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GetSiteTile
+QuestNode_GetSiteTile --> "storeAs<string>" "SlateRef`1"
+QuestNode_GetSiteTile --> "preferCloserTiles<bool>" "SlateRef`1"
+QuestNode_GetSiteTile --> "allowCaravans<bool>" "SlateRef`1"
+QuestNode_GetSiteTile --> "clampRangeBySiteParts<bool?>" "SlateRef`1"
+QuestNode_GetSiteTile --> "sitePartDefs<IEnumerable<SitePartDef>>" "SlateRef`1"
+@enduml

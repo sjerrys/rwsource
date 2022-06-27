@@ -1,0 +1,15 @@
+@startuml
+class Dialog_DebugOutputMenu {
+    + <<const>> DefaultCategory : string = "General"
+    + <<override>> IsDebug : bool <<get>>
+    + Dialog_DebugOutputMenu()
+    + <<override>> OnAcceptKeyPressed() : void
+}
+class DebugOutputOption <<struct>> {
+    + label : string
+    + category : string
+}
+Dialog_DebugOptionLister <|-- Dialog_DebugOutputMenu
+Dialog_DebugOutputMenu +-- DebugOutputOption
+DebugOutputOption --> "action" Action
+@enduml

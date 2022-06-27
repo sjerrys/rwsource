@@ -1,0 +1,15 @@
+@startuml
+class ScribeExtractor <<static>> {
+    + {static} ValueFromNode(subNode:XmlNode, defaultValue:T) : T
+    + {static} DefFromNode(subNode:XmlNode) : T
+    + {static} DefFromNodeUnsafe(subNode:XmlNode) : T
+    + {static} SaveableFromNode(subNode:XmlNode, ctorArgs:object[]) : T
+    + {static} LocalTargetInfoFromNode(node:XmlNode, label:string, defaultValue:LocalTargetInfo) : LocalTargetInfo
+    + {static} TargetInfoFromNode(node:XmlNode, label:string, defaultValue:TargetInfo) : TargetInfo
+    + {static} GlobalTargetInfoFromNode(node:XmlNode, label:string, defaultValue:GlobalTargetInfo) : GlobalTargetInfo
+    + {static} ResolveLocalTargetInfo(loaded:LocalTargetInfo, label:string) : LocalTargetInfo
+    + {static} ResolveTargetInfo(loaded:TargetInfo, label:string) : TargetInfo
+    + {static} ResolveGlobalTargetInfo(loaded:GlobalTargetInfo, label:string) : GlobalTargetInfo
+    + {static} BodyPartFromNode(node:XmlNode, label:string, defaultValue:BodyPartRecord) : BodyPartRecord
+}
+@enduml

@@ -1,0 +1,20 @@
+@startuml
+class MentalBreaker {
+    + BreakThresholdExtreme : float <<get>>
+    + BreakThresholdMajor : float <<get>>
+    + BreakThresholdMinor : float <<get>>
+    + BreakExtremeIsImminent : bool <<get>>
+    + BreakMajorIsImminent : bool <<get>>
+    + BreakMinorIsImminent : bool <<get>>
+    + BreakExtremeIsApproaching : bool <<get>>
+    + CurMood : float <<get>>
+    + MentalBreaker()
+    + MentalBreaker(pawn:Pawn)
+    + ExposeData() : void
+    + MentalBreakerTick() : void
+    + TryDoRandomMoodCausedMentalBreak() : bool
+    + Notify_RecoveredFromMentalState() : void
+    + MentalBreakThresholdFor(intensity:MentalBreakIntensity) : float
+}
+IExposable <|-- MentalBreaker
+@enduml

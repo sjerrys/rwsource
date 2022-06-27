@@ -1,0 +1,7 @@
+@startuml
+class PermitsCardUtility <<static>> {
+    + {static} DrawRecordsCard(rect:Rect, pawn:Pawn) : void
+}
+PermitsCardUtility --> "selectedPermit" RoyalTitlePermitDef
+PermitsCardUtility --> "selectedFaction" Faction
+@enduml

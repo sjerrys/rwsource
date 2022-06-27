@@ -1,0 +1,9 @@
+@startuml
+class CompProperties_Flickable {
+    + commandTexture : string = "UI/Commands/DesirePower"
+    + commandLabelKey : string = "CommandDesignateTogglePowerLabel"
+    + commandDescKey : string = "CommandDesignateTogglePowerDesc"
+    + CompProperties_Flickable()
+}
+CompProperties <|-- CompProperties_Flickable
+@enduml

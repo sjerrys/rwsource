@@ -1,0 +1,14 @@
+@startuml
+class MainTabWindow_History {
+    + <<override>> PreOpen() : void
+    + <<override>> DoWindowContents(rect:Rect) : void
+}
+enum HistoryTab {
+    Graph,
+    Messages,
+    Statistics,
+}
+MainTabWindow <|-- MainTabWindow_History
+MainTabWindow_History --> "RequestedTabSize" Vector2
+MainTabWindow_History +-- HistoryTab
+@enduml

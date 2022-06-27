@@ -1,0 +1,5 @@
+@startuml
+class InspectTabManager <<static>> {
+    + {static} GetSharedInstance(tabType:Type) : InspectTabBase
+}
+@enduml

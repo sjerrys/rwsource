@@ -1,0 +1,9 @@
+@startuml
+class CompProperties_HeatPusher {
+    + heatPerSecond : float
+    + heatPushMaxTemperature : float = 99999f
+    + heatPushMinTemperature : float
+    + CompProperties_HeatPusher()
+}
+CompProperties <|-- CompProperties_HeatPusher
+@enduml

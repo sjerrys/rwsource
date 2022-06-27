@@ -1,0 +1,8 @@
+@startuml
+class StatPart_Age {
+    + <<override>> TransformValue(req:StatRequest, val:float) : void
+    + <<override>> ExplanationPart(req:StatRequest) : string
+    + <<override>> ConfigErrors() : IEnumerable<string>
+}
+StatPart <|-- StatPart_Age
+@enduml

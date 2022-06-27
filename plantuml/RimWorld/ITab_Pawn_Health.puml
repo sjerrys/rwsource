@@ -1,0 +1,7 @@
+@startuml
+class ITab_Pawn_Health {
+    + <<const>> Width : float = 630f
+    + ITab_Pawn_Health()
+}
+ITab <|-- ITab_Pawn_Health
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class GameCondition_HeatWave {
+    + <<override>> TransitionTicks : int <<get>>
+    + <<override>> TemperatureOffset() : float
+}
+GameCondition <|-- GameCondition_HeatWave
+@enduml

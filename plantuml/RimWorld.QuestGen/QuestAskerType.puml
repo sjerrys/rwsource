@@ -1,0 +1,9 @@
+@startuml
+enum QuestAskerType {
+    Nobody,
+    FactionLeader,
+    FactionMember,
+    FactionlessWorldPawn,
+    ColonistOrPrisoner,
+}
+@enduml

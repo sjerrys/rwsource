@@ -1,0 +1,18 @@
+@startuml
+abstract class CompAbilityEffect {
+    + <<virtual>> Apply(target:LocalTargetInfo, dest:LocalTargetInfo) : void
+    + <<virtual>> Apply(target:GlobalTargetInfo) : void
+    + <<virtual>> CanApplyOn(target:LocalTargetInfo, dest:LocalTargetInfo) : bool
+    + <<virtual>> CanApplyOn(target:GlobalTargetInfo) : bool
+    + <<virtual>> GetPreCastActions() : IEnumerable<PreCastAction>
+    + <<virtual>> DrawEffectPreview(target:LocalTargetInfo) : void
+    + <<virtual>> Valid(target:LocalTargetInfo, throwMessages:bool) : bool
+    + <<virtual>> Valid(target:GlobalTargetInfo, throwMessages:bool) : bool
+    + <<virtual>> ExtraLabel(target:LocalTargetInfo) : string
+    + <<virtual>> WorldMapExtraLabel(target:GlobalTargetInfo) : string
+    + <<virtual>> ConfirmationDialogText(target:LocalTargetInfo) : string
+    + <<virtual>> ConfirmationDialogText(target:GlobalTargetInfo) : string
+}
+AbilityComp <|-- CompAbilityEffect
+CompAbilityEffect --> "Props" CompProperties_AbilityEffect
+@enduml

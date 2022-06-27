@@ -1,0 +1,9 @@
+@startuml
+class CompProperties_DestroyAfterDelay {
+    + delayTicks : int
+    + countdownLabel : string
+    + CompProperties_DestroyAfterDelay()
+}
+CompProperties <|-- CompProperties_DestroyAfterDelay
+CompProperties_DestroyAfterDelay --> "destroyMode" DestroyMode
+@enduml

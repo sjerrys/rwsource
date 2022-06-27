@@ -1,0 +1,13 @@
+@startuml
+class RecipeWorker {
+    + <<virtual>> AvailableOnNow(thing:Thing) : bool
+    + <<virtual>> GetPartsToApplyOn(pawn:Pawn, recipe:RecipeDef) : IEnumerable<BodyPartRecord>
+    + <<virtual>> ApplyOnPawn(pawn:Pawn, part:BodyPartRecord, billDoer:Pawn, ingredients:List<Thing>, bill:Bill) : void
+    + <<virtual>> IsViolationOnPawn(pawn:Pawn, part:BodyPartRecord, billDoerFaction:Faction) : bool
+    + <<virtual>> GetLabelWhenUsedOn(pawn:Pawn, part:BodyPartRecord) : string
+    + <<virtual>> ConsumeIngredient(ingredient:Thing, recipe:RecipeDef, map:Map) : void
+    + <<virtual>> Notify_IterationCompleted(billDoer:Pawn, ingredients:List<Thing>) : void
+    + <<virtual>> CheckForWarnings(billDoer:Pawn) : void
+}
+RecipeWorker --> "recipe" RecipeDef
+@enduml

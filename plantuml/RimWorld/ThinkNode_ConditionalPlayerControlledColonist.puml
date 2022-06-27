@@ -1,0 +1,5 @@
+@startuml
+class ThinkNode_ConditionalPlayerControlledColonist {
+}
+ThinkNode_Conditional <|-- ThinkNode_ConditionalPlayerControlledColonist
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+class BeautyUtility <<static>> {
+    + {static} <<readonly>> SampleNumCells_Beauty : int
+    + {static} AverageBeautyPerceptible(root:IntVec3, map:Map) : float
+    + {static} FillBeautyRelevantCells(root:IntVec3, map:Map) : void
+    + {static} CellBeauty(c:IntVec3, map:Map, countedThings:List<Thing>) : float
+    + {static} BeautyRelevant(cat:ThingCategory) : bool
+}
+class "List`1"<T> {
+}
+BeautyUtility o-> "beautyRelevantCells<IntVec3>" "List`1"
+@enduml

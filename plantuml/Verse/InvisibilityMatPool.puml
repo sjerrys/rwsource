@@ -1,0 +1,5 @@
+@startuml
+class InvisibilityMatPool <<static>> {
+    + {static} GetInvisibleMat(baseMat:Material) : Material
+}
+@enduml

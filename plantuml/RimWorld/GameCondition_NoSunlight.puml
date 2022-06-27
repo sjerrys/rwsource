@@ -1,0 +1,8 @@
+@startuml
+class GameCondition_NoSunlight {
+    + <<override>> TransitionTicks : int <<get>>
+    + <<override>> SkyTargetLerpFactor(map:Map) : float
+    + <<override>> SkyTarget(map:Map) : SkyTarget?
+}
+GameCondition <|-- GameCondition_NoSunlight
+@enduml

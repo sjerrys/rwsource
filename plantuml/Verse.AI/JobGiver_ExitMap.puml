@@ -1,0 +1,6 @@
+@startuml
+abstract class JobGiver_ExitMap {
+    + <<override>> DeepCopy(resolve:bool) : ThinkNode
+}
+ThinkNode_JobGiver <|-- JobGiver_ExitMap
+@enduml

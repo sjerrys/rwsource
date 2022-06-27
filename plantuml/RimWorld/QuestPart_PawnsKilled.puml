@@ -1,0 +1,17 @@
+@startuml
+class QuestPart_PawnsKilled {
+    + count : int
+    + outSignalPawnKilled : string
+    + <<override>> DescriptionPart : string <<get>>
+    + <<override>> Notify_PawnKilled(pawn:Pawn, dinfo:DamageInfo?) : void
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+}
+class "IEnumerable`1"<T> {
+}
+QuestPartActivable <|-- QuestPart_PawnsKilled
+QuestPart_PawnsKilled --> "race" ThingDef
+QuestPart_PawnsKilled --> "requiredInstigatorFaction" Faction
+QuestPart_PawnsKilled --> "mapParent" MapParent
+QuestPart_PawnsKilled --> "InvolvedFactions<Faction>" "IEnumerable`1"
+@enduml

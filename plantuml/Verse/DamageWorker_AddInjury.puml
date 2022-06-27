@@ -1,0 +1,7 @@
+@startuml
+class DamageWorker_AddInjury {
+    + <<override>> Apply(dinfo:DamageInfo, thing:Thing) : DamageResult
+    + {static} ShouldReduceDamageToPreservePart(bodyPart:BodyPartRecord) : bool
+}
+DamageWorker <|-- DamageWorker_AddInjury
+@enduml

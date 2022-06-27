@@ -1,0 +1,10 @@
+@startuml
+class ScenPart_StartingResearch {
+    + <<override>> DoEditInterface(listing:Listing_ScenEdit) : void
+    + <<override>> Randomize() : void
+    + <<override>> ExposeData() : void
+    + <<override>> Summary(scen:Scenario) : string
+    + <<override>> PostGameStart() : void
+}
+ScenPart <|-- ScenPart_StartingResearch
+@enduml

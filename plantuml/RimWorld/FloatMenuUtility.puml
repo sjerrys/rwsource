@@ -1,0 +1,9 @@
+@startuml
+class FloatMenuUtility <<static>> {
+    + {static} MakeMenu(objects:IEnumerable<T>, labelGetter:Func<T, string>, actionGetter:Func<T, Action>) : void
+    + {static} GetRangedAttackAction(pawn:Pawn, target:LocalTargetInfo, failStr:string) : Action
+    + {static} GetMeleeAttackAction(pawn:Pawn, target:LocalTargetInfo, failStr:string) : Action
+    + {static} GetAttackAction(pawn:Pawn, target:LocalTargetInfo, failStr:string) : Action
+    + {static} DecoratePrioritizedTask(option:FloatMenuOption, pawn:Pawn, target:LocalTargetInfo, reservedText:string) : FloatMenuOption
+}
+@enduml

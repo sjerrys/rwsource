@@ -1,0 +1,5 @@
+@startuml
+class WardenFeedUtility <<static>> {
+    + {static} ShouldBeFed(p:Pawn) : bool
+}
+@enduml

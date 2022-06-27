@@ -1,0 +1,23 @@
+@startuml
+class Designator_Dropdown {
+    + <<override>> Label : string <<get>>
+    + <<override>> Desc : string <<get>>
+    + <<override>> Visible : bool <<get>>
+    + <<override>> PanelReadoutTitleExtraRightMargin : float <<get>>
+    + <<override>> GizmoOnGUI(topLeft:Vector2, maxWidth:float) : GizmoResult
+    + {static} DrawExtraOptionsIcon(topLeft:Vector2, width:float) : void
+    + Add(des:Designator) : void
+    + SetActiveDesignator(des:Designator, explicitySet:bool) : void
+    + <<override>> DrawMouseAttachments() : void
+    + <<override>> ProcessInput(ev:Event) : void
+    + <<override>> CanDesignateCell(loc:IntVec3) : AcceptanceReport
+    + <<override>> SelectedUpdate() : void
+    + <<override>> DrawPanelReadout(curY:float, width:float) : void
+}
+class "List`1"<T> {
+}
+Designator <|-- Designator_Dropdown
+Designator_Dropdown o-> "PlusTex" Texture2D
+Designator_Dropdown --> "IconDrawColor" Color
+Designator_Dropdown --> "Elements<Designator>" "List`1"
+@enduml

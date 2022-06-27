@@ -1,0 +1,7 @@
+@startuml
+class CompUseEffect_FinishRandomResearchProject {
+    + <<override>> DoEffect(usedBy:Pawn) : void
+    + <<override>> CanBeUsedBy(p:Pawn, failReason:string) : bool
+}
+CompUseEffect <|-- CompUseEffect_FinishRandomResearchProject
+@enduml

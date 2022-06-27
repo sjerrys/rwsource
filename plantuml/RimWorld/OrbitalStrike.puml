@@ -1,0 +1,12 @@
+@startuml
+class OrbitalStrike {
+    + duration : int
+    + <<override>> ExposeData() : void
+    + <<override>> Draw() : void
+    + <<virtual>> StartStrike() : void
+    + <<override>> Tick() : void
+}
+ThingWithComps <|-- OrbitalStrike
+OrbitalStrike --> "instigator" Thing
+OrbitalStrike --> "weaponDef" ThingDef
+@enduml

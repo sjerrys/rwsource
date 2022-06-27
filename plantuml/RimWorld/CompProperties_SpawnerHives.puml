@@ -1,0 +1,10 @@
+@startuml
+class CompProperties_SpawnerHives {
+    + HiveSpawnPreferredMinDist : float = 3.5f
+    + HiveSpawnRadius : float = 10f
+    + CompProperties_SpawnerHives()
+}
+CompProperties <|-- CompProperties_SpawnerHives
+CompProperties_SpawnerHives o-> "HiveSpawnIntervalDays" FloatRange
+CompProperties_SpawnerHives o-> "ReproduceRateFactorFromNearbyHiveCountCurve" SimpleCurve
+@enduml

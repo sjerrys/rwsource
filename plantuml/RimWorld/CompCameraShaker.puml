@@ -1,0 +1,7 @@
+@startuml
+class CompCameraShaker {
+    + <<override>> CompTick() : void
+}
+ThingComp <|-- CompCameraShaker
+CompCameraShaker --> "Props" CompProperties_CameraShaker
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class JobGiver_Reload {
+    + <<override>> GetPriority(pawn:Pawn) : float
+    + {static} MakeReloadJob(comp:CompReloadable, chosenAmmo:List<Thing>) : Job
+}
+ThinkNode_JobGiver <|-- JobGiver_Reload
+@enduml

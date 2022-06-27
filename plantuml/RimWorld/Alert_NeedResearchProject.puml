@@ -1,0 +1,7 @@
+@startuml
+class Alert_NeedResearchProject {
+    + Alert_NeedResearchProject()
+    + <<override>> GetReport() : AlertReport
+}
+Alert <|-- Alert_NeedResearchProject
+@enduml

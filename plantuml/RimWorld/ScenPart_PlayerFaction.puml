@@ -1,0 +1,13 @@
+@startuml
+class ScenPart_PlayerFaction {
+    + <<override>> ExposeData() : void
+    + <<override>> DoEditInterface(listing:Listing_ScenEdit) : void
+    + <<override>> Summary(scen:Scenario) : string
+    + <<override>> Randomize() : void
+    + <<override>> PostWorldGenerate() : void
+    + <<override>> PreMapGenerate() : void
+    + <<override>> PostGameStart() : void
+    + <<override>> ConfigErrors() : IEnumerable<string>
+}
+ScenPart <|-- ScenPart_PlayerFaction
+@enduml

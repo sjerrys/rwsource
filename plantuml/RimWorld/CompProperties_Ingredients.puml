@@ -1,0 +1,6 @@
+@startuml
+class CompProperties_Ingredients {
+    + CompProperties_Ingredients()
+}
+CompProperties <|-- CompProperties_Ingredients
+@enduml

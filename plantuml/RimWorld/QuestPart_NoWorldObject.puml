@@ -1,0 +1,12 @@
+@startuml
+class QuestPart_NoWorldObject {
+    + <<override>> QuestPartTick() : void
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+}
+class "IEnumerable`1"<T> {
+}
+QuestPartActivable <|-- QuestPart_NoWorldObject
+QuestPart_NoWorldObject --> "worldObject" WorldObject
+QuestPart_NoWorldObject --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+@enduml

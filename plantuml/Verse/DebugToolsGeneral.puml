@@ -1,0 +1,4 @@
+@startuml
+class DebugToolsGeneral <<static>> {
+}
+@enduml

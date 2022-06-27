@@ -1,0 +1,5 @@
+@startuml
+class StatPart_Health {
+}
+StatPart_Curve <|-- StatPart_Health
+@enduml

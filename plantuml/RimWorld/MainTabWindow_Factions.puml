@@ -1,0 +1,8 @@
+@startuml
+class MainTabWindow_Factions {
+    + <<override>> PreOpen() : void
+    + ScrollToFaction(faction:Faction) : void
+    + <<override>> DoWindowContents(fillRect:Rect) : void
+}
+MainTabWindow <|-- MainTabWindow_Factions
+@enduml

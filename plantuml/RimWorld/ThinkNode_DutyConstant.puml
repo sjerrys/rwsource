@@ -1,0 +1,7 @@
+@startuml
+class ThinkNode_DutyConstant {
+    + <<override>> TryIssueJobPackage(pawn:Pawn, jobParams:JobIssueParams) : ThinkResult
+    + <<override>> DeepCopy(resolve:bool) : ThinkNode
+}
+ThinkNode <|-- ThinkNode_DutyConstant
+@enduml

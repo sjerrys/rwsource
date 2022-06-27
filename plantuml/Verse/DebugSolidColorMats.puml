@@ -1,0 +1,5 @@
+@startuml
+class DebugSolidColorMats <<static>> {
+    + {static} MaterialOf(col:Color) : Material
+}
+@enduml

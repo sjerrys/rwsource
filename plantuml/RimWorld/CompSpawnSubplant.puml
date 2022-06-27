@@ -1,0 +1,17 @@
+@startuml
+class CompSpawnSubplant {
+    + AddProgress(progress:float) : void
+    + AddProgress_NewTmp(progress:float, ignoreMultiplier:bool) : void
+    + <<override>> CompTickLong() : void
+    + Cleanup() : void
+    + <<override>> CompInspectStringExtra() : string
+    + <<override>> CompGetGizmosExtra() : IEnumerable<Gizmo>
+    + <<override>> PostExposeData() : void
+}
+class "List`1"<T> {
+}
+ThingComp <|-- CompSpawnSubplant
+CompSpawnSubplant --> "onGrassGrown" Action
+CompSpawnSubplant --> "Props" CompProperties_SpawnSubplant
+CompSpawnSubplant --> "SubplantsForReading<Thing>" "List`1"
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+class CaravanArrivalAction_VisitSettlement {
+    + <<override>> Label : string <<get>>
+    + <<override>> ReportString : string <<get>>
+    + CaravanArrivalAction_VisitSettlement()
+    + CaravanArrivalAction_VisitSettlement(settlement:Settlement)
+    + <<override>> StillValid(caravan:Caravan, destinationTile:int) : FloatMenuAcceptanceReport
+    + <<override>> Arrived(caravan:Caravan) : void
+    + <<override>> ExposeData() : void
+    + {static} CanVisit(caravan:Caravan, settlement:Settlement) : FloatMenuAcceptanceReport
+    + {static} GetFloatMenuOptions(caravan:Caravan, settlement:Settlement) : IEnumerable<FloatMenuOption>
+}
+CaravanArrivalAction <|-- CaravanArrivalAction_VisitSettlement
+@enduml

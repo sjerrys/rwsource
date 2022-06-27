@@ -1,0 +1,11 @@
+@startuml
+class LordJob_DefendPoint {
+    + <<override>> IsCaravanSendable : bool <<get>>
+    + <<override>> AddFleeToil : bool <<get>>
+    + LordJob_DefendPoint()
+    + LordJob_DefendPoint(point:IntVec3, wanderRadius:float?, isCaravanSendable:bool, addFleeToil:bool)
+    + <<override>> CreateGraph() : StateGraph
+    + <<override>> ExposeData() : void
+}
+LordJob <|-- LordJob_DefendPoint
+@enduml

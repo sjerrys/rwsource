@@ -1,0 +1,21 @@
+@startuml
+class ReverbSetup {
+    + dryLevel : float
+    + room : float
+    + roomHF : float
+    + roomLF : float
+    + decayTime : float = 1f
+    + decayHFRatio : float = 0.5f
+    + reflectionsLevel : float
+    + reflectionsDelay : float
+    + reverbLevel : float
+    + reverbDelay : float = 0.04f
+    + hfReference : float = 5000f
+    + lfReference : float = 250f
+    + diffusion : float = 100f
+    + density : float = 100f
+    + DoEditWidgets(widgetRow:WidgetRow) : void
+    + ApplyTo(filter:AudioReverbFilter) : void
+    + {static} Lerp(A:ReverbSetup, B:ReverbSetup, t:float) : ReverbSetup
+}
+@enduml

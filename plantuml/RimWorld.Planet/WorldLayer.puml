@@ -1,0 +1,10 @@
+@startuml
+class WorldLayer {
+    + <<virtual>> ShouldRegenerate : bool <<get>>
+    + Dirty : bool <<get>>
+    + RegenerateNow() : void
+    + Render() : void
+    + <<virtual>> Regenerate() : IEnumerable
+    + SetDirty() : void
+}
+@enduml

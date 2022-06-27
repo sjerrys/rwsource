@@ -1,0 +1,10 @@
+@startuml
+enum PriceType {
+    Undefined,
+    VeryCheap,
+    Cheap,
+    Normal,
+    Expensive,
+    Exorbitant,
+}
+@enduml

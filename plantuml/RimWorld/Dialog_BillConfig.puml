@@ -1,0 +1,9 @@
+@startuml
+class Dialog_BillConfig {
+    + Dialog_BillConfig(bill:Bill_Production, billGiverPos:IntVec3)
+    + <<override>> WindowUpdate() : void
+    + <<override>> DoWindowContents(inRect:Rect) : void
+}
+Window <|-- Dialog_BillConfig
+Dialog_BillConfig --> "InitialSize" Vector2
+@enduml

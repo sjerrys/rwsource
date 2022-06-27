@@ -1,0 +1,15 @@
+@startuml
+class QuestNode_SubScript {
+    + <<override>> ToString() : string
+}
+class "SlateRef`1"<T> {
+}
+class "List`1"<T> {
+}
+QuestNode <|-- QuestNode_SubScript
+QuestNode_SubScript --> "def<QuestScriptDef>" "SlateRef`1"
+QuestNode_SubScript --> "prefix<string>" "SlateRef`1"
+QuestNode_SubScript --> "allowNonPrefixedLookup<bool>" "SlateRef`1"
+QuestNode_SubScript o-> "parms<PrefixCapturedVar>" "List`1"
+QuestNode_SubScript o-> "returnVarNames<SlateRef<string>>" "List`1"
+@enduml

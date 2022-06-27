@@ -1,0 +1,17 @@
+@startuml
+class MessageTypeDefOf <<static>> {
+    {static} MessageTypeDefOf()
+}
+MessageTypeDefOf --> "ThreatBig" MessageTypeDef
+MessageTypeDefOf --> "ThreatSmall" MessageTypeDef
+MessageTypeDefOf --> "PawnDeath" MessageTypeDef
+MessageTypeDefOf --> "NegativeHealthEvent" MessageTypeDef
+MessageTypeDefOf --> "NegativeEvent" MessageTypeDef
+MessageTypeDefOf --> "NeutralEvent" MessageTypeDef
+MessageTypeDefOf --> "TaskCompletion" MessageTypeDef
+MessageTypeDefOf --> "PositiveEvent" MessageTypeDef
+MessageTypeDefOf --> "SituationResolved" MessageTypeDef
+MessageTypeDefOf --> "RejectInput" MessageTypeDef
+MessageTypeDefOf --> "CautionInput" MessageTypeDef
+MessageTypeDefOf --> "SilentInput" MessageTypeDef
+@enduml

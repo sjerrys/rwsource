@@ -1,0 +1,13 @@
+@startuml
+class ByteGrid <<sealed>> {
+    + CellsCount : int <<get>>
+    + ByteGrid()
+    + ByteGrid(map:Map)
+    + MapSizeMatches(map:Map) : bool
+    + ClearAndResizeTo(map:Map) : void
+    + ExposeData() : void
+    + Clear(value:byte) : void
+    + DebugDraw() : void
+}
+IExposable <|-- ByteGrid
+@enduml

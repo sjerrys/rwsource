@@ -1,0 +1,5 @@
+@startuml
+class MultipleCaravansCellFinder <<static>> {
+    + {static} FindStartingCellsFor2Groups(map:Map, first:IntVec3, second:IntVec3) : void
+}
+@enduml

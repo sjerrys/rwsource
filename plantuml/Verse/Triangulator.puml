@@ -1,0 +1,6 @@
+@startuml
+class Triangulator {
+    + Triangulator(points:Vector2[])
+    + Triangulate() : int[]
+}
+@enduml

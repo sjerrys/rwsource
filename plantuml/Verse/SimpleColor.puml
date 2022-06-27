@@ -1,0 +1,11 @@
+@startuml
+enum SimpleColor {
+    White,
+    Red,
+    Green,
+    Blue,
+    Magenta,
+    Yellow,
+    Cyan,
+}
+@enduml

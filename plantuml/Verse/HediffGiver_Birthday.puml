@@ -1,0 +1,9 @@
+@startuml
+class HediffGiver_Birthday {
+    + averageSeverityPerDayBeforeGeneration : float
+    + TryApplyAndSimulateSeverityChange(pawn:Pawn, gotAtAge:float, tryNotToKillPawn:bool) : void
+    + DebugChanceToHaveAtAge(pawn:Pawn, age:int) : float
+}
+HediffGiver <|-- HediffGiver_Birthday
+HediffGiver_Birthday --> "ageFractionChanceCurve" SimpleCurve
+@enduml

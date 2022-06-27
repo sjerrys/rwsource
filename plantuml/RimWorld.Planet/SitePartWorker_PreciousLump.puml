@@ -1,0 +1,7 @@
+@startuml
+class SitePartWorker_PreciousLump {
+    + <<override>> GetPostProcessedThreatLabel(site:Site, sitePart:SitePart) : string
+    + <<override>> Notify_GeneratedByQuestGen(part:SitePart, slate:Slate, outExtraDescriptionRules:List<Rule>, outExtraDescriptionConstants:Dictionary<string, string>) : void
+}
+SitePartWorker <|-- SitePartWorker_PreciousLump
+@enduml

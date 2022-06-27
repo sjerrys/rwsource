@@ -1,0 +1,19 @@
+@startuml
+class TranslationFilesCleaner <<static>> {
+    + {static} CleanupTranslationFiles() : void
+    + {static} GetLanguageFolderPath(language:LoadedLanguage, modRootDir:string) : string
+}
+class PossibleDefInjection {
+    + suggestedPath : string
+    + normalizedPath : string
+    + isCollection : bool
+    + fullListTranslationAllowed : bool
+    + curValue : string
+}
+class "IEnumerable`1"<T> {
+}
+TranslationFilesCleaner +-- PossibleDefInjection
+PossibleDefInjection --> "curValueCollection<string>" "IEnumerable`1"
+PossibleDefInjection --> "fieldInfo" FieldInfo
+PossibleDefInjection --> "def" Def
+@enduml

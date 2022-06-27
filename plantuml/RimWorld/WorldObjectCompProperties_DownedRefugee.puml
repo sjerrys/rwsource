@@ -1,0 +1,6 @@
+@startuml
+class WorldObjectCompProperties_DownedRefugee {
+    + WorldObjectCompProperties_DownedRefugee()
+}
+WorldObjectCompProperties <|-- WorldObjectCompProperties_DownedRefugee
+@enduml

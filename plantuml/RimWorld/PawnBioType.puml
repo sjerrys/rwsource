@@ -1,0 +1,7 @@
+@startuml
+enum PawnBioType {
+    Undefined,
+    BackstoryInGame,
+    PirateKing,
+}
+@enduml

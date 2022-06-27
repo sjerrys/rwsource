@@ -1,0 +1,8 @@
+@startuml
+class Alert_StarvationColonists {
+    + Alert_StarvationColonists()
+    + <<override>> GetExplanation() : TaggedString
+    + <<override>> GetReport() : AlertReport
+}
+Alert <|-- Alert_StarvationColonists
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+abstract class SignalAction {
+    + signalTag : string
+    + <<override>> Notify_SignalReceived(signal:Signal) : void
+    + <<override>> ExposeData() : void
+}
+Thing <|-- SignalAction
+@enduml

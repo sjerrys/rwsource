@@ -1,0 +1,9 @@
+@startuml
+class LordJob_VisitColony {
+    + LordJob_VisitColony()
+    + LordJob_VisitColony(faction:Faction, chillSpot:IntVec3)
+    + <<override>> CreateGraph() : StateGraph
+    + <<override>> ExposeData() : void
+}
+LordJob <|-- LordJob_VisitColony
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class ThoughtWorker_NoThroneroom {
+}
+ThoughtWorker <|-- ThoughtWorker_NoThroneroom
+@enduml

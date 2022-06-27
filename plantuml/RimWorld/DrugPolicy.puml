@@ -1,0 +1,14 @@
+@startuml
+class DrugPolicy {
+    + uniqueId : int
+    + label : string
+    + Count : int <<get>>
+    + DrugPolicy()
+    + DrugPolicy(uniqueId:int, label:string)
+    + InitializeIfNeeded() : void
+    + ExposeData() : void
+    + GetUniqueLoadID() : string
+}
+IExposable <|-- DrugPolicy
+ILoadReferenceable <|-- DrugPolicy
+@enduml

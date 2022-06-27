@@ -1,0 +1,13 @@
+@startuml
+class TunnelHiveSpawner {
+    + spawnHive : bool = true
+    + insectsPoints : float
+    + spawnedByInfestationThingComp : bool
+    + {static} ResetStaticData() : void
+    + <<override>> ExposeData() : void
+    + <<override>> SpawnSetup(map:Map, respawningAfterLoad:bool) : void
+    + <<override>> Tick() : void
+    + <<override>> Draw() : void
+}
+ThingWithComps <|-- TunnelHiveSpawner
+@enduml

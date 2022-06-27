@@ -1,0 +1,5 @@
+@startuml
+class ColorsFromSpectrum <<static>> {
+    + {static} Get(spectrum:IList<Color>, val:float) : Color
+}
+@enduml

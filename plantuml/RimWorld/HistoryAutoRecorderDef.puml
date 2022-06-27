@@ -1,0 +1,12 @@
+@startuml
+class HistoryAutoRecorderDef {
+    + recordTicksFrequency : int = 60000
+    + graphLabelY : string
+    + valueFormat : string
+    + {static} Named(defName:string) : HistoryAutoRecorderDef
+}
+Def <|-- HistoryAutoRecorderDef
+HistoryAutoRecorderDef --> "workerClass" Type
+HistoryAutoRecorderDef o-> "graphColor" Color
+HistoryAutoRecorderDef --> "Worker" HistoryAutoRecorderWorker
+@enduml

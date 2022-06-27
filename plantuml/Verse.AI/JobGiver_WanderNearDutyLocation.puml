@@ -1,0 +1,6 @@
+@startuml
+class JobGiver_WanderNearDutyLocation {
+    + JobGiver_WanderNearDutyLocation()
+}
+JobGiver_Wander <|-- JobGiver_WanderNearDutyLocation
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class StatCategoryDef {
+    + displayOrder : int
+    + displayAllByDefault : bool
+}
+Def <|-- StatCategoryDef
+@enduml

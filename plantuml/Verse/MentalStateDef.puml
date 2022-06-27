@@ -1,0 +1,41 @@
+@startuml
+class MentalStateDef {
+    + prisonersCanDo : bool = true
+    + unspawnedCanDo : bool
+    + colonistsOnly : bool
+    + blockNormalThoughts : bool
+    + blockRandomInteraction : bool
+    + allowBeatfire : bool
+    + ignoreDrugPolicy : bool
+    + recoveryMtbDays : float = 1f
+    + minTicksBeforeRecovery : int = 500
+    + maxTicksBeforeRecovery : int = 99999999
+    + recoverFromSleep : bool
+    + recoverFromDowned : bool = true
+    + recoverFromCollapsingExhausted : bool = true
+    + beginLetter : string
+    + beginLetterLabel : string
+    + recoveryMessage : string
+    + baseInspectLine : string
+    + escapingPrisonersIgnore : bool
+    + IsAggro : bool <<get>>
+    + IsExtreme : bool <<get>>
+    + <<override>> ResolveReferences() : void
+}
+class "List`1"<T> {
+}
+Def <|-- MentalStateDef
+MentalStateDef o-> "stateClass" Type
+MentalStateDef o-> "workerClass" Type
+MentalStateDef --> "category" MentalStateCategory
+MentalStateDef o-> "requiredCapacities<PawnCapacityDef>" "List`1"
+MentalStateDef --> "blockInteractionInitiationExcept<InteractionDef>" "List`1"
+MentalStateDef --> "blockInteractionRecipientExcept<InteractionDef>" "List`1"
+MentalStateDef --> "stateEffecter" EffecterDef
+MentalStateDef --> "tale" TaleDef
+MentalStateDef o-> "drugCategory" DrugCategory
+MentalStateDef --> "moodRecoveryThought" ThoughtDef
+MentalStateDef --> "beginLetterDef" LetterDef
+MentalStateDef o-> "nameColor" Color
+MentalStateDef --> "Worker" MentalStateWorker
+@enduml

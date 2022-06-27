@@ -1,0 +1,9 @@
+@startuml
+class ProfilerPairValidation <<static>> {
+    + {static} BeginSample(token:string) : void
+    + {static} EndSample() : void
+}
+class "Stack`1"<T> {
+}
+ProfilerPairValidation o-> "profilerSignatures<StackTrace>" "Stack`1"
+@enduml

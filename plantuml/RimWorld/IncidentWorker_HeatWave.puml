@@ -1,0 +1,6 @@
+@startuml
+class IncidentWorker_HeatWave {
+    + {static} IsTemperatureAppropriate(map:Map) : bool
+}
+IncidentWorker_MakeGameCondition <|-- IncidentWorker_HeatWave
+@enduml

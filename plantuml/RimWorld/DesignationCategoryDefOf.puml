@@ -1,0 +1,9 @@
+@startuml
+class DesignationCategoryDefOf <<static>> {
+    {static} DesignationCategoryDefOf()
+}
+DesignationCategoryDefOf --> "Production" DesignationCategoryDef
+DesignationCategoryDefOf --> "Structure" DesignationCategoryDef
+DesignationCategoryDefOf --> "Security" DesignationCategoryDef
+DesignationCategoryDefOf --> "Floors" DesignationCategoryDef
+@enduml

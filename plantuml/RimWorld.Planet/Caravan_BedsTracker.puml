@@ -1,0 +1,16 @@
+@startuml
+class Caravan_BedsTracker {
+    + Caravan_BedsTracker()
+    + Caravan_BedsTracker(caravan:Caravan)
+    + BedsTrackerTick() : void
+    + ExposeData() : void
+    + Notify_CaravanSpawned() : void
+    + Notify_PawnRemoved() : void
+    + GetBedUsedBy(p:Pawn) : Building_Bed
+    + IsInBed(p:Pawn) : bool
+    + GetUsedBedCount() : int
+    + GetInBedForMedicalReasonsInspectStringLine() : string
+}
+IExposable <|-- Caravan_BedsTracker
+Caravan_BedsTracker --> "caravan" Caravan
+@enduml

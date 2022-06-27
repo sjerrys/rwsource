@@ -1,0 +1,6 @@
+@startuml
+class MentalState_PanicFlee {
+    + <<override>> SocialModeMax() : RandomSocialMode
+}
+MentalState <|-- MentalState_PanicFlee
+@enduml

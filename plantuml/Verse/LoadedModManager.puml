@@ -1,0 +1,26 @@
+@startuml
+class LoadedModManager <<static>> {
+    + {static} LoadAllActiveMods() : void
+    + {static} InitializeMods() : void
+    + {static} LoadModContent() : void
+    + {static} CreateModClasses() : void
+    + {static} LoadModXML() : List<LoadableXmlAsset>
+    + {static} ApplyPatches(xmlDoc:XmlDocument, assetlookup:Dictionary<XmlNode, LoadableXmlAsset>) : void
+    + {static} CombineIntoUnifiedXML(xmls:List<LoadableXmlAsset>, assetlookup:Dictionary<XmlNode, LoadableXmlAsset>) : XmlDocument
+    + {static} ParseAndProcessXML(xmlDoc:XmlDocument, assetlookup:Dictionary<XmlNode, LoadableXmlAsset>) : void
+    + {static} ClearCachedPatches() : void
+    + {static} ClearDestroy() : void
+    + {static} GetMod() : T
+    + {static} GetMod(type:Type) : Mod
+    + {static} ReadModSettings(modIdentifier:string, modHandleName:string) : T
+    + {static} WriteModSettings(modIdentifier:string, modHandleName:string, settings:ModSettings) : void
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+LoadedModManager --> "RunningModsListForReading<ModContentPack>" "List`1"
+LoadedModManager --> "RunningMods<ModContentPack>" "IEnumerable`1"
+LoadedModManager --> "PatchedDefsForReading<Def>" "List`1"
+LoadedModManager --> "ModHandles<Mod>" "IEnumerable`1"
+@enduml

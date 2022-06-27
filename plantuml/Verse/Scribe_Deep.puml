@@ -1,0 +1,6 @@
+@startuml
+class Scribe_Deep {
+    + {static} Look(target:T, label:string, ctorArgs:object[]) : void
+    + {static} Look(target:T, saveDestroyedThings:bool, label:string, ctorArgs:object[]) : void
+}
+@enduml

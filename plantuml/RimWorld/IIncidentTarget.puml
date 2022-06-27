@@ -1,0 +1,15 @@
+@startuml
+interface IIncidentTarget {
+    Tile : int <<get>>
+    PlayerWealthForStoryteller : float <<get>>
+    ConstantRandSeed : int <<get>>
+    IncidentTargetTags() : IEnumerable<IncidentTargetTagDef>
+}
+class "IEnumerable`1"<T> {
+}
+ILoadReferenceable <|-- IIncidentTarget
+IIncidentTarget --> "StoryState" StoryState
+IIncidentTarget --> "GameConditionManager" GameConditionManager
+IIncidentTarget --> "PlayerPawnsForStoryteller<Pawn>" "IEnumerable`1"
+IIncidentTarget --> "IncidentPointsRandomFactorRange" FloatRange
+@enduml

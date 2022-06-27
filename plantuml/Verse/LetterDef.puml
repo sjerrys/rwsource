@@ -1,0 +1,16 @@
+@startuml
+class LetterDef {
+    + flashInterval : float = 90f
+    + bounce : bool
+    + icon : string = "UI/Letters/LetterUnopened"
+    + forcedSlowdown : bool
+    + <<override>> ResolveReferences() : void
+}
+Def <|-- LetterDef
+LetterDef o-> "letterClass" Type
+LetterDef o-> "color" Color
+LetterDef o-> "flashColor" Color
+LetterDef --> "arriveSound" SoundDef
+LetterDef o-> "pauseMode" AutomaticPauseMode
+LetterDef --> "Icon" Texture2D
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class NativeVerbPropertiesDatabase <<static>> {
+    {static} NativeVerbPropertiesDatabase()
+    + {static} VerbWithCategory(id:VerbCategory) : VerbProperties
+}
+class "List`1"<T> {
+}
+NativeVerbPropertiesDatabase --> "allVerbDefs<VerbProperties>" "List`1"
+@enduml

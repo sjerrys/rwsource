@@ -1,0 +1,39 @@
+@startuml
+class IngestibleProperties {
+    + maxNumToIngestAtOnce : int = 20
+    + baseIngestTicks : int = 500
+    + chairSearchRadius : float = 32f
+    + useEatingSpeedStat : bool = true
+    + ingestCommandString : string
+    + ingestReportString : string
+    + ingestReportStringEat : string
+    + ingestHoldUsesTable : bool = true
+    + joy : float
+    + nurseable : bool
+    + optimalityOffsetHumanlikes : float
+    + optimalityOffsetFeedingAnimals : float
+    + canAutoSelectAsFoodForCaravan : bool = true
+    + HumanEdible : bool <<get>>
+    + IsMeal : bool <<get>>
+    + CachedNutrition : float <<get>>
+    + ConfigErrors() : IEnumerable<string>
+    + MaxSatisfiedTitle() : RoyalTitleDef
+}
+class "List`1"<T> {
+}
+IngestibleProperties --> "parent" ThingDef
+IngestibleProperties --> "outcomeDoers<IngestionOutcomeDoer>" "List`1"
+IngestibleProperties --> "tasteThought" ThoughtDef
+IngestibleProperties --> "specialThoughtDirect" ThoughtDef
+IngestibleProperties --> "specialThoughtAsIngredient" ThoughtDef
+IngestibleProperties --> "ingestEffect" EffecterDef
+IngestibleProperties --> "ingestEffectEat" EffecterDef
+IngestibleProperties --> "ingestSound" SoundDef
+IngestibleProperties --> "ingestHoldOffsetStanding" HoldOffsetSet
+IngestibleProperties --> "foodType" FoodTypeFlags
+IngestibleProperties --> "joyKind" JoyKindDef
+IngestibleProperties --> "sourceDef" ThingDef
+IngestibleProperties --> "preferability" FoodPreferability
+IngestibleProperties --> "drugCategory" DrugCategory
+IngestibleProperties --> "JoyKind" JoyKindDef
+@enduml

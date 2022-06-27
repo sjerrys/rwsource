@@ -1,0 +1,9 @@
+@startuml
+class HediffGiver_BrainInjury {
+    + chancePerDamagePct : float
+    + letterLabel : string
+    + letter : string
+    + <<override>> OnHediffAdded(pawn:Pawn, hediff:Hediff) : bool
+}
+HediffGiver <|-- HediffGiver_BrainInjury
+@enduml

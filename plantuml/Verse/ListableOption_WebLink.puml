@@ -1,0 +1,11 @@
+@startuml
+class ListableOption_WebLink {
+    + url : string
+    + ListableOption_WebLink(label:string, image:Texture2D)
+    + ListableOption_WebLink(label:string, url:string, image:Texture2D)
+    + ListableOption_WebLink(label:string, action:Action, image:Texture2D)
+    + <<override>> DrawOption(pos:Vector2, width:float) : float
+}
+ListableOption <|-- ListableOption_WebLink
+ListableOption_WebLink --> "image" Texture2D
+@enduml

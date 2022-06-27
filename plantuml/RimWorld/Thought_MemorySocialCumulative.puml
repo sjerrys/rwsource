@@ -1,0 +1,9 @@
+@startuml
+class Thought_MemorySocialCumulative {
+    + <<override>> ShouldDiscard : bool <<get>>
+    + <<override>> OpinionOffset() : float
+    + <<override>> ThoughtInterval() : void
+    + <<override>> TryMergeWithExistingMemory(showBubble:bool) : bool
+}
+Thought_MemorySocial <|-- Thought_MemorySocialCumulative
+@enduml

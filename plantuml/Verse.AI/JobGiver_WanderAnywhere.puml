@@ -1,0 +1,6 @@
+@startuml
+class JobGiver_WanderAnywhere {
+    + JobGiver_WanderAnywhere()
+}
+JobGiver_Wander <|-- JobGiver_WanderAnywhere
+@enduml

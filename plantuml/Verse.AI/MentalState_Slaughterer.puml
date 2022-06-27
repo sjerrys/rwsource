@@ -1,0 +1,9 @@
+@startuml
+class MentalState_Slaughterer {
+    + SlaughteredRecently : bool <<get>>
+    + <<override>> ExposeData() : void
+    + <<override>> MentalStateTick() : void
+    + <<override>> Notify_SlaughteredAnimal() : void
+}
+MentalState <|-- MentalState_Slaughterer
+@enduml

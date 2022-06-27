@@ -1,0 +1,7 @@
+@startuml
+class SustainerScopeFader {
+    + inScope : bool = true
+    + inScopePercent : float = 1f
+    + SustainerScopeUpdate() : void
+}
+@enduml

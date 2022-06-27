@@ -1,0 +1,5 @@
+@startuml
+class JobGiver_HaulCorpseToPublicPlace {
+}
+ThinkNode_JobGiver <|-- JobGiver_HaulCorpseToPublicPlace
+@enduml

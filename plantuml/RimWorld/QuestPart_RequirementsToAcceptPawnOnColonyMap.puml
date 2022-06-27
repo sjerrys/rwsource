@@ -1,0 +1,11 @@
+@startuml
+class QuestPart_RequirementsToAcceptPawnOnColonyMap {
+    + <<override>> CanAccept() : AcceptanceReport
+    + <<override>> ExposeData() : void
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart_RequirementsToAccept <|-- QuestPart_RequirementsToAcceptPawnOnColonyMap
+QuestPart_RequirementsToAcceptPawnOnColonyMap --> "pawn" Pawn
+QuestPart_RequirementsToAcceptPawnOnColonyMap --> "Hyperlinks<Dialog_InfoCard.Hyperlink>" "IEnumerable`1"
+@enduml

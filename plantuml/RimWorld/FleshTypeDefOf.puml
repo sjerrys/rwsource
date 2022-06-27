@@ -1,0 +1,8 @@
+@startuml
+class FleshTypeDefOf <<static>> {
+    {static} FleshTypeDefOf()
+}
+FleshTypeDefOf --> "Normal" FleshTypeDef
+FleshTypeDefOf --> "Mechanoid" FleshTypeDef
+FleshTypeDefOf --> "Insectoid" FleshTypeDef
+@enduml

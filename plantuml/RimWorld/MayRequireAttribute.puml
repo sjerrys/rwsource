@@ -1,0 +1,7 @@
+@startuml
+class MayRequireAttribute {
+    + modId : string
+    + MayRequireAttribute(modId:string)
+}
+Attribute <|-- MayRequireAttribute
+@enduml

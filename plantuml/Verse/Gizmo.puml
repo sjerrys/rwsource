@@ -1,0 +1,22 @@
+@startuml
+abstract class Gizmo {
+    + disabled : bool
+    + disabledReason : string
+    + alsoClickIfOtherInGroupClicked : bool = true
+    + order : float
+    + <<const>> Height : float = 75f
+    + <<virtual>> Visible : bool <<get>>
+    + {abstract} GizmoOnGUI(topLeft:Vector2, maxWidth:float) : GizmoResult
+    + <<virtual>> GizmoUpdateOnMouseover() : void
+    + {abstract} GetWidth(maxWidth:float) : float
+    + <<virtual>> ProcessInput(ev:Event) : void
+    + <<virtual>> GroupsWith(other:Gizmo) : bool
+    + <<virtual>> MergeWith(other:Gizmo) : void
+    + <<virtual>> InheritInteractionsFrom(other:Gizmo) : bool
+    + <<virtual>> InheritFloatMenuInteractionsFrom(other:Gizmo) : bool
+    + Disable(reason:string) : void
+}
+class "IEnumerable`1"<T> {
+}
+Gizmo --> "RightClickFloatMenuOptions<FloatMenuOption>" "IEnumerable`1"
+@enduml

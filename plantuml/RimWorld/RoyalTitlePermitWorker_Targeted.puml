@@ -1,0 +1,21 @@
+@startuml
+abstract class RoyalTitlePermitWorker_Targeted {
+    + CasterIsPawn : bool <<get>>
+    + IsMeleeAttack : bool <<get>>
+    + Targetable : bool <<get>>
+    + MultiSelect : bool <<get>>
+    + CanHitTarget(target:LocalTargetInfo) : bool
+    + <<virtual>> ValidateTarget(target:LocalTargetInfo) : bool
+    + <<virtual>> DrawHighlight(target:LocalTargetInfo) : void
+    + <<virtual>> OrderForceTarget(target:LocalTargetInfo) : void
+    + <<virtual>> OnGUI(target:LocalTargetInfo) : void
+}
+RoyalTitlePermitWorker <|-- RoyalTitlePermitWorker_Targeted
+ITargetingSource <|-- RoyalTitlePermitWorker_Targeted
+RoyalTitlePermitWorker_Targeted --> "Caster" Thing
+RoyalTitlePermitWorker_Targeted --> "CasterPawn" Pawn
+RoyalTitlePermitWorker_Targeted --> "GetVerb" Verb
+RoyalTitlePermitWorker_Targeted --> "UIIcon" Texture2D
+RoyalTitlePermitWorker_Targeted --> "targetParams" TargetingParameters
+RoyalTitlePermitWorker_Targeted --> "DestinationSelector" ITargetingSource
+@enduml

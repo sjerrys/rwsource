@@ -1,0 +1,90 @@
+@startuml
+class Faction {
+    + loadID : int
+    + randomKey : int
+    + colorFromSpectrum : float
+    + centralMelanin : float = 0.5f
+    + defeated : bool
+    + lastTraderRequestTick : int
+    + lastMilitaryAidRequestTick : int
+    + allowRoyalFavorRewards : bool = true
+    + allowGoodwillRewards : bool = true
+    + color : Color?
+    + hidden : bool?
+    + temporary : bool
+    + hostileFromMemberCapture : bool = true
+    + <<const>> RoyalThingUseViolationGoodwillImpact : int = 4
+    + Name : string <<get>> <<set>>
+    + HasName : bool <<get>>
+    + IsPlayer : bool <<get>>
+    + PlayerGoodwill : int <<get>>
+    + LeaderTitle : string <<get>>
+    + CanGiveGoodwillRewards : bool <<get>>
+    + CanEverGiveGoodwillRewards : bool <<get>>
+    + GetReportText : string <<get>>
+    + Hidden : bool <<get>>
+    + HasGoodwill : bool <<get>>
+    + Faction()
+    + ExposeData() : void
+    + FactionTick() : void
+    + TryMakeInitialRelationsWith(other:Faction) : void
+    + SetRelation(relation:FactionRelation) : void
+    + RandomPawnKind() : PawnKindDef
+    + RelationWith(other:Faction, allowNull:bool) : FactionRelation
+    + GoodwillWith(other:Faction) : int
+    + RelationKindWith(other:Faction) : FactionRelationKind
+    + CanChangeGoodwillFor(other:Faction, goodwillChange:int) : bool
+    + TryAffectGoodwillWith(other:Faction, goodwillChange:int, canSendMessage:bool, canSendHostilityLetter:bool, reason:string, lookTarget:GlobalTargetInfo?) : bool
+    + SetRelationDirect(other:Faction, kind:FactionRelationKind, canSendHostilityLetter:bool, reason:string, lookTarget:GlobalTargetInfo?) : void
+    + TrySetNotHostileTo(other:Faction, canSendLetter:bool, reason:string, lookTarget:GlobalTargetInfo?) : bool
+    + TrySetNotAlly(other:Faction, canSendLetter:bool, reason:string, lookTarget:GlobalTargetInfo?) : bool
+    + TrySetRelationKind(other:Faction, kind:FactionRelationKind, canSendLetter:bool, reason:string, lookTarget:GlobalTargetInfo?) : bool
+    + RemoveAllRelations() : void
+    + TryAppendRelationKindChangedInfo(text:StringBuilder, previousKind:FactionRelationKind, newKind:FactionRelationKind, reason:string) : void
+    + TryAppendRelationKindChangedInfo(text:TaggedString, previousKind:FactionRelationKind, newKind:FactionRelationKind, reason:string) : void
+    + Notify_MemberTookDamage(member:Pawn, dinfo:DamageInfo) : void
+    + Notify_BuildingTookDamage(building:Building, dinfo:DamageInfo) : void
+    + Notify_MemberCaptured(member:Pawn, violator:Faction) : void
+    + Notify_MemberStripped(member:Pawn, violator:Faction) : void
+    + Notify_MemberDied(member:Pawn, dinfo:DamageInfo?, wasWorldPawn:bool, map:Map) : void
+    + Notify_LeaderDied() : void
+    + Notify_LeaderLost() : void
+    + Notify_RelationKindChanged(other:Faction, previousKind:FactionRelationKind, canSendLetter:bool, reason:string, lookTarget:GlobalTargetInfo, sentLetter:bool) : void
+    + Notify_PlayerTraded(marketValueSentByPlayer:float, playerNegotiator:Pawn) : void
+    + Notify_MemberExitedMap(member:Pawn, free:bool) : void
+    + GetGoodwillGainForPrisonerRelease(member:Pawn, isHealthy:bool) : int
+    + GenerateNewLeader() : void
+    + TryGenerateNewLeader() : bool
+    + GetCallLabel() : string
+    + GetInfoText() : string
+    GetFaction() : Faction
+    + TryOpenComms(negotiator:Pawn) : void
+    + CommFloatMenuOption(console:Building_CommsConsole, negotiator:Pawn) : FloatMenuOption
+    + HasPredatorRecentlyAttackedAnyone(predator:Pawn) : bool
+    + Notify_RoyalThingUseViolation(implantOrWeapon:Def, pawn:Pawn, violationSourceName:string, detectionChance:float, violationSourceLevel:int) : void
+    + GetMinTitleForImplant(implantDef:HediffDef, level:int) : RoyalTitleDef
+    + GetMaxAllowedImplantLevel(implantDef:HediffDef, title:RoyalTitleDef) : RoyalImplantRule
+    + {static} GetMinTitleForImplantAllFactions(implantDef:HediffDef) : Pair<Faction, RoyalTitleDef>
+    + GetUniqueLoadID() : string
+    + <<override>> ToString() : string
+}
+class "List`1"<T> {
+}
+IExposable <|-- Faction
+ILoadReferenceable <|-- Faction
+ICommunicable <|-- Faction
+Faction --> "def" FactionDef
+Faction --> "leader" Pawn
+Faction --> "kidnapped" KidnappedPawnsTracker
+Faction --> "questTags<string>" "List`1"
+Faction --> "PlayerRelationKind" FactionRelationKind
+Faction --> "Color" Color
+Faction --> "NameColored" TaggedString
+Faction --> "OfPlayer" Faction
+Faction --> "OfMechanoids" Faction
+Faction --> "OfInsects" Faction
+Faction --> "OfAncients" Faction
+Faction --> "OfAncientsHostile" Faction
+Faction --> "Empire" Faction
+Faction --> "OfPlayerSilentFail" Faction
+@enduml

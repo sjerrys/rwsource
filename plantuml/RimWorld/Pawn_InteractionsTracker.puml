@@ -1,0 +1,16 @@
+@startuml
+class Pawn_InteractionsTracker {
+    + <<const>> RandomInteractIntervalMin : int = 320
+    + <<const>> DirectTalkInteractInterval : int = 320
+    + Pawn_InteractionsTracker(pawn:Pawn)
+    + ExposeData() : void
+    + InteractionsTrackerTick() : void
+    + InteractedTooRecentlyToInteract() : bool
+    + CanInteractNowWith(recipient:Pawn, interactionDef:InteractionDef) : bool
+    + TryInteractWith(recipient:Pawn, intDef:InteractionDef) : bool
+    + CheckSocialFightStart(interaction:InteractionDef, initiator:Pawn) : bool
+    + StartSocialFight(otherPawn:Pawn) : void
+    + SocialFightChance(interaction:InteractionDef, initiator:Pawn) : float
+}
+IExposable <|-- Pawn_InteractionsTracker
+@enduml

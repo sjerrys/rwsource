@@ -1,0 +1,7 @@
+@startuml
+class ScenarioDefOf <<static>> {
+    {static} ScenarioDefOf()
+}
+ScenarioDefOf --> "Crashlanded" ScenarioDef
+ScenarioDefOf --> "Tutorial" ScenarioDef
+@enduml

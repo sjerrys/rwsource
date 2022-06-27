@@ -1,0 +1,10 @@
+@startuml
+abstract class JobDriver_InteractAnimal {
+    + <<const>> FeedCount : int = 2
+    + <<override>> ExposeData() : void
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+    + {static} RequiredNutritionPerFeed(animal:Pawn) : float
+}
+JobDriver <|-- JobDriver_InteractAnimal
+JobDriver_InteractAnimal o-> "MaxFoodPreferability" FoodPreferability
+@enduml

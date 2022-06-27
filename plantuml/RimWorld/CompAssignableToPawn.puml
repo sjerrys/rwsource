@@ -1,0 +1,26 @@
+@startuml
+class CompAssignableToPawn {
+    + MaxAssignedPawnsCount : int <<get>>
+    + PlayerCanSeeAssignments : bool <<get>>
+    + HasFreeSlot : bool <<get>>
+    + <<override>> DrawGUIOverlay() : void
+    + <<virtual>> ForceAddPawn(pawn:Pawn) : void
+    + <<virtual>> ForceRemovePawn(pawn:Pawn) : void
+    + <<virtual>> CanAssignTo(pawn:Pawn) : AcceptanceReport
+    + <<virtual>> TryAssignPawn(pawn:Pawn) : void
+    + <<virtual>> TryUnassignPawn(pawn:Pawn, sort:bool) : void
+    + <<virtual>> AssignedAnything(pawn:Pawn) : bool
+    + <<override>> CompGetGizmosExtra() : IEnumerable<Gizmo>
+    + <<override>> PostExposeData() : void
+    + <<override>> PostDeSpawn(map:Map) : void
+}
+class "IEnumerable`1"<T> {
+}
+class "List`1"<T> {
+}
+ThingComp <|-- CompAssignableToPawn
+CompAssignableToPawn --> "Props" CompProperties_AssignableToPawn
+CompAssignableToPawn --> "AssigningCandidates<Pawn>" "IEnumerable`1"
+CompAssignableToPawn --> "AssignedPawnsForReading<Pawn>" "List`1"
+CompAssignableToPawn --> "AssignedPawns<Pawn>" "IEnumerable`1"
+@enduml

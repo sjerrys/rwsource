@@ -1,0 +1,6 @@
+@startuml
+class StorytellerCompProperties_ShipChunkDrop {
+    + StorytellerCompProperties_ShipChunkDrop()
+}
+StorytellerCompProperties <|-- StorytellerCompProperties_ShipChunkDrop
+@enduml

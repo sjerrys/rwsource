@@ -1,0 +1,6 @@
+@startuml
+class ConfiguredTicksAbsAtGameStartCache {
+    + TryGetCachedValue(initData:GameInitData, ticksAbs:int) : bool
+    + Cache(ticksAbs:int, initData:GameInitData) : void
+}
+@enduml

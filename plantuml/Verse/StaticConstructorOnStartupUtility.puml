@@ -1,0 +1,7 @@
+@startuml
+class StaticConstructorOnStartupUtility <<static>> {
+    + {static} coreStaticAssetsLoaded : bool
+    + {static} CallAll() : void
+    + {static} ReportProbablyMissingAttributes() : void
+}
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class ThoughtWorker_OpinionOfMyLover {
+}
+ThoughtWorker <|-- ThoughtWorker_OpinionOfMyLover
+@enduml

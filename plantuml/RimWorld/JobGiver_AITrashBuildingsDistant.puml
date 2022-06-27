@@ -1,0 +1,7 @@
+@startuml
+class JobGiver_AITrashBuildingsDistant {
+    + attackAllInert : bool
+    + <<override>> DeepCopy(resolve:bool) : ThinkNode
+}
+ThinkNode_JobGiver <|-- JobGiver_AITrashBuildingsDistant
+@enduml

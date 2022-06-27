@@ -1,0 +1,8 @@
+@startuml
+class JobDriver_CastAbilityWorld {
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+    + <<override>> GetReport() : string
+    + <<override>> Notify_Starting() : void
+}
+JobDriver <|-- JobDriver_CastAbilityWorld
+@enduml

@@ -1,0 +1,19 @@
+@startuml
+class TriggerSignal <<struct>> {
+    + memo : string
+    + previousRelationKind : FactionRelationKind?
+    + TriggerSignal(type:TriggerSignalType)
+    + {static} ForMemo(memo:string) : TriggerSignal
+    + {static} ForSignal(signal:Signal) : TriggerSignal
+    + <<override>> ToString() : string
+}
+TriggerSignal --> "type" TriggerSignalType
+TriggerSignal --> "signal" Signal
+TriggerSignal --> "thing" Thing
+TriggerSignal --> "dinfo" DamageInfo
+TriggerSignal --> "condition" PawnLostCondition
+TriggerSignal --> "faction" Faction
+TriggerSignal --> "clamorType" ClamorDef
+TriggerSignal --> "Pawn" Pawn
+TriggerSignal --> "ForTick" TriggerSignal
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class RoomStatScoreStage {
+    + minScore : float
+    + label : string
+    + untranslatedLabel : string
+    + PostLoad() : void
+}
+@enduml

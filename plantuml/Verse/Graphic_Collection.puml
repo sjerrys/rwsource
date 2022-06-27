@@ -1,0 +1,6 @@
+@startuml
+abstract class Graphic_Collection {
+    + <<override>> Init(req:GraphicRequest) : void
+}
+Graphic <|-- Graphic_Collection
+@enduml

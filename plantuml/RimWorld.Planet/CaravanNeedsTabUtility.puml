@@ -1,0 +1,6 @@
+@startuml
+class CaravanNeedsTabUtility <<static>> {
+    + {static} DoRows(size:Vector2, pawns:List<Pawn>, caravan:Caravan, scrollPosition:Vector2, scrollViewHeight:float, specificNeedsTabForPawn:Pawn, doNeeds:bool) : void
+    + {static} GetSize(pawns:List<Pawn>, paneTopY:float, doNeeds:bool) : Vector2
+}
+@enduml

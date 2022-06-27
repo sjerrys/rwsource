@@ -1,0 +1,5 @@
+@startuml
+class JobDriver_Train {
+}
+JobDriver_InteractAnimal <|-- JobDriver_Train
+@enduml

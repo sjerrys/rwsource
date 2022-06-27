@@ -1,0 +1,6 @@
+@startuml
+class RestraintsUtility <<static>> {
+    + {static} InRestraints(pawn:Pawn) : bool
+    + {static} ShouldShowRestraintsInfo(pawn:Pawn) : bool
+}
+@enduml

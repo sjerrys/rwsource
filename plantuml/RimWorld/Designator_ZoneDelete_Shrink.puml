@@ -1,0 +1,6 @@
+@startuml
+class Designator_ZoneDelete_Shrink {
+    + Designator_ZoneDelete_Shrink()
+}
+Designator_ZoneDelete <|-- Designator_ZoneDelete_Shrink
+@enduml

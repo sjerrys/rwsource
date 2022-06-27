@@ -1,0 +1,8 @@
+@startuml
+class Dialog_DefineBinding {
+    + Dialog_DefineBinding(keyPrefsData:KeyPrefsData, keyDef:KeyBindingDef, slot:KeyPrefs.BindingSlot)
+    + <<override>> DoWindowContents(inRect:Rect) : void
+}
+Window <|-- Dialog_DefineBinding
+Dialog_DefineBinding --> "InitialSize" Vector2
+@enduml

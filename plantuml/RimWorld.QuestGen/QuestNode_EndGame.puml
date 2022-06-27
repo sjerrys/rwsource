@@ -1,0 +1,13 @@
+@startuml
+class QuestNode_EndGame {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_EndGame
+QuestNode_EndGame --> "inSignal<string>" "SlateRef`1"
+QuestNode_EndGame --> "signalListenMode<QuestPart.SignalListenMode?>" "SlateRef`1"
+QuestNode_EndGame --> "introText<string>" "SlateRef`1"
+QuestNode_EndGame --> "endingText<string>" "SlateRef`1"
+QuestNode_EndGame --> "introTextRules<RulePack>" "SlateRef`1"
+QuestNode_EndGame --> "endingTextRules<RulePack>" "SlateRef`1"
+@enduml

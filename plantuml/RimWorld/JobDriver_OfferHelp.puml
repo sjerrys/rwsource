@@ -1,0 +1,7 @@
+@startuml
+class JobDriver_OfferHelp {
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+}
+JobDriver <|-- JobDriver_OfferHelp
+JobDriver_OfferHelp --> "OtherPawn" Pawn
+@enduml

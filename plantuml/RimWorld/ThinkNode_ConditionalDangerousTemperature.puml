@@ -1,0 +1,5 @@
+@startuml
+class ThinkNode_ConditionalDangerousTemperature {
+}
+ThinkNode_Conditional <|-- ThinkNode_ConditionalDangerousTemperature
+@enduml

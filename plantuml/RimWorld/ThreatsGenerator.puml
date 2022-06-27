@@ -1,0 +1,6 @@
+@startuml
+class ThreatsGenerator <<static>> {
+    + {static} MakeIntervalIncidents(parms:ThreatsGeneratorParams, target:IIncidentTarget, startTick:int) : IEnumerable<FiringIncident>
+    + {static} AnyIncidentPossible(parms:ThreatsGeneratorParams, target:IIncidentTarget) : bool
+}
+@enduml

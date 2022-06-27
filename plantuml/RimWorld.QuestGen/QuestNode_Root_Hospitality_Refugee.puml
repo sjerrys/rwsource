@@ -1,0 +1,5 @@
+@startuml
+class QuestNode_Root_Hospitality_Refugee {
+}
+QuestNode <|-- QuestNode_Root_Hospitality_Refugee
+@enduml

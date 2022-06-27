@@ -1,0 +1,32 @@
+@startuml
+class Building_Door {
+    + Open : bool <<get>>
+    + HoldOpen : bool <<get>>
+    + FreePassage : bool <<get>>
+    + TicksTillFullyOpened : int <<get>>
+    + WillCloseSoon : bool <<get>>
+    + BlockedOpenMomentary : bool <<get>>
+    + DoorPowerOn : bool <<get>>
+    + SlowsPawns : bool <<get>>
+    + TicksToOpenNow : int <<get>>
+    + <<override>> FireBulwark : bool <<get>>
+    + <<override>> PostMake() : void
+    + <<override>> SpawnSetup(map:Map, respawningAfterLoad:bool) : void
+    + <<override>> DeSpawn(mode:DestroyMode) : void
+    + <<override>> ExposeData() : void
+    + <<override>> SetFaction(newFaction:Faction, recruiter:Pawn) : void
+    + <<override>> Tick() : void
+    + CheckFriendlyTouched(p:Pawn) : void
+    + Notify_PawnApproaching(p:Pawn, moveCost:int) : void
+    + CanPhysicallyPass(p:Pawn) : bool
+    + <<virtual>> PawnCanOpen(p:Pawn) : bool
+    + <<override>> BlocksPawn(p:Pawn) : bool
+    + StartManualOpenBy(opener:Pawn) : void
+    + StartManualCloseBy(closer:Pawn) : void
+    + <<override>> Draw() : void
+    + {static} DoorRotationAt(loc:IntVec3, map:Map) : Rot4
+    + <<override>> GetGizmos() : IEnumerable<Gizmo>
+}
+Building <|-- Building_Door
+Building_Door --> "powerComp" CompPowerTrader
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+class BattleLogEntry_ExplosionImpact {
+    + BattleLogEntry_ExplosionImpact()
+    + BattleLogEntry_ExplosionImpact(initiator:Thing, recipient:Thing, weaponDef:ThingDef, projectileDef:ThingDef, damageDef:DamageDef)
+    + <<override>> Concerns(t:Thing) : bool
+    + <<override>> GetConcerns() : IEnumerable<Thing>
+    + <<override>> CanBeClickedFromPOV(pov:Thing) : bool
+    + <<override>> ClickedFromPOV(pov:Thing) : void
+    + <<override>> IconFromPOV(pov:Thing) : Texture2D
+    + <<override>> ExposeData() : void
+    + <<override>> ToString() : string
+}
+LogEntry_DamageResult <|-- BattleLogEntry_ExplosionImpact
+@enduml

@@ -1,0 +1,26 @@
+@startuml
+class Building_Storage {
+    + StorageTabVisible : bool <<get>>
+    + IgnoreStoredThingsBeauty : bool <<get>>
+    + Building_Storage()
+    + GetSlotGroup() : SlotGroup
+    + <<virtual>> Notify_ReceivedThing(newItem:Thing) : void
+    + <<virtual>> Notify_LostThing(newItem:Thing) : void
+    + <<virtual>> AllSlotCells() : IEnumerable<IntVec3>
+    + AllSlotCellsList() : List<IntVec3>
+    + GetStoreSettings() : StorageSettings
+    + GetParentStoreSettings() : StorageSettings
+    + SlotYielderLabel() : string
+    + Accepts(t:Thing) : bool
+    + <<override>> PostMake() : void
+    + <<override>> SpawnSetup(map:Map, respawningAfterLoad:bool) : void
+    + <<override>> ExposeData() : void
+    + <<override>> GetGizmos() : IEnumerable<Gizmo>
+}
+Building <|-- Building_Storage
+ISlotGroupParent <|-- Building_Storage
+IStoreSettingsParent <|-- Building_Storage
+IHaulDestination <|-- Building_Storage
+Building_Storage --> "settings" StorageSettings
+Building_Storage --> "slotGroup" SlotGroup
+@enduml

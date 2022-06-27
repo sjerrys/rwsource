@@ -1,0 +1,5 @@
+@startuml
+class IncidentWorker_ManhunterPack {
+}
+IncidentWorker <|-- IncidentWorker_ManhunterPack
+@enduml

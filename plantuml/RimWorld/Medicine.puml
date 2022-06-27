@@ -1,0 +1,6 @@
+@startuml
+class Medicine {
+    + {static} GetMedicineCountToFullyHeal(pawn:Pawn) : int
+}
+ThingWithComps <|-- Medicine
+@enduml

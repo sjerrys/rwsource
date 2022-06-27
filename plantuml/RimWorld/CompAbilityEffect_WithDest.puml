@@ -1,0 +1,27 @@
+@startuml
+abstract class CompAbilityEffect_WithDest {
+    + MultiSelect : bool <<get>>
+    + CasterIsPawn : bool <<get>>
+    + IsMeleeAttack : bool <<get>>
+    + Targetable : bool <<get>>
+    + GetDestination(target:LocalTargetInfo) : LocalTargetInfo
+    + CanPlaceSelectedTargetAt(target:LocalTargetInfo) : bool
+    + {static} CanTeleportThingTo(target:LocalTargetInfo, map:Map) : bool
+    + <<virtual>> CanHitTarget(target:LocalTargetInfo) : bool
+    + <<virtual>> ValidateTarget(target:LocalTargetInfo) : bool
+    + DrawHighlight(target:LocalTargetInfo) : void
+    + OnGUI(target:LocalTargetInfo) : void
+    + OrderForceTarget(target:LocalTargetInfo) : void
+    + SetTarget(target:LocalTargetInfo) : void
+    + <<virtual>> SelectDestination() : void
+}
+CompAbilityEffect <|-- CompAbilityEffect_WithDest
+ITargetingSource <|-- CompAbilityEffect_WithDest
+CompAbilityEffect_WithDest --> "Props" CompProperties_EffectWithDest
+CompAbilityEffect_WithDest --> "targetParams" TargetingParameters
+CompAbilityEffect_WithDest --> "Caster" Thing
+CompAbilityEffect_WithDest --> "CasterPawn" Pawn
+CompAbilityEffect_WithDest --> "GetVerb" Verb
+CompAbilityEffect_WithDest --> "UIIcon" Texture2D
+CompAbilityEffect_WithDest --> "DestinationSelector" ITargetingSource
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class QuestPart_AssaultThings {
+    + <<override>> ExposeData() : void
+}
+class "List`1"<T> {
+}
+QuestPart_MakeLord <|-- QuestPart_AssaultThings
+QuestPart_AssaultThings o-> "things<Thing>" "List`1"
+@enduml

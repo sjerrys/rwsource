@@ -1,0 +1,15 @@
+@startuml
+class TutorialState {
+    + endTick : int
+    + introDone : bool
+    + ExposeData() : void
+    + Notify_TutorialEnding() : void
+    + AddStartingItem(t:Thing) : void
+}
+class "List`1"<T> {
+}
+IExposable <|-- TutorialState
+TutorialState o-> "startingItems<Thing>" "List`1"
+TutorialState --> "roomRect" CellRect
+TutorialState --> "sandbagsRect" CellRect
+@enduml

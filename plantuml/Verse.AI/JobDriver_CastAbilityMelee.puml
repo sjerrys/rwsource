@@ -1,0 +1,6 @@
+@startuml
+class JobDriver_CastAbilityMelee {
+    + <<override>> Notify_Starting() : void
+}
+JobDriver_CastAbility <|-- JobDriver_CastAbilityMelee
+@enduml

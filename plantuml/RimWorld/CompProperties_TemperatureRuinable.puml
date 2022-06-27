@@ -1,0 +1,9 @@
+@startuml
+class CompProperties_TemperatureRuinable {
+    + minSafeTemperature : float
+    + maxSafeTemperature : float = 100f
+    + progressPerDegreePerTick : float = 1E-05f
+    + CompProperties_TemperatureRuinable()
+}
+CompProperties <|-- CompProperties_TemperatureRuinable
+@enduml

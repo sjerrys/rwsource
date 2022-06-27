@@ -1,0 +1,7 @@
+@startuml
+class WeatherEventMaker {
+    + averageInterval : float = 100f
+    + WeatherEventMakerTick(map:Map, strength:float) : void
+}
+WeatherEventMaker --> "eventClass" Type
+@enduml

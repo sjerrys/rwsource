@@ -1,0 +1,7 @@
+@startuml
+enum HediffGrowthMode {
+    Growing,
+    Stable,
+    Remission,
+}
+@enduml

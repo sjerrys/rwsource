@@ -1,0 +1,11 @@
+@startuml
+class ScenPart_PawnFilter_Age {
+    + <<override>> DoEditInterface(listing:Listing_ScenEdit) : void
+    + <<override>> ExposeData() : void
+    + <<override>> Summary(scen:Scenario) : string
+    + <<override>> AllowPlayerStartingPawn(pawn:Pawn, tryingToRedress:bool, req:PawnGenerationRequest) : bool
+    + <<override>> Randomize() : void
+}
+ScenPart <|-- ScenPart_PawnFilter_Age
+ScenPart_PawnFilter_Age o-> "allowedAgeRange" IntRange
+@enduml

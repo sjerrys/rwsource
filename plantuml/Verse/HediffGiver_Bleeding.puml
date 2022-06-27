@@ -1,0 +1,6 @@
+@startuml
+class HediffGiver_Bleeding {
+    + <<override>> OnIntervalPassed(pawn:Pawn, cause:Hediff) : void
+}
+HediffGiver <|-- HediffGiver_Bleeding
+@enduml

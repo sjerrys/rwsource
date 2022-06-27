@@ -1,0 +1,14 @@
+@startuml
+class ScenPart_PermaGameCondition {
+    + <<const>> PermaGameConditionTag : string = "PermaGameCondition"
+    + <<override>> Label : string <<get>>
+    + <<override>> DoEditInterface(listing:Listing_ScenEdit) : void
+    + <<override>> ExposeData() : void
+    + <<override>> Randomize() : void
+    + <<override>> Summary(scen:Scenario) : string
+    + <<override>> GetSummaryListEntries(tag:string) : IEnumerable<string>
+    + <<override>> GenerateIntoMap(map:Map) : void
+    + <<override>> CanCoexistWith(other:ScenPart) : bool
+}
+ScenPart <|-- ScenPart_PermaGameCondition
+@enduml

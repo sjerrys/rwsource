@@ -1,0 +1,54 @@
+@startuml
+class Settlement {
+    + namedByPlayer : bool
+    + Name : string <<get>> <<set>>
+    + <<override>> Label : string <<get>>
+    + <<override>> HasName : bool <<get>>
+    + <<virtual>> Visitable : bool <<get>>
+    + <<virtual>> Attackable : bool <<get>>
+    + <<override>> ShowRelatedQuests : bool <<get>>
+    + RandomPriceFactorSeed : int <<get>>
+    + TraderName : string <<get>>
+    + CanTradeNow : bool <<get>>
+    + TradePriceImprovementOffsetForPlayer : float <<get>>
+    + EverVisited : bool <<get>>
+    + RestockedSinceLastVisit : bool <<get>>
+    + NextRestockTick : int <<get>>
+    + ColonyThingsWillingToBuy(playerNegotiator:Pawn) : IEnumerable<Thing>
+    + GiveSoldThingToTrader(toGive:Thing, countToGive:int, playerNegotiator:Pawn) : void
+    + GiveSoldThingToPlayer(toGive:Thing, countToGive:int, playerNegotiator:Pawn) : void
+    + Settlement()
+    + <<override>> IncidentTargetTags() : IEnumerable<IncidentTargetTagDef>
+    + <<override>> ExposeData() : void
+    + <<override>> PostMapGenerate() : void
+    + <<override>> Tick() : void
+    + <<override>> Notify_MyMapRemoved(map:Map) : void
+    + <<override>> ShouldRemoveMapNow(alsoRemoveWorldObject:bool) : bool
+    + <<override>> PostRemove() : void
+    + <<override>> GetInspectString() : string
+    + <<override>> GetGizmos() : IEnumerable<Gizmo>
+    + <<override>> GetCaravanGizmos(caravan:Caravan) : IEnumerable<Gizmo>
+    + <<override>> GetFloatMenuOptions(caravan:Caravan) : IEnumerable<FloatMenuOption>
+    + <<override>> GetTransportPodsFloatMenuOptions(pods:IEnumerable<IThingHolder>, representative:CompLaunchable) : IEnumerable<FloatMenuOption>
+    + <<override>> GetShuttleFloatMenuOptions(pods:IEnumerable<IThingHolder>, launchAction:Action<int, TransportPodsArrivalAction>) : IEnumerable<FloatMenuOption>
+    + <<override>> GetChildHolders(outChildren:List<IThingHolder>) : void
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+MapParent <|-- Settlement
+ITrader <|-- Settlement
+ITraderRestockingInfoProvider <|-- Settlement
+Settlement --> "trader" Settlement_TraderTracker
+Settlement o-> "previouslyGeneratedInhabitants<Pawn>" "List`1"
+Settlement o-> "ShowSellableItemsCommand" Texture2D
+Settlement o-> "FormCaravanCommand" Texture2D
+Settlement o-> "AttackCommand" Texture2D
+Settlement --> "ExpandingIcon" Texture2D
+Settlement --> "Material" Material
+Settlement --> "MapGeneratorDef" MapGeneratorDef
+Settlement --> "TraderKind" TraderKindDef
+Settlement --> "Goods<Thing>" "IEnumerable`1"
+Settlement --> "TradeCurrency" TradeCurrency
+@enduml

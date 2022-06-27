@@ -1,0 +1,5 @@
+@startuml
+class ThoughtWorker_PassionateWork {
+}
+ThoughtWorker <|-- ThoughtWorker_PassionateWork
+@enduml

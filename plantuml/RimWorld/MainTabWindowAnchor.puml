@@ -1,0 +1,6 @@
+@startuml
+enum MainTabWindowAnchor {
+    Left,
+    Right,
+}
+@enduml

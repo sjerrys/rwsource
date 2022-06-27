@@ -1,0 +1,16 @@
+@startuml
+class QuestNode_CreateIncidents {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_CreateIncidents
+QuestNode_CreateIncidents --> "inSignalEnable<string>" "SlateRef`1"
+QuestNode_CreateIncidents --> "inSignalDisable<string>" "SlateRef`1"
+QuestNode_CreateIncidents --> "incidentDef<IncidentDef>" "SlateRef`1"
+QuestNode_CreateIncidents --> "intervalTicks<int?>" "SlateRef`1"
+QuestNode_CreateIncidents --> "randomIncidents<int?>" "SlateRef`1"
+QuestNode_CreateIncidents --> "startOffsetTicks<int>" "SlateRef`1"
+QuestNode_CreateIncidents --> "duration<int>" "SlateRef`1"
+QuestNode_CreateIncidents --> "points<float>" "SlateRef`1"
+QuestNode_CreateIncidents --> "faction<Faction>" "SlateRef`1"
+@enduml

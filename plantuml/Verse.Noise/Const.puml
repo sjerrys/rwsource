@@ -1,0 +1,9 @@
+@startuml
+class Const {
+    + Value : double <<get>> <<set>>
+    + Const()
+    + Const(value:double)
+    + <<override>> GetValue(x:double, y:double, z:double) : double
+}
+ModuleBase <|-- Const
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class RoadPathingDefOf <<static>> {
+    {static} RoadPathingDefOf()
+}
+RoadPathingDefOf --> "Avoid" RoadPathingDef
+RoadPathingDefOf --> "Bulldoze" RoadPathingDef
+@enduml

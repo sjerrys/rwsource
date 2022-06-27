@@ -1,0 +1,5 @@
+@startuml
+class ShaderUtility <<static>> {
+    + {static} SupportsMaskTex(shader:Shader) : bool
+}
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class Building_TrapExplosive {
+}
+Building_Trap <|-- Building_TrapExplosive
+@enduml

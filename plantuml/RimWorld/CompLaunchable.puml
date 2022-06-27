@@ -1,0 +1,35 @@
+@startuml
+class CompLaunchable {
+    + ConnectedToFuelingPort : bool <<get>>
+    + FuelingPortSourceHasAnyFuel : bool <<get>>
+    + LoadingInProgressOrReadyToLaunch : bool <<get>>
+    + AnythingLeftToLoad : bool <<get>>
+    + AnyInGroupHasAnythingLeftToLoad : bool <<get>>
+    + AnyInGroupIsUnderRoof : bool <<get>>
+    + FuelingPortSourceFuel : float <<get>>
+    + AllInGroupConnectedToFuelingPort : bool <<get>>
+    + AllFuelingPortSourcesInGroupHaveAnyFuel : bool <<get>>
+    + CanTryLaunch : bool <<get>>
+    + <<override>> CompGetGizmosExtra() : IEnumerable<Gizmo>
+    + <<override>> CompInspectStringExtra() : string
+    + StartChoosingDestination() : void
+    + TryLaunch(destinationTile:int, arrivalAction:TransportPodsArrivalAction) : void
+    + Notify_FuelingPortSourceDeSpawned() : void
+    + {static} MaxLaunchDistanceAtFuelLevel(fuelLevel:float) : int
+    + {static} FuelNeededToLaunchAtDist(dist:float) : float
+    + {static} ChoseWorldTarget(target:GlobalTargetInfo, tile:int, pods:IEnumerable<IThingHolder>, maxLaunchDistance:int, launchAction:Action<int, TransportPodsArrivalAction>, launchable:CompLaunchable) : bool
+    + {static} GetOptionsForTile(tile:int, pods:IEnumerable<IThingHolder>, launchAction:Action<int, TransportPodsArrivalAction>) : IEnumerable<FloatMenuOption>
+    + {static} TargetingLabelGetter(target:GlobalTargetInfo, tile:int, maxLaunchDistance:int, pods:IEnumerable<IThingHolder>, launchAction:Action<int, TransportPodsArrivalAction>, launchable:CompLaunchable) : string
+}
+class "List`1"<T> {
+}
+ThingComp <|-- CompLaunchable
+CompLaunchable o-> "TargeterMouseAttachment" Texture2D
+CompLaunchable o-> "LaunchCommandTex" Texture2D
+CompLaunchable --> "Props" CompProperties_Launchable
+CompLaunchable --> "FuelingPortSource" Building
+CompLaunchable --> "FirstThingLeftToLoad" Thing
+CompLaunchable --> "TransportersInGroup<CompTransporter>" "List`1"
+CompLaunchable --> "FirstThingLeftToLoadInGroup" Thing
+CompLaunchable --> "Transporter" CompTransporter
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class DebugCell <<sealed>> {
+    + displayString : string
+    + colorPct : float
+    + ticksLeft : int
+    + Draw() : void
+    + OnGUI() : void
+}
+DebugCell --> "c" IntVec3
+DebugCell --> "customMat" Material
+@enduml

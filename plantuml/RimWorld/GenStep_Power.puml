@@ -1,0 +1,11 @@
+@startuml
+class GenStep_Power {
+    + canSpawnBatteries : bool = true
+    + canSpawnPowerGenerators : bool = true
+    + spawnRoofOverNewBatteries : bool = true
+    + <<override>> SeedPart : int <<get>>
+    + <<override>> Generate(map:Map, parms:GenStepParams) : void
+}
+GenStep <|-- GenStep_Power
+GenStep_Power o-> "newBatteriesInitialStoredEnergyPctRange" FloatRange
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class Reward_CampLoot {
+    + <<override>> InitFromValue(rewardValue:float, parms:RewardsGeneratorParams, valueActuallyUsed:float) : void
+    + <<override>> GenerateQuestParts(index:int, parms:RewardsGeneratorParams, customLetterLabel:string, customLetterText:string, customLetterLabelRules:RulePack, customLetterTextRules:RulePack) : IEnumerable<QuestPart>
+    + <<override>> GetDescription(parms:RewardsGeneratorParams) : string
+}
+class "IEnumerable`1"<T> {
+}
+Reward <|-- Reward_CampLoot
+Reward_CampLoot --> "StackElements<GenUI.AnonymousStackElement>" "IEnumerable`1"
+@enduml

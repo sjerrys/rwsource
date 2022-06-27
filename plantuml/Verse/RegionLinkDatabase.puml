@@ -1,0 +1,7 @@
+@startuml
+class RegionLinkDatabase {
+    + LinkFrom(span:EdgeSpan) : RegionLink
+    + Notify_LinkHasNoRegions(link:RegionLink) : void
+    + DebugLog() : void
+}
+@enduml

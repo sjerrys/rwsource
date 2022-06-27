@@ -1,0 +1,5 @@
+@startuml
+class IncidentWorker_MechCluster {
+}
+IncidentWorker <|-- IncidentWorker_MechCluster
+@enduml

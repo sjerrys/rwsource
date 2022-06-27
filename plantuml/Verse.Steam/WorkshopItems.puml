@@ -1,0 +1,13 @@
+@startuml
+class WorkshopItems <<static>> {
+    + {static} DownloadingItemsCount : int <<get>>
+    {static} WorkshopItems()
+    + {static} EnsureInit() : void
+    + {static} GetItem(pfid:PublishedFileId_t) : WorkshopItem
+    + {static} HasItem(pfid:PublishedFileId_t) : bool
+    + {static} DebugOutput() : string
+}
+class "IEnumerable`1"<T> {
+}
+WorkshopItems --> "AllSubscribedItems<WorkshopItem>" "IEnumerable`1"
+@enduml

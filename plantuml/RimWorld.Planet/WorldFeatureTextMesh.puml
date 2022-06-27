@@ -1,0 +1,15 @@
+@startuml
+abstract class WorldFeatureTextMesh {
+    + {abstract} Active : bool <<get>>
+    + {abstract} Text : string <<get>> <<set>>
+    + {abstract} Size : float <<set>>
+    + {abstract} SetActive(active:bool) : void
+    + {abstract} Destroy() : void
+    + {abstract} Init() : void
+    + {abstract} WrapAroundPlanetSurface() : void
+}
+WorldFeatureTextMesh --> "Position" Vector3
+WorldFeatureTextMesh --> "Color" Color
+WorldFeatureTextMesh --> "Rotation" Quaternion
+WorldFeatureTextMesh --> "LocalPosition" Vector3
+@enduml

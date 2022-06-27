@@ -1,0 +1,5 @@
+@startuml
+class InteriorSymbolResolverUtility <<static>> {
+    + {static} PushBedroomHeatersCoolersAndLightSourcesSymbols(rp:ResolveParams, hasToSpawnLightSource:bool) : void
+}
+@enduml

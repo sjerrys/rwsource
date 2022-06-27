@@ -1,0 +1,5 @@
+@startuml
+class SketchResolver_MechClusterWalls {
+}
+SketchResolver <|-- SketchResolver_MechClusterWalls
+@enduml

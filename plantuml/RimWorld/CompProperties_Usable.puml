@@ -1,0 +1,9 @@
+@startuml
+class CompProperties_Usable {
+    + useLabel : string
+    + useDuration : int = 100
+    + CompProperties_Usable()
+}
+CompProperties <|-- CompProperties_Usable
+CompProperties_Usable --> "useJob" JobDef
+@enduml

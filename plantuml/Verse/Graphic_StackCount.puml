@@ -1,0 +1,13 @@
+@startuml
+class Graphic_StackCount {
+    + <<override>> GetColoredVersion(newShader:Shader, newColor:Color, newColorTwo:Color) : Graphic
+    + <<override>> MatAt(rot:Rot4, thing:Thing) : Material
+    + <<override>> MatSingleFor(thing:Thing) : Material
+    + SubGraphicFor(thing:Thing) : Graphic
+    + <<override>> DrawWorker(loc:Vector3, rot:Rot4, thingDef:ThingDef, thing:Thing, extraRotation:float) : void
+    + SubGraphicForStackCount(stackCount:int, def:ThingDef) : Graphic
+    + <<override>> ToString() : string
+}
+Graphic_Collection <|-- Graphic_StackCount
+Graphic_StackCount --> "MatSingle" Material
+@enduml

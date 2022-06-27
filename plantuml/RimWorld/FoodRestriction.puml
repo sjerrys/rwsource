@@ -1,0 +1,15 @@
+@startuml
+class FoodRestriction {
+    + id : int
+    + label : string
+    + FoodRestriction(id:int, label:string)
+    + FoodRestriction()
+    + Allows(def:ThingDef) : bool
+    + Allows(thing:Thing) : bool
+    + ExposeData() : void
+    + GetUniqueLoadID() : string
+}
+IExposable <|-- FoodRestriction
+ILoadReferenceable <|-- FoodRestriction
+FoodRestriction o-> "filter" ThingFilter
+@enduml

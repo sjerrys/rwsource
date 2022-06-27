@@ -1,0 +1,5 @@
+@startuml
+class ManhunterPackGenStepUtility <<static>> {
+    + {static} TryGetAnimalsKind(points:float, tile:int, animalKind:PawnKindDef) : bool
+}
+@enduml

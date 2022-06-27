@@ -1,0 +1,5 @@
+@startuml
+class FeatureWorker_Bay {
+}
+FeatureWorker_Protrusion <|-- FeatureWorker_Bay
+@enduml

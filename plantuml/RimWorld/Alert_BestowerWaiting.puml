@@ -1,0 +1,9 @@
+@startuml
+class Alert_BestowerWaiting {
+    + Alert_BestowerWaiting()
+    + <<override>> GetLabel() : string
+    + <<override>> GetExplanation() : TaggedString
+    + <<override>> GetReport() : AlertReport
+}
+Alert <|-- Alert_BestowerWaiting
+@enduml

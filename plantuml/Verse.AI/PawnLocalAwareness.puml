@@ -1,0 +1,5 @@
+@startuml
+class PawnLocalAwareness <<static>> {
+    + {static} AnimalAwareOf(p:Pawn, t:Thing) : bool
+}
+@enduml

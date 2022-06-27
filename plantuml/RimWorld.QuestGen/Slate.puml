@@ -1,0 +1,27 @@
+@startuml
+class Slate {
+    + <<const>> Separator : char = '/'
+    + CurrentPrefix : string <<get>>
+    + Get(name:string, defaultValue:T, isAbsoluteName:bool) : T
+    + TryGet(name:string, var:T, isAbsoluteName:bool) : bool
+    + Set(name:string, var:T, isAbsoluteName:bool) : void
+    + SetIfNone(name:string, var:T, isAbsoluteName:bool) : void
+    + Remove(name:string, isAbsoluteName:bool) : bool
+    + Exists(name:string, isAbsoluteName:bool) : bool
+    + PushPrefix(newPrefix:string, allowNonPrefixedLookup:bool) : void
+    + PopPrefix() : void
+    + GetRestoreInfo(name:string) : VarRestoreInfo
+    + Restore(varRestoreInfo:VarRestoreInfo) : void
+    + SetAll(otherSlate:Slate) : void
+    + Reset() : void
+    + DeepCopy() : Slate
+    + <<override>> ToString() : string
+}
+class VarRestoreInfo <<struct>> {
+    + name : string
+    + exists : bool
+    + value : object
+    + VarRestoreInfo(name:string, exists:bool, value:object)
+}
+Slate +-- VarRestoreInfo
+@enduml

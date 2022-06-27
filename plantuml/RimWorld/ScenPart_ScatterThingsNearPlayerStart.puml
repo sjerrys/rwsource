@@ -1,0 +1,7 @@
+@startuml
+class ScenPart_ScatterThingsNearPlayerStart {
+    + <<override>> Summary(scen:Scenario) : string
+    + <<override>> GetSummaryListEntries(tag:string) : IEnumerable<string>
+}
+ScenPart_ScatterThings <|-- ScenPart_ScatterThingsNearPlayerStart
+@enduml

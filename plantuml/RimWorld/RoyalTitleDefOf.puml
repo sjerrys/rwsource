@@ -1,0 +1,7 @@
+@startuml
+class RoyalTitleDefOf <<static>> {
+    {static} RoyalTitleDefOf()
+}
+RoyalTitleDefOf --> "Knight" RoyalTitleDef
+RoyalTitleDefOf --> "Count" RoyalTitleDef
+@enduml

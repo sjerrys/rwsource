@@ -1,0 +1,7 @@
+@startuml
+class WITab_Caravan_Health {
+    + WITab_Caravan_Health()
+    + <<override>> Notify_ClearingAllMapsMemory() : void
+}
+WITab <|-- WITab_Caravan_Health
+@enduml

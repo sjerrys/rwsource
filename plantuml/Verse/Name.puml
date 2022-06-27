@@ -1,0 +1,12 @@
+@startuml
+abstract class Name {
+    + {abstract} ToStringFull : string <<get>>
+    + {abstract} ToStringShort : string <<get>>
+    + {abstract} IsValid : bool <<get>>
+    + UsedThisGame : bool <<get>>
+    + {abstract} Numerical : bool <<get>>
+    + {abstract} ConfusinglySimilarTo(other:Name) : bool
+    + {abstract} ExposeData() : void
+}
+IExposable <|-- Name
+@enduml

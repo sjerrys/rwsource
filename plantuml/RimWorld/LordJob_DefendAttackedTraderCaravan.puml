@@ -1,0 +1,9 @@
+@startuml
+class LordJob_DefendAttackedTraderCaravan {
+    + LordJob_DefendAttackedTraderCaravan()
+    + LordJob_DefendAttackedTraderCaravan(defendSpot:IntVec3)
+    + <<override>> CreateGraph() : StateGraph
+    + <<override>> ExposeData() : void
+}
+LordJob <|-- LordJob_DefendAttackedTraderCaravan
+@enduml

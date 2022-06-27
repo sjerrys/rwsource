@@ -1,0 +1,6 @@
+@startuml
+abstract class RoomStatWorker {
+    + {abstract} GetScore(room:Room) : float
+}
+RoomStatWorker --> "def" RoomStatDef
+@enduml

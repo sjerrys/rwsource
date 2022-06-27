@@ -1,0 +1,19 @@
+@startuml
+class DebugOutputsIncidents <<static>> {
+    + {static} IncidentChances() : void
+    + {static} FutureIncidents() : void
+    + {static} FutureIncidentsCurrentMap() : void
+    + {static} IncidentTargetsList() : void
+    + {static} PawnArrivalCandidates() : void
+    + {static} TraderKinds() : void
+    + {static} TraderKindThings() : void
+    + {static} TraderStockMarketValues() : void
+    + {static} TraderStockGeneration() : void
+    + {static} TraderStockGeneratorsDefs() : void
+    + {static} PawnGroupGenSampled() : void
+    + {static} RaidFactionSampled() : void
+    + {static} RaidStrategySampled() : void
+    + {static} RaidArrivemodeSampled() : void
+    + {static} ThreatsGenerator() : void
+}
+@enduml

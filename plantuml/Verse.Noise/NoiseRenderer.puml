@@ -1,0 +1,7 @@
+@startuml
+class NoiseRenderer <<static>> {
+    + {static} NoiseRendered(noise:ModuleBase) : Texture2D
+    + {static} NoiseRendered(rect:CellRect, noise:ModuleBase) : Texture2D
+}
+NoiseRenderer o-> "renderSize" IntVec2
+@enduml

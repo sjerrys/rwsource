@@ -1,0 +1,10 @@
+@startuml
+class Rule_NamePerson {
+    + <<override>> BaseSelectionWeight : float <<get>>
+    + <<override>> DeepCopy() : Rule
+    + <<override>> Generate() : string
+    + <<override>> ToString() : string
+}
+Rule <|-- Rule_NamePerson
+Rule_NamePerson --> "gender" Gender
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class AudioSourcePoolCamera {
+    + AudioSourcePoolCamera()
+    + GetSourceCamera() : AudioSource
+}
+AudioSourcePoolCamera --> "cameraSourcesContainer" GameObject
+@enduml

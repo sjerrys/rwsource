@@ -1,0 +1,10 @@
+@startuml
+class CoverUtility <<static>> {
+    + <<const>> CoverPercent_Corner : float = 0.75f
+    + {static} CalculateCoverGiverSet(target:LocalTargetInfo, shooterLoc:IntVec3, map:Map) : List<CoverInfo>
+    + {static} CalculateOverallBlockChance(target:LocalTargetInfo, shooterLoc:IntVec3, map:Map) : float
+    + {static} BaseBlockChance(def:ThingDef) : float
+    + {static} BaseBlockChance(thing:Thing) : float
+    + {static} TotalSurroundingCoverScore(c:IntVec3, map:Map) : float
+}
+@enduml

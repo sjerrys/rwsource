@@ -1,0 +1,16 @@
+@startuml
+class Pawn_SkillTracker {
+    + Pawn_SkillTracker(newPawn:Pawn)
+    + ExposeData() : void
+    + GetSkill(skillDef:SkillDef) : SkillRecord
+    + SkillsTick() : void
+    + Learn(sDef:SkillDef, xp:float, direct:bool) : void
+    + AverageOfRelevantSkillsFor(workDef:WorkTypeDef) : float
+    + MaxPassionOfRelevantSkillsFor(workDef:WorkTypeDef) : Passion
+    + Notify_SkillDisablesChanged() : void
+}
+class "List`1"<T> {
+}
+IExposable <|-- Pawn_SkillTracker
+Pawn_SkillTracker o-> "skills<SkillRecord>" "List`1"
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+class Exponent {
+    + Value : double <<get>> <<set>>
+    + Exponent()
+    + Exponent(input:ModuleBase)
+    + Exponent(exponent:double, input:ModuleBase)
+    + <<override>> GetValue(x:double, y:double, z:double) : double
+}
+ModuleBase <|-- Exponent
+@enduml

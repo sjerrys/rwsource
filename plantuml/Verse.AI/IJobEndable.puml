@@ -1,0 +1,6 @@
+@startuml
+interface IJobEndable {
+    GetActor() : Pawn
+    AddEndCondition(newEndCondition:Func<JobCondition>) : void
+}
+@enduml

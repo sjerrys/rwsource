@@ -1,0 +1,13 @@
+@startuml
+class ListerMergeables {
+    + ListerMergeables(map:Map)
+    + ThingsPotentiallyNeedingMerging() : List<Thing>
+    + Notify_Spawned(t:Thing) : void
+    + Notify_DeSpawned(t:Thing) : void
+    + Notify_Unforbidden(t:Thing) : void
+    + Notify_Forbidden(t:Thing) : void
+    + Notify_SlotGroupChanged(sg:SlotGroup) : void
+    + Notify_ThingStackChanged(t:Thing) : void
+    + RecalcAllInCell(c:IntVec3) : void
+}
+@enduml

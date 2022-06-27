@@ -1,0 +1,5 @@
+@startuml
+class SphereGenerator <<static>> {
+    + {static} Generate(subdivisionsCount:int, radius:float, viewCenter:Vector3, viewAngle:float, outVerts:List<Vector3>, outIndices:List<int>) : void
+}
+@enduml

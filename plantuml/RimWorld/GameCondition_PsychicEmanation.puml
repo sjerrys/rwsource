@@ -1,0 +1,15 @@
+@startuml
+class GameCondition_PsychicEmanation {
+    + <<const>> MaxPointsDroneLow : float = 800f
+    + <<const>> MaxPointsDroneMedium : float = 2000f
+    + <<override>> Label : string <<get>>
+    + <<override>> LetterText : string <<get>>
+    + <<override>> Description : string <<get>>
+    + <<override>> PostMake() : void
+    + <<override>> RandomizeSettings(points:float, map:Map, outExtraDescriptionRules:List<Rule>, outExtraDescriptionConstants:Dictionary<string, string>) : void
+    + <<override>> ExposeData() : void
+}
+GameCondition <|-- GameCondition_PsychicEmanation
+GameCondition_PsychicEmanation --> "gender" Gender
+GameCondition_PsychicEmanation o-> "level" PsychicDroneLevel
+@enduml

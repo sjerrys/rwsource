@@ -1,0 +1,17 @@
+@startuml
+class QuestPart_AddMemoryThought {
+    + inSignal : string
+    + addToLookTargets : bool = true
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+    + <<override>> ReplacePawnReferences(replace:Pawn, with:Pawn) : void
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart <|-- QuestPart_AddMemoryThought
+QuestPart_AddMemoryThought --> "def" ThoughtDef
+QuestPart_AddMemoryThought --> "pawn" Pawn
+QuestPart_AddMemoryThought --> "otherPawn" Pawn
+QuestPart_AddMemoryThought --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class SubEffecter_SprayerContinuous {
+    + SubEffecter_SprayerContinuous(def:SubEffecterDef, parent:Effecter)
+    + <<override>> SubEffectTick(A:TargetInfo, B:TargetInfo) : void
+}
+SubEffecter_Sprayer <|-- SubEffecter_SprayerContinuous
+@enduml

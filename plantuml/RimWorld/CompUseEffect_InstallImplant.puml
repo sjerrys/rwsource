@@ -1,0 +1,9 @@
+@startuml
+class CompUseEffect_InstallImplant {
+    + <<override>> DoEffect(user:Pawn) : void
+    + <<override>> CanBeUsedBy(p:Pawn, failReason:string) : bool
+    + GetExistingImplant(p:Pawn) : Hediff
+}
+CompUseEffect <|-- CompUseEffect_InstallImplant
+CompUseEffect_InstallImplant --> "Props" CompProperties_UseEffectInstallImplant
+@enduml

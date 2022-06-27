@@ -1,0 +1,14 @@
+@startuml
+class HediffCompProperties_DissolveGearOnDeath {
+    + moteCount : int = 3
+    + filthCount : int = 4
+    + HediffCompProperties_DissolveGearOnDeath()
+}
+HediffCompProperties <|-- HediffCompProperties_DissolveGearOnDeath
+HediffCompProperties_DissolveGearOnDeath --> "mote" ThingDef
+HediffCompProperties_DissolveGearOnDeath o-> "moteOffsetRange" FloatRange
+HediffCompProperties_DissolveGearOnDeath --> "filth" ThingDef
+HediffCompProperties_DissolveGearOnDeath --> "injuryCreatedOnDeath" HediffDef
+HediffCompProperties_DissolveGearOnDeath --> "injuryCount" IntRange
+HediffCompProperties_DissolveGearOnDeath --> "sound" SoundDef
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class GenStep_SleepingMechanoids {
+    + <<override>> SeedPart : int <<get>>
+    + {static} SendMechanoidsToSleepImmediately(spawnedMechanoids:List<Pawn>) : void
+    + <<override>> Generate(map:Map, parms:GenStepParams) : void
+}
+GenStep <|-- GenStep_SleepingMechanoids
+GenStep_SleepingMechanoids o-> "defaultPointsRange" FloatRange
+@enduml

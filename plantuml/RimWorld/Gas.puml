@@ -1,0 +1,11 @@
+@startuml
+class Gas {
+    + destroyTick : int
+    + graphicRotation : float
+    + graphicRotationSpeed : float
+    + <<override>> SpawnSetup(map:Map, respawningAfterLoad:bool) : void
+    + <<override>> Tick() : void
+    + <<override>> ExposeData() : void
+}
+Thing <|-- Gas
+@enduml

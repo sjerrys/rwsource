@@ -1,0 +1,6 @@
+@startuml
+class MouseoverReadout {
+    + MouseoverReadout()
+    + MouseoverReadoutOnGUI() : void
+}
+@enduml

@@ -1,0 +1,19 @@
+@startuml
+class RoyalTitle {
+    + receivedTick : int
+    + wasInherited : bool
+    + conceited : bool
+    + Label : string <<get>>
+    + RoomRequirementGracePeriodDaysLeft : float <<get>>
+    + RoomRequirementGracePeriodActive(pawn:Pawn) : bool
+    + RoyalTitle()
+    + RoyalTitle(other:RoyalTitle)
+    + RoyalTitleTick_NewTemp() : void
+    + RoyalTitleTick(pawn:Pawn) : void
+    + ExposeData() : void
+}
+IExposable <|-- RoyalTitle
+RoyalTitle --> "faction" Faction
+RoyalTitle --> "def" RoyalTitleDef
+RoyalTitle --> "pawn" Pawn
+@enduml

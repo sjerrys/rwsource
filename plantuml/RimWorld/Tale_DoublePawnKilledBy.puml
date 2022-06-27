@@ -1,0 +1,7 @@
+@startuml
+class Tale_DoublePawnKilledBy {
+    + Tale_DoublePawnKilledBy()
+    + Tale_DoublePawnKilledBy(victim:Pawn, dinfo:DamageInfo)
+}
+Tale_DoublePawn <|-- Tale_DoublePawnKilledBy
+@enduml

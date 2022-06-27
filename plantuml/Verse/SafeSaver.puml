@@ -1,0 +1,5 @@
+@startuml
+class SafeSaver <<static>> {
+    + {static} Save(path:string, documentElementName:string, saveAction:Action, leaveOldFile:bool) : void
+}
+@enduml

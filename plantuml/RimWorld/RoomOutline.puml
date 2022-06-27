@@ -1,0 +1,7 @@
+@startuml
+class RoomOutline {
+    + CellsCountIgnoringWalls : int <<get>>
+    + RoomOutline(rect:CellRect)
+}
+RoomOutline --> "rect" CellRect
+@enduml

@@ -1,0 +1,22 @@
+@startuml
+class QuestManager {
+    + Add(quest:Quest) : void
+    + Remove(quest:Quest) : void
+    + Contains(quest:Quest) : bool
+    + QuestManagerTick() : void
+    + IsReservedByAnyQuest(p:Pawn) : bool
+    + IsReservedByAnyQuest(f:Faction) : bool
+    + Notify_PawnDiscarded(pawn:Pawn) : void
+    + ExposeData() : void
+    + Notify_ThingsProduced(worker:Pawn, things:List<Thing>) : void
+    + Notify_PlantHarvested(worker:Pawn, harvested:Thing) : void
+    + Notify_PawnKilled(pawn:Pawn, dinfo:DamageInfo?) : void
+    + Notify_FactionRemoved(faction:Faction) : void
+}
+class "List`1"<T> {
+}
+IExposable <|-- QuestManager
+QuestManager o-> "questsInDisplayOrder<Quest>" "List`1"
+QuestManager --> "QuestsListForReading<Quest>" "List`1"
+QuestManager --> "SituationalThoughtQuestParts<QuestPart_SituationalThought>" "List`1"
+@enduml

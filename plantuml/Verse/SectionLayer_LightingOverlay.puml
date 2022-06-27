@@ -1,0 +1,9 @@
+@startuml
+class SectionLayer_LightingOverlay {
+    + <<override>> Visible : bool <<get>>
+    + SectionLayer_LightingOverlay(section:Section)
+    + GlowReportAt(c:IntVec3) : string
+    + <<override>> Regenerate() : void
+}
+SectionLayer <|-- SectionLayer_LightingOverlay
+@enduml

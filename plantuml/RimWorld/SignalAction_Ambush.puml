@@ -1,0 +1,11 @@
+@startuml
+class SignalAction_Ambush {
+    + points : float
+    + spawnPawnsOnEdge : bool
+    + <<override>> ExposeData() : void
+}
+SignalAction <|-- SignalAction_Ambush
+SignalAction_Ambush --> "ambushType" SignalActionAmbushType
+SignalAction_Ambush o-> "spawnNear" IntVec3
+SignalAction_Ambush --> "spawnAround" CellRect
+@enduml

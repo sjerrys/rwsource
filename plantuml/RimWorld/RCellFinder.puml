@@ -1,0 +1,33 @@
+@startuml
+class RCellFinder <<static>> {
+    + {static} BestOrderedGotoDestNear(root:IntVec3, searcher:Pawn) : IntVec3
+    + {static} BestOrderedGotoDestNear_NewTemp(root:IntVec3, searcher:Pawn, cellValidator:Predicate<IntVec3>) : IntVec3
+    + {static} TryFindBestExitSpot(pawn:Pawn, spot:IntVec3, mode:TraverseMode) : bool
+    + {static} TryFindRandomExitSpot(pawn:Pawn, spot:IntVec3, mode:TraverseMode) : bool
+    + {static} TryFindExitSpotNear(pawn:Pawn, near:IntVec3, radius:float, spot:IntVec3, mode:TraverseMode) : bool
+    + {static} RandomWanderDestFor(pawn:Pawn, root:IntVec3, radius:float, validator:Func<Pawn, IntVec3, IntVec3, bool>, maxDanger:Danger) : IntVec3
+    + {static} TryFindGoodAdjacentSpotToTouch(toucher:Pawn, touchee:Thing, result:IntVec3) : bool
+    + {static} TryFindRandomPawnEntryCell(result:IntVec3, map:Map, roadChance:float, allowFogged:bool, extraValidator:Predicate<IntVec3>) : bool
+    + {static} TryFindPrisonerReleaseCell(prisoner:Pawn, warden:Pawn, result:IntVec3) : bool
+    + {static} RandomAnimalSpawnCell_MapGen(map:Map) : IntVec3
+    + {static} TryFindSkygazeCell(root:IntVec3, searcher:Pawn, result:IntVec3) : bool
+    + {static} TryFindTravelDestFrom(root:IntVec3, map:Map, travelDest:IntVec3) : bool
+    + {static} TryFindRandomSpotJustOutsideColony(originCell:IntVec3, map:Map, result:IntVec3) : bool
+    + {static} TryFindRandomSpotJustOutsideColony(searcher:Pawn, result:IntVec3) : bool
+    + {static} TryFindRandomSpotJustOutsideColony(root:IntVec3, map:Map, searcher:Pawn, result:IntVec3, extraValidator:Predicate<IntVec3>) : bool
+    + {static} TryFindRandomCellInRegionUnforbidden(reg:Region, pawn:Pawn, validator:Predicate<IntVec3>, result:IntVec3) : bool
+    + {static} TryFindDirectFleeDestination(root:IntVec3, dist:float, pawn:Pawn, result:IntVec3) : bool
+    + {static} TryFindRandomCellOutsideColonyNearTheCenterOfTheMap(pos:IntVec3, map:Map, minDistToColony:float, result:IntVec3) : bool
+    + {static} TryFindRandomCellNearTheCenterOfTheMapWith(validator:Predicate<IntVec3>, map:Map, result:IntVec3) : bool
+    + {static} TryFindRandomCellNearWith(near:IntVec3, validator:Predicate<IntVec3>, map:Map, result:IntVec3, startingSearchRadius:int, maxSearchRadius:int) : bool
+    + {static} SpotToChewStandingNear(pawn:Pawn, ingestible:Thing) : IntVec3
+    + {static} TryFindMarriageSite(firstFiance:Pawn, secondFiance:Pawn, result:IntVec3) : bool
+    + {static} TryFindGatheringSpot_NewTemp(organizer:Pawn, gatheringDef:GatheringDef, ignoreRequiredColonistCount:bool, result:IntVec3) : bool
+    + {static} TryFindGatheringSpot(organizer:Pawn, gatheringDef:GatheringDef, result:IntVec3) : bool
+    + {static} FindSiegePositionFrom(entrySpot:IntVec3, map:Map) : IntVec3
+    + {static} FindSiegePositionFrom_NewTemp(entrySpot:IntVec3, map:Map, allowRoofed:bool) : IntVec3
+    + {static} TryFindEdgeCellWithPathToPositionAvoidingColony(target:IntVec3, minDistToColony:float, minDistanceToTarget:float, map:Map, result:IntVec3) : bool
+    + {static} TryFindRandomSpotNearAvoidingHostilePawns(thing:Thing, map:Map, predicate:Func<IntVec3, bool>, result:IntVec3, maxSearchDistance:float, minDistance:float, maxDistance:float, avoidColony:bool) : bool
+    + {static} TryFindEdgeCellFromTargetAvoidingColony(position:IntVec3, map:Map, predicate:Predicate<IntVec3>, result:IntVec3) : bool
+}
+@enduml

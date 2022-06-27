@@ -1,0 +1,6 @@
+@startuml
+class HediffCompProperties_SeverityFromEntropy {
+    + HediffCompProperties_SeverityFromEntropy()
+}
+HediffCompProperties <|-- HediffCompProperties_SeverityFromEntropy
+@enduml

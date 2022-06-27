@@ -1,0 +1,5 @@
+@startuml
+class SketchResolver_MonumentRuin {
+}
+SketchResolver <|-- SketchResolver_MonumentRuin
+@enduml

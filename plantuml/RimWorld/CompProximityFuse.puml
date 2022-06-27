@@ -1,0 +1,8 @@
+@startuml
+class CompProximityFuse {
+    + <<override>> CompTick() : void
+    + <<override>> CompTickRare() : void
+}
+ThingComp <|-- CompProximityFuse
+CompProximityFuse --> "Props" CompProperties_ProximityFuse
+@enduml

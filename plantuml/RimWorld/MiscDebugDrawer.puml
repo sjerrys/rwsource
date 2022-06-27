@@ -1,0 +1,5 @@
+@startuml
+class MiscDebugDrawer <<static>> {
+    + {static} DebugDrawInteractionCells() : void
+}
+@enduml

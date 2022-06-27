@@ -1,0 +1,8 @@
+@startuml
+class QuestPart_PassActivable {
+    + inSignal : string
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+}
+QuestPartActivable <|-- QuestPart_PassActivable
+@enduml

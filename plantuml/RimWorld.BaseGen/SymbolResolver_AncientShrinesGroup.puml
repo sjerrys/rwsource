@@ -1,0 +1,8 @@
+@startuml
+class SymbolResolver_AncientShrinesGroup {
+    + <<const>> MarginCells : int
+    + <<override>> Resolve(rp:ResolveParams) : void
+}
+SymbolResolver <|-- SymbolResolver_AncientShrinesGroup
+SymbolResolver_AncientShrinesGroup o-> "StandardAncientShrineSize" IntVec2
+@enduml

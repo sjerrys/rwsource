@@ -1,0 +1,7 @@
+@startuml
+class HediffCompProperties_RecoveryThought {
+    + HediffCompProperties_RecoveryThought()
+}
+HediffCompProperties <|-- HediffCompProperties_RecoveryThought
+HediffCompProperties_RecoveryThought --> "thought" ThoughtDef
+@enduml

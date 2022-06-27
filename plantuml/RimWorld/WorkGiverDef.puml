@@ -1,0 +1,39 @@
+@startuml
+class WorkGiverDef {
+    + priorityInType : int
+    + verb : string
+    + gerund : string
+    + scanThings : bool = true
+    + scanCells : bool
+    + emergency : bool
+    + directOrderable : bool = true
+    + prioritizeSustains : bool
+    + nonColonistsCanDo : bool
+    + canBeDoneWhileDrafted : bool
+    + autoTakeablePriorityDrafted : int
+    + billGiversAllHumanlikes : bool
+    + billGiversAllHumanlikesCorpses : bool
+    + billGiversAllMechanoids : bool
+    + billGiversAllMechanoidsCorpses : bool
+    + billGiversAllAnimals : bool
+    + billGiversAllAnimalsCorpses : bool
+    + tendToHumanlikesOnly : bool
+    + tendToAnimalsOnly : bool
+    + feedHumanlikesOnly : bool
+    + feedAnimalsOnly : bool
+    + <<override>> ConfigErrors() : IEnumerable<string>
+}
+class "List`1"<T> {
+}
+Def <|-- WorkGiverDef
+WorkGiverDef --> "giverClass" Type
+WorkGiverDef --> "workType" WorkTypeDef
+WorkGiverDef --> "workTags" WorkTags
+WorkGiverDef o-> "requiredCapacities<PawnCapacityDef>" "List`1"
+WorkGiverDef o-> "tagToGive" JobTag
+WorkGiverDef --> "equivalenceGroup" WorkGiverEquivalenceGroupDef
+WorkGiverDef --> "forceMote" ThingDef
+WorkGiverDef --> "fixedBillGiverDefs<ThingDef>" "List`1"
+WorkGiverDef --> "scannerDef" ThingDef
+WorkGiverDef --> "Worker" WorkGiver
+@enduml

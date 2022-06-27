@@ -1,0 +1,10 @@
+@startuml
+class PawnsArrivalModeDefOf <<static>> {
+    {static} PawnsArrivalModeDefOf()
+}
+PawnsArrivalModeDefOf --> "EdgeWalkIn" PawnsArrivalModeDef
+PawnsArrivalModeDefOf --> "CenterDrop" PawnsArrivalModeDef
+PawnsArrivalModeDefOf --> "EdgeDrop" PawnsArrivalModeDef
+PawnsArrivalModeDefOf --> "RandomDrop" PawnsArrivalModeDef
+PawnsArrivalModeDefOf --> "Shuttle" PawnsArrivalModeDef
+@enduml

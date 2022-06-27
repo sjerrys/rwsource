@@ -1,0 +1,8 @@
+@startuml
+class CaravanIncidentUtility <<static>> {
+    + {static} CalculateIncidentMapSize(caravanPawns:List<Pawn>, enemies:List<Pawn>) : int
+    + {static} CanFireIncidentWhichWantsToGenerateMapAt(tile:int) : bool
+    + {static} SetupCaravanAttackMap(caravan:Caravan, enemies:List<Pawn>, sendLetterIfRelatedPawns:bool) : Map
+    + {static} GetOrGenerateMapForIncident(caravan:Caravan, size:IntVec3, suggestedMapParentDef:WorldObjectDef) : Map
+}
+@enduml

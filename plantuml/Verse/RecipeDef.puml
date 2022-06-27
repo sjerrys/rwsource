@@ -1,0 +1,78 @@
+@startuml
+class RecipeDef {
+    + jobString : string = "Doing an unknown recipe."
+    + workAmount : float
+    + allowMixingIngredients : bool
+    + ignoreIngredientCountTakeEntireStacks : bool
+    + autoStripCorpses : bool = true
+    + interruptIfIngredientIsRotting : bool
+    + productHasIngredientStuff : bool
+    + useIngredientsForColor : bool = true
+    + targetCountAdjustment : int = 1
+    + workSkillLearnFactor : float = 1f
+    + hediffLevelOffset : int
+    + hideBodyPartNames : bool
+    + isViolation : bool
+    + successfullyRemovedHediffMessage : string
+    + surgerySuccessChanceFactor : float = 1f
+    + deathOnFailedSurgeryChance : float
+    + targetsBodyPart : bool = true
+    + anesthetize : bool = true
+    + dontShowIfAnyIngredientMissing : bool
+    + AvailableNow : bool <<get>>
+    + MinSkillString : string <<get>>
+    + UsesUnfinishedThing : bool <<get>>
+    + IsSurgery : bool <<get>>
+    + AvailableOnNow(thing:Thing) : bool
+    + WorkAmountTotal(stuffDef:ThingDef) : float
+    + PotentiallyMissingIngredients(billDoer:Pawn, map:Map) : IEnumerable<ThingDef>
+    + IsIngredient(th:ThingDef) : bool
+    + <<override>> ConfigErrors() : IEnumerable<string>
+    + <<override>> ResolveReferences() : void
+    + CompatibleWithHediff(hediffDef:HediffDef) : bool
+    + PawnSatisfiesSkillRequirements(pawn:Pawn) : bool
+    + FirstSkillRequirementPawnDoesntSatisfy(pawn:Pawn) : SkillRequirement
+    + GetPremultipliedSmallIngredients() : List<ThingDef>
+    + <<override>> SpecialDisplayStats(req:StatRequest) : IEnumerable<StatDrawEntry>
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+Def <|-- RecipeDef
+RecipeDef o-> "workerClass" Type
+RecipeDef o-> "workerCounterClass" Type
+RecipeDef --> "requiredGiverWorkType" WorkTypeDef
+RecipeDef --> "workSpeedStat" StatDef
+RecipeDef --> "efficiencyStat" StatDef
+RecipeDef --> "workTableEfficiencyStat" StatDef
+RecipeDef --> "workTableSpeedStat" StatDef
+RecipeDef o-> "ingredients<IngredientCount>" "List`1"
+RecipeDef o-> "fixedIngredientFilter" ThingFilter
+RecipeDef --> "defaultIngredientFilter" ThingFilter
+RecipeDef --> "forceHiddenSpecialFilters<SpecialThingFilterDef>" "List`1"
+RecipeDef o-> "products<ThingDefCountClass>" "List`1"
+RecipeDef --> "specialProducts<SpecialProductType>" "List`1"
+RecipeDef --> "unfinishedThingDef" ThingDef
+RecipeDef --> "skillRequirements<SkillRequirement>" "List`1"
+RecipeDef --> "workSkill" SkillDef
+RecipeDef --> "effectWorking" EffecterDef
+RecipeDef --> "soundWorking" SoundDef
+RecipeDef --> "recipeUsers<ThingDef>" "List`1"
+RecipeDef o-> "appliedOnFixedBodyParts<BodyPartDef>" "List`1"
+RecipeDef o-> "appliedOnFixedBodyPartGroups<BodyPartGroupDef>" "List`1"
+RecipeDef --> "addsHediff" HediffDef
+RecipeDef --> "removesHediff" HediffDef
+RecipeDef --> "changesHediffLevel" HediffDef
+RecipeDef --> "incompatibleWithHediffTags<string>" "List`1"
+RecipeDef --> "researchPrerequisite" ResearchProjectDef
+RecipeDef --> "researchPrerequisites<ResearchProjectDef>" "List`1"
+RecipeDef --> "factionPrerequisiteTags<string>" "List`1"
+RecipeDef --> "conceptLearned" ConceptDef
+RecipeDef --> "Worker" RecipeWorker
+RecipeDef --> "WorkerCounter" RecipeWorkerCounter
+RecipeDef --> "IngredientValueGetter" IngredientValueGetter
+RecipeDef --> "AllRecipeUsers<ThingDef>" "IEnumerable`1"
+RecipeDef --> "ProducedThingDef" ThingDef
+RecipeDef --> "UIIconThing" ThingDef
+@enduml

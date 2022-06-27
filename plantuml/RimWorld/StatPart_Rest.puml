@@ -1,0 +1,7 @@
+@startuml
+class StatPart_Rest {
+    + <<override>> TransformValue(req:StatRequest, val:float) : void
+    + <<override>> ExplanationPart(req:StatRequest) : string
+}
+StatPart <|-- StatPart_Rest
+@enduml

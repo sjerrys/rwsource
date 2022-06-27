@@ -1,0 +1,6 @@
+@startuml
+class CompCauseGameCondition_ToxicSpewer {
+    + <<override>> CompTick() : void
+}
+CompCauseGameCondition <|-- CompCauseGameCondition_ToxicSpewer
+@enduml

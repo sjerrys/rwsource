@@ -1,0 +1,27 @@
+@startuml
+class CompSpawnerPawn {
+    + nextPawnSpawnTick : int
+    + pawnsLeftToSpawn : int
+    + aggressive : bool = true
+    + canSpawnPawns : bool = true
+    + Active : bool <<get>>
+    + Dormant : bool <<get>>
+    + <<override>> Initialize(props:CompProperties) : void
+    + {static} FindLordToJoin(spawner:Thing, lordJobType:Type, shouldTryJoinParentLord:bool, spawnedPawnSelector:Func<Thing, List<Pawn>>) : Lord
+    + {static} CreateNewLord(byThing:Thing, aggressive:bool, defendRadius:float, lordJobType:Type) : Lord
+    + SpawnPawnsUntilPoints(points:float) : void
+    + CalculateNextPawnSpawnTick(delayTicks:float) : void
+    + <<override>> PostSpawnSetup(respawningAfterLoad:bool) : void
+    + <<override>> CompTick() : void
+    + SendMessage() : void
+    + <<override>> CompGetGizmosExtra() : IEnumerable<Gizmo>
+    + <<override>> CompInspectStringExtra() : string
+    + <<override>> PostExposeData() : void
+}
+class "List`1"<T> {
+}
+ThingComp <|-- CompSpawnerPawn
+CompSpawnerPawn o-> "spawnedPawns<Pawn>" "List`1"
+CompSpawnerPawn --> "Lord" Lord
+CompSpawnerPawn --> "DormancyComp" CompCanBeDormant
+@enduml

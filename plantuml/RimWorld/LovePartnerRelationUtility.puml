@@ -1,0 +1,25 @@
+@startuml
+class LovePartnerRelationUtility <<static>> {
+    + {static} HasAnyLovePartner(pawn:Pawn) : bool
+    + {static} IsLovePartnerRelation(relation:PawnRelationDef) : bool
+    + {static} IsExLovePartnerRelation(relation:PawnRelationDef) : bool
+    + {static} HasAnyLovePartnerOfTheSameGender(pawn:Pawn) : bool
+    + {static} HasAnyExLovePartnerOfTheSameGender(pawn:Pawn) : bool
+    + {static} HasAnyLovePartnerOfTheOppositeGender(pawn:Pawn) : bool
+    + {static} HasAnyExLovePartnerOfTheOppositeGender(pawn:Pawn) : bool
+    + {static} ExistingLovePartner(pawn:Pawn) : Pawn
+    + {static} LovePartnerRelationExists(first:Pawn, second:Pawn) : bool
+    + {static} ExLovePartnerRelationExists(first:Pawn, second:Pawn) : bool
+    + {static} GiveRandomExLoverOrExSpouseRelation(first:Pawn, second:Pawn) : void
+    + {static} GetPartnerInMyBed(pawn:Pawn) : Pawn
+    + {static} ExistingMostLikedLovePartner(p:Pawn, allowDead:bool) : Pawn
+    + {static} ExistingMostLikedLovePartnerRel(p:Pawn, allowDead:bool) : DirectPawnRelation
+    + {static} GetLovinMtbHours(pawn:Pawn, partner:Pawn) : float
+    + {static} TryToShareBed(first:Pawn, second:Pawn) : void
+    + {static} LovePartnerRelationGenerationChance(generated:Pawn, other:Pawn, request:PawnGenerationRequest, ex:bool) : float
+    + {static} TryToShareChildrenForGeneratedLovePartner(generated:Pawn, other:Pawn, request:PawnGenerationRequest, extraChanceFactor:float) : void
+    + {static} ChangeSpouseRelationsToExSpouse(pawn:Pawn) : void
+    + {static} GetMostDislikedNonPartnerBedOwner(p:Pawn) : Pawn
+    + {static} IncestOpinionOffsetFor(other:Pawn, pawn:Pawn) : float
+}
+@enduml

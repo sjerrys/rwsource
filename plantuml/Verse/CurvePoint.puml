@@ -1,0 +1,11 @@
+@startuml
+class CurvePoint <<struct>> {
+    + x : float <<get>>
+    + y : float <<get>>
+    + CurvePoint(x:float, y:float)
+    + CurvePoint(loc:Vector2)
+    + {static} FromString(str:string) : CurvePoint
+    + <<override>> ToString() : string
+}
+CurvePoint --> "Loc" Vector2
+@enduml

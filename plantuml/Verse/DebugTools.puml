@@ -1,0 +1,6 @@
+@startuml
+class DebugTools <<static>> {
+    + {static} DebugToolsOnGUI() : void
+}
+DebugTools --> "curTool" DebugTool
+@enduml

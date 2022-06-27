@@ -1,0 +1,20 @@
+@startuml
+class LetterStack <<sealed>> {
+    + <<const>> LetterSpacing : float = 12f
+    + LastTopY : float <<get>>
+    + ReceiveLetter(label:TaggedString, text:TaggedString, textLetterDef:LetterDef, lookTargets:LookTargets, relatedFaction:Faction, quest:Quest, hyperlinkThingDefs:List<ThingDef>, debugInfo:string) : void
+    + ReceiveLetter(label:string, text:string, textLetterDef:LetterDef, debugInfo:string) : void
+    + ReceiveLetter(let:Letter, debugInfo:string) : void
+    + RemoveLetter(let:Letter) : void
+    + LettersOnGUI(baseY:float) : void
+    + LetterStackTick() : void
+    + LetterStackUpdate() : void
+    + Notify_LetterMouseover(let:Letter) : void
+    + Notify_FactionRemoved(faction:Faction) : void
+    + ExposeData() : void
+}
+class "List`1"<T> {
+}
+IExposable <|-- LetterStack
+LetterStack --> "LettersListForReading<Letter>" "List`1"
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+abstract class WorldCameraConfig {
+    + dollyRateKeys : float = 170f
+    + dollyRateScreenEdge : float = 125f
+    + camRotationDecayFactor : float = 0.9f
+    + rotationSpeedScale : float = 0.3f
+    + zoomSpeed : float = 2.6f
+    + zoomPreserveFactor : float
+    + smoothZoom : bool
+    + <<virtual>> ConfigFixedUpdate_60(rotationVelocity:Vector2) : void
+    + <<virtual>> ConfigOnGUI() : void
+}
+@enduml

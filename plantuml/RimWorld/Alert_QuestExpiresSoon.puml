@@ -1,0 +1,9 @@
+@startuml
+class Alert_QuestExpiresSoon {
+    + Alert_QuestExpiresSoon()
+    + <<override>> GetLabel() : string
+    + <<override>> GetExplanation() : TaggedString
+    + <<override>> GetReport() : AlertReport
+}
+Alert <|-- Alert_QuestExpiresSoon
+@enduml

@@ -1,0 +1,24 @@
+@startuml
+class QuestPart_SpawnThing {
+    + inSignal : string
+    + questLookTarget : bool = true
+    + lookForSafeSpot : bool
+    + tryLandInShipLandingZone : bool
+    + <<override>> IncreasesPopulation : bool <<get>>
+    + <<override>> Notify_QuestSignalReceived(signal:Signal) : void
+    + <<override>> QuestPartReserves(p:Pawn) : bool
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart <|-- QuestPart_SpawnThing
+QuestPart_SpawnThing --> "thing" Thing
+QuestPart_SpawnThing --> "factionForFindingSpot" Faction
+QuestPart_SpawnThing --> "mapParent" MapParent
+QuestPart_SpawnThing o-> "cell" IntVec3
+QuestPart_SpawnThing --> "tryLandNearThing" Thing
+QuestPart_SpawnThing --> "mapParentOfPawn" Pawn
+QuestPart_SpawnThing --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+QuestPart_SpawnThing --> "MapParent" MapParent
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class AssignableUtility <<static>> {
+    + {static} GetAssignedPawn(building:Building) : Pawn
+    + {static} GetAssignedPawns(building:Building) : IEnumerable<Pawn>
+}
+@enduml

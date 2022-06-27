@@ -1,0 +1,14 @@
+@startuml
+class QuestPart_Hyperlinks {
+    + <<override>> ExposeData() : void
+    + <<override>> ReplacePawnReferences(replace:Pawn, with:Pawn) : void
+}
+class "List`1"<T> {
+}
+class "IEnumerable`1"<T> {
+}
+QuestPart <|-- QuestPart_Hyperlinks
+QuestPart_Hyperlinks o-> "thingDefs<ThingDef>" "List`1"
+QuestPart_Hyperlinks o-> "pawns<Pawn>" "List`1"
+QuestPart_Hyperlinks --> "Hyperlinks<Dialog_InfoCard.Hyperlink>" "IEnumerable`1"
+@enduml

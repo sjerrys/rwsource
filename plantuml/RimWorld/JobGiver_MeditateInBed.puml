@@ -1,0 +1,5 @@
+@startuml
+class JobGiver_MeditateInBed {
+}
+JobGiver_Meditate <|-- JobGiver_MeditateInBed
+@enduml

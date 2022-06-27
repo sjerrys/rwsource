@@ -1,0 +1,9 @@
+@startuml
+class SolidColorMaterials <<static>> {
+    + {static} SimpleColorMatCount : int <<get>>
+    + {static} SimpleSolidColorMaterial(col:Color, careAboutVertexColors:bool) : Material
+    + {static} NewSolidColorMaterial(col:Color, shader:Shader) : Material
+    + {static} NewSolidColorTexture(r:float, g:float, b:float, a:float) : Texture2D
+    + {static} NewSolidColorTexture(color:Color) : Texture2D
+}
+@enduml

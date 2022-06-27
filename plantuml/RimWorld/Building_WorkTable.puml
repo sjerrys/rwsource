@@ -1,0 +1,21 @@
+@startuml
+class Building_WorkTable {
+    + CanWorkWithoutPower : bool <<get>>
+    + CanWorkWithoutFuel : bool <<get>>
+    + Building_WorkTable()
+    + <<override>> ExposeData() : void
+    + <<override>> SpawnSetup(map:Map, respawningAfterLoad:bool) : void
+    + <<virtual>> UsedThisTick() : void
+    + CurrentlyUsableForBills() : bool
+    + UsableForBillsAfterFueling() : bool
+}
+class "IEnumerable`1"<T> {
+}
+Building <|-- Building_WorkTable
+IBillGiver <|-- Building_WorkTable
+IBillGiverWithTickAction <|-- Building_WorkTable
+Building_WorkTable --> "billStack" BillStack
+Building_WorkTable --> "BillStack" BillStack
+Building_WorkTable --> "BillInteractionCell" IntVec3
+Building_WorkTable --> "IngredientStackCells<IntVec3>" "IEnumerable`1"
+@enduml

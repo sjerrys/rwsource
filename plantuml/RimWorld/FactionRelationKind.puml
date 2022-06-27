@@ -1,0 +1,7 @@
+@startuml
+enum FactionRelationKind {
+    Hostile,
+    Neutral,
+    Ally,
+}
+@enduml

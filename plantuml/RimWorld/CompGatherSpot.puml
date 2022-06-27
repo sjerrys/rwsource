@@ -1,0 +1,10 @@
+@startuml
+class CompGatherSpot {
+    + Active : bool <<get>> <<set>>
+    + <<override>> PostExposeData() : void
+    + <<override>> PostSpawnSetup(respawningAfterLoad:bool) : void
+    + <<override>> PostDeSpawn(map:Map) : void
+    + <<override>> CompGetGizmosExtra() : IEnumerable<Gizmo>
+}
+ThingComp <|-- CompGatherSpot
+@enduml

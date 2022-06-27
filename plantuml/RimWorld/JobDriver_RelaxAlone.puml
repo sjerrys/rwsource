@@ -1,0 +1,8 @@
+@startuml
+class JobDriver_RelaxAlone {
+    + <<override>> CanBeginNowWhileLyingDown() : bool
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+    + <<override>> ExposeData() : void
+}
+JobDriver <|-- JobDriver_RelaxAlone
+@enduml

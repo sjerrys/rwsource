@@ -1,0 +1,8 @@
+@startuml
+class Thought_MemoryObservation {
+    + <<override>> ExposeData() : void
+    + <<override>> TryMergeWithExistingMemory(showBubble:bool) : bool
+}
+Thought_Memory <|-- Thought_MemoryObservation
+Thought_MemoryObservation --> "Target" Thing
+@enduml

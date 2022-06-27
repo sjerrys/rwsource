@@ -1,0 +1,18 @@
+@startuml
+class LayerSubMesh {
+    + finalized : bool
+    + disabled : bool
+    + LayerSubMesh(mesh:Mesh, material:Material)
+    + Clear(parts:MeshParts) : void
+    + FinalizeMesh(parts:MeshParts) : void
+    + <<override>> ToString() : string
+}
+class "List`1"<T> {
+}
+LayerSubMesh --> "material" Material
+LayerSubMesh --> "mesh" Mesh
+LayerSubMesh o-> "verts<Vector3>" "List`1"
+LayerSubMesh o-> "tris<int>" "List`1"
+LayerSubMesh o-> "colors<Color32>" "List`1"
+LayerSubMesh o-> "uvs<Vector3>" "List`1"
+@enduml

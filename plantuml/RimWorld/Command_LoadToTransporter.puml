@@ -1,0 +1,8 @@
+@startuml
+class Command_LoadToTransporter {
+    + <<override>> ProcessInput(ev:Event) : void
+    + <<override>> InheritInteractionsFrom(other:Gizmo) : bool
+}
+Command <|-- Command_LoadToTransporter
+Command_LoadToTransporter --> "transComp" CompTransporter
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+class DebugTile {
+    + tile : int
+    + displayString : string
+    + colorPct : float
+    + ticksLeft : int
+    + DistanceToCamera : float <<get>>
+    + Draw() : void
+    + OnGUI() : void
+}
+DebugTile --> "customMat" Material
+@enduml

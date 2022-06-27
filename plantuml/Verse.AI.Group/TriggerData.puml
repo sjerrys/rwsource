@@ -1,0 +1,6 @@
+@startuml
+abstract class TriggerData {
+    + {abstract} ExposeData() : void
+}
+IExposable <|-- TriggerData
+@enduml

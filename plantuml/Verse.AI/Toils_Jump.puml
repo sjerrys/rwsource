@@ -1,0 +1,12 @@
+@startuml
+class Toils_Jump <<static>> {
+    + {static} Jump(jumpTarget:Toil) : Toil
+    + {static} JumpIf(jumpTarget:Toil, condition:Func<bool>) : Toil
+    + {static} JumpIfTargetDespawnedOrNull(ind:TargetIndex, jumpToil:Toil) : Toil
+    + {static} JumpIfTargetInvalid(ind:TargetIndex, jumpToil:Toil) : Toil
+    + {static} JumpIfTargetNotHittable(ind:TargetIndex, jumpToil:Toil) : Toil
+    + {static} JumpIfTargetDowned(ind:TargetIndex, jumpToil:Toil) : Toil
+    + {static} JumpIfHaveTargetInQueue(ind:TargetIndex, jumpToil:Toil) : Toil
+    + {static} JumpIfCannotTouch(ind:TargetIndex, peMode:PathEndMode, jumpToil:Toil) : Toil
+}
+@enduml

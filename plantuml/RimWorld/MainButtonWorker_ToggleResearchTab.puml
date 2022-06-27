@@ -1,0 +1,6 @@
+@startuml
+class MainButtonWorker_ToggleResearchTab {
+    + <<override>> ButtonBarPercent : float <<get>>
+}
+MainButtonWorker_ToggleTab <|-- MainButtonWorker_ToggleResearchTab
+@enduml

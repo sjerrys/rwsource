@@ -1,0 +1,8 @@
+@startuml
+class Power {
+    + Power()
+    + Power(lhs:ModuleBase, rhs:ModuleBase)
+    + <<override>> GetValue(x:double, y:double, z:double) : double
+}
+ModuleBase <|-- Power
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+class QuestNode_GetExampleRaid {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GetExampleRaid
+QuestNode_GetExampleRaid --> "storeAs<string>" "SlateRef`1"
+QuestNode_GetExampleRaid --> "faction<Faction>" "SlateRef`1"
+QuestNode_GetExampleRaid --> "points<float>" "SlateRef`1"
+@enduml

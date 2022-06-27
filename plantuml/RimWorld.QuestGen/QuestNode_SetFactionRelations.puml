@@ -1,0 +1,11 @@
+@startuml
+class QuestNode_SetFactionRelations {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_SetFactionRelations
+QuestNode_SetFactionRelations --> "inSignal<string>" "SlateRef`1"
+QuestNode_SetFactionRelations --> "faction<Faction>" "SlateRef`1"
+QuestNode_SetFactionRelations --> "relationKind<FactionRelationKind>" "SlateRef`1"
+QuestNode_SetFactionRelations --> "sendLetter<bool?>" "SlateRef`1"
+@enduml

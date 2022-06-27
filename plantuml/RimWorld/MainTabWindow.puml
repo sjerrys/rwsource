@@ -1,0 +1,11 @@
+@startuml
+abstract class MainTabWindow {
+    + MainTabWindow()
+    + <<override>> DoWindowContents(inRect:Rect) : void
+}
+Window <|-- MainTabWindow
+MainTabWindow --> "def" MainButtonDef
+MainTabWindow --> "RequestedTabSize" Vector2
+MainTabWindow --> "Anchor" MainTabWindowAnchor
+MainTabWindow --> "InitialSize" Vector2
+@enduml

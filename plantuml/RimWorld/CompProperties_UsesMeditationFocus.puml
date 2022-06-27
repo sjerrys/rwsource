@@ -1,0 +1,6 @@
+@startuml
+class CompProperties_UsesMeditationFocus {
+    + CompProperties_UsesMeditationFocus()
+}
+CompProperties <|-- CompProperties_UsesMeditationFocus
+@enduml

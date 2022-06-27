@@ -1,0 +1,16 @@
+@startuml
+class RoomGroupTempTracker <<sealed>> {
+    + <<const>> FractionWallEqualizeCells : float = 0.2f
+    + <<const>> WallEqualizeFactor : float = 0.00017f
+    + <<const>> EqualizationPowerOfFilledCells : float = 0.5f
+    + Temperature : float <<get>> <<set>>
+    + RoomGroupTempTracker(roomGroup:RoomGroup, map:Map)
+    + RoofChanged() : void
+    + RoomChanged() : void
+    + EqualizeTemperature() : void
+    + DebugDraw() : void
+}
+class "List`1"<T> {
+}
+RoomGroupTempTracker --> "EqualizeCellsForReading<IntVec3>" "List`1"
+@enduml

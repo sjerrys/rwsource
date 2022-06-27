@@ -1,0 +1,19 @@
+@startuml
+class PawnTable {
+    + SortingDescending : bool <<get>>
+    + HeightNoScrollbar : float <<get>>
+    + HeaderHeight : float <<get>>
+    + PawnTable(def:PawnTableDef, pawnsGetter:Func<IEnumerable<Pawn>>, uiWidth:int, uiHeight:int)
+    + PawnTableOnGUI(position:Vector2) : void
+    + SetDirty() : void
+    + SetMinMaxSize(minTableWidth:int, maxTableWidth:int, minTableHeight:int, maxTableHeight:int) : void
+    + SetFixedSize(size:Vector2) : void
+    + SortBy(column:PawnColumnDef, descending:bool) : void
+}
+class "List`1"<T> {
+}
+PawnTable --> "ColumnsListForReading<PawnColumnDef>" "List`1"
+PawnTable --> "SortingBy" PawnColumnDef
+PawnTable --> "Size" Vector2
+PawnTable --> "PawnsListForReading<Pawn>" "List`1"
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+class JoyTunings <<static>> {
+    + <<const>> BaseJoyGainPerHour : float = 0.36f
+    + <<const>> ThreshLow : float = 0.15f
+    + <<const>> ThreshSatisfied : float = 0.3f
+    + <<const>> ThreshHigh : float = 0.7f
+    + <<const>> ThreshVeryHigh : float = 0.85f
+    + <<const>> BaseFallPerInterval : float = 0.0015f
+    + <<const>> FallRateFactorWhenLow : float = 0.7f
+    + <<const>> FallRateFactorWhenVeryLow : float = 0.4f
+    + <<const>> ToleranceGainPerJoy : float = 0.65f
+    + <<const>> BoredStartToleranceThreshold : float = 0.5f
+    + <<const>> BoredEndToleranceThreshold : float = 0.3f
+}
+@enduml

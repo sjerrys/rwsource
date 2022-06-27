@@ -1,0 +1,7 @@
+@startuml
+class ThoughtWorker_ApparelDamaged {
+    + <<const>> MinForFrayed : float = 0.5f
+    + <<const>> MinForTattered : float = 0.2f
+}
+ThoughtWorker <|-- ThoughtWorker_ApparelDamaged
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class DiaNode {
+    + DiaNode(text:TaggedString)
+    + DiaNode(newDef:DiaNodeMold)
+    + PreClose() : void
+}
+class "List`1"<T> {
+}
+DiaNode --> "text" TaggedString
+DiaNode o-> "options<DiaOption>" "List`1"
+@enduml

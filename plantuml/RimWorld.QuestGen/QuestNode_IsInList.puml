@@ -1,0 +1,11 @@
+@startuml
+class QuestNode_IsInList {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_IsInList
+QuestNode_IsInList --> "name<string>" "SlateRef`1"
+QuestNode_IsInList --> "value<object>" "SlateRef`1"
+QuestNode_IsInList --> "node" QuestNode
+QuestNode_IsInList --> "elseNode" QuestNode
+@enduml

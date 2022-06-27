@@ -1,0 +1,10 @@
+@startuml
+class SubcameraDef {
+    + layer : string
+    + depth : int
+    + LayerId : int <<get>>
+}
+Def <|-- SubcameraDef
+SubcameraDef --> "format" RenderTextureFormat
+SubcameraDef --> "BestFormat" RenderTextureFormat
+@enduml

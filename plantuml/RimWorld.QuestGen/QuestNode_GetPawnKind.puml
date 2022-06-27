@@ -1,0 +1,16 @@
+@startuml
+class QuestNode_GetPawnKind {
+}
+class Option {
+    + weight : float
+    + anyAnimal : bool
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GetPawnKind
+QuestNode_GetPawnKind --> "storeAs<string>" "SlateRef`1"
+QuestNode_GetPawnKind --> "options<List<Option>>" "SlateRef`1"
+QuestNode_GetPawnKind +-- Option
+Option --> "kindDef" PawnKindDef
+Option --> "onlyAllowedFleshType" FleshTypeDef
+@enduml

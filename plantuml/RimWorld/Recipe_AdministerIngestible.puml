@@ -1,0 +1,9 @@
+@startuml
+class Recipe_AdministerIngestible {
+    + <<override>> ApplyOnPawn(pawn:Pawn, part:BodyPartRecord, billDoer:Pawn, ingredients:List<Thing>, bill:Bill) : void
+    + <<override>> ConsumeIngredient(ingredient:Thing, recipe:RecipeDef, map:Map) : void
+    + <<override>> IsViolationOnPawn(pawn:Pawn, part:BodyPartRecord, billDoerFaction:Faction) : bool
+    + <<override>> GetLabelWhenUsedOn(pawn:Pawn, part:BodyPartRecord) : string
+}
+Recipe_Surgery <|-- Recipe_AdministerIngestible
+@enduml

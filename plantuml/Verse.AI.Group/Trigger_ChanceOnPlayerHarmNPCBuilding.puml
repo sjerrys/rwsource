@@ -1,0 +1,7 @@
+@startuml
+class Trigger_ChanceOnPlayerHarmNPCBuilding {
+    + Trigger_ChanceOnPlayerHarmNPCBuilding(chance:float)
+    + <<override>> ActivateOn(lord:Lord, signal:TriggerSignal) : bool
+}
+Trigger <|-- Trigger_ChanceOnPlayerHarmNPCBuilding
+@enduml

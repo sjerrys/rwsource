@@ -1,0 +1,5 @@
+@startuml
+class JobGiver_ConcertOrganizerPlayInstrument {
+}
+ThinkNode_JobGiver <|-- JobGiver_ConcertOrganizerPlayInstrument
+@enduml

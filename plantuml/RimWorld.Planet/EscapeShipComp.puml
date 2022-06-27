@@ -1,0 +1,7 @@
+@startuml
+class EscapeShipComp {
+    + <<override>> PostMapGenerate() : void
+    + <<override>> GetFloatMenuOptions(caravan:Caravan) : IEnumerable<FloatMenuOption>
+}
+WorldObjectComp <|-- EscapeShipComp
+@enduml

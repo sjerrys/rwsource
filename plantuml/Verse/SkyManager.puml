@@ -1,0 +1,11 @@
+@startuml
+class SkyManager {
+    + <<const>> NightMaxCelGlow : float = 0.1f
+    + <<const>> DuskMaxCelGlow : float = 0.6f
+    + CurSkyGlow : float <<get>>
+    + SkyManager(map:Map)
+    + SkyManagerUpdate() : void
+    + ForceSetCurSkyGlow(curSkyGlow:float) : void
+    + DebugString() : string
+}
+@enduml

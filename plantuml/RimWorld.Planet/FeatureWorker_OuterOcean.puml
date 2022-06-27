@@ -1,0 +1,6 @@
+@startuml
+class FeatureWorker_OuterOcean {
+    + <<override>> GenerateWhereAppropriate() : void
+}
+FeatureWorker <|-- FeatureWorker_OuterOcean
+@enduml

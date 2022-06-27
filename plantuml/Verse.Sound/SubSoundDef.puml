@@ -1,0 +1,34 @@
+@startuml
+class SubSoundDef {
+    + name : string = "UnnamedSubSoundDef"
+    + onCamera : bool
+    + muteWhenPaused : bool
+    + tempoAffectedByGameSpeed : bool
+    + sustainLoop : bool = true
+    + sustainAttack : float
+    + sustainSkipFirstAttack : bool = true
+    + sustainRelease : float
+    + <<virtual>> TryPlay(info:SoundInfo) : void
+    + RandomizedResolvedGrain() : ResolvedGrain
+    + RandomizedVolume() : float
+    + <<override>> ResolveReferences() : void
+    + <<override>> ConfigErrors() : IEnumerable<string>
+    + <<override>> ToString() : string
+}
+class "List`1"<T> {
+}
+Editable <|-- SubSoundDef
+SubSoundDef o-> "grains<AudioGrain>" "List`1"
+SubSoundDef o-> "volumeRange" FloatRange
+SubSoundDef o-> "pitchRange" FloatRange
+SubSoundDef o-> "distRange" FloatRange
+SubSoundDef o-> "repeatMode" RepeatSelectMode
+SubSoundDef o-> "paramMappings<SoundParameterMapping>" "List`1"
+SubSoundDef o-> "filters<SoundFilter>" "List`1"
+SubSoundDef o-> "startDelayRange" FloatRange
+SubSoundDef o-> "gameSpeedRange" IntRange
+SubSoundDef o-> "sustainLoopDurationRange" FloatRange
+SubSoundDef o-> "sustainIntervalRange" FloatRange
+SubSoundDef --> "parentDef" SoundDef
+SubSoundDef --> "Duration" FloatRange
+@enduml

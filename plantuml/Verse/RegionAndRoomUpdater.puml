@@ -1,0 +1,9 @@
+@startuml
+class RegionAndRoomUpdater {
+    + Enabled : bool <<get>> <<set>>
+    + AnythingToRebuild : bool <<get>>
+    + RegionAndRoomUpdater(map:Map)
+    + RebuildAllRegionsAndRooms() : void
+    + TryRebuildDirtyRegionsAndRooms() : void
+}
+@enduml

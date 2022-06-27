@@ -1,0 +1,11 @@
+@startuml
+class Alert_UndignifiedBedroom {
+    + Alert_UndignifiedBedroom()
+    + <<override>> GetReport() : AlertReport
+    + <<override>> GetExplanation() : TaggedString
+}
+class "List`1"<T> {
+}
+Alert <|-- Alert_UndignifiedBedroom
+Alert_UndignifiedBedroom --> "Targets<Pawn>" "List`1"
+@enduml

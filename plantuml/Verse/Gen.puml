@@ -1,0 +1,33 @@
+@startuml
+class Gen <<static>> {
+    + {static} AveragePosition(cells:List<IntVec3>) : Vector3
+    + {static} RandomEnumValue(disallowFirstValue:bool) : T
+    + {static} RandomHorizontalVector(max:float) : Vector3
+    + {static} GetBitCountOf(lValue:long) : int
+    + {static} GetAllSelectedItems(value:Enum) : IEnumerable<T>
+    + {static} YieldSingle(val:T) : IEnumerable<T>
+    + {static} YieldSingleNonGeneric(val:T) : IEnumerable
+    + {static} ToStringSafe(obj:T) : string
+    + {static} ToStringSafeEnumerable(enumerable:IEnumerable) : string
+    + {static} Swap(x:T, y:T) : void
+    + {static} MemberwiseClone(obj:T) : T
+    + {static} FixedTimeStepUpdate(timeBuffer:float, fps:float) : int
+    + {static} HashCombine(seed:int, obj:T) : int
+    + {static} HashCombineStruct(seed:int, obj:T) : int
+    + {static} HashCombineInt(seed:int, value:int) : int
+    + {static} HashCombineInt(v1:int, v2:int, v3:int, v4:int) : int
+    + {static} HashOffset(baseInt:int) : int
+    + {static} HashOffset(t:Thing) : int
+    + {static} HashOffset(o:WorldObject) : int
+    + {static} IsHashIntervalTick(t:Thing, interval:int) : bool
+    + {static} HashOffsetTicks(t:Thing) : int
+    + {static} IsHashIntervalTick(o:WorldObject, interval:int) : bool
+    + {static} HashOffsetTicks(o:WorldObject) : int
+    + {static} IsHashIntervalTick(f:Faction, interval:int) : bool
+    + {static} HashOffsetTicks(f:Faction) : int
+    + {static} IsNestedHashIntervalTick(t:Thing, outerInterval:int, approxInnerInterval:int) : bool
+    + {static} ReplaceNullFields(replaceIn:T, replaceWith:T) : void
+    + {static} EnsureAllFieldsNullable(type:Type) : void
+    + {static} GetNonNullFieldsDebugInfo(obj:object) : string
+}
+@enduml

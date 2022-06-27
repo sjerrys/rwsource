@@ -1,0 +1,14 @@
+@startuml
+class CompHibernatable {
+    + Running : bool <<get>>
+    + <<override>> PostSpawnSetup(respawningAfterLoad:bool) : void
+    + <<override>> PostDeSpawn(map:Map) : void
+    + Startup() : void
+    + <<override>> CompInspectStringExtra() : string
+    + <<override>> CompTick() : void
+    + <<override>> PostExposeData() : void
+}
+ThingComp <|-- CompHibernatable
+CompHibernatable --> "Props" CompProperties_Hibernatable
+CompHibernatable --> "State" HibernatableStateDef
+@enduml

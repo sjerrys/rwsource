@@ -1,0 +1,6 @@
+@startuml
+class JoyGiver_TakeDrug {
+    + <<override>> GetChance(pawn:Pawn) : float
+}
+JoyGiver_Ingest <|-- JoyGiver_TakeDrug
+@enduml

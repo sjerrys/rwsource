@@ -1,0 +1,22 @@
+@startuml
+class CompBladelinkWeapon {
+    + TicksSinceLastKill : int <<get>>
+    + Bondable : bool <<get>>
+    + <<override>> PostPostMake() : void
+    + <<override>> PostDestroy(mode:DestroyMode, previousMap:Map) : void
+    + <<override>> Notify_Equipped(pawn:Pawn) : void
+    + <<override>> Notify_KilledPawn(pawn:Pawn) : void
+    + Notify_EquipmentLost(pawn:Pawn) : void
+    + Notify_WieldedOtherWeapon() : void
+    + UnBond() : void
+    + <<override>> CompInspectStringExtra() : string
+    + <<override>> PostExposeData() : void
+    + <<override>> SpecialDisplayStats() : IEnumerable<StatDrawEntry>
+    + <<override>> Notify_UsedWeapon(pawn:Pawn) : void
+}
+class "List`1"<T> {
+}
+ThingComp <|-- CompBladelinkWeapon
+CompBladelinkWeapon --> "bondedPawn" Pawn
+CompBladelinkWeapon --> "TraitsListForReading<WeaponTraitDef>" "List`1"
+@enduml

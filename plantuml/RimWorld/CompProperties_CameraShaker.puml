@@ -1,0 +1,7 @@
+@startuml
+class CompProperties_CameraShaker {
+    + mag : float = 0.05f
+    + CompProperties_CameraShaker()
+}
+CompProperties <|-- CompProperties_CameraShaker
+@enduml

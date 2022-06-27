@@ -1,0 +1,9 @@
+@startuml
+class SkillGain {
+    + xp : int
+    + SkillGain()
+    + SkillGain(skill:SkillDef, xp:int)
+    + LoadDataFromXmlCustom(xmlRoot:XmlNode) : void
+}
+SkillGain --> "skill" SkillDef
+@enduml

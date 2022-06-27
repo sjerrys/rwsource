@@ -1,0 +1,6 @@
+@startuml
+class CameraMapConfig_CarWithContinuousZoom {
+    + CameraMapConfig_CarWithContinuousZoom()
+}
+CameraMapConfig_Car <|-- CameraMapConfig_CarWithContinuousZoom
+@enduml

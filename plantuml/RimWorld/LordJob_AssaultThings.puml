@@ -1,0 +1,9 @@
+@startuml
+class LordJob_AssaultThings {
+    + LordJob_AssaultThings()
+    + LordJob_AssaultThings(assaulterFaction:Faction, things:List<Thing>, damageFraction:float, useAvoidGridSmart:bool)
+    + <<override>> CreateGraph() : StateGraph
+    + <<override>> ExposeData() : void
+}
+LordJob <|-- LordJob_AssaultThings
+@enduml

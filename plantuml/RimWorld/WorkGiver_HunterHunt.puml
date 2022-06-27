@@ -1,0 +1,13 @@
+@startuml
+class WorkGiver_HunterHunt {
+    + <<override>> PotentialWorkThingsGlobal(pawn:Pawn) : IEnumerable<Thing>
+    + <<override>> MaxPathDanger(pawn:Pawn) : Danger
+    + <<override>> ShouldSkip(pawn:Pawn, forced:bool) : bool
+    + <<override>> HasJobOnThing(pawn:Pawn, t:Thing, forced:bool) : bool
+    + <<override>> JobOnThing(pawn:Pawn, t:Thing, forced:bool) : Job
+    + {static} HasHuntingWeapon(p:Pawn) : bool
+    + {static} HasShieldAndRangedWeapon(p:Pawn) : bool
+}
+WorkGiver_Scanner <|-- WorkGiver_HunterHunt
+WorkGiver_HunterHunt --> "PathEndMode" PathEndMode
+@enduml

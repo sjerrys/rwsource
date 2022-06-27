@@ -1,0 +1,9 @@
+@startuml
+enum FoodPoisonCause {
+    Unknown,
+    IncompetentCook,
+    FilthyKitchen,
+    Rotten,
+    DangerousFoodType,
+}
+@enduml

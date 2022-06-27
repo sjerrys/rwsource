@@ -1,0 +1,8 @@
+@startuml
+abstract class FeedbackItem {
+    + TimeLeft : float = 2f
+    + FeedbackItem(ScreenPos:Vector2)
+    + Update() : void
+    + {abstract} FeedbackOnGUI() : void
+}
+@enduml

@@ -1,0 +1,16 @@
+@startuml
+class Need_Authority {
+    + <<const>> LevelGainPerDayOfReigning : float = 2f
+    + <<const>> LevelGainPerDayOfGivingSpeech : float = 3f
+    + <<override>> GUIChangeArrow : int <<get>>
+    + IsActive : bool <<get>>
+    + FallPerDay : float <<get>>
+    + <<override>> ShowOnNeedList : bool <<get>>
+    + IsCurrentlyReigning : bool <<get>>
+    + IsCurrentlyGivingSpeech : bool <<get>>
+    + Need_Authority(pawn:Pawn)
+    + <<override>> NeedInterval() : void
+}
+Need <|-- Need_Authority
+Need_Authority --> "CurCategory" AuthorityCategory
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+class CaravanArrivalTimeEstimator <<static>> {
+    + {static} EstimatedTicksToArrive(caravan:Caravan, allowCaching:bool) : int
+    + {static} EstimatedTicksToArrive(from:int, to:int, caravan:Caravan) : int
+    + {static} EstimatedTicksToArrive(from:int, to:int, path:WorldPath, nextTileCostLeft:float, caravanTicksPerMove:int, curTicksAbs:int) : int
+    + {static} EstimatedTicksToArriveToEvery(from:int, to:int, path:WorldPath, nextTileCostLeft:float, caravanTicksPerMove:int, curTicksAbs:int, outTicksToArrive:List<Pair<int, int>>) : void
+    + {static} EstimatedTicksToArrive(destinationTile:int, estimatedTicksToArriveToEvery:List<Pair<int, int>>) : int
+    + {static} TileIllBeInAt(ticksAbs:int, estimatedTicksToArriveToEvery:List<Pair<int, int>>, ticksAbsUsedToCalculateEstimatedTicksToArriveToEvery:int) : int
+}
+@enduml

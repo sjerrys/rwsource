@@ -1,0 +1,6 @@
+@startuml
+class MainTabWindow_Wildlife {
+    + <<override>> PostOpen() : void
+}
+MainTabWindow_PawnTable <|-- MainTabWindow_Wildlife
+@enduml

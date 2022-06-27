@@ -1,0 +1,7 @@
+@startuml
+class RoyalTitleAwardWorker_BestowingCeremony {
+    + <<override>> OnPreAward(pawn:Pawn, faction:Faction, currentTitle:RoyalTitleDef, newTitle:RoyalTitleDef) : void
+    + <<override>> DoAward(pawn:Pawn, faction:Faction, currentTitle:RoyalTitleDef, newTitle:RoyalTitleDef) : void
+}
+RoyalTitleAwardWorker <|-- RoyalTitleAwardWorker_BestowingCeremony
+@enduml

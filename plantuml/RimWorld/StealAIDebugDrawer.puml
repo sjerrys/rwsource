@@ -1,0 +1,6 @@
+@startuml
+class StealAIDebugDrawer <<static>> {
+    + {static} DebugDraw() : void
+    + {static} Notify_ThingChanged(thing:Thing) : void
+}
+@enduml

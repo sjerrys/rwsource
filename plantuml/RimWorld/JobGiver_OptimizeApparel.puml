@@ -1,0 +1,8 @@
+@startuml
+class JobGiver_OptimizeApparel {
+    + {static} ApparelScoreGain_NewTmp(pawn:Pawn, ap:Apparel, wornScoresCache:List<float>) : float
+    + {static} ApparelScoreGain(pawn:Pawn, ap:Apparel) : float
+    + {static} ApparelScoreRaw(pawn:Pawn, ap:Apparel) : float
+}
+ThinkNode_JobGiver <|-- JobGiver_OptimizeApparel
+@enduml

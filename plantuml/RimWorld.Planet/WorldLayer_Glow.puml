@@ -1,0 +1,7 @@
+@startuml
+class WorldLayer_Glow {
+    + <<const>> GlowRadius : float = 8f
+    + <<override>> Regenerate() : IEnumerable
+}
+WorldLayer <|-- WorldLayer_Glow
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class CompProperties_AbilityTransferEntropy {
+    + targetReceivesEntropy : bool = true
+    + CompProperties_AbilityTransferEntropy()
+}
+CompProperties_AbilityEffect <|-- CompProperties_AbilityTransferEntropy
+@enduml

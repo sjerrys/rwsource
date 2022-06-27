@@ -1,0 +1,34 @@
+@startuml
+class GenLabel <<static>> {
+    + {static} ClearCache() : void
+    + {static} ThingLabel(entDef:BuildableDef, stuffDef:ThingDef, stackCount:int) : string
+    + {static} ThingLabel(t:Thing, stackCount:int, includeHp:bool) : string
+    + {static} ThingsLabel(things:IEnumerable<Thing>, prefix:string) : string
+    + {static} ThingsLabel(things:List<ThingCount>, prefix:string, ignoreStackLimit:bool) : string
+    + {static} BestKindLabel(pawn:Pawn, mustNoteGender:bool, mustNoteLifeStage:bool, plural:bool, pluralCount:int) : string
+    + {static} BestKindLabel(kindDef:PawnKindDef, gender:Gender, plural:bool, pluralCount:int) : string
+    + {static} BestKindLabel(kindDef:PawnKindDef, gender:Gender, genderNoted:bool, plural:bool, pluralCount:int) : string
+    + {static} BestGroupLabel(pawns:List<Pawn>, definite:bool, singlePawn:Pawn) : string
+}
+class LabelElement {
+    + count : int
+}
+class LabelRequest <<struct>> {
+    + stackCount : int
+    + health : int
+    + maxHealth : int
+    + wornByCorpse : bool
+    + <<override>> Equals(obj:object) : bool
+    + Equals(other:LabelRequest) : bool
+    + <<override>> GetHashCode() : int
+}
+class "IEquatable`1"<T> {
+}
+GenLabel +-- LabelElement
+LabelElement --> "thingTemplate" Thing
+GenLabel +-- LabelRequest
+"IEquatable`1" "<LabelRequest>" <|-- LabelRequest
+LabelRequest --> "entDef" BuildableDef
+LabelRequest --> "stuffDef" ThingDef
+LabelRequest --> "quality" QualityCategory
+@enduml

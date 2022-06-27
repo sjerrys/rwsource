@@ -1,0 +1,7 @@
+@startuml
+class WorldLayer_Terrain {
+    + <<override>> Regenerate() : IEnumerable
+    + GetTileIDFromRayHit(hit:RaycastHit) : int
+}
+WorldLayer <|-- WorldLayer_Terrain
+@enduml

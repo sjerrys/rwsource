@@ -1,0 +1,25 @@
+@startuml
+class ThreadLocalDeepProfiler {
+    {static} ThreadLocalDeepProfiler()
+    + Start(label:string) : void
+    + End() : void
+}
+class Watcher {
+    + ElapsedMilliseconds : double <<get>>
+    + Label : string <<get>>
+    + Watcher(label:string)
+    + Watcher(label:string, stopwatch:Stopwatch)
+    + AddChildResult(w:Watcher) : void
+}
+class LabelTimeTuple <<struct>> {
+    + label : string
+    + totalTime : double
+    + selfTime : double
+}
+class "List`1"<T> {
+}
+ThreadLocalDeepProfiler +-- Watcher
+Watcher --> "Watch" Stopwatch
+Watcher --> "Children<Watcher>" "List`1"
+ThreadLocalDeepProfiler +-- LabelTimeTuple
+@enduml

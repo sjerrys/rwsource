@@ -1,0 +1,7 @@
+@startuml
+enum FillCategory {
+    None,
+    Partial,
+    Full,
+}
+@enduml

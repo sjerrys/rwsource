@@ -1,0 +1,8 @@
+@startuml
+class WorkGiver_Refuel_Turret {
+    + <<override>> CanRefuelThing(t:Thing) : bool
+}
+WorkGiver_Refuel <|-- WorkGiver_Refuel_Turret
+WorkGiver_Refuel_Turret --> "JobStandard" JobDef
+WorkGiver_Refuel_Turret --> "JobAtomic" JobDef
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class Verb_Spawn {
+}
+Verb_CastBase <|-- Verb_Spawn
+@enduml

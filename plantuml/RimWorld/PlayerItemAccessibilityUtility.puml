@@ -1,0 +1,10 @@
+@startuml
+class PlayerItemAccessibilityUtility <<static>> {
+    + {static} Accessible(thing:ThingDef, count:int, map:Map) : bool
+    + {static} PossiblyAccessible(thing:ThingDef, count:int, map:Map) : bool
+    + {static} PlayerCanMake(thing:ThingDef, map:Map) : bool
+    + {static} PlayerOrQuestRewardHas(thingFilter:ThingFilter) : bool
+    + {static} PlayerOrQuestRewardHas(thingDef:ThingDef, count:int) : bool
+    + {static} ItemStashHas(thingDef:ThingDef) : bool
+}
+@enduml

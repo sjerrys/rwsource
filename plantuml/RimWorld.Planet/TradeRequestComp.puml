@@ -1,0 +1,14 @@
+@startuml
+class TradeRequestComp {
+    + requestCount : int
+    + expiration : int
+    + outSignalFulfilled : string
+    + ActiveRequest : bool <<get>>
+    + <<override>> CompInspectStringExtra() : string
+    + <<override>> GetCaravanGizmos(caravan:Caravan) : IEnumerable<Gizmo>
+    + Disable() : void
+    + <<override>> PostExposeData() : void
+}
+WorldObjectComp <|-- TradeRequestComp
+TradeRequestComp --> "requestThingDef" ThingDef
+@enduml

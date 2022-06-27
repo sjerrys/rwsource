@@ -1,0 +1,7 @@
+@startuml
+class TimeSlower {
+    + ForcedNormalSpeed : bool <<get>>
+    + SignalForceNormalSpeed() : void
+    + SignalForceNormalSpeedShort() : void
+}
+@enduml

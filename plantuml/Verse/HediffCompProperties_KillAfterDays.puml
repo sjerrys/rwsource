@@ -1,0 +1,7 @@
+@startuml
+class HediffCompProperties_KillAfterDays {
+    + days : int
+    + HediffCompProperties_KillAfterDays()
+}
+HediffCompProperties <|-- HediffCompProperties_KillAfterDays
+@enduml

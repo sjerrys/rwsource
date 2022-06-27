@@ -1,0 +1,6 @@
+@startuml
+enum VerbState {
+    Idle,
+    Bursting,
+}
+@enduml

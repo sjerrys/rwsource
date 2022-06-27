@@ -1,0 +1,19 @@
+@startuml
+class QuestPart_Alert {
+    + label : string
+    + explanation : string
+    + critical : bool
+    + getLookTargetsFromSignal : bool
+    + <<override>> AlertLabel : string <<get>>
+    + <<override>> AlertExplanation : string <<get>>
+    + <<override>> AlertCritical : bool <<get>>
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+}
+class "IEnumerable`1"<T> {
+}
+QuestPartActivable <|-- QuestPart_Alert
+QuestPart_Alert --> "lookTargets" LookTargets
+QuestPart_Alert --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+QuestPart_Alert --> "AlertReport" AlertReport
+@enduml

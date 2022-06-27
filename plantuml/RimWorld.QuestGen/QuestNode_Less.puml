@@ -1,0 +1,11 @@
+@startuml
+class QuestNode_Less {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_Less
+QuestNode_Less --> "value1<double>" "SlateRef`1"
+QuestNode_Less --> "value2<double>" "SlateRef`1"
+QuestNode_Less --> "node" QuestNode
+QuestNode_Less --> "elseNode" QuestNode
+@enduml

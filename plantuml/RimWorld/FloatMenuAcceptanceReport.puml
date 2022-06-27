@@ -1,0 +1,12 @@
+@startuml
+class FloatMenuAcceptanceReport <<struct>> {
+    + Accepted : bool <<get>>
+    + FailMessage : string <<get>>
+    + FailReason : string <<get>>
+    + {static} WithFailReason(failReason:string) : FloatMenuAcceptanceReport
+    + {static} WithFailMessage(failMessage:string) : FloatMenuAcceptanceReport
+    + {static} WithFailReasonAndMessage(failReason:string, failMessage:string) : FloatMenuAcceptanceReport
+}
+FloatMenuAcceptanceReport --> "WasAccepted" FloatMenuAcceptanceReport
+FloatMenuAcceptanceReport --> "WasRejected" FloatMenuAcceptanceReport
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class JobGiver_GetJoy {
+    + <<override>> ResolveReferences() : void
+}
+ThinkNode_JobGiver <|-- JobGiver_GetJoy
+@enduml

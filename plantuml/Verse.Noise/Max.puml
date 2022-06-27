@@ -1,0 +1,8 @@
+@startuml
+class Max {
+    + Max()
+    + Max(lhs:ModuleBase, rhs:ModuleBase)
+    + <<override>> GetValue(x:double, y:double, z:double) : double
+}
+ModuleBase <|-- Max
+@enduml

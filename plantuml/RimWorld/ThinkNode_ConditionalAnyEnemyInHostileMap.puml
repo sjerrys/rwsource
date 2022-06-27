@@ -1,0 +1,5 @@
+@startuml
+class ThinkNode_ConditionalAnyEnemyInHostileMap {
+}
+ThinkNode_Conditional <|-- ThinkNode_ConditionalAnyEnemyInHostileMap
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+class GrammarRequest <<struct>> {
+    + Clear() : void
+}
+class "List`1"<T> {
+}
+class "Dictionary`2"<T1,T2> {
+}
+GrammarRequest --> "RulesAllowNull<Rule>" "List`1"
+GrammarRequest --> "Rules<Rule>" "List`1"
+GrammarRequest --> "IncludesBareAllowNull<RulePack>" "List`1"
+GrammarRequest --> "IncludesBare<RulePack>" "List`1"
+GrammarRequest --> "IncludesAllowNull<RulePackDef>" "List`1"
+GrammarRequest --> "Includes<RulePackDef>" "List`1"
+GrammarRequest --> "ConstantsAllowNull<string,string>" "Dictionary`2"
+GrammarRequest --> "Constants<string,string>" "Dictionary`2"
+@enduml

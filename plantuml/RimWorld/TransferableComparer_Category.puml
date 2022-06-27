@@ -1,0 +1,7 @@
+@startuml
+class TransferableComparer_Category {
+    + <<override>> Compare(lhs:Transferable, rhs:Transferable) : int
+    + {static} Compare(lhsTh:ThingDef, rhsTh:ThingDef) : int
+}
+TransferableComparer <|-- TransferableComparer_Category
+@enduml

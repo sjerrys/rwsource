@@ -1,0 +1,8 @@
+@startuml
+abstract class QuestNode_Root_Mission {
+    + <<const>> MinTilesAwayFromColony : int = 80
+    + <<const>> MaxTilesAwayFromColony : int = 85
+}
+QuestNode <|-- QuestNode_Root_Mission
+QuestNode_Root_Mission o-> "timeLimitDays" FloatRange
+@enduml

@@ -1,0 +1,22 @@
+@startuml
+class QuestNode_GetFaction {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GetFaction
+QuestNode_GetFaction --> "storeAs<string>" "SlateRef`1"
+QuestNode_GetFaction --> "allowEnemy<bool>" "SlateRef`1"
+QuestNode_GetFaction --> "allowNeutral<bool>" "SlateRef`1"
+QuestNode_GetFaction --> "allowAlly<bool>" "SlateRef`1"
+QuestNode_GetFaction --> "allowAskerFaction<bool>" "SlateRef`1"
+QuestNode_GetFaction --> "allowPermanentEnemy<bool?>" "SlateRef`1"
+QuestNode_GetFaction --> "mustBePermanentEnemy<bool>" "SlateRef`1"
+QuestNode_GetFaction --> "playerCantBeAttackingCurrently<bool>" "SlateRef`1"
+QuestNode_GetFaction --> "peaceTalksCantExist<bool>" "SlateRef`1"
+QuestNode_GetFaction --> "leaderMustBeSafe<bool>" "SlateRef`1"
+QuestNode_GetFaction --> "mustHaveGoodwillRewardsEnabled<bool>" "SlateRef`1"
+QuestNode_GetFaction --> "ofPawn<Pawn>" "SlateRef`1"
+QuestNode_GetFaction --> "mustBeHostileToFactionOf<Thing>" "SlateRef`1"
+QuestNode_GetFaction --> "exclude<IEnumerable<Faction>>" "SlateRef`1"
+QuestNode_GetFaction --> "allowedHiddenFactions<IEnumerable<Faction>>" "SlateRef`1"
+@enduml

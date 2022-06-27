@@ -1,0 +1,7 @@
+@startuml
+class Trigger_TicksPassedAfterConditionMet {
+    + Trigger_TicksPassedAfterConditionMet(tickLimit:int, condition:Func<bool>, checkEveryTicks:int)
+    + <<override>> ActivateOn(lord:Lord, signal:TriggerSignal) : bool
+}
+Trigger_TicksPassed <|-- Trigger_TicksPassedAfterConditionMet
+@enduml

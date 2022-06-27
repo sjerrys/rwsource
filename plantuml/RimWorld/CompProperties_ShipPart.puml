@@ -1,0 +1,6 @@
+@startuml
+class CompProperties_ShipPart {
+    + CompProperties_ShipPart()
+}
+CompProperties <|-- CompProperties_ShipPart
+@enduml

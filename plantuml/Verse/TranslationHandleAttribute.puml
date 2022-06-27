@@ -1,0 +1,6 @@
+@startuml
+class TranslationHandleAttribute {
+    + Priority : int <<get>> <<set>>
+}
+Attribute <|-- TranslationHandleAttribute
+@enduml

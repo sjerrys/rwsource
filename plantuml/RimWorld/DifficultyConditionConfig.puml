@@ -1,0 +1,9 @@
+@startuml
+class DifficultyConditionConfig {
+    + bigThreatsDisabled : bool
+    + trapsDisabled : bool
+    + turretsDisabled : bool
+    + mortarsDisabled : bool
+    + extremeWeatherIncidentsDisabled : bool
+}
+@enduml

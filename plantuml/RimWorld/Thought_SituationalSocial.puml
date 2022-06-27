@@ -1,0 +1,13 @@
+@startuml
+class Thought_SituationalSocial {
+    + <<override>> VisibleInNeedsTab : bool <<get>>
+    + <<override>> LabelCap : string <<get>>
+    + <<override>> LabelCapSocial : string <<get>>
+    + OtherPawn() : Pawn
+    + <<virtual>> OpinionOffset() : float
+    + <<override>> GroupsWith(other:Thought) : bool
+}
+Thought_Situational <|-- Thought_SituationalSocial
+ISocialThought <|-- Thought_SituationalSocial
+Thought_SituationalSocial --> "otherPawn" Pawn
+@enduml

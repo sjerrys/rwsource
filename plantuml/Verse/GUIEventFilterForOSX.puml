@@ -1,0 +1,5 @@
+@startuml
+class GUIEventFilterForOSX <<static>> {
+    + {static} CheckRejectGUIEvent() : void
+}
+@enduml

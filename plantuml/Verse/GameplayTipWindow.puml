@@ -1,0 +1,8 @@
+@startuml
+class GameplayTipWindow {
+    + <<const>> tipUpdateInterval : float = 17.5f
+    + {static} DrawWindow(offset:Vector2, useWindowStack:bool) : void
+    + {static} ResetTipTimer() : void
+}
+GameplayTipWindow o-> "WindowSize" Vector2
+@enduml

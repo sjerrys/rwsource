@@ -1,0 +1,5 @@
+@startuml
+class JobGiver_SeekAllowedArea {
+}
+ThinkNode_JobGiver <|-- JobGiver_SeekAllowedArea
+@enduml

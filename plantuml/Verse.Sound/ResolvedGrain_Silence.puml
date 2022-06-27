@@ -1,0 +1,10 @@
+@startuml
+class ResolvedGrain_Silence {
+    + ResolvedGrain_Silence(sourceGrain:AudioGrain_Silence)
+    + <<override>> ToString() : string
+    + <<override>> Equals(obj:object) : bool
+    + <<override>> GetHashCode() : int
+}
+ResolvedGrain <|-- ResolvedGrain_Silence
+ResolvedGrain_Silence --> "sourceGrain" AudioGrain_Silence
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class JobDriver_PredatorHunt {
+    + <<override>> ExposeData() : void
+    + <<override>> GetReport() : string
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+    + <<override>> Notify_DamageTaken(dinfo:DamageInfo) : void
+}
+JobDriver <|-- JobDriver_PredatorHunt
+JobDriver_PredatorHunt o-> "PreyInd" TargetIndex
+JobDriver_PredatorHunt --> "Prey" Pawn
+@enduml

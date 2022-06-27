@@ -1,0 +1,5 @@
+@startuml
+class InfestationUtility <<static>> {
+    + {static} SpawnTunnels(hiveCount:int, map:Map, spawnAnywhereIfNoGoodCell:bool, ignoreRoofedRequirement:bool, questTag:string) : Thing
+}
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+class SubSustainer {
+    + creationFrame : int
+    + creationTick : int
+    + creationRealTime : float
+    + SubSustainer(parent:Sustainer, subSoundDef:SubSoundDef)
+    + SubSustainerUpdate() : void
+    + <<virtual>> Cleanup() : void
+    + <<override>> ToString() : string
+    + <<override>> GetHashCode() : int
+    + SamplesDebugString() : string
+}
+SubSustainer --> "parent" Sustainer
+SubSustainer --> "subDef" SubSoundDef
+SubSustainer --> "Info" SoundInfo
+SubSustainer --> "ExternalParams" SoundParams
+@enduml

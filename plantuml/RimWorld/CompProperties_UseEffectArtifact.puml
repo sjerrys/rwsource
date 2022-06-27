@@ -1,0 +1,7 @@
+@startuml
+class CompProperties_UseEffectArtifact {
+    + CompProperties_UseEffectArtifact()
+}
+CompProperties_UseEffect <|-- CompProperties_UseEffectArtifact
+CompProperties_UseEffectArtifact --> "sound" SoundDef
+@enduml

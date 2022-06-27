@@ -1,0 +1,18 @@
+@startuml
+class Pawn_DrawTracker {
+    + Pawn_DrawTracker(pawn:Pawn)
+    + DrawTrackerTick() : void
+    + DrawAt(loc:Vector3) : void
+    + Notify_Spawned() : void
+    + Notify_WarmingCastAlongLine(newShootLine:ShootLine, ShootPosition:IntVec3) : void
+    + Notify_DamageApplied(dinfo:DamageInfo) : void
+    + Notify_DamageDeflected(dinfo:DamageInfo) : void
+    + Notify_MeleeAttackOn(Target:Thing) : void
+    + Notify_DebugAffected() : void
+}
+Pawn_DrawTracker --> "tweener" PawnTweener
+Pawn_DrawTracker --> "leaner" PawnLeaner
+Pawn_DrawTracker --> "renderer" PawnRenderer
+Pawn_DrawTracker --> "ui" PawnUIOverlay
+Pawn_DrawTracker --> "DrawPos" Vector3
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+class QuestPart_TradeRequestInactive {
+    + <<override>> QuestPartTick() : void
+    + <<override>> ExposeData() : void
+    + <<override>> AssignDebugData() : void
+}
+class "IEnumerable`1"<T> {
+}
+QuestPartActivable <|-- QuestPart_TradeRequestInactive
+QuestPart_TradeRequestInactive --> "settlement" Settlement
+QuestPart_TradeRequestInactive --> "QuestLookTargets<GlobalTargetInfo>" "IEnumerable`1"
+QuestPart_TradeRequestInactive --> "InvolvedFactions<Faction>" "IEnumerable`1"
+@enduml

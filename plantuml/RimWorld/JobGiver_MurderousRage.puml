@@ -1,0 +1,5 @@
+@startuml
+class JobGiver_MurderousRage {
+}
+ThinkNode_JobGiver <|-- JobGiver_MurderousRage
+@enduml

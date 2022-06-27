@@ -1,0 +1,10 @@
+@startuml
+class SketchGenUtility <<static>> {
+    + {static} IsStuffAllowed(stuff:ThingDef, allowWood:bool, useOnlyStonesAvailableOnMap:Map, allowFlammableWalls:bool, stuffFor:ThingDef) : bool
+    + {static} IsFloorAllowed(floor:TerrainDef, allowWoodenFloor:bool, allowConcrete:bool, useOnlyStonesAvailableOnMap:Map, onlyBuildableByPlayer:bool) : bool
+    + {static} IsFloorAllowed_NewTmp(floor:TerrainDef, allowWoodenFloor:bool, allowConcrete:bool, useOnlyStonesAvailableOnMap:Map, onlyBuildableByPlayer:bool, onlyStoneFloor:bool) : bool
+    + {static} FindBiggestRectAt(c:IntVec3, outerRect:CellRect, sketch:Sketch, processed:HashSet<IntVec3>, canTraverse:Predicate<IntVec3>) : CellRect
+    + {static} FindBiggestRect(sketch:Sketch, canTraverse:Predicate<IntVec3>) : CellRect
+    + {static} PlayerCanBuildNow(buildable:BuildableDef) : bool
+}
+@enduml

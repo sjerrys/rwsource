@@ -1,0 +1,15 @@
+@startuml
+class CaravanExitMapUtility <<static>> {
+    + {static} ExitMapAndCreateCaravan(pawns:IEnumerable<Pawn>, faction:Faction, exitFromTile:int, dir:Direction8Way, destinationTile:int, sendMessage:bool) : Caravan
+    + {static} ExitMapAndCreateCaravan(pawns:IEnumerable<Pawn>, faction:Faction, exitFromTile:int, directionTile:int, destinationTile:int, sendMessage:bool) : Caravan
+    + {static} ExitMapAndJoinOrCreateCaravan(pawn:Pawn, exitDir:Rot4) : void
+    + {static} CanExitMapAndJoinOrCreateCaravanNow(pawn:Pawn) : bool
+    + {static} AvailableExitTilesAt(map:Map) : List<int>
+    + {static} GetExitMapEdges(grid:WorldGrid, fromTileID:int, toTileID:int, primary:Rot4, secondary:Rot4) : void
+    + {static} RandomBestExitTileFrom(map:Map) : int
+    + {static} BestExitTileToGoTo(destinationTile:int, from:Map) : int
+    + {static} FindCaravanToJoinFor(pawn:Pawn) : Caravan
+    + {static} AnyoneTryingToJoinCaravan(c:Caravan) : bool
+    + {static} OpenSomeoneTryingToJoinCaravanDialog(c:Caravan, confirmAction:Action) : void
+}
+@enduml

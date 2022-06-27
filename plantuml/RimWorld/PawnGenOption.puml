@@ -1,0 +1,9 @@
+@startuml
+class PawnGenOption {
+    + selectionWeight : float
+    + Cost : float <<get>>
+    + <<override>> ToString() : string
+    + LoadDataFromXmlCustom(xmlRoot:XmlNode) : void
+}
+PawnGenOption --> "kind" PawnKindDef
+@enduml

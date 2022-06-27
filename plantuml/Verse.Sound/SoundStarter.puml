@@ -1,0 +1,7 @@
+@startuml
+class SoundStarter <<static>> {
+    + {static} PlayOneShotOnCamera(soundDef:SoundDef, onlyThisMap:Map) : void
+    + {static} PlayOneShot(soundDef:SoundDef, info:SoundInfo) : void
+    + {static} TrySpawnSustainer(soundDef:SoundDef, info:SoundInfo) : Sustainer
+}
+@enduml

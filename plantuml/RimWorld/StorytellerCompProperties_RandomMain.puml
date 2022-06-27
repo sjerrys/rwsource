@@ -1,0 +1,13 @@
+@startuml
+class StorytellerCompProperties_RandomMain {
+    + mtbDays : float
+    + maxThreatBigIntervalDays : float = 99999f
+    + skipThreatBigIfRaidBeacon : bool
+    + StorytellerCompProperties_RandomMain()
+}
+class "List`1"<T> {
+}
+StorytellerCompProperties <|-- StorytellerCompProperties_RandomMain
+StorytellerCompProperties_RandomMain o-> "categoryWeights<IncidentCategoryEntry>" "List`1"
+StorytellerCompProperties_RandomMain o-> "randomPointsFactorRange" FloatRange
+@enduml

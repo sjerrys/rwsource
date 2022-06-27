@@ -1,0 +1,12 @@
+@startuml
+class GenStep_Terrain {
+    + <<override>> SeedPart : int <<get>>
+    + <<override>> Generate(map:Map, parms:GenStepParams) : void
+}
+class GRLT_Entry <<struct>> {
+    + bestDistance : float
+}
+GenStep <|-- GenStep_Terrain
+GenStep_Terrain +-- GRLT_Entry
+GRLT_Entry --> "bestNode" IntVec3
+@enduml

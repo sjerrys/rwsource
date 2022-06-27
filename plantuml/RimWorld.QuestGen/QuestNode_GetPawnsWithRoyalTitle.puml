@@ -1,0 +1,11 @@
+@startuml
+class QuestNode_GetPawnsWithRoyalTitle {
+}
+class "SlateRef`1"<T> {
+}
+QuestNode <|-- QuestNode_GetPawnsWithRoyalTitle
+QuestNode_GetPawnsWithRoyalTitle --> "pawns<List<Pawn>>" "SlateRef`1"
+QuestNode_GetPawnsWithRoyalTitle --> "storeAs<string>" "SlateRef`1"
+QuestNode_GetPawnsWithRoyalTitle --> "storeCountAs<string>" "SlateRef`1"
+QuestNode_GetPawnsWithRoyalTitle --> "storePawnsLabelAs<string>" "SlateRef`1"
+@enduml

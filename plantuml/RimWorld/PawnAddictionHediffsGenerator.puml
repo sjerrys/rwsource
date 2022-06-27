@@ -1,0 +1,5 @@
+@startuml
+class PawnAddictionHediffsGenerator <<static>> {
+    + {static} GenerateAddictionsAndTolerancesFor(pawn:Pawn) : void
+}
+@enduml

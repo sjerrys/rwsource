@@ -1,0 +1,6 @@
+@startuml
+class CompTargetable_SinglePawn {
+    + <<override>> GetTargets(targetChosenByPlayer:Thing) : IEnumerable<Thing>
+}
+CompTargetable <|-- CompTargetable_SinglePawn
+@enduml

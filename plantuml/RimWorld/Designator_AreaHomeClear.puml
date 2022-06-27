@@ -1,0 +1,6 @@
+@startuml
+class Designator_AreaHomeClear {
+    + Designator_AreaHomeClear()
+}
+Designator_AreaHome <|-- Designator_AreaHomeClear
+@enduml

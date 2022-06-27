@@ -1,0 +1,21 @@
+@startuml
+class CompArt {
+    + Title : string <<get>>
+    + CanShowArt : bool <<get>>
+    + Active : bool <<get>>
+    + InitializeArt(source:ArtGenerationContext) : void
+    + InitializeArt(relatedThing:Thing) : void
+    + JustCreatedBy(pawn:Pawn) : void
+    + Clear() : void
+    + <<override>> PostExposeData() : void
+    + <<override>> CompInspectStringExtra() : string
+    + <<override>> PostDestroy(mode:DestroyMode, previousMap:Map) : void
+    + <<override>> GetDescriptionPart() : string
+    + <<override>> AllowStackWith(other:Thing) : bool
+    + GenerateImageDescription() : TaggedString
+}
+ThingComp <|-- CompArt
+CompArt --> "AuthorName" TaggedString
+CompArt --> "TaleRef" TaleReference
+CompArt --> "Props" CompProperties_Art
+@enduml

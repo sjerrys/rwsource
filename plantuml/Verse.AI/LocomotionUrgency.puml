@@ -1,0 +1,9 @@
+@startuml
+enum LocomotionUrgency {
+    None,
+    Amble,
+    Walk,
+    Jog,
+    Sprint,
+}
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+class Perlin {
+    + Frequency : double <<get>> <<set>>
+    + Lacunarity : double <<get>> <<set>>
+    + OctaveCount : int <<get>> <<set>>
+    + Persistence : double <<get>> <<set>>
+    + Seed : int <<get>> <<set>>
+    + Perlin()
+    + Perlin(frequency:double, lacunarity:double, persistence:double, octaves:int, seed:int, quality:QualityMode)
+    + <<override>> GetValue(x:double, y:double, z:double) : double
+}
+ModuleBase <|-- Perlin
+Perlin --> "Quality" QualityMode
+@enduml

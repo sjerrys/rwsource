@@ -1,0 +1,7 @@
+@startuml
+class Trigger_ChanceOnTickInteval {
+    + Trigger_ChanceOnTickInteval(interval:int, chancePerInterval:float)
+    + <<override>> ActivateOn(lord:Lord, signal:TriggerSignal) : bool
+}
+Trigger <|-- Trigger_ChanceOnTickInteval
+@enduml

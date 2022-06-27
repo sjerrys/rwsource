@@ -1,0 +1,10 @@
+@startuml
+class StatWorker_MarketValue {
+    + <<const>> ValuePerWork : float = 0.0036f
+    + <<override>> GetValueUnfinalized(req:StatRequest, applyPostProcess:bool) : float
+    + {static} CalculatedBaseMarketValue(def:BuildableDef, stuffDef:ThingDef) : float
+    + {static} CalculableRecipe(def:BuildableDef) : RecipeDef
+    + <<override>> GetExplanationUnfinalized(req:StatRequest, numberSense:ToStringNumberSense) : string
+}
+StatWorker <|-- StatWorker_MarketValue
+@enduml

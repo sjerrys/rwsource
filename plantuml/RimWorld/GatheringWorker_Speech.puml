@@ -1,0 +1,7 @@
+@startuml
+class GatheringWorker_Speech {
+    + <<override>> CanExecute(map:Map, organizer:Pawn) : bool
+    + {static} OutcomeBreakdownForPawn(organizer:Pawn) : string
+}
+GatheringWorker <|-- GatheringWorker_Speech
+@enduml

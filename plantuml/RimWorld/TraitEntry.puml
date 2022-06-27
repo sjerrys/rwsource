@@ -1,0 +1,9 @@
+@startuml
+class TraitEntry {
+    + degree : int
+    + TraitEntry()
+    + TraitEntry(def:TraitDef, degree:int)
+    + LoadDataFromXmlCustom(xmlRoot:XmlNode) : void
+}
+TraitEntry --> "def" TraitDef
+@enduml

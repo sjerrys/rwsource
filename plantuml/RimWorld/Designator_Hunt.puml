@@ -1,0 +1,11 @@
+@startuml
+class Designator_Hunt {
+    + <<override>> DraggableDimensions : int <<get>>
+    + Designator_Hunt()
+    + <<override>> CanDesignateCell(c:IntVec3) : AcceptanceReport
+    + <<override>> DesignateSingleCell(loc:IntVec3) : void
+    + <<override>> CanDesignateThing(t:Thing) : AcceptanceReport
+    + <<override>> DesignateThing(t:Thing) : void
+}
+Designator <|-- Designator_Hunt
+@enduml

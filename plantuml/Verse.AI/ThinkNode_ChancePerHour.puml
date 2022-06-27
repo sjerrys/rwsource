@@ -1,0 +1,6 @@
+@startuml
+abstract class ThinkNode_ChancePerHour {
+    + <<override>> TryIssueJobPackage(pawn:Pawn, jobParams:JobIssueParams) : ThinkResult
+}
+ThinkNode_Priority <|-- ThinkNode_ChancePerHour
+@enduml

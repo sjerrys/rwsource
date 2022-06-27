@@ -1,0 +1,10 @@
+@startuml
+class JobDriver_HaulToContainer {
+    + <<override>> GetReport() : string
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+}
+JobDriver <|-- JobDriver_HaulToContainer
+JobDriver_HaulToContainer o-> "DestIndex" TargetIndex
+JobDriver_HaulToContainer --> "ThingToCarry" Thing
+JobDriver_HaulToContainer --> "Container" Thing
+@enduml

@@ -1,0 +1,26 @@
+@startuml
+class PawnPath {
+    + inUse : bool
+    + Found : bool <<get>>
+    + TotalCost : float <<get>>
+    + NodesLeftCount : int <<get>>
+    + NodesConsumedCount : int <<get>>
+    + UsedRegionHeuristics : bool <<get>>
+    + AddNode(nodePosition:IntVec3) : void
+    + SetupFound(totalCost:float, usedRegionHeuristics:bool) : void
+    + Dispose() : void
+    + ReleaseToPool() : void
+    + {static} NewNotFound() : PawnPath
+    + ConsumeNextNode() : IntVec3
+    + Peek(nodesAhead:int) : IntVec3
+    + <<override>> ToString() : string
+    + DrawPath(pathingPawn:Pawn) : void
+}
+class "List`1"<T> {
+}
+IDisposable <|-- PawnPath
+PawnPath --> "NodesReversed<IntVec3>" "List`1"
+PawnPath --> "FirstNode" IntVec3
+PawnPath --> "LastNode" IntVec3
+PawnPath --> "NotFound" PawnPath
+@enduml

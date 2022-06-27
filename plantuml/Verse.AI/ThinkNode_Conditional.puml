@@ -1,0 +1,8 @@
+@startuml
+abstract class ThinkNode_Conditional {
+    + invert : bool
+    + <<override>> DeepCopy(resolve:bool) : ThinkNode
+    + <<override>> TryIssueJobPackage(pawn:Pawn, jobParams:JobIssueParams) : ThinkResult
+}
+ThinkNode_Priority <|-- ThinkNode_Conditional
+@enduml

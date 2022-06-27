@@ -1,0 +1,5 @@
+@startuml
+class ScenPart_Rule_DisallowDesignator {
+}
+ScenPart_Rule <|-- ScenPart_Rule_DisallowDesignator
+@enduml

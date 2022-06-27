@@ -1,0 +1,25 @@
+@startuml
+class Pawn_WorkSettings {
+    + <<const>> LowestPriority : int = 4
+    + <<const>> DefaultPriority : int = 3
+    + EverWork : bool <<get>>
+    + Pawn_WorkSettings()
+    + Pawn_WorkSettings(pawn:Pawn)
+    + ExposeData() : void
+    + EnableAndInitializeIfNotAlreadyInitialized() : void
+    + EnableAndInitialize() : void
+    + SetPriority(w:WorkTypeDef, priority:int) : void
+    + GetPriority(w:WorkTypeDef) : int
+    + WorkIsActive(w:WorkTypeDef) : bool
+    + Disable(w:WorkTypeDef) : void
+    + DisableAll() : void
+    + Notify_UseWorkPrioritiesChanged() : void
+    + Notify_DisabledWorkTypesChanged() : void
+    + DebugString() : string
+}
+class "List`1"<T> {
+}
+IExposable <|-- Pawn_WorkSettings
+Pawn_WorkSettings --> "WorkGiversInOrderNormal<WorkGiver>" "List`1"
+Pawn_WorkSettings --> "WorkGiversInOrderEmergency<WorkGiver>" "List`1"
+@enduml

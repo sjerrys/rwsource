@@ -1,0 +1,14 @@
+@startuml
+abstract class RaidStrategyWorker {
+    + <<virtual>> SelectionWeight(map:Map, basePoints:float) : float
+    + <<virtual>> MakeLords(parms:IncidentParms, pawns:List<Pawn>) : void
+    + <<virtual>> CanUseWith(parms:IncidentParms, groupKind:PawnGroupKindDef) : bool
+    + <<virtual>> MinimumPoints(faction:Faction, groupKind:PawnGroupKindDef) : float
+    + <<virtual>> MinMaxAllowedPawnGenOptionCost(faction:Faction, groupKind:PawnGroupKindDef) : float
+    + <<virtual>> CanUsePawnGenOption(g:PawnGenOption, chosenGroups:List<PawnGenOption>) : bool
+    + <<virtual>> CanUsePawn(p:Pawn, otherPawns:List<Pawn>) : bool
+    + <<virtual>> TryGenerateThreats(parms:IncidentParms) : void
+    + <<virtual>> SpawnThreats(parms:IncidentParms) : List<Pawn>
+}
+RaidStrategyWorker --> "def" RaidStrategyDef
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+class JobDriver_HaulToTransporter {
+    + initialCount : int
+    + <<override>> ExposeData() : void
+    + <<override>> TryMakePreToilReservations(errorOnFailed:bool) : bool
+    + <<override>> Notify_Starting() : void
+}
+JobDriver_HaulToContainer <|-- JobDriver_HaulToTransporter
+JobDriver_HaulToTransporter --> "Transporter" CompTransporter
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class PawnColumnWorker_CopyPasteWorkPriorities {
+    + <<override>> DoCell(rect:Rect, pawn:Pawn, table:PawnTable) : void
+}
+PawnColumnWorker_CopyPaste <|-- PawnColumnWorker_CopyPasteWorkPriorities
+@enduml

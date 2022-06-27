@@ -1,0 +1,8 @@
+@startuml
+class InteractionCardUtility <<static>> {
+    + <<const>> ImageSize : float = 26f
+    + <<const>> ImagePadRight : float = 3f
+    + <<const>> TextOffset : float = 29f
+    + {static} DrawInteractionsLog(rect:Rect, pawn:Pawn, entries:List<LogEntry>, maxEntries:int) : void
+}
+@enduml

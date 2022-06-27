@@ -1,0 +1,6 @@
+@startuml
+class RaidStrategyWorker_StageThenAttack {
+    + <<override>> CanUseWith(parms:IncidentParms, groupKind:PawnGroupKindDef) : bool
+}
+RaidStrategyWorker <|-- RaidStrategyWorker_StageThenAttack
+@enduml
